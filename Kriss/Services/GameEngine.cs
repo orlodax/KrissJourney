@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Text.Json;
-using KrissJourney.Kriss.Helpers;
 using KrissJourney.Kriss.Models;
 using KrissJourney.Kriss.Nodes;
 
@@ -38,8 +37,8 @@ public class GameEngine(StatusManager statusManager)
         while (true);
 
         //debug: start from. Comment for default start
-        //currentChapter = chapters[9];
-        //LoadNode(1);
+        CurrentChapter = chapters[9];
+        LoadNode(1);
         //debug
 
         if (!Console.IsOutputRedirected)
@@ -243,15 +242,4 @@ public class GameEngine(StatusManager statusManager)
 
         File.WriteAllText(path, sb.ToString());
     }
-
-    #region Jokes
-    public bool CheckChap2Node2()
-    {
-        //first action node. to mock player just the first time they use help
-        if (currentChapter?.Id == 2 && currentNode?.Id == 2)
-            return true;
-
-        return false;
-    }
-    #endregion
 }
