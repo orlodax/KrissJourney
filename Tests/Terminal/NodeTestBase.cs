@@ -16,7 +16,7 @@ public abstract class NodeTestBase
     /// <summary>
     /// The unified test runner for node testing
     /// </summary>
-    protected NodeTestRunner TestRunner { get; private set; }
+    protected NodeTestRunner TestRunner { get; set; }
 
     /// <summary>
     /// Shorthand access to the GameEngine from the TestRunner

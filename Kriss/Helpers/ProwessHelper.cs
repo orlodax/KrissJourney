@@ -6,7 +6,7 @@ namespace KrissJourney.Kriss.Helpers;
 // I am not actually giving you XP ≽^•⩊•^≼
 public static class ProwessHelper
 {
-    internal static Prowess GetProwess(int chapterId)
+    public static Prowess GetProwess(int chapterId)
     {
         return chapterId switch
         {

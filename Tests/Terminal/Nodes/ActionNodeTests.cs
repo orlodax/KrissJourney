@@ -200,8 +200,8 @@ namespace KrissJourney.Tests.Terminal.Nodes
         public void ProcessAction_WithUnmetCondition_ShowsCustomRefusal()
         {
             // Arrange: Add an action with an object that has a condition with a refusal
-            Condition failCondition = new Condition { Refusal = "Nope!", Item = "nonexistent_item", Type = "item" };
-            Action failAction = new Action
+            Condition failCondition = new() { Refusal = "Nope!", Item = "nonexistent_item", Type = "item" };
+            Action failAction = new()
             {
                 Verbs = ["fail"],
                 Objects =

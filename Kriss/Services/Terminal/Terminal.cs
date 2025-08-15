@@ -77,4 +77,15 @@ public class Terminal : ITerminal
         Console.ResetColor();
     }
     public bool KeyAvailable => Console.KeyAvailable;
+    public bool CursorVisible
+    {
+        get => true;
+        set
+        {
+            if (value)
+                Console.Write("\x1b[?25h");
+            else
+                Console.Write("\x1b[?25l");
+        }
+    }
 }

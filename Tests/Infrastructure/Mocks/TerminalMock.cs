@@ -28,6 +28,11 @@ public class TerminalMock : ITerminal
     // For testing
     public string GetOutput() => outputBuilder.ToString();
     public int KeyQueueCount => keyQueue.Count;
+    public bool CursorVisible
+    {
+        get => true;
+        set { /* do nothing */ }
+    }
 
     public void Clear()
     {

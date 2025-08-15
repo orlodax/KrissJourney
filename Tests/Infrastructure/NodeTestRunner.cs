@@ -27,7 +27,7 @@ public class NodeTestRunner
     /// <summary>
     /// The test chapter that is automatically created for testing nodes
     /// </summary>
-    public Chapter TestChapter { get; private set; }
+    public Chapter TestChapter { get; set; }
 
     private readonly PropertyInfo _currentChapterProperty;
     private readonly PropertyInfo _currentNodeProperty;
