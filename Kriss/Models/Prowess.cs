@@ -14,5 +14,5 @@ public record struct Prowess(
     int BaseDamage,
     int RageBonus,
     int FuryBonus,
-    int QteSpeedFactor,
+    float QteSpeedFactor,
     int QteWidth);

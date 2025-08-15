@@ -169,9 +169,7 @@ public class NodeTestRunner
     {
         // Add the node to the test chapter if it's not already there
         if (!TestChapter.Nodes.Any(n => n.Id == node.Id))
-        {
             TestChapter.Nodes.Add(node);
-        }
 
         // Set the game engine on the node
         node.SetGameEngine(GameEngine);        // Set the current chapter and node in the game engine
@@ -206,9 +204,7 @@ public class NodeTestRunner
     public void SimulateUserInput(params ConsoleKey[] keys)
     {
         if (Terminal == null)
-        {
             throw new InvalidOperationException("Terminal mock is not set up. Call SetupTerminalMock() first.");
-        }
 
         Terminal.EnqueueKeys(keys);
     }
@@ -219,9 +215,7 @@ public class NodeTestRunner
     public void SimulateTextInput(string text)
     {
         if (Terminal == null)
-        {
             throw new InvalidOperationException("Terminal mock is not set up. Call SetupTerminalMock() first.");
-        }
 
         Terminal.EnqueueText(text);
     }
@@ -232,9 +226,7 @@ public class NodeTestRunner
     public string GetTerminalOutput()
     {
         if (Terminal == null)
-        {
             throw new InvalidOperationException("Terminal mock is not set up. Call SetupTerminalMock() first.");
-        }
 
         return Terminal.GetOutput();
     }

@@ -40,7 +40,6 @@ public class FightNode : NodeBase
 
     void Fight()
     {
-
         if (IsThisNode(chapterId: 10, nodeId: 1)) // To display tutorial the first time player encounters a fight
         {
             // display tutorial
@@ -194,10 +193,12 @@ public class FightNode : NodeBase
     /// <param name="length">The number of positions between < and > (including X and O).</param>
     private AttackResult ShowOscillatingCursorAndWaitForKey(ConsoleKey requiredKey, int cycles = 3, int length = 20)
     {
+        WriteLine();
+
         AttackResult result = AttackResult.Fail;
 
         int qteWidth = prowess.QteWidth;
-        int sleep = 80 / prowess.QteSpeedFactor; // ms per frame
+        int sleep = (int)(100 / prowess.QteSpeedFactor); // ms per frame
         int right = length - 1;
         int targetPos = random.Next(1, right - 1); // Avoid edges
         int cursorPos = 1;
