@@ -14,7 +14,7 @@ public static class GameEngineTestExtensions
     /// </summary>
     public static List<Chapter> GetChapters(this GameEngine gameEngine)
     {
-        var chaptersField = typeof(GameEngine).GetField("chapters",
+        System.Reflection.FieldInfo chaptersField = typeof(GameEngine).GetField("chapters",
             System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
         return chaptersField?.GetValue(gameEngine) as List<Chapter>;
     }

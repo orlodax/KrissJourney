@@ -55,4 +55,9 @@ public static class TerminalFacade
     public static ConsoleKeyInfo ReadKey(bool intercept = false) => terminal.ReadKey(intercept);
     public static void ResetColor() => terminal.ResetColor();
     public static bool KeyAvailable => terminal.KeyAvailable;
+    public static bool CursorVisible
+    {
+        get => terminal.CursorVisible;
+        set => terminal.CursorVisible = value;
+    }
 }

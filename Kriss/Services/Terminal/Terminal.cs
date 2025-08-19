@@ -48,14 +48,14 @@ public class Terminal : ITerminal
     }
     public void WriteLine(string message, ConsoleColor color)
     {
-        var original = Console.ForegroundColor;
+        ConsoleColor original = Console.ForegroundColor;
         Console.ForegroundColor = color;
         Console.WriteLine(message);
         Console.ForegroundColor = original;
     }
     public void Write(string message, ConsoleColor color)
     {
-        var original = Console.ForegroundColor;
+        ConsoleColor original = Console.ForegroundColor;
         Console.ForegroundColor = color;
         Console.Write(message);
         Console.ForegroundColor = original;
@@ -77,4 +77,15 @@ public class Terminal : ITerminal
         Console.ResetColor();
     }
     public bool KeyAvailable => Console.KeyAvailable;
+    public bool CursorVisible
+    {
+        get => true;
+        set
+        {
+            if (value)
+                Console.Write("\x1b[?25h");
+            else
+                Console.Write("\x1b[?25l");
+        }
+    }
 }

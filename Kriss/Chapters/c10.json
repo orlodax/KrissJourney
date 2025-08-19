@@ -4,11 +4,28 @@
   "nodes": [
     {
       "id": 1,
-      "type": "Story",
-      "recap": "end of early access 1",
-      "text": "Well, you made it. You survived so far.##\n\nThank you for playing the early access version of Kriss.#\nI hope you enjoyed this early access version and look forward to your feedback.#\nFind us on the Community Page, Discord and GitHub!#\nIf you want to support this game, please consider leaving a review or sharing the game with your friends.#\n\nThank you for your support, traveler!",
+      "type": "Fight",
+      "recap": "test",
+      "text": "Test fight text.",
       "childid": 1,
-      "isClosing": true
+      "encounter": {
+        "foes": [
+          {
+            "name": "Goblin",
+            "health": 30,
+            "damage": 5,
+            "attacksPerRound": 2
+          },
+          {
+            "name": "Orc",
+            "health": 50,
+            "damage": 10,
+            "attacksPerRound": 1
+          }
+        ],
+        "defeatMessage": "You have been defeated by the goblin and orc.",
+        "victoryMessage": "You have defeated the goblin and orc."
+      }
     }
   ]
 }

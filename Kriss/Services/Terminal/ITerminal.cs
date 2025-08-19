@@ -22,4 +22,5 @@ public interface ITerminal
     ConsoleKeyInfo ReadKey(bool intercept = false);
     void ResetColor();
     bool KeyAvailable { get; }
+    bool CursorVisible { get; set; }
 }

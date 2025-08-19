@@ -141,7 +141,7 @@ public class GameEngineStatusManagerTests
 
         // Assert
         int count = 0;
-        foreach (var i in typeof(TestStatusManager).BaseType.GetProperty("Status", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).GetValue(manager).GetType().GetProperty("Inventory").GetValue(typeof(TestStatusManager).BaseType.GetProperty("Status", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).GetValue(manager)) as System.Collections.IEnumerable)
+        foreach (object i in typeof(TestStatusManager).BaseType.GetProperty("Status", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).GetValue(manager).GetType().GetProperty("Inventory").GetValue(typeof(TestStatusManager).BaseType.GetProperty("Status", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).GetValue(manager)) as System.Collections.IEnumerable)
             if ((string)i == item) count++;
 
         Assert.AreEqual(1, count, "Item should only be added once");

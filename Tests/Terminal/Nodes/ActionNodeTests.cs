@@ -1,4 +1,5 @@
 using System;
+using System.Reflection;
 using KrissJourney.Kriss.Models;
 using KrissJourney.Kriss.Nodes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -86,7 +87,7 @@ namespace KrissJourney.Tests.Terminal.Nodes
         public void EnterPressed_WithActionAndObject_ProcessesAction()
         {
             // Arrange: create a second node that will be loaded by AdvanceToNext
-            var nextNode = CreateNode<StoryNode>(nodeId: 2, configure: node =>
+            StoryNode nextNode = CreateNode<StoryNode>(nodeId: 2, configure: node =>
             {
                 node.Text = "Next node text";
                 node.ChildId = 1; // Set it to point back to the first node to avoid looking for non-existent nodes
@@ -199,8 +200,8 @@ namespace KrissJourney.Tests.Terminal.Nodes
         public void ProcessAction_WithUnmetCondition_ShowsCustomRefusal()
         {
             // Arrange: Add an action with an object that has a condition with a refusal
-            var failCondition = new Condition { Refusal = "Nope!", Item = "nonexistent_item", Type = "item" };
-            var failAction = new Action
+            Condition failCondition = new() { Refusal = "Nope!", Item = "nonexistent_item", Type = "item" };
+            Action failAction = new()
             {
                 Verbs = ["fail"],
                 Objects =
@@ -232,7 +233,7 @@ namespace KrissJourney.Tests.Terminal.Nodes
         public void DisplaySuccess_WithChildId_AdvancesToNextNode()
         {
             // Arrange: Simulate typing 'take book' (which has ChildId = 2)
-            var nextNode = CreateNode<StoryNode>(nodeId: 2, configure: node => node.Text = "Next node!");
+            StoryNode nextNode = CreateNode<StoryNode>(nodeId: 2, configure: node => node.Text = "Next node!");
             SimulateTextInput("take book");
             SimulateUserInput(ConsoleKey.Enter);
             SimulateUserInput(ConsoleKey.Enter); // To advance
@@ -249,17 +250,25 @@ namespace KrissJourney.Tests.Terminal.Nodes
         public void RedrawNode_DisplaysBottomMessageWithCorrectColor()
         {
             // Arrange: Use reflection to set internal fields
-            var bottomMessageField = typeof(ActionNode).GetField("BottomMessage", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Public);
-            var bottomMessageColorField = typeof(ActionNode).GetField("BottomMessageColor", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Public);
+            FieldInfo bottomMessageField = typeof(ActionNode).GetField("BottomMessage", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Public);
+            FieldInfo bottomMessageColorField = typeof(ActionNode).GetField("BottomMessageColor", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Public);
             bottomMessageField.SetValue(actionNode, "Test bottom message");
             bottomMessageColorField.SetValue(actionNode, ConsoleColor.DarkYellow);
-            actionNode.GetType().GetMethod("RedrawNode", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
-                .Invoke(actionNode, [true]);
+
+            MethodInfo redrawNodeMethod = typeof(ActionNode).GetMethod(
+                name: "RedrawNode",
+                bindingAttr: System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance,
+                binder: null,
+                types: [typeof(bool)],
+                modifiers: null
+            );
+            redrawNodeMethod.Invoke(actionNode, [true]);
+
             string outputYellow = TerminalMock.GetOutput();
             TerminalMock.Clear();
             bottomMessageColorField.SetValue(actionNode, ConsoleColor.Cyan);
-            actionNode.GetType().GetMethod("RedrawNode", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
-                .Invoke(actionNode, [true]);
+
+            redrawNodeMethod.Invoke(actionNode, [true]);
             string outputCyan = TerminalMock.GetOutput();
 
             // Assert
@@ -273,7 +282,7 @@ namespace KrissJourney.Tests.Terminal.Nodes
         public void MiniGame01_TabPressed_ShowsGuessPrompt()
         {
             // Arrange
-            var miniGame = CreateNode<MiniGame01>();
+            MiniGame01 miniGame = CreateNode<MiniGame01>();
             SimulateUserInput(ConsoleKey.Tab);
 
             // Act
@@ -288,7 +297,7 @@ namespace KrissJourney.Tests.Terminal.Nodes
         public void MiniGame01_EnterPressed_DisplaysGuess()
         {
             // Arrange
-            var miniGame = CreateNode<MiniGame01>();
+            MiniGame01 miniGame = CreateNode<MiniGame01>();
             SimulateTextInput("apple");
             SimulateUserInput(ConsoleKey.Enter);
 
@@ -305,8 +314,8 @@ namespace KrissJourney.Tests.Terminal.Nodes
         public void MiniGame01_EnterPressed_Stop_AdvancesToNext()
         {
             // Arrange: create a next node for advancing
-            var nextNode = CreateNode<StoryNode>(nodeId: 42, configure: node => node.Text = "End of guessing!");
-            var miniGame = CreateNode<MiniGame01>(configure: node => node.ChildId = 42);
+            StoryNode nextNode = CreateNode<StoryNode>(nodeId: 42, configure: node => node.Text = "End of guessing!");
+            MiniGame01 miniGame = CreateNode<MiniGame01>(configure: node => node.ChildId = 42);
             SimulateTextInput("stop");
             SimulateUserInput(ConsoleKey.Enter);
 

@@ -126,7 +126,7 @@ public static class SteamManager
 
             try
             {
-                foreach (var file in Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory))
+                foreach (string file in Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory))
                     Log($" - {Path.GetFileName(file)}");
             }
             catch (Exception ex)

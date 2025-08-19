@@ -47,7 +47,7 @@ void ExecuteCommand(string fileName, string arguments)
         CreateNoWindow = true
     };
 
-    using var process = Process.Start(psi) ?? throw new Exception($"Failed to start process.");
+    using Process process = Process.Start(psi) ?? throw new Exception($"Failed to start process.");
     process.OutputDataReceived += (s, e) => { if (e.Data != null) Console.WriteLine(e.Data); };
     process.ErrorDataReceived += (s, e) => { if (e.Data != null) Console.Error.WriteLine(e.Data); };
     process.BeginOutputReadLine();

@@ -20,7 +20,7 @@ public static class NodeTestHelper
     /// <returns>The configured node</returns>
     public static T CreateTestNode<T>(this GameEngine gameEngine, int nodeId = 1, Action<T> configure = null) where T : NodeBase, new()
     {
-        var node = new T { Id = nodeId };
+        T node = new() { Id = nodeId };
         // Apply default configuration
         if (typeof(T) == typeof(StoryNode) || node is StoryNode)
         {
@@ -77,10 +77,10 @@ public static class NodeTestHelper
     private static void SetupTestEnvironmentForNode(GameEngine gameEngine, NodeBase node)
     {
         // Create a test chapter if needed
-        var testChapterId = 999;
+        int testChapterId = 999;
 
         // Create a test chapter
-        var testChapter = new Chapter
+        Chapter testChapter = new()
         {
             Id = testChapterId,
             Title = "Test Chapter",
@@ -91,8 +91,8 @@ public static class NodeTestHelper
         node.SetGameEngine(gameEngine);
 
         // Use reflection to set the private setters for CurrentChapter and CurrentNode
-        var currentChapterProperty = typeof(GameEngine).GetProperty(nameof(GameEngine.CurrentChapter));
-        var currentNodeProperty = typeof(GameEngine).GetProperty(nameof(GameEngine.CurrentNode));
+        System.Reflection.PropertyInfo currentChapterProperty = typeof(GameEngine).GetProperty(nameof(GameEngine.CurrentChapter));
+        System.Reflection.PropertyInfo currentNodeProperty = typeof(GameEngine).GetProperty(nameof(GameEngine.CurrentNode));
 
         currentChapterProperty?.SetValue(gameEngine, testChapter);
         currentNodeProperty?.SetValue(gameEngine, node);
@@ -108,7 +108,7 @@ public static class NodeTestHelper
     /// <param name="configure">Optional action to configure the node</param>
     public static void TestNode<T>(this GameEngine gameEngine, Action<T> testAction, int nodeId = 1, Action<T> configure = null) where T : NodeBase, new()
     {
-        var node = gameEngine.CreateTestNode(nodeId, configure);
+        T node = gameEngine.CreateTestNode(nodeId, configure);
         testAction(node);
     }
 }

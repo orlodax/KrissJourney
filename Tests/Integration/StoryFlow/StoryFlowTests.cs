@@ -120,7 +120,7 @@ public class StoryFlowTests
     public void AllChapters_HaveNoUnreachableOrMissingNodes()
     {
         // Load all chapters using the real loader
-        foreach (Kriss.Models.Chapter chapter in GameEngineTestExtensions.Setup().GetChapters())
+        foreach (Chapter chapter in GameEngineTestExtensions.Setup().GetChapters())
         {
             Dictionary<int, NodeBase> nodeMap = chapter.Nodes.ToDictionary(n => n.Id);
             HashSet<int> visited = [];

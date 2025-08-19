@@ -27,7 +27,7 @@ public class NodeTestRunner
     /// <summary>
     /// The test chapter that is automatically created for testing nodes
     /// </summary>
-    public Chapter TestChapter { get; private set; }
+    public Chapter TestChapter { get; set; }
 
     private readonly PropertyInfo _currentChapterProperty;
     private readonly PropertyInfo _currentNodeProperty;
@@ -39,7 +39,7 @@ public class NodeTestRunner
     public NodeTestRunner(bool setupTerminalMock = false)
     {
         // Create a test status manager that doesn't use the file system
-        var statusManager = new TestStatusManager();
+        TestStatusManager statusManager = new();
 
         // Initialize the game engine with our test status manager
         GameEngine = new GameEngine(statusManager);
@@ -68,7 +68,7 @@ public class NodeTestRunner
     private void SetupTestChapter()
     {
         // Get chapters field using reflection
-        var chaptersField = typeof(GameEngine).GetField("chapters",
+        FieldInfo chaptersField = typeof(GameEngine).GetField("chapters",
             System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
 
         // Create a test chapter
@@ -108,7 +108,7 @@ public class NodeTestRunner
     public T CreateNode<T>(int nodeId = 1, Action<T> configure = null) where T : NodeBase, new()
     {
         // Create the node with the specified ID
-        var node = new T { Id = nodeId };
+        T node = new() { Id = nodeId };
 
         // Apply default configuration
         SetDefaultNodeProperties(node);
@@ -169,9 +169,7 @@ public class NodeTestRunner
     {
         // Add the node to the test chapter if it's not already there
         if (!TestChapter.Nodes.Any(n => n.Id == node.Id))
-        {
             TestChapter.Nodes.Add(node);
-        }
 
         // Set the game engine on the node
         node.SetGameEngine(GameEngine);        // Set the current chapter and node in the game engine
@@ -196,7 +194,7 @@ public class NodeTestRunner
     /// <param name="configure">Optional action to configure the node</param>
     public void TestNode<T>(Action<T> testAction, int nodeId = 1, Action<T> configure = null) where T : NodeBase, new()
     {
-        var node = CreateNode(nodeId, configure);
+        T node = CreateNode(nodeId, configure);
         testAction(node);
     }
 
@@ -206,9 +204,7 @@ public class NodeTestRunner
     public void SimulateUserInput(params ConsoleKey[] keys)
     {
         if (Terminal == null)
-        {
             throw new InvalidOperationException("Terminal mock is not set up. Call SetupTerminalMock() first.");
-        }
 
         Terminal.EnqueueKeys(keys);
     }
@@ -219,9 +215,7 @@ public class NodeTestRunner
     public void SimulateTextInput(string text)
     {
         if (Terminal == null)
-        {
             throw new InvalidOperationException("Terminal mock is not set up. Call SetupTerminalMock() first.");
-        }
 
         Terminal.EnqueueText(text);
     }
@@ -232,9 +226,7 @@ public class NodeTestRunner
     public string GetTerminalOutput()
     {
         if (Terminal == null)
-        {
             throw new InvalidOperationException("Terminal mock is not set up. Call SetupTerminalMock() first.");
-        }
 
         return Terminal.GetOutput();
     }

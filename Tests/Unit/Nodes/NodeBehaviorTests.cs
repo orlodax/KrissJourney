@@ -24,7 +24,7 @@ public class NodeBehaviorTests
     public void StoryNode_CanBeCreatedAndTested()
     {
         // Create and test a story node
-        var storyNode = testRunner.CreateNode<StoryNode>(nodeId: 1, node =>
+        StoryNode storyNode = testRunner.CreateNode<StoryNode>(nodeId: 1, node =>
         {
             node.Text = "Custom story text";
             node.ChildId = 2;
@@ -47,7 +47,7 @@ public class NodeBehaviorTests
     public void DialogueNode_CanBeCreatedAndTested()
     {
         // Create and test a dialogue node with custom dialogues
-        var dialogueNode = testRunner.CreateNode<DialogueNode>(nodeId: 1, node =>
+        DialogueNode dialogueNode = testRunner.CreateNode<DialogueNode>(nodeId: 1, node =>
         {
             node.Dialogues = [
                 new DialogueLine { Actor = EnCharacter.Kriss, Line = "Hello world", Break = true },

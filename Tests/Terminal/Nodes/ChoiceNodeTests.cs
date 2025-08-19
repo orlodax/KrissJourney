@@ -232,7 +232,7 @@ public class ChoiceNodeTests : NodeTestBase
         // Simulate: DownArrow to select second, Enter to select
         SimulateUserInput(ConsoleKey.DownArrow, ConsoleKey.Enter);
         // Add a dummy next node to simulate game loading
-        var nextNode = CreateNode<StoryNode>(nodeId: 3, configure: n => n.Text = "Next node loaded!");
+        StoryNode nextNode = CreateNode<StoryNode>(nodeId: 3, configure: n => n.Text = "Next node loaded!");
 
         LoadNode(choiceNode);
 
@@ -244,7 +244,7 @@ public class ChoiceNodeTests : NodeTestBase
 
         TerminalMock.ResetOutput();
         // Now try to select it again (simulate a new node, as in real gameplay)
-        var newChoiceNode = CreateNode<ChoiceNode>(configure: node =>
+        ChoiceNode newChoiceNode = CreateNode<ChoiceNode>(configure: node =>
         {
             node.Choices = choiceNode.Choices;
         });
@@ -263,7 +263,7 @@ public class ChoiceNodeTests : NodeTestBase
         // Arrange: Make first choice repeatable
         choiceNode.Choices[0].IsNotRepeatable = false;
         // Add a dummy next node to simulate game loading
-        var nextNode = CreateNode<StoryNode>(nodeId: 2, configure: n => n.Text = "Repeat node loaded!");
+        StoryNode nextNode = CreateNode<StoryNode>(nodeId: 2, configure: n => n.Text = "Repeat node loaded!");
         // Simulate: Enter to select, then Enter to select again (simulate new node each time)
         SimulateUserInput(ConsoleKey.Enter, ConsoleKey.Enter);
 
@@ -272,7 +272,7 @@ public class ChoiceNodeTests : NodeTestBase
         string output = TerminalMock.GetOutput();
         Assert.IsTrue(output.Contains("Repeat node loaded!"));
         // Simulate a new node for the repeat
-        var newChoiceNode = CreateNode<ChoiceNode>(configure: node =>
+        ChoiceNode newChoiceNode = CreateNode<ChoiceNode>(configure: node =>
         {
             node.Choices = choiceNode.Choices;
         });

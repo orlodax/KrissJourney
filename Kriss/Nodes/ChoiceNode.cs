@@ -152,14 +152,4 @@ public class ChoiceNode : NodeBase
             WaitForChoice();
         }
     }
-    void RedrawNode()
-    {
-        Clear();
-
-        Typist.InstantText(Text);
-
-        WriteLine();
-        WriteLine();
-        WriteLine();
-    }
 }

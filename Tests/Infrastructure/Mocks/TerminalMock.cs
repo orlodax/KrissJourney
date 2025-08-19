@@ -28,6 +28,11 @@ public class TerminalMock : ITerminal
     // For testing
     public string GetOutput() => outputBuilder.ToString();
     public int KeyQueueCount => keyQueue.Count;
+    public bool CursorVisible
+    {
+        get => true;
+        set { /* do nothing */ }
+    }
 
     public void Clear()
     {
@@ -57,7 +62,7 @@ public class TerminalMock : ITerminal
         // Update cursor position based on content
         if (message != null)
         {
-            var lines = message.Split('\n');
+            string[] lines = message.Split('\n');
             if (lines.Length > 1)
             {
                 CursorTop += lines.Length - 1;
@@ -83,7 +88,7 @@ public class TerminalMock : ITerminal
         // Update cursor
         if (message != null)
         {
-            var lines = message.Split('\n');
+            string[] lines = message.Split('\n');
             if (lines.Length > 1)
             {
                 CursorTop += lines.Length - 1;
@@ -123,7 +128,7 @@ public class TerminalMock : ITerminal
 
     public void EnqueueKeys(params ConsoleKey[] keys)
     {
-        foreach (var key in keys)
+        foreach (ConsoleKey key in keys)
         {
             char keyChar = key switch
             {

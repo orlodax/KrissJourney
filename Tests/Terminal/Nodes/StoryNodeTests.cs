@@ -23,7 +23,7 @@ public class StoryNodeTests : NodeTestBase
     [TestMethod]
     public void LoadsAndAdvancesToNextNode()
     {
-        var nextNode = CreateNode<StoryNode>(nodeId: 2, configure: n => n.Text = "Next node");
+        StoryNode nextNode = CreateNode<StoryNode>(nodeId: 2, configure: n => n.Text = "Next node");
         SimulateUserInput(ConsoleKey.Enter);
         try { storyNode.Load(); } catch { }
         // Should have called AdvanceToNext(2)
