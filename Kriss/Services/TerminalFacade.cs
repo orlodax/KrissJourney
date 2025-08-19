@@ -50,7 +50,12 @@ public static class TerminalFacade
     public static void Write(string message) => terminal.Write(message);
     public static void WriteLine(string message, ConsoleColor color) => terminal.WriteLine(message, color);
     public static void Write(string message, ConsoleColor color) => terminal.Write(message, color);
-    public static void Clear() => terminal.Clear();
+    public static void Clear()
+    {
+        terminal.Write("\x1b[3J\x1b[H\x1b[2J");
+        terminal.SetCursorPosition(0, 0);
+        terminal.Clear();
+    }
     public static void SetCursorPosition(int left, int top) => terminal.SetCursorPosition(left, top);
     public static ConsoleKeyInfo ReadKey(bool intercept = false) => terminal.ReadKey(intercept);
     public static void ResetColor() => terminal.ResetColor();

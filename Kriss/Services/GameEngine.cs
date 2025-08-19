@@ -138,6 +138,7 @@ public class GameEngine(StatusManager statusManager)
             CurrentNode.SetGameEngine(this);
             CurrentNode.IsVisited = IsNodeVisited(CurrentNode.Id);
 
+            Clear();
             CurrentNode.Load();
         }
         else
