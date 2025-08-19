@@ -31,7 +31,7 @@ public static class Typist
             int shortPause = ShortPause;
             int longPause = LongPause;
 
-            if (IsDebug())
+            if (CommandLineOptions.IsDebug)
                 isFlowing = false;
 
             if (!isFlowing)
@@ -110,7 +110,7 @@ public static class Typist
         else
             RenderText(isFlowing, "\"" + dialogue.Line + "\" ", dialogue.Actor.Color());
 
-        if (!IsDebug() && isFlowing)
+        if (!CommandLineOptions.IsDebug && isFlowing)
             Thread.Sleep(ParagraphBreak);
     }
 
@@ -118,7 +118,7 @@ public static class Typist
     {
         RenderText(isFlowing, part);
 
-        if (!IsDebug() && isFlowing)
+        if (!CommandLineOptions.IsDebug && isFlowing)
             Thread.Sleep(ParagraphBreak);
     }
 
@@ -144,18 +144,5 @@ public static class Typist
 
         Write("Press a key to continue...");
         ReadKey(true);
-    }
-
-    /// <summary>
-    /// Checks command-line arguments and environment variables for debug flags
-    /// </summary>
-    private static bool IsDebug()
-    {
-        // Check command-line arguments
-        foreach (string arg in Environment.GetCommandLineArgs())
-            if (arg.Equals("--debug", StringComparison.OrdinalIgnoreCase))
-                return true;
-
-        return false;
     }
 }

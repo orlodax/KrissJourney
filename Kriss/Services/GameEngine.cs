@@ -36,10 +36,12 @@ public class GameEngine(StatusManager statusManager)
         }
         while (true);
 
-        //debug: start from. Comment for default start
-        //CurrentChapter = chapters[9];
-        //LoadNode(1);
-        //debug
+        // check arguments for specific chapter/node starting point
+        if (CommandLineOptions.Chapter.HasValue && CommandLineOptions.Node.HasValue)
+        {
+            CurrentChapter = chapters[CommandLineOptions.Chapter.Value - 1];
+            LoadNode(CommandLineOptions.Node.Value);
+        }
 
         if (!Console.IsOutputRedirected)
             DisplayMenu();

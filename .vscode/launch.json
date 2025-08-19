@@ -28,6 +28,23 @@
             "stopAtEntry": false
         },
         {
+            "name": ".NET Core Launch (exe) - Load specific node",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/Kriss/bin/Debug/net8.0/KrissJourney.Kriss.exe",
+            "args": [
+                "--debug",
+                "--chapter",
+                "3",
+                "--node",
+                "5"
+            ],
+            "cwd": "${workspaceFolder}/Kriss",
+            "console": "externalTerminal",
+            "stopAtEntry": false
+        },
+        {
             "name": ".NET Core Launch (exe) - Steam",
             "type": "coreclr",
             "request": "launch",
