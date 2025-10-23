@@ -87,9 +87,10 @@ Task BuildPlatform(string platform)
             if (Directory.Exists(publishDir))
                 Directory.Delete(publishDir, true);
 
+            string projectDir = Path.Combine(basePath, "Kriss", "KrissJourney.Kriss.csproj");
             ExecuteCommand(
                 "dotnet",
-                $"publish ..\\Kriss\\KrissJourney.Kriss.csproj -c Release -r {platform} -p:PublishSingleFile=true --self-contained true /p:DebugType=None /p:DebugSymbols=false /p:AssemblyName=Kriss");
+                $"publish {projectDir} -c Release -r {platform} -p:PublishSingleFile=true --self-contained true /p:DebugType=None /p:DebugSymbols=false /p:AssemblyName=Kriss");
         }
         catch (Exception ex)
         {
