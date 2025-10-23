@@ -1,5 +1,8 @@
 using System;
 using System.Reflection;
+using System.Threading;
+using System.Threading.Tasks;
+using KrissJourney.Kriss; // For CommandLineOptions
 using KrissJourney.Kriss.Nodes;
 using KrissJourney.Kriss.Services;
 using KrissJourney.Tests.Infrastructure;
@@ -31,10 +34,8 @@ public abstract class NodeTestBase
     [TestInitialize]
     public virtual void TestInitialize()
     {
-        // Set command line args via reflection for testing
-        FieldInfo commandLineArgsField = typeof(Environment).GetField("s_commandLineArgs", BindingFlags.Static | BindingFlags.NonPublic);
-        string[] value = ["--debug"];
-        commandLineArgsField?.SetValue(null, value);
+        // Force fast rendering in tests (disable Typist delays)
+        CommandLineOptions.IsDebug = true;
 
         // Create the test runner with terminal mock
         TestRunner = new NodeTestRunner(setupTerminalMock: true);
@@ -72,6 +73,42 @@ public abstract class NodeTestBase
     {
         TestRunner.SimulateTextInput(text);
     }
+
+    /// <summary>
+    /// Waits until the output contains a substring or times out.
+    /// Returns true if found, false if timeout.
+    /// </summary>
+    protected bool WaitForOutputContains(string marker, int timeoutMs = 3000)
+    {
+        var sw = System.Diagnostics.Stopwatch.StartNew();
+        while (sw.ElapsedMilliseconds < timeoutMs)
+        {
+            string output = TerminalMock.GetOutput();
+            if (output.Contains(marker, StringComparison.Ordinal))
+                return true;
+            Thread.Sleep(10);
+        }
+        return false;
+    }
+
+    /// <summary>
+    /// Asynchronously waits until the output contains marker at or after startIndex.
+    /// Returns the index just after the matched marker, or throws on timeout.
+    /// </summary>
+    protected async Task<int> WaitForOutputIndexAsync(string marker, int startIndex, int timeoutMs = 3000)
+    {
+        var sw = System.Diagnostics.Stopwatch.StartNew();
+        while (sw.ElapsedMilliseconds < timeoutMs)
+        {
+            string output = TerminalMock.GetOutput();
+            int idx = output.IndexOf(marker, startIndex, StringComparison.Ordinal);
+            if (idx >= 0)
+                return idx + marker.Length;
+            await Task.Delay(10);
+        }
+        throw new TimeoutException($"Marker not found in output within {timeoutMs}ms: '{marker}'");
+    }
+
 
     /// <summary>
     /// Asserts that the exception message for a ReadKey operation is as expected.

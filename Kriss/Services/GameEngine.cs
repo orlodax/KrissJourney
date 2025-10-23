@@ -26,7 +26,7 @@ public class GameEngine(StatusManager statusManager)
         int id = 1;
         do
         {
-            string jChapter = LoadResource($"KrissJourney.Kriss.Chapters.c{id}.json");
+            string jChapter = ReadChapter($"KrissJourney.Kriss.Chapters.c{id}.json");
 
             if (string.IsNullOrEmpty(jChapter))
                 break;
@@ -212,17 +212,16 @@ public class GameEngine(StatusManager statusManager)
     /// <summary>
     /// Extracts resources (chapters) from the compiled DLL
     /// </summary>
-    /// <param name="resourceName" name-path of the resource></param>
-    /// <returns></returns>
-    static string LoadResource(string resourceName)
+    /// <param name="chapterPath" name of the resource></param>
+    /// <returns>The string contents of the chapter</returns>
+    static string ReadChapter(string chapterPath)
     {
-        using Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourceName);
-        if (stream != null)
-        {
-            using StreamReader reader = new(stream);
-            return reader.ReadToEnd();
-        }
-        return string.Empty;
+        using Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(chapterPath);
+        if (stream is null)
+            return string.Empty;
+
+        using StreamReader reader = new(stream);
+        return reader.ReadToEnd();
     }
 
     /// <summary>

@@ -9,6 +9,8 @@ public class TerminalMock : ITerminal
 {
     private readonly StringBuilder outputBuilder = new();
     private readonly Queue<ConsoleKeyInfo> keyQueue = new();
+    private readonly object keyQueueLock = new();
+    private readonly object outputLock = new();
 
     // Window properties
     public int WindowWidth { get; set; } = 80;
@@ -23,11 +25,29 @@ public class TerminalMock : ITerminal
     public ConsoleColor BackgroundColor { get; set; } = ConsoleColor.Black;
 
     // Input simulation
-    public bool KeyAvailable => keyQueue.Count > 0;
+    public bool KeyAvailable
+    {
+        get
+        {
+            lock (keyQueueLock)
+                return keyQueue.Count > 0;
+        }
+    }
 
     // For testing
-    public string GetOutput() => outputBuilder.ToString();
-    public int KeyQueueCount => keyQueue.Count;
+    public string GetOutput()
+    {
+        lock (outputLock)
+            return outputBuilder.ToString();
+    }
+    public int KeyQueueCount
+    {
+        get
+        {
+            lock (keyQueueLock)
+                return keyQueue.Count;
+        }
+    }
     public bool CursorVisible
     {
         get => true;
@@ -36,29 +56,34 @@ public class TerminalMock : ITerminal
 
     public void Clear()
     {
-        outputBuilder.AppendLine("[CONSOLE CLEARED]");
+        lock (outputLock)
+            outputBuilder.AppendLine("[CONSOLE CLEARED]");
         CursorLeft = 0;
         CursorTop = 0;
     }
 
     public void ResetOutput()
     {
-        outputBuilder.Clear();
-        keyQueue.Clear();
+        lock (outputLock)
+            outputBuilder.Clear();
+        lock (keyQueueLock)
+            keyQueue.Clear();
         CursorLeft = 0;
         CursorTop = 0;
     }
 
     public void WriteLine(string message = null)
     {
-        outputBuilder.AppendLine(message ?? string.Empty);
+        lock (outputLock)
+            outputBuilder.AppendLine(message ?? string.Empty);
         CursorLeft = 0;
         CursorTop++;
     }
 
     public void Write(string message)
     {
-        outputBuilder.Append(message);
+        lock (outputLock)
+            outputBuilder.Append(message);
         // Update cursor position based on content
         if (message != null)
         {
@@ -77,14 +102,16 @@ public class TerminalMock : ITerminal
 
     public void WriteLine(string message, ConsoleColor color)
     {
-        outputBuilder.AppendLine($"[{color}]{message ?? string.Empty}[/{color}]");
+        lock (outputLock)
+            outputBuilder.AppendLine($"[{color}]{message ?? string.Empty}[/{color}]");
         CursorLeft = 0;
         CursorTop++;
     }
 
     public void Write(string message, ConsoleColor color)
     {
-        outputBuilder.Append($"[{color}]{message}[/{color}]");
+        lock (outputLock)
+            outputBuilder.Append($"[{color}]{message}[/{color}]");
         // Update cursor
         if (message != null)
         {
@@ -114,8 +141,18 @@ public class TerminalMock : ITerminal
 
     public ConsoleKeyInfo ReadKey(bool intercept = false)
     {
-        if (keyQueue.Count > 0)
-            return keyQueue.Dequeue();
+        // Block briefly to allow tests to enqueue keys after prompts appear
+        int waited = 0;
+        while (waited < 1000)
+        {
+            lock (keyQueueLock)
+            {
+                if (keyQueue.Count > 0)
+                    return keyQueue.Dequeue();
+            }
+            System.Threading.Thread.Sleep(5);
+            waited += 5;
+        }
 
         throw new InvalidOperationException("No keys available in mock terminal");
     }
@@ -135,7 +172,8 @@ public class TerminalMock : ITerminal
                 ConsoleKey.Spacebar => ' ',
                 _ => (char)key // Basic mapping for letters
             };
-            keyQueue.Enqueue(new ConsoleKeyInfo(char.ToLower(keyChar), key, false, false, false));
+            lock (keyQueueLock)
+                keyQueue.Enqueue(new ConsoleKeyInfo(char.ToLower(keyChar), key, false, false, false));
         }
     }
 
@@ -151,7 +189,8 @@ public class TerminalMock : ITerminal
             else
                 continue; // Skip characters we can't easily map
 
-            keyQueue.Enqueue(new ConsoleKeyInfo(c, key, false, false, false));
+            lock (keyQueueLock)
+                keyQueue.Enqueue(new ConsoleKeyInfo(c, key, false, false, false));
         }
     }
 }

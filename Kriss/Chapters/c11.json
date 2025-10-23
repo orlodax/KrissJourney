@@ -1,0 +1,14 @@
+{
+    "id": 11,
+    "title": "AYONN",
+    "nodes": [
+        {
+            "id": 1,
+            "type": "Story",
+            "recap": "end of early access",
+            "text": "Well, you made it. You survived so far.##\n\nThank you for playing this early access version of Kriss' Journey.#\nI hope you enjoyed it so far and look forward to your feedback!#\nFind us on the Community Page, Discord and GitHub!#\nIf you want to support this game, please consider leaving a review,\nsharing the game with your friends,\nand donating.#\n\nThank you for your support, traveler!#\n\nAnd stay tuned for more content coming soon!#",
+            "childid": 1,
+            "isClosing": true
+        }
+    ]
+}

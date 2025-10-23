@@ -40,36 +40,46 @@ public class FightNode : NodeBase
 
     void Fight()
     {
-        if (IsThisNode(chapterId: 10, nodeId: 1)) // To display tutorial the first time player encounters a fight
+        if (IsThisNode(chapterId: 10, nodeId: 701)) // To display tutorial the first time player encounters a fight
         {
-            // display tutorial
+            WriteLine();
+            WriteLine();
+            Typist.InstantText("Time your actions to attack or defend.\nTry to press the right key when the cursor is on the right spot.\nI trust you'll figure it out...", ConsoleColor.DarkYellow);
+            Thread.Sleep(1000);
+            WriteLine();
+            WriteLine();
         }
 
-        Typist.RenderText(isFlowing: true, "Prepare to fight!", ConsoleColor.Red);
+        Typist.InstantText("Prepare to fight!", ConsoleColor.Red);
 
         Typist.WaitForKey(2);
         WriteLine();
         RedrawNode();
 
         ForegroundColor = ConsoleColor.DarkYellow;
-        int numberOfHits = 0;
-        RecursiveRounds(Encounter.Foes, numberOfHits);
+        RecursiveRounds(Encounter.Foes);
 
         Typist.RenderText(isFlowing: true, Encounter.VictoryMessage, ConsoleColor.Red);
         Typist.WaitForKey(3);
         AdvanceToNext(ChildId);
     }
 
-    void RecursiveRounds(IEnumerable<Foe> foes, int numberOfHits)
+    void RecursiveRounds(IEnumerable<Foe> foes)
     {
         foreach (Foe foe in foes)
         {
-            AttackResult attackResult = FoeAttack(foe);
-            if (attackResult is AttackResult.Fail)
+            bool perfectDefense = false;
+
+            for (int i = 0; i < foe.AttacksPerRound; i++)
             {
-                rageBonus += prowess.RageBonus;
-                health -= foe.Damage;
-                numberOfHits++;
+                AttackResult attackResult = FoeAttack(foe);
+                if (attackResult is AttackResult.Fail)
+                {
+                    rageBonus += prowess.RageBonus;
+                    health -= foe.Damage;
+                }
+
+                perfectDefense |= attackResult is AttackResult.Perfect;
             }
 
             if (health <= 0)
@@ -80,24 +90,28 @@ public class FightNode : NodeBase
 
             // Player attacks back  
             if (health > 0 && foe.Health > 0)
-                PlayerAttack(foe, attackResult);
+                for (int i = 0; i < prowess.AttacksPerRound; i++)
+                    PlayerAttack(foe, perfectDefense);
         }
 
         IEnumerable<Foe> remainingFoes = foes.Where(f => f.Health > 0);
 
         if (remainingFoes.Any())
-            RecursiveRounds(remainingFoes, numberOfHits);
+            RecursiveRounds(remainingFoes);
 
         return;
     }
 
     void GameOver()
     {
-        Typist.RenderText(isFlowing: true, "Your health has been depleted!", ConsoleColor.Red);
-        Typist.RenderText(isFlowing: true, Encounter.DefeatMessage, ConsoleColor.Red);
+        WriteLine();
+        Typist.RenderText(
+            isFlowing: true,
+            text: Encounter.DefeatMessage ?? "You have been defeated. You might want to try that again...",
+            color: ConsoleColor.Red);
 
         Typist.WaitForKey(numberOfNewLines: 3);
-        AdvanceToNext(childId: 1);
+        GameEngine.LoadNode(nodeId: 1);
     }
 
 
@@ -108,13 +122,13 @@ public class FightNode : NodeBase
         ConsoleKey requiredKey = arrowKeys[keyIndex];
         string arrowSymbol = arrowNames[keyIndex];
 
-        WriteLine($"{foe.Name} prepares to attack!");
-        Thread.Sleep(800); // Build tension
+        Typist.RenderText(isFlowing: true, $"{foe.Name} prepares to attack.\n", ConsoleColor.DarkGray);
+        Thread.Sleep(600);
+        WriteLine();
+        Typist.RenderText(isFlowing: true, $"Press {arrowSymbol} to dodge!\n", ConsoleColor.DarkRed);
 
         // Show the required key with timing window
-        WriteLine($"Press {arrowSymbol} to dodge!");
-
-        AttackResult result = ShowOscillatingCursorAndWaitForKey(requiredKey, cycles: 3, length: 20);
+        AttackResult result = ShowOscillatingCursorAndWaitForKey(requiredKey);
 
         WriteLine();
         string message = result switch
@@ -125,33 +139,35 @@ public class FightNode : NodeBase
             _ => throw new NotImplementedException()
         };
         WriteLine(message, ConsoleColor.DarkYellow);
+        WriteLine();
+        WriteLine();
 
-        if (health <= prowess.MaxHealth * 0.1)
+        if (health <= prowess.MaxHealth * 0.1 && health > 0)
             WriteLine("Your health is critically low! Your rage becomes fury!", ConsoleColor.Red);
 
         return result;
     }
 
-    private void PlayerAttack(Foe foe, AttackResult defenseResult)
+    private void PlayerAttack(Foe foe, bool perfectDefense)
     {
         // Select random arrow key for player attack
         int keyIndex = random.Next(arrowKeys.Length);
         ConsoleKey requiredKey = arrowKeys[keyIndex];
         string arrowSymbol = arrowNames[keyIndex];
 
-        WriteLine($"Your turn to attack {foe.Name}!");
+        Typist.RenderText(isFlowing: true, $"Your turn to attack {foe.Name}.\n", ConsoleColor.DarkGray);
         Thread.Sleep(600);
+        WriteLine();
+        Typist.RenderText(isFlowing: true, $"Press {arrowSymbol} to strike!\n", ConsoleColor.DarkRed);
 
-        WriteLine($"Press {arrowSymbol} to strike!");
-
-        AttackResult result = ShowOscillatingCursorAndWaitForKey(requiredKey, cycles: 3, length: 20);
+        AttackResult result = ShowOscillatingCursorAndWaitForKey(requiredKey);
 
         int damage = prowess.BaseDamage + rageBonus;
 
         if (health <= prowess.MaxHealth * 0.1)
             damage += prowess.FuryBonus;
 
-        if (defenseResult == AttackResult.Perfect)
+        if (perfectDefense)
             damage += GetPerfectTimingBonus(); // Bonus damage for perfect dodge/parry
 
         WriteLine();
@@ -191,15 +207,15 @@ public class FightNode : NodeBase
     /// <param name="requiredKey">The key the player must press.</param>
     /// <param name="cycles">How many oscillations the minigame lasts.</param>
     /// <param name="length">The number of positions between < and > (including X and O).</param>
-    private AttackResult ShowOscillatingCursorAndWaitForKey(ConsoleKey requiredKey, int cycles = 3, int length = 20)
+    private AttackResult ShowOscillatingCursorAndWaitForKey(ConsoleKey requiredKey)
     {
         WriteLine();
 
         AttackResult result = AttackResult.Fail;
 
-        int qteWidth = prowess.QteWidth;
-        int sleep = (int)(100 / prowess.QteSpeedFactor); // ms per frame
-        int right = length - 1;
+        int qteWidth = Encounter.QteWidth;
+        int sleep = (int)(100 / Encounter.QteSpeedFactor); // ms per frame
+        int right = Encounter.QteLength - 1;
         int targetPos = random.Next(1, right - 1); // Avoid edges
         int cursorPos = 1;
         int direction = 1;
@@ -209,13 +225,17 @@ public class FightNode : NodeBase
 
         CursorVisible = false;
 
-        while (oscillations < cycles && !isKeyPressed)
+        // Clear any buffered key presses before starting the QTE
+        while (KeyAvailable)
+            ReadKey(intercept: true);
+
+        while (oscillations < Encounter.QteCycles && !isKeyPressed)
         {
             // Build the line
             SetCursorPosition(0, CursorTop);
 
             Write("<");
-            for (int i = 0; i < length; i++)
+            for (int i = 0; i < Encounter.QteLength; i++)
             {
                 string symbol = "-";
 
@@ -289,7 +309,7 @@ public class FightNode : NodeBase
         }
 
         // Clear line
-        Write("\r" + new string(' ', length + 2) + "\r");
+        Write("\r" + new string(' ', Encounter.QteLength + 2) + "\r");
         CursorVisible = true;
         return result;
     }

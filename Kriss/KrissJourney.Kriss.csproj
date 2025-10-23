@@ -23,7 +23,6 @@
 
   <ItemGroup>
     <None Remove="Chapters\c1.json" />
-    <None Remove="Chapters\c10.json" />
     <None Remove="Chapters\c2.json" />
     <None Remove="Chapters\c3.json" />
     <None Remove="Chapters\c4.json" />
@@ -32,12 +31,12 @@
     <None Remove="Chapters\c7.json" />
     <None Remove="Chapters\c8.json" />
     <None Remove="Chapters\c9.json" />
+    <None Remove="Chapters\c10.json" />
+    <None Remove="Chapters\c11.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Chapters\c1.json">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Chapters\c11.json" />
     <EmbeddedResource Include="Chapters\c10.json" />
     <EmbeddedResource Include="Chapters\c9.json" />
     <EmbeddedResource Include="Chapters\c8.json" />
@@ -47,6 +46,7 @@
     <EmbeddedResource Include="Chapters\c4.json" />
     <EmbeddedResource Include="Chapters\c3.json" />
     <EmbeddedResource Include="Chapters\c2.json" />
+    <EmbeddedResource Include="Chapters\c1.json" />
   </ItemGroup>
 
   <!-- Windows: Use .ico as application icon -->

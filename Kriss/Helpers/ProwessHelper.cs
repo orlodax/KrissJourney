@@ -16,8 +16,7 @@ public static class ProwessHelper
                 BaseDamage = 10,
                 RageBonus = 1,
                 FuryBonus = 5,
-                QteSpeedFactor = 1f,
-                QteWidth = 2
+                AttacksPerRound = 1
             },
             _ => throw new NotImplementedException($"Prowess for chapter {chapterId} is not implemented.")
         };

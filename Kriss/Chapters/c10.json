@@ -4,28 +4,1201 @@
   "nodes": [
     {
       "id": 1,
+      "type": "Dialogue",
+      "recap": "startMazerock",
+      "text": "-------------------------------\n|          CHAPTER 10          |\n-------------------------------\n\n",
+      "dialogues": [
+        {
+          "actor": "Theo",
+          "line": "Here is where we enter the Mazerock.",
+          "comment": "Theo announces, as you stand on the edge of a narrow and winding canyon,\nwhich zig-zags away in multiple directions.#\n\nYou are not really listening.#\nYou feel something in the air, some kind of tension.#\nLike something bad is going to happen.##\n\nYou look down at the multitude of shadows nestled between the rocks, and you shiver.#\nYou feel like going down there is the last thing you want to do right now.#\nMath puts a hand on your shoulder. You hear Efeliah's voice:"
+        },
+        {
+          "actor": "Efeliah",
+          "line": "Can you feel it too?",
+          "istelepathy": true
+        },
+        {
+          "actor": "Kriss",
+          "line": "Yeah... is something about to happen?",
+          "istelepathy": true
+        },
+        {
+          "actor": "Math",
+          "line": "We are not sure... but we should be ready for anything.",
+          "comment": "\nThis exchange of thoughts between the three of you only takes a couple of seconds.",
+          "istelepathy": true,
+          "break": true
+        },
+        {
+          "actor": "Corolla",
+          "line": "So guys, there's a million crevices, crevasses and tunnels down there.\nLet's be canny about which way we go.#\nI wish we had a map...# Smiurl, I'm counting on your legendary sense of direction.",
+          "comment": "\nAt this, Smiurl lights up only faintly, and in turn looks at you for some reason, with a mixture of anxiety and hopefulness on his face."
+        },
+        {
+          "actor": "Theo",
+          "line": "Let's descend."
+        },
+        {
+          "actor": "Kriss",
+          "line": "Isn't there really ANY other way?"
+        },
+        {
+          "actor": "Theo",
+          "line": "No.",
+          "comment": "\n\nYou sigh, and resign to delve into the Mazerock, holding your sword at the ready.",
+          "childid": 701
+        }
+      ]
+    },
+    {
+      "id": 701,
       "type": "Fight",
-      "recap": "test",
-      "text": "Test fight text.",
-      "childid": 1,
+      "recap": "First fight in Mazerock",
+      "text": "You slowly make your way among the rocks and stone debris.#\nYou carefully watch your step, your senses heightened,\nfeeling every steady-ish pebble and every loose grain of stone slipping away under your feet.#\nYou feel the temperature drop as you go deeper.# The sky gets smaller.#\nThe sounds around you shift, acquiring a more echoing quality.#\n\n$c<<Well, at least it will be nice to be away from the unceasing glare of the sun for a while.\nNo wait,# that is not the Sun...# whatever!>>#\n\n$CSuddenly, you hear a soft sound coming at you from behind one of the bends!#\nEverybody freezes, as two oxengutters jump into view.#\nYou're unsure if you should feel sheer panic or a strange sense of confidence,\nas your premonition manifests itself.#\nYou manage a glance at the others, and see they don't seem shocked or surprised. Just focused.",
+      "alttext": "You recognize this spot, this is where you first entered the Mazerock...\nAnd where you defeated the first two oxengutters.",
+      "childid": 101,
       "encounter": {
         "foes": [
           {
-            "name": "Goblin",
+            "name": "Oxengutter",
             "health": 30,
+            "damage": 10
+          },
+          {
+            "name": "Small Oxengutter",
+            "health": 20,
+            "damage": 5
+          }
+        ],
+        "victoryMessage": "Well done. You have defeated the oxengutters.#\nYou realize you need a better name for these guys.\nLet's call them oxies from now on...#"
+      }
+    },
+    {
+      "id": 101,
+      "type": "Choice",
+      "recap": "afterFirstFight",
+      "text": "Two very similar gorges branch out in front of you, not considering the slope from where you entered.",
+      "choices": [
+        {
+          "desc": "Go left.",
+          "childid": 2
+        },
+        {
+          "desc": "Go right.",
+          "childid": 11
+        },
+        {
+          "desc": "You know the way: go straight to the exit.",
+          "childid": 45,
+          "condition": {
+            "type": "isNodeVisited",
+            "item": "45"
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "type": "Choice",
+      "text": "You stop at a modest opening. Ahead lies a dark tunnel, while another gorge branches off to the right.",
+      "choices": [
+        {
+          "desc": "Enter the tunnel.",
+          "childid": 703
+        },
+        {
+          "desc": "Go right.",
+          "childid": 710
+        },
+        {
+          "desc": "Go back.",
+          "childid": 101
+        }
+      ]
+    },
+    {
+      "id": 703,
+      "type": "Fight",
+      "text": "You carefully enter the tunnel, trying to make out any shapes in the darkness.\nSmiurl's glints inconsistently dance around, and Corolla lights a torch.#\n\nYou don't have to walk for long when you see the light in front of you.#\nAs you step back into the open, you think this was maybe too easy,\nand, as a matter of fact, that's when you are ambushed again.#\n\nAnother oxie is hoping to get its meal sorted out for the day.\nA large, quite gross centipede creature with sharp-looking mouth-parts and extremities joins the fray too.",
+      "alttext": "You've been here already, it's the spot where you fought the oxie and the centipede.",
+      "childid": 3,
+      "encounter": {
+        "foes": [
+          {
+            "name": "Oxie",
+            "health": 40,
+            "damage": 10,
+            "attacksPerRound": 1
+          },
+          {
+            "name": "Croegg Sigma",
+            "health": 20,
+            "damage": 5,
+            "attacksPerRound": 2
+          }
+        ],
+        "victoryMessage": "You disposed of the local critters. You are both elated and mildly disgusted.#"
+      }
+    },
+    {
+      "id": 3,
+      "type": "Choice",
+      "text": "You stand with in the middle of another narrow canyon. A tunnel entrance is behind you.",
+      "choices": [
+        {
+          "desc": "Go left.",
+          "childid": 4
+        },
+        {
+          "desc": "Go right.",
+          "childid": 707
+        },
+        {
+          "desc": "Go back into the tunnel.",
+          "childid": 2
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "type": "Choice",
+      "text": "You take a break at another small opening. The gorge transitions into a tunnel. You either continue or go back.",
+      "choices": [
+        {
+          "desc": "Go inside, maybe north.",
+          "childid": 5
+        },
+        {
+          "desc": "Walk the gorge, seemingly south.",
+          "childid": 3
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "type": "Choice",
+      "text": "Another fork in the path.",
+      "choices": [
+        {
+          "desc": "Enter the cramped canyon to the west.",
+          "childid": 6
+        },
+        {
+          "desc": "Go into the tunnel.",
+          "childid": 4
+        },
+        {
+          "desc": "Walk south-ish.",
+          "childid": 707
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "type": "Choice",
+      "text": "It seems like a dead end. Only rock walls around you. Birds circle overhead.",
+      "choices": [
+        {
+          "desc": "Go back.",
+          "childid": 5
+        }
+      ]
+    },
+    {
+      "id": 707,
+      "type": "Fight",
+      "childid": 7,
+      "text": "You walk along the gorge, and suddenly you hear a rustling sound from above.#\nBefore you can react, a large bird of prey swoops down at you!#\nIts talons are sharp and it looks hungry.#\n\nYou ready your weapons, and prepare to defend yourselves.",
+      "alttext": "You are back at the spot where you fought the angry bird.",
+      "encounter": {
+        "qtewidth": 1,
+        "qtespeedfactor": 2,
+        "foes": [
+          {
+            "name": "Angry Bird",
+            "health": 30,
+            "damage": 10,
+            "attacksPerRound": 2
+          }
+        ],
+        "victoryMessage": "You have defeated the angry bird.#\nYou feel a bit sorry for it; you hope reinforcements aren't coming.",
+        "defeatMessage": "You lost.##\nTo a chonky, absolute unit of a birb.#\n\nGuess what's left of you will see its nest soon.#"
+      }
+    },
+    {
+      "id": 7,
+      "type": "Choice",
+      "text": "You find yourself at another fork in the path.",
+      "choices": [
+        {
+          "desc": "Go left.",
+          "childid": 3
+        },
+        {
+          "desc": "Go right.",
+          "childid": 5
+        },
+        {
+          "desc": "Go down.",
+          "childid": 8
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "type": "Choice",
+      "text": "You find yourself at another fork in the path, with a tunnel entrance to the side.",
+      "choices": [
+        {
+          "desc": "Go left.",
+          "childid": 7
+        },
+        {
+          "desc": "Go right.",
+          "childid": 9
+        },
+        {
+          "desc": "Go into the tunnel.",
+          "childid": 729
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "type": "Choice",
+      "text": "You find yourself at another fork in the path, with a tunnel entrance in front of you.",
+      "choices": [
+        {
+          "desc": "Go left.",
+          "childid": 8
+        },
+        {
+          "desc": "Go right.",
+          "childid": 10
+        },
+        {
+          "desc": "Go into the tunnel.",
+          "childid": 729
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "type": "Choice",
+      "text": "You find yourself at another fork in the path, with a tunnel entrance to your back.",
+      "choices": [
+        {
+          "desc": "Go left.",
+          "childid": 2
+        },
+        {
+          "desc": "Go right.",
+          "childid": 9
+        },
+        {
+          "desc": "Go into the tunnel.",
+          "childid": 710
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "type": "Choice",
+      "text": "Time to choose again: three gorges and an opening to a tunnel intersect here.",
+      "choices": [
+        {
+          "desc": "Go left.",
+          "childid": 701
+        },
+        {
+          "desc": "Go right.",
+          "childid": 714
+        },
+        {
+          "desc": "Go down.",
+          "childid": 12
+        },
+        {
+          "desc": "Go into the tunnel.",
+          "childid": 710
+        }
+      ]
+    },
+    {
+      "id": 710,
+      "type": "Fight",
+      "childid": 7,
+      "text": "You crawl into the tunnel. It is very cramped and the ceiling is low.#\nYou try not to hit your head, with limited success.##\nAnd when you are in what seems like the darkest part of it, several critters start crawling around you.",
+      "alttext": "This was the tiny tunnel with that pair of Croeggs.",
+      "encounter": {
+        "foes": [
+          {
+            "name": "Croegg Beta",
+            "health": 20,
             "damage": 5,
             "attacksPerRound": 2
           },
           {
-            "name": "Orc",
-            "health": 50,
+            "name": "Croegg Delta",
+            "health": 30,
+            "damage": 8,
+            "attacksPerRound": 2
+          },
+          {
+            "name": "Croegg Gamma",
+            "health": 25,
             "damage": 10,
             "attacksPerRound": 1
           }
         ],
-        "defeatMessage": "You have been defeated by the goblin and orc.",
-        "victoryMessage": "You have defeated the goblin and orc."
+        "victoryMessage": "What a mess you made.#\nAt least you won't have to clean up."
       }
+    },
+    {
+      "id": 714,
+      "type": "Fight",
+      "childid": 11,
+      "text": "You squeeze through the rocks and slowly continue like that for a few minutes.#\nThis is another of those cases where you question your life choices in general.#\n\nAt last, you step out in a small opening.# Only to realize it's a dead end.#\nA pile of rocks and boulders piles up to the sky and beyond in front of you, barring any progress.#\nBut you won't be allowed to just leave, some Oxies are pouncing down, not believing their luck.",
+      "alttext": "This was that dead end where you met a few Oxies.",
+      "encounter": {
+        "foes": [
+          {
+            "name": "Red Oxie",
+            "health": 30,
+            "damage": 12
+          },
+          {
+            "name": "Brown Oxie",
+            "health": 40,
+            "damage": 15
+          },
+          {
+            "name": "Dark Oxie",
+            "health": 35,
+            "damage": 10
+          }
+        ],
+        "victoryMessage": "You slayed.# The beasts,# I mean.#\nTime to head back.",
+        "defeatMessage": "You lost.##\nThese oxies were too strong for you.#\n\nFun fact: Oxengutters are opportunistic feeders, a bit like cats.#\nAnd they don't mind some good old scavenging either."
+      }
+    },
+    {
+      "id": 12,
+      "type": "Choice",
+      "text": "You find yourself at another fork in the path.#\nA total of three gorges.#\nYou wonder, should you call it a Threek then.#\nWho knows.",
+      "choices": [
+        {
+          "desc": "Go up.",
+          "childid": 11
+        },
+        {
+          "desc": "Go right.",
+          "childid": 715
+        },
+        {
+          "desc": "Go down.",
+          "childid": 13
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "type": "Choice",
+      "text": "Befuddled, and betrayed, by the path, once more.#\nA dead end.# Turn back.",
+      "choices": [
+        {
+          "desc": "Go back.",
+          "childid": 12
+        }
+      ]
+    },
+    {
+      "id": 715,
+      "type": "Fight",
+      "childid": 15,
+      "text": "You land in another opening. From behind every corner in the path: in front, behind and to your right, Oxies leap at you.",
+      "alttext": "You've been here already, it should be the spot where the Oxies came at you from three sides.",
+      "encounter": {
+        "foes": [
+          {
+            "name": "Young Oxie",
+            "health": 15,
+            "damage": 6
+          },
+          {
+            "name": "Big Oxie",
+            "health": 40,
+            "damage": 15
+          },
+          {
+            "name": "One-eyed Oxie",
+            "health": 35,
+            "damage": 10
+          }
+        ],
+        "victoryMessage": "You survived once more.#\nTime to move on.",
+        "defeatMessage": "You lost.##\nThese oxies were too strong for you."
+      }
+    },
+    {
+      "id": 15,
+      "type": "Choice",
+      "text": "Again, you need to pick between 3 alternatives.",
+      "choices": [
+        {
+          "desc": "Go left.",
+          "childid": 12
+        },
+        {
+          "desc": "Go right.",
+          "childid": 718
+        },
+        {
+          "desc": "Go down.",
+          "childid": 16
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "type": "Choice",
+      "text": "A bend in the way. You just hope there is nothing waiting for you around the corner.",
+      "choices": [
+        {
+          "desc": "Go up.",
+          "childid": 15
+        },
+        {
+          "desc": "Go right.",
+          "childid": 17
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "type": "Choice",
+      "text": "Relief, disappointment.#\nIt is just another dead end.#\n\nIn front of you just a vertical rock wall, with a long, jagged fissure running from top to bottom.#\nAs if two massive slabs of rock collided dead on, leaving no space between to squeeze through.",
+      "choices": [
+        {
+          "desc": "Go back.",
+          "childid": 16
+        }
+      ]
+    },
+    {
+      "id": 718,
+      "type": "Fight",
+      "childid": 18,
+      "text": "Three paths, including the one you just came from, depart from in front the entrance to a tunnel.#\n\nYou hear a growling sound from the darkness of the tunnel.#\nMore oxies decided they'd have a go at you.",
+      "alttext": "You recognize this place, were you fought the oxies at the tunnel entrance.",
+      "encounter": {
+        "foes": [
+          {
+            "name": "Young Oxie",
+            "health": 15,
+            "damage": 6
+          },
+          {
+            "name": "Albino Oxie",
+            "health": 40,
+            "damage": 15,
+            "attacksPerRound": 2
+          }
+        ],
+        "victoryMessage": "You got rid of the oxies.",
+        "defeatMessage": "You lost.##\nThese oxies were too strong for you."
+      }
+    },
+    {
+      "id": 18,
+      "type": "Choice",
+      "text": "Three paths, including the one you just came from, depart from a small opening in front of the entrance to a tunnel.",
+      "alttext": "Three paths depart from a small opening in front of the entrance to a tunnel.",
+      "choices": [
+        {
+          "desc": "Go up.",
+          "childid": 26
+        },
+        {
+          "desc": "Go right.",
+          "childid": 720
+        },
+        {
+          "desc": "Go left.",
+          "childid": 715
+        },
+        {
+          "desc": "Go into the tunnel.",
+          "childid": 719
+        }
+      ]
+    },
+    {
+      "id": 719,
+      "type": "Fight",
+      "childid": 18,
+      "text": "For some reason you felt the need to dive into the dark crevice.#\nYou carefully make your way inside the rock for a few minutes.#\nEventually, the passage opens up into a wider, albeit small, chamber.#\nYou don't have time to do much sight-seeing, as you hear $Mthings$C skittering from several directions.",
+      "alttext": "This was the dead-end cave with some Croeggs in it. Go back.",
+      "encounter": {
+        "foes": [
+          {
+            "name": "Croegg Rho",
+            "health": 20,
+            "damage": 5,
+            "attacksPerRound": 2
+          },
+          {
+            "name": "Croegg Lambda",
+            "health": 30,
+            "damage": 8,
+            "attacksPerRound": 1
+          },
+          {
+            "name": "Croegg Epsilon",
+            "health": 40,
+            "damage": 15,
+            "attacksPerRound": 1
+          }
+        ],
+        "victoryMessage": "You got rid of the...# insects?.#\n\nYou take a minute to look around.# Quite the nice crib they had here.#\nDaylight seeps through tiny cracks and crevasses somewhere up above, allowing you to see without much trouble.#\nStalactites and stalagmites populate what you can't help thinking of as the late critters' living room.#\nA small pool of bluish water adds ambience to the place.# Not a bad fixture for a desert dwelling.#\n\nThe place is also a dead end, so you head back.",
+        "defeatMessage": "The giant centipedes got the best of you.## EWW!!#"
+      }
+    },
+    {
+      "id": 720,
+      "type": "Fight",
+      "childid": 20,
+      "text": "Another small clearing connecting gorges opens up in front of you.#\nBefore you can pick a direction, you need to get rid of the oxies here too.",
+      "alttext": "Another fork in the way were you got ambushed by some oxies.",
+      "encounter": {
+        "foes": [
+          {
+            "name": "Skinny Oxie",
+            "health": 15,
+            "damage": 6
+          },
+          {
+            "name": "Big Oxie",
+            "health": 40,
+            "damage": 15
+          },
+          {
+            "name": " Oxie",
+            "health": 35,
+            "damage": 10
+          }
+        ],
+        "victoryMessage": "Will there ever be an end to this?#\nThey aren't going to go extinct because of you, right??",
+        "defeatMessage": "You all just became the new favorite Oxies' meal."
+      }
+    },
+    {
+      "id": 20,
+      "type": "Choice",
+      "text": "Pick a direction.",
+      "choices": [
+        {
+          "desc": "Go up.",
+          "childid": 24
+        },
+        {
+          "desc": "Go right.",
+          "childid": 21
+        },
+        {
+          "desc": "Go left.",
+          "childid": 718
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "type": "Choice",
+      "text": "There is a smooth wall in front of you, where three gorges converge.",
+      "choices": [
+        {
+          "desc": "Go up.",
+          "childid": 20
+        },
+        {
+          "desc": "Go right.",
+          "childid": 23
+        },
+        {
+          "desc": "Go left.",
+          "childid": 22
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "type": "Choice",
+      "text": "Another dead end. Turn back.",
+      "choices": [
+        {
+          "desc": "Go back.",
+          "childid": 21
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "type": "Choice",
+      "text": "Another dead end. Turn back.",
+      "choices": [
+        {
+          "desc": "Go back.",
+          "childid": 21
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "type": "Choice",
+      "text": "You reach a spot where the gorge dies against two tunnels openings in opposite directions.",
+      "choices": [
+        {
+          "desc": "Walk down the gorge.",
+          "childid": 720
+        },
+        {
+          "desc": "Enter the larger opening.",
+          "childid": 31
+        },
+        {
+          "desc": "Crawl left.",
+          "childid": 725
+        }
+      ]
+    },
+    {
+      "id": 725,
+      "type": "Fight",
+      "childid": 25,
+      "text": "You turn the corner around the boulders, only to spot a massive Oxie sleeping on the ground.#\nIt is almost cute.# Almost.#\n\nYou start to think about sneaking past it, when its gross-looking snout twitches.#\nSoon after,# its eyes snap open wide,# and growling and drooling it launches at you.",
+      "alttext": "This was the place where you fought the big frenzied Oxie. Now pick a direction.",
+      "encounter": {
+        "qtewidth": 1,
+        "qtespeedfactor": 2,
+        "foes": [
+          {
+            "name": "Frenzied Oxie",
+            "health": 50,
+            "damage": 25,
+            "attacksPerRound": 3
+          }
+        ],
+        "victoryMessage": "Now that was quite the fight! Well done, I suppose.",
+        "defeatMessage": "This beefy predator was maybe a bit too hyped for you."
+      }
+    },
+    {
+      "id": 25,
+      "type": "Choice",
+      "text": "This was the place where you fought the big, frenzied Oxie. Now pick a direction.",
+      "choices": [
+        {
+          "desc": "Walk North.",
+          "childid": 41
+        },
+        {
+          "desc": "Crawl into the tunnel to the East.",
+          "childid": 24
+        },
+        {
+          "desc": "Venture West.",
+          "childid": 28
+        },
+        {
+          "desc": "Go South.",
+          "childid": 26
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "type": "Choice",
+      "text": "Another choice. Maybe you should have brought a coin or something...#\nBy the way, are you keeping track of your path?",
+      "choices": [
+        {
+          "desc": "Walk down.",
+          "childid": 718
+        },
+        {
+          "desc": "Enter the tunnel to the left.",
+          "childid": 27
+        },
+        {
+          "desc": "Go up.",
+          "childid": 725
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "type": "Choice",
+      "text": "You proceed through the semi-darkness of the narrow tunnel. Everything is quiet and the air is cold and damp.#\nSoon enough a wider chambers opens up in front of you.#\nCave formations everywhere, you can hear the sporadic sound of dripping water.#\nIt's all nice and cool, but there's nowhere to go.# Turn back.",
+      "choices": [
+        {
+          "desc": "Go back.",
+          "childid": 26
+        }
+      ]
+    },
+    {
+      "id": 729,
+      "type": "Fight",
+      "childid": 29,
+      "text": "You proceed through the dark passage.#\nSoon enough, you start to feel there must be something different about this cave.#\n\nYou can't exactly tell what it is,#\nmaybe a different, subtle smell,#\nor the way the rock walls wind around the place,#\nor the skittering noises coming from no specific direction.##\n\nYou continue for a while, until the path widens gradually into a larger cavern.#\nIt is quite large, and light comes in from the ceiling in multiple places somehow.#\nThere are many cave formations around, and you notice...# $MSTUFF...$C##\n...some cluster-like material...# growing?...# around and against the stalagmites rising from the ground.#\nIt looks like...# Cobwebs?# Fungi?##\n\nYour xenobiology musings are cut short by a shrill, shrieking cry,# suddenly echoing all around you.#\nYour blood curdles as goosebumps form over your neck and spine.#\n\nEverybody draws their weapons.# It seems you stepped into a Croegg nest!#\nAn unspecified number of insectoid creatures of all sizes come swarming at you from all directions!",
+      "alttext": "This was the central hall of the main cavern, where you found the Croegg's nest.",
+      "encounter": {
+        "qtewidth": 4,
+        "qtespeedfactor": 5,
+        "foes": [
+          {
+            "name": "Croegg Alpha",
+            "health": 40,
+            "damage": 15,
+            "attacksPerRound": 1
+          },
+          {
+            "name": "Croegg Omega",
+            "health": 35,
+            "damage": 20,
+            "attacksPerRound": 1
+          },
+          {
+            "name": "Croeggs Swarm",
+            "health": 100,
+            "damage": 4,
+            "attacksPerRound": 5
+          }
+        ],
+        "victoryMessage": "You defeated the swarm...# Trashing the place in the process.",
+        "defeatMessage": "You've been Croegg-rushed.# Sad.#"
+      }
+    },
+    {
+      "id": 29,
+      "type": "Choice",
+      "text": "Now you have time to look around: the place is even larger than you first thought.#\nSurely it must be some important portion of these centipede guys' colony.#\nYou shudder wondering if reinforcements are coming.#\n\nThere are, in total, 5 tunnels branching away in different directions.#\n\nIn the meantime, Smiurl is picking up some of that stuff growing around the place.# You do not dare ask why.#",
+      "alttext": "This was the central hall of the main cavern, where you found the Croegg's nest.",
+      "choices": [
+        {
+          "desc": "Enter the tunnel at your 12:00.",
+          "childid": 30
+        },
+        {
+          "desc": "Enter the tunnel at your 2:00.",
+          "childid": 31
+        },
+        {
+          "desc": "Enter the tunnel at your 5:00.",
+          "childid": 28
+        },
+        {
+          "desc": "Enter the tunnel at your 7:00.",
+          "childid": 9
+        },
+        {
+          "desc": "Enter the tunnel at your 9:00.",
+          "childid": 8
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "type": "Choice",
+      "text": "The passage continues for a while, cracks, and tiny openings everywhere.#\nNothing comes out of them, thankfully.#\n\nEventually, the passage itself becomes too narrow for a human to continue.# Not even Smiurl could.#\nNor he would,# it seems,# understandably.",
+      "choices": [
+        {
+          "desc": "Go back.",
+          "childid": 29
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "type": "Choice",
+      "text": "You come to stand at the entrance of a cave.#\nYou feel the contrast between the heat of the desert air and the colder, damp air of the cave.",
+      "choices": [
+        {
+          "desc": "Go inside.",
+          "childid": 729
+        },
+        {
+          "desc": "Get out.",
+          "childid": 725
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "type": "Choice",
+      "text": "You stand inside a vestibule of sort, under a stone archway.#\nThere are two tunnels departing from here, or you can walk in the open.",
+      "choices": [
+        {
+          "desc": "Enter the tunnel to the West.",
+          "childid": 729
+        },
+        {
+          "desc": "Enter the tunnel to the North.",
+          "childid": 24
+        },
+        {
+          "desc": "Walk down the gorge to the East.",
+          "childid": 732
+        }
+      ]
+    },
+    {
+      "id": 732,
+      "type": "Fight",
+      "childid": 32,
+      "text": "You get to a junction where two gorges meet at an almost perfect right angle, like a crossroads.#\n\nA scuffling you got used to by now comes from...# everywhere.#\nIt seems some oxies decided to ambush you from all four sides.",
+      "alttext": "This was that crossroads-shaped junction where you fought four oxies.",
+      "encounter": {
+        "foes": [
+          {
+            "name": "Yellow Oxie",
+            "health": 15,
+            "damage": 6
+          },
+          {
+            "name": "Brown Oxie",
+            "health": 40,
+            "damage": 15
+          },
+          {
+            "name": "Red Oxie",
+            "health": 35,
+            "damage": 10
+          },
+          {
+            "name": "Dark Oxie",
+            "health": 30,
+            "damage": 12
+          }
+        ]
+      }
+    },
+    {
+      "id": 32,
+      "type": "Choice",
+      "text": "This was that crossroads-shaped junction where you fought four oxies.",
+      "choices": [
+        {
+          "desc": "Walk West.",
+          "childid": 31
+        },
+        {
+          "desc": "Walk North.",
+          "childid": 733
+        },
+        {
+          "desc": "Walk East.",
+          "childid": 37
+        },
+        {
+          "desc": "Walk South.",
+          "childid": 41
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "type": "Choice",
+      "text": "You reach the center of a T-shaped junction.",
+      "choices": [
+        {
+          "desc": "Walk North-East.",
+          "childid": 740
+        },
+        {
+          "desc": "Walk North-West.",
+          "childid": 732
+        },
+        {
+          "desc": "Walk South-West.",
+          "childid": 725
+        }
+      ]
+    },
+    {
+      "id": 733,
+      "type": "Fight",
+      "childid": 33,
+      "text": "The walls here get higher and the width of the passage narrows.#\nLooking up, you spot what looks like clay lumps stuck to the rock walls.#\nThey aren't very noticeable, as they are the same color as the rock, but something drew your attention to them.#\n\nYou realize they are not a geological accident, rather something intentional.#\nJust as the word \"nest\" crosses your mind, several of their inhabitants pop their heads out and stare at you.#\nThree of the bigger ones come swiftly down at you.",
+      "alttext": "This was the passage with the Skarnyx nests.",
+      "encounter": {
+        "qtewidth": 1,
+        "qtespeedfactor": 4,
+        "foes": [
+          {
+            "name": "Skarnyx Sentry",
+            "health": 30,
+            "damage": 10
+          },
+          {
+            "name": "Skarnyx Guard",
+            "health": 18,
+            "damage": 30
+          },
+          {
+            "name": "Skarnyx Fighter",
+            "health": 22,
+            "damage": 10,
+            "attacksPerRound": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": 33,
+      "type": "Choice",
+      "text": "This was the passage with the Skarnyx nests.",
+      "choices": [
+        {
+          "desc": "Go up.",
+          "childid": 34
+        },
+        {
+          "desc": "Go down.",
+          "childid": 732
+        },
+        {
+          "desc": "Go right.",
+          "childid": 35
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "type": "Choice",
+      "text": "You reach a dead end. Turn back.",
+      "choices": [
+        {
+          "desc": "Go back.",
+          "childid": 33
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "type": "Choice",
+      "text": "You reach a fork in the path.",
+      "choices": [
+        {
+          "desc": "Go left.",
+          "childid": 736
+        },
+        {
+          "desc": "Go down.",
+          "childid": 733
+        },
+        {
+          "desc": "Enter the tunnel to the right.",
+          "childid": 37
+        }
+      ]
+    },
+    {
+      "id": 736,
+      "type": "Fight",
+      "childid": 35,
+      "text": "Another dead end. Only a huge pile of rock that you are not going to try and climb.#\n\nAs you turn back, two Skarnyx leap at you from the shadows.",
+      "alttext": "This was that dead end where you fought the Skarnyx. Go back.",
+      "encounter": {
+        "qtewidth": 2,
+        "qtespeedfactor": 2,
+        "foes": [
+          {
+            "name": "Red Skarnyx",
+            "health": 22,
+            "damage": 10,
+            "attacksPerRound": 2
+          },
+          {
+            "name": "Brown Skarnyx",
+            "health": 22,
+            "damage": 12,
+            "attacksPerRound": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": 37,
+      "type": "Choice",
+      "text": "Pick a direction.",
+      "choices": [
+        {
+          "desc": "Go left.",
+          "childid": 732
+        },
+        {
+          "desc": "Go down.",
+          "childid": 38
+        },
+        {
+          "desc": "Enter the tunnel to the left.",
+          "childid": 35
+        },
+        {
+          "desc": "Go right.",
+          "childid": 745
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "type": "Choice",
+      "text": "Another narrow junction where four passages meet. Pick a direction.",
+      "choices": [
+        {
+          "desc": "Go North.",
+          "childid": 745
+        },
+        {
+          "desc": "Go South.",
+          "childid": 740
+        },
+        {
+          "desc": "Go West.",
+          "childid": 37
+        },
+        {
+          "desc": "Go East.",
+          "childid": 39
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "type": "Choice",
+      "text": "Just another dead end. Turn back.",
+      "choices": [
+        {
+          "desc": "Go back.",
+          "childid": 38
+        }
+      ]
+    },
+    {
+      "id": 740,
+      "type": "Fight",
+      "childid": 40,
+      "text": "In the middle of a T-junction, several Skarnyx are intent on picking a dead animal clean, probably an Oxie.#\n\nThey realize there's fresh food coming, and they shift their attention to you.",
+      "alttext": "Here you fought the Skarnyx after interrupting their meal.",
+      "encounter": {
+        "qtewidth": 2,
+        "qtespeedfactor": 2,
+        "foes": [
+          {
+            "name": "Red Skarnyx",
+            "health": 22,
+            "damage": 10
+          },
+          {
+            "name": "Brown Skarnyx",
+            "health": 22,
+            "damage": 12
+          },
+          {
+            "name": "Black Skarnyx",
+            "health": 30,
+            "damage": 15
+          }
+        ]
+      }
+    },
+    {
+      "id": 40,
+      "type": "Choice",
+      "text": "Here you fought the Skarnyx after interrupting their meal.",
+      "choices": [
+        {
+          "desc": "Go North.",
+          "childid": 38
+        },
+        {
+          "desc": "Go South.",
+          "childid": 41
+        },
+        {
+          "desc": "Go East.",
+          "childid": 42
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "type": "Choice",
+      "text": "A fork in the path.",
+      "choices": [
+        {
+          "desc": "Go North.",
+          "childid": 43
+        },
+        {
+          "desc": "Go East.",
+          "childid": 44
+        },
+        {
+          "desc": "Go back.",
+          "childid": 40
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "type": "Choice",
+      "text": "The path ends in front of a hole in the ground.#\nIt is pitch black and you cannot see anything inside, nor tell how deep it is.#\nBetter turn back.",
+      "choices": [
+        {
+          "desc": "Go back.",
+          "childid": 42
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "type": "Choice",
+      "text": "The passage ends abruptly after a bend in front of a smooth high stone wall.#\nCan't climb that.#\nTurn back.",
+      "choices": [
+        {
+          "desc": "Go back.",
+          "childid": 42
+        }
+      ]
+    },
+    {
+      "id": 745,
+      "type": "Fight",
+      "childid": 45,
+      "text": "The passage gets narrower, to the point where you have to walk in a single file.#\nThen, unexpectedly, it opens up into a wide clearing.##\n\nSuddenly everything falls quiet.# I mean,# QUIETER.#\nIt seems nothing is moving around here, not even the air.#\nNo birds whatsoever to be spotted overhead, nor croaking out any of their calls.##\n\nYou all look at each other, somehow $Mknowing$C what is about to happen.##\nAs a single unit, you all ready your weapons,# slowly,# quietly.#\nAnd just as you do,# a massive Oxie, at least twice the size of the others you've seen so far,#\ncomes out of the shadows.#\nIt is covered in scars and old wounds, and its eyes burn with a fierce, intelligent rage.#\nIt walks towards you slowly, deliberately, without any hint of fear.##\n\nIt must be the leader of the pack.#\nYou can kinda appreciate its feline elegance and its impressive, muscular poise.#\nAnd it is not happy about your presence here.#\nOr,# rather,# it IS happy finally some fresh meat has come its way.#",
+      "alttext": "You defeated the Oxies' leader here.",
+      "encounter": {
+        "qtewidth": 2,
+        "qtespeedfactor": 2,
+        "foes": [
+          {
+            "name": "Oxie Leader",
+            "health": 120,
+            "damage": 20,
+            "attacksPerRound": 2
+          }
+        ],
+        "victoryMessage": "You take a few minutes to catch your breath.##\nIt finally went down.# That wasn't easy.#\nYour relief is partially overshadowed by the sorrow of having to slay such a powerful and doubtlessly intelligent creature.#\nYou wonder if the local fauna will ever stop wanting to having you for dinner.##\n\nProbably not.",
+        "defeatMessage": "You did your best... I guess.#\nThe Oxie Leader was just too much for you."
+      }
+    },
+    {
+      "id": 45,
+      "type": "Story",
+      "text": "As you resume making your way through the Mazerock,#\nthat threatening feeling you had before suddenly comes back,#\nnagging at the corners of your mind.#\n\nNothing really changed around you,# yet you feel things are somehow... different.#\nAs if the rocks and desert scrub around you could be more...## hostile?##\n\nYou try to shake off the feeling,# inanimate things cannot harbor ill intentions towards you.##\n...right??##\n\nYou turn towards the two telepaths, and right then Efeliah stops in her tracks, eyes open wide.##\nShe and Math both look as they are listening to something only them can hear.#\n\nYou are about to ask them what is going on,# when for the first time you see fear spread on Ef's face.##\nShe instinctively grabs Math's arm,# and while still staring into the void she screams at all of you:#\n\n$g\"RUN!## NOW!\"#$C",
+      "islast": true
     }
   ]
 }

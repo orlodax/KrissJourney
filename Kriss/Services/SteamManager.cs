@@ -35,6 +35,13 @@ public static class SteamManager
 
     public static bool Initialize(Action onAppQuitCallback = null)
     {
+        if (CommandLineOptions.SkipSteam)
+        {
+            Log("Local run mode detected - skipping Steam initialization.");
+            s_Initialized = false;
+            return false;
+        }
+
         Log("Initialize called.");
         if (s_Initialized)
         {

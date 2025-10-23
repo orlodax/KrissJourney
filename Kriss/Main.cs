@@ -12,6 +12,8 @@ for (int i = 0; i < args.Length; i++)
 {
     if (args[i] == "--debug")
         CommandLineOptions.IsDebug = true;
+    else if (args[i] == "--skipSteam")
+        CommandLineOptions.SkipSteam = true;
     else if (args[i] == "--chapter" && i + 1 < args.Length && int.TryParse(args[i + 1], out int chapter))
         CommandLineOptions.Chapter = chapter;
     else if (args[i] == "--node" && i + 1 < args.Length && int.TryParse(args[i + 1], out int node))

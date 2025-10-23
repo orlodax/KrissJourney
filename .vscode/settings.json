@@ -2,6 +2,7 @@
     "cSpell.words": [
         "Ayonn",
         "childid",
+        "Croegg",
         "Earthers",
         "Efeliah",
         "gainitem",
@@ -21,15 +22,32 @@
         "objs",
         "Oxengutter",
         "Oxengutters",
+        "Oxie",
+        "oxies",
         "Pinzerro",
         "precomment",
         "Saberinne",
+        "Skarnyx",
         "Smiurl",
+        "starships",
         "steamdeck",
         "steamrt",
         "Telepath",
         "telepaths",
         "Theo",
+        "unawarely",
         "unhide"
-    ]
+    ],
+    "cSpell.ignoreWords": [
+        "Croeggs",
+        "Threek",
+        "alttext",
+        "birb",
+        "chonky",
+        "qtespeedfactor",
+        "qtewidth"
+    ],
+    "[json]": {
+        "editor.wordWrap": "on"
+    }
 }

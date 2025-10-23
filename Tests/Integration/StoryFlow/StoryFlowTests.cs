@@ -251,6 +251,9 @@ public class StoryFlowTests
             }
         }
 
+        if (node is FightNode f)
+            yield return f.ChildId;
+
         if (node is MiniGame01 miniGame)
         {
             if (miniGame.ChildId > 0)

@@ -34,11 +34,12 @@
             "preLaunchTask": "build",
             "program": "${workspaceFolder}/Kriss/bin/Debug/net8.0/KrissJourney.Kriss.exe",
             "args": [
-                "--debug",
+                //"--debug",
+                "--skipSteam",
                 "--chapter",
-                "3",
+                "10",
                 "--node",
-                "5"
+                "745"
             ],
             "cwd": "${workspaceFolder}/Kriss",
             "console": "externalTerminal",
