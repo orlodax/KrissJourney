@@ -2,7 +2,7 @@
 # Creates a Steam-compatible Linux build for Kriss Journey
 
 $ErrorActionPreference = "Stop"
-$ProjectRoot = "H:\KrissJourney"
+$ProjectRoot = "D:\KrissJourney"
 $ScriptsRoot = Join-Path -Path $ProjectRoot -ChildPath "Scripts"
 $BuildRoot = Join-Path -Path $ScriptsRoot -ChildPath "Linux-SteamOS"
 $OutputDir = Join-Path -Path $BuildRoot -ChildPath "output"

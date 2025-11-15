@@ -3,7 +3,7 @@ FROM kriss-journey-env-base:latest
 
 # WORKDIR /app is inherited from the base image
 
-# Copy project files from the host's build context (H:\KrissJourney) into /app
+# Copy project files from the host's build context (D:\KrissJourney) into /app
 COPY . .
 
 # Create build script (this will overwrite any build.sh from the base if it existed,

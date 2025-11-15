@@ -11,7 +11,7 @@ if (Process.GetProcessesByName("Docker Desktop").Length == 0)
 // execute the multiple steps to publish on the 3 platforms in parallel
 // build windows and mac directly
 // build linux in docker
-string basePath = "H:\\KrissJourney";
+string basePath = "D:\\KrissJourney";
 
 // this takes longer, so we wait at the end
 Task linuxBuild = BuildLinuxInDocker();
