@@ -49,7 +49,7 @@ RUN wget https://dot.net/v1/dotnet-install.sh -O /tmp/dotnet-install.sh && \
 # Install Kitty terminal
 RUN mkdir -p /tmp/kitty-terminal && \
     cd /tmp/kitty-terminal && \
-    wget -q https://github.com/kovidgoyal/kitty/releases/download/v0.30.1/kitty-0.30.1-x86_64.txz && \
+    wget -q https://github.com/kovidgoyal/kitty/releases/download/v0.45.0/kitty-0.45.0-x86_64.txz && \
     tar xf kitty-*.txz && \
     mkdir -p /opt/kitty && \
     cp -r ./* /opt/kitty/ && \
