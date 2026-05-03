@@ -1,14 +1,238 @@
 {
-    "id": 11,
-    "title": "AYONN",
-    "nodes": [
+  "id": 11,
+  "title": "THE MANY-COLORED HUNT",
+  "nodes": [
+    {
+      "id": 1,
+      "type": "Dialogue",
+      "recap": "start ch11 the many-colored hunt",
+      "text": "-------------------------------\n|          CHAPTER 11          |\n-------------------------------\n\n",
+      "dialogues": [
         {
-            "id": 1,
-            "type": "Story",
-            "recap": "end of early access",
-            "text": "Well, you made it. You survived so far.##\n\nThank you for playing this early access version of Kriss' Journey.#\nI hope you enjoyed it so far and look forward to your feedback!#\nFind us on the Community Page, Discord and GitHub!#\nIf you want to support this game, please consider leaving a review,\nsharing the game with your friends,\nand donating.#\n\nThank you for your support, traveler!#\n\nAnd stay tuned for more content coming soon!#",
-            "childid": 1,
-            "isClosing": true
+          "actor": "Efeliah",
+          "precomment": "You are running.#\n\nEfeliah's scream still echoes off the canyon walls around you,# but your legs are already moving,#\npropelled by something deeper than thought.#\nInstinct.#\nThe raw, animal certainty that something is very, very wrong.#\n\nSmiurl is ahead of you, scrambling over rocks with a nimbleness impossible for a human.\nCorolla is right behind you,# her breathing sharp and controlled.\nTheo brings up the rear, his heavy footsteps like muffled thunder.#\n\nMath is holding Efeliah's arm, half-guiding, half-pulling her as she runs with her eyes wide open,#\nstaring at something none of you can see.##\n\nHer voice slides into your mind:",
+          "line": "Minds.# Hundreds of them.# Coming towards us through the Mazerock.",
+          "istelepathy": true
+        },
+        {
+          "actor": "Kriss",
+          "line": "What kind of minds? Hordes? Oxies?",
+          "istelepathy": true
+        },
+        {
+          "actor": "Efeliah",
+          "line": "No.## Something... wrong.# They are there but... they are not.# Like empty rooms with the lights still on.",
+          "comment": "\nHer telepathic voice trembles.# You have never felt that in her before.",
+          "istelepathy": true
+        },
+        {
+          "actor": "Math",
+          "line": "She is right. I can sense them too now. A single will, wearing hundreds of bodies!",
+          "comment": "\nNow, that doesn't sound promising at all.",
+          "istelepathy": true,
+          "break": true
+        },
+        {
+          "actor": "Corolla",
+          "precomment": "You keep running, your sword banging against the narrow rock walls, sparks flying off the stone.#\nThe canyons twist and turn, one passage bleeding into another.#\nYou have no idea where you are going.# Nobody does.",
+          "line": "How far?!",
+          "comment": "Corolla shouts between ragged breaths."
+        },
+        {
+          "actor": "Efeliah",
+          "line": "Close.# Very close.# We need to hide.# Now!!",
+          "comment": "Efeliah gasps, stumbling against Math.",
+          "childid": 2
         }
-    ]
+      ]
+    },
+    {
+      "id": 2,
+      "type": "Story",
+      "recap": "running hearing the marching",
+      "text": "Theo reacts before anyone else.# He grabs Smiurl under one arm like a sack of flour and surges forward,#\nscanning the rock walls with the focus of a man who has done this before.##\n\nThen you hear it.##\n\nAt first you think it is your own heartbeat,# amplified by the canyon acoustics.#\nBut the rhythm is wrong.# Too regular.# Too mechanical.##\n\nFootsteps.##\n\nHundreds of footsteps,# striking stone in $Wperfect unison$C.##\n\nNo voices.# No clanking of armour.# No shuffling.#\nJust the metronomic, relentless percussion of feet hitting rock at exactly the same instant.##\n\n$c<<What the hell makes that sound?>>#\n\n$CTheo veers sharply left into a crevice you would have missed entirely,#\na jagged tear in the canyon wall barely wide enough for a person.#\nHe shoves Smiurl in first, then Math and Efeliah.#\nCorolla pushes you in ahead of her and squeezes in last, pressing flat against you.#\n\nTheo stands at the entrance, his massive frame filling the gap,#\none hand braced flat against each wall.##\n\nThe footsteps grow louder.##\n\nLouder.###",
+      "childid": 3
+    },
+    {
+      "id": 3,
+      "type": "Story",
+      "recap": "procession horror set-piece",
+      "text": "The first figures pass the mouth of your crevice.##\n\nYou press yourself against the cold stone, holding your breath,#\nand through the narrow gap between Theo's shoulder and the rock wall, you see them.##\n\nSoldiers.##\n\nMen and women, marching in perfect lockstep.#\nTheir faces are...## blank.##\n\nNot sleeping.# Not unconscious.# The eyes are open,#\nstaring straight ahead with a terrible, vacant fixity.#\nEvery face wears the same expression:# none.## No expression at all.##\n\nAcross each forehead, glinting dully in the dim canyon light,#\na thin $Wmetal headband$C.##\n\nYou count.# Ten.# Twenty.# Fifty.# They keep coming.##\n\nThey carry weapons.# Swords, spears, crude pikes.#\nHeld at exactly the same angle by every hand.#\nArms that do not sway.# Legs that do not falter.#\nBodies that move with the horrifying precision of puppets on the same string.##\n\nAnd the $Wsilence$C.###\n\nNo one speaks.# No one coughs, or clears their throat, or shifts a weapon from one hand to the other.#\nNo boots scuff.# No armour rattles.# There is no breathing you can hear,#\njust the footsteps,## hundreds upon hundreds of them,## landing as one.##\n\nYou see a boy among them.# He cannot be older than fifteen.##\nSame headband.# Same dead eyes.# Same metronomic stride.#\nHis hands are too small for the pike he carries.##\n\n$c<<They are not soldiers.# They are not anything anymore.>>#\n\n$CYou feel Corolla's hand close around your forearm.#\nHer grip is iron.# She squeezes so hard the bruise will last for days,#\nbut neither of you acknowledges it.##\n\nBehind you, Efeliah makes a sound.#\nA thin, keening whimper, like a dog that has been struck.#\nMath is holding her,# one hand pressed gently over her mouth,# his own face twisted with concentration.#\n\n$c<<The psychic void.# She can feel all of them and there is nothing inside.>>#\n\n$CSmiurl is pressed into the deepest corner of the crevice.#\nYou glance back at him and your stomach drops.##\n\nHis skin is $Wdark$C.#\nCompletely dark.# Not a single flicker of bioluminescence.#\nYou have never seen that before.##\nNot even when the oxengutters attacked.# Not even in the canyon with the Chief.##\n\nThe procession continues.##\n\nAnd continues.##\n\nAnd continues.###\n\nYou lose track of time.# Your legs are cramping.# Corolla's hand has gone numb on your arm.#\nTheo has not moved a single muscle.##\n\nFinally,# the last row passes.#\nThe footsteps recede into the distance,# growing fainter,#\nfainter,##\nuntil they are swallowed by the stone.###\n\nSilence.##\n\nReal silence, this time.#\nThe kind with wind in it, and the distant call of a bird.##\n\nNobody moves for a long time.",
+      "childid": 4
+    },
+    {
+      "id": 4,
+      "type": "Dialogue",
+      "recap": "discussing what they saw",
+      "text": "Theo steps back from the crevice entrance slowly, releasing a long, controlled breath.#\nOne by one, you emerge from the crack in the rock, legs stiff, hearts pounding.\n\nEfeliah sinks to the ground the moment she is free, Math kneeling beside her.#\nShe is trembling.# Her hands are shaking so badly she cannot hold them still.",
+      "dialogues": [
+        {
+          "actor": "Theo",
+          "line": "What were they.",
+          "comment": "It is not a question."
+        },
+        {
+          "actor": "Math",
+          "precomment": "Math takes a moment before answering. He looks older than you have ever seen him.",
+          "line": "People.# Or what is left of them.#\nThe headbands are psychic conduits.# They erase the individual mind and replace it with a signal.#\nA single controlling will.# Every one of those people is being piloted. Like a machine wearing skin."
+        },
+        {
+          "actor": "Efeliah",
+          "line": "I could feel where their minds used to be.# Like... scars. Outlines of people who were there once.",
+          "comment": "She whispers, still shaking.",
+          "istelepathy": true
+        },
+        {
+          "actor": "Efeliah",
+          "line": "They are still in there, somewhere. Buried. Screaming.# And nobody can hear them.",
+          "comment": "\nA long silence follows.",
+          "istelepathy": true,
+          "break": true
+        },
+        {
+          "actor": "Corolla",
+          "precomment": "Corolla is standing apart, staring in the direction the procession disappeared.#\nWhen she turns back, her eyes are hard.",
+          "line": "They have been turned into tools.# Walking, breathing tools.\nI have seen what Hordes do to people.# This is worse."
+        },
+        {
+          "actor": "Math",
+          "line": "Yes.# The legends spoke of Ayonn's power, but I never imagined... this.\nA single mind, controlling hundreds. Perhaps thousands.\nWhatever is generating that signal — it is ancient. Powerful. And it is coming from the city."
+        },
+        {
+          "actor": "Theo",
+          "line": "Then we go to the city."
+        },
+        {
+          "actor": "Smiurl",
+          "line": "We WHAT?!# You just saw what those... those THINGS were!# We will end up like them!",
+          "comment": "Smiurl's bioluminescence flickers between orange and deep red — colours you have never seen on him before.#\n\nEveryone looks at you.",
+          "childid": 5
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "type": "Choice",
+      "recap": "comfort Smiurl choice",
+      "text": "Smiurl is looking at you with eyes full of fear.# Everyone is waiting for you to speak.",
+      "choices": [
+        {
+          "desc": "Put your hand on his shoulder. \"We'll get through this. Together.\"",
+          "childid": 51
+        },
+        {
+          "desc": "Be honest with him. \"I won't lie to you. This is worse than anything we've faced.\"",
+          "childid": 52
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "type": "Story",
+      "recap": "reassure Smiurl",
+      "text": "You kneel next to Smiurl and put your hand on his shoulder.#\n\n$c\"We'll get through this. Together. We always do.\"$C#\n\nHe looks up at you, searching your face for certainty.#\nYou are not entirely sure you have any,# but you hold his gaze.# Steady.##\n\nAfter a moment, a faint warmth returns to his skin.#\nNot bright.# Not cheerful.# But present.#\nA dim, stubborn amber, like the last ember in a dying fire.#\n\n$Y\"Together.\"$C He echoes quietly.#\n\nCorolla watches from above, and you catch the slightest nod.",
+      "childid": 6
+    },
+    {
+      "id": 52,
+      "type": "Story",
+      "recap": "honest with Smiurl",
+      "text": "You crouch beside him and look him in the eyes.#\n\n$c\"I won't lie to you, Smiurl. This is worse than anything we've faced. Those people...\"$C#\n\nYou trail off.# You do not need to finish.#\n\nHis lower lip trembles.# For a moment you think he might cry.##\nBut then something shifts in his expression.#\n\n$Y\"Then we need to stop it.\"$C#\n\nHis voice is barely above a whisper, but it is steady.#\nAnd as he says it, a single point of fierce, defiant gold flickers to life on his chest,#\nright over his heart.##\n\n$c<<Braver than any of us.>>#\n\n$CCorolla puts a hand on his head. $R\"Damn right we do.\"$C",
+      "childid": 6
+    },
+    {
+      "id": 6,
+      "type": "Story",
+      "recap": "emerge from Mazerock see Ayonn",
+      "text": "You press on through the last stretches of the Mazerock in tense silence.#\nThe canyons gradually widen.# The walls drop lower.# The sky opens above you,#\nand the oppressive weight of stone and shadow finally lifts from your shoulders.##\n\nAnd then you see it.###\n\n$WAyonn.$C###\n\nA city of gold.##\n\nIt rises from the desert plain like a mirage,# shimmering towers and domes\nglowing with a warm, honeyed light that has no visible source.#\nThe city seems to pulse gently against the haze of the horizon,#\nbeautiful,# impossible,## perfect.###\n\n$c<<It's... incredible.>>#\n\n$CBut something is wrong.##\n\nYou stare harder.# The light does not shift.# There are no shadows moving across the buildings,#\nno flicker of activity on the walls.# The golden shimmer is too uniform, too constant.#\nLike a photograph someone is holding up against the sky.##\n\nAnd as you walk closer,# a feeling grows in the pit of your stomach.#\nNot fear, exactly.# Something older.# A deep, primal $Wrepulsion$C,#\nas if every cell in your body is telling you to turn around.##\n\n$c<<My skin is crawling.# Every step forward feels like pushing through water.>>#\n\n$CEfeliah has stopped walking.#\n\n$g\"It is a projection.\"$C# She says quietly. $g\"A psychic projection. The whole city... what you are seeing... it is not real.\"$C#\n\nShe pauses.#\n\n$g\"But what is behind it is.\"$C",
+      "childid": 7
+    },
+    {
+      "id": 7,
+      "type": "Choice",
+      "recap": "approach Ayonn or find another way",
+      "text": "The golden illusion of Ayonn shimmers before you, impossibly beautiful, impossibly wrong.#\nThe psychic repulsion is like a steady pressure against your temples, growing stronger with every step.#\nSmiurl is whimpering.# Even Theo's jaw is clenched.#\nCorolla walks with her eyes fixed forward, knuckles white on her knife hilts.##\n\nBehind that shimmering veil, a real city waits.# And whoever controls those soldiers.\n\n$c<<Every fibre of my being says go back...# but I won't.>>#",
+      "choices": [
+        {
+          "desc": "Press forward. You've come too far to stop now.",
+          "childid": 8
+        },
+        {
+          "desc": "Maybe there's another way in. Look for a gap in the shield.",
+          "childid": 71
+        }
+      ]
+    },
+    {
+      "id": 71,
+      "type": "Story",
+      "recap": "no other way in",
+      "text": "You spend what feels like an hour circling the perimeter.#\nThe shimmer extends in every direction,# a perfect dome of golden light\nwith no gaps, no seams, no weakness you can discern.#\n\nEvery direction you try, the repulsion intensifies.#\nYour head throbs.# Your vision blurs at the edges.#\nSmiurl has stopped trying to hide his fear and is openly clinging to Theo's belt.##\n\nMath shakes his head grimly.\n\n$m\"It is a complete psychic sphere. There is no gap. No back door.\nWhoever built this intended it to be impenetrable.\"$C\n\nCorolla kicks a rock in frustration.#\n\n$R\"Then we go through the front.\"$C",
+      "childid": 8
+    },
+    {
+      "id": 8,
+      "type": "Dialogue",
+      "recap": "planning the shield breach",
+      "text": "You approach Ayonn's barrier from the west, skirting along the base of a rocky outcrop\nthat provides some cover from the city's watchtowers.##\n\nUp close, the energy shield is visible — barely.#\nA faint shimmer in the air, like heat haze, but too regular. Too perfect.#\nWhen you reach out your hand, you feel it — a wall of resistance,\nlike pushing against a strong current of water.# Your fingers tingle, then burn.##\n\nThe golden illusion is almost gone now. This close, you can see through it\nto the grey reality beneath. The city looks sick.# Tired.# Old.",
+      "dialogues": [
+        {
+          "actor": "Math",
+          "line": "This is it. Efeliah and I will focus our combined psychic energy on a single point.\nKriss... we need you too.",
+          "comment": "He looks at you with an intensity you have never seen from him before."
+        },
+        {
+          "actor": "Kriss",
+          "line": "Me?# I am not a telepath, Math. I can barely receive thoughts, let alone-"
+        },
+        {
+          "actor": "Efeliah",
+          "line": "Not telepathy.# Something... else.#\nYou felt it too, Math. In the desert. At Seer's Rock.\nHis mind is different.",
+          "comment": "She looks at you, and her expression is soft, but serious.",
+          "istelepathy": true
+        },
+        {
+          "actor": "Math",
+          "line": "She is right. There is a force in you that is not telepathy.#\nThe same force that saved Smiurl from the oxengutter, that has been growing since we left Seer's Rock.\nWe will feed you our strength.# You push through. With everything you have.",
+          "comment": "He puts both hands on your shoulders and looks into your eyes."
+        },
+        {
+          "actor": "Math",
+          "line": "Do not think. Feel.# When the moment comes, you will know what to do.",
+          "break": true
+        },
+        {
+          "actor": "Corolla",
+          "precomment": "Corolla steps forward, hand on the hilt of her blade.",
+          "line": "And while they are busy doing...# whatever it is they are about to do,#\nTheo and I will make sure nothing interrupts them.",
+          "comment": "She gives you a look.# That look.# The one that says: $Rdon't you dare die.$C"
+        },
+        {
+          "actor": "Theo",
+          "line": "Ready.",
+          "comment": "One word.# It is enough."
+        },
+        {
+          "actor": "Smiurl",
+          "line": "I will... I will stay close to you, Kriss.",
+          "comment": "He is still frightened, but he takes a step closer to you.#\nA faint glow returns to his skin.# Not much.# But it is there.# And that is everything.",
+          "childid": 9
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "type": "Story",
+      "recap": "breaching the shield",
+      "text": "You walk towards the shimmer.##\n\nMath stands to your left.# Efeliah to your right.#\nTheir hands close around yours, one on each side, and immediately you feel it:#\na warmth flooding up your arms and into your chest,# like stepping into sunlight after a long winter.##\n\nThe golden wall looms before you.# Ten paces.# Five.# Two.##\n\nYou reach out with your free hand# and touch the barrier.###\n\n$WPAIN.$C###\n\nA wall of static slams into your skull.# Every nerve in your body ignites at once,#\nas if a million needles are being driven through your skin from the inside.#\nYour teeth clench so hard you taste blood.#\nYour vision whites out.##\n\n$c<<PUSH.>>#\n\n$CYou push.# Not with your hands.# With something behind your eyes,#\nsomething in the base of your skull that has been stirring since the canyon,#\nsince the oxengutter,# since the sword first hummed in your grip.##\n\nThe shield pushes back.# Harder.#\nYour nose starts bleeding.# Hot copper on your lips.#\nYour knees buckle but you will not fall.##\n\n$m<<Hold on, Kriss. We are here. We are with you.>>#\n\n$CMath's voice.# An anchor in the static.#\nYou feel his mind beside yours, disciplined and sharp as a lance.#\nAnd Efeliah's strength flowing into you like a river,#\ngentle and immense and impossibly deep.##\n\nBut it is not enough.##\n\nThe shield tightens.# The pain redoubles.#\nYou feel the controlling intelligence behind it $Wnotice you$C.#\nA vast, cold, mechanical awareness turns its attention to the three tiny minds\ntrying to breach its wall.##\n\nYou are a fist trying to punch through a mountain.#\nYour grip on Math's hand is slipping.# Your vision is failing.#\nDarkness crowds in at the edges.###\n\nYou are going to fail.##\n\n$c<<I can't...# I can't do this...>>#\n\nAnd then something gives way.##\n\nNot from outside.# From within.#\nDeep in the base of your skull,# something that has been building since the canyon,#\nsince the oxengutter,# since the sword first hummed in your grip —#\nit erupts.##\n\n$CSomething detonates inside you.##\n\nIt is not telepathy.# It is something else entirely.#\nA force that erupts from your core like a shockwave,#\nchannelled through every nerve,# every synapse,#\nthrough Math and Efeliah and the link between you,#\nand it hits the shield like a battering ram made of light.###\n\nThe world $Wshatters$C.##\n\nA sound like a thousand windows breaking at once.#\nA rush of cold air.# The golden shimmer fractures,# spiderwebs,# collapses.#\n\nAnd then vertigo.# The ground tilts.# The sky spins.##\n\nYou fall.##\n\nSomeone catches you.##\n\nBlackness.",
+      "childid": 10
+    },
+    {
+      "id": 10,
+      "type": "Story",
+      "recap": "inside Ayonn blackout",
+      "text": "Fragments.##\n\nYou are being carried.# Voices, muffled, as if heard through water.#\n\nYou force your eyes open for one searing instant.##\n\nGrey stone.# Not golden.# Narrow streets lined with squat, utilitarian buildings.#\nNo shimmer.# No light.# Just cold, grey, oppressive stone under a colourless sky.##\n\n$c<<It was all a lie...>>#\n\n$CBlank-faced citizens shuffle past on the street below,# headbands gleaming.#\nNone of them react to your presence.# None of them react to anything.##\n\nA large building looms ahead, taller than the rest, its facade stained and windowless.#\nSomething about it pulls at your mind, even now,# like a signal you cannot quite tune in.##\n\nYou catch a flash of red.# Corolla, running alongside,# her face taut with worry.#\nTheo's arms are around you.# He is carrying you and Math both, one under each arm,#\nas if you weigh nothing at all.##\n\nSmiurl is clinging to Theo's back, his whole body pulsing with a terrified, strobing amber.##\n\nEfeliah is walking under her own power, barely,# one hand against the wall to steady herself.##\n\nThe metallic taste of blood fills your mouth.#\nYour head is splitting.#\nThe last thing you see before the darkness takes you again\nis the tall building growing larger,# closer,#\nswallowing the grey sky above you.###\n\n$c<<We made it...>>#\n\n$CBlackness.# Total and absolute.##",
+      "islast": true
+    }
+  ]
 }
