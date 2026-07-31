@@ -18,6 +18,14 @@ public static class ProwessHelper
                 FuryBonus = 5,
                 AttacksPerRound = 1
             },
+            13 => new Prowess()
+            {
+                MaxHealth = 40,
+                BaseDamage = 15,
+                RageBonus = 2,
+                FuryBonus = 10,
+                AttacksPerRound = 2
+            },
             _ => throw new NotImplementedException($"Prowess for chapter {chapterId} is not implemented.")
         };
     }

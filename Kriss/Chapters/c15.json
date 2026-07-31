@@ -1,0 +1,218 @@
+{
+  "id": 15,
+  "title": "THE ROAD SOUTH",
+  "nodes": [
+    {
+      "id": 1,
+      "type": "Story",
+      "recap": "chapter header - walking south from Ayonn",
+      "text": "-------------------------------\n|          CHAPTER 15          |\n-------------------------------\n\n\n$CAyonn is behind you.#\n\nThe road south is unpaved and wide and empty, and the first day\nyou walk it in almost complete silence, the weight of the city\nstill sitting in your chest.# The real sky above, Ayonn's real sky,\nwithout the golden shimmer, is pale and ordinary and\nextraordinarily welcome.##\n\nSmiurl walks with his face tilted upward at regular intervals,\nchecking that the sky is still real.# You notice this, and you do not comment,\nbecause you have been doing the same thing.##",
+      "childid": 2
+    },
+    {
+      "id": 2,
+      "type": "Story",
+      "recap": "days of travel south through the southern labyrinths",
+      "text": "The land south of Ayonn is cut through by long canyon passages,\nthe southern labyrinths: deep-walled gullies of pale rock\nthat channel the wind and swallow sound and make the days feel both faster\nand smaller than they are.##\n\nYou cover ground.# The party moves efficiently, automatically,\nthe rhythms of travel long since internalized.# Corolla reads the\ndistances with easy competence, Theo sets the pace,\nand Efeliah walks and listens, as she always does, to things\nyou cannot hear.##\n\nSmiurl has not yet recovered from the discovery that south means sea.##",
+      "childid": 3
+    },
+    {
+      "id": 3,
+      "type": "Dialogue",
+      "recap": "marching through canyon - Smiurl asks the distance",
+      "dialogues": [
+        {
+          "actor": "Smiurl",
+          "precomment": "You are deep in one of the canyon passages, the walls close on either side,\nwhen Smiurl falls into step beside you and asks the question\nthat has evidently been troubling him for some time.",
+          "line": "But how long must we walk?# Before the sea, I mean.",
+          "comment": "He says 'the sea' the way a man might say 'the executioner's block.'"
+        },
+        {
+          "actor": "Kriss",
+          "line": "I don't know exactly.# Not long, I think.",
+          "istelepathy": false
+        },
+        {
+          "actor": "Corolla",
+          "precomment": "Corolla, walking ahead, does not turn around.",
+          "line": "The distance from here to the coast is about the same as from Ayonn to Seer's Rock.#\nA little more, perhaps.# It's just past what you can see at the horizon.",
+          "comment": "She says it the way she says practical things: quickly, without weight, moving on."
+        },
+        {
+          "actor": "Kriss",
+          "precomment": "You look at the back of her head.# Something in the way she said it,\nthe precision of it, the ease, catches your attention.",
+          "line": "How do you know that?# Did your Horde reach that far?",
+          "comment": "It is an innocent question.# You say it easily, curious, the way you might ask\nsomeone how they know a shortcut.##\n\nCorolla stops walking.##",
+          "childid": 4
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "type": "Story",
+      "recap": "Corolla darkens - Kriss pushes - she EXPLODES",
+      "text": "She stops, and for a moment she does not turn around.##\n\nWhen she does, her expression has changed.# Something has closed\nbehind her eyes, something that was not there a moment ago,\nand she looks at you with a flatness you have not seen from her before.##\n\n$R\"It's just a detail.\"$C#\n\nShe turns back to the path and starts walking again.##\n\nEfeliah, a half-step behind you, does not speak.#\nYou glance at her.# She gives you a look that is neither warning nor encouragement,\nonly a very slight, almost imperceptible stillness.##\n\nYou look at Corolla's back, at the set of her shoulders, and you try to leave it.\nBut there was something in the way she went quiet, and you cannot.##\n\n$c<<She is hiding something.# I can see it from here.#\nI should probably let this go.>>#\n\n$C$R\"There's something wrong, isn't there?\"$C# you say.##\n\n$R\"No, nothing,\"$C# she says, without turning around, her voice flat.##\n\nTheo, walking ahead at the front, turns his head a few degrees, just enough\nto look sideways with the corner of his eye.# Then he turns back to the path.##\n\n$R\"Come on,\"$C# you say.# $R\"It's obvious you're hiding something.\"$C##\n\nShe stops.##\n\nShe turns.##\n\n$R\"Leave me alone!\"$C##\n\nThe cry hits the canyon walls and comes back at you.#\n$RLeave me alone$C...# and again, fainter,# $Rleave me alone$C...#\nand again, a whisper, fading into the rock.##\n\nNobody moves.# Smiurl has gone an immediate, shocked gray.#\nEfeliah is very still.# Theo does not turn around.##\n\nCorolla's eyes are bright with something you were not expecting,\na fury that has tears at the very edge of it, and she holds your gaze\nfor one burning moment, long enough for you to feel the full weight\nof having accidentally put your hand on something,\nbefore she turns away with a sharp motion of her whole body\nand strides ahead, disappearing around the next bend in the canyon.##\n\nYou look at Efeliah.# She looks back at you, stricken in her quiet way.#\nYou look at Theo.##\n\n$B\"Come. It'll be dark in a few hours.\"$C##\n\nYou walk.# For the rest of the day you do not see Corolla except as\na distant shape ahead of you, never within speaking distance,\nand Smiurl does not make a single sound.##",
+      "childid": 5
+    },
+    {
+      "id": 5,
+      "type": "Story",
+      "recap": "evening camp in the canyon - Corolla's absence",
+      "text": "They find a natural clearing where the canyon widens\naround a junction of three gullies, old stones arranged in a circle\nfor a fire: the remnant of someone else's camp, long ago.##\n\nTheo makes the fire without ceremony.# Corolla is already there\nwhen you arrive, sitting at the far edge of the firelight with her back\npartly to the group, tending to her pack.# She does not speak,\nand nobody speaks to her.##\n\nYou cook the meat from the Ayonn stores in silence.#\nEfeliah sits with her eyes half-closed, and you are not sure if she is\nlistening to anyone's thoughts or simply doing them the courtesy\nof not listening.# Smiurl eats very quietly, which is not a thing\nhe does naturally, and the effort of it is visible.##\n\nThe fire settles.# Night comes in from the canyon walls above.##\n\nNobody seems to want to sleep.# Nobody seems to want to speak.##\n\nAnd then Theo speaks.##",
+      "childid": 6
+    },
+    {
+      "id": 6,
+      "type": "Dialogue",
+      "recap": "Theo opens the Øder backstory - Corolla joins mid-telling",
+      "dialogues": [
+        {
+          "actor": "Theo",
+          "precomment": "He does not look up from the fire.# His voice is low, and even,\nand carries the weight of something that has not been said for a long time.",
+          "line": "It's time we told you our story.",
+          "comment": "You look at him.# Then at Corolla, who has gone very still at the edge of the firelight."
+        },
+        {
+          "actor": "Theo",
+          "precomment": "He looks at the fire, not at you.#\nHe speaks the way he does everything: steadily, without decoration,\nputting one word after the next the way you put one foot after another\nwhen there is no other option.",
+          "line": "I was born in the city of Øder.# Alone on the mountain range of the same name.#\nCorolla is from that city too.# But there is a great difference between us.#\nI am the son of laborers.# Mountain workers, for generations.\nMy people knew nothing but hard work.# They were born for it.#\nThey loved the mountains above all things.",
+          "comment": "He says it without sentiment.#\nBut you hear what is underneath it, as you hear most things underneath Theo's words:\nthe size of what he is describing by not describing it."
+        },
+        {
+          "actor": "Theo",
+          "line": "She is a noble.# The last of Øder.# Firstborn of the king,\nand heir to the throne by right.# She was loved by the people.#\nIntelligent and beautiful, and she had no shortage of suitors.#\nNaturally she chose none of them.# There were no others of equal rank.#\nShe would have been the queen of Øder.##\n\nProbably the best ruler the city had ever had.",
+          "comment": "He stops.# The fire settles.##\n\nSmiurl's skin is a deep, motionless amber, not his anxious amber\nbut something deeper, older, as if his light has gone still.##"
+        },
+        {
+          "actor": "Theo",
+          "line": "But none of that would come to pass.##\n\nØder had never known war.# High and alone, it was avoided by the Hordes\nthat had long since spread like a sickness through the colonies of Noi-Hert.\nSo when they came, we were taken by surprise.# The Horde attacked without warning.#\nIt was a massacre.# They were many, but by the end of the battle\nthey were reduced to a few dozen.##\n\nI was taken prisoner, for my usefulness.# I killed two dozen of them first.#\nThey wanted to persuade me to join them.# I would have died before accepting.#\nBut something changed my mind.",
+          "comment": "He looks at the fire.# He does not say what that something was.##\n\nAnd then a voice from the edge of the light.##",
+          "break": true
+        },
+        {
+          "actor": "Corolla",
+          "precomment": "She has moved without sound.# You did not hear her cross the camp.\nShe is sitting now within the warmth of the fire, not quite beside anyone,\nbut present, her arms around her knees, her eyes on the ground.\nWhen she speaks her voice is flat, and absolutely level,\nand it costs her something you cannot fully see.",
+          "line": "We barricaded ourselves in the royal palace, me and the servants,\npractically the only survivors.# A hundred and forty people:\ncooks, attendants, guards, people who had lived there their whole lives.##\n\nThe palace held most of Øder's treasures.# That was what the Horde wanted.\nReduced to less than half their number, they couldn't besiege us.#\nSo I proposed an exchange.# The freedom of the servants and the prisoners\nfor the royal treasury.# They accepted.",
+          "comment": "She stops.# Her throat moves."
+        },
+        {
+          "actor": "Corolla",
+          "line": "They had the impudence to try to climb the palace walls to take more\nbefore the deal was done.# They hadn't counted on me.#\nAll the royal line is trained in combat, mind and body both.#\nThose crude men were no match for me.##\n\nThey freed the servants.",
+          "comment": "She says it simply.# Then:"
+        },
+        {
+          "actor": "Corolla",
+          "line": "I watched them go.# And then there was nothing left of Øder.#\nGreat fires were climbing the mountains, lighting the peaks with a ghostly glow,\nlike an enormous wound.##\n\nMy father had been among the first to fall in battle.",
+          "comment": "The words are flat.# Completely controlled.#\nEvery muscle in her face is doing something.##",
+          "break": true
+        },
+        {
+          "actor": "Corolla",
+          "line": "I had no home left.# No throne.#\nI looked around, and the Horde's chief was standing behind me,\nwatching me with a grin, and he described, without the least mercy,\nexactly what my situation was, and then he invited me to join them.##\n\nI had no other choice.# Where would I have gone?#\nI couldn't scatter myself among that handful of servants and butlers.#\nI saw Theo.# So I accepted, swearing in the bottom of my heart\nthat I would make them pay for it, the Horde and its chief.",
+          "comment": "She says the last sentence as if she is still deciding how to feel about it.##"
+        },
+        {
+          "actor": "Corolla",
+          "line": "We rode with them for years.# Fought beside them, ate with them,\nwaited for the Chief to make a mistake.##\n\nHe did not make mistakes.# He was many things, but not careless.##\n\nAnd then the canyon happened, and he died,\nand it had nothing to do with us.",
+          "comment": "She looks at the fire.# Not at you."
+        },
+        {
+          "actor": "Kriss",
+          "line": "Is that why you helped me?# At the beginning?",
+          "comment": "You say it quietly."
+        },
+        {
+          "actor": "Corolla",
+          "line": "No.",
+          "comment": ""
+        },
+        {
+          "actor": "Theo",
+          "line": "We helped you because it was right.",
+          "comment": "He says it from across the fire, his voice unchanged."
+        },
+        {
+          "actor": "Corolla",
+          "line": "The Horde met its fate regardless of you.#\nThey paid, every last one of them who remained, and especially the Chief.#\nHe wasn't particularly surprised to see us there, at the end.#\nHe'll have thought we arranged the ambush.",
+          "comment": "The ghost of something crosses her face.# Not a smile, something older, and very tired.#\n\n$c<<She waited years.# She gave them everything she had left\nand rode beside the man who killed her father, and waited,\nand when it finally ended it was someone else who ended it.#\nNot her.>>#\n\n$CYou do not say anything.# There is nothing to say.##"
+        },
+        {
+          "actor": "Corolla",
+          "precomment": "A long silence.# The fire pops, and somewhere in the canyon\nsomething moves in the dark, once, and then is still.##\n\nCorolla picks up a small stone and turns it in her fingers.\nWhen she speaks again her voice has changed.# It is quieter,\nsomewhere further back inside herself.",
+          "line": "When I was a child, every afternoon I went to my father's study.#\nHe would sit me on his knee, and let me play with his things.##\n\nThe thing I loved most was an old globe of Noi-Hert.#\nI would choose a spot at random, pointing with my finger,\nand my father would invent a fairy tale about that place, improvising...",
+          "comment": "Her voice drops.# Falls away entirely.##\n\nYou do not move.# None of you do.##\n\nYou look at Efeliah.##\n\nShe is crying.# Silently, her head down, tears falling freely,\nnot with any drama, just the quiet fact of it, impossible to look away from.##",
+          "childid": 7
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "type": "Dialogue",
+      "recap": "Kriss apologizes - Corolla accepts",
+      "dialogues": [
+        {
+          "actor": "Kriss",
+          "precomment": "You look at Corolla.# She is looking at the stone in her hand.",
+          "line": "I'm sorry.# I... I didn't know.",
+          "comment": ""
+        },
+        {
+          "actor": "Corolla",
+          "line": "You couldn't have.",
+          "comment": "She says it without looking up.# She tries to smile, or something close to it.##\n\nThe fire burns low.# Nobody says anything for a long time.##\n\nSmiurl crosses without a word and sits down directly beside Corolla,\nclose enough that his shoulder is against her arm.# He does not speak.\nAfter a moment his skin shifts from its motionless amber to something warmer:\na slow, steady glow, like firelight from inside.##\n\nCorolla does not look at him.# But she stops turning the stone in her fingers,\nand she is still.",
+          "childid": 8
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "type": "Story",
+      "recap": "aftermath - silence, everyone settling for the night",
+      "text": "The fire settles.##\n\nNobody speaks for a long time.# The canyon walls breathe and click,\nand somewhere distant something calls once and then is quiet.##\n\nEfeliah dries her face without fuss and takes her food\nfrom the pot without looking up, her eyes soft and distant.#\nTheo watches the dark beyond the fire's reach with the usual absolute patience.##\n\nYou eat.# The fire burns down.##\n\nBefore sleep, in the low last glow of the embers,\nyou look at the sword planted in the ground at your side,\nthe Chief's sword, yours now, its metal throwing back a dull red.\nCorolla was right.# The most fitting symbol of his defeat.##",
+      "childid": 9
+    },
+    {
+      "id": 9,
+      "type": "Dialogue",
+      "recap": "morning - Corolla tells Kriss don't make it strange",
+      "dialogues": [
+        {
+          "actor": "Corolla",
+          "precomment": "In the morning, before the others are fully awake,\nCorolla is already at the edge of the camp rolling her pack.#\nYou bring her water from the skin, and she takes it without turning around.##\n\nFor a moment you stand there, not sure what to say.",
+          "line": "Don't.",
+          "comment": "Her voice is even.# Completely herself again."
+        },
+        {
+          "actor": "Kriss",
+          "line": "Don't what?",
+          "comment": "She does turn now.# And her expression is the one you know:#\nthe clear, slightly sardonic Corolla-gaze that has been reading\nyou accurately since the day you met."
+        },
+        {
+          "actor": "Corolla",
+          "line": "Don't let it make you strange around me.#\nDon't look at me differently, don't be careful.##\n\nYou asked, I told you.# That is all it is.",
+          "comment": "A pause.# Her eyes hold yours steadily."
+        },
+        {
+          "actor": "Corolla",
+          "line": "What I told you last night: that is not who I am now.#\nIt is why I am who I am now.# There is a difference.",
+          "comment": "She ties off her pack and stands.##\n\nBehind you, Smiurl has woken up and is already complaining about his back,\nTheo is putting out the fire, and the morning is gray and cool\nand smells of earth and distant water.##\n\nCorolla brushes past you.#\n\n$R\"Come on.# We're losing daylight.\"$C##",
+          "childid": 10
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "type": "Story",
+      "recap": "leaving the labyrinths - the great plain, sea in the distance",
+      "text": "The canyon walls fall back the next morning, and the world opens.##\n\nYou step out of the last gully into a vast plain that slopes gently downward\nfor as far as you can see, and for the first time since you arrived on Noi-Hert\nthe landscape in front of you is $Wnot$C barren.# Great meadows stretch ahead,\nreal grass, and further out, at the edges of sight, the dark shapes of trees.##\n\nYou run.##\n\nYou do it without thinking, without deciding to, just breaking into a run\nbecause the ground is flat and green and the sun is warm and the wind\nis coming up from the south, and you run until you reach the top\nof a low hill and stop there, breathing hard, with your arms out.#\nThere is only the warmth of the sun and the voice of the wind.#\nFor a moment you feel like part of the planet.##\n\nYou hear the others catching up behind you.#\nYou feel Efeliah's mental presence, and something else: a faint, sourceless unease\njust at the edge of your perception, a shadow without a shape.##\n\nThe incantation breaks.# You become Kriss on a hill again, with his companions,\nlooking south.##\n\nEfeliah reaches you, and her expression is faintly puzzled.#\n\n$g\"I still don't understand what generates your unease,\"$C# she says quietly as the others arrive.##\n\n$c<<Neither do I.>>#\n\n$CHe says as much.# She considers it.#\n\n$g\"I must resign myself to the evidence.# Perhaps only by waiting,\nif we are lucky, will we find answers.\"$C##\n\nYou look south.# Down the long green slope, at the edge of the far horizon,\nthe faintest blue-gray line.# The sea.##",
+      "childid": 11
+    },
+    {
+      "id": 11,
+      "type": "Story",
+      "recap": "end of chapter - the sea visible, the coastal town sighted",
+      "text": "Proceeding faster than expected, in the late afternoon\nyou make camp near a small stand of trees like nothing you have seen on Noi-Hert before:\ntall, with a shape almost like conifers, their needles dark in the fading light.##\n\nA couple of kilometers further south a town is visible, crouched in a bay,\nabandoned-looking, or nearly so, but several ships ride at anchor in the harbor\nin what appears to be reasonable condition, which suggests someone must be\nkeeping them that way.##\n\nEfeliah looks at it from a distance.# Her expression does not change,\nbut something in her posture closes.##\n\nSmiurl looks at it too.# Then he looks at the ships.# Then at the town.##\n\n$Y\"I have a bad feeling about this.\"$C##\n\nYou say nothing.# You look at the town in the darkening bay,\nand you think he may not be wrong.##",
+      "islast": true
+    }
+  ]
+}

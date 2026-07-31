@@ -1,0 +1,135 @@
+{
+  "id": 19,
+  "title": "THE WHITE CITY",
+  "nodes": [
+    {
+      "id": 1,
+      "type": "Story",
+      "recap": "chapter header + the southern plains",
+      "text": "-------------------------------\n|          CHAPTER 19          |\n-------------------------------\n\n\n$CThe south is green.##\n\nYou have been walking through it for three days\nand you have not finished believing it.#\nAfter the desert and the scrubland and the sea,\nthe south is $Wgreen$C, real green, deep and various,\ngrass in the valleys and low forest on the hillsides\nand flowers in colors that feel almost aggressive after\nthe palette of the rest of this planet.##\n\nThe land is empty of people, or nearly,\nand you pass the remains of farmsteads, old ones,\nlong abandoned, the walls returned to the hillside.#\nWhatever this place once was, it has been quiet for a long time.##\n\nBut the city is there, somewhere ahead of you.#\nYou know this without any evidence yet,\nwithout having seen anything beyond these hills,\nand you have known it since you stepped off the beach\nand onto the southern grass.##\n\n$c<<Something is pulling.# I have been ignoring it for three days,\nand I am becoming less successful at this.>>$C##",
+      "childid": 2
+    },
+    {
+      "id": 2,
+      "type": "Story",
+      "recap": "first sight of the besieged white city from the hills",
+      "text": "You crest the hill on the third evening and see the army.##\n\nIt is not a small one.##\n\nThe valley below is perhaps five kilometers across at its widest,\nand the floor of it, what would be meadow, what was probably\npasture once, or crops, is occupied,\ntents, fires, supply wagons, corrals of animals,\nthe accumulated infrastructure of a force that has been\nsitting in one place for some time and has gotten comfortable doing it.#\nThousands of them, more than thousands.##\n\nAnd beyond them, across the valley, at the southern end,\nset against the curve of the hills with its back to the mountains,\nthe city.##\n\nWhite.##\n\nNot the muddy cream of old stone but$W white$C,\nactual white, its walls catching the last light\nlike a thing that generates its own illumination,\nwith towers, colonnades, porticoes, and a palace at its center\nthat rises above everything in calm, absolute authority.##\n\nSomething in you responds to the sight of it\nlike a string being plucked.# You look at those walls\nand feel a certainty you cannot explain\nand do not try to.##\n\n$c<<I know this place.##\n\nThat is impossible.# I have never been here,\nnever been on this planet before six months ago.##\n\nAnd yet.>>$C##",
+      "childid": 3
+    },
+    {
+      "id": 3,
+      "type": "Dialogue",
+      "recap": "companions discuss the situation on the hill",
+      "dialogues": [
+        {
+          "actor": "Corolla",
+          "precomment": "You are crouched at the hilltop in the long grass,\nall five of you, looking down at the valley.#\nThe army's nearest cookfires are perhaps a kilometer below.#\nThe wind is from the north, carrying wood smoke and the smell\nof a camp that has been here long enough to develop its own character.",
+          "line": "Siege.# Established position, multiple supply lines coming\nfrom the east.# They have been here at least two months, maybe more."
+        },
+        {
+          "actor": "Smiurl",
+          "precomment": "Smiurl is staring at the army below.#\nHis skin has gone a contemplative gray.",
+          "line": "How do we get past them?",
+          "comment": "Practical."
+        },
+        {
+          "actor": "Corolla",
+          "line": "We don't.# Not directly.# The siege line runs\nall the way to the hills on each side.#\nThere is a gap on the western slope, there, but\nit's watched, and we would need a diversion.",
+          "break": true
+        },
+        {
+          "actor": "Efeliah",
+          "precomment": "Efeliah has been looking not at the army but at the city.#\nShe turns from it to you, and her expression is unusual,\nnot calm, not concerned, but searching.",
+          "line": "Kriss.# What do you feel?",
+          "istelepathy": true
+        },
+        {
+          "actor": "Kriss",
+          "precomment": "Everyone looks at you.# You look at the white walls below.\nYou let yourself feel what you have been not-feeling for three days.##",
+          "line": "Like I am supposed to be there.#\nLike something in the city is waiting for me specifically.",
+          "comment": "A silence.##\n\nEfeliah looks at the city, then at you.\nShe says nothing, but her expression does something quiet and certain."
+        },
+        {
+          "actor": "Corolla",
+          "precomment": "Corolla studies you for a moment.# Then nods once.",
+          "line": "Then we figure out how to get you there.",
+          "comment": "She says it as simply as if you have asked her\nto help you find a street in Ayonn.##",
+          "childid": 4
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "type": "Story",
+      "recap": "making camp below the hill, the planning discussion and Kriss going to sleep",
+      "text": "You make camp at the base of the rock spire below the hilltop,\nout of sight of the army in the valley.#\nNo fire.# Cold provisions.# The kind of camp\nyou all know how to make by now without discussion.##\n\nAfter you have eaten in silence, Efeliah speaks first.##\n\n$g\"We need to think about how to enter the city.\"$C##\n\n$B\"Before the sun rises\"$C, says Theo, $B\"while they sleep.\"$C##\n\nCorolla looks at the valley.#\n$R\"Two kilometers of open ground once we leave the trees.\nIf we snap even one branch they'll be on us in seconds.\"$C##\n\n$g\"I can feel the difference between a sleeping mind and a waking one.#\nI can guide us.\"$C##\n\nThe discussion continues around you, and you sit in it\nwithout really hearing it, your eyes on the dark valley below\nwhere hundreds of fires describe the shape of the siege camp\nand at the far end, unchanged, unchanged,\nthe white city rises against the mountains.##\n\nThe pull is steady now.# Not urgent, not demanding,\nbut constant, like a compass needle,\nlike a voice too low to make out words\nbut too clear to ignore.##\n\n$c<<What are you?# Who is in there?\nHow do you know I'm on this hill?>>$C##\n\n$CYou stand and move toward the tent you are sharing with Theo.#\nYou say, to no one in particular: $c<<Then it's decided.>>$C##\n\n$CYou lie down.# Every thought drains from your head\nlike water through sand.# A profound sleep takes you\nbefore you have finished closing your eyes.##",
+      "childid": 5
+    },
+    {
+      "id": 5,
+      "type": "Story",
+      "recap": "the dream-flight begins: moving invisible through the forest",
+      "text": "It is still dark.# Darkness will reign a while longer.##\n\nYou move, silent, invisible,\nthrough forest as dense as anything you have seen on this planet,\nand nothing stirs as you pass through it.#\nNot the night animals, not a single branch.#\nThe world does not notice you.##\n\nFrom the direction of the city a slow, aching sound\nreaches you through the trees, distant but clear,\nfloating from the palace where a single high window\nstill holds light.# Something between a song and a lament,\na call that does not expect an answer\nbut that you feel anyway in the center of your chest,\nan ache you recognize without knowing why.##\n\n$c<<That sound.# I know that sound.#\nI have always known it.>>$C##\n\n$CYou move toward it without deciding to.##",
+      "childid": 6
+    },
+    {
+      "id": 6,
+      "type": "Story",
+      "recap": "the dream-flight continues: over the sleeping army",
+      "text": "Below you, the siege camp.##\n\nThousands of sleeping men, spread across the stripped valley floor,\nthe cookfires burned to orange coals,\nthe sentries walking their rounds with a boredom that makes them\nalmost as absent as the sleepers.#\nYou feel their minds like a dim heat, a mass of slow breathing thought,\nand you pass through them like a current through still water,\nleaving no ripple.##\n\nYou sail above the bare earth they have made of what was pasture,\nabove their tents and their stacked weapons and their horses,\nand not one of them looks up.#\nNot one of them senses you.##\n\nThe white walls are ahead.# The lament from the high window\ngrows stronger with each moment, pulling you on,\nand you feel the first pale light beginning to build\nat the edge of the world behind you.#\nYou move faster.##",
+      "childid": 7
+    },
+    {
+      "id": 7,
+      "type": "Story",
+      "recap": "the dream-flight: over the walls and into the palace gardens",
+      "text": "The walls.##\n\nIn the faint pre-dawn light they glow like moonstones,\nimmense, ancient, rising sheer above the base of the valley.#\nThere is no time to look for gates.#\n$c<<What would they be for?>>$C##\n\n$CYou rise along the outer face of the wall as if dancing,\ncaught by nothing but the song, drawn by nothing but that voice\nsomewhere above in the palace.#\nYou crest the wall as you would crest a wave,\nand below you on the other side the sleeping city\nopens in all its white quiet.##\n\nYou pass over rooftops that still hold a little warmth\nfrom the day's sun.# Over fountains that go on murmuring\nto themselves in the empty streets.# Over the dark shapes\nof gardens and colonnades and streets of pale stone.##\n\nThe palace gate is open.# You descend through it.##\n\nThe gardens inside are wonderful,\nenchanting trees still lost in sleep,\nfountains sounding in the dark with their mysterious murmur,\nand the scent of something alive and growing\nthat should not exist in a besieged city,\nor perhaps that exists precisely because of it.##\n\nThe lament is very close now.#\nA great white staircase rises before you,\nthe marble softened to something liquid in the milky light,\nand there is a figure at the top of it,\narms open, a silhouette against the window's dying glow,\nand the figure is$W whispering.##\n\nYour name.##",
+      "childid": 8
+    },
+    {
+      "id": 8,
+      "type": "Story",
+      "recap": "the light engulfs him; he wakes physically in the palace gardens",
+      "text": "The first ray of true sunlight pierces the sky like an arrow.##\n\nIt strikes the white staircase and the marble ignites,\nflaring gold and orange, molten, flooding upward,\nand the light grows and grows until there is nothing else,\nuntil you are inside it,\nuntil you are $Wlight$C,\nheat and radiance, no body, no weight, no dark.##\n\nYou open your eyes slowly.##\n\nDaylight.# Actual daylight, morning, the sun already clear\nof the mountains behind the city.##\n\nYou are not in the tent.##\n\nA garden surrounds you, glorious and real,\nfountains, flowers, trees moving in a gentle morning breeze,\nthe scent of stone and water and living things.#\nOn the ground around you your companions are stirring,\nblinking, sitting up one by one in the grass of the garden,\nand their expressions are the mirrors of yours:##\n\nTheo, sitting upright and still, looking at the garden\nwith a soldier's unhurried assessment.#\nCorolla, already on her feet, hand on her knife, eyes moving fast.#\nSmiurl, both hands pressed to his face, glowing a bright, disbelieving gold.#\nEfeliah, eyes wide, feeling the space around her with the invisible sense\nthat is always open, her gaze finding yours with a look of calm, wondering certainty.##\n\nYou turn.##\n\nBefore you rises the white staircase.#\nExactly as you dreamed it.##",
+      "childid": 9
+    },
+    {
+      "id": 9,
+      "type": "Dialogue",
+      "recap": "companions react to finding themselves in the palace gardens",
+      "dialogues": [
+        {
+          "actor": "Corolla",
+          "precomment": "Corolla has finished her scan of the garden walls.\nShe turns to you, and whatever she had been going to say\nstays behind her teeth for a moment.",
+          "line": "We didn't walk here.",
+          "comment": "It is not a question.# It is the plainest sentence\nshe has ever said to you.#"
+        },
+        {
+          "actor": "Kriss",
+          "line": "No.# We didn't.",
+          "comment": "A pause.##"
+        },
+        {
+          "actor": "Smiurl",
+          "line": "How... how are we inside?# The walls... the army...",
+          "comment": "He trails off, his skin cycling through uncertain colors."
+        },
+        {
+          "actor": "Efeliah",
+          "precomment": "Efeliah has been standing very still, her eyes on the staircase.",
+          "line": "Something brought us here.# Something very old, and very strong,\nand it knows who we are.",
+          "istelepathy": true,
+          "comment": "The garden is quiet around you,\nthe fountains running, the trees moving in their gentle way,\nand the morning light is gold on the white marble of the staircase\nthat rises before you, exactly as you dreamed it.##",
+          "childid": 10
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "type": "Story",
+      "recap": "approaching the elliptical hall - end of chapter",
+      "text": "You climb the staircase.##\n\nYour companions follow without discussion, as they have always followed,\nthrough everything you have asked them to walk into.##\n\nAt the top, a corridor of pale stone leads inward\nthrough the palace's heart, lit by windows that face\nsome inner court you cannot see, the light coming\nfrom no visible source and going nowhere visible.#\nThe corridor is wide and white and at its end\nstands a pair of high doors, open,\nonto a space you feel before you see.##\n\nAn elliptical hall.##\n\nIts ceiling rises into shadow.# Its floor is a single expanse\nof white marble, worn smooth and polished to a deep luster\nby some long continuity of use you can only guess at.\nThe hall is vast and empty and it holds\na silence that is not like the silence outside,\nnot the silence of absence but the silence of waiting,\nof something that has been patient here for longer\nthan you can hold in your mind at once.##\n\n$c<<Whoever is coming, whatever is coming,\nI am ready.\nI have been ready since a lightning bolt\ndropped me on a dead planet with no shoes.>>$C##\n\n$CYou cross the threshold.##\n\nThe doors close.##",
+      "islast": true
+    }
+  ]
+}

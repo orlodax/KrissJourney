@@ -89,9 +89,10 @@ public class FightNode : NodeBase
             RedrawNode();
 
             // Player attacks back  
-            if (health > 0 && foe.Health > 0)
+            if (health > 0)
                 for (int i = 0; i < prowess.AttacksPerRound; i++)
-                    PlayerAttack(foe, perfectDefense);
+                    if (foe.Health > 0)
+                        PlayerAttack(foe, perfectDefense);
         }
 
         IEnumerable<Foe> remainingFoes = foes.Where(f => f.Health > 0);

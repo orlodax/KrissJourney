@@ -15,7 +15,8 @@ public enum EnCharacter
     Jeorghe,
     Chief,
     Person,
-    Saberinne
+    Saberinne,
+    Riff
 }
 
 public static class CharacterExtensions
@@ -36,6 +37,7 @@ public static class CharacterExtensions
             EnCharacter.Chief => ConsoleColor.Magenta,
             EnCharacter.Person => ConsoleColor.DarkYellow,
             EnCharacter.Saberinne => ConsoleColor.Green,
+            EnCharacter.Riff => ConsoleColor.DarkYellow,
             _ => ConsoleColor.DarkCyan, // default color
         };
     }

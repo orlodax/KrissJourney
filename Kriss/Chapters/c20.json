@@ -1,0 +1,164 @@
+{
+  "id": 20,
+  "title": "THE DUEL",
+  "nodes": [
+    {
+      "id": 1,
+      "type": "Story",
+      "recap": "chapter header + alone in the hall",
+      "text": "-------------------------------\n|          CHAPTER 20          |\n-------------------------------\n\n\n$CThe hall is elliptical, and enormous, and quiet.##\n\nYou did not come through the doors.# You do not know\nhow you came to be here, only that you are here\nand that the others are not.# You registered their absence\nwithout alarm as the moment resolved around you,\nas if it were the right thing, the expected thing.#\nThis hall is for two.##\n\nThe floor is white marble so polished it is almost a mirror:#\nyou can see the faint shape of yourself reflected in it,\nstanding alone at the northern end while the hall\nextends away from you toward a wide staircase\nat the southern end, flanked by four great entrances,\neach one hung with enormous translucent drapes\nthat move gently in air that has no detectable source.##\n\nThe light is oblique, banded, gold and white\ncoming through tall windows, and the ceiling is very high and frescoed\nand you are not going to think about the ceiling right now,\nbecause the drapes on the left-hand entrance\nhave just stopped moving.##\n\nEverything stops.# The drapes, the light, the air itself.##\n\nAnd then she steps through.##",
+      "childid": 2
+    },
+    {
+      "id": 2,
+      "type": "Story",
+      "recap": "the armored warrior enters",
+      "text": "The armor is old, older than anything you have seen on this planet,\nand that is not a small claim.# Full plate, greaves and gauntlets\nand breastplate and gorget, and a great helm that covers everything\nabove the shoulders in a curve of dark greenish metal engraved\nwith lines you cannot read.##\n\nShe carries two swords: long, slightly curved sabers,\ngold handles, blades the color of blue glass,\nan impossible material that is neither steel nor crystal\nbut something that has the properties of both.#\nThey hang at her sides, points downward, held in a grip\nthat is more frightening than any guard.##\n\nShe is tall inside the armor and she moves the way nothing\nin that weight of metal should be able to move,\nbalanced and fluid, like someone who has worn this particular suit\nlong enough that it has become a second skin.##\n\nShe crosses to the hall's other focus, the far point of the ellipse,\nand she looks at you through the slits of her helm.##\n\nA thousand voices ring in your head at once,\nand you almost believe you see the air between you vibrate\nwith the flow of that energy:#\n\n$G<<I am Saberinne.>>$C##\n\nBefore you can register a single syllable of that,\nshe comes at you.##",
+      "childid": 3
+    },
+    {
+      "id": 3,
+      "type": "Fight",
+      "recap": "the duel with Saberinne - Kriss is losing, fights with desperate rage",
+      "text": "Blind instinct draws your sword from its scabbard.##\n\nYour mind is not concerned, in that moment, with being a student\nfrom Earth who has never properly trained with a weapon.#\nThere is only your movement and hers, her sabers\ncutting the air, silent and precise, and the sword\nin both your hands that has been part of you\nfor so many months it answers before you think.##\n\nYou clash.# The impact sends sparks in a cascade across the mirror floor\nthat leave no trace on the marble.# You slide,\nget your footing back, and come at her again.##\n\nYou are fighting with the force of desperation,\nthe determination not to yield,\nand nothing else.# She reads every initiative\nas if she can see inside your mind.#\nEvery counter you attempt she is already past.#\nAnd for every meter you take, you give back two.##\n\nThe wall is approaching behind you.##",
+      "encounter": {
+        "foes": [
+          {
+            "name": "Saberinne",
+            "health": 200,
+            "damage": 18,
+            "attacksperround": 2
+          }
+        ],
+        "victorymessage": "$CYou are against the wall.##\n\nRight hand gripping your sword, left hand pressed flat\nto the cold marble behind you.# Her saber is at your throat.#\nThe helm's slits look at you, steady, unhurried.##\n\nYou have fought as you have never imagined any person could fight,\nand you have lost.# The thought does not arrive with resignation.\nIt arrives with something else entirely:\nthat same pressure behind your hands,\nbehind your eyes, the same rage that tore a metal door\nout of its frame in the dark of an underwater cell.##\n\nYou cannot let it end like this.# You will not.##\n\nYou think of all of them, of every day of this journey,\nand you close your fist around your sword and pour everything\nyou have into it: your rage, your desperation,\nevery charged particle of the power that has been\nbuilding in you since Noi-Hert took you in.#\nAnd you scream.# A full-throated scream\nyou have never heard yourself make before.##\n\nThe sword tears free of the wall's gravity and flashes upward,\nstriking her helm with a force so tremendous\nthat for one instant both your eyes are blinded\nby the screech of wounded metal.##\n\nThe helm spins away down the staircase behind her.# The light returns.##",
+        "defeatmessage": "$CShe has ten thousand years of practice,\nand every second of it.##\n\nThe marble is cold under your back.#\nThe hall's ceiling is very beautiful,\nand you have a great deal of time to look at it.##",
+        "qtecycles": 5,
+        "qtelength": 42,
+        "qtespeedfactor": 1.3,
+        "qtewidth": 4
+      },
+      "childid": 4
+    },
+    {
+      "id": 4,
+      "type": "Story",
+      "recap": "the unmasking - Saberinne revealed",
+      "text": "Time resumes.##\n\nThe armor seems to breathe, then to recede, drawing back\ninto itself until it is gone, and what it reveals\nis a woman who has no equivalent in anything\nyou have seen before or will see again.##\n\nShe is beautiful in a way that has no relation to age,\nbecause age has not touched her.# Not young, not old,\nbut $Woutside of time$C entirely, as if time long ago decided\nit could not find the purchase on her that it finds\non everyone else and moved on without her.#\nHer face is the face of something ancient that has remained\ncompletely itself.##\n\nBlonde curls fall around her face and down her back,\nspilling over the white dress that reveals a perfect figure.#\nHer eyes are the color of the sea at a depth where the sun\nstill reaches, green and clear and containing\na great warmth and an even greater strength.##\n\nShe looks at you with those eyes and she smiles.\n$C##\n\n$G\"I am Saberinne\"$C she says,\nand projects that warmth directly into your mind.##\n\nYou know her voice.##\n\n$c<<I know it.# I have been hearing it since Ayonn,\nin dreams, at the edge of sleep,\nbetween one breath and the next in the dark.#\nI know this voice.# I found her.>>$C##",
+      "childid": 5
+    },
+    {
+      "id": 5,
+      "type": "Dialogue",
+      "recap": "companions recover - Saberinne leads everyone to the terrace - revelations begin",
+      "dialogues": [
+        {
+          "actor": "Saberinne",
+          "precomment": "Your companions, you discover, were behind you the whole time\nand noticed nothing of the duel.# They are still recovering\nfrom the general stupor of the arrival, looking around\nthe hall in varying states of wonder.##\n\nEfeliah recovers first.# She looks at Saberinne\nand does something you have never seen her do:\nshe goes to her knees, bowing her head.# Smiurl drops\nbeside her without hesitation, his skin flooding a reverent blue-violet.#\nTheo and Corolla stay on their feet, staring.##\n\nSaberinne looks at Efeliah with a warmth that is also a correction.",
+          "line": "Rise.# I am not what you think.#\nI am a human being, the same as you.",
+          "comment": "She says it without vanity and without false modesty.##"
+        },
+        {
+          "actor": "Saberinne",
+          "line": "Come. Follow me out to the terrace.#\nI believe I owe you a great many explanations.",
+          "comment": "She turns toward the northern entrance,\nand they follow her down a corridor of equal splendor,\nfrescoed ceilings, marble walls, tall bright windows\nthat pour oblique light across the floor.##\n\nYou and Saberinne walk ahead of the others, and you look\nat each other, and she looks back at you,\nand whatever passes between your minds in that moment\nis entirely beyond even Efeliah's perception.##"
+        },
+        {
+          "actor": "Saberinne",
+          "precomment": "The corridor opens onto a wide covered terrace, pergola-style,\nframed by climbing plants that must be tended with enormous care,\nthe whole structure inclining just slightly toward the liberty style.\nA small table is already set.# Servants bring refreshments.\nThey are two young people who smile easily and bow at Saberinne.",
+          "line": "I do not permit slavery in this city.#\nService in the palace is considered a privilege,\nand given freely.",
+          "comment": "She says it briefly, because it is simply how things are.##\n\nThey sit.# Saberinne watches them eat with the expression\nof someone reading a very interesting page,\nand then her attention settles on Kriss,\nchinning her hand, something warm and intent in her face.##"
+        },
+        {
+          "actor": "Saberinne",
+          "precomment": "When they have eaten, she begins.",
+          "line": "Kriss, I perceived your presence from the day\nyou arrived on Noi-Hert, born from the deepest fiber\nof our universe.# I knew of your coming.# It was prophesied.\nAnd even had it not been, all of this would have happened anyway.",
+          "comment": ""
+        },
+        {
+          "actor": "Saberinne",
+          "line": "You come from a parallel universe.#\nYou did not travel through your own space or time.\nWhat made the crossing possible was two things:\nthe lightning that struck near you, in an unusual storm\nthat altered the energetic parameters of your surroundings,\nand, more importantly, your own mind.##\n\nAs you can all see, my mind is well outside the common.#\nNo one else on this planet could have perceived Kriss's arrival\nfrom such a distance. And no one else could have sustained\na city like this in a world in full decay.",
+          "comment": "She pauses and looks at Kriss.##"
+        },
+        {
+          "actor": "Saberinne",
+          "line": "When the lightning caught you, your mind placed\nour two universes in contact, unconsciously.#\nBecause this universe, as you were told at Seer's Rock,\nhas additional dimensions: they enable the exchange\nbetween minds, and they permit the rarest minds\nto alter the reality of ordinary physical law.##\n\nYours is one of those minds.",
+          "comment": "Efeliah makes a small, involuntary sound.#\n\n$g<<The structures.# The ones I always perceived\nbut could not name.>>$C##"
+        },
+        {
+          "actor": "Saberinne",
+          "line": "Exactly.# You would call it, somewhat imprecisely, telekinesis.\nThose neural circuits were unused in your life before this,\nbecause they were genuinely useless in your universe.\nWhen you arrived here, the energy of your mind\nbegan pressing on them automatically.##\n\nThe night you saved Smiurl from the Sgozza-Buoi,\nEfeliah's emotional transmission overloaded\nyour mental equilibrium. It was like flooring a cold engine:\nyour mind ran hot and nearly damaged itself.#\nBut that event was crucial. From that evening,\nthe pathway was unlocked.##\n\nThen the door in the underwater cell.#\nAnd from that moment, hour by hour, day by day,\nyour potential grew enormously.#\nI could move a mountain now, if I wanted to.\nDo you believe me?",
+          "comment": "She smiles at his expression.##"
+        },
+        {
+          "actor": "Saberinne",
+          "line": "I knew the Master.",
+          "comment": "A pause for all of them to absorb this.##"
+        },
+        {
+          "actor": "Kriss",
+          "line": "Wait.# The legend.# The one Elder Long told us,\nabout the Master dreaming of a golden goddess\nwho told him to expect us.",
+          "comment": ""
+        },
+        {
+          "actor": "Saberinne",
+          "precomment": "She tilts her head, genuinely surprised.",
+          "line": "That I did not know.# I transmitted to him what knowledge\nI could in the few years our meeting allowed.#\nYour community is the product of that encounter.#\nBut a dream predicting your arrival?#\nThat is something he built himself, it seems.#\nThe circumstances make it remarkable, I grant you.",
+          "comment": "A silence, everyone thinking.##"
+        },
+        {
+          "actor": "Saberinne",
+          "precomment": "Saberinne looks at the city through the terrace arch,\nat the walls, at the siege camp beyond them,\nand the warmth in her face becomes something else:\nsome ancient weight that lives below everything.##",
+          "line": "This city is my life.# It bears my name,\nand since it has lived, I have lived.#\nIf it were destroyed, it would mean destruction for my soul as well.##\n\nIt has no army.# It is part of our constitution.#\nOur isolation and our walls have always been sufficient.\nUntil now.# Dozens of Hordes have formed an alliance\nto take its resources, the only technological wealth left intact\nanywhere on this planet.##\n\nI cannot defend it alone.# But there may be another way.",
+          "comment": "She looks at you.",
+          "childid": 6
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "type": "Dialogue",
+      "recap": "Saberinne explains the mind-merge; then private time in the garden",
+      "dialogues": [
+        {
+          "actor": "Saberinne",
+          "precomment": "She leads them down the terrace stairs into the gardens:\nfountains, flowers, trees bending in the warm breeze.\nShe walks barefoot on the grass.##",
+          "line": "Two minds joined at their fullest depth.\nNot communication.# More than that.#\nNot memory-sharing.# More than that.##\n\nIf our minds can truly fuse into a single entity,\nits power would multiply beyond anything either of us\ncould achieve alone.# It could reach every mind\nin that army simultaneously and simply... stop them.##\n\nBut I first need to understand something\nI have been considering since the moment you arrived here.",
+          "comment": ""
+        },
+        {
+          "actor": "Saberinne",
+          "line": "Kriss, I would like to speak with you privately.",
+          "comment": "She says it without apology, because she does not need any.##\n\n$c<<I would not refuse for anything in the world.>>$C##"
+        },
+        {
+          "actor": "Corolla",
+          "precomment": "The others exchange glances.# Corolla opens her mouth,\nthen closes it, something in Saberinne's expression\nnot quite an instruction but carrying the weight of one.##",
+          "line": "We'll be by the fountain.",
+          "comment": "She says it flatly.# Efeliah respectfully withdraws\neven her mental presence.##"
+        },
+        {
+          "actor": "Saberinne",
+          "precomment": "Saberinne leads you through the gardens to a hedge maze,\nalong passages of perfect green, until the passages open\ninto a small clearing at the center: a stone bench,\na fountain playing quietly, flowers growing close to the water.##\n\nYou sit.# Your mind and heart feel as if they will crack open.\nSo many thoughts, so many emotions pressing at once\nthat no word can form.##\n\nShe raises one finger to her lips, smiling.",
+          "line": "Don't say anything.",
+          "istelepathy": true,
+          "comment": "She says it softly, into your mind.##\n\nAnd so you don't.##\n\nYou sit facing each other, and your eyes find hers,\nand what happens then is not conversation, not in any form\nyou have a name for.# You are looking directly\ninto each other's minds, past every surface,\nand what is there is... exact.# Perfectly complementary.\nTwo things that were built to find each other.##\n\nNo words. No images.# The language is emotion itself.#\nEvery neuron you have vibrating in time with every thought she has.\nYou can feel her breathing on your face,\ncounting the molecules of air between you in time\nthat stretches like honey.# Her hands find yours,\nmeeting in the middle.##\n\nYou could stay here for an eternity.# You both know this.\nThe want is very strong.##\n\nA single bird, alone in the sky above the hedge, sings.##",
+          "childid": 7
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "type": "Story",
+      "recap": "return to the others - soulmate reveal - Corolla's reaction",
+      "text": "You walk back to the others in the late afternoon,\nyour arm through hers.##\n\nSaberinne takes her leave with the composure she carries\nin everything, though she holds your gaze a half-second longer\nthan she holds anyone else's, a farewell\nthat only you can read.##\n\nThe moment she is gone, Corolla says, loudly,\nwithout the smallest concern about being overheard:#\n\n$R\"What in the world did she say to you for all that time?!\"$C##\n\n$c<<Nothing.# We did not exchange a single word.>>$C##\n\n$CAn uncomfortable silence.# Then Efeliah comes forward,\nher face carrying something between concern and wonder.##\n\n$g\"Kriss... Something has changed in you.# Profoundly.\nI almost don't recognize you...\"$C##\n\n$Y\"Are you alright?\"$C Smiurl asks, looking from Ef to you,\nalready anxious at the others' expressions.##\n\n$B\"I believe so,\"$C says Theo, without turning from the window\nwhere he has been watching the garden.# The others look at him,\nnot understanding.# Finally you speak.##\n\n$c\"Do you know the concept of kindred souls?\"$C##\n\nEfeliah explains it to the others.##\n\n$c\"I stopped believing in things like that as a child.#\nThe facts have now shown me I was wrong.##\n\n\"My mind and Saberinne's are perfectly complementary.\nThey can merge into a single entity without resistance...\"$C##\n\n$g\"In the garden, you were exchanging thoughts.#\nLooking into each other's minds.\"$C Ef says.##\n\n$c\"Yes.\"$C##\n\n$R\"Are you certain?\"$C asks Corolla, sharp.##\n\n$c\"Yes.\"$C##\n\n$g\"He's not telling us everything,\"$C Ef thinks, then catches herself,\nthen looks up to find you watching her.##\n\n$g\"How did you...\"$C##\n\n$c\"I heard you.# Only Saberinne has ever been able\nto see past your screens before, hasn't she?\"$C##\n\nEfeliah stares at you, stunned.##\n\n$c\"We are one thing now.# Two faces of the same coin.\nMy life is hers, her city is mine,\nand our hearts have become a single heartbeat...\"$C##\n\nCorolla drops onto the edge of the nearest bed\nand stares at the ceiling.##\n\n$R\"What has happened to you...\"$C she murmurs,\nhalf to herself.##\n\n$c\"Nothing bad.# I promise you that.\"$C\nYou put a hand on her shoulder.#\n$c\"You are still my best friends.\nThe finest companions anyone has ever had.##\n\n\"But my life is now bound to Saberinne's.\nIn every place, in every time.\"$C##",
+      "childid": 8
+    },
+    {
+      "id": 8,
+      "type": "Story",
+      "recap": "night falls - Saberinne brings them to their quarters",
+      "text": "With that, you each retire to your rooms.##\n\nSaberinne has arranged everything: palatial quarters,\nwarm water, clean clothes, a quiet that is not\nthe quiet of a besieged city but the quiet of one\nthat has decided, at some depth, that it will survive the morning.##\n\nYou wash, change, and for a long time stand at the window\nlooking out over the gardens in the last of the light,\nover the walls, over the camp fires of the army\nthat has no idea what is waiting for it.##\n\n$c<<Tomorrow.>>$C##\n\nYou turn from the window and go to meet the others for dinner.##",
+      "islast": true
+    }
+  ]
+}

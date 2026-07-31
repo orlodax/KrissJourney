@@ -1,0 +1,628 @@
+{
+  "id": 12,
+  "title": "AYONN",
+  "nodes": [
+    {
+      "id": 1,
+      "type": "Story",
+      "recap": "waking in force-field cell",
+      "text": "-------------------------------\n|          CHAPTER 12          |\n-------------------------------\n\n\n##You wake to the hum.##\n\nA low, electric drone that vibrates through the floor, through the walls,\nthrough the bones of your skull.# It is the first thing you are aware of, before the pain,\nbefore the cold, before the memory of what happened.##\n\nYou are lying on your side on a smooth metal floor, your mouth tasting of copper and ozone,\nyour head feeling like it has been split open and reassembled by someone who did not care\nabout the instruction manual.##\n\n$c<<Ow.>>#\n\n$CYou open your eyes.##\n\nGray. Everything is gray. Gray walls, gray ceiling, a narrow rectangular space,#\nperhaps three meters by two, lit by a strip of sickly white light recessed into the ceiling.#\nNo windows, no furniture. Just the floor, the walls, and you.##",
+      "childid": 12
+    },
+    {
+      "id": 12,
+      "type": "Story",
+      "recap": "seeing the barrier",
+      "text": "You sit up slowly, every muscle protesting, and that is when you see the barrier.##\n\nWhere a door should be, there is...# nothing. An opening.#\nBut the air in that opening $mshimmers$C, a faint translucent curtain of rippling light,\nlike heat haze made solid.# You reach toward it instinctively and...#\n\n$WPAIN.$C#\n\nA jolt of pure agony shoots up your arm, locking every muscle from wrist to shoulder,#\nand you stumble backward, gasping, cradling your hand against your chest.##\n\n$c<<Force field. I'm behind a force field. In a cell.>>#\n\n$CThe last thing you remember is the golden shield...# collapsing?##\nThe vertigo, the blackness.# And before that, someone carrying you, drab streets, blank faces...##\n\n$c<<They caught us.>>$C",
+      "childid": 2
+    },
+    {
+      "id": 2,
+      "type": "Dialogue",
+      "recap": "cell conversations with party",
+      "dialogues": [
+        {
+          "actor": "Smiurl",
+          "precomment": "You drag yourself to the barrier and peer through the shimmer.#\nThe corridor beyond is narrow and featureless, lined with identical cells on both sides.",
+          "line": "KRISS!# Kriss, you're awake! Oh thank the stars you're awake!#\nI thought you were dead! You were so still! You wouldn't move and I kept calling and calling...",
+          "comment": "\nSmiurl's voice, high and frantic, hits you from one of the cells directly across from yours.#\nYou can see him pressed against his own barrier, careful not to touch it,\nhis skin flickering a rapid, panicked amber."
+        },
+        {
+          "actor": "Kriss",
+          "line": "I'm okay, Smiurl. I'm okay.",
+          "comment": "You are not okay, but he does not need to know that."
+        },
+        {
+          "actor": "Corolla",
+          "precomment": "From the cell beside Smiurl's, Corolla's voice cuts through like a blade.",
+          "line": "About time.# We've been stuck in these boxes for hours.#\nThey took our weapons. They took $Weverything$R.",
+          "comment": "\nHer voice is controlled, but you can hear the fury simmering beneath every syllable.#\nShe is pacing, three steps forward, three steps back, a caged predator."
+        },
+        {
+          "actor": "Corolla",
+          "line": "But when I get my hands free, I swear on my father's grave...",
+          "comment": "\nShe stops herself, her jaw tightening. She does not finish the sentence.",
+          "break": true
+        },
+        {
+          "actor": "Math",
+          "precomment": "A voice comes from the cell on your left.",
+          "line": "The shield... drained us. Efeliah and I.# Our minds are...# quiet.",
+          "comment": "Math sounds like he has aged ten years."
+        },
+        {
+          "actor": "Math",
+          "line": "I cannot reach beyond these walls. Not yet. I need time to recover."
+        },
+        {
+          "actor": "Efeliah",
+          "precomment": "Efeliah must be in the other cell beside yours.# You cannot see her directly;\nher mind voice reaches you, thin and strained, like silk stretched to its limit.",
+          "line": "There are minds here. So many minds.# But they are... dim.#\nSmothered, like candle flames under glass.",
+          "istelepathy": true
+        },
+        {
+          "actor": "Kriss",
+          "precomment": "You look to the cell beside Smiurl's, opposite from Corolla's.# Theo.\n\nHe is sitting in front of the barrier, legs and arms folded,#\nhis massive frame perfectly still, his eyes fixed.#\n\nHe has not said a word.",
+          "line": "Theo? You alright?",
+          "comment": "He does not answer. He does not even look at you.#\nHis eyes are moving, slowly, methodically, following something you cannot see.#\n\nWhatever he's doing, he's clearly up to something.",
+          "childid": 3
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "type": "Story",
+      "recap": "guard patrol observation",
+      "text": "Time passes.# You have no way to measure it: minutes or hours swallowed by the hum and the bleached light.##\n\nAnd then you hear it.# Footsteps.##\n\nSlow and metronomic, soon enough a figure rounds the corner of the corridor.##\n\nA guard. A woman, perhaps thirty, in a grayish uniform that hangs loose on her frame.#\nHer face...## blank.##\n\nEmpty. Wiped clean.# Her eyes are open, but there is no one behind them.#\nAcross her forehead, a thin $Wmetal headband$C, its surface dull and featureless,\nexcept for two small nodes at the temples that pulse with a faint, rhythmic light.##",
+      "childid": 13
+    },
+    {
+      "id": 13,
+      "type": "Story",
+      "recap": "guard scans corridor",
+      "text": "She walks the corridor slowly, methodically, her eyes sweeping each cell\nwith the precision of a security camera, but there is no recognition in them,#\nno curiosity, no threat assessment, just the flat, mechanical scan of a machine\nperforming a routine.##\n\nShe passes your cell. Your eyes meet.##\n\nNothing. Less than nothing.# You have looked into the eyes of animals with way more presence.#\n\nYou wonder if there is a person in there...## still.##\n\nShe continues to the end of the corridor, turns with mechanical precision,#\nand walks back the way she came. Gone.##",
+      "childid": 14
+    },
+    {
+      "id": 14,
+      "type": "Story",
+      "recap": "Efeliah senses static minds",
+      "text": "Silence returns, and the hum fills the void.##\n\n$g<<There is a mind in there. I can feel the outline of it.#\nBut the inside is...# static. White noise where a person should be.>>$C#\n\nEfeliah's telepathic voice cracks.#\n\n$g<<Every one of them. Every guard, every patrol, all of them still in there.#\nAnd no one can hear them.>>$C##\n\nYou look at Theo.##\n\nFor the first time since you woke up, his expression has changed.#\nHis jaw is set, his eyes are hard, and the calm, patient observation\nhas been replaced by something colder.###\n\nSteeled determination.",
+      "childid": 4
+    },
+    {
+      "id": 4,
+      "type": "Story",
+      "recap": "Theo acts without a word",
+      "text": "Then Theo moves.##\n\nNo word.# No warning.# He rises and sets himself at the edge of his barrier,#\nhis right arm drawn back, his eyes fixed on the mouth of the corridor.##\n\n$Y\"Theo?# Theo, what are you...\"$C# Smiurl's voice climbs toward panic.##\n\nCorolla is already at the front of her cell, gripping the doorframe, knuckles white.#\nShe has understood.# You can see it in her face,# and you can see that she knows\nthere is no stopping him now.##\n\n$c<<Theo, whatever this is...>>##\n\n$CFootsteps.###\n\nDistant, then not: the mechanical drumbeat of a single pair of boots.# Closer.# Closer.",
+      "childid": 6
+    },
+    {
+      "id": 6,
+      "type": "Story",
+      "recap": "Theo breaks them out",
+      "text": "The guard rounds the corner.##\n\nA man this time, broad-shouldered, slack-jawed, dead-eyed, the headband pulsing\nat his temples.# He carries a short metal baton at his hip, his footsteps\nperfectly even, mechanical, unstoppable.##\n\nHe passes Smiurl's cell, Corolla's, yours.# He reaches Theo's.##\n\nTheo $Wmoves$C.###\n\nOne arm punches THROUGH the barrier!##",
+      "childid": 15
+    },
+    {
+      "id": 15,
+      "type": "Story",
+      "recap": "Theo overloads the barrier",
+      "text": "The sound that comes out of Theo is not human, a roar ripped from somewhere\ndeeper than the lungs, deeper than the chest, a sound of pure, burning, defiant agony\nas the force field tears into his flesh.##\n\nHis hand closes around the guard's throat.##\n\nThe guard does not react, does not flinch, does not scream.#\nHis dead eyes stare at Theo as if observing a mildly unusual weather pattern.##\n\nAnd Theo does not pull him out.# He drives him $Win$C.###\n\nWith one savage heave he hauls the guard bodily into the barrier,#\nforcing a whole living body into a field built to turn back a fingertip.##\n\n$WLIGHT.$C###",
+      "childid": 16
+    },
+    {
+      "id": 16,
+      "type": "Story",
+      "recap": "barriers collapse",
+      "text": "A blinding arc of electricity erupts from the point of contact, blue-white fire\nscreaming through the conduit, branching like lightning, following every seam,\nevery groove, racing through the walls, the ceiling, the floor.##\n\nEvery barrier in the corridor $Wshrieks$C, a sound like tearing metal,\nlike a thousand tuning forks shattering at once, and the shimmering curtains\nflicker, spasm, and die.##\n\nBut Theo does not let go.##\n\nThe current is flowing $Wthrough$C him. You can see it.#\nHis entire body is rigid, every muscle locked, his teeth bared, his eyes wide and white,#\nblue sparks dancing across his skin, his hair standing on end.##",
+      "childid": 17
+    },
+    {
+      "id": 17,
+      "type": "Story",
+      "recap": "conduit explodes",
+      "text": "His arm is still through the space where the barrier was, his hand still clamped\naround the guard's throat. The guard has gone limp, and the headband is glowing\ncherry-red.##\n\n$c\"LET GO!# THEO, LET GO!\"$C#\n\nHe can't. The current has him, and his muscles are not his own.##\n\nAnd then, with a sound like a gunshot, the conduit blows.##\n\nDarkness, absolute, as the ceiling light dies with the barriers.##\n\nA heavy thud, then another...# then silence.###\n\nThe hum is gone.",
+      "childid": 7
+    },
+    {
+      "id": 7,
+      "type": "Story",
+      "recap": "Theo recovers",
+      "text": "Emergency lighting flickers on, dim red, barely enough to see.##\n\nYou are on your feet before you know it, stumbling through the dead barrier frame,#\nyour bare feet hitting cold corridor metal.# Theo is lying face-down on the floor,#\nand the guard is crumpled against the far wall, motionless.##\n\nYou drop to your knees beside Theo.#\n\n$c\"Theo!\"$C#\n\nHis skin is hot. Not warm. $WHot$C, like touching a radiator,#\nand the smell of singed hair fills the corridor.# Black marks trace branching lines\nup his forearm, across his shoulder, like a diagram of the current's path\nburned into his flesh.##",
+      "childid": 18
+    },
+    {
+      "id": 18,
+      "type": "Story",
+      "recap": "checking Theo's pulse",
+      "text": "He is not moving.##\n\nCorolla is beside you in an instant, her hands steady as she presses\ntwo fingers to his throat. Her face says everything her mouth will not.##\n\nOne second.# Two.# Three.###\n\n$R\"Pulse.\"$C#\n\nShe breathes the word like a prayer.##\n\nSmiurl makes a sound that is half sob, half laugh, his skin flooding\nwith golden light, bright enough to cast shadows in the red-lit corridor.##\n\nTheo's eyes open. He blinks, once, twice, looks up at the cluster of faces\nabove him, and his lips crack into the faintest ghost of a smile.##\n\n$B\"Why the long face.\"$C##\n\nCorolla echoes Smiurl with a noise somewhere between a laugh and a sob,#\nand punches him in the shoulder. Hard.##\n\n$R\"Don't you $Wever$R do that again.\"$C#\n\nHer eyes are bright, and she turns away before anyone can see them clearly.",
+      "childid": 19
+    },
+    {
+      "id": 19,
+      "type": "Story",
+      "recap": "Theo wakes up",
+      "text": "Math emerges from his cell, leaning heavily against the doorframe,#\nand Efeliah follows, one hand on the wall for support.#\nShe looks at Theo and closes her eyes.##\n\n$c\"You beautiful, stubborn, impossible absolute unit of a man!\"$C# you exclaim, a grin ear to ear.#\n\nTheo sits up, winces, and looks at the burn marks on his arm\nwith detached curiosity.##\n\n$B\"Could have been worse.\"$C##\n\n$c\"He just electrocuted himself on purpose and his review is\n'could have been worse.'# I will never understand this man.\"#\n\n$CThe corridor stretches ahead of you, dim and silent under the emergency lights.#\nThe barriers are dead, your cells are open, but you are still deep inside whatever\nthis building is, and somewhere beyond the heavy door at the far end of the corridor\nthere are more cells, more prisoners, more people buried alive behind static and silence.",
+      "childid": 8
+    },
+    {
+      "id": 8,
+      "type": "Action",
+      "recap": "explore the prison corridor",
+      "text": "You help Theo to his feet. He sways once, steadies, and stands,#\nand the group moves cautiously down the corridor under the dim red emergency lights,#\nthe downed guard slumped against the wall behind you.#\n\nAhead, the corridor widens into a larger cellblock.#\nMore cells line both walls, their barriers still $Mactive$C, still humming,#\nfed by a different circuit than the one Theo destroyed, and behind the shimmering\ncurtains you can see figures, motionless, staring.##\n\nA metal storage alcove is set into the left wall, and the corridor terminates\nat a heavy sealed door with a control panel beside it.\n\n\n$D[Type an action at the prompt. Press TAB for help.]$C",
+      "actions": [
+        {
+          "verbs": [
+            "search",
+            "look",
+            "examine",
+            "inspect"
+          ],
+          "answer": "The cellblock stretches before you under red emergency light.\nActive barriers hum in cells on both sides.\nThere is a storage alcove to the left, a control panel by the far door,\nand the downed guard behind you.",
+          "objects": [
+            {
+              "objs": [
+                "cell",
+                "cells",
+                "room",
+                "rooms",
+                "barrier",
+                "barriers",
+                "figures",
+                "people",
+                "prisoners",
+                "men"
+              ],
+              "answer": "Behind the active barriers, figures sit or stand in perfect stillness,\nmen and women, young and old, each wearing a metal headband, each staring at nothing.\nOne woman is mouthing words silently, over and over,\nlike a prayer no one taught her to forget."
+            },
+            {
+              "objs": [
+                "corridor",
+                "hallway",
+                "hall",
+                "wall",
+                "walls",
+                "conduit",
+                "groove",
+                "grooves",
+                "door"
+              ],
+              "answer": "You trace the corridor walls carefully.\nThe same metal conduit grooves run here, but these connect to a separate circuit:\na control panel mounted beside the sealed door at the far end.\nIt has a row of switches and a status display still glowing faint green.",
+              "effect": {
+                "gainitem": "foundPanel"
+              }
+            },
+            {
+              "objs": [
+                "panel",
+                "console",
+                "controls",
+                "switch",
+                "switches",
+                "display"
+              ],
+              "answer": "The panel is simple, military-functional.\nA row of heavy switches labeled in faded text you cannot read,\nand a central override lever marked in red.\nThe status display shows a grid of cell numbers, each glowing green. Active. All of them.",
+              "condition": {
+                "item": "foundPanel",
+                "refusal": "I should look around more carefully first. There has to be a way to control these barriers."
+              }
+            },
+            {
+              "objs": [
+                "guard",
+                "body",
+                "soldier"
+              ],
+              "answer": "The guard is unconscious, slumped at an awkward angle.\nThe headband on his forehead is cracked, its temple nodes dark and dead.\nBeneath it, the skin is red and blistered.\nUp close, his face looks... younger than you thought. Softer.\nAs if something has relaxed in the muscles now that the signal is gone."
+            },
+            {
+              "objs": [
+                "headband",
+                "band"
+              ],
+              "answer": "You examine the cracked headband on the guard's forehead.\nIt is warm to the touch, lightweight, with two small nodes at the temples\nconnected by a thin metal strip.\nThe craftsmanship is ancient: precise but worn.\nA tiny crystal is set into each node, one of them fractured from the surge."
+            },
+            {
+              "objs": [
+                "alcove",
+                "supplies",
+                "storage",
+                "shelf",
+                "shelves",
+                "crate",
+                "crates"
+              ],
+              "answer": "The storage alcove contains standard-issue equipment: gray uniforms, restraint bands,\nand, buried under a pile of confiscated belongings, a medical kit.\nOld but intact, with bandages, salve, and a vial of something that smells sharply antiseptic.",
+              "effect": {
+                "gainitem": "medkit"
+              }
+            },
+            {
+              "objs": [
+                "door"
+              ],
+              "answer": "The door is solid metal, sealed shut.\nA heavy-duty mechanism that will not yield to force.\nThe control panel beside it seems to govern both the cell barriers and the door lock."
+            }
+          ]
+        },
+        {
+          "verbs": [
+            "use",
+            "activate",
+            "press",
+            "flip",
+            "disable",
+            "pull"
+          ],
+          "answer": "You are not sure what to use, or on what.",
+          "objects": [
+            {
+              "objs": [
+                "panel",
+                "console",
+                "controls",
+                "switch",
+                "switches",
+                "override",
+                "lever"
+              ],
+              "answer": "You grip the red override lever and pull. It resists for a moment, then gives.\n\nThe effect is immediate. Every barrier in the cellblock dies at once,\nthe shimmer collapsing like a held breath finally released.\nThe status display flickers from green to dark, cell by cell, like stars going out.\nThe sealed door at the far end clicks and swings ajar.\n\nThe hum is gone. Replaced by something almost worse: silence.\nAnd then, slowly, the sound of people stirring\nwho have not moved of their own will in a very long time.",
+              "condition": {
+                "item": "foundPanel",
+                "refusal": "I need to find whatever controls these barriers first."
+              },
+              "effect": {
+                "gainitem": "fieldsDown"
+              }
+            },
+            {
+              "objs": [
+                "medkit",
+                "kit",
+                "medicine",
+                "bandages",
+                "bandage",
+                "salve",
+                "antiseptic"
+              ],
+              "condition": {
+                "item": "medkit",
+                "refusal": "I have nothing to treat that with.# I would need to find a kit first."
+              },
+              "answer": "You dig the medical kit out and set to work on Theo's arm.\nHe watches you do it with the mild interest of a man observing\nsomeone else's hobby, and offers no reaction as you clean\nthe branching burns and wind the bandage tight.\n\n$B\"You missed a spot.\"$y# He says it when you finish. He did not.\n\nIt will not undo what the current did to him, but the salve draws\nthe worst of the heat from the wound, and the bandage will hold.\nIt is something."
+            }
+          ]
+        },
+        {
+          "verbs": [
+            "treat",
+            "heal",
+            "bandage",
+            "tend",
+            "dress",
+            "patch",
+            "cure",
+            "medicate"
+          ],
+          "answer": "There is no time for careful work, but Theo's burned arm is the worst of it.",
+          "objects": [
+            {
+              "objs": [
+                "theo",
+                "arm",
+                "burn",
+                "burns",
+                "wound",
+                "wounds",
+                "him"
+              ],
+              "condition": {
+                "item": "medkit",
+                "refusal": "I have nothing to treat that with.# I would need to find a kit first."
+              },
+              "answer": "You dig the medical kit out and set to work on Theo's arm.\nHe watches you do it with the mild interest of a man observing\nsomeone else's hobby, and offers no reaction as you clean\nthe branching burns and wind the bandage tight.\n\n$B\"You missed a spot.\"$y# He says it when you finish. He did not.\n\nIt will not undo what the current did to him, but the salve draws\nthe worst of the heat from the wound, and the bandage will hold.\nIt is something."
+            }
+          ]
+        },
+        {
+          "verbs": [
+            "open",
+            "free",
+            "release",
+            "help",
+            "rescue"
+          ],
+          "answer": "You want to help, but you need to figure out how first.",
+          "objects": [
+            {
+              "objs": [
+                "prisoners",
+                "people",
+                "cells",
+                "cell",
+                "door"
+              ],
+              "condition": {
+                "item": "fieldsDown",
+                "refusal": "The barriers are still active. I need to find a way to shut them down first."
+              },
+              "childid": 9
+            }
+          ]
+        },
+        {
+          "verbs": [
+            "talk",
+            "speak",
+            "ask",
+            "call",
+            "shout",
+            "yell"
+          ],
+          "answer": "Nobody here is in any state to talk.",
+          "objects": [
+            {
+              "objs": [
+                "prisoners",
+                "people",
+                "figures"
+              ],
+              "answer": "You call out to the figures behind the barriers. Nothing. Not a flinch. Not a blink.\nOne man's lips are moving, but no sound comes out.\nTheir eyes pass over you as if you are furniture."
+            },
+            {
+              "objs": [
+                "guard",
+                "body",
+                "soldier"
+              ],
+              "answer": "The guard is unconscious. He does not respond."
+            }
+          ]
+        },
+        {
+          "verbs": [
+            "take",
+            "grab",
+            "pick"
+          ],
+          "answer": "You look around, but nothing useful catches your eye to take.",
+          "objects": [
+            {
+              "objs": [
+                "weapon",
+                "baton",
+                "prod",
+                "stick"
+              ],
+              "answer": "You take the guard's baton. It is heavier than it looks: solid metal with a rubberized grip. Not a sword, but better than bare hands.",
+              "effect": {
+                "gainitem": "guardBaton"
+              }
+            },
+            {
+              "objs": [
+                "headband",
+                "band"
+              ],
+              "answer": "You pry the cracked headband from the guard's forehead and pocket it.\nThe crystal nodes are dark. Dead technology, for now.\nBut Math might want to examine it."
+            },
+            {
+              "objs": [
+                "supplies",
+                "kit",
+                "medkit",
+                "medicine",
+                "bandages"
+              ],
+              "answer": "You grab the medical kit from the storage alcove. Old but intact, with bandages, salve, and antiseptic.",
+              "effect": {
+                "gainitem": "medkit"
+              }
+            }
+          ]
+        },
+        {
+          "verbs": [
+            "go",
+            "walk",
+            "move",
+            "leave",
+            "proceed",
+            "advance"
+          ],
+          "answer": "Where? The only way forward is through the sealed door at the end.",
+          "objects": [
+            {
+              "objs": [
+                "corridor",
+                "forward",
+                "ahead",
+                "deeper",
+                "door",
+                "out"
+              ],
+              "condition": {
+                "item": "fieldsDown",
+                "refusal": "I am not leaving these people behind those barriers."
+              },
+              "childid": 9
+            }
+          ]
+        },
+        {
+          "verbs": [
+            "wait"
+          ],
+          "answer": "You stand in the dim red light, listening to the hum of active barriers\nand the sound of your own breathing.\nSomewhere deeper in the complex, something mechanical clicks at regular intervals.\nTime is not on your side."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "type": "Dialogue",
+      "recap": "meeting Riff",
+      "dialogues": [
+        {
+          "actor": "Riff",
+          "precomment": "The freed prisoners stir like sleepwalkers. Most sit where they are,#\nblinking, confused, the headbands dark and lifeless on their foreheads.#\nSome pull at the bands with trembling hands, others simply stare.##\n\nBut one figure stands.##\n\nHe is wiry, medium height, with close-cropped hair and a jaw-length scar\nthat pulls the left side of his mouth into a permanent half-grimace.#\nHis eyes are sharp and alert, and $Whe is not wearing a headband.$C##\n\nHe steps out of his cell and looks at your group with the expression of a man\nwho has been waiting for something impossible and just watched it walk through the door.",
+          "line": "You.# You brought the barrier down.",
+          "comment": "His voice is rough, cracked from disuse, but underneath the rasp\nthere is something fierce, something unbroken."
+        },
+        {
+          "actor": "Kriss",
+          "line": "That was mostly him.",
+          "comment": "You gesture at Theo, who is leaning against the wall,#\ncradling his burned arm with quiet stoicism."
+        },
+        {
+          "actor": "Riff",
+          "precomment": "The man looks at Theo, taking in the burn marks, the size of him,\nthe fact that he is standing at all.",
+          "line": "Then he has my respect. And my thanks.",
+          "comment": "He turns back to you and studies your face."
+        },
+        {
+          "actor": "Riff",
+          "line": "My name is Riff.# I lead what is left of the resistance in this city,#\nor I did, before they caught me.",
+          "comment": "He gestures at the confused, stumbling figures around him.",
+          "break": true
+        },
+        {
+          "actor": "Riff",
+          "line": "These people were free once. Fighters, thinkers, anyone who would not bend.#\nJoe took them, put the bands on them, added them to his collection.",
+          "comment": "The bitterness in his voice could etch glass."
+        },
+        {
+          "actor": "Corolla",
+          "line": "How many of you are left? Uncontrolled?",
+          "comment": "Corolla has her arms crossed, measuring Riff\nthe way she measures everything: quickly, thoroughly, and without apparent sentiment."
+        },
+        {
+          "actor": "Riff",
+          "line": "A handful, hidden in the service tunnels beneath the city.#\nWe have been fighting Joe for...# I have lost track. Months. Years, maybe.#\nHard to tell in a city where the sky is a lie.",
+          "comment": "He looks at the ceiling,\nas if he can see through it to the golden illusion above.",
+          "childid": 10
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "type": "Dialogue",
+      "recap": "Riff exposition about Joe and Projector",
+      "dialogues": [
+        {
+          "actor": "Kriss",
+          "line": "Who is Joe? What is he using to do all this?"
+        },
+        {
+          "actor": "Riff",
+          "precomment": "Riff's jaw tightens, and the scar pulls white.",
+          "line": "Joe.# Self-proclaimed Tyrant of Ayonn.# That is what he calls himself. Tyrant.#\nNot king, not leader.# $WTyrant$y, as if it is something to be proud of.",
+          "comment": "He spits the word like poison."
+        },
+        {
+          "actor": "Riff",
+          "line": "He controls the city through a machine, ancient technology.#\nIt sits in the Municipal building, that ugly tower in the center of the city,#\nand they call it the $WProjector$y.",
+          "break": true
+        },
+        {
+          "actor": "Riff",
+          "line": "The Projector does two things.# It generates the golden shield over the city,#\nthe illusion, the fear that keeps outsiders away.# And it generates the $Wsignal$y,#\nthe one that feeds those headbands, the one that erases people.",
+          "comment": "He taps his own bare forehead."
+        },
+        {
+          "actor": "Riff",
+          "line": "Control the Projector,# control the headbands.#\nControl the headbands,# control the city.#\nEvery guard, every soldier, every worker: all puppets.#\nOne man, pulling all the strings."
+        },
+        {
+          "actor": "Math",
+          "precomment": "Math has been listening with growing intensity,#\nhis bloodshot eyes suddenly alight with recognition.",
+          "line": "A psychic amplification machine...# The Projector...#\nThis is the Master's work.",
+          "comment": "His voice is barely a whisper, reverent and horrified in equal measure."
+        },
+        {
+          "actor": "Math",
+          "line": "The Memories speak of it, a device built to shield a community,#\nto project mental energy across great distances.#\nBut it was never meant for...# $Wthis$m.",
+          "comment": "He looks physically ill.",
+          "break": true
+        },
+        {
+          "actor": "Efeliah",
+          "precomment": "Efeliah has been sitting quietly, her hands pressed to her temples,#\nher breathing slow and deliberate, recovering.#\nWhen she speaks, her voice still uncertain, but present.",
+          "line": "If the Projector generates the signal...# then the Projector can end it.#\nThose minds are not destroyed. They are $Wsuppressed$g.#\nDisable the signal# and they wake up. All of them."
+        },
+        {
+          "actor": "Riff",
+          "line": "That is what we have been trying to do, for months.#\nBut the Municipal building is a fortress.#\nGuards on every floor,# and a door on the top level that no weapon can force open.#\nWe have thrown everything at it, every assault, every scheme, every suicide run.",
+          "comment": "He looks down at his hands.\nThey are shaking, not with fear, with exhaustion."
+        },
+        {
+          "actor": "Riff",
+          "line": "We lost good people.# A lot of good people.#\nAnd every one we didn't, Joe put a headband on and sent back against us.",
+          "comment": "His voice is steady. But his eyes are not."
+        },
+        {
+          "actor": "Corolla",
+          "precomment": "A heavy silence settles over the group.#\nCorolla breaks it.",
+          "line": "About that door.# There must be a way to open it or get past it.",
+          "break": true
+        },
+        {
+          "actor": "Riff",
+          "line": "Top floor of the Municipal building, before the Projector room.#\nThat door that has no lock, no handle, no mechanism.# Maybe it only opens to the $Wmind$y.#\nWe have tried explosives, battering rams, fire.# Nothing. It does not even scratch."
+        },
+        {
+          "actor": "Math",
+          "line": "A psi-lock.# It requires a psychic key.#\nA mind equipped with either the needed knowledge or sufficient strength, or both.",
+          "comment": "He looks at Efeliah, and she looks back."
+        },
+        {
+          "actor": "Efeliah",
+          "line": "We can do it. Together, when we have recovered.",
+          "comment": "She says it simply, as a fact, and Riff stares at her\nas if she has just promised to move the sun."
+        },
+        {
+          "actor": "Riff",
+          "precomment": "Riff looks at your group, really looks: the giant with the burned arm\nwho broke a force field with his bare hands, the dark-haired woman with murder in her eyes,\nthe two telepaths, drained but unbroken,#\nthe glowing dwarf who is somehow still here,# and you, a stranger from nowhere\nwho just happened to waltz through an impassable psychic shield.",
+          "line": "Who the hell are you people?",
+          "comment": "For the first time, something cracks in his composure.#\nNot despair, its opposite...##\n\nHope.",
+          "childid": 11
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "type": "Story",
+      "recap": "rebel safe house chapter end",
+      "text": "Riff leads you through maintenance corridors no map would show,#\nduct-lined passages behind walls, beneath floors, through the guts of a city\nthat was never designed for secrecy but has been made to serve it.##\n\nHe moves with the practiced ease of a man who knows every bolt, every hatch,#\nevery camera blind spot by heart, and the freed prisoners follow in a stumbling line,#\nsome supported by others, the headbands removed and discarded like dead insects.##\n\nThree turns, two ladders, one long tunnel through dripping darkness,#\nand you emerge into warmth.##",
+      "childid": 21
+    },
+    {
+      "id": 21,
+      "type": "Story",
+      "recap": "arrival at rebel hideout",
+      "text": "A wide, low-ceilinged room, underground, clearly.# Concrete walls hung\nwith salvaged blankets, mismatched furniture, a table covered in hand-drawn maps.#\nOil lanterns cast flickering orange light across the faces of a dozen people\nwho rise to their feet as Riff enters, their expressions shifting from alarm\nto disbelief to joy.##\n\nRebels. Survivors. The last free minds in Ayonn.##\n\nRiff grips the forearm of a woman who rushes forward, her eyes brimming.#\nHe squeezes once, nods, and that is all they need.##\n\nThe room comes alive.##",
+      "childid": 22
+    },
+    {
+      "id": 22,
+      "type": "Story",
+      "recap": "food and tending wounds",
+      "text": "Someone finds food, bread and dried meat and a thin, sharp broth\nthat warms you from the inside out.# You eat ravenously, barely tasting it,#\nand it is the best thing you have ever put in your mouth.##\n\nEfeliah sits beside Theo, her hands gentle on his burned arm, her brow furrowed\nin concentration as she channels what little psychic energy she has recovered\ninto easing the pain.# Theo watches her work with an expression of faint,\ngrudging gratitude.##\n\nIn the corner, Smiurl has attracted a small cluster of rebel children.##",
+      "childid": 23
+    },
+    {
+      "id": 23,
+      "type": "Story",
+      "recap": "children plans and memories",
+      "text": "His skin is cycling through soft, gentle colors, lavender, warm gold,\na shy seafoam green, and the children are reaching out to touch his arm,#\ngiggling, pulling their hands back and then reaching again.# He is telling them\nsomething, gesturing wildly, and they are rapt.# For a moment, in the orange\nlamplight, he is not afraid.##\n\nCorolla and Riff are bent over the map table, heads close together.#\nShe is pointing at something, and he is shaking his head. She insists.#\nHe pauses, looks at her with narrowed eyes, then nods, slowly.#\nSomething has just been decided.##\n\nMath sits apart, cross-legged, eyes closed, his lips moving silently,\nreciting, perhaps, the Master's Memories, drawing strength from ancient words\nagainst a very modern darkness.##",
+      "childid": 24
+    },
+    {
+      "id": 24,
+      "type": "Story",
+      "recap": "one free night",
+      "text": "You lean your back against the concrete wall.# The broth is warm in your belly,#\nthe lantern light is soft, and around you, people who were strangers an hour ago\nare sharing food, tending wounds, speaking in low voices.##\n\nTomorrow, you go to war against a tyrant and his machine.#\nTomorrow, you storm a fortress and break down a door that has no lock.#\nTomorrow, everything changes.##\n\nBut tonight, just for tonight, you are free.##\n\nYou close your eyes.##",
+      "islast": true
+    }
+  ]
+}

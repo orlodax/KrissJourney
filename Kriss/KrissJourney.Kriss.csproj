@@ -33,9 +33,31 @@
     <None Remove="Chapters\c9.json" />
     <None Remove="Chapters\c10.json" />
     <None Remove="Chapters\c11.json" />
+    <None Remove="Chapters\c12.json" />
+    <None Remove="Chapters\c13.json" />
+    <None Remove="Chapters\c14.json" />
+    <None Remove="Chapters\c15.json" />
+    <None Remove="Chapters\c16.json" />
+    <None Remove="Chapters\c17.json" />
+    <None Remove="Chapters\c18.json" />
+    <None Remove="Chapters\c19.json" />
+    <None Remove="Chapters\c20.json" />
+    <None Remove="Chapters\c21.json" />
+    <None Remove="Chapters\c22.json" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Chapters\c22.json" />
+    <EmbeddedResource Include="Chapters\c21.json" />
+    <EmbeddedResource Include="Chapters\c20.json" />
+    <EmbeddedResource Include="Chapters\c19.json" />
+    <EmbeddedResource Include="Chapters\c18.json" />
+    <EmbeddedResource Include="Chapters\c17.json" />
+    <EmbeddedResource Include="Chapters\c16.json" />
+    <EmbeddedResource Include="Chapters\c15.json" />
+    <EmbeddedResource Include="Chapters\c14.json" />
+    <EmbeddedResource Include="Chapters\c13.json" />
+    <EmbeddedResource Include="Chapters\c12.json" />
     <EmbeddedResource Include="Chapters\c11.json" />
     <EmbeddedResource Include="Chapters\c10.json" />
     <EmbeddedResource Include="Chapters\c9.json" />

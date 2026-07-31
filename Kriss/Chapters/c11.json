@@ -1,14 +1,205 @@
 {
-    "id": 11,
-    "title": "AYONN",
-    "nodes": [
+  "id": 11,
+  "title": "THE MANY-COLORED HUNT",
+  "nodes": [
+    {
+      "id": 1,
+      "type": "Dialogue",
+      "recap": "start ch11 the many-colored hunt",
+      "text": "-------------------------------\n|          CHAPTER 11          |\n-------------------------------\n\n",
+      "dialogues": [
         {
-            "id": 1,
-            "type": "Story",
-            "recap": "end of early access",
-            "text": "Well, you made it. You survived so far.##\n\nThank you for playing this early access version of Kriss' Journey.#\nI hope you enjoyed it so far and look forward to your feedback!#\nFind us on the Community Page, Discord and GitHub!#\nIf you want to support this game, please consider leaving a review,\nsharing the game with your friends,\nand donating.#\n\nThank you for your support, traveler!#\n\nAnd stay tuned for more content coming soon!#",
-            "childid": 1,
-            "isClosing": true
+          "actor": "Efeliah",
+          "precomment": "You are running.#\n\nEfeliah's voice in your mind is what set you all moving, and your legs have not stopped since.#\nInstinct.# The raw, animal certainty that something is very, very wrong.#\n\nSmiurl is ahead of you, scrambling over rocks with a nimbleness no human could match.\nCorolla is right behind you,# her breathing sharp and controlled.\nTheo brings up the rear, his heavy footsteps like muffled thunder.#\n\nMath is half-guiding, half-pulling Efeliah as she runs with her eyes wide open,#\nstaring at something none of you can see.##\n\nHer voice slides into your mind:",
+          "line": "Somebody is following us.# Many of them.# And they are... evil.",
+          "istelepathy": true,
+          "break": true
+        },
+        {
+          "actor": "Corolla",
+          "precomment": "You keep running, your sword banging against the narrow rock walls, sparks flying off the stone.#\nThe canyons twist and turn, one passage bleeding into another.#\nYou have no idea where you are going.# Nobody does.",
+          "line": "How far?!",
+          "comment": "Corolla shouts between ragged breaths."
+        },
+        {
+          "actor": "Efeliah",
+          "line": "Close.# Very close.# We need to hide.# Now!!",
+          "comment": "Efeliah gasps, stumbling against Math.",
+          "childid": 2
         }
-    ]
+      ]
+    },
+    {
+      "id": 2,
+      "type": "Story",
+      "recap": "Theo finds hiding spots in dead end crevice",
+      "text": "Theo stops.##\n\nOne second he was running, the next he is simply still,\nhis arm out like a bar across your chest before you can run past him.#\nNo explanation, no hesitation: he points you toward a gap in the canyon wall.#\nA crevice.# Just wide enough for a body.##\n\nYou go.# All of you.# Corolla pushes Smiurl in first.#\nMath pulls Efeliah after him.##\nYou press yourself flat against cold stone as Theo squeezes in last.##\n\nYou wait.",
+      "childid": 3
+    },
+    {
+      "id": 3,
+      "type": "Story",
+      "recap": "colored lights approach - the two lights, dancing, probe",
+      "text": "First, nothing.## For a long time, nothing at all.#\n\nThen the darkness in the passage shifts.#\nFaint colored reflections begin playing off the canyon walls: dancing, wavering, as if cast by something in motion far away.#\nThe rocks seem to tremble with them,# weaving in and out of the shadows.##\n\nCorolla reaches for Smiurl and clamps a hand over his mouth before he can make a sound.##\n\nFor endless seconds nothing else happens.# The colored shimmer moves but nothing arrives.##\nThen,# abruptly,# the dark gives way to two lights,# one bluish,# one yellow,# drifting into the passage.##\nThey dance around each other without any apparent logic, suspended about a meter from the ground.#\n\n$c<<They remind me of bees...>>##\n\n$CBut the more you watch them,# the more the terror inside you grows.##\nYou are frozen.##\nYou cannot move a single muscle.",
+      "childid": 12
+    },
+    {
+      "id": 12,
+      "type": "Story",
+      "recap": "lights linger and probe - Efeliah screens the group",
+      "text": "The lights keep dancing in front of you,# as if reluctant to give up,# not quite convinced.##\n\nYou manage to shift your gaze toward Efeliah's hiding spot.#\nYou can barely make her out; the dark is almost total,#\nand the reflections thrown by the two lights swirl too fast, too erratically.##\nBut you hear her voice, so low you barely catch it yourself:##\n\n$g\"Try to stay calm. Math and I are trying to screen us.\"$C#\n\nYou understand she means all of you.# You tell Theo, your own voice barely a breath.#\nHe does not move, but a tiny glance tells you he has understood.##\n\nThe lights are still there,#\nand if they were to drift close to the rock face and examine it,#\nthey would certainly find you.##\n\nTime moves so slowly you think you might go mad if this lasts much longer,# bursting at the seams with adrenaline.",
+      "childid": 121
+    },
+    {
+      "id": 121,
+      "type": "Story",
+      "recap": "lights begin to withdraw then one returns",
+      "text": "Slowly at first, barely perceptibly, then more decisively, the lights withdraw.#\nAs they keep dancing that senseless dance around each other, they retreat back toward the wider space.##\n\nFaint reflections continue to wash over the rocks.#\n\n$g\"Don't move.\"$C comes Efeliah's voice.# And Math's.#\nIt is unnecessary, really: you feel like you'll need several hours before thinking about moving again.#\nBesides, a faint light is still coming from the canyon passage.##\n\nThen, without warning, a yellow light, perhaps the same one from before,#\ndarts out from behind the rocks directly ahead.##\n\nYour heart misses a beat.#\nThe light is racing along the canyon walls at close range.#\nYou press yourselves flat behind the boulder,# right when it's about to pass in front of you.##\n\nFinally,# after hesitating over your hiding spot,# it carefully moves away,\ncasting slanted rays into the small grotto.#\nAnd,# as suddenly as it appeared,# vanishes again.##\n\nAfter a few minutes the light from the passage begins to fade.#\nAfter further long,# interminable minutes,# it disappears entirely.##\n\nYou let your muscles go,# stretch out in the cramped hiding space,\nyour back against the boulder that has sheltered you, and breathe.",
+      "childid": 4
+    },
+    {
+      "id": 4,
+      "type": "Dialogue",
+      "recap": "aftermath - Efeliah clears them, discussion of what the lights were, Kriss recognises the canyon lights",
+      "dialogues": [
+        {
+          "actor": "Efeliah",
+          "line": "We can come out now. They're gone.",
+          "comment": "Efeliah's voice, out loud this time.# You all descend from your hiding places.#\nCorolla arrives last, Smiurl in tow. Evidently it took some convincing to get him to move at all."
+        },
+        {
+          "actor": "Kriss",
+          "precomment": "You stand in the empty passage.# Nobody speaks for a moment.",
+          "line": "What were those lights?",
+          "comment": "It comes out quieter than you intended."
+        },
+        {
+          "actor": "Smiurl",
+          "line": "The spirits that protect the city...",
+          "comment": "His voice is barely above a whisper."
+        },
+        {
+          "actor": "Math",
+          "line": "They were not spirits.# Beneath their mental screens, we perceived human minds.",
+          "comment": "A beat of silence.",
+          "break": true
+        },
+        {
+          "actor": "Corolla",
+          "line": "What? Mental screens? Human minds? What are you talking about?",
+          "comment": "Her tone is sharp, but she is asking in earnest."
+        },
+        {
+          "actor": "Efeliah",
+          "line": "Barriers that prevent thoughts from filtering out from the mind that generates them.#\nWe generated one too, to avoid being detected.#\nYou did not notice, but we used your energies as well.",
+          "comment": "She pauses."
+        },
+        {
+          "actor": "Math",
+          "line": "But their screen was completely different.#\nIn material terms, how to put it...\nit was perfectly smooth. Symmetric.# Almost mechanical.",
+          "comment": "Of course, nobody seems to understand the explanation."
+        },
+        {
+          "actor": "Corolla",
+          "line": "What matters it's they're gone.",
+          "comment": "Corolla says, decisively."
+        },
+        {
+          "actor": "Efeliah",
+          "line": "In the wider space there were many more of them, I couldn't count them."
+        },
+        {
+          "actor": "Kriss",
+          "line": "We've seen those lights before.\"$C You say, quietly.#\n\n$c\"Before the Mazerock, on the road here.#\nThe convoy of the Horde escort.#\nThose same lights had come, the same colors.#\nAnd then the blinding flash, the silence... and when it was over, there was nobody left.",
+          "comment": "\nYour voice breaks.",
+          "childid": 6
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "type": "Story",
+      "recap": "They climb to see Ayonn",
+      "text": "$B\"Better move now.\"$C Theo states, breaking the silence, then starts to climb up the slope.#\n\n$Y\"Could there be more of them, up there?\"$C Smiurl asks, still frightened.#\n\n$c\"I want to go and see.\"$C#\n\nIn a few minutes you have climbed to the top of the slope and pulled yourselves up past the canyon's edge.#\nYou stand upright and look out.##\n\nYou stay rooted to the spot, mouth open.##\n\nBefore you the ground falls away, and at the centre of that enormous depression,\nsome two kilometers away, sits a dome.#\nHemispherical,# multicolored,# luminous with an incredible, almost impossible brightness.#\nThrough it you can make out the outlines of tall golden palaces, apparently built from light itself.#\nIt is an absurd spectacle: at once terrifying and extraordinary.##\n\nYou stand there, staring, mesmerized.#\nA ludicrous,# ginormous,# $Rs$Co$Ga$Bp $Rb$Cu$Gb$Mb$Yl$We,$C# shining with an energy you have no words to describe.",
+      "childid": 14
+    },
+    {
+      "id": 14,
+      "type": "Dialogue",
+      "recap": "Ayonn exclaimed, Smiurl names shield, they start toward it",
+      "dialogues": [
+        {
+          "actor": "Smiurl",
+          "precomment": "$Y\"Ayonn!\"$C# cries Smiurl, along with the two telepaths.# Then he adds, to clear any doubt:",
+          "line": "The magic shield!",
+          "comment": ""
+        },
+        {
+          "actor": "Kriss",
+          "precomment": "You all stand there for a few minutes more just looking at it.## Finally, you get to your feet.",
+          "line": "Well then! What are we waiting for? Ayonn is waiting for us!",
+          "comment": "\n\nYou start walking.# Your voice came out far more confident than you actually feel.#\nBecause the more you stare at that dome in the centre of the valley, the more an inexplicable fear grows inside you.#\nYou realize you cannot reason clearly for more than a few seconds straight.#\nYou cannot even analyze what is frightening you so much.##\n\nYou glance back, and see that the others are following,\nand from their expressions you understand they must be feeling more or less the same.",
+          "childid": 7
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "type": "Choice",
+      "recap": "approach Ayonn or find another way",
+      "text": "By the halfway point the light is bright as day.#\nYou stop for a moment.# Your minds need the rest more than your legs do,\nsince you have been walking gently downhill.##\n\n$g\"I don't think I can take much more of this\"$C says Efeliah, exhaling.#\n$R\"It's unbearable! What's happening?!\"$C Corolla complains, pressing her hands to her temples.#\n$m\"The panic seems to come straight from the city\"$C Math says quietly.# \n$m\"But the more we focus on it, the less ground we'll cover.\"$C##\n\nYou try to think.# The panic grips your brain and your stomach,\nand the harder you concentrate the more your head seems to heat up and fill with lead.#\n\n$c<<Maybe we should try thinking of something beautiful. Something reassuring. Anything but this.>>$C",
+      "choices": [
+        {
+          "desc": "Press forward, trying to think of something calm and beautiful.",
+          "childid": 8
+        },
+        {
+          "desc": "Maybe there's another way in. Circle the dome and look for a gap.",
+          "childid": 71
+        }
+      ]
+    },
+    {
+      "id": 71,
+      "type": "Story",
+      "recap": "no other way in",
+      "text": "You spend what feels like an hour circling the base of the dome.#\nThe shield extends in every direction,# a perfect hemisphere with no gaps,# no seams, no weakness you can discern.##\n\nEvery direction you try, the dread intensifies.#\nYour head throbs.# Your vision blurs at the edges.#\nSmiurl has stopped trying to hide his fear and is openly clinging to Theo's belt.##\n\nMath shakes his head.##\n\n$m\"There is no gap. No back door.\"$C##\n\nCorolla kicks a rock in frustration.#\n\n$R\"Then we go through the front.\"$C",
+      "childid": 8
+    },
+    {
+      "id": 8,
+      "type": "Story",
+      "recap": "advancing through growing panic toward the wall of light",
+      "text": "You advance.# Trying to think of something beautiful,# reassuring.# Anything.##\n\n$g\"Do that.# Try as hard as you can\"$C Efeliah says, straightening up.#\n$g\"All of you.# Think... happy thoughts.\"##\n\n$CSmiurl is hunched into himself and nods pathetically.#\nHe starts walking again, propelled by Corolla.##\n\nThe first few hundred metres pass quickly enough.# Then the mental pressure begins to build in earnest.#\nIt grows exponentially.# You find yourself, in one corner of your mind, recalling an old school lesson\nabout electric and gravitational fields, how force is inversely proportional to the square of the distance.#\nOddly, it helps.# It lets you detach, concentrate on your own old world,\nwhere you led an ordinary life, day after day;\nwhere there were no raiding hordes, no mysterious flying lights, and certainly no cities protected by magic shields.##\n\nBut the harder you concentrate, the more your head feels like it is about to explode.#\nWhatever that is, it surrounds you and attacks you from within, impossible to resist.#\nThe mental pressure makes you feel like a walnut under a steamroller.##\n\nYou cast your eyes up: a few dozen metres remain before the wall of light.",
+      "childid": 9
+    },
+    {
+      "id": 9,
+      "type": "Story",
+      "recap": "companions fall one by one as they near the wall",
+      "text": "You turn slowly, your face contorted in the spasm of mental strain.##\n\nSmiurl is many dozens of metres behind you now, hopping and skipping as though deranged,\nbefore darting away and disappearing behind a low bush.#\nJust ahead of that, Corolla is stretched out on the ground.#\nFurther forward still, Theo has set his hammer on the earth and is leaning his full weight on it, unable to go further.#\nBeyond him, Math and Efeliah still advance, slowly, painfully, holding hands.##\n\nYou take another step, still watching.#\nThe pressure doubles and brings tears to your eyes.#\nYou stagger, and by a miracle manage to stay on your feet.##\n\nThe last hope is going out inside you.# Everything is finished.#\nIt is simply not possible to resist a force like this.#\nYou may as well lie down and wait for the oblivion that will surely bring its relief.",
+      "childid": 16
+    },
+    {
+      "id": 16,
+      "type": "Story",
+      "recap": "Efeliah falls - fury erupts in you",
+      "text": "Then you see her.##\n\nEfeliah has dropped to her knees, still holding Math's hand... until her grip slips.#\nShe collapses forward, eyes rolling back.##\n\nYou see it as though in slow motion:# the whites of her eyes.# Her mouth, half-open.#\nHer hair trailing behind her as she falls slowly, slowly, face-first.#\nThe dust she raises with the displacement of her own weight.##\n\nAnd then,# in an instant,# $Rfury$C fills you.###\n\nWith one corner of your awareness you see Math staring at you, stunned, already lurching toward you.#\nBut you have already started moving, decisive, toward the shield of light.##\n\nYou are not thinking.# Only an inextinguishable flame, suddenly rekindled at the sight of Efeliah, burning in your mind.#\nYou can feel the panic screaming mercilessly and angrily against you.# You can even feel the impact of it.#\nIt feels like your skull is close to bursting.##\n\nYou begin to grind your teeth.#\nA low, guttural growl rises from your throat.##\nYou reach out your hands.##\n\nThe wall of light is just one metre away.",
+      "childid": 17
+    },
+    {
+      "id": 17,
+      "type": "Story",
+      "recap": "the breach - you drag Math through",
+      "text": "The pain is unbearable.# But the more it grows,# the more it feeds your fury.#\nAnd that is what feeds that last flame keeping you upright.##\n\nYou feel Math's hand on your shoulder. He is collapsing onto you.#\nYou let it slide down your arm and take his own arm in your hand,# and press on toward the light.#\n\nYou cannot see anymore.# The light burns in directly into your mind.##\n\nYou scream.# And in a final surge of rage you cross the last metre, dragging Math behind you.##\n\nFor a fraction of a nanosecond the pressure in your head is insupportable, only to drop, instantly, violently.##\n\nA blinding flash and a deafening boom fill the air, and charges of energy crackle and discharge in all directions around you.#\nThe light drops sharply, falling to the natural light of the stars.# With it the panic flees.##\n\nAnd a moment later you feel your own consciousness slide away, as you fall to the ground.",
+      "childid": 10
+    },
+    {
+      "id": 10,
+      "type": "Story",
+      "recap": "blackout - chapter end",
+      "text": "Darkness.##\n\nAt some point, no sense of time nor space now, there are voices.# Muffled,# arriving through layers of nothing.##\n\n$dGrey.#\n$CNot golden.#\nYou open your eyes for one instant and it is only grey sky, ordinary,# and someone is carrying you.##\n\nThen nothing at all.",
+      "islast": true
+    }
+  ]
 }

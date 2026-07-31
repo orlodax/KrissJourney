@@ -1,0 +1,168 @@
+{
+  "id": 16,
+  "title": "THE EDZZEN",
+  "nodes": [
+    {
+      "id": 1,
+      "type": "Story",
+      "recap": "chapter header + arriving at the coastal town",
+      "text": "-------------------------------\n|          CHAPTER 16          |\n-------------------------------\n\n\n$CThe night's rest is poor.# All of you say so in the morning,\naround the fire Theo has built to cook breakfast,\nwithout quite agreeing on why.##\n\n$Y\"I had bad dreams,\"$C# Smiurl announces,\nwhich is no surprise, because you did too, and you suspect everyone did.#\nEfeliah says it is mental tension finding its outlet in sleep,\nnot real danger, probably, and looks at the town below with an expression\nthat does not entirely match what she is saying.##\n\nThe town sits in the bay like something washed ashore and left to rot:\nan agglomeration of old wood, stacked hull-planks, inverted keels for rooftops,\na main gate that is simply a ship's prow set upright in the ground.\nA vague, acrid smell carries up the hill on the sea wind.##\n\n$c<<I have a bad feeling about this.#\nSmiurl has already said this out loud.# I choose to keep mine internal.>>$C##",
+      "childid": 2
+    },
+    {
+      "id": 2,
+      "type": "Story",
+      "recap": "entering the town - ominous quiet",
+      "text": "After about an hour they reach the main road bisecting the town,\nand proceed in single file down the middle of it.##\n\nHouses of rotted wood stand like relics of a forgotten age,\ntheir windows nailed shut.# A faint stench of fish seeps through everything,\nclinging to the walls and the air both.# There is no sound.#\nNot the quiet of absence, but the quiet of waiting,\na watching silence that settles on your neck like a hand.##\n\nCorolla has her hand on her blade.#\nSmiurl's skin has gone a flat, unhappy ochre.##\n\nNot one building stands intact.# Ruin has insinuated itself into every corner,\naided by time, and no gull cries.# You notice the absence of gulls\nafter a while, as a wrong note in a piece of music.##\n\nKriss leads, and they walk, and nothing dares break the silence but their footsteps.##",
+      "childid": 3
+    },
+    {
+      "id": 3,
+      "type": "Story",
+      "recap": "the building - Frankenstein construction, they go inside",
+      "text": "On the right: a building three stories tall: wood, but not the rotted wood\nof everything else around it.# Still standing, or at least maintaining\nthe pretense of standing, constructed from boards of different origins,\nnailed together with the logic of someone who had six ships' worth of timber\nand a single axe and a great deal of time.##\n\nA ship's tiller hangs above the entrance like an amputated limb.##\n\nThe door is ajar.# From inside comes the flicker of firelight.##\n\nKriss had caught what might have been movement inside, at the corner of his eye,\nwatching from the left-hand side of the street.# They approach the entrance,\nunder a crooked portico, and a fetid smell of fish is stronger here.##\n\n$c<<I am walking into a building in an abandoned port town\nthat smells of fish and is built from cannibalized ships.#\nThis will probably be fine.>>$C##\n\nKriss takes the handle and pushes the door open.# He goes in first,\nand the others follow.##",
+      "childid": 4
+    },
+    {
+      "id": 4,
+      "type": "Story",
+      "recap": "inside the building - the bar, the chandelier, the dark porticos",
+      "text": "The room inside is large and quadrangular, high-ceilinged,\nand dark in the way that a great deal of firelight paradoxically creates darkness\nbeyond its own reach.# From the center of the ceiling hangs what appears to be\na chandelier made of bone, or at least of something that may have been bone,\nhung with dozens of candles that do little against the shadows pooled\nin the colonnaded porticos running around all four walls.# A shaft of light\nfalls obliquely from a skylight in the upper level and disappears into the dark above.##\n\nAhead of them, a raised bar counter occupies most of the far wall.##\n\nThey advance carefully between overturned chairs and ropes that coil\nacross the floor like sleeping snakes, watching the shadows,\nuntil behind them, with a tremendous and sadistic creak, the door swings shut.##\n\nThe room goes darker.##\n\nKriss's hand is on his sword.# Only Efeliah seems, on the surface, calm.##\n\n$g\"We are not alone.\"$C##\n\nHer thought barely has time to land before the porticos fill with light.\nTiny torches, dozens of them, crowding into every alcove on every floor,\nand then their bearers swarm down from the shadows into the room around them.##\n\nThey are small, dwarf-small, dense, compact, and they are all old:#\nwrinkled faces, vacant eyes, scalps cracked and browned by the sun,\nbent backs, and on every face the same expression of consuming, irrational,\npersonally offended contempt for the people standing in their room.##\n\nAnd then the worst one climbs onto the bar counter.##\n\nHe is perhaps the oldest, or the cruelest, or the ugliest,\nor all three at once, the combination being greater than the sum of its parts.\nFive others stand at his back on the counter.# He surveys your group\nwith tiny eyes the color of yellowed ice, lit from within by a lurid and\ncompletely committed madness, and then he opens his mouth and says,\nin a voice of terrible authority:##\n\n$r\"'Oukurtzen los.'\"$C##",
+      "childid": 5
+    },
+    {
+      "id": 5,
+      "type": "Dialogue",
+      "recap": "Efeliah translates the tribunal - formal death sentence, the party heckles",
+      "dialogues": [
+        {
+          "actor": "Kriss",
+          "precomment": "You look at the creature on the bar counter.#\nThen at the several dozen gathered around you.\nThen back at the creature.",
+          "line": "...what?",
+          "comment": "You are uncertain whether to be afraid or simply offended."
+        },
+        {
+          "actor": "Efeliah",
+          "precomment": "Efeliah's voice arrives in your mind, flat and composed.",
+          "line": "It is a language none of you know.# I can read his thoughts.#\nHe is saying... that you have profaned and violated\nthe territory of the Edzzen.# That you are emissaries of, and I am rendering\nthis faithfully, 'the worthy-of-atrocious-sufferings-and-death,'#\nor else enemy spies, or possibly ambassadors of distant kings.#\nIn any case you are condemned to die.",
+          "istelepathy": true
+        },
+        {
+          "actor": "Kriss",
+          "line": "These people are insane.",
+          "comment": "You say it, perhaps not quietly enough."
+        },
+        {
+          "actor": "Theo",
+          "line": "What gave it away.",
+          "comment": "He says it without inflection, looking at the creature on the bar.",
+          "break": true
+        },
+        {
+          "actor": "Efeliah",
+          "precomment": "The creature on the counter does not appear to enjoy the interruption.\nHe fixes you all with a gaze of refined malice and continues,\nhis voice rising to a pitch of theatrical outrage.",
+          "line": "He says...# you will die.# Today.#\nThey will eat your tongues,# and then hang you from the royal ship,#\nand the fish will dispose of your putrid remains.",
+          "istelepathy": true
+        },
+        {
+          "actor": "Corolla",
+          "precomment": "Corolla studies the thing on the bar counter with an expression of pure contempt.",
+          "line": "He looks like a child's attempt to draw a corpse.",
+          "comment": "You cannot help it.# You laugh.##"
+        },
+        {
+          "actor": "Efeliah",
+          "precomment": "The creature's eyes bulge.# Efeliah relays his response without visible emotion.",
+          "line": "He asks if you are laughing at your own end.#\nHe suggests that if so, you should die now.#\nHe is gesturing theatrically.",
+          "istelepathy": true,
+          "childid": 6
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "type": "Fight",
+      "recap": "the bar fight - one of them dives off the counter with a knife",
+      "text": "And then one of them leaps.##\n\nIt flings itself from the counter on a rope, a serrated knife catching\nthe candlelight as it swings toward you.# And you have the sword out\nbefore you have consciously decided to draw it, pivoting on your heel,\nusing the flat of the blade like a bat.#\nThe creature cartwheels away with a shriek and hits the floor hard.##\n\nYou stand there with the sword in your hand, and in the bone-lit dimness\nit is catching the light the way metal should not,\nbrightening and shifting impossibly, and you are looking at the thing\non the bar counter with eyes that are possibly on fire.#\nTheo has reached behind his back for his hammers.#\nCorolla has a blade in each hand.# Smiurl is somewhere above you.##\n\n$c\"Ef!# The door!\"$C##\n\nThat is enough.# The whole room surges.##",
+      "encounter": {
+        "foes": [
+          {
+            "name": "Edzzen Mob",
+            "health": 120,
+            "damage": 8,
+            "attacksperround": 3
+          }
+        ],
+        "victorymessage": "$CYou push through.#\n\nNot cleanly, there is nothing clean about this, but the wave of them\nbreaks against the four of you long enough for Efeliah to wrench the door\nopen from its frame, and you pour through it into the street, running.#\nEvery blow is a body in your way; every body that falls is ground gained.#\nTheir howls fill the building and spill out into the alley beyond.##\n\nYou run.##",
+        "defeatmessage": "$CThe room swarms.# There are too many of them\nand they are fast, faster than things their size should be,\nand eventually the weight of numbers drags you down.##\n\nThe candlelight flickers above you.# Somewhere on the bar counter,\na dreadful old voice is pronouncing something terrible\nand feeling very satisfied about it.##",
+        "qtecycles": 3,
+        "qtelength": 36,
+        "qtespeedfactor": 1.0,
+        "qtewidth": 5
+      },
+      "childid": 7
+    },
+    {
+      "id": 7,
+      "type": "Story",
+      "recap": "running through the town - the pursuit",
+      "text": "The street receives you at a run and gives you nothing to work with:\nno clear direction, no cover, just more of the same warped wood\nand nailed-shut windows, and the sound of the Edzzen pouring out of the building\nbehind you like something overflowing.##\n\nThey are fast.# Unpleasantly, disproportionately fast for their size,\nscuttling between the buildings, spilling into the alleys ahead,\ntrying to flank and surround.# Smiurl is already at the front,\nleaping in great panicked arcs over obstacles.##\n\n$B\"They'll take us!\"$C##\n\n$c<<Think.# Think.>>#\n\n$C$g\"The ships!\"$C# Efeliah says in your head.# $g\"Theo!# The ships!\"$C#\nTheo understands immediately, and changes direction.# Corolla, somehow,\nalso understands, and she turns and points:#\n\n$R\"Diversionary run.# Up there, the promontory!# Go!\"$C##\n\n$Y\"Diversionary?!# Us?!\"$C##\n\nSmiurl has one half-second of pure anguish,\nand then he is running after Corolla and Kriss\nbecause there is no third option and his legs have already decided.##",
+      "childid": 8
+    },
+    {
+      "id": 8,
+      "type": "Story",
+      "recap": "up the promontory toward the lighthouse",
+      "text": "The promontory rises at the edge of town where the buildings thin out:\ndark rock, a spine of it, jutting over the harbor with the lighthouse\nat its tip, a pale column against the afternoon sky.#\nSupporting it from below: great steel beams, angled like buttresses,\ndiving down into the face of the cliff and disappearing into the water.##\n\nYou run for it.##\n\n$c<<They are chasing us with hooks and fish bones up a cliff\nwhile two of our party is doing something clever with a ship.#\nI am going to focus on the running and trust that the clever part works.>>$C##\n\nThe rock steepens.# The Edzzen fan out behind you,\ntrying to close the circle, their howl rising and splitting\ninto dozens of individual notes of outrage.#\nSmiurl overtakes everyone with a single panicked leap and hits the lighthouse\ndoor first, palms flat, shoving it open.# You and Corolla\npile in after him and slam it shut behind you,\nbarring it with whatever comes to hand, with ropes and an iron ring\nand a piece of timber, while fists and hooks begin battering the wood\nfrom outside.##\n\nA narrow slit window, barred with iron, shows a ring of faces.##\n\nAbove you: a spiral stair, climbing.##",
+      "childid": 9
+    },
+    {
+      "id": 9,
+      "type": "Story",
+      "recap": "up the lighthouse stairs - the hatch, the roof",
+      "text": "Up.##\n\nThe staircase is steep and narrow and curves with the lighthouse wall,\nand the noise from below follows you up it, the door taking a sustained beating\nthat the bar will not hold indefinitely.#\nAt the top, above the lamp room, Smiurl finds it first:\na hatch in the ceiling, and he is through it before you reach him,\nhis voice coming down from above.##\n\n$Y\"Up here!# This way!\"$C##\n\nCorolla laces her hands for your foot and you go through the hatch.#\nShe jams it with a dagger and takes the hand you offer her and swings up beside you,\nand the wind on the roof of the lighthouse hits like a fist, cold, full, real,\nand the sea is in every direction below.##\n\nAll three of you grab the railing and hold on.##\n\n$R\"Now what?!\"$C# you shout over the wind.##\n\nFrom below, a tremendous crash: the front door going.#\nThe sound of many small feet on stone stairs.#\nSpring toward you from the hatch; Corolla and Smiurl move to brace it.##",
+      "childid": 10
+    },
+    {
+      "id": 10,
+      "type": "Story",
+      "recap": "Kriss spots the ship - and leaps",
+      "text": "You lean out over the railing on the seaward side.##\n\nBelow, far below, the cliff plunging straight down to dark water,\nyou spot it.# A ship, emerging from along the harbor wall, moving parallel to the coast\ntoward the promontory.# The sails above it are not canvas;\nthey are enormous, luminous panels, angled toward the sky.##\n\n$g\"Below you, on the sea,\"$C# Efeliah's voice arrives in your mind.##\n\nYou stare at the ship.# You stare at the great sails.#\nThe largest sail is oriented at an angle, its face tilted upward toward the sun,\nthe way a ramp tilts, you find yourself thinking,\nwithout exactly meaning to think it, and you step back from the railing slowly, barely aware you are moving,\nuntil you are standing beside Corolla and Smiurl at the hatch.##\n\nAnother crash from below, shaking the iron of the hatch.##\n\nCorolla looks up from it and finds your face.# She sees something there\nthat makes her go very still.##\n\nTwo rapid strides.# Your foot on the railing.##\n\nYou go off the edge of the lighthouse into the void.##\n\nCorolla watches you fall, and then she does not watch you fall,\nbecause you stop falling.# You hit the sail flat and $Wslide$C,\nthe great panel angled perfectly, a chute of taut luminous material,\nand you come off the bottom of it and land heavily on a mass\nof coiled ropes and furled canvas and what feels very much like a mattress.##\n\nYou lie there for one second and look up at the lighthouse far above you,\na very small tower against the sky.##\n\nThen you get to your feet.##\n\n$c<<That actually worked.#\nI want to be very clear, to myself, that I had no idea that would work.>>$C##",
+      "childid": 11
+    },
+    {
+      "id": 11,
+      "type": "Story",
+      "recap": "Corolla throws Smiurl - then faces the bigger Edzzen",
+      "text": "Above you, on the lighthouse roof: Corolla has turned from the railing.##\n\nSmiurl is crouched at the hatch, still trying to hold it,\nhis eyes huge, his skin a blinding white-yellow alarm.# He has not noticed\nthat Kriss is no longer beside him.# Corolla walks to him, deliberate,\ntakes hold of him by the back of his jacket,\nand before he can complete the sentence that begins with $Y\"But what are you...\"$C\nhe is airborne.##\n\nHis scream cuts off when your hands catch him on the deck.##\n\nCorolla takes her rincorsa, a short run toward the railing, and then she stops.##\n\nA figure has pulled itself over the edge of the roof.##\n\nLarger than the others.# Not by much, but enough to matter on a rooftop:#\nbroader in the shoulder, moving differently, with a deliberation the others lack.\nIt draws two daggers from its belt with a grin that is possibly the worst\nexpression you have ever seen, and settles into a fighting crouch.##\n\nBelow, on the deck, the three of you look up.##",
+      "childid": 12
+    },
+    {
+      "id": 12,
+      "type": "Dialogue",
+      "recap": "Corolla's rooftop duel - wound on the old burn scar",
+      "dialogues": [
+        {
+          "actor": "Corolla",
+          "precomment": "They circle each other along the lighthouse railing, high above the sea,\nCorolla with a dagger out, the bigger Edzzen with two.#\nThe wind is full and the light is terrible and below,\non the deck, none of you can do a thing but watch.#\n\nShe feints right.# The Edzzen charges and she shifts left,\nbut his second blade catches her, a glancing blow across the back,\nexactly where the Ayonn burn-scar sits.#\n\nShe cries out, a real cry, sharp, involuntary, and loses her balance,\ngoing hard into the railing.# The dagger leaves her hand.##\n\nSmiurl makes a sound beside you.##",
+          "line": "Corolla!",
+          "comment": ""
+        },
+        {
+          "actor": "Kriss",
+          "precomment": "She does not answer.# Above you, you see her grip the railing\nwith both hands, and her head drops for one second,\nand the Edzzen is already moving toward her again.##\n\nShe does not have a weapon.# She has the railing.#\nAnd she has the Edzzen's momentum.##\n\nAt the last instant she twists aside, and the Edzzen's face meets the railing with a crack\nthat carries all the way down to the deck.##\n\nIn the half-second the creature spends with its head against the metal,\nCorolla takes her run, three steps on the open roof, hooks a foot\noff the back of the Edzzen's shoulders and goes over the railing headfirst.##",
+          "line": "She's...",
+          "comment": "She hits the sail.##\n\nShe slides.##\n\nShe lands hard on the deck, harder than you did,\nand she does not get up immediately.# She lies there, not moving,\nwhile Smiurl and Efeliah are already crouching over her\nand Theo is already casting off the mooring lines.##\n\nThe last thing visible on the lighthouse roof, above,\nis the Edzzen's expression, a precise composition of bafflement and fury,\nnow surrounded by many of his colleagues, shrinking\nas the ship carries you away from the promontory, into open water.##",
+          "childid": 13
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "type": "Story",
+      "recap": "end of chapter - away from the town, Corolla unconscious",
+      "text": "The lighthouse diminishes behind you, and the wretched town with it,\nuntil the promontory is only a dark finger against the pale sky\nand then the coast itself is only a line, and then only a suggestion,\nand then gone.##\n\nThe sails above you are already angling toward the sun,\nslowly, with a mechanical patience that seems almost affectionate,\nand the motors engage below the waterline with a clean,\nuntroubled hum.##\n\nCorolla has not woken up.##\n\nEfeliah is beside her, and has not moved from beside her,\nand Smiurl has arranged himself at a distance that is trying very hard\nnot to look like hovering.##\n\n$c<<She got hit on the old burn scar.#\nShe'll be fine.# Corolla is always fine.#\nI am saying this with full confidence and no anxiety whatsoever.>>$C##\n\n$CTheo stands at the wheel.# Or rather near it, since the navigation computer\nis already managing the course.# He looks at the panels above\nwith an expression you would describe, if pressed, as reverent.##",
+      "islast": true
+    }
+  ]
+}

@@ -1,0 +1,382 @@
+{
+  "id": 13,
+  "title": "THE ASSAULT",
+  "nodes": [
+    {
+      "id": 1,
+      "type": "Story",
+      "recap": "chapter header and morning in rebel base",
+      "text": "-------------------------------\n|          CHAPTER 13          |\n-------------------------------\n\n\n$CYou did not sleep long.##\n\nThe oil lanterns had burned low by the time your eyes finally closed,#\nand they are low still, orange and guttering.# But the rebel base\nis already alive with quiet, deliberate movement, people checking straps,#\npassing weapons, looking at maps.##\n\nRiff is at the table. He has not slept, and his eyes are iron.",
+      "childid": 2
+    },
+    {
+      "id": 2,
+      "type": "Dialogue",
+      "recap": "Riff briefs the group on the plan",
+      "dialogues": [
+        {
+          "actor": "Riff",
+          "precomment": "He has laid out a hand-drawn map of the Municipal building on the table,#\nweighted at the corners by spent lanterns.# It is detailed,\nthe work of months spent watching, probing, losing people, learning.",
+          "line": "Seven floors. The Projector is on the top.# Every floor has a guard rotation:\ntwo on the landings, two in the corridors, all controlled, all armed.",
+          "comment": "He traces the route with a finger.",
+          "break": true
+        },
+        {
+          "actor": "Riff",
+          "line": "Our fighters take the front entrance.# Loud, direct, as much noise as we can make.#\nThe guards will respond.# They have to, Joe's programming does not allow\nfor ignoring a frontal assault.# That draws them down and toward the main doors.#\nWhile they are focused there, you go in the side.",
+          "comment": "He taps a point on the east wall of the building."
+        },
+        {
+          "actor": "Riff",
+          "line": "Service entrance, maintenance corridor, stairwell to your left.# Go straight up,#\nand do not stop to fight unless you have to.# Every second you spend on the lower floors\nis a second a free person is dying out front to buy you time.",
+          "comment": "His voice does not waver, but his jaw tightens.",
+          "break": true
+        },
+        {
+          "actor": "Corolla",
+          "precomment": "Corolla's hand settles at her hip, where a blade should hang.#\nIt closes on empty air, and her mouth thins.",
+          "line": "Don't stop to fight.# With what, exactly?##\nThey stripped us in the cells. I have not held my knife since they took us,\nand I would rather not go chest to chest with an armored guard\nwearing nothing but good intentions."
+        },
+        {
+          "actor": "Theo",
+          "line": "I would.",
+          "comment": "Nobody doubts it."
+        },
+        {
+          "actor": "Riff",
+          "precomment": "Riff nods, like a man who has been waiting for the question.",
+          "line": "Everything Joe's people confiscate, they log and lock away.#\nSecond floor, an administrative level, a storage locker among the offices.#\nIf your weapons are still in that building, that is where they will be.##\nIt is on your way up. Take back what is yours, but be quick about it.",
+          "comment": "He taps the second floor on the map, twice.",
+          "break": true
+        },
+        {
+          "actor": "Corolla",
+          "precomment": "Corolla is studying the map, her eyes moving with quick precision.",
+          "line": "The psychic door. You mentioned it last night.",
+          "comment": "Not a question."
+        },
+        {
+          "actor": "Riff",
+          "line": "Top floor, one room before the Projector chamber.#\nFlat gray wall, no handle, no lock, no visible mechanism.#\nWe hit it with a battering ram for two hours once, left not so much as a scratch.",
+          "comment": "He looks at Math and Efeliah."
+        },
+        {
+          "actor": "Math",
+          "precomment": "Math nods slowly.# He looks steadier than last night; the rest has helped.#\nHis eyes are still bloodshot, but the dullness is gone.",
+          "line": "A psi-lock.# It responds to mental resonance, not physical force.#\nEfeliah and I can open it, if we conserve what we have until we reach it.#\nWe must not expend our strength in the lower floors.",
+          "comment": "He looks at her."
+        },
+        {
+          "actor": "Efeliah",
+          "line": "I am ready.",
+          "comment": "She says it simply.# And she means it.",
+          "break": true
+        },
+        {
+          "actor": "Theo",
+          "precomment": "Everyone looks at Theo. He is standing with his arms folded,\nhis burned forearm wrapped in clean cloth from last night,#\nand he looks like a man who has had a full night's sleep.#\n\nHe looks, in other words, like a force of nature.",
+          "line": "We go.",
+          "break": true
+        },
+        {
+          "actor": "Smiurl",
+          "precomment": "Everyone turns to Smiurl. He has both hands pressed against his face,#\nhis skin cycling through a rapid sequence of colors: orange, purple, an anxious green.",
+          "line": "I hate this plan.# I hate it completely.# But I am also here and not hiding,#\nand that means I am going with you, even though the plan is terrible.\nJust so we are clear that I think it is terrible.",
+          "comment": "He lowers his hands, his chin set, his eyes bright.##\n\nCorolla puts a hand briefly on his shoulder, says nothing.",
+          "childid": 3
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "type": "Story",
+      "recap": "moving out through rebel tunnels toward the building",
+      "text": "The rebels arm themselves in silence.# Riff distributes what weapons they have,#\nknives mostly, a few short clubs, two bows, simple tools for a desperate job.##\n\nYou move out in single file, back into the maintenance passages.#\nRiff leads, you follow, and Corolla takes the rear.##\n\nThe city above bleeds through the grates in the ceiling, and you catch glimpses\nas you pass beneath them: blue-white light and shadow, the undersides of boots,#\nthe mechanical even cadence of guards on patrol, the golden shimmer that passes\nfor sky on the streets above, beautiful and false.##\n\n$c<<All of this.# All of this just to keep one man's hands around everyone's throat.>>#\n\n$CThe thought makes something cold and sharp settle in your chest. You keep walking.##",
+      "childid": 4
+    },
+    {
+      "id": 4,
+      "type": "Story",
+      "recap": "reaching the building, diversion starts",
+      "text": "You emerge into an alley.##\n\nThe Municipal building looms above you, close enough to touch.#\nUp close it is uglier than it looked from the approach: gray concrete poured\nwithout care, functional and brutal, the architecture of cheap and pragmatic control.#\nNo decoration, no windows on the lower floors, just seven floors of solid, humming menace.##\n\nThen, from the far side of the building:##\n\nShouting.##\n\nA crash, the sound of boots at a dead run.# Somewhere around the corner,#\nRiff's fighters have met the front doors.##\n\nCorolla looks at you, her hand already on her blade.##\n\n$R\"Now.\"$C##",
+      "childid": 5
+    },
+    {
+      "id": 5,
+      "type": "Story",
+      "recap": "entering the service entrance",
+      "text": "The service door is a heavy metal slab in the east wall, its lock industrial,#\nbuilt for durability rather than resistance.##\n\nTheo examines it for approximately one second, then puts his weight against it.#\nThe mechanism does not break so much as $Wgive up$C, the bolt shearing from its housing\nwith a sound like a gunshot, and the door swings open.##\n\nInside, a corridor of bare concrete, lit by sickly emergency strips,#\nthe smell of machine oil and recycled air, and to the left, immediately, a stairwell.##\n\nYou go in, and the door closes behind you, the sounds of battle fading\nto a muffled, distant drumbeat.##\n\n$c<<One floor at a time. Don't think about the top. Just the next step.>>$C##",
+      "childid": 6
+    },
+    {
+      "id": 6,
+      "type": "Fight",
+      "recap": "guards on floor 2 landing",
+      "text": "You reach the second-floor landing and stop.##\n\nTwo guards block the corridor ahead, and they turn immediately, mechanically,#\nraising their batons.# No hesitation, no communication, Joe's signal handles the tactics.##\n\nCorolla is already moving.# You'll have to go bare-knuckles for this one.##",
+      "encounter": {
+        "foes": [
+          {
+            "name": "Tired-looking Guard",
+            "health": 80,
+            "damage": 12,
+            "attacksPerRound": 1
+          },
+          {
+            "name": "Dark-haired Guard",
+            "health": 80,
+            "damage": 15,
+            "attacksPerRound": 2
+          }
+        ],
+        "qtespeedfactor": 2.0,
+        "victoryMessage": "They fall, not like warriors but like machines unplugged,\ncrumpling to the floor with blank faces and open eyes.#\nSomewhere beneath those headbands, people are still in there,#\nand you do not let yourself think about that.",
+        "defeatMessage": "The guards press forward, baton strikes driving you back against the stairwell wall,#\nblankness where there should be a face, the headband pulsing.##\n\n$Y[You have been captured. I hope you like your new headband... not that it matters.]$C"
+      },
+      "childid": 7
+    },
+    {
+      "id": 7,
+      "type": "Action",
+      "recap": "searching floor 2 for weapons",
+      "text": "The guards are down, the corridor empty.# To the right, the floor opens\ninto a gray administrative space of desks, cabinets, filing systems,#\nand to the left, the stairwell continues upward.##\n\nThe second floor.# This is the level Riff marked on the map,#\nthe one where Joe's people log and lock away what they take.#\nYour weapons are here, somewhere.##\n\nYou have perhaps two minutes before the diversion loses momentum.##\n\n$D[Type an action at the prompt. Press TAB for help.]$C",
+      "actions": [
+        {
+          "verbs": [
+            "search",
+            "look",
+            "examine",
+            "check"
+          ],
+          "answer": "The floor is an administrative level of desks, cabinets, and filing systems.\nA weapon storage locker is mounted on the far wall,\nand the downed guards carry basic equipment.",
+          "objects": [
+            {
+              "objs": [
+                "locker",
+                "cabinet",
+                "storage",
+                "wall"
+              ],
+              "answer": "A weapons locker, locked with a standard key mechanism. The guard must carry the key.",
+              "effect": {
+                "gainitem": "foundLocker"
+              }
+            },
+            {
+              "objs": [
+                "guard",
+                "guards",
+                "body",
+                "bodies"
+              ],
+              "answer": "You check the guards. Both carry heavy batons and one has a small ring of keys on his belt.",
+              "effect": {
+                "gainitem": "foundKeys"
+              }
+            },
+            {
+              "objs": [
+                "office",
+                "desk",
+                "desks",
+                "files",
+                "papers",
+                "documents"
+              ],
+              "answer": "Administrative records. Lists of names, schedules,\ncolumns of numbers in a corrupted script you cannot read.\nThe neatness of it turns your stomach: the bureaucracy of control."
+            }
+          ]
+        },
+        {
+          "verbs": [
+            "take",
+            "grab",
+            "pick"
+          ],
+          "answer": "Nothing obvious in reach.",
+          "objects": [
+            {
+              "objs": [
+                "baton",
+                "batons",
+                "weapon",
+                "weapons"
+              ],
+              "answer": "You take a guard's baton. Better than bare hands.",
+              "effect": {
+                "gainitem": "guardBaton"
+              }
+            },
+            {
+              "objs": [
+                "key",
+                "keys",
+                "ring"
+              ],
+              "answer": "You take the key ring from the guard's belt. One of these should fit the locker.",
+              "effect": {
+                "gainitem": "foundKeys"
+              }
+            }
+          ]
+        },
+        {
+          "verbs": [
+            "open",
+            "unlock"
+          ],
+          "answer": "What do you want to open?",
+          "objects": [
+            {
+              "objs": [
+                "locker",
+                "cabinet"
+              ],
+              "condition": {
+                "item": "foundKeys",
+                "refusal": "The locker is locked. I need a key."
+              },
+              "answer": "The key fits, and the locker swings open on your confiscated gear,\ntossed in a heap where Joe's people left it: your own sword,\nCorolla's knife and bolas coiled tight, and Theo's heavy hammer.\n\nArmed again. Now you can climb.",
+              "effect": {
+                "gainitem": "weaponsFound"
+              }
+            }
+          ]
+        },
+        {
+          "verbs": [
+            "go",
+            "climb",
+            "ascend",
+            "up",
+            "continue",
+            "move",
+            "advance",
+            "proceed"
+          ],
+          "answer": "The stairwell is to your left.",
+          "objects": [
+            {
+              "objs": [
+                "up",
+                "stairs",
+                "stairwell",
+                "above",
+                "top",
+                "forward",
+                "ahead"
+              ],
+              "condition": {
+                "item": "weaponsFound",
+                "refusal": "Not without our weapons.# Riff said the gear Joe took is locked up\non this floor, and I am not climbing to the Projector bare-handed."
+              },
+              "childid": 8
+            }
+          ]
+        },
+        {
+          "verbs": [
+            "wait",
+            "stop"
+          ],
+          "answer": "There is no time to rest. The diversion will not last forever."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "type": "Story",
+      "recap": "climbing through middle floors",
+      "text": "You climb.##\n\nFloors three and four are clear, the diversion having pulled the guards down,#\nand you pass empty offices, empty corridors, the hum of the building's machinery\ngrowing louder as you ascend.# Somewhere below, the sounds of fighting have grown\nmore intense: shouts, crashes, the sharp crack of something improvised and desperate.##\n\nCorolla sets the pace, moving with a hunter's economy of motion.#\nTheo keeps the rear, and Smiurl stays in the middle, his skin dimmed\nto what he seems to feel to be camouflage.##\n\nFloor five.##\n\nThe stairwell door opens onto a corridor that is different from the ones below.#\nThe lighting is brighter, the walls are cleaner, and from somewhere above,#\npressing down like a physical weight, you can feel something.##\n\nLike standing under a thunderstorm.# Again.##\nThe air is heavy.# Wrong.#\n\nEfeliah stops and presses one hand to the wall, her breathing changing.##",
+      "childid": 9
+    },
+    {
+      "id": 9,
+      "type": "Dialogue",
+      "recap": "Efeliah senses the Projector above",
+      "dialogues": [
+        {
+          "actor": "Efeliah",
+          "precomment": "She does not open her eyes.",
+          "line": "It is above us, two floors.# I can feel the signal from here, and it is enormous,#\nlike standing next to a waterfall and trying to think.#\nEvery mind in this building, in this city, is being pressed through it,\nsqueezed, shaped, redirected."
+        },
+        {
+          "actor": "Math",
+          "precomment": "Math's face is strained. He is feeling it too.",
+          "line": "The psi-lock will be on floor six, one floor up.#\nWe need to reach it with enough strength to open it.# Ef..."
+        },
+        {
+          "actor": "Efeliah",
+          "line": "I am fine.",
+          "comment": "She opens her eyes. They are clear, steady, determined.",
+          "break": true
+        },
+        {
+          "actor": "Corolla",
+          "precomment": "Corolla is already at the stairwell door, peering through its narrow window.",
+          "line": "Three guards on the next landing, and one who looks like an officer.#\nHeavier armor, the same dead eyes, unfortunately.",
+          "comment": "She glances back at you.",
+          "childid": 10
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "type": "Fight",
+      "recap": "guards and armored officer on floor 6 landing",
+      "text": "You hit them fast, before they can set a formation.##\n\nThree guards in standard gray, and behind them an officer in heavier armor,#\na segmented plate over the chest that makes Theo's eyes narrow with something\napproaching professional interest.# All four have the same blank faces,#\nand all four attack the moment you appear.##\n\nIt is not a heroic charge but a brawl on a landing, limited by the stairwell's\ngeometry, with the sounds of combat from below driving up through the walls\nlike a drumbeat.##",
+      "encounter": {
+        "foes": [
+          {
+            "name": "Left flank Guard",
+            "health": 50,
+            "damage": 12,
+            "attacksPerRound": 1
+          },
+          {
+            "name": "Center Guard",
+            "health": 50,
+            "damage": 12,
+            "attacksPerRound": 1
+          },
+          {
+            "name": "Right flank Guard",
+            "health": 50,
+            "damage": 12,
+            "attacksPerRound": 1
+          },
+          {
+            "name": "Armored Officer",
+            "health": 150,
+            "damage": 20,
+            "attacksPerRound": 2
+          }
+        ],
+        "qtespeedfactor": 2.5,
+        "victoryMessage": "The officer is the last to fall.# Theo does it, a single blow that folds\nthe armored chest like foil, and the headband keeps pulsing for a moment\nafter the man hits the floor.# Then it goes dark.##",
+        "defeatMessage": "The officer's armored shoulder drives you back, the guards swarm,#\nand you lose ground, step by step, until the stairwell wall is at your back.##\n\n$WIt seems your little insurrection has come to an abrupt end.## Such a shame.$C"
+      },
+      "childid": 11
+    },
+    {
+      "id": 11,
+      "type": "Story",
+      "recap": "Corolla struck by a ray from the gallery",
+      "text": "You are all still standing, but only just, and you have barely taken stock of that\nwhen a ray fired from the far end of the gallery catches Corolla across the back.##\n\nThe flash of it is brief, almost incidental, but the sound she makes is not.#\nYou see her clothes blacken along the shoulder and spine,\nsee her lurch forward and start to crumple, and you catch her before she can fall.##\n\nShe is a dead weight in your arms, unconscious, her skin hot where the beam\nhas burned through fabric and into flesh.##\n\n$c\"Corolla!# Corolla, no...\"$C\n\nSmiurl is at your side in an instant, his hands under her other arm,\nhis skin flashing alarm-orange.# Her breathing is steady, but she does not stir.##",
+      "childid": 12
+    },
+    {
+      "id": 12,
+      "type": "Story",
+      "recap": "floor 6 corridor - the psychic door in sight",
+      "text": "The sixth-floor corridor stretches before you, and at the far end,#\nperhaps twenty meters, is the door.##\n\nYou recognize it immediately, even though you have never seen it,#\nbecause it is $Wnot$C there.# Or rather, it is: a section of wall, perfectly flush,#\nwithout seam or frame or handle, an absence shaped like a door, smooth as a mirror\nand as dead as a stone.##\n\nYou carry Corolla between you and Smiurl, her weight distributed across both your shoulders.#\nShe has not woken.# Theo keeps a hand near her neck as you move,\nchecking the pulse there with a practiced calm he does not bother to explain.##\n\nThe air around the door presses against the inside of your skull, a sensation\nlike pressure, like standing at altitude, warm and slightly wrong.##\n\nEfeliah exhales slowly, Math straightens, and they look at each other.##",
+      "childid": 13
+    },
+    {
+      "id": 13,
+      "type": "Story",
+      "recap": "chapter end - Math and Efeliah prepare at the door",
+      "text": "Below, the rebel assault continues, the building shaking, occasionally,#\nwith the impact of something violent happening many floors down.#\nRiff's fighters, still buying time.##\n\nCorolla is propped against the wall between you and Smiurl,\nstill unconscious, her breathing even.# You cannot do anything for her yet.#\nTheo glances at her once, then at the door, and his jaw sets.##\n\nSmiurl's skin has gone a resolute, steady gold, which, for Smiurl,#\nis the bravest color there is.##\n\n$c\"Last floor. The Projector is right there.#\nAll we have to do is get through a door that cannot be opened.\"$C\n\nMath takes a slow breath, and Efeliah reaches out and takes his hand.##",
+      "islast": true
+    }
+  ]
+}

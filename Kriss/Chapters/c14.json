@@ -1,0 +1,292 @@
+{
+  "id": 14,
+  "title": "THE PROJECTOR",
+  "nodes": [
+    {
+      "id": 1,
+      "type": "Story",
+      "recap": "chapter header - before the psychic door",
+      "text": "-------------------------------\n|          CHAPTER 14          |\n-------------------------------\n\n\n$CThe door says nothing.##\n\nIt does not hum or glow or radiate threat in any way you can name,\nbut is simply there: a rectangle of featureless metal, smooth and complete,\nfilling its frame so perfectly that the seam between door and wall\nis invisible unless you press your face to the surface and look sideways.##\n\nMath and Efeliah stand before it, still holding hands, while the rest of you\nform a loose perimeter behind them.# Theo watches the corridor, one eye on Corolla,\nwho lies propped against the wall beside him, still unconscious, the burned skin\nalong her back an angry red beneath the blackened cloth.#\n\nSmiurl watches Math and Efeliah with the concentrated faith of someone who has decided\nthat if they believe hard enough, it might help.##",
+      "childid": 2
+    },
+    {
+      "id": 2,
+      "type": "Dialogue",
+      "recap": "Math and Efeliah prepare to open the door",
+      "dialogues": [
+        {
+          "actor": "Math",
+          "precomment": "Math releases Efeliah's hand.# He turns to face her directly.#\nYou hear his quiet voice in your mind,# a voice meant for her alone.",
+          "line": "The lock will be tuned to a specific resonance.# We cannot force it,\nwe must match it: find the frequency and hold it steady.#\nIt will take everything we have left.",
+          "istelepathy": true,
+          "comment": "He looks at her steadily."
+        },
+        {
+          "actor": "Efeliah",
+          "line": "Then we give everything we have left.",
+          "comment": "She replies without drama, simply, as if it is obvious.#\nMath looks at her for a moment, and something in his expression\ncloses and becomes very still, the way a person looks\nwhen they are holding something carefully.",
+          "istelepathy": true,
+          "break": true
+        },
+        {
+          "actor": "Math",
+          "line": "Together, then.# On three.",
+          "comment": "He turns back to the door.# Efeliah takes her position beside him,\nan arm's length away, eyes closing, and they both go very still and quiet.##\n\nThe air in the corridor changes.##\n\nYou cannot describe it exactly: a shift in pressure,\na feeling that the space around Math and Efeliah has grown slightly heavier,\ndenser, more real than the rest of the building.#\n\nSmiurl's skin brightens involuntarily, a pale, wondering blue.",
+          "childid": 3
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "type": "Story",
+      "recap": "the psychic door opens",
+      "text": "The door does not glow, and it does not make a dramatic sound.##\n\nFor a long moment, nothing happens at all,\nand then, at the very edge of hearing, at the edge of perception,\nyou feel it more than hear it: a low, sustained $Wtone$C,\nplaying at a frequency somewhere behind your eyes...##\n\nMath makes a sound in his throat: not pain, but $Weffort$C.#\nEfeliah's jaw tightens, her hands loose at her sides\nyet white at the knuckle where the fists have half-formed.##\n\nThe door clicks.###\n\nNot loudly, just a small, precise click, like a combination lock\nfinding its last digit.# And then the door swings inward,\nsmooth and silent, on hinges that have not moved in years,\nopening into a room full of warm orange light.##\n\nMath takes one step back and sits down heavily on the floor,\nwhile Efeliah catches herself on the doorframe.##\n\n$m\"Go,\"$C# Math says, without looking up.# $m\"We will follow.\"$C##",
+      "childid": 4
+    },
+    {
+      "id": 4,
+      "type": "Story",
+      "recap": "entering the Projector room",
+      "text": "The Projector room is nothing like you imagined.##\n\nPipes run everywhere: iron trunks and thin brass lines, looping across the floor,\nup the walls and back down, bound at the joints with wire\nand cloth where somebody's repair outlived the thing it was repairing.#\nCable spills between them in black bundles thick as your arm,\nlashed with leather straps and spliced wherever a run came up short.##\n\nAt the far side the heaviest trunks gather and climb,\nconverging on a shaft that goes up and out through the roof.#\nThat, then, must be where the golden shield comes from.##\n\nYou almost miss the ladder.# It is welded to the flank of the tangle,\niron rungs rising into the middle of everything, and at the top of it\na platform: metal grid floor plates laid straight over the machinery,\nrailed on three sides, a clearing hacked out of a thicket.##\n\nYou climb.##",
+      "childid": 40
+    },
+    {
+      "id": 40,
+      "type": "Story",
+      "recap": "on the platform - the screens and the two terminals",
+      "text": "Up there, set into the gaps between the cable runs, are screens:\na dozen of them at odd angles, continuously running what looks to be logs and reports, diagrams and maps.##\n\nAnd at the center of the platform, two seats, numbered 1 and 2.#\nThey are low and reclined and molded to the body, their armrests worn pale.#\nCable comes out from under them and goes down into everything.#\nAbove each, folded back against a bracket, hangs a jointed metal arm.#",
+      "childid": 5
+    },
+    {
+      "id": 5,
+      "type": "Dialogue",
+      "recap": "Math recognizes the Master's work",
+      "dialogues": [
+        {
+          "actor": "Math",
+          "precomment": "Math and Efeliah have recovered enough to stand, and they comes up the ladder.#\nMath crosses the platform slowly, his eyes moving over the machine with an expression\nyou have never seen on him before, something between awe and grief.#\nHe stops in front of the screens and wires and lifts a hand toward them.",
+          "line": "These were added later.",
+          "comment": "He says it with certainty, the way you would date a patch on a coat."
+        },
+        {
+          "actor": "Theo",
+          "line": "How do you know?"
+        },
+        {
+          "actor": "Efeliah",
+          "line": "Because this Projector is the Master's work.",
+          "comment": "She says it like a name spoken inside a temple.##\n\nNobody answers.# What stands in front of you is the work of a long gone science.\nAll it left, in all this time, this machine and another singular monument:\na rock in the middle of a desert, full of people like these two.##\n\n$c<<What kind of Earth would build something like this?>>$C#\nYou find yourself wondering.",
+          "break": true
+        },
+        {
+          "actor": "Math",
+          "line": "Joe took it and turned it against the very people it was built for.#\nThere is so much that was left out of the Seer's Rock Memories...\nSo many things we don't know!",
+          "comment": "#\n\nHe rests a hand on the frame beside him for a moment, then takes it away."
+        },
+        {
+          "actor": "Efeliah",
+          "line": "Those must be the terminals. We must hurry: Riff's people cannot hold much longer."
+        },
+        {
+          "actor": "Math",
+          "line": "Together, then.",
+          "comment": "He nods once.# Something quiet in his eyes.",
+          "childid": 6
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "type": "Story",
+      "recap": "Math and Efeliah take the control seats",
+      "text": "Math and Efeliah take the chairs.##\n\nThey do not speak again.# Math settles into seat one\nand closes his eyes, his hands finding the worn grooves in the armrests,\nand Efeliah takes seat two, mirroring his posture exactly, and closes her eyes also.#\nFrom the armrests, two metal objects extend on short cables: a sphere and a cylinder each.#\nThey take them: sphere in the left hand, cylinder in the right.##\n\nFor a moment, nothing.##\n\nThen a mechanical arm descends from above each chair,\nand $Wa strong light strikes both their foreheads at once.##\n\n$CTheo and you remain motionless, poised between awe and fear.#\nCorolla lies where Theo has laid her carefully on the floor at the base of the platform,\nstill unconscious, still breathing.##\n\nSmiurl makes a small panicked sound, and goes to hide behind her body.##",
+      "childid": 7
+    },
+    {
+      "id": 7,
+      "type": "Story",
+      "recap": "the Projector shuts down the mind-control signal",
+      "text": "After some minutes of interminable waiting, the lights go out.##\n\nMath and Efeliah open their eyes.# They rise from the chairs slowly,\nstruggling to hold themselves upright.##\n\n$g<<They are safe...>>$C#\n\nEfeliah's mind voice reaches you faintly.#\nYou and Theo look at each other, unable to make sense of what has happened.##\n\nShe steadies herself and speaks, just loud enough to be heard:##\n\n$g\"We have disabled the mind-control.# Completely.# Ayonn is free.\"$C##\n\n$m\"The troops that were chasing Riff's people,\"$C# Math says,\nstill leaning against the chair, $m\"they will have stopped.#\nThey are bringing the rebels back to the city now.# As rescuers.\"$C##\n\nFrom below, something that had been a battle-sound shifts.#\nYou hear the change even from up here: the sharp crack of energy weapons going silent,#\nand then a confused, raw noise rising from the streets:#\nvoices, people, hundreds of them, surfacing from something they cannot name yet.##",
+      "childid": 8
+    },
+    {
+      "id": 8,
+      "type": "Dialogue",
+      "recap": "Math/Efeliah say task is done; Efeliah says not done yet and defers to Kriss",
+      "dialogues": [
+        {
+          "actor": "Theo",
+          "precomment": "Theo stares at them, arms at his sides, still not fully comprehending\nhow two people sitting in chairs did what they just did.#\nThen his shoulders drop, just slightly, and he turns to look at Corolla on the floor.",
+          "line": "Not possible.",
+          "comment": "He says it with conviction, like a verdict."
+        },
+        {
+          "actor": "Math",
+          "line": "Our task is concluded.",
+          "comment": "He straightens, steadying himself."
+        },
+        {
+          "actor": "Efeliah",
+          "line": "I don't think so.",
+          "comment": "She says quietly.# Then she turns to look at you.#\nAll eyes go to you.##"
+        },
+        {
+          "actor": "Efeliah",
+          "line": "Right,# Kriss?#",
+          "childid": 90
+        }
+      ]
+    },
+    {
+      "id": 90,
+      "type": "Story",
+      "recap": "Kriss sits in seat one and connects to the Projector",
+      "text": "You don't know why you do it.##\n\nOr rather, you know why.# Something has been pulling at you since the moment\nyou stepped into this room, a feeling like an obligation,#\nor a memory you cannot quite reach.# Your heart is beating way too fast.##\n\n$c<<Whatever this is, I don't think it's my idea.>>$C##\n\nYou sit down in seat one.# You take the sphere in your left hand,\nthe cylinder in your right, and before you can think twice about it,\nthe arm descends and the light strikes you between the eyes.##\n\nYou no longer have a body.##",
+      "childid": 91
+    },
+    {
+      "id": 91,
+      "type": "Story",
+      "recap": "the white, the rise, the galaxy, and knowing where Earth is",
+      "text": "All is milky white, luminous, empty and full at once.#\nA single thought moves through you: $c<<Where am I?>>$C#\nAnd in the same instant that you think it,\na gap opens in the white ahead of you.##\n\nAt the speed of light, you rise.##\n\nThe Municipal building falls away beneath you.# Then all of Ayonn,\nits streets and rooftops and the faint threads of light where people\nare beginning to move again.# Then the desert,# and the Seer's Rock somewhere\nto the right, and the sea somewhere to the left.# The whole planet\nof Noi-Hert spreads below you, pole to pole, enormous and ancient and quiet,\nand then even that shrinks, and you are looking at the galaxy from above,\na slow wheel of light with Noi-Hert a small and certain point within it.##\n\nAnd you know, without being told, without understanding how, where Earth is.##\n\nThe desire to look at it moves through you.###\nNothing happens.##\n\nYou watch the stars for a long time that is not time.# Then you turn back.##",
+      "childid": 92
+    },
+    {
+      "id": 92,
+      "type": "Story",
+      "recap": "planing back down over Ayonn; the white returns and something warm presses in",
+      "text": "Gliding down toward Noi-Hert again, you pass over Ayonn and grow aware\nof the machines in the city: psychic machines, some dark, some still flickering,\nand the dancing lights you saw in the Mazerock and in the canyon,\nnow lying still and dark and harmless on the ground below.##\n\nThen the white returns.##\n\nYou wait in it.# Something presses at the edge of your awareness,\na sensation that is not quite yours, an urgency,# a warmth.#\nLike sunlight through closed eyelids when you are lying on a beach.#\nA warm, rosy feeling, and something almost-heard, almost-remembered...##\n\nYou stop thinking.# You listen.##",
+      "childid": 93
+    },
+    {
+      "id": 93,
+      "type": "Story",
+      "recap": "the coastline image, then the pull south over the ocean",
+      "text": "It is faint as a whisper, irregular as the sound of the sea,\nslow as the erosion of a cliff face.# But it is there, and it is warm,\nand it carries with it an image:##\n\nA coastline.# Beaches, and vegetation thickening toward mountains on one side,\nand the open sea on the other.# You feel the calm of it wash over you,\nand for just a moment you are there.# Then the image dissolves.##\n\nAnd then, sudden and complete as a thunderclap,\nan opening tears through the white, and it swallows you.##\n\nYou fly south.##\n\nBelow flies the land, sparse trees, animals in ones and twos, a coast,\nand then the ocean, wide and blue, running away without reflecting your image.#\nIn the distance, barely visible, a strip of land:# forest and low hills,\nseemingly vibrating with the same energy that has been calling you,\nthat you realize has been calling you for a while now.\n Now...## you understand.##",
+      "childid": 94
+    },
+    {
+      "id": 94,
+      "type": "Story",
+      "recap": "the voice calls him south, then Kriss wakes in the chair",
+      "text": "And then you hear it,# once more.##\n\nA voice,# familiar,# impossible,# $Gwhispering and crying out at the same time:###\n\n$G<<Come.>>$C####\n\nThen a jolt.##\n\nAnd you open your eyes.##\n\n",
+      "childid": 95
+    },
+    {
+      "id": 95,
+      "type": "Story",
+      "recap": "resolution",
+      "text": "You climb down from the seat.# Everyone is looking at you.#\nEfeliah holds your gaze, and her question arrives without words:##\n\n$g<<Did you find what you were looking for?>>$C##\n\nYou say, out loud, to all of them:##\n\n$c\"I think I know what to do.\"$C##",
+      "childid": 9
+    },
+    {
+      "id": 9,
+      "type": "Story",
+      "recap": "after the dream-flight; group gathers, Corolla begins to recover",
+      "text": "Nobody speaks for a moment.##\n\nTheo is looking at you with his brow very slightly furrowed,\nwhich on Theo is the equivalent of a dropped jaw.#\nSmiurl has crept out from behind Corolla\nand is staring at you from roughly the height of your knee,\nhis skin running through small rapid pulses of uncertain orange.##\n\nEfeliah says nothing.# She already knows.##\n\nFrom the floor, a sound.# And then Corolla shifts, her hand moving first,\nfingers pressing flat against the ground.##\n\n$m\"She will be all right,\"$C# Math says quietly, his eyes not leaving you.#\n$m\"It is a superficial burn.# We have already contained the pain.#\nShe will recover.\"$C##\n\nYou look at her, and believe him.##\n\nSmiurl's skin flushes, slowly, into a relieved and luminous gold.##\n\nTheo puts one hand briefly on Math's shoulder as he passes, crouching beside Corolla.#\nNo words.# Theo does not need words for this.##",
+      "childid": 10
+    },
+    {
+      "id": 10,
+      "type": "Dialogue",
+      "recap": "Riff arrives - victory",
+      "dialogues": [
+        {
+          "actor": "Riff",
+          "precomment": "The bolted door shudders, and you unlock it.#\nRiff enters at a run, followed by three of his fighters,\nall of them bloodied and out of breath and grinning\nwith the uncontrollable, bewildered relief of people\nwho had stopped expecting to win.##\n\nHe takes in the room: the darkened Projector, the machine at rest,\nMath and Efeliah on their feet, and Corolla sitting upright against the wall,\npale but conscious, her eyes sharp.##\n\nHis jaw moves, but no sound comes out.",
+          "line": "You did it.",
+          "comment": "It is barely a whisper."
+        },
+        {
+          "actor": "Kriss",
+          "precomment": "You look around the room, at your companions,\nat the machine that has held a city captive for years, now dark and silent.",
+          "line": "Math and Efeliah did it.",
+          "comment": "Riff looks at them.# He puts his fist against his chest and bows his head.#\nA brief gesture, but it carries everything.##",
+          "break": true
+        },
+        {
+          "actor": "Riff",
+          "line": "'Mayor' Joe is gone.# Slipped out a side passage before we reached the top.#\nWe will find him.# Ayonn will find him.# That is not your problem.#\nYou have done what we could not do ourselves.",
+          "comment": "He straightens.#\nThe grief-lines in his face have not gone anywhere,\nbut something behind his eyes is different, lighter."
+        },
+        {
+          "actor": "Riff",
+          "line": "The city will need time.# Months, probably.#\nPeople waking up, people remembering, people finding out\nwhat happened to the ones who never came back.#\nThat will not be easy."
+        },
+        {
+          "actor": "Corolla",
+          "line": "No.# But the city will be theirs again, and that will make all the difference.",
+          "comment": "Riff looks at her for a long moment.# He nods."
+        },
+        {
+          "actor": "Riff",
+          "line": "Where do you go from here?"
+        },
+        {
+          "actor": "Corolla",
+          "line": "South.",
+          "comment": "She says it like it is already decided.##\n\nBecause it is.",
+          "childid": 11
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "type": "Story",
+      "recap": "farewell to Riff, departure from Ayonn - gathering in the atrium before dawn",
+      "text": "They give you provisions: water, dried food, a better map than anything\nyou have carried before.# Toward the third hour of the night\nyou gather in the great municipal atrium to say your goodbyes.##\n\nAyonn is changed.##\n\nNot the buildings, not the streets, which are the same gray and concrete\nthey always were, but the people are different, and you see it in every one you pass:\nguards sitting against walls with their headbands removed, staring at their hands,#\ncivilians emerging from doorways, blinking, uncertain, as if waking\nfrom a long sleep they did not choose and cannot quite place.#\nSmall knots of people finding each other, arms around shoulders,\nthe kind of stillness that comes just before someone starts to cry.",
+      "childid": 110
+    },
+    {
+      "id": 110,
+      "type": "Dialogue",
+      "recap": "farewell to Riff and Math - Math stays to mind the Projector",
+      "dialogues": [
+        {
+          "actor": "Riff",
+          "precomment": "Riff embraces each of you in turn, longer than expected,\nand with the unconcealed emotion of someone who has decided\nthis is not the moment for composure.",
+          "line": "Friends.# I hope we meet again, one day.#\nI cannot yet take in everything you have done for all of us.#\nIt happened too fast.# Thank you.# Thank you again.",
+          "comment": "He holds on for a moment longer than is strictly necessary.\n$c<<This one is considerably more expressive than his council friends.>>$C##\n\n$g<<You could say that!>>$C# Efeliah's reply arrives in your mind, bright with amusement.##\n\nThen Math steps forward.",
+          "break": true
+        },
+        {
+          "actor": "Math",
+          "precomment": "Math's expression is composed, as always, though something behind his eyes\nis doing something quiet and considered.",
+          "line": "I wish you good luck.# If the Master predicted your arrival,\nthen your destiny is sealed.# I am certain we will meet again.",
+          "comment": "He says it with the calm certainty of someone quoting a principle\nthey have tested and found holds."
+        },
+        {
+          "actor": "Efeliah",
+          "precomment": "Efeliah turns to him.",
+          "line": "We'll stay in contact with you through the amplifier, won't we?",
+          "istelepathy": true
+        },
+        {
+          "actor": "Math",
+          "line": "Of course.# I'll make myself heard often.##\n\nI don't want to hold you too long: too much sentiment now\ncould cause hesitation, and that is the last thing you need.",
+          "comment": "He glances over his shoulder toward the Projector room above.#\nThen, as if remembering:",
+          "break": true
+        },
+        {
+          "actor": "Math",
+          "line": "The Projector has been reactivated, but your minds\nwill be ignored by the machine.# Do not worry about it.",
+          "comment": "He accompanies you to the door.#\nAt the threshold he stops, and you understand without being told\nthat this is where he stays.##"
+        },
+        {
+          "actor": "Kriss",
+          "precomment": "You look at him: the scholar from Seer's Rock,\nthe man who opened the psychic door.",
+          "line": "Take care of yourself, Math.",
+          "comment": "He nods once.# Something in his expression closes into the\nparticular stillness of a man who finds it better not to speak.",
+          "childid": 12
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "type": "Story",
+      "recap": "heading south - chapter end - party of five departs",
+      "text": "You set off along the main street just before dawn,\nleaving the Municipal building behind, and Ayonn with it.#\nYou pass through the south gate while a gap is opened in the holographic shield,\nand the guard on duty raises a hand as you step out,\nand the moment your feet leave the city perimeter the shield closes\nand takes its shape again behind you.##\n\nYou walk a few hundred meters and turn to look at it.#\nFrom out here, without the dread the machine once projected, it is simply beautiful,\na hemisphere of shifting light sitting over the city like a second dawn.##\n\n$c<<The hemispheric glory of Ayonn.>>$C#\n$C$c<<I could not forget a place like this, even if I tried.>>$C##\n\n$C\"$cAnd come to think of it,\"$C# you say aloud,\nsurprising yourself, $c\"I could not forget any of the rest, either.\"$C##\n\n$CThey look at you.# Then they turn back to the road.##\n\nSmiurl walks between Corolla and Theo, his skin cycling\nthrough slow, warm colors: amber, rose, a satisfied cream.#\nCorolla walks steadily, a little stiffly, the burn on her back a reminder\nshe is not going to dwell on.# Efeliah walks in silence,\nher eyes already moving south.##\n\nYou walk.##\n\n$c<<South.# That is what you know.# That is what the machine told you,\nor what something through the machine told you,# and you are\nnot going to examine it too closely right now.#\nSouth.>>$C##\n\nAhead: the road, and whatever comes next.##",
+      "islast": true
+    }
+  ]
+}

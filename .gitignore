@@ -361,3 +361,10 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+
+# Local agent issues 
+.issues/
+.github/agents
+.github/copilot-instructions.md
+.claude/
+CLAUDE.md
