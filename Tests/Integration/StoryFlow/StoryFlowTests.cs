@@ -254,6 +254,14 @@ public class StoryFlowTests
         if (node is FightNode f)
             yield return f.ChildId;
 
+        if (node is SurgeNode surge)
+        {
+            yield return surge.ChildId;
+
+            if (surge.Challenge?.FailureChildId is int failureChildId)
+                yield return failureChildId;
+        }
+
         if (node is MiniGame01 miniGame)
         {
             if (miniGame.ChildId > 0)

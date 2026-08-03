@@ -1,9 +1,27 @@
 ﻿global using static KrissJourney.Kriss.Services.TerminalFacade;
 using System;
 using System.Diagnostics;
+using System.IO;
+using System.Text;
 using System.Threading.Tasks;
 using KrissJourney.Kriss;
 using KrissJourney.Kriss.Services;
+
+// Windows consoles still default to a legacy code page (437 here), and .NET encodes
+// everything it prints into it. Page 437 has no room for most of what the game writes:
+// the Surge arrows come out as control bytes - the left arrow becomes 0x1B, an ESC that
+// swallows whatever follows it - while the stroked O of Corolla's home city and the
+// ellipsis are quietly best-fitted away to "O" and ".". UTF-8 is what all of them need,
+// and on macOS and Linux (the Steam Deck included) it is already the default, so this
+// costs nothing there.
+try
+{
+    Console.OutputEncoding = Encoding.UTF8;
+}
+catch (IOException)
+{
+    // No console attached to configure. Nothing to do, and nothing worth crashing over.
+}
 
 Console.Title = "KRISS' JOURNEY";
 

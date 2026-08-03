@@ -30,6 +30,7 @@ public class NodeJsonConverter : JsonConverter<NodeBase>
             "dialogue" => JsonSerializer.Deserialize<DialogueNode>(json, options),
             "action" => JsonSerializer.Deserialize<ActionNode>(json, options),
             "fight" => JsonSerializer.Deserialize<FightNode>(json, options),
+            "surge" => JsonSerializer.Deserialize<SurgeNode>(json, options),
             "minigame01" => JsonSerializer.Deserialize<MiniGame01>(json, options),
             _ => throw new JsonException($"Unknown node type: {nodeType}")
         };
