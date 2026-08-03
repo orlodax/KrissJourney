@@ -1,417 +1,250 @@
 {
   "id": 18,
-  "title": "THE UNDERWATER MUTANTS",
+  "title": "THE SOLAR SHIP",
   "nodes": [
     {
       "id": 1,
-      "type": "Story",
-      "recap": "chapter header + waking alone in metal cell",
-      "text": "-------------------------------\n|          CHAPTER 18          |\n-------------------------------\n\n\n$CA voice calls your name without quite pronouncing it.##\n\nInsistent, anxious, almost frightened, hovering somewhere just above\nthe surface of your unconsciousness, a pulsing pink halo of light\nthat your mind has been dreaming as a sound.##\n\nYou realize you are waking up. And then, all at once, the last moments\non the ship rush back: the sea's tremendous fury that would not let up,\nthe instant of panic when the water poured into the hull\nas the vessel capsized, and then darkness.# And then nothing.##\n\nYou sit up sharply, and in the pitch black you slam your head\nviolently against something metal above you.# A piercing pain\nrings through your skull and you press a hand to your forehead,\ncursing under your breath.# You sit up more slowly,\nextending your hands above you.##\n\nYour left hand goes instinctively to your hip.# The sword is not there.\nNeither is the knife.##\n\nA metallic click, and a hum.# Whatever that sliding sound is,\nit is the door opening,\nand in the doorway a dark silhouette blocks a harsh light from behind.\n$D\"$CBring him with the others.$D\"$C A voice, flat, not quite human.##\n\nHands seize you, bind your wrists, blindfold you, and drag you\nin a direction you cannot map.##",
-      "childid": 2
-    },
-    {
-      "id": 2,
-      "type": "Story",
-      "recap": "brought to the scientist's viewing room - first sight of the mutant",
-      "text": "After several minutes of walking, you are shoved into a seat.\nSomeone removes the blindfold.##\n\nAs your eyes adjust, you see that the others are all here,\non chairs like yours, and the relief of that is physical.#\nSmiurl is pale to the point of translucency, Corolla already\nstudying the room with her fighting mind, Theo rigid with readiness,\nEfeliah watchful and still.#\nAll of them. Nobody missing.##\n\nYou are in a large room whose entire front wall is one vast window.\nBeyond it, the sea floor, lit from somewhere below,\nwhere pale creatures drift through dark-blue water\nand the pressure must be crushing.# Equipment and instruments\nand screens cover every other wall, and a figure stands with its back to you\nat a desk of buttons and lights.##\n\nIt wears a white coat.# It cannot be human:\nfrom the back of its head, blue-gray cartilaginous appendages\ndescend behind its shoulders, like the memory of fins.##\n\nWhen it turns, you see the face: the same blue-dark, greenish color.\nNot a hair on it, no nose, no ears, only flat smooth skin\nwhere those features should be, with small holes in their place.\nThe eyes are disproportionately enormous, and the mouth has no lips.\nThe hands and feet are webbed.##\n\nIt studies you all, and makes an expression you cannot read.\nEfeliah's voice arrives in your minds.##\n\n$g<<It finds us disgusting.# Repellent.>>$C##\n\n$c<<Charming. And it's quite the looker.>>$C",
-      "childid": 3
-    },
-    {
-      "id": 3,
       "type": "Dialogue",
-      "recap": "scientist declares intent - Efeliah taken to the psi-sonde room",
+      "recap": "Corolla wakes - anxious bedside, Theo on the tech",
+      "text": "-------------------------------\n|          CHAPTER 18          |\n-------------------------------\n\n\n",
       "dialogues": [
         {
+          "actor": "Corolla",
+          "precomment": "She comes around half an hour after the lighthouse.##\n\nThe first thing she sees is all of them leaning over her bunk,\nfaces anxious in varying degrees of composure.# Smiurl has apparently\nbeen self-appointed as chief nurse and is the closest.#\nEfeliah has already cleaned and bandaged the wound across the old burn-scar.\nOutside, through the porthole, open water.##\n\nCorolla blinks.# Takes in the ceiling, composite material, pale, no\nship-timber or salvaged wood, and the clean white light of the recessed fixtures.#\nThen she looks at the faces above her and does what she does.",
+          "line": "I'm fine.",
+          "comment": "She says it the way you'd say it if you were trying to convince yourself\nas much as the room."
+        },
+        {
+          "actor": "Kriss",
+          "line": "You were fantastic.# Ef described everything we couldn't see.##\nYou used the dwarf's back as a launch ramp.",
+          "comment": "She almost laughs.# Not quite, but almost."
+        },
+        {
+          "actor": "Smiurl",
+          "line": "She's also bandaged your wound!# The medicines on board are extraordinary!#\nShe says they'll work wonders even after all this time!",
+          "comment": "He is practically glowing with the satisfaction of having useful information to deliver."
+        },
+        {
           "actor": "Efeliah",
-          "precomment": "The creature speaks in a guttural, slurring voice.",
-          "line": "It says: 'I think you will prove useful to us.'",
-          "comment": "It gestures, and others like it appear, taller,\nmoving with a boneless fluidity, who simply take hold of you\nand drag you apart. It takes two of them to move Theo,\nthough they are bigger than him and enormously strong.\nOne lifts Kriss like a wooden puppet.##\n\nEfeliah's voice rings in your minds, alarmed.",
+          "precomment": "Efeliah's voice is calm.",
+          "line": "The ship's medical stores are very well preserved.# You'll be on your feet\nwithin the day if you rest.",
           "istelepathy": true
         },
         {
-          "actor": "Efeliah",
-          "line": "They want to run experiments on all of us.#\nThat one must be their leader, or a scientist of some kind…",
-          "istelepathy": true
-        },
-        {
-          "actor": "Efeliah",
-          "precomment": "The scientist-creature speaks again, and you hear behind you the voice you woke to.",
-          "line": "The female. The fairer one. For the psi-sonde.",
-          "comment": "You see them take Efeliah into another room.##\n\nA moment later, the rest of you are thrown into a metal cell.\nThe door slides shut behind you.##\n\nKriss recovers his balance and immediately throws himself at the door,\nkicking and pounding it, shouting.",
-          "istelepathy": true,
-          "childid": 4
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "type": "Dialogue",
-      "recap": "cell - Ef's warning from the other room, Smiurl's lore",
-      "dialogues": [
-        {
-          "actor": "Kriss",
-          "precomment": "You hammer the door until Efeliah's voice stops you cold.",
-          "line": "Ef! Efeliah! We have to get her out!"
-        },
-        {
-          "actor": "Efeliah",
-          "precomment": "Her voice arrives in your minds with a steadiness that costs her something.",
-          "line": "They want to probe my mind.# They have identified unusual faculties in me.\nThe instrument is crude, I think.# It could damage me.##\n\nI don't know how long I can hold out.#\nAnd when they are done with me, they will begin with you.",
-          "istelepathy": true
-        },
-        {
-          "actor": "Kriss",
-          "line": "We have to get out of here.",
-          "comment": "You say it to the cell, to the door, to whoever has an answer."
-        },
-        {
           "actor": "Corolla",
-          "line": "We can't leave Ef in the hands of these fish-men.",
-          "comment": ""
-        },
-        {
-          "actor": "Smiurl",
-          "precomment": "Smiurl is standing very still, staring at nothing, his skin a stunned gray.",
-          "line": "The sea mutants…",
-          "comment": "He says it almost to himself, distracted."
-        },
-        {
-          "actor": "Kriss",
-          "line": "What?",
-          "comment": ""
-        },
-        {
-          "actor": "Smiurl",
-          "precomment": "Smiurl does not answer immediately. After a moment he begins, slowly.",
-          "line": "My grandfather used to tell me the history of our people, when I was small.#\nThere is something that has come back to me just now.\n\nHe said our race was created by the people from Earth\nthrough manipulation of the genome of normal men.#\nBut alongside ours, other races were created too.#\nOne of them was that of the mysterious sea mutants,\nwhom we believed to be a legend…",
-          "comment": ""
-        },
-        {
-          "actor": "Corolla",
-          "precomment": "Corolla interrupts.",
-          "line": "You mean these monsters were grown in a test tube?",
-          "comment": "Smiurl darkens, and Corolla sees it at once."
-        },
-        {
-          "actor": "Corolla",
-          "line": "I'm sorry.",
-          "comment": ""
-        },
-        {
-          "actor": "Smiurl",
-          "precomment": "He waves it away, though it has landed.",
-          "line": "Leave it. It doesn't matter.##\n\nBut yes: they are modified-DNA beings,\nand I'd wager that like my people they can reproduce naturally.##\n\nThe story said, also, that those men without morals wanted\nto create intelligent beings capable of living in hostile environments,\nlike the sea floor. To exploit the energies and resources\nhidden in the planet: that was their purpose.##\n\nThey say they built a submarine city from which one could access\nthe fire beneath the earth beneath the sea.",
-          "comment": ""
-        },
-        {
-          "actor": "Kriss",
-          "line": "Converting the thermal energy of the mantle into electricity.",
-          "comment": ""
-        },
-        {
-          "actor": "Corolla",
-          "line": "What?",
-          "comment": ""
-        },
-        {
-          "actor": "Kriss",
-          "line": "If it's as Smiurl says, and if this is the submarine city,\nit can only be a geothermal plant.# Thalassothermal, maybe.",
-          "comment": ""
-        },
-        {
-          "actor": "Smiurl",
-          "precomment": "Smiurl resumes his recitation as if reading from somewhere inside himself.",
-          "line": "The sea mutants can live underwater as easily as in the air,\nand they are endowed with extraordinary strength…",
-          "comment": "Efeliah's voice cuts through, tight with strain.",
-          "childid": 5
-        }
-      ]
-    },
-    {
-      "id": 5,
-      "type": "Story",
-      "recap": "Ef's pain builds - Kriss's rage - the door-punch",
-      "text": "$g<<They are about to begin attacking my mental defenses.#\nI don't think I can hold out long…>>$C##\n\nA sensation of suffering accompanies the words,\nnot described but transmitted, Efeliah's actual pain\narriving in your chest the way her voice does, directly.##\n\nKriss, the moment that pain reaches him, feels himself go cold with fury.\nHe begins to pace the narrow cell, his footsteps ringing sharp on the metal.##\n\n$B\"We have no weapons.\"$C#\nTheo watches him, almost as if he can hear his thoughts.##\n\n$Y\"And they're strong,\"$C# Smiurl confirms, deflated.##\n\nYou breathe out hard. The helplessness is unbearable.\nCorolla watches you with understanding, having no better answer.##\n\n$c<<Maledizione.>>$C# You plant yourself in front of the door\nand shout it aloud too.\n\n$C\"$cMaledizione!$C\"##\n\nYou close your eyes. You clench your fists.##\n\nYou think of Efeliah on the other side of that wall, suffering,\nwho could be dying or worse from one moment to the next,\nwho has always been close to you,\nclosed to each of you. You think of the sword you don't have,\nof Theo's hammer you don't have, of the door that cannot be opened.#\nThis cannot end here.##\n\nYou can feel Efeliah's suffering growing, her mind stiffening\nin the effort to resist.# You no longer feel anything around you.\nYou are alone, in nothing, with your rage and her voice in your skull.##\n\nIt happens in an instant.# Without realizing what you are doing,\nyou begin to scream, and your hand snaps forward\nas if it were your sword,\nstruck the door with all the force of desperation.##\n\nA detonation fills the room.###\n\nYou open your eyes.# The door is against the opposite wall,\nand two guards are pinned beneath it, motionless.\nThe metal is twisted at the exact point where your fist connected.##\n\nYour head swims. Colored lights streak past your vision.\nYour hand is bleeding, but after a moment you can move it.##\n\nYou stand perfectly still, trying to understand what just happened,\nand cannot, and then the others push past you\nand take the guards' weapons from the floor.##",
-      "childid": 6
-    },
-    {
-      "id": 6,
-      "type": "Story",
-      "recap": "they arm up and go find Ef",
-      "text": "$Y\"Come on, Kriss!\"$C Smiurl, already in the corridor.##\n\nTheo is examining the guards' weapons: electric prods,\ntwo acuminate electrodes between which a visible shock crackles\nwhen you press the button. He hands both of them to Corolla.\nFor himself he picks up a long metal tube wrenched free from the door by the impact.##\n\n$B\"Let's go.\"$C##\n\nYou retrace the corridor you were dragged down, and open the door\nthrough which you saw Efeliah disappear.\nAnother corridor opens ahead.# You move from door to door,\neach in turn, until you hear Efeliah's muffled voice and the voices\nof mutants somewhere ahead.##\n\nTheo kicks the door open and is inside before it finishes moving.#\nHis tube descends on the first mutant who blocks him,\ncaving the skull.# Corolla throws a prod at a second, pinning it\nto the wall with lethal precision, then wheels and drives her second prod\ninto a third one's throat, dropping it when the current\nflows through its body.##\n\nYou grab the weapon of one of the fallen\nwhile your companions are still fighting,\nand slide around behind the scientist-creature,\nwho stands frozen, watching the scene.##",
-      "childid": 7
-    },
-    {
-      "id": 7,
-      "type": "Dialogue",
-      "recap": "Kriss uses the scientist as hostage to free Ef",
-      "dialogues": [
-        {
-          "actor": "Kriss",
-          "precomment": "An alarm begins to wail somewhere in the walls.##\n\nThe scientist turns and sees you behind it, the prod leveled.",
-          "line": "They'll be here soon and you'll all be dead.",
-          "comment": "The scientist mutant speaks, guttural, slurring."
-        },
-        {
-          "actor": "Kriss",
-          "line": "I don't care!# Free her immediately, or I plant this thing in your gills!",
-          "comment": "A pause, in which the mutant calculates\nthat in any case compliance is the sensible option.##\n\nIt nods.##\n\nYou watch the sensors attached to Efeliah's skull and body,\nwhere she lies stretched on something resembling an operating table,\nretract instantly into their housings.# She sighs.# After a moment\nshe opens her eyes, and slowly sits up."
-        },
-        {
-          "actor": "Efeliah",
-          "precomment": "Her voice is quiet, composed, but barely.",
-          "line": "More are coming.",
+          "precomment": "Corolla glances around the cabin: the smooth walls, the recessed lights,\nthe clean lines of a technology from another world entirely.",
+          "line": "What... is this ship?",
           "comment": ""
         },
         {
           "actor": "Theo",
-          "line": "We need weapons.",
-          "comment": ""
+          "precomment": "Theo, standing in the doorway, which he barely fits in,\nhas the look of a man who has just been given an enormous gift and is not\nentire sure what to do with the feeling.",
+          "line": "Solar energy.# The sails collect sunlight, feed electric motors below the waterline.#\nElectric motors.# We had examples of this technology at Øder,\nbut very few.# Very limited examples.#\nNothing like this.",
+          "comment": "He looks over his shoulder, back at the ship around him,\nwith an expression you rarely see on Theo's face: something close to wonder.#\nHe adds, as if to himself:"
         },
         {
-          "actor": "Corolla",
-          "line": "We need a way out.",
-          "comment": "Kriss drives the prod into the scientist's back."
-        },
-        {
-          "actor": "Kriss",
-          "line": "Where are our weapons?!",
-          "comment": ""
-        },
-        {
-          "actor": "Kriss",
-          "precomment": "The mutant says it does not know. Kriss shoves the electrodes into its flesh.",
-          "line": "Tell us!",
-          "comment": "The mutant gasps, then says, breathless:"
-        },
-        {
-          "actor": "Efeliah",
-          "precomment": "Ef translates, without inflection.",
-          "line": "Perhaps. In the minisub area.",
-          "istelepathy": true
-        },
-        {
-          "actor": "Kriss",
-          "precomment": "Kriss turns to Efeliah.",
-          "line": "Can you get us there, Ef?",
-          "comment": "She holds still for a moment, searching something in the scientist's mind.##\n\n$g<<Yes.>>$C",
-          "childid": 8
+          "actor": "Theo",
+          "line": "I have set the route in the navigation computer.#\nWe are underway.",
+          "comment": "Corolla looks at the ceiling for a moment.# Then she closes her eyes.#\n\n$R\"Don't let me sleep too long.\"$C##\n\nSmiurl immediately sets about arranging himself in the chair beside her bunk\nwith the air of someone who has been waiting for a job.",
+          "childid": 2
         }
       ]
     },
     {
+      "id": 2,
+      "type": "Story",
+      "recap": "exploring the ship - glass prow observation room",
+      "text": "You leave Corolla to Smiurl's enthusiastic nursing and go to see the rest of the ship.##\n\nThe main cabin runs most of the hull's length below deck:\npale walls, smooth and clean and unscratched, narrow bunks folded into alcoves,\nlight coming from fixtures with no visible source.# At the stern end,\na panel of screens and switches sits dark until you approach it,\nand then the whole board illuminates, amber characters scrolling\nacross a central display in characters that Efeliah, appearing at your elbow,\nbegins deciphering with quiet attention.##\n\nThe forward compartment is what stops you cold.##\n\nThe floor is glass.# Not glass-like, not translucent.# Actual clear glass,\nthick as your fist, running the full width of the prow,\nand below it the sea floor is visible: pale sand, dark weed,\nthe slow unhurried movement of creatures going about their lives.#\nThe walls bow outward around the glass and curve to meet the floor,\nso that the whole room feels like standing inside a bubble at the water's surface.##\n\nYou stand there for a long moment, looking down,\nas a flat fish glides across the sand below you without acknowledgement,\nand you have the clear and irrational sense that you are flying.##\n\n$c<<Earth is a very long way away.#\nRight now that is not the worst thought I can have.>>$C##",
+      "childid": 3
+    },
+    {
+      "id": 3,
+      "type": "Story",
+      "recap": "setting sail - Corolla at the stern as land disappears",
+      "text": "By the time Corolla has rested and is back on her feet, ignoring everyone\nwho suggests she rest longer, the coastal town is far behind\nand the open sea is in every direction.##\n\nThe sails track the sun with a slow, almost imperceptible patience,\nrotating a few degrees as the afternoon moves,\nthe way a flower tilts its face without appearing to move at all.#\nThe motors push the hull through calm water with a low, clean vibration\nthat you feel more than hear, and the ship eases through the sea\nwithout drama, the bow leaving a long white line.##\n\nCorolla stands at the stern for a while, watching the last suggestion of land\nsink below the horizon.# She says nothing, but after a moment\nher shoulders drop a fraction, and she breathes slowly out through her nose,\nand you realize this is the closest she will come to relief.##",
+      "childid": 4
+    },
+    {
+      "id": 4,
+      "type": "Story",
+      "recap": "the Edzzen following on their own ships - then they fall behind",
+      "text": "The Edzzen have not given up.##\n\nLooking back through a glass of Theo's finding, you can see them:\ntwo or three old vessels, sails filled, making what speed they can\nin the direction the solar ship has taken.# They are not slow, exactly,\nbut they are no match for electric motors and a hull built\nfor open ocean, and Theo watches them for a while through the glass\nand then sets it down.##\n\n$B\"They won't catch us.# We're pulling away.\"$C##\n\nYou say nothing.# You watch the smudge of their sails on the horizon\nuntil they vanish, and feel a relief so specific that it almost has a name.##",
+      "childid": 5
+    },
+    {
+      "id": 5,
+      "type": "Dialogue",
+      "recap": "Efeliah describes the ocean mental field - Kriss's homesickness",
+      "dialogues": [
+        {
+          "actor": "Efeliah",
+          "precomment": "On the second evening at sea, the sun goes down ahead of you,\npainting the water in wide bands of copper and rose.#\nThe others are below, and Efeliah is sitting cross-legged at the very front\nof the prow deck, directly above the glass floor of the observation room,\nher eyes closed.# You come to sit beside her.##\n\nShe does not open her eyes, but she smiles.",
+          "line": "I am listening.",
+          "istelepathy": true
+        },
+        {
+          "actor": "Kriss",
+          "line": "To what?",
+          "istelepathy": true
+        },
+        {
+          "actor": "Efeliah",
+          "line": "The sea.# Its depths.#\nOn Noi-Hert, the sea is far more populous than the land.#\nFish of every kind, invertebrates, micro-organisms, great mammoths of the deep...#\nListening to their minds is like hearing a chorus of vibrations\non every frequency from the highest to the lowest,\nevery creature participating, building into one vast field of mental energy\nbelow the level of the sea.#\nIf you could see it...",
+          "comment": "She pauses, and the pause has a kind of reverence in it.",
+          "istelepathy": true
+        },
+        {
+          "actor": "Efeliah",
+          "line": "It would be a superb sight.",
+          "istelepathy": true,
+          "break": true
+        },
+        {
+          "actor": "Kriss",
+          "precomment": "You look at the water spreading around you in every direction.\nYou cannot hear what she describes, or not exactly, but there is something:\na faint, sourceless sense of presence, vast and unhurried,\nmoving underneath the surface like a tide that has nothing to do with the moon.",
+          "line": "Can you try to share it with me?# What you're hearing?",
+          "istelepathy": true
+        },
+        {
+          "actor": "Efeliah",
+          "line": "Your mind, though exceptional, is not naturally receptive in the way\nthat nearly all minds I have encountered on Noi-Hert are.#\nSometimes you have spikes of energy and catch external images,\nbut you are not made for this.#\nThe only hope you have of understanding what lives in your mind\nis to follow this pull that has guided you so far.",
+          "comment": "She opens her eyes and looks at you.# The light on the water.",
+          "istelepathy": true,
+          "break": true
+        },
+        {
+          "actor": "Kriss",
+          "precomment": "You look at the water, and the light on it, and the deepening sky.#\nAnd something comes up that you have been pushing down for some time.",
+          "line": "Honestly?# I don't much care what's in my head.#\nI just want to go home.",
+          "comment": "You say it quietly, and then you are surprised to find that your eyes\nhave filled without your permission, which is not the effect you were looking for.##"
+        },
+        {
+          "actor": "Efeliah",
+          "precomment": "Efeliah puts an arm around your shoulders.# She does not speak aloud;\nher voice is very low in your mind, and she projects with it\na sense of peace, something warm, placed gently, like a hand on a fever.",
+          "line": "Perhaps you will find an answer to that too.#\nWe don't know what awaits us.# You'll see.# It will all work out.",
+          "comment": "But even as she says it, she is thinking something she does not transmit:\nthat she cannot begin to comprehend how she can say those words\nto someone who is light-years from his planet and millennia from his time.##\n\nShe closes her eyes.# She keeps her arm around your shoulders.#\nYou look out into the ocean depths of this strange planet while the last\nof the sun goes below the horizon and the stars come out, one by one.##",
+          "istelepathy": true,
+          "childid": 6
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "type": "Dialogue",
+      "recap": "evening in the cabin - companionship at sea",
+      "dialogues": [
+        {
+          "actor": "Smiurl",
+          "precomment": "That night, with the ship running steadily south under a sky thick with stars,\nall five of you are in the main cabin.# The navigation computer tends the course.\nThere is food from the ship's stores, preserved, more varied and less grim\nthan anything you have eaten in weeks.# Efeliah has found a sealed container\nof something that might be wine and is examining it with quiet curiosity.",
+          "line": "Do you think there are things in the water?# Big things?",
+          "comment": "He is staring at the glass floor of the forward compartment.\nHis skin is a mild, curious amber."
+        },
+        {
+          "actor": "Efeliah",
+          "line": "Statistically, yes.# The southern sea is deep and cold,\nand everything I have heard in it suggests fauna of considerable size.",
+          "comment": "She finally opens the container and sniffs it, and her eyebrows rise.",
+          "istelepathy": true
+        },
+        {
+          "actor": "Smiurl",
+          "line": "I was hoping you would say no.",
+          "comment": "He shifts slightly away from the glass floor."
+        },
+        {
+          "actor": "Corolla",
+          "precomment": "Corolla is lying on one of the bunks, one arm behind her head.",
+          "line": "Ef, stop torturing the dwarf and open the bottle.",
+          "break": true
+        },
+        {
+          "actor": "Efeliah",
+          "line": "It may be two hundred years old.",
+          "comment": "She pours some into a cup and passes it to Corolla,\nwho drinks without ceremony and hands it back.",
+          "istelepathy": true
+        },
+        {
+          "actor": "Corolla",
+          "line": "It's fine.# Very fine, actually.",
+          "comment": "She stares at the ceiling for a moment, then, quietly:"
+        },
+        {
+          "actor": "Corolla",
+          "line": "I did not expect us to make it this far.",
+          "comment": "Nobody speaks for a moment.# It is not a complaint,\nbut simply the truth, offered plainly,\nthe way Corolla sometimes offers things when her guard slips.",
+          "break": true
+        },
+        {
+          "actor": "Theo",
+          "precomment": "Theo, sitting with his back against the hull and his eyes half-closed, says:",
+          "line": "We keep going.",
+          "comment": "It is not a reassurance, but a statement of fact, the way gravity is a fact."
+        },
+        {
+          "actor": "Corolla",
+          "precomment": "Corolla turns her head and looks at him.",
+          "line": "Yeah.",
+          "comment": "She says it softly, and looks back at the ceiling.##\n\nSmiurl has fallen asleep sitting up,\nleaning against Efeliah's shoulder, his face entirely unguarded,\nand Efeliah looks at him with quiet fondness and does not move.",
+          "childid": 7
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "type": "Story",
+      "recap": "three days of peace at sea",
+      "text": "Three days pass like something out of a dream you did not know you were allowed to have.##\n\nThe sea is calm, the sails track the sun with their slow mechanical patience,\nand the navigation computer adjusts course twice a day with soft chirps that bother no one.#\nYou sleep in an actual bunk, between actual walls,\nwithout one ear listening for the sound of footsteps in the dark.##\n\nYou talk, all of you, in various combinations, about nothing in particular.#\nEfeliah tells you about Seer's Rock, about the library of stone-tablet Memories,\nabout the Master's belief that the mind was not separate from the universe\nbut simply a finer arrangement of it.#\nCorolla teaches you a card game using a deck improvised from torn scraps\nof the ship's technical manual, and she cheats badly and dares you to call her on it.#\nSmiurl gets seasick on the second day, recovers on the third,\nand spends the fourth leaning over the prow, watching the water,\nhis skin a meditative pale blue.##\n\nEfeliah listens to the chorus, and you watch her listen,\nand the peace on her face is something you want to remember.##",
+      "childid": 8
+    },
+    {
       "id": 8,
       "type": "Story",
-      "recap": "running through corridors with hostage - toward the diaphragm door",
-      "text": "$B\"Walk.\"$C# Theo, to the scientist, flat and absolute.##\n\n$c<<You had better walk.>>$C# You press the prod to its back.\n$C\"You'll want to move quickly.\"\n\nFrom the staircase to their right,\na heavy trampling of feet, growing louder.##\n\nYou run left.##\n\nEfeliah runs point with Corolla at her shoulder,\nwounded but barely showing it, ready to strike.\nTheo and you drag the scientist between you.\nThe alarm has not stopped; the whole base is ringing with it,\nand ahead and behind the sound of running feet echoes\nthrough the metal corridors.##\n\nAt a junction, Efeliah stops before a massive circular metal door.##\n\nShe stands before it for some seconds, saying nothing,\nthen takes the scientist's hand and presses it flat against\na plate at the center of the door.# The plate brightens at the touch,\nand the door slides open silently, irising apart,\nrevealing a long glass tunnel ahead.##\n\n$c<<Fingerprints.# Or something like them.>>$C##\n\nYou push through. Efeliah closes the door behind you.##\n\n$g<<It can only be opened by those with sufficient standing in their hierarchy.#\nThey should not be able to follow.>>$C##\n\nYou do not ask what that means, because there is already shouting\non the other side of the door, and no time to weigh it.##",
+      "recap": "storm approaches - sky darkens",
+      "text": "On the morning of the fifth day, the horizon ahead turns the color of a bruise.##\n\nIt happens gradually at first.#\nThe blue-white sky thickens to a hazier white,\nthen to a flat gray that strips the water of its glitter and leaves it leaden and cold,\nand the swells grow, not dramatically but steadily,\nthe ship beginning to lift and dip on rollers that are still comfortable but no longer gentle.#\nThe sails retract automatically, folding themselves inward with a mechanical whisper\nthat sounds, in the new silence, like a held breath.##\n\nThe navigation console emits a series of chirps\nand then a sustained tone that Efeliah identifies,\nafter some study of the screen's amber characters,\nas a storm alert.##\n\n$c<<Of course.# Of course there is a storm.\nWe were having a nice time,\nwhich historically has been the universe's preferred trigger.>>#\n\n$CTheo looks at the sky and says nothing.##",
       "childid": 9
     },
     {
       "id": 9,
       "type": "Story",
-      "recap": "the glass tunnel - city glimpsed on the run",
-      "text": "The walls of the tunnel are glass.##\n\nYou are already running when you understand this,\nand you do not stop, cannot stop,\nbut you see it as you run: a long crystal tube\nconnecting two structures, and beneath it, dozens of meters down,\nthe sea floor, lit as bright as noon, sprawling out\nfor the area of a small city in every direction.##\n\nTo the left: mutants at work, emerging from minisubs without any protection,\nat ease in the water as you are in air, digging or preparing\nsome new structure, deliberate and purposeful.#\nTo the right, you see something more extraordinary.##\n\nA city.##\n\nA real city, streets and gardens of algae and coral,\nand around what might be a market\na great number of mutants move with the unhurried purpose\nof people who have somewhere to be.# Colorful structures\ncling to the rock face like shells.# Small luminous submersibles\nshuttle between points, ferrying passengers.##\n\nAnd then, from a building, a crowd of small mutants pours out,\nproportioned differently, their enormous eyes not yet fully developed.##\n\n$g<<Children coming out of school…>>$C##\n\nEfeliah says it with a particular hesitation.# Nobody says anything else.\nYou keep running, but you are all looking,\nand the scientist-mutant you are dragging along has taken on\nthe expression of something like pride,\nthough it says nothing, not a syllable.##\n\n$g<<They're entering the tunnel! We must keep moving!>>$C##",
+      "recap": "storm worsens - real danger",
+      "text": "By midday, there is no question about it anymore.##\n\nThe swells are three meters, then four,\nand the ship climbs each one in a long, lunging motion\nand comes down the far side with a crash that sends water sheeting across the deck.#\nThe sky has closed completely, a low ceiling of boiling gray-black\nthat flickers with interior light, and the wind has gone from a whisper to a roar,\nand when it hits you in the face it carries water, not spray but solid,\npelting rain that strikes with unexpected force.##\n\nSmiurl is below, and everyone not needed on deck is below,\nwhile Corolla and Theo are lashed to the stern rail,\nfighting the wheel in turns as the computer struggles\nwith a sea that no longer follows any of its models.#\nThe masts creak, and something deep in the hull makes a sound\nthat you do not want to interpret.##\n\n$c<<We are going to lose this ship.#\nI know it with the bone-cold certainty of someone who has already lost\nseveral things on this planet and developed an instinct for it.>>$C##",
       "childid": 10
     },
     {
       "id": 10,
       "type": "Story",
-      "recap": "scientist released - the flood trap begins",
-      "text": "The tunnel continues ahead in a straight line,\nnarrowing with distance into a point of darkness.##\n\nAfter another minute of running, Efeliah says:\n$g<<There is a slight downgrade ahead.>>$C# And then:\n$g<<They are coming.>>$C##\n\nYou shove the scientist toward the tunnel wall\nand release it.# It stands very still where you leave it,\nwatching you run, the pride-expression fading into something\nyou cannot name and do not have the time to study.##\n\nYou run.##\n\nA few minutes in, you feel it: water under your feet.\nRising, not from above but creeping along the tunnel floor,\ncold and inexorable.# You look back.\nThe scientist has closed its mouth into something like\na sharp-toothed smile.##\n\n$Y\"They want to drown us,\"$C# Smiurl says,\nin a tone of simple, defeated fact.\n\nYou all look at Efeliah, who gives one short nod.##\n\n$c<<Of course.# Of course they do.>>$C##\n\n$c\"Then there's no time to waste,\"$C# you say.\n\nYou run harder.##",
+      "recap": "the decisive wave - ship goes down",
+      "text": "The wave that decides it comes out of the dark.##\n\nYou see it for perhaps two seconds before it hits,\na black wall of water, twice the height of the mast,\ncarrying the low groaning sound of something vast being moved against its will.#\nThere is no time to shout.#\nTheo lets go of the wheel and throws himself flat,\nand Corolla grabs the rail with both hands and locks her elbows.##\n\nThe wave takes the ship broadside.###\n\nThe world becomes white and cold and violent and there is no up.#\nThe deck tilts past ninety degrees and you are not on it anymore,\nyou are in the water, and the water is black and enormous and full of noise.#\nSomething hits you, a piece of the ship, the mast, you do not know,\nand the noise cuts out.##",
       "childid": 11
     },
     {
       "id": 11,
-      "type": "Story",
-      "recap": "water rises - the apnea choice",
-      "text": "The water rises faster the farther you go,\nand the tunnel shows no sign of climbing.##\n\nYou wade through it at hip height.\nSmiurl is already swimming.# The others follow.\nYou stop when there is only the thickness of a head between the water\nand the tunnel ceiling, all of you treading,\nand Theo says nothing because there is nothing useful to say.##\n\n$R\"What do we do?\"$C# Corolla asks.##\n\n$g\"Look, the tunnel rises there,\"$C# Efeliah says,\npointing ahead through the water: some meters forward,\nthe tunnel curves sharply upward into the rock,\nclimbing not quite as fast as it descended.\nBeyond that point the water would be shallower again, or at least\nthe ceiling higher.# Then air.##\n\n$B\"You want us to swim it.\"$C# Theo, flat.#\nEfeliah doesn't answer.##\n\n$C\"I don't think we have any other choice,\"$C# you say.##\n\nThey all look at you, each of them deciding the same thing.##\n\n$B\"Smiurl goes first. Then Corolla. Then Ef. Then Kriss.# I am last.\"$C##\n\nSmiurl draws up to the water's edge,\ntakes three, four, five deep breaths with an anguished expression,\nand dives.# Corolla follows instantly, gone clean beneath the surface.##",
-      "childid": 12
-    },
-    {
-      "id": 12,
       "type": "Choice",
-      "recap": "the apnea swim - two approaches",
-      "text": "Theo's hand finds your shoulder.##\n\n$B\"Stay close.\"$C##\n\nEfeliah goes under.# You take your breath, the deepest you can,\nand follow.##\n\nThe illumination of the tunnel carries through the water,\nso you can see where you are going: the curve upward a dozen\nmeters ahead, the wavering green light above it,\nthe others' shapes moving through the dark.##\n\nHow do you approach the swim?",
+      "recap": "underwater - which way is up",
+      "text": "You are underwater.##\n\nYou know this because of the cold and the silence and the burning in your lungs,\nwhich have apparently made the executive decision to remind you they exist.#\nThe water is dark, no light in any direction, no surface visible,\nand you do not know which way is up.##\n\nYour body wants to panic.# You are familiar with this impulse,\nand you do not have the time for it.##",
       "choices": [
         {
-          "desc": "Long, steady strokes, measured, don't burn it all at once.",
-          "childid": 13
+          "desc": "Go still, and let your body find its own buoyancy.",
+          "childid": 12
         },
         {
-          "desc": "Go as hard as you can, straight to the surface.",
-          "childid": 121
+          "desc": "Kick hard, any direction. Up is probably one of them.",
+          "childid": 111
         }
       ]
     },
     {
-      "id": 121,
+      "id": 111,
       "type": "Story",
-      "recap": "wrong choice - burned through air",
-      "text": "You go hard, everything at once, churning the water.\nTwenty meters and your lungs are already screaming,\nbut the curve is just there, and past it the ceiling opens,\nyou can see the pale air above the waterline...##\n\nYou let go of the breath. The cold water fills your throat.\nYour vision goes at the edges, gently, the way the sea does everything.##\n\nThe dark comes in like a tide.##",
+      "recap": "wrong choice - kicked downward",
+      "text": "You kick hard, downward.##\n\nThe pressure builds instead of releasing, and the burning in your lungs becomes a roar,\nand you realize your error just as the darkness at the edges of your vision\nbegins to move inward, quietly and with great finality.##\n\nThe sea keeps all of its secrets.##",
       "islast": true,
       "isclosing": true
     },
     {
-      "id": 13,
+      "id": 12,
       "type": "Story",
-      "recap": "the apnea swim - drowning - Theo resuscitates",
-      "text": "Long strokes, don't fight it.##\n\nEvery nerve in your body wants speed, but you know,\nyou know the way your lungs know, that burning the air early\ngets you nowhere. You measure it out,\nstroke by stroke, the burning growing and being set aside,\nthe curve arriving, then past it, the ceiling higher now,\nthe green light of the air above closer with every pull.##\n\nTen meters. Five.##\n\nYour lungs give out on you.##\n\nYou don't decide to let the air go.# It leaves,\nand the salt water takes its place,\nand you swallow it and your body\nmakes its own decision about what this means,\nand the decision is that it is finished,\nhere on the bottom of an unknown ocean on this absurd planet,\nand after everything, all the danger and the things witnessed,\nthis is the epilogue.# On Earth they must have given you up\nas lost from the first day you disappeared.##\n\nThe darkness comes in from the edges.# In your chest, a strange heaviness.\nWith the last thread of consciousness you register\nthat this is your final moment.##\n\nThen a great pressure on your chest.# Once.# Twice.# Three times.##\n\nYou open your eyes, gasping, coughing salt water from your lungs,\nand Theo is there, squeezing you like a lemon\nwith his enormous hands, and when you have spat out the last drop\nyou drag yourself upright and look around.##\n\nThey are all here, all of them,\nand their faces carry a fear you have rarely seen on any of them,\nand Efeliah's breath is still short.##\n\nYou reach a hand to Theo.##",
-      "childid": 14
-    },
-    {
-      "id": 14,
-      "type": "Dialogue",
-      "recap": "after the drowning - no rest, press on",
-      "dialogues": [
-        {
-          "actor": "Kriss",
-          "line": "If I'm alive, it's because of you.# You saved me.",
-          "comment": "He grips your hand and allows himself a smile,\nthen pulls you to your feet."
-        },
-        {
-          "actor": "Efeliah",
-          "precomment": "Efeliah, still catching her breath.",
-          "line": "We cannot stop even now.#\nFor them the water is no obstacle.",
-          "istelepathy": true,
-          "childid": 15
-        }
-      ]
-    },
-    {
-      "id": 15,
-      "type": "Story",
-      "recap": "out of the tunnel into the rock cavern",
-      "text": "You make for the portal at the top of the tunnel.##\n\nThis one has no protection. It opens docilely\nwith a hiss the moment you press the button.##\n\nYou step into a vast space, much of it carved from the rock itself.\nAn enormous hum fills it, and the smell of hot metal and electricity.\nCountless pieces of equipment populate the cavern,\nall of them active to judge by the noise and the light,\nstacked without pause from floor to the high ceiling,\nwith metal walkways providing access to the upper ones.#\nTwo staircases rise left and right into corridors bored through the rock.##",
-      "childid": 16
-    },
-    {
-      "id": 16,
-      "type": "Dialogue",
-      "recap": "Theo divides the party - search for a way out",
-      "dialogues": [
-        {
-          "actor": "Theo",
-          "precomment": "Theo has already read the space.",
-          "line": "We should split up.# Smiurl, come with me.",
-          "comment": "He moves toward the right staircase."
-        },
-        {
-          "actor": "Theo",
-          "line": "Find a way out. And our weapons.",
-          "comment": ""
-        },
-        {
-          "actor": "Efeliah",
-          "precomment": "Efeliah nods.",
-          "line": "I'll be the link between both groups.",
-          "comment": "She turns and runs left, with Corolla and Kriss behind her.",
-          "istelepathy": true,
-          "childid": 17
-        }
-      ]
-    },
-    {
-      "id": 17,
-      "type": "Story",
-      "recap": "the grotto with their ship being dismantled",
-      "text": "The left corridor is the same reddish rock,\nelectric cables strung between bulbs at regular intervals.\nYou follow it for a minute or two without meeting anything,\nthen it ends, opening onto a metal landing above a vast cavern.##\n\nWhat you see stops the breath in your lungs.##\n\nThe ship.##\n\nIn the center of the cavern, an enormous grotto cut into the rock,\ntheir ship lies at rest,\nthe one you sailed south on, the one that took you all down with it.#\nMechanical arms hiss and clank around the hull, the mast, the solar sails,\ndismantling it piece by piece with methodical indifference.#\nAlready the forward half is in sections on the floor;\nonly the stern remains intact.##\n\nYou descend to explore, keeping your distance from the mechanical arms\nthat would crush you without noticing.##\n\nThen a mutant stares down at you from a control booth\nhigh on the cavern wall, frozen in surprise for a moment,\nthen recovers and reaches for something like a telephone.##\n\n$R\"It's calling reinforcements,\"$C# Corolla says,\nreading it the same moment you do.##\n\n$c<<As if we didn't have enough problems.>>$C##\n\nA hiss cuts the air between you, and something metal\nstikes the floor just behind you.# The technician\nthat calls reinforcements also shoots at you with something like a harpoon gun.##\n\nYou run.##",
-      "childid": 18
-    },
-    {
-      "id": 18,
-      "type": "Story",
-      "recap": "minisub dock found - Corolla clears it",
-      "text": "A side corridor, low and curved, takes you away from the harpoon darts.\nAt its end, an open door: and inside, a dock.##\n\nSeveral minisubs rest in their berths,\nlow and sleek and entirely alien in design,\nbut real, and floating, and connected to the surface\nby water that glints faintly far above.##\n\n$c<<Our ticket to the surface.>>$C##\n\nTwo mutants emerge from behind a row of storage racks,\nreaching for their own prods.#\nThey do not get the chance.# Corolla is already on them,\nand within moments both are on the floor, and their weapons in her hands.\nShe assesses the two new prods with the air of someone\ncalculating how to operate four of a thing simultaneously.\nShe appears to conclude she can.##\n\n$R\"We need Theo and Smiurl.\"$C##\n\nYou double back toward the ship-grotto,\ncautious around the mouth of the dock entrance.\nThe technician in his booth has vanished.##\n\n$g<<They're coming!>>$C##\n\nA mass of mutants pours into the grotto from the same corridor\nyou used. And from the upper walkways, more.##",
-      "childid": 19
-    },
-    {
-      "id": 19,
-      "type": "Fight",
-      "recap": "battle in the ship grotto - Theo and Smiurl arrive",
-      "text": "Corolla goes to ground behind a segment of the ship's hull,\nalready toppled with the rest of the prow.\n$R\"Get to the control booth! I'll draw them off!\"$C##\n\nYou take cover behind whatever the dismantling arms have left.\nEfeliah moves for the booth, low and fast.\nHer voice arrives in your minds:\n$g<<I will try to confuse their minds.# Hold as long as you can.\nTheo and Smiurl should arrive any moment.>>$C##\n\nThe first attackers to reach you find that the ship wreck and the\nmoving machinery between you and the main group cost them time\nthey do not have.# But the rest begin to fan out,\ntrying to flank.# Three reach Corolla; others come for you.##\n\nYou have no sword. Your borrowed prod is not the weapon you know.\nBut the cavern has a floor,\nand it has cables, and it has machinery that moves,\nand you use all of them.##",
-      "encounter": {
-        "foes": [
-          {
-            "name": "Mutant Guards",
-            "health": 110,
-            "damage": 15,
-            "attacksperround": 2
-          }
-        ],
-        "victorymessage": "$CTheo drops from the upper platform at full height\nand takes three of them down before they have seen him,\nand Smiurl comes behind him scattering blinding light\nfrom every inch of skin.# The result is brief and conclusive.##\n\nYour weapons are in Theo's hands.# And then in yours.#\nYou draw the sword and look at your reflection in the blade,\nsteady and certain, and step forward.##\n\nA few minutes later it is finished.\nEfeliah descends from the booth.\n\n$g<<We should go before more arrive.>>$C",
-        "defeatmessage": "$CThey are too many, and they do not stop,\nand eventually Corolla's prods run dry\nand your prod finds no target that stays down.##\n\nThe scientist will get its experiments after all.##",
-        "qtecycles": 4,
-        "qtelength": 38,
-        "qtespeedfactor": 1.15,
-        "qtewidth": 5
-      },
-      "childid": 20
-    },
-    {
-      "id": 20,
-      "type": "Story",
-      "recap": "Kriss figures out the minisub controls",
-      "text": "You pile into the largest minisub and Smiurl seals the hatch.##\n\n$R\"Who knows how to pilot this thing?\"$C#\nCorolla gestures at the control board.##\n\n$g<<I have never seen anything like it.#\nAnd I don't have a pilot nearby to borrow from.>>$C##\n\nYou lean in over the controls.#\nAmidst a field of blinking indicator lights, two things stand out:\na device that looks precisely like the joystick from your computer at home,\nand a flight-style control stick beside it.\nAll the labels are in characters you cannot begin to decipher.##\n\nYou sit in the pilot seat.# You ease the control stick\nlightly upward, and a low vibration runs through the hull.##\n\n$c<<Can't be that complicated.>>$C# You say it partly for their sake.##\n\nYou study the central lever: it can slide vertically.\nYou lower it a few millimeters.##\n\nThe minisub tilts, then begins to descend slowly toward the dock water.##\n\n$Y\"How do you do that?!\"$C# Smiurl, delighted despite everything.##\n\n$c<<This one controls the drive motors,>>$C# you say,\n$c<<and this lever here is for diving and surfacing.>>$C##\n\n$Y\"What about those?\"$C# He points at the twin joysticks.##\n\n$c<<Still working on that.>>$C##\n\n$B\"Two swiveling propellers,\"$C# Theo says, from over your shoulder.\n$B\"Should have about ninety degrees of rotation.\"$C##\n\nYou test it.# The minisub yaws, first right, then left.##\n\n$Y\"What did I tell you?!\"$C# Smiurl shrieks with what passes for joy in a near-death situation.##\n\nGuide channels of pale light mark the path to the cavern mouth.\nYou push the throttle forward.##\n\n$c<<Only one thing we still don't know,>>$C# you say,\nas the rock walls accelerate past either side,\n$c<<is how this thing brakes.>>$C##",
-      "childid": 21
-    },
-    {
-      "id": 21,
-      "type": "Story",
-      "recap": "surfacing - orientation - Smiurl's navigation trick",
-      "text": "You burst from the cavern into open water at full speed.\nThe minisub wobbles, finds itself, and angles sharply upward.##\n\nWhen you break the surface, actual sunlight comes through the viewport,\nand everyone goes quiet for a moment at the fact of it.#\nYou think about embolism for a second, then Smiurl opens the hatch\nand takes a breath and is perfectly fine,\nand you close that particular worry in a drawer at the back of your mind\nwhere it will stay until you have time to look at it properly.##\n\nA collective silence, then a general eruption of relief that is partly noise\nand partly just the absence of dread.##\n\nThe only problem is that there is nothing to eat or drink aboard,\nand the water they have between them is very little.##\n\n$R\"Which way do we go?\"$C# Corolla at the compass.#\n$R\"The cardinal points don't match anything I know.\"$C##\n\n$g<<I have no idea where we are.>>##\n\n$c\"We need to go south,\"$C# you say.##\n\n$R\"And how do we know which way that is?\"$C##\n\nYou had been about to suggest waiting for night\nand navigating by the stars, when Smiurl squeezes past you\nand sticks his head through the hatch for a moment, then drops back in.##\n\n$Y\"South is that way,\"$C# he says, pointing slightly to your right.##\n\n$R\"And how exactly would you know?\"$C# Corolla, genuinely surprised.##\n\n$Y\"Simple.# The sun is low on the horizon.\nIf the city at the bottom of the sea keeps solar time, that's west.\"$C##\n\nNobody says anything.# You all look at Smiurl.##\n\n$c<<Right. Of course. The dwarf.>>$C##\n\nYou turn the minisub to Smiurl's south.#\nThat night, when the stars come out, you check,\nand he is exactly right.##",
-      "childid": 22
-    },
-    {
-      "id": 22,
-      "type": "Dialogue",
-      "recap": "Efeliah's revelation - the storm was artificial",
-      "dialogues": [
-        {
-          "actor": "Efeliah",
-          "precomment": "The night passes in shifts at the controls.\nBy morning, when you are all awake,\nEfeliah speaks.# She has been quiet since the tunnel,\nquieter than usual, and there is something in the way she chooses\nher words now that tells you she has been sitting with this for hours.",
-          "line": "There is something I need to tell you.",
-          "istelepathy": true
-        },
-        {
-          "actor": "Kriss",
-          "line": "Go on.",
-          "comment": ""
-        },
-        {
-          "actor": "Efeliah",
-          "line": "The storm that sank us.# It was not a natural phenomenon.",
-          "comment": "She lets that sit a moment.## ",
-          "istelepathy": true
-        },
-        {
-          "actor": "Smiurl",
-          "line": "And who...",
-          "comment": ""
-        },
-        {
-          "actor": "Efeliah",
-          "line": "The mutants.# The complex of machines we saw inside the structure\nwhere we found our ship: that was only part of an enormous machine\ncapable of controlling the weather.# I read it in their minds.##\n\nThey detected us somehow, at a distance.\nThey sank us deliberately.#\nGetting possession of that ship was one purpose,\nbut capturing living human specimens, especially ones with unusual mental faculties,\nwas the real prize.# They would have run every kind of experiment\non our minds and bodies.",
-          "istelepathy": true
-        },
-        {
-          "actor": "Corolla",
-          "precomment": "A beat.",
-          "line": "That's not possible.",
-          "comment": ""
-        },
-        {
-          "actor": "Smiurl",
-          "line": "All that seawater must have gone to their brains!",
-          "comment": "He says it with a righteous indignation\nthat is so precisely correct that everyone laughs,\nhalf from the joke and half from the pure physical relief\nof having escaped people who would have done exactly that.##\n\nAnd then you stop laughing, because you find yourself looking back,\nin your mind, at the city in the glass tunnel.\nThe children coming out of school.\nThe market, the coral gardens, the little luminous submersibles\nplying their routes. The scientist in his white coat,\nholding his arm after what Efeliah told you, looking\nat something you still cannot name.##\n\nThe scientist who found you disgusting.# Who you found disgusting.##",
-          "childid": 23
-        }
-      ]
-    },
-    {
-      "id": 23,
-      "type": "Story",
-      "recap": "closing reflection - 'those mutants are no less human than us'",
-      "text": "$c<<Those mutants…# they are no less human than we are.>>$C##\n\nYou say it aloud before you have decided to.##\n\nNobody answers.# Nobody has the courage to add anything.##\n\nThe minisub runs south, its motors quieter now,\nand ahead of you, the sea.##",
+      "recap": "find surface, then lose consciousness in water",
+      "text": "You stop fighting.# You go limp in the cold water\nand let the darkness be still around you for one terrible second,\nand then you feel it, the faint, slow pull of your body\ntoward one direction rather than another,\nthe physics of buoyancy asserting itself even here.##\n\nYou kick hard, toward where up should be.##\n\nYou break the surface with a gasp that tears at your throat, coughing water,\narms thrashing, and the rain hammers down\nand the sea heaves around you in enormous dark swells,\nand lightning flashes somewhere behind the clouds, illuminating for one white second\na field of wreckage, splintered wood, a torn sail panel, debris scattered\nacross the face of the water.##\n\nYou can see nothing.# You call out,\nbut the wind takes your voice and tears it to nothing.#\nThe cold is extraordinary, and your limbs are already growing heavy.##\n\nAnother wave, and you take a breath,\nand then the sea takes you down again,\nand the darkness comes back, and this time you do not fight it.##\n\nYou float.##\n\nDown.##",
       "islast": true
     }
   ]

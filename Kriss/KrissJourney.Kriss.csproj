@@ -44,9 +44,13 @@
     <None Remove="Chapters\c20.json" />
     <None Remove="Chapters\c21.json" />
     <None Remove="Chapters\c22.json" />
+    <None Remove="Chapters\c23.json" />
+    <None Remove="Chapters\c24.json" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Chapters\c24.json" />
+    <EmbeddedResource Include="Chapters\c23.json" />
     <EmbeddedResource Include="Chapters\c22.json" />
     <EmbeddedResource Include="Chapters\c21.json" />
     <EmbeddedResource Include="Chapters\c20.json" />

@@ -1,0 +1,94 @@
+{
+  "id": 23,
+  "title": "THE FAREWELL",
+  "nodes": [
+    {
+      "id": 1,
+      "type": "Story",
+      "recap": "chapter header + the banquet hall",
+      "text": "-------------------------------\n|          CHAPTER 23          |\n-------------------------------\n\n\n$CThe banquet hall has nothing in common with anything\nyou have seen since Ayonn.##\n\nThat is saying something.# The table, very small relative\nto the enormity of the room, stands at the foot of a wide staircase\ncarpeted in red.# Hundreds of lights nest in the crevices\nof the stone walls, casting a warm diffuse glow,\nand from the vaulted ceiling an enormous chandelier\nof gems and gold lights the center of the room\nlike a controlled star.# Stone pillars rise from the polished floor\nto take the shapes of colossi and unknown creatures\nthat seem to hold the richly decorated ceiling on their shoulders.##\n\nYou arrive still dreamstruck, the way you arrive\nat everything in this city, and you look around\nand say nothing, because nothing is adequate.##\n\nThen Saberinne comes through, and everything else\nstops mattering.##\n\nShe is wearing a green dress with a train that seems to you,\nirrational as it is, like the dress of a bride.#\nEarrings, a necklace that falls toward her collarbone.#\nHer face radiant with a warmth she is not containing\nbecause she has stopped trying to.##\n\n$c<<I think... I know... I will not let this end.\nI know this is impossible.# I know it anyway.>>$C##\n\n$CShe feels the thought.# She smiles, and she sits down,\nand the evening begins.##",
+      "childid": 2
+    },
+    {
+      "id": 2,
+      "type": "Story",
+      "recap": "after dinner - the open terrace, the stars, the plan",
+      "text": "After dinner you climb a staircase to a second terrace, this one\nopen to the sky, the night around you mild and clear,\nand you sit in the candlelight and look at the stars of Noi-Hert\nand Saberinne says, to all of you:#\n\n$G\"There is something we need to tell you.\"$C##\n\nYou explain it together, turn and turn about:\nthe merge, the army, tomorrow at dawn.#\nYou say it simply, the way you have learned to say\ndifficult things, and they listen.##\n\nA silence.# Then$R Corolla$C: $R\"You've already decided, then.\"$C\nIt is not a question.# Then$g Efeliah$C, carefully:#\n$g\"I understand that what passed between you two\nhas been something that goes beyond what I could imagine.\nI believe it must be this way.\"$C##\n\n$Y\"It won't be dangerous, will it?\"$C asks Smiurl.#\nYou smile at him: $c\"Like everything else, there are risks.\nBut they won't stop me, will they, Smiurl?\"$C#\n$Y\"You're right,\"$C he says, and bows his head.##\n\nAnd then Theo stands and crosses to you in two steps\nand closes his arms around you,\nand briefly reorganizes your spine.##",
+      "childid": 3
+    },
+    {
+      "id": 3,
+      "type": "Dialogue",
+      "recap": "the goodbyes on the rooftop terrace - each companion",
+      "dialogues": [
+        {
+          "actor": "Theo",
+          "precomment": "He holds on for one second, two, then releases you\nand takes one step back and looks at you\nwith the expression you know now as Theo's everything:",
+          "line": "This is my farewell.#\nI have a strange presentiment, boy.#\nIn case we should not meet again.",
+          "comment": "He says it flatly, in his way, and means every word.##"
+        },
+        {
+          "actor": "Kriss",
+          "line": "I assure you it isn't necessary...",
+          "comment": ""
+        },
+        {
+          "actor": "Corolla",
+          "precomment": "Corolla does not wait.# With her voice slightly uneven,\nwhich is a thing she will never acknowledge,\nshe throws her arms around your neck.",
+          "line": "We don't care!",
+          "comment": "She holds you for a moment, then draws back slowly,\nher hands lingering in yours.##\n\n$R\"Don't get hurt.\"$C she whispers against your ear.#\nThen she steps back, chin up, eyes completely dry,\njaw set.##"
+        },
+        {
+          "actor": "Efeliah",
+          "precomment": "Efeliah looks at you for a long moment with that gaze\nthat has always seen more than it should\nand held it without judgment.#\nThen she says:",
+          "line": "Goodbye, Kriss.",
+          "comment": "$g<<I don't know why, but I feel that Theo is right...>>$C##\n\nAll of them moved, and none of them entirely\nunderstanding why, and that somehow makes it worse.##",
+          "istelepathy": true,
+          "break": true
+        },
+        {
+          "actor": "Smiurl",
+          "precomment": "Smiurl says nothing.# He launches himself at you\nwith enough force to nearly knock you over,\nhis arms around your neck, his skin\nflooding a quiet and complicated pattern of light:\nevery color, none of them quite settling.##\n\nWhen he comes back down to earth:",
+          "line": "We will never forget you.",
+          "comment": "He says it simply.# Then he steps back and will not look at you,\nbecause he is not going to make this harder,\nand that is final.##",
+          "childid": 4
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "type": "Story",
+      "recap": "Kriss and Saberinne alone - the last night",
+      "text": "$c\"Neither will I.# Not any of you.\"$C##\n\n$CYou embrace them all one last time,\nand then they go to their rooms,\nheart-heavy in ways none of you have quite named.##\n\nYou and Saberinne walk away arm in arm,\nand she is quieting, gently, the storm that farewell has stirred in you.##\n\nAfter a while you find a small pavilion at the corner\nof the open terrace, sheltered from other eyes\nby a curve of the stonework, open only to the sky.#\nYou sit together on a narrow bench in the dark.##\n\n$G\"Do you think I'll really never see them again?\"$C you ask her.\n$G\"Who can say, Kriss?# Some things truly cannot be predicted.\"$C\n$c\"For the first time since I've known you,\nI have the feeling you are not telling me everything.\"$C\n$G\"Doesn't everyone enjoy their small secrets?\"$C She looks at the stars.#\nThen: $G\"And if it were a surprise?\"$C\n$c\"You couldn't hide it from me for long.\"$C\n$G\"Time will bring you answers when it brings tomorrow.##\n\n\"Tomorrow we have a great mission, an appointment with destiny.\nBetter not to think about it too much.\"$C##\n\nShe sighs, quietly.# $G\"The night is so brief...\"$C##\n\nShe turns to look at you.##\n\n$G\"And if your companions were right?#\nAnd if this were our last night?\"$C#\nHer words dissolve in the silence between you.##\n\n$c\"We can no longer exist separately, Saberinne.\nNothing will separate me from you, or you from me,\nnot even our own separate wills.\nYou know this.\"$C##\n\n$G\"Of course, my love.# Of course.\"$C##\n\nYou look at each other for a long moment,\nand then everything around you seems to dissolve\nwhen she ends every question, every doubt,\nand closes her mouth over yours.##\n\nThe stars fade.# The first red light of the sun\nfinds you still together, asleep, not letting go.##",
+      "childid": 5
+    },
+    {
+      "id": 5,
+      "type": "Story",
+      "recap": "dawn - the companions give them space - into the elliptical hall",
+      "text": "The companions understood, without being told,\nthat you and Saberinne would need complete concentration\nand solitude.# They gather in one room,\nasking each other what the outcome will be,\nand whether they will truly see you again.##\n\nYou and Saberinne are ready.##\n\nYou enter the elliptical hall together, silent,\nand walk to its center.# Then you separate,\nmoving in mirror-image to each of the two focal points\nof the ellipse, and kneel,\nhands resting on your thighs.##\n\nYou look at each other across the polished marble\none last time with your individual eyes.##\n\nThen you open your minds to each other,\nmore deeply, more completely, than even in the garden.##",
+      "childid": 6
+    },
+    {
+      "id": 6,
+      "type": "Story",
+      "recap": "the mind-merge - fusion into one entity",
+      "text": "Space and time lose part of their meaning.##\n\nYou perceive your bodies as if from outside them.\nYou are several meters apart and yet you can feel\neach other's touch.# You let go of every resistance,\nevery tension, every individual thread.##\n\nYou see your minds as an indescribable tapestry\nof light and sound and thought.#\nYou concentrate on that perception, forgetting your bodies,\nforgetting the elliptical hall, forgetting the city,\nforgetting the planet.##\n\nYour thoughts, your memories, your sensations, your souls:\nthey mix, they merge, they become a single thing.##\n\nIt is no longer Saberinne.# It is no longer Kriss.##\n\nThat enormous power lifts toward the sky,\nextending in every direction,\naware of every house, every person, every blade of grass,\nevery molecule of the valley.##\n\nBelow it the whole planet pulses like an enormous heart,\ntransmitting an unimaginable energy upward.##\n\nInvisible, it extends over the city,\nthen reaches north.##",
+      "childid": 7
+    },
+    {
+      "id": 7,
+      "type": "Story",
+      "recap": "the army is destroyed - the tornado",
+      "text": "So many small men, certain that this is the decisive assault,\nthe one that will deliver the city into their hands.#\nThey do not know they are transparent under the eye\nof something they could not begin to conceive.##\n\nFor only a moment it hesitates.#\nThen, exercising nothing more than its will, it acts.##\n\nThe deepest and most total panic floods the minds\nof most of the attackers at once.# They run in every direction,\nsmashing into each other, trampling each other,\ntwo companions turning suddenly to fight each other\nwithout understanding why.# Others fire their arrows\nand only then, with horror, realize they have not aimed\nat the city's sparse defenders but at their own allies,\nwho now turn on them furiously.##\n\nEvery firearm explodes in its holster.#\nEnergy weapons lose their charge, sucked dry by an invisible force.##\n\nThe army scatters, it flees, but some still resist,\nsome animal stubbornness holding them together.##\n\nThen a wind rises from the south,\ndriving a wall of clouds the color of a sick, rusty red,\nand behind the clouds come lightning storms that scorch\nthe ground in multiple places where the forest once stood.##\n\nTransport vehicles explode, catch fire.#\nHorses bolt, as panicked as their riders.##\n\nThe plain north of the city is devastation now:\nfires, the fallen, swarms of soldiers running without direction\nor comprehension.# Chaos absolute.##\n\nAt that sight something stirs.# And with a final surge\nit sweeps the ruin from before it.##\n\nAn enormous black vortex descends from the clouds,\nbending every remaining tree before it as it passes.##\n\nEverything in its path is dragged upward into its coils,\nimplacable, not distinguishing.# The greater part of that army\nis lifted from the ground like sand.##\n\nIt is a terrifying sight.# Almost no one on the city walls\nhas the courage to watch it.##\n\nThe vortex moves north and disappears over the horizon,\ncarrying an entire army with it, taking them,\nif any survive, to the most remote land on the planet.##\n\nThose few who fled first through the forest escape,\nand they reach their ships and drive them at full speed\nfor days, dispersing into the ocean, making landfall\nfinally on the northern continent.# And those survivors\nwill carry the memory of the terror of Saberinne\nto every corner of the world,\nand a legend will be born from what they witnessed.##\n\nAt his rock far away in the desert,\nElder Long perceives the pulse of that enormous energy\nand is shaken by it, even from that distance.##",
+      "childid": 8
+    },
+    {
+      "id": 8,
+      "type": "Story",
+      "recap": "the merge ends - separation begins - the irreversible truth",
+      "text": "Done.##\n\nThe city is safe.# Gradually, the immense energies are released,\nand it diminishes, withdraws, returns framing toward the hall\nwhere two bodies breathe quietly, waiting.##\n\nSlowly, with an immense pain that passes through them\nto the smallest fiber of their being, they begin to separate.#\nTheir thoughts divide, their perception diverges,\nand they fall back, each toward their own body.##\n\nYou feel yourself returning, on the edge of opening your eyes,\nwhen a new surge of energy engulfs you.##\n\n$c<<What is happening?!>>$C you cry, without making any sound.##\n\n$G<<Kriss, you do not belong to this world.#\nThis is not your universe.>>$C##\n\n$c<<I don't understand.>>$C\n\n$G<<The process is now irreversible.# We would not have had\na second attempt.>>$C\n\n$c<<What are you talking about?>>$C\n\n$G<<Our joined effort can carry you back to your universe of origin.\nWe drew on tremendous energies, and they can give you\nthe push you need.>>$C\n\n$c<<But I don't want to go back.>>$C##\n\nGreat pain in those five words.##\n\n$G<<Kriss, you must.# This is your world, not that one...#\nDon't think it is easy for me.#\nYou know exactly what I feel.>>$C##\n\nAnd you do.# Her mind is open to you,\nand her pain is your pain, exact and equal.##\n\n$G<<The same risks you run, I run.#\nThere is a possibility that one of us, or both,\ncould be lost in the continuum,\nstranded between two dimensions, or in another parallel universe entirely...>>$C##\n\n$c<<We cannot lose each other.#\nI won't survive you.>>$C##\n\n$G<<Nor I you.>>$C she says,\nwith the same note in her voice.#\n$G<<But this sacrifice is necessary.#\nDo you remember what you said to me last night?#\nNothing can separate us.# Keep this with you always:#\nwe will be united, wherever in space and time\nwe find ourselves, across any distance,\nacross any universe.>>$C##\n\n$W\"And now, with that knowledge in our hearts,\nwe throw ourselves toward this unknown\nand hope that all will be well.\"$C##\n\nYou say it together, both of you,\nin one voice and not without fear.##\n\n$c<<I will not forget you.# I will not let you go.# Never.>>$C\n$G<<Never.>>$C##\n\nWeeping without tears, you vanish in a blinding flash of light.##\n\nThe translucent drapes of the elliptical hall\nare blasted to dust.# A strong wind\nruns through the city of Saberinne.##\n\nThe echo of that explosion of grief\ncircles the planet multiple times,\nand drowns, in its intensity and passion,\nevery other emotion in the entire solar system of Noi-Hert.##",
+      "islast": true
+    }
+  ]
+}

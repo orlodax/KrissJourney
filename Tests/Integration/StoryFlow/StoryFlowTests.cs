@@ -156,6 +156,50 @@ public class StoryFlowTests
 
 
     [TestMethod]
+    public void AllChapters_LoadExactlyTwentyFourInContiguousOrder()
+    {
+        // GameEngine.Run loads embedded resource "KrissJourney.Kriss.Chapters.c{id}.json" in a
+        // loop starting at id 1 and breaks at the first missing resource (see GameEngine.Run), so
+        // any gap below 24 would silently truncate the back half of the story instead of failing
+        // loudly. GameEngine.StartChapter also finds a chapter by its Id FIELD, not by list
+        // position (chapters.Find(c => c.Id == chapterId)), so the loaded list must both have the
+        // right count and have each chapter's Id field match the c{N}.json it was loaded from.
+        List<Chapter> chapters = gameEngine.GetChapters();
+
+        Assert.AreEqual(24, chapters.Count, "Expected all 24 chapters (see issue 5's renumber) to load.");
+
+        for (int i = 0; i < chapters.Count; i++)
+        {
+            int expectedId = i + 1;
+            Assert.AreEqual(expectedId, chapters[i].Id,
+                $"Chapter loaded at position {i} should have Id {expectedId} to match its c{expectedId}.json filename.");
+        }
+    }
+
+    [TestMethod]
+    public void AllChapters_HaveANodeWithId1()
+    {
+        // GameEngine.StartChapter always calls LoadNode(nodeId: 1) as a chapter's entry point.
+        foreach (Chapter chapter in gameEngine.GetChapters())
+            Assert.IsTrue(chapter.Nodes.Any(n => n.Id == 1), $"Chapter {chapter.Id} has no node with Id 1.");
+    }
+
+    [TestMethod]
+    public void AllChapters_NodeIdsAreUniqueWithinTheChapter()
+    {
+        foreach (Chapter chapter in gameEngine.GetChapters())
+        {
+            List<int> duplicateIds = [.. chapter.Nodes
+                .GroupBy(n => n.Id)
+                .Where(g => g.Count() > 1)
+                .Select(g => g.Key)];
+
+            Assert.IsTrue(duplicateIds.Count == 0,
+                $"Chapter {chapter.Id} has duplicate node ids: {string.Join(", ", duplicateIds)}");
+        }
+    }
+
+    [TestMethod]
     public void Chapter1_FirstNodeIsAccessible()
     {
         // Assuming chapter 1 exists and is the start of the game

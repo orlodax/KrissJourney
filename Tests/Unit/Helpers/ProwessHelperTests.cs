@@ -77,16 +77,16 @@ public class ProwessHelperTests
 
         // Below and above the calibrated range, the nearest is the first and last entry.
         Assert.AreEqual(ProwessHelper.GetProwess(10), ProwessHelper.GetProwess(1));
-        Assert.AreEqual(ProwessHelper.GetProwess(20), ProwessHelper.GetProwess(99));
+        Assert.AreEqual(ProwessHelper.GetProwess(22), ProwessHelper.GetProwess(99));
     }
 
     [TestMethod]
     public void GetProwess_EquidistantFromTwoChapters_PrefersTheEarlier()
     {
-        // 17 is one away from both 16 and 18. The earlier wins, so an uncalibrated
+        // 18 is one away from both 17 and 19. The earlier wins, so an uncalibrated
         // chapter inherits difficulty already proven in play rather than difficulty
         // tuned for later, stronger enemies.
-        Assert.AreEqual(ProwessHelper.GetProwess(16), ProwessHelper.GetProwess(17));
+        Assert.AreEqual(ProwessHelper.GetProwess(17), ProwessHelper.GetProwess(18));
     }
 
     [TestMethod]

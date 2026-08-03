@@ -11,7 +11,7 @@ namespace KrissJourney.Tests.Unit.Converters;
 /// <see cref="JsonHelper.Options"/> the same way every other node type does. The fixture
 /// payload lives here in test code rather than under Kriss/Chapters: c1-c10 are canon and
 /// this issue does not touch any chapter file, and the content issues that will actually
-/// place Surges in the story (6, 7, 12, 15, 16) land separately.
+/// place Surges in the story (6, 7, 12, 16, 17) land separately.
 /// </summary>
 [TestClass]
 public class SurgeDeserializationTests

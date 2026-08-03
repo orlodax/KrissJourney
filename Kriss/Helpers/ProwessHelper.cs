@@ -9,8 +9,6 @@ namespace KrissJourney.Kriss.Helpers;
 public static class ProwessHelper
 {
     // Every chapter containing a Fight node needs an entry here.
-    // NOTE: these keys use the CURRENT chapter numbering. Issue 5 renumbers the 22
-    // chapters into 24, shifting c15 onward, so 16/18/20 must be revisited then.
     static readonly Dictionary<int, Prowess> ProwessByChapter = new()
     {
         // c10 - oxengutters and croeggs: Kriss swings a dead chief's sword and hopes.
@@ -31,9 +29,9 @@ public static class ProwessHelper
             FuryBonus = 10,
             AttacksPerRound = 2
         },
-        // c16 - the Edzzen bar brawl: tougher and hitting harder, but still two swings,
+        // c17 - the Edzzen bar brawl: tougher and hitting harder, but still two swings,
         // because the mob's three attacks per round make this a fight about not being hit.
-        [16] = new Prowess()
+        [17] = new Prowess()
         {
             MaxHealth = 50,
             BaseDamage = 20,
@@ -41,9 +39,9 @@ public static class ProwessHelper
             FuryBonus = 15,
             AttacksPerRound = 2
         },
-        // c18 - the sea mutants: the underwater rage that tore a door out of its frame
+        // c19 - the sea mutants: the underwater rage that tore a door out of its frame
         // shows up as a third attack per round.
-        [18] = new Prowess()
+        [19] = new Prowess()
         {
             MaxHealth = 60,
             BaseDamage = 25,
@@ -51,9 +49,9 @@ public static class ProwessHelper
             FuryBonus = 20,
             AttacksPerRound = 3
         },
-        // c20 - the duel with Saberinne: Kriss at his peak. She is a wall because of her
-        // own stats in c20.json, not because he is weakened here.
-        [20] = new Prowess()
+        // c22 - the duel with Saberinne: Kriss at his peak. She is a wall because of her
+        // own stats in c22.json, not because he is weakened here.
+        [22] = new Prowess()
         {
             MaxHealth = 70,
             BaseDamage = 30,
