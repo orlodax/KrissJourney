@@ -106,9 +106,20 @@
         },
         {
           "actor": "Efeliah",
-          "line": "In the wider space there were many more of them, I couldn't count them."
+          "line": "In the wider space there were many more of them, I couldn't count them.",
+          "replies": [
+            {
+              "line": "\"Wait... I've seen this before.\"",
+              "nextline": "krissRecalls"
+            },
+            {
+              "line": "\"I know these lights.\"",
+              "nextline": "krissRecalls"
+            }
+          ]
         },
         {
+          "linename": "krissRecalls",
           "actor": "Kriss",
           "line": "We've seen those lights before.\"$C You say, quietly.#\n\n$c\"Before the Mazerock, on the road here.#\nThe convoy of the Horde escort.#\nThose same lights had come, the same colors.#\nAnd then the blinding flash, the silence... and when it was over, there was nobody left.",
           "comment": "\nYour voice breaks.",
@@ -168,30 +179,96 @@
     },
     {
       "id": 8,
-      "type": "Story",
-      "recap": "advancing through growing panic toward the wall of light",
+      "type": "Surge",
+      "recap": "Surge attempt 1 - push toward the wall (tutorial fires here); Smiurl drops",
       "text": "You advance.# Trying to think of something beautiful,# reassuring.# Anything.##\n\n$g\"Do that.# Try as hard as you can\"$C Efeliah says, straightening up.#\n$g\"All of you.# Think... happy thoughts.\"##\n\n$CSmiurl is hunched into himself and nods pathetically.#\nHe starts walking again, propelled by Corolla.##\n\nThe first few hundred metres pass quickly enough.# Then the mental pressure begins to build in earnest.#\nIt grows exponentially.# You find yourself, in one corner of your mind, recalling an old school lesson\nabout electric and gravitational fields, how force is inversely proportional to the square of the distance.#\nOddly, it helps.# It lets you detach, concentrate on your own old world,\nwhere you led an ordinary life, day after day;\nwhere there were no raiding hordes, no mysterious flying lights, and certainly no cities protected by magic shields.##\n\nBut the harder you concentrate, the more your head feels like it is about to explode.#\nWhatever that is, it surrounds you and attacks you from within, impossible to resist.#\nThe mental pressure makes you feel like a walnut under a steamroller.##\n\nYou cast your eyes up: a few dozen metres remain before the wall of light.",
-      "childid": 9
+      "childid": 9,
+      "challenge": {
+        "sequencelength": 6,
+        "drainrate": 45,
+        "restore": 3,
+        "penalty": 12,
+        "startingrage": 100,
+        "maxrage": 100,
+        "successmessage": "You turn slowly, your face contorted in the spasm of mental strain.##\n\nSmiurl is many dozens of metres behind you now, hopping and skipping as though deranged,\nbefore darting away and disappearing behind a low bush.",
+        "failuremessage": "You turn slowly, your face contorted in the spasm of mental strain.##\n\nSmiurl is many dozens of metres behind you now, hopping and skipping as though deranged,\nbefore darting away and disappearing behind a low bush.",
+        "failurechildid": 9
+      }
     },
     {
       "id": 9,
-      "type": "Story",
-      "recap": "companions fall one by one as they near the wall",
-      "text": "You turn slowly, your face contorted in the spasm of mental strain.##\n\nSmiurl is many dozens of metres behind you now, hopping and skipping as though deranged,\nbefore darting away and disappearing behind a low bush.#\nJust ahead of that, Corolla is stretched out on the ground.#\nFurther forward still, Theo has set his hammer on the earth and is leaning his full weight on it, unable to go further.#\nBeyond him, Math and Efeliah still advance, slowly, painfully, holding hands.##\n\nYou take another step, still watching.#\nThe pressure doubles and brings tears to your eyes.#\nYou stagger, and by a miracle manage to stay on your feet.##\n\nThe last hope is going out inside you.# Everything is finished.#\nIt is simply not possible to resist a force like this.#\nYou may as well lie down and wait for the oblivion that will surely bring its relief.",
-      "childid": 16
+      "type": "Surge",
+      "recap": "Surge attempt 2 - push again; Corolla drops",
+      "text": "You take another step, still watching.#",
+      "childid": 15,
+      "challenge": {
+        "sequencelength": 6,
+        "drainrate": 45,
+        "restore": 3,
+        "penalty": 12,
+        "startingrage": 100,
+        "maxrage": 100,
+        "successmessage": "Just ahead of that, Corolla is stretched out on the ground.",
+        "failuremessage": "Just ahead of that, Corolla is stretched out on the ground.",
+        "failurechildid": 15
+      }
+    },
+    {
+      "id": 15,
+      "type": "Surge",
+      "recap": "Surge attempt 3 - push again; Theo drops",
+      "text": "The pressure doubles and brings tears to your eyes.#",
+      "childid": 16,
+      "challenge": {
+        "sequencelength": 6,
+        "drainrate": 45,
+        "restore": 3,
+        "penalty": 12,
+        "startingrage": 100,
+        "maxrage": 100,
+        "successmessage": "Further forward still, Theo has set his hammer on the earth and is leaning his full weight on it, unable to go further.",
+        "failuremessage": "Further forward still, Theo has set his hammer on the earth and is leaning his full weight on it, unable to go further.",
+        "failurechildid": 16
+      }
     },
     {
       "id": 16,
-      "type": "Story",
-      "recap": "Efeliah falls - fury erupts in you",
-      "text": "Then you see her.##\n\nEfeliah has dropped to her knees, still holding Math's hand... until her grip slips.#\nShe collapses forward, eyes rolling back.##\n\nYou see it as though in slow motion:# the whites of her eyes.# Her mouth, half-open.#\nHer hair trailing behind her as she falls slowly, slowly, face-first.#\nThe dust she raises with the displacement of her own weight.##\n\nAnd then,# in an instant,# $Rfury$C fills you.###\n\nWith one corner of your awareness you see Math staring at you, stunned, already lurching toward you.#\nBut you have already started moving, decisive, toward the shield of light.##\n\nYou are not thinking.# Only an inextinguishable flame, suddenly rekindled at the sight of Efeliah, burning in your mind.#\nYou can feel the panic screaming mercilessly and angrily against you.# You can even feel the impact of it.#\nIt feels like your skull is close to bursting.##\n\nYou begin to grind your teeth.#\nA low, guttural growl rises from your throat.##\nYou reach out your hands.##\n\nThe wall of light is just one metre away.",
-      "childid": 17
+      "type": "Surge",
+      "recap": "Surge attempt 4 - push again; Efeliah drops, fury ignites",
+      "text": "You stagger, and by a miracle manage to stay on your feet.##\n\nBeyond him, Math and Efeliah still advance, slowly, painfully, holding hands.##\n\nThe last hope is going out inside you.# Everything is finished.#\nIt is simply not possible to resist a force like this.#\nYou may as well lie down and wait for the oblivion that will surely bring its relief.",
+      "childid": 18,
+      "challenge": {
+        "sequencelength": 6,
+        "drainrate": 45,
+        "restore": 3,
+        "penalty": 12,
+        "startingrage": 100,
+        "maxrage": 100,
+        "successmessage": "Then you see her.##\n\nEfeliah has dropped to her knees, still holding Math's hand... until her grip slips.#\nShe collapses forward, eyes rolling back.##\n\nYou see it as though in slow motion:# the whites of her eyes.# Her mouth, half-open.#\nHer hair trailing behind her as she falls slowly, slowly, face-first.#\nThe dust she raises with the displacement of her own weight.##\n\nAnd then,# in an instant,# $Rfury$W fills you.###\n\n$RWith one corner of your awareness you see Math staring at you, stunned, already lurching toward you.#\nBut you have already started moving, decisive, toward the shield of light.##\n\nYou are not thinking.# Only an inextinguishable flame, suddenly rekindled at the sight of Efeliah, burning in your mind.#\nYou can feel the panic screaming mercilessly and angrily against you.# You can even feel the impact of it.#\nIt feels like your skull is close to bursting.",
+        "failuremessage": "Then you see her.##\n\nEfeliah has dropped to her knees, still holding Math's hand... until her grip slips.#\nShe collapses forward, eyes rolling back.##\n\nYou see it as though in slow motion:# the whites of her eyes.# Her mouth, half-open.#\nHer hair trailing behind her as she falls slowly, slowly, face-first.#\nThe dust she raises with the displacement of her own weight.##\n\nAnd then,# in an instant,# $Rfury$W fills you.###\n\n$RWith one corner of your awareness you see Math staring at you, stunned, already lurching toward you.#\nBut you have already started moving, decisive, toward the shield of light.##\n\nYou are not thinking.# Only an inextinguishable flame, suddenly rekindled at the sight of Efeliah, burning in your mind.#\nYou can feel the panic screaming mercilessly and angrily against you.# You can even feel the impact of it.#\nIt feels like your skull is close to bursting.",
+        "failurechildid": 18
+      }
+    },
+    {
+      "id": 18,
+      "type": "Surge",
+      "recap": "Surge attempt 5 - the release; near-unfailable, Kriss doesn't choose this",
+      "text": "You begin to grind your teeth.#\nA low, guttural growl rises from your throat.##\nYou reach out your hands.##\n\nThe wall of light is just one metre away.",
+      "childid": 17,
+      "challenge": {
+        "sequencelength": 2,
+        "drainrate": 2,
+        "restore": 40,
+        "penalty": 2,
+        "startingrage": 100,
+        "maxrage": 100
+      }
     },
     {
       "id": 17,
       "type": "Story",
       "recap": "the breach - you drag Math through",
-      "text": "The pain is unbearable.# But the more it grows,# the more it feeds your fury.#\nAnd that is what feeds that last flame keeping you upright.##\n\nYou feel Math's hand on your shoulder. He is collapsing onto you.#\nYou let it slide down your arm and take his own arm in your hand,# and press on toward the light.#\n\nYou cannot see anymore.# The light burns in directly into your mind.##\n\nYou scream.# And in a final surge of rage you cross the last metre, dragging Math behind you.##\n\nFor a fraction of a nanosecond the pressure in your head is insupportable, only to drop, instantly, violently.##\n\nA blinding flash and a deafening boom fill the air, and charges of energy crackle and discharge in all directions around you.#\nThe light drops sharply, falling to the natural light of the stars.# With it the panic flees.##\n\nAnd a moment later you feel your own consciousness slide away, as you fall to the ground.",
+      "text": "The pain is unbearable.# But the more it grows,# the more it feeds your fury.#\nAnd that is what feeds that last flame keeping you upright.##\n\nYou feel Math's hand on your shoulder. He is collapsing onto you.#\nYou let it slide down your arm and take his own arm in your hand,# and press on toward the light.#\n\nYou cannot see anymore.# The light burns in directly into your mind.##\n\nYou scream.# And in a final surge of rage you cross the last metre, dragging Math behind you.##\n\nFor a fraction of a nanosecond the pressure in your head is insupportable, only to drop, instantly, violently.##\n\nA blinding flash and a deafening boom fill the air,\nand charges of energy crackle and discharge in all directions around you.#\n\nThe light drops sharply, falling to the natural light of the stars.# With it the panic flees.##\n\nAnd a moment later you feel your own consciousness slide away, as you fall to the ground.",
       "childid": 10
     },
     {
