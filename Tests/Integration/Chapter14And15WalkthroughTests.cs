@@ -1,0 +1,443 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Threading.Tasks;
+using KrissJourney.Kriss;
+using KrissJourney.Kriss.Models;
+using KrissJourney.Kriss.Services;
+using KrissJourney.Tests.Infrastructure.Mocks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+namespace KrissJourney.Tests.Integration;
+
+/// <summary>
+/// Drives c14 ("THE PROJECTOR") and c15 ("THE LIBERATION") through a real
+/// <see cref="GameEngine"/>/<see cref="TerminalMock"/> pair, the same way
+/// <see cref="Terminal.Nodes.SurgeTests"/> drives a single Surge node: the engine's own
+/// blocking, recursive node.Load() -> AdvanceToNext -> GameEngine.LoadNode chain runs on the
+/// test thread, while a background Task plays the part of the player, waiting for each
+/// prompt to actually appear in the mock's output before answering it.
+///
+/// One production quirk this file leans on deliberately: <see cref="NodeBase.AdvanceToNext"/>
+/// calls <see cref="GameEngine.StartNextChapter"/> synchronously for an islast node, and that
+/// call runs the WHOLE next chapter before returning - so reaching c14's node 95 does not
+/// stop the walk, it hands straight into c15's node 1 in the same call stack. Rather than
+/// chase that cascade into c16 (which is out of this issue's scope and, per c16/c18/c20's
+/// known ProwessHelper gap, would crash on an unrelated Fight node), every walk here uses a
+/// GameEngine whose chapter list has been reflectively narrowed to just the chapter(s) under
+/// test. Reaching the far edge of that scope then surfaces as a clean, deterministic
+/// ArgumentNullException from StartChapter ("Chapter with ID N not found.") - proof the walk
+/// reached the intended islast node and nothing past it.
+/// </summary>
+[TestClass]
+public class Chapter14And15WalkthroughTests
+{
+    const string ContinuePrompt = "Press a key to continue...";
+
+    TerminalMock terminal;
+
+    [TestInitialize]
+    public void TestInitialize()
+    {
+        CommandLineOptions.IsDebug = true; // strips Typist's flow/pause delays; SurgeNode's real-time drain is unaffected
+        terminal = new TerminalMock();
+        TerminalFacade.SetTestTerminal(terminal);
+    }
+
+    [TestMethod]
+    public void Chapter14HappyPath_WalksThroughNode95AndHandsOffIntoChapter15ThroughNode12()
+    {
+        GameEngine engine = BuildScopedEngine(14, 15);
+        SetCurrentChapter(engine, 14);
+
+        ArgumentNullException stoppedAt = null;
+
+        Task script = Task.Run(async () =>
+        {
+            int idx = 0;
+
+            idx = await ContinueAsync(idx);                                              // node 1
+
+            idx = await ContinueAsync(idx);                                              // node 2: Efeliah's break line
+            idx = await ContinueAsync(idx);                                              // node 2: Kriss's childid line -> node 20
+
+            idx = await ContinueAsync(idx);                                              // node 20: "Let it out!"
+            idx = await PlaySurgeToVictoryAsync(idx, "LURDLURD");
+            idx = await WaitForOutputIndexAsync("The pattern locks into place all at once", idx);
+            idx = await ContinueAsync(idx);                                              // node 20 success -> node 3
+
+            idx = await ContinueAsync(idx);                                              // node 3 -> node 4
+            idx = await ContinueAsync(idx);                                              // node 4 -> node 40
+            idx = await ContinueAsync(idx);                                              // node 40 -> node 5
+
+            idx = await ChooseAsync(idx, "\"What happened to it?\"");                     // node 5: Efeliah's reply prompt
+            idx = await ContinueAsync(idx);                                              // node 5: joeExplains break
+            idx = await ContinueAsync(idx);                                              // node 5: Math's childid line -> node 6
+
+            idx = await ContinueAsync(idx);                                              // node 6 -> node 7
+            idx = await ContinueAsync(idx);                                              // node 7 -> node 8
+
+            idx = await ChooseAsync(idx, "\"Well...\"");                                  // node 8: Efeliah's reply prompt
+            idx = await ContinueAsync(idx);                                              // node 8: krissRises childid -> node 90
+
+            idx = await ContinueAsync(idx);                                              // node 90 -> node 900
+
+            idx = await ChooseAsync(idx, "Let the ascent carry you.");                    // node 900 -> 901
+            idx = await ContinueAsync(idx);                                              // node 901 -> node 902
+            idx = await ChooseAsync(idx, "Look to the Rock.");                            // node 902 -> 9021
+            idx = await ContinueAsync(idx);                                              // node 9021 -> node 903
+            idx = await ContinueAsync(idx);                                              // node 903 -> node 904
+            idx = await ChooseAsync(idx, "Try to reach toward Earth.");                   // node 904 -> 905
+            idx = await ContinueAsync(idx);                                              // node 905 -> node 906
+            idx = await ContinueAsync(idx);                                              // node 906 -> node 908
+            idx = await ContinueAsync(idx);                                              // node 908 -> node 940
+
+            idx = await ChooseAsync(idx, "Follow it, patient.");                          // node 940 -> 941 (correct)
+            idx = await ChooseAsync(idx, "Keep moving toward it.");                       // node 941 -> 943 (correct)
+            idx = await ChooseAsync(idx, "Go all the way in.");                           // node 943 -> 945 (correct)
+
+            idx = await ContinueAsync(idx);                                              // node 945 -> node 946
+            idx = await ContinueAsync(idx);                                              // node 946 -> node 95
+            idx = await ContinueAsync(idx);                                              // node 95 -> StartNextChapter(15)
+
+            // ---- c14's islast hands off into c15's node 1, same call stack ----
+
+            idx = await ContinueAsync(idx);                                              // c15 node 1 -> node 10
+
+            idx = await ContinueAsync(idx);                                              // c15 node 10: Kriss's break line
+            idx = await ContinueAsync(idx);                                              // c15 node 10: Corolla's childid line -> node 11
+
+            idx = await ContinueAsync(idx);                                              // c15 node 11 -> node 110
+
+            idx = await ContinueAsync(idx);                                              // c15 node 110: Riff's break line
+            idx = await ContinueAsync(idx);                                              // c15 node 110: Math's break line
+            idx = await ContinueAsync(idx);                                              // c15 node 110: Kriss's childid line -> node 12
+
+            idx = await ContinueAsync(idx);                                              // c15 node 12 -> StartNextChapter(16), out of scope
+        });
+
+        try
+        {
+            engine.LoadNode(1);
+            Assert.Fail("Expected the walk to end trying to start chapter 16, which this scoped engine does not have loaded.");
+        }
+        catch (ArgumentNullException ex)
+        {
+            stoppedAt = ex;
+        }
+
+        Assert.IsTrue(script.Wait(TimeSpan.FromSeconds(30)), "Input script timed out.");
+        Assert.IsNotNull(stoppedAt, "Expected an ArgumentNullException once the walk ran past c15's node 12.");
+        Assert.AreEqual("Chapter with ID 16 not found.", stoppedAt.ParamName,
+            "The walk should stop only because chapter 16 is outside this test's scoped chapter list, not for any earlier reason.");
+        Assert.AreEqual(0, terminal.KeyQueueCount, "Every queued key should have been consumed exactly once.");
+
+        string output = terminal.GetOutput();
+        Assert.IsTrue(output.Contains("The pattern locks into place all at once"), "Should have won the first Surge attempt (node 20).");
+        Assert.IsTrue(output.Contains("I think I know what to do."), "Should have reached c14's resolution beat at node 95.");
+        Assert.IsTrue(output.Contains("CHAPTER 15"), "islast on node 95 should have hung off into c15's own header (node 1).");
+        Assert.IsTrue(output.Contains("You did it."), "Should have reached c15 node 10 (Riff's arrival).");
+        Assert.IsTrue(output.Contains("Take care of yourself, Math."), "Should have reached c15 node 110 (farewell to Math).");
+        Assert.IsTrue(output.Contains("Ahead: the road, and whatever comes next."), "Should have flowed all the way to c15 node 12's closing beat.");
+    }
+
+    [TestMethod]
+    public void Chapter14_Surge20FailsWithNoInput_RoutesThroughNode21ToNode22AndSucceedsAtNode3()
+    {
+        GameEngine engine = BuildScopedEngine(14);
+        SetCurrentChapter(engine, 14);
+
+        InvalidOperationException stoppedAt = null;
+
+        Task script = Task.Run(async () =>
+        {
+            int idx = 0;
+
+            idx = await ContinueAsync(idx);                                              // node 1
+            idx = await ContinueAsync(idx);                                              // node 2: Efeliah's break line
+            idx = await ContinueAsync(idx);                                              // node 2: Kriss's childid line -> node 20
+
+            idx = await ContinueAsync(idx);                                              // node 20: "Let it out!"
+            // Deliberately no arrow keys: node 20's drainrate (18/s against startingrage 100)
+            // guarantees a loss on its own, exactly like SurgeTests' HighDrainRate test.
+            idx = await WaitForOutputIndexAsync(
+                "The pattern slips through your grip at the last glyph", idx, timeoutMs: 10_000);
+            idx = await ContinueAsync(idx);                                              // node 20 failure -> node 21 (failurechildid)
+
+            idx = await ContinueAsync(idx);                                              // node 21 -> node 22
+
+            idx = await ContinueAsync(idx);                                              // node 22: "Let it out!"
+            idx = await PlaySurgeToVictoryAsync(idx, "DRULDRUL");
+            idx = await WaitForOutputIndexAsync("This time the pattern holds.", idx);
+            idx = await ContinueAsync(idx);                                              // node 22 success -> node 3
+
+            // node 3's own trailing "press a key" prompt is deliberately left unanswered:
+            // its text having rendered is the proof the walk reached node 3.
+            await WaitForOutputIndexAsync("The door does not glow", idx);
+        });
+
+        try
+        {
+            engine.LoadNode(1);
+            Assert.Fail("Expected node 3's own unanswered prompt to time out the mock's ReadKey.");
+        }
+        catch (InvalidOperationException ex)
+        {
+            stoppedAt = ex;
+        }
+
+        Assert.IsTrue(script.Wait(TimeSpan.FromSeconds(30)), "Input script timed out.");
+        Assert.IsNotNull(stoppedAt);
+        Assert.AreEqual("No keys available in mock terminal", stoppedAt.Message,
+            "Expected exception message in testing environment only: System.Console.ReadKey never throws this way.");
+
+        string output = terminal.GetOutput();
+        Assert.IsTrue(output.Contains("The pattern slips through your grip at the last glyph"), "Node 20 should have failed.");
+        Assert.IsTrue(output.Contains("Somewhere back down the corridor"), "Should have reached node 21 (guards approaching).");
+        Assert.IsTrue(output.Contains("This time the pattern holds."), "Node 22 should have succeeded.");
+        Assert.IsTrue(output.Contains("The door does not glow"), "Should have converged on node 3, same target as a first-attempt win.");
+    }
+
+    [TestMethod]
+    public void Chapter14_SearchSoftFail_WrongTurnsLoopBackToHub1AndTheRunStillReachesNode95()
+    {
+        GameEngine engine = BuildScopedEngine(14);
+        SetCurrentChapter(engine, 14);
+
+        ArgumentNullException stoppedAt = null;
+
+        Task script = Task.Run(async () =>
+        {
+            int idx = 0;
+
+            idx = await ContinueAsync(idx);                                              // node 1
+            idx = await ContinueAsync(idx);                                              // node 2: Efeliah's break line
+            idx = await ContinueAsync(idx);                                              // node 2: Kriss's childid line -> node 20
+
+            idx = await ContinueAsync(idx);                                              // node 20: "Let it out!"
+            idx = await PlaySurgeToVictoryAsync(idx, "LURDLURD");
+            idx = await WaitForOutputIndexAsync("The pattern locks into place all at once", idx);
+            idx = await ContinueAsync(idx);                                              // node 20 success -> node 3
+
+            idx = await ContinueAsync(idx);                                              // node 3 -> node 4
+            idx = await ContinueAsync(idx);                                              // node 4 -> node 40
+            idx = await ContinueAsync(idx);                                              // node 40 -> node 5
+
+            idx = await ChooseAsync(idx, "\"What happened to it?\"");
+            idx = await ContinueAsync(idx);                                              // node 5: joeExplains break
+            idx = await ContinueAsync(idx);                                              // node 5: Math's childid line -> node 6
+
+            idx = await ContinueAsync(idx);                                              // node 6 -> node 7
+            idx = await ContinueAsync(idx);                                              // node 7 -> node 8
+
+            idx = await ChooseAsync(idx, "\"Well...\"");
+            idx = await ContinueAsync(idx);                                              // node 8: krissRises childid -> node 90
+
+            idx = await ContinueAsync(idx);                                              // node 90 -> node 900
+
+            idx = await ChooseAsync(idx, "Let the ascent carry you.");                    // node 900 -> 901
+            idx = await ContinueAsync(idx);                                              // node 901 -> node 902
+            idx = await ChooseAsync(idx, "Look to the Rock.");                            // node 902 -> 9021
+            idx = await ContinueAsync(idx);                                              // node 9021 -> node 903
+            idx = await ContinueAsync(idx);                                              // node 903 -> node 904
+            idx = await ChooseAsync(idx, "Try to reach toward Earth.");                   // node 904 -> 905
+            idx = await ContinueAsync(idx);                                              // node 905 -> node 906
+            idx = await ContinueAsync(idx);                                              // node 906 -> node 908
+            idx = await ContinueAsync(idx);                                              // node 908 -> node 940
+
+            // Hub 1, first visit (selectedRow starts at 0): deliberately pick the WRONG turn
+            // (index 1, "Turn toward something sharper...") -> node 9401.
+            idx = await ChooseAsync(idx, "Follow it, patient.", ConsoleKey.DownArrow);
+
+            // From the wrong turn, push further rather than backing out -> shared deep wander.
+            idx = await ChooseAsync(idx, "Keep going anyway.", ConsoleKey.DownArrow);      // node 9401 -> 9491 (index 1)
+            idx = await ChooseAsync(idx, "Keep searching, blind.", ConsoleKey.DownArrow);  // node 9491 -> 9490 (index 1)
+
+            idx = await ContinueAsync(idx);                                              // node 9490 (soft pull-out) -> loops back to 940
+
+            // Hub 1, second visit: ChoiceNode.selectedRow is an instance field that is never
+            // reset between Load() calls on the same node object, so it is still sitting on
+            // index 1 (the wrong turn) from the first visit here. UpArrow moves it back to the
+            // correct index 0 ("Follow it, patient.") before confirming with Enter.
+            idx = await ChooseAsync(idx, "Follow it, patient.", ConsoleKey.UpArrow);        // node 940 -> 941 (index 0, correct)
+
+            idx = await ChooseAsync(idx, "Keep moving toward it.");                        // node 941 -> 943 (index 0, correct, first visit)
+            idx = await ChooseAsync(idx, "Go all the way in.");                            // node 943 -> 945 (index 0, correct, first visit)
+
+            idx = await ContinueAsync(idx);                                              // node 945 -> node 946
+            idx = await ContinueAsync(idx);                                              // node 946 -> node 95
+            idx = await ContinueAsync(idx);                                              // node 95 -> StartNextChapter(15), out of scope
+        });
+
+        try
+        {
+            engine.LoadNode(1);
+            Assert.Fail("Expected the walk to end trying to start chapter 15, which this scoped engine does not have loaded.");
+        }
+        catch (ArgumentNullException ex)
+        {
+            stoppedAt = ex;
+        }
+
+        Assert.IsTrue(script.Wait(TimeSpan.FromSeconds(30)), "Input script timed out.");
+        Assert.IsNotNull(stoppedAt);
+        Assert.AreEqual("Chapter with ID 15 not found.", stoppedAt.ParamName,
+            "The walk should stop only because chapter 15 is outside this test's scoped chapter list, not for any earlier reason.");
+        Assert.AreEqual(0, terminal.KeyQueueCount, "Every queued key should have been consumed exactly once.");
+
+        string output = terminal.GetOutput();
+        Assert.IsTrue(output.Contains("It is only static"), "Should have taken the wrong turn at hub 1 (node 9401).");
+        Assert.IsTrue(output.Contains("you cannot find the thread at all"), "Should have reached the shared deep wander (node 9491).");
+        Assert.IsTrue(output.Contains("I'm here."), "Should have reached the soft pull-out (node 9490).");
+        Assert.IsTrue(output.Contains("I think I know what to do."), "Re-entering hub 1 and taking the correct path should still finish the chapter.");
+    }
+
+    [TestMethod]
+    public void Chapter15Standalone_WalksFromNode1ThroughNode12()
+    {
+        GameEngine engine = BuildScopedEngine(15);
+        SetCurrentChapter(engine, 15);
+
+        ArgumentNullException stoppedAt = null;
+
+        Task script = Task.Run(async () =>
+        {
+            int idx = 0;
+
+            idx = await ContinueAsync(idx);                                              // node 1 -> node 10
+
+            idx = await ContinueAsync(idx);                                              // node 10: Kriss's break line
+            idx = await ContinueAsync(idx);                                              // node 10: Corolla's childid line -> node 11
+
+            idx = await ContinueAsync(idx);                                              // node 11 -> node 110
+
+            idx = await ContinueAsync(idx);                                              // node 110: Riff's break line
+            idx = await ContinueAsync(idx);                                              // node 110: Math's break line
+            idx = await ContinueAsync(idx);                                              // node 110: Kriss's childid line -> node 12
+
+            idx = await ContinueAsync(idx);                                              // node 12 -> StartNextChapter(16), out of scope
+        });
+
+        try
+        {
+            engine.LoadNode(1);
+            Assert.Fail("Expected the walk to end trying to start chapter 16, which this scoped engine does not have loaded.");
+        }
+        catch (ArgumentNullException ex)
+        {
+            stoppedAt = ex;
+        }
+
+        Assert.IsTrue(script.Wait(TimeSpan.FromSeconds(30)), "Input script timed out.");
+        Assert.IsNotNull(stoppedAt);
+        Assert.AreEqual("Chapter with ID 16 not found.", stoppedAt.ParamName,
+            "The walk should stop only because chapter 16 is outside this test's scoped chapter list, not for any earlier reason.");
+        Assert.AreEqual(0, terminal.KeyQueueCount, "Every queued key should have been consumed exactly once.");
+
+        string output = terminal.GetOutput();
+        Assert.IsTrue(output.Contains("CHAPTER 15"), "Should have rendered c15's own header at node 1.");
+        Assert.IsTrue(output.Contains("You did it."), "Should have reached node 10 (Riff's arrival).");
+        Assert.IsTrue(output.Contains("Ayonn is changed."), "Should have reached node 11 (the farewell gathering).");
+        Assert.IsTrue(output.Contains("Take care of yourself, Math."), "Should have reached node 110 (farewell to Math).");
+        Assert.IsTrue(output.Contains("Ahead: the road, and whatever comes next."), "Should have flowed all the way to node 12's closing beat.");
+    }
+
+    // ---- helpers -------------------------------------------------------------------
+
+    /// <summary>
+    /// Loads every real chapter through the production embedded-resource pipeline
+    /// (<see cref="GameEngine.Run"/>), then reflectively narrows the engine's private
+    /// chapter list down to just the requested ids. The chapters themselves are the exact
+    /// objects the real deserializer produced - only which ones the engine can see is scoped.
+    /// </summary>
+    static GameEngine BuildScopedEngine(params int[] chapterIds)
+    {
+        GameEngine engine = new(new TestStatusManager());
+        engine.Run();
+
+        FieldInfo chaptersField = typeof(GameEngine).GetField("chapters", BindingFlags.NonPublic | BindingFlags.Instance);
+        List<Chapter> allChapters = (List<Chapter>)chaptersField.GetValue(engine);
+        List<Chapter> scoped = [.. chapterIds.Select(id => allChapters.Single(c => c.Id == id))];
+        chaptersField.SetValue(engine, scoped);
+
+        return engine;
+    }
+
+    static void SetCurrentChapter(GameEngine engine, int chapterId)
+    {
+        FieldInfo chaptersField = typeof(GameEngine).GetField("chapters", BindingFlags.NonPublic | BindingFlags.Instance);
+        List<Chapter> chapters = (List<Chapter>)chaptersField.GetValue(engine);
+        Chapter chapter = chapters.Single(c => c.Id == chapterId);
+
+        PropertyInfo currentChapterProperty = typeof(GameEngine).GetProperty(nameof(GameEngine.CurrentChapter));
+        currentChapterProperty.SetValue(engine, chapter);
+    }
+
+    /// <summary>Waits for the next generic "press a key" prompt and answers it with Enter.</summary>
+    async Task<int> ContinueAsync(int startIndex, int timeoutMs = 5000)
+    {
+        int idx = await WaitForOutputIndexAsync(ContinuePrompt, startIndex, timeoutMs);
+        terminal.EnqueueKeys(ConsoleKey.Enter);
+        return idx;
+    }
+
+    /// <summary>
+    /// Waits for a marker unique to a Choice/Dialogue-reply prompt (which, unlike
+    /// <see cref="Typist.WaitForKey"/>, prints no "press a key" banner before its raw
+    /// ReadKey), then plays the given navigation keys followed by Enter.
+    /// </summary>
+    async Task<int> ChooseAsync(int startIndex, string marker, params ConsoleKey[] navigation)
+    {
+        int idx = await WaitForOutputIndexAsync(marker, startIndex);
+        if (navigation.Length > 0)
+            terminal.EnqueueKeys(navigation);
+        terminal.EnqueueKeys(ConsoleKey.Enter);
+        return idx;
+    }
+
+    /// <summary>
+    /// Plays a whole authored Surge row in one go. Waits for "RAGE" (the first drawn frame,
+    /// which only appears after SurgeNode.PlayRow has discarded any stale queued keys and
+    /// started its Stopwatch) before queuing anything, exactly as SurgeTests does for its
+    /// first key - see PlayRow's own comment on why keys sent before that would be dropped.
+    /// Queuing the whole correct row at once (rather than one key per glyph, waiting on the
+    /// caret between each) is still "ahead of the drain": SurgeState.ApplyInput drains its
+    /// input queue every ~10ms tick, and every queued key here is correct, so the row
+    /// resolves within a tick or two regardless of exactly when this task is scheduled.
+    /// </summary>
+    async Task<int> PlaySurgeToVictoryAsync(int startIndex, string sequence)
+    {
+        int idx = await WaitForOutputIndexAsync("RAGE", startIndex);
+
+        foreach (char c in sequence)
+            terminal.EnqueueKeys(DirectionKey(c));
+
+        return idx;
+    }
+
+    static ConsoleKey DirectionKey(char c) => char.ToUpperInvariant(c) switch
+    {
+        'L' => ConsoleKey.LeftArrow,
+        'U' => ConsoleKey.UpArrow,
+        'R' => ConsoleKey.RightArrow,
+        'D' => ConsoleKey.DownArrow,
+        _ => throw new ArgumentException($"'{c}' is not a Surge direction letter (L/U/R/D)."),
+    };
+
+    async Task<int> WaitForOutputIndexAsync(string marker, int startIndex, int timeoutMs = 5000)
+    {
+        System.Diagnostics.Stopwatch sw = System.Diagnostics.Stopwatch.StartNew();
+        while (sw.ElapsedMilliseconds < timeoutMs)
+        {
+            string output = terminal.GetOutput();
+            int idx = output.IndexOf(marker, startIndex, StringComparison.Ordinal);
+            if (idx >= 0)
+                return idx + marker.Length;
+            await Task.Delay(10);
+        }
+
+        throw new TimeoutException(
+            $"Marker not found in output within {timeoutMs}ms: '{marker}'.\n---- output so far ----\n{terminal.GetOutput()}");
+    }
+}

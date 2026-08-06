@@ -259,6 +259,110 @@ public class StoryFlowTests
         }
     }
 
+    /// <summary>
+    /// Issue 7 (c14/c15 restructure): every Dialogue reply's/line's "nextline" jump must
+    /// resolve to a "linename" within the SAME DialogueNode. This is not caught by
+    /// <see cref="AllChapters_HaveNoUnreachableOrMissingNodes"/>, whose BFS only follows
+    /// inter-node "childid" links: <see cref="GetAllOutgoingLinks"/> deliberately does not
+    /// yield NextLine jumps, because they are not node ids at all. Scoped to chapters 14/15
+    /// (this issue's changed files) rather than made a repo-wide invariant, since other
+    /// chapters (c5, c8, c11) also use nextline/linename and are out of this issue's scope.
+    /// </summary>
+    [TestMethod]
+    public void Chapter14And15_DialogueNextLineReferencesResolveWithinTheSameNode()
+    {
+        foreach (int chapterId in new[] { 14, 15 })
+        {
+            Chapter chapter = gameEngine.GetChapters().Single(c => c.Id == chapterId);
+
+            foreach (DialogueNode dialogueNode in chapter.Nodes.OfType<DialogueNode>())
+            {
+                HashSet<string> lineNames = [.. dialogueNode.Dialogues
+                    .Where(d => !string.IsNullOrEmpty(d.LineName))
+                    .Select(d => d.LineName)];
+
+                foreach (DialogueLine line in dialogueNode.Dialogues)
+                {
+                    if (!string.IsNullOrEmpty(line.NextLine))
+                        Assert.IsTrue(lineNames.Contains(line.NextLine),
+                            $"Chapter {chapterId} node {dialogueNode.Id}: line nextline '{line.NextLine}' has no matching linename.");
+
+                    if (line.Replies == null)
+                        continue;
+
+                    foreach (Reply reply in line.Replies)
+                        if (!string.IsNullOrEmpty(reply.NextLine))
+                            Assert.IsTrue(lineNames.Contains(reply.NextLine),
+                                $"Chapter {chapterId} node {dialogueNode.Id}: reply nextline '{reply.NextLine}' has no matching linename.");
+                }
+            }
+        }
+    }
+
+    /// <summary>
+    /// Issue 7: c14 now ends at node 95 and c15 at node 12. Confirms exactly one reachable
+    /// node per chapter carries islast, and that it is the specific node the content report
+    /// names - not just "any one node", which would pass even if the wrong node were marked.
+    /// Scoped to 14/15: c1, c2, c18 and c19 do not currently satisfy "exactly one" (0 or 2
+    /// islast nodes respectively), so this is not yet safe as a repo-wide invariant.
+    /// </summary>
+    [TestMethod]
+    public void Chapter14And15_ExactlyOneReachableIsLastNode()
+    {
+        AssertSingleReachableIsLast(chapterId: 14, expectedIsLastNodeId: 95);
+        AssertSingleReachableIsLast(chapterId: 15, expectedIsLastNodeId: 12);
+    }
+
+    void AssertSingleReachableIsLast(int chapterId, int expectedIsLastNodeId)
+    {
+        Chapter chapter = gameEngine.GetChapters().Single(c => c.Id == chapterId);
+        Dictionary<int, NodeBase> nodeMap = chapter.Nodes.ToDictionary(n => n.Id);
+
+        HashSet<int> visited = [];
+        Queue<NodeBase> queue = new();
+        queue.Enqueue(nodeMap[1]);
+
+        while (queue.Count > 0)
+        {
+            NodeBase node = queue.Dequeue();
+            if (!visited.Add(node.Id))
+                continue;
+
+            foreach (int nextId in GetAllOutgoingLinks(node))
+                queue.Enqueue(nodeMap[nextId]);
+        }
+
+        List<int> reachableIsLastIds = [.. visited.Where(id => nodeMap[id].IsLast)];
+
+        Assert.AreEqual(1, reachableIsLastIds.Count,
+            $"Chapter {chapterId}: expected exactly one reachable islast node, found [{string.Join(", ", reachableIsLastIds)}].");
+        Assert.AreEqual(expectedIsLastNodeId, reachableIsLastIds[0],
+            $"Chapter {chapterId}: the reachable islast node should be {expectedIsLastNodeId}.");
+    }
+
+    /// <summary>
+    /// Issue 7 explicitly calls for zero Game-Over-style dead ends anywhere in c14 (unlike
+    /// c1-c10, which use exactly that pattern - a Story node with no forward link that loops
+    /// back to node 1 - deliberately, e.g. c2 node 21). Every node must either be the
+    /// chapter's terminal (islast) or have at least one way forward that
+    /// <see cref="GetAllOutgoingLinks"/> can see (childid, a choice, a dialogue
+    /// line/reply chain, or a Surge's success/failure route).
+    /// </summary>
+    [TestMethod]
+    public void Chapter14_HasNoDeadEndNodes()
+    {
+        Chapter chapter = gameEngine.GetChapters().Single(c => c.Id == 14);
+
+        foreach (NodeBase node in chapter.Nodes)
+        {
+            if (node.IsLast)
+                continue;
+
+            bool hasWayForward = GetAllOutgoingLinks(node).Any();
+            Assert.IsTrue(hasWayForward, $"Chapter 14 node {node.Id} is a dead end: no childid/choice/reply/surge route and not islast.");
+        }
+    }
+
     static IEnumerable<int> GetAllOutgoingLinks(NodeBase node)
     {
         if (node is StoryNode s && s.ChildId > 0)

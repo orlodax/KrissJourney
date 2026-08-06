@@ -37,9 +37,9 @@
                 //"--debug",
                 "--skipSteam",
                 "--chapter",
-                "14",
+                "13",
                 "--node",
-                "90"
+                "13"
             ],
             "cwd": "${workspaceFolder}/Kriss",
             "console": "externalTerminal",
