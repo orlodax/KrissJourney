@@ -112,37 +112,112 @@ public class Chapter14And15ContentDeserializationTests
     }
 
     [TestMethod]
-    public void Chapter15_HasExactlyTheFiveDocumentedNodes()
+    public void Chapter15_HasThirtyOneNodesInContiguousOrder()
     {
+        // Issue 8 replaced c15's 6-node stub (1, 10, 11, 110, 12, 13 moved from c14 under
+        // issue 7) with 31 authored nodes, ids 1-31 contiguous.
         List<int> ids = [.. c15.Nodes.Select(n => n.Id).OrderBy(i => i)];
-        CollectionAssert.AreEqual(new List<int> { 1, 10, 11, 12, 110 }, ids);
+        CollectionAssert.AreEqual(Enumerable.Range(1, 31).ToList(), ids);
     }
 
     [TestMethod]
-    public void Chapter15_Node10_CorollaLine_LeadsToNode11()
-    {
-        DialogueNode node10 = (DialogueNode)c15.Nodes.Single(n => n.Id == 10);
-        DialogueLine last = node10.Dialogues.Last();
-
-        Assert.AreEqual(EnCharacter.Corolla, last.Actor);
-        Assert.AreEqual(11, last.ChildId);
-    }
-
-    [TestMethod]
-    public void Chapter15_Node110_KrissLine_LeadsToNode12()
-    {
-        DialogueNode node110 = (DialogueNode)c15.Nodes.Single(n => n.Id == 110);
-        DialogueLine last = node110.Dialogues.Last();
-
-        Assert.AreEqual(EnCharacter.Kriss, last.Actor);
-        Assert.AreEqual(12, last.ChildId);
-    }
-
-    [TestMethod]
-    public void Chapter15_Node12_IsTheOnlyIsLastNode()
+    public void Chapter15_Node27_IsTheOnlyIsLastNode()
     {
         List<NodeBase> lastNodes = [.. c15.Nodes.Where(n => n.IsLast)];
         Assert.AreEqual(1, lastNodes.Count);
-        Assert.AreEqual(12, lastNodes[0].Id);
+        Assert.AreEqual(27, lastNodes[0].Id);
+    }
+
+    /// <summary>
+    /// Node 17's "ask/talk/say" verb group is the setup half of issue 8's gating: matching the
+    /// "math"/"projector" object must silently grant heardMathMotive (no childid of its own -
+    /// the player stays in the Action prompt), and the "wait/continue/listen" verb group must
+    /// carry the gate itself: a conditionless-typed Condition (defaults to an inventory check
+    /// in GameEngine.Evaluate) on that same item, with its own refusal text, advancing to
+    /// node 18 only once satisfied.
+    /// </summary>
+    [TestMethod]
+    public void Chapter15_Node17_AskMathObject_GrantsHeardMathMotive_AndGatesTheWaitVerb()
+    {
+        ActionNode node17 = (ActionNode)c15.Nodes.Single(n => n.Id == 17);
+
+        Kriss.Models.Action askAction = node17.Actions.Single(a => a.Verbs.Contains("ask"));
+        CollectionAssert.AreEquivalent(new List<string> { "ask", "talk", "say" }, askAction.Verbs);
+
+        ActionObject mathObject = askAction.Objects.Single(o => o.Objs.Contains("math"));
+        CollectionAssert.AreEquivalent(new List<string> { "math", "projector" }, mathObject.Objs);
+        Assert.IsNotNull(mathObject.Effect, "Asking about the Projector/Math must carry an effect.");
+        Assert.AreEqual("heardMathMotive", mathObject.Effect.GainItem);
+        Assert.IsNull(mathObject.ChildId, "Matching an object mid-conversation should not advance the node on its own.");
+
+        Kriss.Models.Action waitAction = node17.Actions.Single(a => a.Verbs.Contains("wait"));
+        CollectionAssert.AreEquivalent(new List<string> { "wait", "continue", "listen" }, waitAction.Verbs);
+        Assert.IsNotNull(waitAction.Condition, "The wait verb must be gated.");
+        Assert.AreEqual("heardMathMotive", waitAction.Condition.Item);
+        Assert.IsFalse(string.IsNullOrEmpty(waitAction.Condition.Refusal));
+        Assert.AreEqual(18, waitAction.ChildId);
+    }
+
+    [TestMethod]
+    public void Chapter15_Node17_AskEfeliahObject_GrantsHeardRockHistory()
+    {
+        ActionNode node17 = (ActionNode)c15.Nodes.Single(n => n.Id == 17);
+        Kriss.Models.Action askAction = node17.Actions.Single(a => a.Verbs.Contains("ask"));
+
+        ActionObject rockObject = askAction.Objects.Single(o => o.Objs.Contains("rock"));
+        CollectionAssert.AreEquivalent(new List<string> { "efeliah", "rock", "founder", "master" }, rockObject.Objs);
+        Assert.IsNotNull(rockObject.Effect);
+        Assert.AreEqual("heardRockHistory", rockObject.Effect.GainItem);
+    }
+
+    /// <summary>
+    /// Node 19's award ceremony grants the four items the content report promises, split
+    /// across two verb groups ("take"/"accept"/"claim" and "look"/"watch"/"observe"), and its
+    /// ungated "leave/go/bow/retire" verb is what finally advances the node.
+    /// </summary>
+    [TestMethod]
+    public void Chapter15_Node19_AwardObjects_GrantTheFourDocumentedItems()
+    {
+        ActionNode node19 = (ActionNode)c15.Nodes.Single(n => n.Id == 19);
+
+        Kriss.Models.Action takeAction = node19.Actions.Single(a => a.Verbs.Contains("take"));
+        Assert.AreEqual("lightSphere", takeAction.Objects.Single(o => o.Objs.Contains("sphere")).Effect.GainItem);
+        Assert.AreEqual("daggerReplica", takeAction.Objects.Single(o => o.Objs.Contains("dagger")).Effect.GainItem);
+
+        Kriss.Models.Action lookAction = node19.Actions.Single(a => a.Verbs.Contains("look"));
+        Assert.AreEqual("laserRifle", lookAction.Objects.Single(o => o.Objs.Contains("rifle")).Effect.GainItem);
+        Assert.AreEqual("amplifier", lookAction.Objects.Single(o => o.Objs.Contains("amplifier")).Effect.GainItem);
+
+        Kriss.Models.Action leaveAction = node19.Actions.Single(a => a.Verbs.Contains("leave"));
+        CollectionAssert.AreEquivalent(new List<string> { "leave", "go", "bow", "retire" }, leaveAction.Verbs);
+        Assert.AreEqual(20, leaveAction.ChildId);
+        Assert.IsNull(leaveAction.Condition, "Leaving the stage is not gated on having collected every item.");
+    }
+
+    /// <summary>
+    /// Node 24 is the payoff half of issue 8's Kriss/Math poll: three choices, each gated on
+    /// isNodeVisited against a different one of nodes 9/10/11 (the branches of node 8), all
+    /// converging on node 25. ChoiceNode.DisplayChoices only shows the choice whose condition
+    /// currently passes, so exactly one is visible at a time - proven at the engine level by
+    /// Chapter14And15WalkthroughTests, not here.
+    /// </summary>
+    [TestMethod]
+    public void Chapter15_Node24_ChoicesAreGatedOnNodesNineTenAndEleven()
+    {
+        ChoiceNode node24 = (ChoiceNode)c15.Nodes.Single(n => n.Id == 24);
+
+        Assert.AreEqual(3, node24.Choices.Count);
+
+        List<string> expectedItems = ["9", "10", "11"];
+        foreach (Choice choice in node24.Choices)
+        {
+            Assert.IsNotNull(choice.Condition);
+            Assert.AreEqual("isNodeVisited", choice.Condition.Type);
+            Assert.IsTrue(expectedItems.Remove(choice.Condition.Item),
+                $"Unexpected or duplicate isNodeVisited target: {choice.Condition.Item}");
+            Assert.AreEqual(25, choice.ChildId);
+        }
+
+        Assert.AreEqual(0, expectedItems.Count, $"Missing isNodeVisited targets: {string.Join(", ", expectedItems)}.");
     }
 }

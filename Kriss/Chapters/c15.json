@@ -5,117 +5,744 @@
     {
       "id": 1,
       "type": "Story",
-      "recap": "RAW MATERIAL moved verbatim from c14 under issue 7 - rewrite under issue 8 (source ch. XIV-XV). Was c14 node 9: after the dream-flight; group gathers, Corolla begins to recover",
-      "text": "-------------------------------\n|          CHAPTER 15          |\n-------------------------------\n\n\nNobody speaks for a moment.##\n\nTheo is looking at you with his brow very slightly furrowed,\nwhich on Theo is the equivalent of a dropped jaw.#\nSmiurl has crept out from behind Corolla\nand is staring at you from roughly the height of your knee,\nhis skin running through small rapid pulses of uncertain orange.##\n\nEfeliah says nothing.# She already knows.##\n\nFrom the floor, a sound.# And then Corolla shifts, her hand moving first,\nfingers pressing flat against the ground.##\n\n$m\"She will be all right,\"$C# Math says quietly, his eyes not leaving you.#\n$m\"It is a superficial burn.# We have already contained the pain.\"$C##\n\nYou look at her, and believe him.##\n\nSmiurl's skin flushes, slowly, into a relieved and luminous gold.##\n\nTheo puts one hand briefly on Math's shoulder as he passes, crouching beside Corolla.#\nNo words.# Theo does not need words for this.##",
-      "childid": 10
+      "recap": "chapter header - aftermath of the Projector, Corolla treated, Kriss recounts the call to the group",
+      "text": "-------------------------------\n|          CHAPTER 15          |\n-------------------------------\n\n\nNobody speaks for a moment.##\n\nTheo is looking at you with his brow very slightly furrowed,\nwhich on Theo is the equivalent of a dropped jaw.#\nSmiurl has crept out from behind Corolla\nand is staring at you from roughly the height of your knee,\nhis skin running through small rapid pulses of uncertain orange.##\n\nEfeliah says nothing.# She already knows.##\n\nFrom the floor, a sound.# And then Corolla shifts, her hand moving first,\nfingers pressing flat against the ground.##\n\n$m\"She will be all right,\"$C# Math says quietly, his eyes not leaving you.#\n$m\"It is a superficial burn.# We have already contained the pain.\"$C##\n\nYou look at her, and believe him.##\n\nSmiurl's skin flushes, slowly, into a relieved and luminous gold.##\n\nTheo puts one hand briefly on Math's shoulder as he passes, crouching beside Corolla.#\nNo words.# Theo does not need words for this.##\n\nThey carry her two floors down, to the Municipal infirmary, and lay her on a cot\nwhile Efeliah dresses the burn with salve and steady hands.# You sit close by,\nand somewhere in the telling, the door, the pull, the white, the voice that called\nyou south, you find yourself walking them through all of it, the only way you know how.##",
+      "childid": 2
     },
     {
-      "id": 10,
+      "id": 2,
+      "type": "Choice",
+      "recap": "flavor choice - trail off vs. push through, routes to distinct beats 28/29 before Riff arrives",
+      "text": "You are still trying to put words to something that never really had them,#\nwhen your own sentence runs out from under you.##\n\nWhat do you say, when you don't have the language for it?",
+      "choices": [
+        { "desc": "Let the sentence trail off, unfinished.", "childid": 28 },
+        { "desc": "Try, uselessly, to finish it anyway.", "childid": 29 }
+      ]
+    },
+    {
+      "id": 28,
+      "type": "Story",
+      "recap": "branch: Kriss lets the sentence die, nobody minds",
+      "text": "You let the sentence die where it stands, and say nothing more.##\n\nNobody seems to mind.# Words were never going to be enough for it, anyway.",
+      "childid": 3
+    },
+    {
+      "id": 29,
+      "type": "Story",
+      "recap": "branch: Kriss keeps groping for the word, gives up, nobody minds either way",
+      "text": "You keep going, groping for the word that isn't there,#\nuntil even you can hear how little sense you're making, and you stop.##\n\nNobody seems to mind that either.",
+      "childid": 3
+    },
+    {
+      "id": 3,
       "type": "Dialogue",
-      "recap": "RAW MATERIAL moved verbatim from c14 under issue 7 - rewrite under issue 8 (source ch. XIV-XV). Was c14 node 10: Riff arrives - victory",
+      "recap": "Riff bursts in - victory account restored (machines fell silent, soldiers offered horses), Joe fleeing, squad sent",
       "dialogues": [
         {
           "actor": "Riff",
-          "precomment": "You hear people rushing in.#\nRiff enters at a run, followed by three of his fighters,\nall of them bloodied and out of breath and grinning\nwith the uncontrollable, bewildered relief of people\nwho had stopped expecting to win.##\n\nHe takes in the room: the darkened Projector, the machine at rest,\nMath and Efeliah on their feet, and Corolla sitting upright against the wall,\npale but conscious, her eyes sharp.##\n\nHis jaw moves, but no sound comes out.",
-          "line": "You did it.",
-          "comment": "It is barely a whisper."
+          "precomment": "Running footsteps in the corridor outside, more than one pair, and then\nthe infirmary door bangs open.# Riff staggers in, followed by three of his fighters,\nall of them bloodied and out of breath, grinning with the bewildered relief\nof people who had stopped expecting to win.",
+          "line": "Hail to the saviors!"
         },
         {
           "actor": "Kriss",
-          "precomment": "You look around the room, at your companions,\nat the machine that has held a city captive for years, now dark and silent.",
-          "line": "Math and Efeliah did it.",
-          "comment": "Riff looks at them.# He puts his fist against his chest and bows his head.#\nA brief gesture, but it carries everything.##",
+          "line": "You're safe!",
+          "comment": "The relief in your own voice surprises you."
+        },
+        {
+          "actor": "Riff",
+          "line": "Of course, thanks to you! Your mad plan worked.# We were running,#\nand right when we thought we were finished, the machines went dark behind us,#\nall at once.# The sharper soldiers on our heels worked out what had happened#\nand offered us their own horses to ride back into the city with.# It was glorious.",
+          "comment": "He is still catching his breath, half laughing.",
           "break": true
         },
         {
-          "actor": "Riff",
-          "line": "'Mayor' Joe is gone.# Slipped out a side passage before we reached the top.#\nWe will find him.# Ayonn will find him.# That is not your problem.#\nYou have done what we could not do ourselves.",
-          "comment": "He straightens.#\nThe grief-lines in his face have not gone anywhere,\nbut something behind his eyes is different, lighter."
-        },
-        {
-          "actor": "Riff",
-          "line": "The city will need time.# Months, probably.#\nPeople waking up, people remembering, people finding out\nwhat happened to the ones who never came back.#\nThat will not be easy."
-        },
-        {
-          "actor": "Corolla",
-          "line": "No.# But the city will be theirs again, and that will make all the difference.",
-          "comment": "\nRiff looks at her for a long moment.# He nods."
-        },
-        {
-          "actor": "Riff",
-          "line": "Where do you go from here?"
+          "actor": "Theo",
+          "line": "One moment—"
         },
         {
           "actor": "Kriss",
-          "line": "South.",
-          "comment": "You simply say. #The others nod in agreement.",
-          "childid": 11
+          "line": "—and Joe?",
+          "comment": "You finish the thought for him."
+        },
+        {
+          "actor": "Math",
+          "line": "He's fleeing."
+        },
+        {
+          "actor": "Riff",
+          "line": "We've already sent a squad of our best after him.# He'll be brought here soon,#\nand justice will be done…",
+          "comment": "As he says the last of it, something darkens in him.#\nAn old resentment surfaces on his face.",
+          "break": true,
+          "childid": 4
         }
       ]
     },
     {
-      "id": 11,
-      "type": "Story",
-      "recap": "RAW MATERIAL moved verbatim from c14 under issue 7 - rewrite under issue 8 (source ch. XIV-XV). Was c14 node 11: farewell to Riff, departure from Ayonn - gathering in the atrium before dawn",
-      "text": "They give you provisions: water, dried food, a better map than anything\nyou have carried before.# Toward the third hour of the night\nyou gather in the great municipal atrium to say your goodbyes.##\n\nAyonn is changed.##\n\nNot the buildings, not the streets, which are the same gray and concrete\nthey always were, but the people are different, and you see it in every one you pass:\nguards sitting against walls with their headbands removed, staring at their hands,#\ncivilians emerging from doorways, blinking, uncertain, as if waking\nfrom a long sleep they did not choose and cannot quite place.#\nSmall knots of people finding each other, arms around shoulders,\nthe kind of stillness that comes just before someone starts to cry.",
-      "childid": 110
+      "id": 4,
+      "type": "Choice",
+      "recap": "flavor choice - wait vs. watch, routes to distinct beats 30/31 before Riff's mercy speech",
+      "text": "Something old moves behind Riff's eyes, and for a moment none of you say anything.",
+      "choices": [
+        { "desc": "Wait, and let him say what he needs to say.", "childid": 30 },
+        { "desc": "Watch his face, and say nothing at all.", "childid": 31 }
+      ]
     },
     {
-      "id": 110,
+      "id": 30,
+      "type": "Story",
+      "recap": "branch: Kriss waits him out",
+      "text": "You wait.# Whatever this is, it isn't yours to hurry.",
+      "childid": 5
+    },
+    {
+      "id": 31,
+      "type": "Story",
+      "recap": "branch: Kriss watches his face instead of speaking",
+      "text": "You watch him instead of speaking, and something in his shoulders eases at the silence,#\nas if he'd braced himself for questions.",
+      "childid": 5
+    },
+    {
+      "id": 5,
       "type": "Dialogue",
-      "recap": "RAW MATERIAL moved verbatim from c14 under issue 7 - rewrite under issue 8 (source ch. XIV-XV). Was c14 node 110: farewell to Riff and Math - Math stays to mind the Projector",
+      "recap": "Math asks if Joe will be executed - Riff's mercy speech restored (tired of people dying, would leave him in the 'privileged' quarters)",
       "dialogues": [
         {
+          "actor": "Math",
+          "line": "Will you have him executed?"
+        },
+        {
           "actor": "Riff",
-          "precomment": "Riff embraces each of you in turn, longer than expected,\nand with the unconcealed emotion of someone who has decided\nthis is not the moment for composure.",
-          "line": "Friends.# I hope we meet again, one day.#\nI cannot yet take in everything you have done for all of us.#\nIt happened too fast.# Thank you.# Thank you again.",
-          "comment": "He holds on for a moment longer than is strictly necessary.##\n\nThen Math steps forward.",
+          "line": "I don't think so…# I am tired of seeing people die.#\nIf it were up to me, he would end his days in those 'privileged' quarters\nhe kept reserved for us, for years.",
+          "comment": "He says it flatly, without triumph.",
+          "childid": 6
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "type": "Dialogue",
+      "recap": "Corolla wakes, hugs, debt banter, sits up despite Efeliah, offers hand - 'Friends? For life.' [DECISION: reply]",
+      "dialogues": [
+        {
+          "actor": "Corolla",
+          "precomment": "A small, disgruntled sound comes from the cot.",
+          "line": "Mhn…# Did they hit me?# Damn, I must be getting old…",
+          "comment": "A general laugh breaks out.# You and Smiurl rush to hug her,\nas much as the bandage across her back will allow.",
           "break": true
         },
         {
+          "actor": "Efeliah",
+          "precomment": "Efeliah watches, openly amused.",
+          "line": "These two valiant heroes carried you here and there\nthe whole time you were unconscious.# You owe them your life as much as anyone's.",
+          "comment": "She says it with unmistakable irony."
+        },
+        {
+          "actor": "Corolla",
+          "line": "Smiurl! Wonderful! Now I'm in your debt.# Just think how long\nyou'll be able to brag about it.",
+          "comment": "She smiles at him.# His skin flares through half a dozen colors,\nand he loses every word he was about to say."
+        },
+        {
+          "actor": "Kriss",
+          "line": "I still think it's the other way around.# I'm the one who owes you."
+        },
+        {
+          "actor": "Corolla",
+          "line": "Don't even start.",
+          "comment": "She cuts you off."
+        },
+        {
+          "actor": "Kriss",
+          "line": "If it hadn't been me, it would have been Theo, or one of the others—",
+          "comment": "She silences you with a hand pressed flat over your mouth."
+        },
+        {
+          "actor": "Corolla",
+          "line": "But it was you.# That's what counts.",
+          "comment": "She says it, smiling.# You feel your face go warm and look away,\nbut of course Efeliah and Math both notice.",
+          "break": true
+        },
+        {
+          "actor": "Corolla",
+          "precomment": "She sits up on the cot, despite Efeliah's efforts to stop her, and gets to her feet.",
+          "line": "You're not honestly going to try and stop me from moving, are you?",
+          "comment": "She holds her hand out to you."
+        },
+        {
+          "actor": "Corolla",
+          "line": "Friends?# For life.",
+          "replies": [
+            { "line": "\"Friends. For life.\" You repeat it, unsure what exactly you've just agreed to.", "nextline": "handshakeDone" },
+            { "line": "\"...For life?\" you ask, but you shake her hand anyway.", "nextline": "handshakeDone" },
+            { "line": "You say nothing, and just shake her hand.", "nextline": "handshakeDone" }
+          ]
+        },
+        {
+          "linename": "handshakeDone",
+          "actor": "Kriss",
+          "comment": "Not knowing what else to do, you take her hand and repeat the formula back to her.#\nYou don't know what kind of greeting, ritual, or common phrase it is, exactly.#\nBut it carries itself like something that matters.",
+          "childid": 7
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "type": "Dialogue",
+      "recap": "Math's announcement - 98% probability, pause, Efeliah's expression shifts, his request to stay, her shocked reply, Theo's principle, group nods",
+      "dialogues": [
+        {
           "actor": "Math",
-          "precomment": "Math's expression is composed, as always, though something behind his eyes\nis doing something quiet and considered.",
-          "line": "I wish you good luck.# If the Master predicted your arrival,\nthen your destiny is sealed.# I am certain we will meet again.",
-          "comment": "\nHe says it with the calm certainty of someone quoting a principle they have tested and found holds."
+          "precomment": "A few moments of silence follow the handshake.# Math is the one who breaks it.",
+          "line": "I would like to make an announcement."
+        },
+        {
+          "actor": "Math",
+          "line": "Efeliah and I know, with a good 98% probability, that Riff will be elected\nmayor of Ayonn.",
+          "comment": "Riff is dumbfounded.# Math pauses.## In the pause, Efeliah's expression changes,\nas from night to day."
+        },
+        {
+          "actor": "Math",
+          "line": "Given the great scientific and cultural patrimony that lies in this place,#\nand the many machines built by the Master, I would like to ask the future mayor\nto let me remain in this city as Municipal scholar, or something of the kind…#\nif everyone present agrees, of course."
         },
         {
           "actor": "Efeliah",
-          "precomment": "Efeliah turns to him.",
+          "line": "So THIS is what you were hiding from me!",
+          "comment": "She says it half amused, half devastated."
+        },
+        {
+          "actor": "Theo",
+          "line": "We can't force him to stay.",
+          "comment": "You and Corolla nod.# Smiurl follows a beat behind them.",
+          "childid": 8
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "type": "Choice",
+      "recap": "the room turns to Efeliah - Kriss's stance is polled first [DECISION: choice, tracked for the atrium goodbye via node 9/10/11]",
+      "text": "Everyone turns to look at Efeliah.# Before she can answer, for a moment,\nthey look at you too.",
+      "choices": [
+        { "desc": "Tell her you think Math should stay, if that's what he wants.", "childid": 9 },
+        { "desc": "Say you're not sure Ayonn is safe enough yet to leave him behind.", "childid": 10 },
+        { "desc": "Say nothing, and let it be her decision alone.", "childid": 11 }
+      ]
+    },
+    {
+      "id": 9,
+      "type": "Story",
+      "recap": "poll branch: Kriss voices support for Math staying (visited-flag read later at node 24)",
+      "text": "$c\"I think he should stay, if it's what he wants,\"$C# you say.##\n\nMath glances at you, something briefly grateful crossing his composed face.",
+      "childid": 12
+    },
+    {
+      "id": 10,
+      "type": "Story",
+      "recap": "poll branch: Kriss voices doubt about Ayonn's safety (visited-flag read later at node 24)",
+      "text": "$c\"Is Ayonn safe enough yet, for him to stay behind?\"$C# you ask, unable to help yourself.##\n\nMath considers the question seriously, and does not seem to hold it against you.",
+      "childid": 12
+    },
+    {
+      "id": 11,
+      "type": "Story",
+      "recap": "poll branch: Kriss says nothing, leaves it to Efeliah (visited-flag read later at node 24)",
+      "text": "You say nothing.# This one is not yours to decide, and you know it.##\n\nEfeliah catches your silence, and something in her shoulders eases, just slightly.",
+      "childid": 12
+    },
+    {
+      "id": 12,
+      "type": "Dialogue",
+      "recap": "Efeliah's uncertain consent; Riff agrees; Math prices it at 79%; 'Then we're agreed'",
+      "dialogues": [
+        {
+          "actor": "Efeliah",
+          "precomment": "After a few moments, in a voice not quite steady, she answers.",
+          "line": "Of course.# If you want to stay, if you feel you must, then you must stay…",
+          "comment": "She shrugs, resigned."
+        },
+        {
+          "actor": "Riff",
+          "precomment": "Then it is Riff's turn.",
+          "line": "Fine by me, assuming I really do have the authority to grant it.",
+          "comment": "He says it, raising his shoulders."
+        },
+        {
+          "actor": "Math",
+          "line": "Don't worry.# Your proposal will be received favorably by 79% of the population,#\nmunicipal councillors included."
+        },
+        {
+          "actor": "Riff",
+          "line": "Then we're agreed.",
+          "comment": "He looks first at Math, then at all the others."
+        },
+        {
+          "actor": "Math",
+          "line": "Agreed.",
+          "childid": 13
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "type": "Story",
+      "recap": "transition - later, gathered in Corolla's quarters before going down for dinner",
+      "text": "Later, you all gather in Corolla's quarters, before going down for dinner.##\n\n$c\"Oh, that reminds me,\"$C# you say to Efeliah,# $c\"we were talking about leaving.#\nWe think tomorrow at dawn is the best time.\"$C##\n\nEfeliah sighs.##\n\n$g\"All right,\"$C# she says.# $g\"But now listen.# This is about your mind.\"$C",
+      "childid": 14
+    },
+    {
+      "id": 14,
+      "type": "Dialogue",
+      "recap": "Efeliah's revelation part 1 [DECISION: replies] - expanded functions during the Projector link, the overheard private conversation",
+      "dialogues": [
+        {
+          "actor": "Kriss",
+          "line": "What's wrong?",
+          "replies": [
+            { "line": "\"What's wrong?\"", "nextline": "efExplainsMind" },
+            { "line": "\"Something wrong with me?\"", "nextline": "efExplainsMind" }
+          ]
+        },
+        {
+          "linename": "efExplainsMind",
+          "actor": "Efeliah",
+          "line": "It isn't that anything is wrong…# While I was connected to the Projector,#\nMath and I could not help but examine it, study every point of it.# During the\nconnection to the machine, in fact, your brain's functions 'expanded', so to speak,\nin every direction.# We didn't need to work around the blocks you've had since birth.#\nYour mind laid itself open before us, like a painting at an exhibition.# A few days ago,\nright after we left the Rock, I spoke with Math about something in your mind\nthat puzzled us both, and I proposed examining you."
+        },
+        {
+          "actor": "Kriss",
+          "line": "Actually… I remember. You didn't notice, but I was right behind you. I was listening.",
+          "replies": [
+            { "line": "\"Actually… I remember. You didn't notice, but I was right behind you. I was listening.\"", "nextline": "efShocked" },
+            { "line": "\"Funny you say that. I heard the whole thing. I was right there.\"", "nextline": "efShocked" }
+          ]
+        },
+        {
+          "linename": "efShocked",
+          "actor": "Efeliah",
+          "precomment": "At that, her eyes go wide.# After a few seconds she recovers, and says:",
+          "line": "You were listening?!# You have no idea what that means!"
+        },
+        {
+          "actor": "Smiurl",
+          "precomment": "They all look at her, uncomprehending.",
+          "line": "Is she crazy?",
+          "comment": "He asks Corolla, pointing at Efeliah's exalted expression as she processes\nthe apparently shocking discovery that your hearing works perfectly well.#\nCorolla silences him with an elbow."
+        },
+        {
+          "actor": "Efeliah",
+          "line": "I wasn't speaking!# It was a telepathic exchange!"
+        },
+        {
+          "actor": "Corolla",
+          "line": "Wait a moment.# We've all heard these 'telepathic exchanges' back at the Rock.#\nWhat's the problem?"
+        },
+        {
+          "actor": "Efeliah",
+          "line": "Those were 'public' transmissions, so to speak, the way you'd speak to a group\nof people.# What was passing between Math and me was a private conversation,#\none nobody should have been able to reach unless one of us allowed it."
+        },
+        {
+          "actor": "Corolla",
+          "precomment": "A silence.# Corolla is the one who breaks it.",
+          "line": "He's got a brain outside the normal.# There's no other explanation.",
+          "comment": "You look at her, then turn back to Efeliah.",
+          "childid": 15
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "type": "Dialogue",
+      "recap": "Efeliah's revelation part 2 [DECISION: replies] - two structures per hemisphere, the Oxengutter night explained, the 'vague impression' of change",
+      "dialogues": [
+        {
+          "actor": "Efeliah",
+          "line": "Yes, that's it.# That's exactly what I came to tell you.# Examining your mind,#\nwe found certain structures, two for each hemisphere, that do not exist\nin Noi-Hert brains.# They are so complex we could not work out how they function.#\nBut there is one significant fact."
+        },
+        {
+          "actor": "Kriss",
+          "line": "Which is?",
+          "replies": [
+            { "line": "\"Which is?\"", "nextline": "efOxengutter" },
+            { "line": "\"What kind of fact?\"", "nextline": "efOxengutter" }
+          ]
+        },
+        {
+          "linename": "efOxengutter",
+          "actor": "Efeliah",
+          "line": "Do you remember that night, when we were attacked by the Oxengutter?"
+        },
+        {
+          "actor": "Kriss",
+          "line": "I remember.",
+          "replies": [
+            { "line": "\"I remember.\"", "nextline": "efSword" },
+            { "line": "\"How could I forget it?\"", "nextline": "efSword" }
+          ]
+        },
+        {
+          "linename": "efSword",
+          "actor": "Efeliah",
+          "line": "Do you remember suddenly running for the sword, and killing the beast?",
+          "comment": "You nearly startle at the memory, so close and so sudden.# You hadn't thought of it since."
+        },
+        {
+          "actor": "Kriss",
+          "line": "Yes."
+        },
+        {
+          "actor": "Efeliah",
+          "line": "I fainted…# under the shock of an empathic overload.# Somehow you perceived\npart of my sensations.# That alone would be remarkable, but the point is that\nfrom that moment, until you collapsed at Smiurl's side, those areas I mentioned\nwent, so to speak, wild.# They received energy tens, perhaps a hundred times\nabove normal.# What happened after that, we don't know.# We found you beside\nthe Oxengutter's smashed skull.# Its mental activity had ceased, but those areas\nwere, so to speak, 'burning', from the sudden discharge of energy they'd received.#\nThat's why you had the fever, and the delirium, all that night.# It's understandable."
+        },
+        {
+          "actor": "Corolla",
+          "precomment": "You stare at her, shaken, unable to quite believe it.# But you know she's\ntelling the truth.# You feel a hand on your shoulder.# It's Corolla.",
+          "line": "No lasting injuries…?",
+          "comment": "She asks, worried."
+        },
+        {
+          "actor": "Efeliah",
+          "line": "No, his mind is strong, and it's back in shape now.# However…"
+        },
+        {
+          "actor": "Kriss",
+          "line": "However what?",
+          "replies": [
+            { "line": "\"However what?\"", "nextline": "efImpression" },
+            { "line": "\"Say it.\"", "nextline": "efImpression" }
+          ]
+        },
+        {
+          "linename": "efImpression",
+          "actor": "Efeliah",
+          "line": "After the session at the Projector, I have the vague impression\nthat some of your brain structures have changed."
+        },
+        {
+          "actor": "Corolla",
+          "line": "And what does that mean?"
+        },
+        {
+          "actor": "Efeliah",
+          "line": "I don't know.",
+          "comment": "She says it, letting her head drop.",
+          "childid": 16
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "type": "Story",
+      "recap": "banquet setup - the hall, and the clothes (best characterization in the novel, let it breathe)",
+      "text": "Dinner comes.##\n\nYou change into the clothes provided by the household staff assigned to look after you,\nand go down to the ground floor, at the rear of the Municipal building.##\n\nThe largest hall in Ayonn has been dressed in record time, to hold as many\nayonnesi as it can for an occasion this size, and perhaps this singular:\nthe day that will go down in Ayonn's history as $Wthe Liberation$C.##\n\nYou and the others walk in, and stop, looking around, plainly amazed.#\nImpossibly long tables fill nearly the whole floor of the hall, set with hundreds\nof dishes the city's cooks have spent the entire day preparing.# Enormous crystal\nchandeliers hang from above, throwing colored light across the room and carving\nstrange shadows into the farthest, highest reaches of the vaulted ceiling.#\nAlong the sides, two colonnades descend from the roof, and they remind you,\nmore than anything, of the naves of a church.# There is no altar, though.#\nOnly a great, beautifully lit fountain.##\n\nWhile you are still taking it in, a cluster of men in black, the most elegantly\ndressed in the whole hall, approach and lead you to the seats of honor kept for you.##\n\nCorolla lowers herself into her chair with care, favoring the burn.#\nEven with a bandage clashing violently against a gown of black silk,\nshe loses none of her presence.# Her eyes look ready to throw sparks, amused, as always.##\n\nTheo sits rigid and plainly uncomfortable without a weapon within reach,\nsqueezed into an enormous suit of dark gray.##\n\nSmiurl draws laughter from half the room.# The only clothes small enough for him\nwere a child's: gray jacket and trousers, a red waistcoat, a white shirt.#\nNobody has told him so, of course, but he seems to be working it out for himself,\none amused glance at a time.##\n\nMath and Efeliah look transformed.# Out of their tunics at last, he wears\nan elegant black suit, evidently the latest word in ayonnese fashion, and she wears\na beautiful dress, long behind and short in front, that finally does justice\nto her shape.# It is the same color as her eyes, which some expert hand has brought\nout, along with her mouth.##\n\nYou, for your part, wear black trousers and a white shirt open at the collar.#\nYou have not, even for this, taken off the Oxengutter fangs.# You would never\ndo Theo an insult like that.# Somewhere underneath it all, it feels like\nthe right thing to do.##\n\nThe waiters' dance begins soon after: there is no other way to describe it.#\nDozens of young men and women stream through the hall, delivering full plates\nand collecting empty ones, all in the same uniform, moving with a precision\nthat looks choreographed.##",
+      "childid": 17
+    },
+    {
+      "id": 17,
+      "type": "Action",
+      "recap": "banquet table talk [DECISION: action] - councillors, Riff, Math's wine-loosened motive (heardMathMotive), Efeliah's Rock history + the drunk councillor's joke (heardRockHistory)",
+      "text": "Within a few hours you become something of a scholar of ayonnese cuisine:#\ndozens of courses arrive at your table alone.# You have never sat down\nto a banquet this rich, not even close to any wedding feast you ever attended,#\nback home.# Dozens of wines accompany the courses, and it isn't long before\nSmiurl wears an expression that says everything about his blood alcohol.##\n\nThere is time to talk, before whatever comes next.",
+      "alttext": "The table talk continues around you, warm and unhurried.",
+      "actions": [
+        {
+          "verbs": ["ask", "talk", "say"],
+          "objects": [
+            {
+              "objs": ["riff", "councillors", "councillor", "story", "journey"],
+              "answer": "You find yourself telling the councillors, and Riff, seated among them,\nyour whole story again, how you felt the irresistible pull toward this city.#\n$c\"…and now we'll be leaving again,\"$y you finish.# They wish you well, and one\nof them remarks that having friends willing to follow you to the end of the world\nis luck enough on its own.# $c\"It is,\"$y you agree, nodding at all of them in turn.#\n$c\"I wouldn't be anywhere, right now, if it weren't for every one of them.\"$y"
+            },
+            {
+              "objs": ["math", "projector"],
+              "answer": "One of the councillors asks whether it's true that Math will be joining them soon.#\nLoosened by the wine, Math admits it plainly, in his own voice:# $m\"I must confess it,\"$y\nhe says,# $m\"I am dying to study the Projector up close, so it can be put to a wiser use\nthan the one that tyrant made of it.\"$y",
+              "effect": { "gainitem": "heardMathMotive" }
+            },
+            {
+              "objs": ["efeliah", "rock", "founder", "master"],
+              "answer": "Another councillor asks whether your community, on that spire in the desert,\nwas founded by the same scholar who built the Projector.# Efeliah confirms it,#\nnodding, loose strands of hair moving around her eyes as she talks.#\n$g\"He left us a code,\"$y she says,# $g\"a set of rules that are our principles\nand our laws.# There is almost never a need to apply any penal sanction.\"$y##\n\nA heavyset councillor nearby, who has so far preferred listening while working\nthrough a second and then a third generous course of meat cooked, as you would\nput it, $Wgod knows how$y, cackles into his cup:# \"What a fine place!\"$y",
+              "effect": { "gainitem": "heardRockHistory" }
+            }
+          ],
+          "answer": "There's a great deal you could ask, at a table like this one."
+        },
+        {
+          "verbs": ["wait", "continue", "listen"],
+          "condition": {
+            "item": "heardMathMotive",
+            "refusal": "There's still more table talk worth hearing, before the night moves on."
+          },
+          "childid": 18
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "type": "Story",
+      "recap": "lights dim, music, stage appears at the fountain, names called to the stage",
+      "text": "You are still talking when the lights drop, all at once, and music spreads\nthrough the hall, calling for silence.## Everyone turns toward the fountain.#\nA stage seems to have appeared out of nowhere, ringing the water jets, now lit\nmore brightly than ever by lights you can't quite place.##\n\nOne of the councillors, who had slipped away from your table a moment before,\nclimbs onto it, and speaks:##\n\n$y\"We will now hold the award ceremony.# I invite to join me on stage\nMr. Riff of Ayonn, Kriss of Earth\"$C# (a murmur runs through the hall)#\n$y\", Corolla and Theo of Øder, Smiurl of Desert City, Efeliah and Math\nof Seer's Rock.\"$C##\n\nYou are bewildered.# It sounds like the drawing of some country club lottery,\nnot the ceremony you were half expecting, something closer to a medal for valor.#\nCorolla and Efeliah nudge you both up onto your feet from behind.##\n\nYou make your way to the stage, where you find yourselves lifted, one at a time,\nby some mysterious force rising from the floor.##",
+      "childid": 19
+    },
+    {
+      "id": 19,
+      "type": "Action",
+      "recap": "awards ceremony [DECISION: action] - grants lightSphere, daggerReplica, laserRifle, amplifier; Theo's maul teasing, Math's amplifier + Efeliah's embrace",
+      "text": "The prizes are handed out in the order you appeared on stage.##\n\nRiff receives a small gold sceptre, a single stone set into its head.#\nYou blink when you realize the stone is a diamond, and a large one.##\n\nThen it is your turn.",
+      "alttext": "The stage is still crowded with well-wishers, your friends' gifts still catching the light.",
+      "actions": [
+        {
+          "verbs": ["take", "accept", "claim"],
+          "objects": [
+            {
+              "objs": ["sphere", "light", "orb"],
+              "answer": "They hand you a sphere, and you recognize it at once: one of the very lights\nthat terrified you in the canyon, the ones that killed the Chief.# You can activate\nit now, and make it dance at will, whenever you want it.",
+              "effect": { "gainitem": "lightSphere" }
+            },
+            {
+              "objs": ["dagger", "replica", "blade"],
+              "answer": "Beside it, a dagger-sized replica of your own sword, faithful down to the smallest\ndetail, even the strange, uncertain half-stillness of the blade when it moves.#\nIt is set the whole length of its edge with red, blue and green stones.",
+              "effect": { "gainitem": "daggerReplica" }
+            }
+          ],
+          "answer": "You reach out, uncertain what's left to claim."
+        },
+        {
+          "verbs": ["look", "watch", "observe"],
+          "objects": [
+            {
+              "objs": ["corolla", "rifle", "laser"],
+              "answer": "They bring Corolla a laser rifle just like the one that burned her, and a\nfinely wrought gold necklace to go with it.",
+              "effect": { "gainitem": "laserRifle" }
+            },
+            {
+              "objs": ["theo", "maul", "hammer"],
+              "answer": "Four men wheel in Theo's prize on a metal cart: a platinum maul, identical\nin size and heft to the one he already carries.# He raises it afterward\nlike a man showing off a bouquet of flowers.# $R\"He'll probably have the nerve\nto carry two now,\"$y Corolla says.# Theo hears her, and turns.# $B\"Oh, this one is\nmuch heavier,\"$y he says.# $B\"I won't have any trouble carrying the other as well…\"$y#\nIt's an astonishing number of words to come out of his mouth, and the satisfaction\non his face is just as plain."
+            },
+            {
+              "objs": ["smiurl", "earrings", "coffer"],
+              "answer": "Smiurl is handed a small coffer.# Inside, a scatter of gold earrings, enough\nto multiply his collection several times over.# His skin runs through every\ncolor he owns, twice."
+            },
+            {
+              "objs": ["math", "amplifier", "device"],
+              "answer": "Math is handed a smaller necklace, and beside it, a strange device neither\nof them seems to recognize right away.# $g\"What is it?\"$y Efeliah asks, while Math\nis already turning it over in his hands.# \"Incredible!\"$y they both exclaim,\nat the exact same moment, in a single voice.# $c\"What is it?\"$y you ask.#\n$g\"Another of the Master's creations!\"$y Efeliah says, delighted.# $m\"A kind of\nmental amplifier,\"$y Math says.# $m\"I believe I can use it to stay in contact\nwith you.\"$y# Efeliah embraces him.",
+              "effect": { "gainitem": "amplifier" }
+            },
+            {
+              "objs": ["efeliah", "diadem"],
+              "answer": "For Efeliah, a diadem of diamonds and sapphires set in gold, and a necklace\nto match Corolla's."
+            }
+          ],
+          "answer": "There's a great deal on this stage worth a closer look."
+        },
+        {
+          "verbs": ["leave", "go", "bow", "retire"],
+          "answer": "You turn to the applauding crowd and bow, then lift what you've been given\nso everyone can see it properly.# After being interviewed, photographed, and hugged\nnearly to death, you are finally allowed to retire to your rooms, where,\ndeep into the night, exhausted, you collapse.",
+          "childid": 20
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "type": "Story",
+      "recap": "the long sleep - through the night and the following day; wake at sunset to Efeliah's tease and Theo's deadpan",
+      "text": "You sleep through the night.# You sleep through the whole next day, too.##\n\nWhen you finally stir, you stretch your limbs and make your way down\nto find something to eat.# You vaguely register that something is off\nwhen you notice the lights are lit in the corridor outside.##\n\nYou make your way downstairs, through the halls, to the banquet room,\nwhere you find Efeliah and Theo waiting for you.##\n\n$g\"Good morning, Kriss!\"$C# she says when she sees you, laughing.# $g\"Or rather,\ngood evening!\"$C##\n\nYou stare at her, uncomprehending.# You look at Theo instead, impassive as ever.#\nAfter about ten seconds, while Efeliah is still laughing to herself, he says:##\n\n$B\"It's sunset.# You've slept more than sixteen hours.\"$C##\n\nYou stand there a moment, blinking at him.# Then you go to a window to check,\nand have to surrender to the plain fact of it.##\n\n$g\"Perhaps our efforts turned out to be a little more tiring than you'd estimated,\"$C#\nshe says.",
+      "childid": 21
+    },
+    {
+      "id": 21,
+      "type": "Dialogue",
+      "recap": "councillor's provisions message; Corolla+Smiurl arrive, banter, Efeliah names his fear, Theo proposes dawn [DECISION: reply on Kriss's agreement]",
+      "dialogues": [
+        {
+          "actor": "Person",
+          "precomment": "One of the councillors appears, drawing your attention.",
+          "line": "It's a pleasure to see you again.# We've prepared everything you might need\nfor the journey.# You'll find the provisions there,",
+          "comment": "He gestures at one of the tables still standing from the night before."
+        },
+        {
+          "actor": "Person",
+          "line": "You may leave whenever you like.# Just let us know once you've decided.",
+          "comment": "He bows again, and disappears the way he came.",
+          "break": true
+        },
+        {
+          "actor": "Smiurl",
+          "precomment": "A few minutes later Corolla comes down, Smiurl in tow.# The moment he arrives,\nthe dwarf says:",
+          "line": "Must we really leave…?# I rather like it here…",
+          "comment": "He lights up faintly, remembering the culinary delights he's been allowed to enjoy."
+        },
+        {
+          "actor": "Kriss",
+          "line": "How's that?# Wasn't this the 'cursed city'?",
+          "comment": "You say, smiling."
+        },
+        {
+          "actor": "Smiurl",
+          "line": "Well…",
+          "comment": "He looks at the ground, and shrugs."
+        },
+        {
+          "actor": "Corolla",
+          "line": "You can stay here if you want…# Math will be here with you anyway…",
+          "comment": "She says it partly to test him."
+        },
+        {
+          "actor": "Smiurl",
+          "precomment": "Smiurl groans, torn apart by the conflict.# In the end he speaks up, sighing:",
+          "line": "I'll come with you…# I can't play the coward and abandon my friends!#\nMy honor as a third-generation mutant is at stake!"
+        },
+        {
+          "actor": "Efeliah",
+          "precomment": "Efeliah studies him for a moment.",
+          "line": "That's not everything, is it?"
+        },
+        {
+          "actor": "Smiurl",
+          "precomment": "He looks at her, eyes wide, and after lowering them again, his voice trembling:",
+          "line": "Well… I suppose…"
+        },
+        {
+          "actor": "Efeliah",
+          "line": "You don't trust him…# Or rather, you're afraid of me too, somewhere\nat the back of your mind…",
+          "comment": "He looks at her, even more intimidated.# She points at his own reaction."
+        },
+        {
+          "actor": "Efeliah",
+          "line": "See?"
+        },
+        {
+          "actor": "Smiurl",
+          "line": "Ah! Damn it!",
+          "comment": "He stamps a foot on the ground, and crosses his arms."
+        },
+        {
+          "actor": "Smiurl",
+          "line": "You're right, as always!",
+          "comment": "They laugh.",
+          "break": true
+        },
+        {
+          "actor": "Theo",
+          "precomment": "They put together a snack that turns out to be somewhere between breakfast\nand a light dinner.# When they finish eating, Theo speaks.",
+          "line": "I propose we leave at dawn.# In the meantime we can pack, and rest, one last time."
+        },
+        {
+          "actor": "Corolla",
+          "line": "Agreed."
+        },
+        {
+          "actor": "Efeliah",
+          "line": "Works for me…# You, Kriss?",
+          "replies": [
+            { "line": "\"Sure. At dawn. I've slept enough for one day.\"", "nextline": "dawnAgreed" },
+            { "line": "\"Dawn it is. I don't think I could sleep through anything else today.\"", "nextline": "dawnAgreed" }
+          ]
+        },
+        {
+          "linename": "dawnAgreed",
+          "actor": "Corolla",
+          "line": "Then it's decided."
+        },
+        {
+          "actor": "Smiurl",
+          "line": "Does nobody ask MY opinion?!",
+          "comment": "Indignant.# They laugh again.",
+          "childid": 22
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "type": "Story",
+      "recap": "atrium gathering before the council farewell",
+      "text": "Close to the third hour of the night, you gather in the great municipal atrium,\nto say goodbye to the council.##\n\nAyonn is changed.##\n\nNot the buildings, not the streets, which are the same gray and concrete\nthey always were, but the people are different, and you see it in every one you pass:\nguards sitting against walls with their headbands removed, staring at their hands,#\ncivilians emerging from doorways, blinking, uncertain, as if waking\nfrom a long sleep they did not choose and cannot quite place.#\nSmall knots of people finding each other, arms around shoulders,\nthe kind of stillness that comes just before someone starts to cry.",
+      "childid": 23
+    },
+    {
+      "id": 23,
+      "type": "Dialogue",
+      "recap": "travel clothes description; Riff's farewell; the reinstated 'expansive councillor friends' joke",
+      "text": "You've gone back to your travel clothes.# You are wearing again the ones you arrived\non Noi-Hert in, your sneakers most of all, far more comfortable than Theo's boots.#\nThe Municipal laundry took care of everyone's few belongings, of which, as it turns\nout, there were not many.# Smiurl wears his same old, faded leather jacket.#\nTheo wears only a pair of light trousers.# It is a striking thing to watch,\nthat mountain of muscle dragging behind him an enormous pack and two implausibly\nlarge mauls.##\n\nEfeliah has given up her tunic in favor of something more practical, and gladly\naccepted some of Corolla's clothes: skin-tight black leather trousers, and a kind\nof shirt torn off at the waist.# She looks perfectly at home in it.# You study\nthe two of them for a moment, thinking they look like a pair of beautiful warriors.##",
+      "dialogues": [
+        {
+          "actor": "Riff",
+          "precomment": "You shake yourself out of the thought to bow to the councillors, who wish you\na good journey and all the rest of it, thanking you again half a dozen times more,\nafter assuring you of their undying hospitality toward you, and toward any friends\nof yours who might one day pass this way.##\n\nThen it is Riff's turn.",
+          "line": "Friends.# I hope we meet again, one day.# I still cannot take in everything\nyou have done, for all of us.# It happened too fast.# Thank you.# Thank you again.",
+          "comment": "He embraces each of you in turn, moved.",
+          "break": true
+        },
+        {
+          "actor": "Efeliah",
+          "precomment": "$c<<This one seems much more expansive than his councillor friends,>>$C# you think.",
+          "line": "You can say that again!",
+          "istelepathy": true,
+          "comment": "Efeliah's answer arrives straight into your mind.# By now, you're used\nto the contact.",
+          "childid": 24
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "type": "Choice",
+      "recap": "the goodbye remembers Kriss's earlier stance on Math staying [DECISION: gated choice, isNodeVisited on 9/10/11]",
+      "text": "Then it is Math's turn.# He looks at you for a moment before he speaks.",
+      "choices": [
+        {
+          "desc": "Meet his eyes and hold them.# He remembers what you told him in the infirmary, and something in his glance thanks you for it.",
+          "condition": { "type": "isNodeVisited", "item": "9" },
+          "childid": 25
+        },
+        {
+          "desc": "Meet his eyes, unsure what you'll find there.# He remembers the doubt you raised, and doesn't seem to hold it against you.",
+          "condition": { "type": "isNodeVisited", "item": "10" },
+          "childid": 25
+        },
+        {
+          "desc": "Give him a small nod.# He remembers the silence you gave Efeliah, and seems to understand it.",
+          "condition": { "type": "isNodeVisited", "item": "11" },
+          "childid": 25
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "type": "Dialogue",
+      "recap": "Math's farewell - good luck, amplifier confirmation, Projector reactivated note, 'take care of yourself'",
+      "dialogues": [
+        {
+          "actor": "Math",
+          "line": "I wish you good luck.# If the Master predicted your arrival, then your destiny\nis sealed.# I am certain we will meet again."
+        },
+        {
+          "actor": "Efeliah",
           "line": "We'll stay in contact with you through the amplifier, won't we?",
           "istelepathy": true
         },
         {
           "actor": "Math",
-          "line": "Of course.# I'll make myself heard often.##\n\nI don't want to hold you too long: too much sentiment now\ncould cause hesitation, and that is the last thing you need.",
-          "comment": "\nHe glances over his shoulder toward the Projector room above.# Then, as if remembering:",
+          "line": "Of course.# I'll make myself heard often.##\n\nI don't want to hold you too long: too much sentiment now could cause hesitation,#\nand that is the last thing you need.",
+          "comment": "He glances toward the Projector room above.# Then, as if remembering:",
           "break": true
         },
         {
           "actor": "Math",
-          "line": "The Projector has been reactivated, but your minds\nwill be ignored by the machine.# Do not worry about it.",
-          "comment": "He accompanies you to the door.#\nAt the threshold he stops, and you understand without being told\nthat this is where he stays.##"
+          "line": "The Projector has been reactivated, but your minds will be ignored\nby the machine.# Do not worry about it.",
+          "comment": "He walks you to the door.# At the threshold he stops, and you understand\nwithout being told that this is where he stays."
         },
         {
           "actor": "Kriss",
-          "precomment": "You look at him: the scholar from Seer's Rock,\nthe man who opened the psychic door.",
+          "precomment": "You look at him: the scholar from Seer's Rock, the man who opened the psychic door.",
           "line": "Take care of yourself, Math.",
-          "comment": "He nods once.# Something in his expression closes into the\nparticular stillness of a man who finds it better not to speak.",
-          "childid": 12
+          "comment": "He nods once.# Something in his expression closes into the particular stillness\nof a man who finds it better not to speak.",
+          "childid": 26
         }
       ]
     },
     {
-      "id": 12,
+      "id": 26,
       "type": "Story",
-      "recap": "RAW MATERIAL moved verbatim from c14 under issue 7 - rewrite under issue 8 (source ch. XIV-XV). Was c14 node 12: heading south - chapter end - party of five departs",
+      "recap": "departure through the south gate - the shield seen from outside, 'the hemispheric glory of Ayonn'",
       "text": "You set off along the main street just before dawn,\nleaving the Municipal building behind, and Ayonn with it.#\nYou pass through the south gate while a gap is opened in the holographic shield,\nand the guard on duty raises a hand as you step out,\nand the moment your feet leave the city perimeter the shield closes\nand takes its shape again behind you.##\n\nYou walk a few hundred meters and turn to look at it.#\nFrom out here, without the dread the machine once projected, it is simply beautiful,\na hemisphere of shifting light sitting over the city like a second dawn.##\n\n$c<<The hemispheric glory of Ayonn.>>$C#\n$C$c<<I could not forget a place like this, even if I tried.>>$C##\n\n$C\"$cAnd come to think of it,\"$C# you say aloud,\nsurprising yourself, $c\"I could not forget any of the rest, either.\"$C##\n\n$CThey look at you.# Then they turn back to the road.",
-      "childid": 13
+      "childid": 27
     },
     {
-      "id": 13,
+      "id": 27,
       "type": "Story",
-      "recap": "RAW MATERIAL moved verbatim from c14 under issue 7 - rewrite under issue 8 (source ch. XIV-XV). Was c14 node 12: heading south - chapter end - party of five departs pt 2",
-      "text": "Smiurl walks between Corolla and Theo, his skin cycling\nthrough slow, warm colors: amber, rose, a satisfied cream.#\nCorolla walks steadily, a little stiffly, the burn on her back a reminder\nshe is not going to dwell on.# Efeliah walks in silence,\nher eyes already moving south.##\n\nYou walk.##\n\n$c<<South.>>#$C\n\nThat is what you know.# That is what the machine told you,\nor what something through the... machine? told you,# and you are\nnot going to examine it too closely right now.##\n\nAhead: the road, and whatever comes next.##",
+      "recap": "chapter end - party of five departs south",
+      "text": "Smiurl walks between Corolla and Theo, his skin cycling\nthrough slow, warm colors: amber, rose, a satisfied cream.#\nCorolla walks steadily, a little stiffly, the burn on her back a reminder\nshe is not going to dwell on.# Efeliah walks in silence,\nher eyes already moving south.##\n\nYou walk.##\n\n$c<<South.>>#$C\n\nThat is what you know.# That is what the machine told you,\nor what something through the... machine? told you, and you are\nnot going to examine it too closely right now.##\n\nAhead: the road, and whatever comes next.##",
       "islast": true
     }
   ]

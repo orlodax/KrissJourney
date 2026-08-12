@@ -300,9 +300,10 @@ public class StoryFlowTests
     }
 
     /// <summary>
-    /// Issue 7: c14 now ends at node 95 and c15 at node 12. Confirms exactly one reachable
-    /// node per chapter carries islast, and that it is the specific node the content report
-    /// names - not just "any one node", which would pass even if the wrong node were marked.
+    /// Issue 7 ended c14 at node 95; issue 8 rewrote c15 into 31 nodes (1-31) ending at node 27.
+    /// Confirms exactly one reachable node per chapter carries islast, and that it is the
+    /// specific node the content report names - not just "any one node", which would pass
+    /// even if the wrong node were marked.
     /// Scoped to 14/15: c1, c2, c18 and c19 do not currently satisfy "exactly one" (0 or 2
     /// islast nodes respectively), so this is not yet safe as a repo-wide invariant.
     /// </summary>
@@ -310,7 +311,7 @@ public class StoryFlowTests
     public void Chapter14And15_ExactlyOneReachableIsLastNode()
     {
         AssertSingleReachableIsLast(chapterId: 14, expectedIsLastNodeId: 95);
-        AssertSingleReachableIsLast(chapterId: 15, expectedIsLastNodeId: 12);
+        AssertSingleReachableIsLast(chapterId: 15, expectedIsLastNodeId: 27);
     }
 
     void AssertSingleReachableIsLast(int chapterId, int expectedIsLastNodeId)

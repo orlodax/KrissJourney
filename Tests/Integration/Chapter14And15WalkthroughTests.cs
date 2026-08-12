@@ -46,12 +46,12 @@ public class Chapter14And15WalkthroughTests
     }
 
     [TestMethod]
-    public void Chapter14HappyPath_WalksThroughNode95AndHandsOffIntoChapter15ThroughNode12()
+    public void Chapter14HappyPath_WalksThroughNode95AndHandsOffIntoChapter15sRiffArrival()
     {
         GameEngine engine = BuildScopedEngine(14, 15);
         SetCurrentChapter(engine, 14);
 
-        ArgumentNullException stoppedAt = null;
+        InvalidOperationException stoppedAt = null;
 
         Task script = Task.Run(async () =>
         {
@@ -72,7 +72,9 @@ public class Chapter14And15WalkthroughTests
             idx = await ContinueAsync(idx);                                              // node 40 -> node 5
 
             idx = await ChooseAsync(idx, "\"What happened to it?\"");                     // node 5: Efeliah's reply prompt
-            idx = await ContinueAsync(idx);                                              // node 5: joeExplains break
+            // "joeExplains" (the reply target) has no break of its own in c14.json - it chains
+            // straight through Efeliah's "terminals" line into Math's childid line, whose own
+            // transition is the only "press a key" prompt between the reply and node 6.
             idx = await ContinueAsync(idx);                                              // node 5: Math's childid line -> node 6
 
             idx = await ContinueAsync(idx);                                              // node 6 -> node 7
@@ -103,43 +105,38 @@ public class Chapter14And15WalkthroughTests
 
             // ---- c14's islast hands off into c15's node 1, same call stack ----
 
-            idx = await ContinueAsync(idx);                                              // c15 node 1 -> node 10
+            idx = await ContinueAsync(idx);                                              // c15 node 1 -> node 2
+            idx = await ChooseAsync(idx, "Let the sentence trail off, unfinished.");      // c15 node 2 -> node 28 (choice 0)
+            idx = await ContinueAsync(idx);                                              // c15 node 28 -> node 3
 
-            idx = await ContinueAsync(idx);                                              // c15 node 10: Kriss's break line
-            idx = await ContinueAsync(idx);                                              // c15 node 10: Corolla's childid line -> node 11
-
-            idx = await ContinueAsync(idx);                                              // c15 node 11 -> node 110
-
-            idx = await ContinueAsync(idx);                                              // c15 node 110: Riff's break line
-            idx = await ContinueAsync(idx);                                              // c15 node 110: Math's break line
-            idx = await ContinueAsync(idx);                                              // c15 node 110: Kriss's childid line -> node 12
-
-            idx = await ContinueAsync(idx);                                              // c15 node 12 -> StartNextChapter(16), out of scope
+            // Node 3's opening line (Riff's greeting) flows immediately, before its first
+            // "press a key" prompt; finding it is proof enough the cascade landed on c15's own
+            // content. That next prompt is deliberately left unanswered - walking the whole new
+            // 31-node chapter is Chapter15Standalone's job below, not this cascade test's.
+            await WaitForOutputIndexAsync("Hail to the saviors!", idx);
         });
 
         try
         {
             engine.LoadNode(1);
-            Assert.Fail("Expected the walk to end trying to start chapter 16, which this scoped engine does not have loaded.");
+            Assert.Fail("Expected node 3's own break prompt to time out the mock's ReadKey once the walk reached c15's node 1 cascade.");
         }
-        catch (ArgumentNullException ex)
+        catch (InvalidOperationException ex)
         {
             stoppedAt = ex;
         }
 
         Assert.IsTrue(script.Wait(TimeSpan.FromSeconds(30)), "Input script timed out.");
-        Assert.IsNotNull(stoppedAt, "Expected an ArgumentNullException once the walk ran past c15's node 12.");
-        Assert.AreEqual("Chapter with ID 16 not found.", stoppedAt.ParamName,
-            "The walk should stop only because chapter 16 is outside this test's scoped chapter list, not for any earlier reason.");
+        Assert.IsNotNull(stoppedAt);
+        Assert.AreEqual("No keys available in mock terminal", stoppedAt.Message,
+            "Expected exception message in testing environment only: System.Console.ReadKey never throws this way.");
         Assert.AreEqual(0, terminal.KeyQueueCount, "Every queued key should have been consumed exactly once.");
 
         string output = terminal.GetOutput();
         Assert.IsTrue(output.Contains("The pattern locks into place all at once"), "Should have won the first Surge attempt (node 20).");
         Assert.IsTrue(output.Contains("I think I know what to do."), "Should have reached c14's resolution beat at node 95.");
         Assert.IsTrue(output.Contains("CHAPTER 15"), "islast on node 95 should have hung off into c15's own header (node 1).");
-        Assert.IsTrue(output.Contains("You did it."), "Should have reached c15 node 10 (Riff's arrival).");
-        Assert.IsTrue(output.Contains("Take care of yourself, Math."), "Should have reached c15 node 110 (farewell to Math).");
-        Assert.IsTrue(output.Contains("Ahead: the road, and whatever comes next."), "Should have flowed all the way to c15 node 12's closing beat.");
+        Assert.IsTrue(output.Contains("Hail to the saviors!"), "Should have reached c15 node 3 (Riff's arrival).");
     }
 
     [TestMethod]
@@ -225,7 +222,9 @@ public class Chapter14And15WalkthroughTests
             idx = await ContinueAsync(idx);                                              // node 40 -> node 5
 
             idx = await ChooseAsync(idx, "\"What happened to it?\"");
-            idx = await ContinueAsync(idx);                                              // node 5: joeExplains break
+            // "joeExplains" (the reply target) has no break of its own in c14.json - it chains
+            // straight through Efeliah's "terminals" line into Math's childid line, whose own
+            // transition is the only "press a key" prompt between the reply and node 6.
             idx = await ContinueAsync(idx);                                              // node 5: Math's childid line -> node 6
 
             idx = await ContinueAsync(idx);                                              // node 6 -> node 7
@@ -293,11 +292,21 @@ public class Chapter14And15WalkthroughTests
         Assert.IsTrue(output.Contains("I think I know what to do."), "Re-entering hub 1 and taking the correct path should still finish the chapter.");
     }
 
+    /// <summary>
+    /// Walks the whole 31-node chapter issue 8 authored: both flavor choices (nodes 2/4), the
+    /// "Friends? For life." handshake and both revelation dialogues' replies (nodes 6, 14, 15),
+    /// the first node-8 poll (branch: Math should stay), node 17's gated table-talk Action (ask
+    /// math before wait is allowed to advance), node 19's award-ceremony Action (all four items,
+    /// then leave), the dawn-departure reply (node 21), and node 24's isNodeVisited-gated
+    /// farewell choice - which, since this walk took node 8's "Math should stay" branch (-> node
+    /// 9), should show only that choice's callback text. Ends at node 27 (islast).
+    /// </summary>
     [TestMethod]
-    public void Chapter15Standalone_WalksFromNode1ThroughNode12()
+    public void Chapter15Standalone_WalksFromNode1ThroughNode27_CollectsAllFourAwardItems()
     {
         GameEngine engine = BuildScopedEngine(15);
         SetCurrentChapter(engine, 15);
+        TestStatusManager statusManager = GetStatusManager(engine);
 
         ArgumentNullException stoppedAt = null;
 
@@ -305,18 +314,80 @@ public class Chapter14And15WalkthroughTests
         {
             int idx = 0;
 
-            idx = await ContinueAsync(idx);                                              // node 1 -> node 10
+            idx = await ContinueAsync(idx);                                              // node 1 -> node 2
 
-            idx = await ContinueAsync(idx);                                              // node 10: Kriss's break line
-            idx = await ContinueAsync(idx);                                              // node 10: Corolla's childid line -> node 11
+            idx = await ChooseAsync(idx, "Let the sentence trail off, unfinished.");      // node 2 -> node 28 (choice 0)
+            idx = await ContinueAsync(idx);                                              // node 28 -> node 3
 
-            idx = await ContinueAsync(idx);                                              // node 11 -> node 110
+            idx = await ContinueAsync(idx);                                              // node 3: Riff's "still catching his breath" break
+            idx = await ContinueAsync(idx);                                              // node 3: Riff's break before his childid line
+            idx = await ContinueAsync(idx);                                              // node 3: Riff's childid line -> node 4
 
-            idx = await ContinueAsync(idx);                                              // node 110: Riff's break line
-            idx = await ContinueAsync(idx);                                              // node 110: Math's break line
-            idx = await ContinueAsync(idx);                                              // node 110: Kriss's childid line -> node 12
+            idx = await ChooseAsync(idx, "Wait, and let him say what he needs to say.");  // node 4 -> node 30 (choice 0)
+            idx = await ContinueAsync(idx);                                              // node 30 -> node 5
 
-            idx = await ContinueAsync(idx);                                              // node 12 -> StartNextChapter(16), out of scope
+            idx = await ContinueAsync(idx);                                              // node 5: Riff's childid line -> node 6
+
+            idx = await ContinueAsync(idx);                                              // node 6: Corolla's "did they hit me" break
+            idx = await ContinueAsync(idx);                                              // node 6: Corolla's "that's what counts" break
+            idx = await ChooseAsync(idx, "\"Friends. For life.\" You repeat it, unsure what exactly you've just agreed to.");
+                                                                                           // node 6: "Friends? For life." reply 0 -> handshakeDone
+            idx = await ContinueAsync(idx);                                              // node 6: handshakeDone childid -> node 7
+
+            idx = await ContinueAsync(idx);                                              // node 7: Theo's childid line -> node 8
+
+            idx = await ChooseAsync(idx, "Tell her you think Math should stay, if that's what he wants.");
+                                                                                           // node 8 -> node 9 (choice 0)
+            idx = await ContinueAsync(idx);                                              // node 9 -> node 12
+
+            idx = await ContinueAsync(idx);                                              // node 12: Math's childid line -> node 13
+            idx = await ContinueAsync(idx);                                              // node 13 -> node 14
+
+            idx = await ChooseAsync(idx, "\"What's wrong?\"");                            // node 14 reply 0 -> efExplainsMind
+            idx = await ChooseAsync(idx, "\"Actually… I remember. You didn't notice, but I was right behind you. I was listening.\"");
+                                                                                           // node 14 reply 0 -> efShocked
+            idx = await ContinueAsync(idx);                                              // node 14: Corolla's childid line -> node 15
+
+            idx = await ChooseAsync(idx, "\"Which is?\"");                                // node 15 reply 0 -> efOxengutter
+            idx = await ChooseAsync(idx, "\"I remember.\"");                              // node 15 reply 0 -> efSword
+            idx = await ChooseAsync(idx, "\"However what?\"");                            // node 15 reply 0 -> efImpression
+            idx = await ContinueAsync(idx);                                              // node 15: Efeliah's childid line -> node 16
+
+            idx = await ContinueAsync(idx);                                              // node 16 -> node 17 (Action)
+
+            idx = await ActAsync(idx, "ask math");                                       // node 17: grants heardMathMotive
+            idx = await ActAsync(idx, "wait");                                           // node 17: condition met -> node 18 (no extra prompt)
+
+            idx = await ContinueAsync(idx);                                              // node 18 -> node 19 (Action)
+
+            idx = await ActAsync(idx, "take sphere");                                    // grants lightSphere
+            idx = await ActAsync(idx, "take dagger");                                    // grants daggerReplica
+            idx = await ActAsync(idx, "look rifle");                                     // grants laserRifle
+            idx = await ActAsync(idx, "look amplifier");                                 // grants amplifier
+            idx = await ActAsync(idx, "leave");                                          // -> node 20 (has its own "press a key")
+            idx = await ContinueAsync(idx);
+
+            idx = await ContinueAsync(idx);                                              // node 20 -> node 21
+
+            idx = await ContinueAsync(idx);                                              // node 21: the councillor's break
+            idx = await ContinueAsync(idx);                                              // node 21: "You're right, as always!" break
+            idx = await ChooseAsync(idx, "\"Sure. At dawn. I've slept enough for one day.\"");
+                                                                                           // node 21 reply 0 -> dawnAgreed
+            idx = await ContinueAsync(idx);                                              // node 21: Smiurl's childid line -> node 22
+
+            idx = await ContinueAsync(idx);                                              // node 22 -> node 23
+
+            idx = await ContinueAsync(idx);                                              // node 23: Riff's farewell break
+            idx = await ContinueAsync(idx);                                              // node 23: Efeliah's childid line -> node 24
+
+            idx = await ChooseAsync(idx, "something in his glance thanks you for it.");   // node 24: only visible choice (gated on node 9)
+
+            idx = await ContinueAsync(idx);                                              // node 25: Math's break
+            idx = await ContinueAsync(idx);                                              // node 25: Kriss's childid line -> node 26
+
+            idx = await ContinueAsync(idx);                                              // node 26 -> node 27
+
+            idx = await ContinueAsync(idx);                                              // node 27 -> StartNextChapter(16), out of scope
         });
 
         try
@@ -337,10 +408,80 @@ public class Chapter14And15WalkthroughTests
 
         string output = terminal.GetOutput();
         Assert.IsTrue(output.Contains("CHAPTER 15"), "Should have rendered c15's own header at node 1.");
-        Assert.IsTrue(output.Contains("You did it."), "Should have reached node 10 (Riff's arrival).");
-        Assert.IsTrue(output.Contains("Ayonn is changed."), "Should have reached node 11 (the farewell gathering).");
-        Assert.IsTrue(output.Contains("Take care of yourself, Math."), "Should have reached node 110 (farewell to Math).");
-        Assert.IsTrue(output.Contains("Ahead: the road, and whatever comes next."), "Should have flowed all the way to node 12's closing beat.");
+        Assert.IsTrue(output.Contains("Hail to the saviors!"), "Should have reached node 3 (Riff's arrival).");
+        Assert.IsTrue(output.Contains("So THIS is what you were hiding from me!"), "Should have reached node 7 (Math's announcement).");
+        Assert.IsTrue(output.Contains("Ayonn is changed."), "Should have reached node 22 (the atrium gathering).");
+        Assert.IsTrue(output.Contains("something in his glance thanks you for it."),
+            "Node 24 should show the callback tied to node 9 (the branch this walk took at node 8).");
+        Assert.IsFalse(output.Contains("doesn't seem to hold it against you."),
+            "Node 24's node-10 callback should not be visible: this walk never visited node 10.");
+        Assert.IsFalse(output.Contains("seems to understand it."),
+            "Node 24's node-11 callback should not be visible: this walk never visited node 11.");
+        Assert.IsTrue(output.Contains("Ahead: the road, and whatever comes next."), "Should have flowed all the way to node 27's closing beat.");
+
+        Assert.IsTrue(statusManager.IsItemInInventory("heardMathMotive"), "Node 17's 'ask math' should have granted heardMathMotive.");
+        Assert.IsTrue(statusManager.IsItemInInventory("lightSphere"), "Node 19's 'take sphere' should have granted lightSphere.");
+        Assert.IsTrue(statusManager.IsItemInInventory("daggerReplica"), "Node 19's 'take dagger' should have granted daggerReplica.");
+        Assert.IsTrue(statusManager.IsItemInInventory("laserRifle"), "Node 19's 'look rifle' should have granted laserRifle.");
+        Assert.IsTrue(statusManager.IsItemInInventory("amplifier"), "Node 19's 'look amplifier' should have granted amplifier.");
+    }
+
+    /// <summary>
+    /// Node 24's gating is the payoff of the node-8 poll: proving a SECOND branch shows a
+    /// DIFFERENT callback would otherwise mean re-running the whole 31-node walk above just to
+    /// change one earlier choice. Since GameEngine.LoadNode can jump straight to any node id in
+    /// the current chapter, and the gate itself only reads VisitedNodes through the real
+    /// TestStatusManager (the same one AllChapters... /ChoiceNode.DisplayChoices reads in
+    /// production), pre-seeding node 10 as visited and loading node 24 directly exercises the
+    /// identical isNodeVisited gate far more cheaply, without needing a second full walk.
+    /// </summary>
+    [TestMethod]
+    public void Chapter15Node24_WithNodeTenVisitedInstead_ShowsTheNodeTenCallback()
+    {
+        GameEngine engine = BuildScopedEngine(15);
+        SetCurrentChapter(engine, 15);
+        TestStatusManager statusManager = GetStatusManager(engine);
+        statusManager.SaveProgress(15, 10); // stand-in for having taken node 8's "doubt" branch
+
+        ArgumentNullException stoppedAt = null;
+
+        Task script = Task.Run(async () =>
+        {
+            int idx = 0;
+
+            idx = await ChooseAsync(idx, "doesn't seem to hold it against you.");         // node 24's only visible choice (gated on node 10)
+
+            idx = await ContinueAsync(idx);                                              // node 25: Math's break
+            idx = await ContinueAsync(idx);                                              // node 25: Kriss's childid line -> node 26
+
+            idx = await ContinueAsync(idx);                                              // node 26 -> node 27
+
+            idx = await ContinueAsync(idx);                                              // node 27 -> StartNextChapter(16), out of scope
+        });
+
+        try
+        {
+            engine.LoadNode(24);
+            Assert.Fail("Expected the walk to end trying to start chapter 16, which this scoped engine does not have loaded.");
+        }
+        catch (ArgumentNullException ex)
+        {
+            stoppedAt = ex;
+        }
+
+        Assert.IsTrue(script.Wait(TimeSpan.FromSeconds(30)), "Input script timed out.");
+        Assert.IsNotNull(stoppedAt);
+        Assert.AreEqual("Chapter with ID 16 not found.", stoppedAt.ParamName,
+            "The walk should stop only because chapter 16 is outside this test's scoped chapter list, not for any earlier reason.");
+        Assert.AreEqual(0, terminal.KeyQueueCount, "Every queued key should have been consumed exactly once.");
+
+        string output = terminal.GetOutput();
+        Assert.IsTrue(output.Contains("doesn't seem to hold it against you."),
+            "Node 24 should show the callback tied to node 10 (the node pre-seeded as visited).");
+        Assert.IsFalse(output.Contains("something in his glance thanks you for it."),
+            "Node 24's node-9 callback should not be visible: node 9 was never visited.");
+        Assert.IsFalse(output.Contains("seems to understand it."),
+            "Node 24's node-11 callback should not be visible: node 11 was never visited.");
     }
 
     // ---- helpers -------------------------------------------------------------------
@@ -372,6 +513,17 @@ public class Chapter14And15WalkthroughTests
 
         PropertyInfo currentChapterProperty = typeof(GameEngine).GetProperty(nameof(GameEngine.CurrentChapter));
         currentChapterProperty.SetValue(engine, chapter);
+    }
+
+    /// <summary>
+    /// Reflectively grabs the <see cref="TestStatusManager"/> BuildScopedEngine constructed the
+    /// engine with, so a script can assert on inventory/visited-node state through the exact
+    /// same StatusManager the engine itself reads and writes - not a second, disconnected one.
+    /// </summary>
+    static TestStatusManager GetStatusManager(GameEngine engine)
+    {
+        FieldInfo statusManagerField = typeof(GameEngine).GetField("statusManager", BindingFlags.NonPublic | BindingFlags.Instance);
+        return (TestStatusManager)statusManagerField.GetValue(engine);
     }
 
     /// <summary>Waits for the next generic "press a key" prompt and answers it with Enter.</summary>
@@ -413,6 +565,23 @@ public class Chapter14And15WalkthroughTests
         foreach (char c in sequence)
             terminal.EnqueueKeys(DirectionKey(c));
 
+        return idx;
+    }
+
+    const string ActionPrompt = "\\>";
+
+    /// <summary>
+    /// Waits for an ActionNode's own command prompt (Typist.RenderPrompt's "\>" - like a
+    /// Choice/reply prompt, it prints no "press a key" banner before blocking on raw input),
+    /// then types the given command followed by Enter, the same text-parser interaction
+    /// ActionNodeTests drives through SimulateTextInput/NodeTestBase, but here across the real
+    /// engine/TerminalMock pair.
+    /// </summary>
+    async Task<int> ActAsync(int startIndex, string command)
+    {
+        int idx = await WaitForOutputIndexAsync(ActionPrompt, startIndex);
+        terminal.EnqueueText(command);
+        terminal.EnqueueKeys(ConsoleKey.Enter);
         return idx;
     }
 
