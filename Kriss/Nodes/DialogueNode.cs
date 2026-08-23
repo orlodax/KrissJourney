@@ -75,11 +75,15 @@ public class DialogueNode : NodeBase
         {
             for (int i = 0; i < Dialogues[lineId].Replies.Count; i++)
             {
-                if (i == selectedRow)
-                {
-                    BackgroundColor = ConsoleColor.DarkCyan;
-                    ForegroundColor = ConsoleColor.White;
-                }
+                // set both colors explicitly on every row: the last rendered speech part leaves
+                // the actor's color behind, and an unselected reply must read as narrator text
+                ForegroundColor = i == selectedRow
+                    ? ConsoleColor.White
+                    : ConsoleColor.DarkCyan;
+                BackgroundColor = i == selectedRow
+                    ? ConsoleColor.DarkCyan
+                    : ConsoleColor.Black;
+
                 Write("\t");
                 Write(i + 1 + ". " + Dialogues[lineId].Replies[i].Line);
 

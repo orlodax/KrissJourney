@@ -65,7 +65,10 @@ public class TerminalMock : ITerminal
     public void ResetOutput()
     {
         lock (outputLock)
+        {
             outputBuilder.Clear();
+            ColoredWrites.Clear();
+        }
         lock (keyQueueLock)
             keyQueue.Clear();
         CursorLeft = 0;
@@ -80,10 +83,19 @@ public class TerminalMock : ITerminal
         CursorTop++;
     }
 
+    /// <summary>
+    /// Every Write(string) captured together with the colors active at that moment.
+    /// Lets tests assert on rendering colors, which GetOutput() cannot show.
+    /// </summary>
+    public List<(ConsoleColor Foreground, ConsoleColor Background, string Text)> ColoredWrites { get; } = [];
+
     public void Write(string message)
     {
         lock (outputLock)
+        {
             outputBuilder.Append(message);
+            ColoredWrites.Add((ForegroundColor, BackgroundColor, message));
+        }
         // Update cursor position based on content
         if (message != null)
         {

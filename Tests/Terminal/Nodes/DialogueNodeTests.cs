@@ -128,4 +128,25 @@ public class DialogueNodeTests : NodeTestBase
         Assert.IsTrue(output.Contains("World"));
         Assert.IsTrue(output.Contains("Advanced to 3!"));
     }
+
+    [TestMethod]
+    public void UnselectedReplies_AreAllNarratorColored()
+    {
+        // The speaker is Corolla (Red): if a reply row inherits the color left over by
+        // Typist.RenderLine, the first row paints red instead of the narrator's DarkCyan.
+        dialogueNode.Dialogues[0].Break = false;
+        _ = CreateNode<StoryNode>(nodeId: 3, configure: n => { n.Text = "Next node loaded!"; n.ChildId = 1; });
+        SimulateUserInput(ConsoleKey.DownArrow, ConsoleKey.Enter); // move off row 1, then pick row 2
+
+        LoadNode(dialogueNode);
+
+        (ConsoleColor Foreground, ConsoleColor Background, string Text) firstRow =
+            TerminalMock.ColoredWrites.FindLast(w => w.Text == "1. Reply1");
+
+        Assert.IsNotNull(firstRow.Text, "The first reply row was never written.");
+        Assert.AreEqual(ConsoleColor.DarkCyan, firstRow.Foreground,
+            "An unselected reply must render in the narrator color, not the speaking actor's.");
+        Assert.AreEqual(ConsoleColor.Black, firstRow.Background,
+            "An unselected reply must render on the default background.");
+    }
 }
