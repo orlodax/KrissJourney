@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using KrissJourney.Kriss.Models;
 using KrissJourney.Kriss.Nodes;
@@ -112,12 +112,16 @@ public class Chapter14And15ContentDeserializationTests
     }
 
     [TestMethod]
-    public void Chapter15_HasThirtyOneNodesInContiguousOrder()
+    public void Chapter15_HasFortyNodesInContiguousOrder()
     {
         // Issue 8 replaced c15's 6-node stub (1, 10, 11, 110, 12, 13 moved from c14 under
-        // issue 7) with 31 authored nodes, ids 1-31 contiguous.
+        // issue 7) with 31 authored nodes; splitting the banquet setup (old node 16) into
+        // three Story beats added 32 and 33, and turning the award ceremony (node 19) from one
+        // Action node into a Choice hub gave each prize its own branch, 34-39. Splitting the
+        // departure (node 23) so the travel clothes and the councillors' send-off narrate as
+        // one Story beat before Riff speaks added 40, so ids 1-40 are contiguous.
         List<int> ids = [.. c15.Nodes.Select(n => n.Id).OrderBy(i => i)];
-        CollectionAssert.AreEqual(Enumerable.Range(1, 31).ToList(), ids);
+        CollectionAssert.AreEqual(Enumerable.Range(1, 40).ToList(), ids);
     }
 
     [TestMethod]
@@ -171,27 +175,62 @@ public class Chapter14And15ContentDeserializationTests
     }
 
     /// <summary>
-    /// Node 19's award ceremony grants the four items the content report promises, split
-    /// across two verb groups ("take"/"accept"/"claim" and "look"/"watch"/"observe"), and its
-    /// ungated "leave/go/bow/retire" verb is what finally advances the node.
+    /// Node 19's award ceremony is a Choice hub, not a text parser: every prize on that stage
+    /// is a listed choice, so nothing has to be guessed by name. It unlocks progressively, and
+    /// entirely through isNodeVisited so that a locked prize is not listed at all: Kriss's first
+    /// prize is the only thing on offer, claiming it opens his second, that one opens the four
+    /// companion branches in any order, and only all four together open the exit. Every branch
+    /// loops back to the hub, which together make it impossible to leave the stage early.
     /// </summary>
     [TestMethod]
-    public void Chapter15_Node19_AwardObjects_GrantTheFourDocumentedItems()
+    public void Chapter15_Node19_IsAnAwardHubNobodyCanLeaveEmptyHanded()
     {
-        ActionNode node19 = (ActionNode)c15.Nodes.Single(n => n.Id == 19);
+        ChoiceNode node19 = (ChoiceNode)c15.Nodes.Single(n => n.Id == 19);
+        Assert.AreEqual(7, node19.Choices.Count, "Two prizes for Kriss, one per companion group, plus the exit.");
 
-        Kriss.Models.Action takeAction = node19.Actions.Single(a => a.Verbs.Contains("take"));
-        Assert.AreEqual("lightSphere", takeAction.Objects.Single(o => o.Objs.Contains("sphere")).Effect.GainItem);
-        Assert.AreEqual("daggerReplica", takeAction.Objects.Single(o => o.Objs.Contains("dagger")).Effect.GainItem);
+        Choice sphere = node19.Choices[0];
+        Assert.IsNull(sphere.Condition, "Kriss's first prize is the only choice that is open from the start.");
+        Assert.AreEqual("lightSphere", sphere.Effect.GainItem);
+        Assert.AreEqual(34, sphere.ChildId);
 
-        Kriss.Models.Action lookAction = node19.Actions.Single(a => a.Verbs.Contains("look"));
-        Assert.AreEqual("laserRifle", lookAction.Objects.Single(o => o.Objs.Contains("rifle")).Effect.GainItem);
-        Assert.AreEqual("amplifier", lookAction.Objects.Single(o => o.Objs.Contains("amplifier")).Effect.GainItem);
+        Choice dagger = node19.Choices[1];
+        Assert.AreEqual("isNodeVisited", dagger.Condition.Type);
+        Assert.AreEqual("34", dagger.Condition.Item, "The second prize only appears once the first has been played out.");
+        Assert.AreEqual("daggerReplica", dagger.Effect.GainItem);
+        Assert.AreEqual(35, dagger.ChildId);
 
-        Kriss.Models.Action leaveAction = node19.Actions.Single(a => a.Verbs.Contains("leave"));
-        CollectionAssert.AreEquivalent(new List<string> { "leave", "go", "bow", "retire" }, leaveAction.Verbs);
-        Assert.AreEqual(20, leaveAction.ChildId);
-        Assert.IsNull(leaveAction.Condition, "Leaving the stage is not gated on having collected every item.");
+        List<Choice> companions = [.. node19.Choices.Skip(2).Take(4)];
+        CollectionAssert.AreEqual(new List<int> { 36, 37, 38, 39 }, companions.ConvertAll(c => c.ChildId),
+            "One branch each for Corolla, Theo, Smiurl, and Efeliah with Math.");
+        foreach (Choice companion in companions)
+        {
+            Assert.AreEqual("isNodeVisited", companion.Condition.Type);
+            Assert.AreEqual("35", companion.Condition.Item,
+                "A companion's prize only appears once Kriss has taken both of his own; the four are then free in any order.");
+            Assert.IsNull(companion.Effect, "The companions' prizes are theirs, not additions to Kriss's inventory.");
+        }
+
+        Choice leave = node19.Choices[6];
+        Assert.AreEqual(20, leave.ChildId);
+        Assert.IsNull(leave.Condition.Item, "Leaving is gated on a group, not on any single thing.");
+        CollectionAssert.AreEqual(new List<string> { "36", "37", "38", "39" }, leave.Condition.All.ConvertAll(c => c.Item),
+            "The exit stays out of the list until all four companion prizes have been watched.");
+        Assert.IsTrue(leave.Condition.All.TrueForAll(c => c.Type == "isNodeVisited"));
+
+        foreach (Choice gated in node19.Choices.Where(c => c.Condition != null))
+            Assert.IsTrue(string.IsNullOrEmpty(gated.Refusal),
+                "Nothing here is refused: an unmet isNodeVisited hides its choice, so a refusal line would be dead text.");
+
+        foreach (int storyBranchId in new[] { 34, 35, 36, 38 })
+            Assert.AreEqual(19, c15.Nodes.Single(n => n.Id == storyBranchId).ChildId,
+                "Every prize branch returns to the ceremony hub.");
+
+        foreach (int dialogueBranchId in new[] { 37, 39 })
+        {
+            DialogueNode branch = (DialogueNode)c15.Nodes.Single(n => n.Id == dialogueBranchId);
+            Assert.AreEqual(19, branch.Dialogues.Last().ChildId.Value,
+                "Theo's and Math's prize scenes are spoken dialogue, and they return to the hub too.");
+        }
     }
 
     /// <summary>

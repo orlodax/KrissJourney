@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -320,7 +320,6 @@ public class Chapter14And15WalkthroughTests
             idx = await ContinueAsync(idx);                                              // node 28 -> node 3
 
             idx = await ContinueAsync(idx);                                              // node 3: Riff's "still catching his breath" break
-            idx = await ContinueAsync(idx);                                              // node 3: Riff's break before his childid line
             idx = await ContinueAsync(idx);                                              // node 3: Riff's childid line -> node 4
 
             idx = await ChooseAsync(idx, "Wait, and let him say what he needs to say.");  // node 4 -> node 30 (choice 0)
@@ -343,42 +342,59 @@ public class Chapter14And15WalkthroughTests
             idx = await ContinueAsync(idx);                                              // node 12: Math's childid line -> node 13
             idx = await ContinueAsync(idx);                                              // node 13 -> node 14
 
-            idx = await ChooseAsync(idx, "\"What's wrong?\"");                            // node 14 reply 0 -> efExplainsMind
             idx = await ChooseAsync(idx, "\"Actually… I remember. You didn't notice, but I was right behind you. I was listening.\"");
-                                                                                           // node 14 reply 0 -> efShocked
+                                                                                           // node 14: reply 0 on Efeliah's line -> efShocked
             idx = await ContinueAsync(idx);                                              // node 14: Corolla's childid line -> node 15
 
-            idx = await ChooseAsync(idx, "\"Which is?\"");                                // node 15 reply 0 -> efOxengutter
-            idx = await ChooseAsync(idx, "\"I remember.\"");                              // node 15 reply 0 -> efSword
-            idx = await ChooseAsync(idx, "\"However what?\"");                            // node 15 reply 0 -> efImpression
+            idx = await ChooseAsync(idx, "\"Sure...\"");                                  // node 15: reply 0 on Efeliah's Oxengutter line -> efSword
+            idx = await ContinueAsync(idx);                                              // node 15: Efeliah's "back in shape now" break
             idx = await ContinueAsync(idx);                                              // node 15: Efeliah's childid line -> node 16
 
-            idx = await ContinueAsync(idx);                                              // node 16 -> node 17 (Action)
+            idx = await ContinueAsync(idx);                                              // node 16 -> node 32
+            idx = await ContinueAsync(idx);                                              // node 32 -> node 33
+            idx = await ContinueAsync(idx);                                              // node 33 -> node 17 (Action)
 
             idx = await ActAsync(idx, "ask math");                                       // node 17: grants heardMathMotive
             idx = await ActAsync(idx, "wait");                                           // node 17: condition met -> node 18 (no extra prompt)
 
-            idx = await ContinueAsync(idx);                                              // node 18 -> node 19 (Action)
+            idx = await ContinueAsync(idx);                                              // node 18 -> node 19 (Choice hub)
 
-            idx = await ActAsync(idx, "take sphere");                                    // grants lightSphere
-            idx = await ActAsync(idx, "take dagger");                                    // grants daggerReplica
-            idx = await ActAsync(idx, "look rifle");                                     // grants laserRifle
-            idx = await ActAsync(idx, "look amplifier");                                 // grants amplifier
-            idx = await ActAsync(idx, "leave");                                          // -> node 20 (has its own "press a key")
-            idx = await ContinueAsync(idx);
+            // Node 19's hub keeps its selectedRow between visits (it is the same node instance
+            // the engine re-enters), so every return needs exactly one DownArrow to step onto
+            // the next unplayed choice. The hub also opens up as it goes: each branch below is
+            // only listed at all once the one gating it has played out, so this walk takes them
+            // in listing order and the exit appears only after the last companion prize.
+            idx = await ChooseAsync(idx, "Hold out your hands for the first prize.");     // choice 0 -> node 34, grants lightSphere
+            idx = await ContinueAsync(idx);                                              // node 34 -> back to node 19
+            idx = await ChooseAsync(idx, "Take the second prize", ConsoleKey.DownArrow); // choice 1 -> node 35, grants daggerReplica
+            idx = await ContinueAsync(idx);                                              // node 35 -> back to node 19
+            idx = await ChooseAsync(idx, "Watch what they bring Corolla.", ConsoleKey.DownArrow);
+            idx = await ContinueAsync(idx);                                              // node 36 -> back to node 19
+            idx = await ChooseAsync(idx, "Watch the four men wheeling something out for Theo.", ConsoleKey.DownArrow);
+            idx = await ContinueAsync(idx);                                              // node 37: Theo's childid line -> back to node 19
+            idx = await ChooseAsync(idx, "Watch what they bring Smiurl.", ConsoleKey.DownArrow);
+            idx = await ContinueAsync(idx);                                              // node 38 -> back to node 19
+            idx = await ChooseAsync(idx, "Watch what they bring Efeliah and Math.", ConsoleKey.DownArrow);
+            idx = await ContinueAsync(idx);                                              // node 39: Math's childid line -> back to node 19
+            idx = await ChooseAsync(idx, "Bow to the crowd, and let them lead you off the stage.", ConsoleKey.DownArrow);
 
             idx = await ContinueAsync(idx);                                              // node 20 -> node 21
 
+            // Node 21 carries no replies: "Sure. At dawn." is a line Kriss SPEAKS, not one the
+            // player picks, so all three of its breaks are plain "press a key" prompts. Waiting
+            // on the text of a spoken line instead would deadlock - that line only renders once
+            // the third break has been answered, and answering it is what this step is for.
             idx = await ContinueAsync(idx);                                              // node 21: the councillor's break
+            idx = await ContinueAsync(idx);                                              // node 21: Efeliah's "That's not everything, is it?" break
             idx = await ContinueAsync(idx);                                              // node 21: "You're right, as always!" break
-            idx = await ChooseAsync(idx, "\"Sure. At dawn. I've slept enough for one day.\"");
-                                                                                           // node 21 reply 0 -> dawnAgreed
             idx = await ContinueAsync(idx);                                              // node 21: Smiurl's childid line -> node 22
 
             idx = await ContinueAsync(idx);                                              // node 22 -> node 23
 
-            idx = await ContinueAsync(idx);                                              // node 23: Riff's farewell break
-            idx = await ContinueAsync(idx);                                              // node 23: Efeliah's childid line -> node 24
+            idx = await ContinueAsync(idx);                                              // node 23 -> node 40
+
+            idx = await ContinueAsync(idx);                                              // node 40: Riff's farewell break
+            idx = await ContinueAsync(idx);                                              // node 40: Efeliah's childid line -> node 24
 
             idx = await ChooseAsync(idx, "something in his glance thanks you for it.");   // node 24: only visible choice (gated on node 9)
 
@@ -420,10 +436,10 @@ public class Chapter14And15WalkthroughTests
         Assert.IsTrue(output.Contains("Ahead: the road, and whatever comes next."), "Should have flowed all the way to node 27's closing beat.");
 
         Assert.IsTrue(statusManager.IsItemInInventory("heardMathMotive"), "Node 17's 'ask math' should have granted heardMathMotive.");
-        Assert.IsTrue(statusManager.IsItemInInventory("lightSphere"), "Node 19's 'take sphere' should have granted lightSphere.");
-        Assert.IsTrue(statusManager.IsItemInInventory("daggerReplica"), "Node 19's 'take dagger' should have granted daggerReplica.");
-        Assert.IsTrue(statusManager.IsItemInInventory("laserRifle"), "Node 19's 'look rifle' should have granted laserRifle.");
-        Assert.IsTrue(statusManager.IsItemInInventory("amplifier"), "Node 19's 'look amplifier' should have granted amplifier.");
+        Assert.IsTrue(statusManager.IsItemInInventory("lightSphere"), "Node 19's first prize should have granted lightSphere.");
+        Assert.IsTrue(statusManager.IsItemInInventory("daggerReplica"), "Node 19's second prize should have granted daggerReplica.");
+        Assert.IsFalse(statusManager.IsItemInInventory("laserRifle"), "Corolla's rifle is hers; watching her receive it grants Kriss nothing.");
+        Assert.IsFalse(statusManager.IsItemInInventory("amplifier"), "The amplifier is Math's; watching him receive it grants Kriss nothing.");
     }
 
     /// <summary>
