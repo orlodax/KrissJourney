@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using KrissJourney.Kriss.Models;
 using KrissJourney.Kriss.Nodes;
@@ -67,6 +67,32 @@ public class GameEngineTests
         {
             Assert.Fail($"SaveProgress threw an exception: {ex.Message}");
         }
+    }
+
+    [TestMethod]
+    public void Evaluate_WithGroupCondition_ReturnsFalseUnlessEveryMemberHolds()
+    {
+        Condition partlyMet = new()
+        {
+            All =
+            [
+                new() { Item = null },                                  // trivially true
+                new() { Item = "nonexistent_item", Type = "item" }      // false
+            ]
+        };
+
+        Assert.IsFalse(gameEngine.Evaluate(partlyMet), "A group is only as good as its weakest member.");
+
+        Condition allMet = new()
+        {
+            All =
+            [
+                new() { Item = null },
+                new() { Item = "" }
+            ]
+        };
+
+        Assert.IsTrue(gameEngine.Evaluate(allMet), "A group whose every member holds, holds.");
     }
 
     [TestMethod]

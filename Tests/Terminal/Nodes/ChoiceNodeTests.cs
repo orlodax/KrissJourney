@@ -1,4 +1,5 @@
-using System;
+﻿using System;
+using System.Collections.Generic;
 using KrissJourney.Kriss.Models;
 using KrissJourney.Kriss.Nodes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -282,5 +283,79 @@ public class ChoiceNodeTests : NodeTestBase
         string output2 = TerminalMock.GetOutput();
 
         Assert.IsTrue(output2.Contains("Repeat node loaded!"));
+    }
+    /// <summary>
+    /// A choice can require more than one thing at once through Condition.All, which holds only
+    /// when every one of its members holds. Like any other unmet isNodeVisited, an incomplete
+    /// group keeps the choice out of the list entirely rather than refusing it when picked -
+    /// that is what lets a hub open up progressively (c15's award ceremony gates leaving the
+    /// stage on all four companion prizes having been watched, in any order).
+    /// </summary>
+    [TestMethod]
+    public void GroupCondition_KeepsTheChoiceUnlistedUntilEveryMemberIsSatisfied()
+    {
+        List<Choice> choices =
+        [
+            new() { Desc = "Open from the start", ChildId = 2 },
+            new()
+            {
+                Desc = "Needs both",
+                ChildId = 3,
+                Condition = new()
+                {
+                    All =
+                    [
+                        new() { Type = "isNodeVisited", Item = "2" },
+                        new() { Type = "isNodeVisited", Item = "3" }
+                    ]
+                }
+            }
+        ];
+
+        GameEngine.SaveProgress(2); // only half the group
+
+        ChoiceNode halfSatisfied = CreateNode<ChoiceNode>(nodeId: 10, configure: n => n.Choices = choices);
+        LoadNode(halfSatisfied);
+
+        string output = TerminalMock.GetOutput();
+        Assert.IsTrue(output.Contains("Open from the start"));
+        Assert.IsFalse(output.Contains("Needs both"), "One satisfied member is not enough to list the choice.");
+
+        GameEngine.SaveProgress(3); // now the group is complete
+
+        ChoiceNode fullySatisfied = CreateNode<ChoiceNode>(nodeId: 11, configure: n => n.Choices = choices);
+        LoadNode(fullySatisfied);
+
+        Assert.IsTrue(TerminalMock.GetOutput().Contains("Needs both"),
+            "With every member satisfied the choice joins the list.");
+    }
+
+    /// <summary>
+    /// The engine re-enters the same node instance every time a branch loops back to a hub, so
+    /// DisplayChoices runs again and appends whatever has since unlocked - keeping the choices
+    /// already listed where they were, and the played ones greyed out rather than gone.
+    /// </summary>
+    [TestMethod]
+    public void RevisitingAHub_AppendsWhateverHasUnlockedSinceTheLastVisit()
+    {
+        ChoiceNode hub = CreateNode<ChoiceNode>(nodeId: 10, configure: n => n.Choices =
+        [
+            new() { Desc = "Take the prize", ChildId = 2, IsNotRepeatable = true },
+            new() { Desc = "Leave the stage", ChildId = 3, Condition = new() { Type = "isNodeVisited", Item = "2" } }
+        ]);
+        _ = CreateNode<StoryNode>(nodeId: 2, configure: n => n.Text = "The prize is yours.");
+
+        SimulateUserInput(ConsoleKey.Enter); // take the prize; node 2 then runs out of input
+
+        LoadNode(hub);
+        Assert.IsFalse(TerminalMock.GetOutput().Contains("Leave the stage"),
+            "Leaving is gated on the prize branch having played out.");
+
+        GameEngine.SaveProgress(2); // node 2 marks itself visited on its way back to the hub
+
+        LoadNode(hub);              // the engine's own re-entry into the very same instance
+        string output = TerminalMock.GetOutput();
+        Assert.IsTrue(output.Contains("Leave the stage"), "The exit joins the list on the return visit.");
+        Assert.IsTrue(output.Contains("Take the prize"), "A spent choice stays listed (greyed out), it does not vanish.");
     }
 }

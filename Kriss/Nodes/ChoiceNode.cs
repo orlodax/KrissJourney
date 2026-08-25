@@ -35,26 +35,32 @@ public class ChoiceNode : NodeBase
 
         foreach (Choice c in notHiddenChoices)                                 //crawl trough looking for those which does not satisfy possible condition
         {
-            Condition cond = c.Condition;
-            if (cond != null)
-            {
-                if (cond.Type == "isNodeVisited")
-                {
-                    if (int.TryParse(cond.Item, out int nodeId))            //item in this case contains node id
-                    {
-                        if (GameEngine.IsNodeVisited(nodeId))
-                            if (!visibleChoices.Contains(c))
-                                visibleChoices.Add(c);
-                    }
-                    else
-                        throw new Exception("IsNodeVisited Condition wasn't an integer!!");
-                }
-                else if (!visibleChoices.Contains(c))
-                    visibleChoices.Add(c);
-            }
-            else if (!visibleChoices.Contains(c))
+            if (IsVisitSatisfied(c.Condition) && !visibleChoices.Contains(c))
                 visibleChoices.Add(c);
         }
+    }
+
+    /// <summary>
+    /// Only isNodeVisited decides whether a choice is listed at all: an unmet one keeps the
+    /// choice out of the list entirely, while an unmet item condition still lists it and lets
+    /// its refusal play when picked. A group holds only when each of its members does, so a
+    /// choice gated on several visited nodes stays hidden until the last of them is done.
+    /// </summary>
+    bool IsVisitSatisfied(Condition cond)
+    {
+        if (cond == null)
+            return true;
+
+        if (cond.All is { Count: > 0 })
+            return cond.All.TrueForAll(IsVisitSatisfied);
+
+        if (cond.Type != "isNodeVisited")
+            return true;
+
+        if (!int.TryParse(cond.Item, out int nodeId))                       //item in this case contains node id
+            throw new Exception("IsNodeVisited Condition wasn't an integer!!");
+
+        return GameEngine.IsNodeVisited(nodeId);
     }
 
     /// <summary>
@@ -70,7 +76,7 @@ public class ChoiceNode : NodeBase
                 ConsoleColor foreground = ConsoleColor.DarkCyan;
                 ConsoleColor background = ConsoleColor.Black;
 
-                if (Choices[i].IsPlayed)
+                if (visibleChoices[i].IsPlayed)
                 {
                     foreground = ConsoleColor.DarkGray;
                     if (i == selectedRow)
@@ -117,14 +123,13 @@ public class ChoiceNode : NodeBase
 
         Choice choice = visibleChoices[selectedRow];
 
-        if (choice.IsPlayed)
+        if (choice.IsPlayed && choice.IsNotRepeatable)  //already spent: hand the turn back rather than replaying it
         {
-            if (choice.IsNotRepeatable)
-            {
-                RedrawNode();
-                WaitForChoice();
-            }
+            RedrawNode();
+            WaitForChoice();
+            return;
         }
+
         if (GameEngine.Evaluate(choice.Condition))
         {
             if (choice.Effect != null)

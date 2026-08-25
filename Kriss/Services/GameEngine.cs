@@ -176,7 +176,13 @@ public class GameEngine(StatusManager statusManager)
     /// <returns></returns>
     public bool Evaluate(Condition condition)
     {
-        if (condition is null || string.IsNullOrEmpty(condition.Item))
+        if (condition is null)
+            return true;
+
+        if (condition.All is { Count: > 0 })
+            return condition.All.TrueForAll(Evaluate); // a group holds only when every one of its members does
+
+        if (string.IsNullOrEmpty(condition.Item))
             return true; // no condition, or empty item means always true
 
         return condition.Type switch
