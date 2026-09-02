@@ -393,12 +393,10 @@ public class Chapter14And15WalkthroughTests
 
             idx = await ContinueAsync(idx);                                              // node 23 -> node 40
 
-            idx = await ContinueAsync(idx);                                              // node 40: Riff's farewell break
             idx = await ContinueAsync(idx);                                              // node 40: Efeliah's childid line -> node 24
 
             idx = await ChooseAsync(idx, "something in his glance thanks you for it.");   // node 24: only visible choice (gated on node 9)
 
-            idx = await ContinueAsync(idx);                                              // node 25: Math's break
             idx = await ContinueAsync(idx);                                              // node 25: Kriss's childid line -> node 26
 
             idx = await ContinueAsync(idx);                                              // node 26 -> node 27
@@ -467,7 +465,6 @@ public class Chapter14And15WalkthroughTests
 
             idx = await ChooseAsync(idx, "doesn't seem to hold it against you.");         // node 24's only visible choice (gated on node 10)
 
-            idx = await ContinueAsync(idx);                                              // node 25: Math's break
             idx = await ContinueAsync(idx);                                              // node 25: Kriss's childid line -> node 26
 
             idx = await ContinueAsync(idx);                                              // node 26 -> node 27
