@@ -148,10 +148,114 @@
     },
     {
       "id": 7,
-      "type": "Story",
-      "recap": "return to the others - soulmate reveal - Corolla's reaction",
-      "text": "You walk back to the others in the late afternoon,\nyour arm through hers.##\n\nSaberinne takes her leave with the composure she carries\nin everything, though she holds your gaze a half-second longer\nthan she holds anyone else's, a farewell\nthat only you can read.##\n\nThe moment she is gone, Corolla says, loudly,\nwithout the smallest concern about being overheard:#\n\n$R\"What in the world did she say to you for all that time?!\"$C##\n\n$c<<Nothing.# We did not exchange a single word.>>$C##\n\n$CAn uncomfortable silence.# Then Efeliah comes forward,\nher face carrying something between concern and wonder.##\n\n$g\"Kriss... Something has changed in you.# Profoundly.\nI almost don't recognize you...\"$C##\n\n$Y\"Are you alright?\"$C Smiurl asks, looking from Ef to you,\nalready anxious at the others' expressions.##\n\n$B\"I believe so,\"$C says Theo, without turning from the window\nwhere he has been watching the garden.# The others look at him,\nnot understanding.# Finally you speak.##\n\n$c\"Do you know the concept of kindred souls?\"$C##\n\nEfeliah explains it to the others.##\n\n$c\"I stopped believing in things like that as a child.#\nThe facts have now shown me I was wrong.##\n\n\"My mind and Saberinne's are perfectly complementary.\nThey can merge into a single entity without resistance...\"$C##\n\n$g\"In the garden, you were exchanging thoughts.#\nLooking into each other's minds.\"$C Ef says.##\n\n$c\"Yes.\"$C##\n\n$R\"Are you certain?\"$C asks Corolla, sharp.##\n\n$c\"Yes.\"$C##\n\n$g\"He's not telling us everything,\"$C Ef thinks, then catches herself,\nthen looks up to find you watching her.##\n\n$g\"How did you...\"$C##\n\n$c\"I heard you.# Only Saberinne has ever been able\nto see past your screens before, hasn't she?\"$C##\n\nEfeliah stares at you, stunned.##\n\n$c\"We are one thing now.# Two faces of the same coin.\nMy life is hers, her city is mine,\nand our hearts have become a single heartbeat...\"$C##\n\nCorolla drops onto the edge of the nearest bed\nand stares at the ceiling.##\n\n$R\"What has happened to you...\"$C she murmurs,\nhalf to herself.##\n\n$c\"Nothing bad.# I promise you that.\"$C\nYou put a hand on her shoulder.#\n$c\"You are still my best friends.\nThe finest companions anyone has ever had.##\n\n\"But my life is now bound to Saberinne's.\nIn every place, in every time.\"$C##",
-      "childid": 8
+      "type": "Dialogue",
+      "recap": "return to the others - the kindred-souls reveal - Ef catches herself being heard - Corolla's reaction",
+      "dialogues": [
+        {
+          "actor": "Corolla",
+          "precomment": "You walk back to the others in the late afternoon,\nyour arm through hers.##\n\nSaberinne takes her leave with the composure she carries\nin everything, though she holds your gaze a half-second longer\nthan she holds anyone else's, a farewell\nthat only you can read.##\n\nThe moment she is gone, Corolla says, loudly,\nwithout the smallest concern about being overheard:",
+          "line": "What in the world did she say to you for all that time?!"
+        },
+        {
+          "actor": "Kriss",
+          "line": "Nothing.# We did not exchange a single word."
+        },
+        {
+          "actor": "Efeliah",
+          "precomment": "An uncomfortable silence.# Then Efeliah comes forward,\nher face carrying something between concern and wonder.",
+          "line": "Kriss...# Something has changed in you.# Profoundly.\nI almost don't recognize you..."
+        },
+        {
+          "actor": "Smiurl",
+          "line": "Are you alright?",
+          "comment": "He looks from Ef to you, already anxious at the others' expressions."
+        },
+        {
+          "actor": "Theo",
+          "line": "I believe so.",
+          "comment": "He says it without turning from the window\nwhere he has been watching the garden.# The others look at him,\nnot understanding.##\n\nFinally you speak.",
+          "break": true
+        },
+        {
+          "actor": "Kriss",
+          "line": "Do you know the concept of kindred souls?",
+          "comment": "Efeliah explains it to the others."
+        },
+        {
+          "actor": "Kriss",
+          "line": "I stopped believing in things like that as a child.#\nThe facts have now shown me I was wrong.##\n\nMy mind and Saberinne's are perfectly complementary.\nThey can merge into a single entity without resistance..."
+        },
+        {
+          "actor": "Efeliah",
+          "line": "In the garden, you were exchanging thoughts.#\nLooking into each other's minds."
+        },
+        {
+          "actor": "Kriss",
+          "line": "Yes."
+        },
+        {
+          "actor": "Corolla",
+          "line": "Are you certain?",
+          "comment": "Sharp."
+        },
+        {
+          "actor": "Kriss",
+          "line": "Yes."
+        },
+        {
+          "actor": "Efeliah",
+          "istelepathy": true,
+          "line": "He's not telling us everything.",
+          "comment": "Ef thinks it, then catches herself,\nthen looks up to find you watching her.",
+          "replies": [
+            {
+              "line": "\"I heard you.\"",
+              "nextline": "howdid"
+            },
+            {
+              "line": "Hold her gaze, and let her work it out.",
+              "nextline": "howdid"
+            }
+          ]
+        },
+        {
+          "linename": "howdid",
+          "actor": "Efeliah",
+          "line": "How did you..."
+        },
+        {
+          "actor": "Kriss",
+          "line": "Only Saberinne has ever been able\nto see past your screens before, hasn't she?",
+          "comment": "Efeliah stares at you, stunned."
+        },
+        {
+          "actor": "Kriss",
+          "line": "We are one thing now.# Two faces of the same coin.\nMy life is hers, her city is mine,\nand our hearts have become a single heartbeat...",
+          "comment": "Corolla drops onto the edge of the nearest bed\nand stares at the ceiling."
+        },
+        {
+          "actor": "Corolla",
+          "line": "What has happened to you...",
+          "comment": "She murmurs it, half to herself.",
+          "replies": [
+            {
+              "line": "\"Nothing bad. I promise you that.\"",
+              "nextline": "bound"
+            },
+            {
+              "line": "Put a hand on her shoulder, and say nothing.",
+              "nextline": "bound"
+            }
+          ]
+        },
+        {
+          "linename": "bound",
+          "actor": "Kriss",
+          "precomment": "You put a hand on her shoulder.",
+          "line": "You are still my best friends.\nThe finest companions anyone has ever had.##\n\nBut my life is now bound to Saberinne's.\nIn every place, in every time.",
+          "childid": 8
+        }
+      ]
     },
     {
       "id": 8,

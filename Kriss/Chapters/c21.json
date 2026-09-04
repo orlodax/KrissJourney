@@ -60,10 +60,45 @@
     },
     {
       "id": 4,
-      "type": "Story",
-      "recap": "making camp below the hill, the planning discussion and Kriss going to sleep",
-      "text": "You make camp at the base of the rock spire below the hilltop,\nout of sight of the army in the valley.#\nNo fire.# Cold provisions.# The kind of camp\nyou all know how to make by now without discussion.##\n\nAfter you have eaten in silence, Efeliah speaks first.##\n\n$g\"We need to think about how to enter the city.\"$C##\n\n$B\"Before the sun rises\"$C, says Theo, $B\"while they sleep.\"$C##\n\nCorolla looks at the valley.#\n$R\"Two kilometers of open ground once we leave the trees.\nIf we snap even one branch they'll be on us in seconds.\"$C##\n\n$g\"I can feel the difference between a sleeping mind and a waking one.#\nI can guide us.\"$C##\n\nThe discussion continues around you, and you sit in it\nwithout really hearing it, your eyes on the dark valley below\nwhere hundreds of fires describe the shape of the siege camp\nand at the far end, unchanged, unchanged,\nthe white city rises against the mountains.##\n\nThe pull is steady now.# Not urgent, not demanding,\nbut constant, like a compass needle,\nlike a voice too low to make out words\nbut too clear to ignore.##\n\n$c<<What are you?# Who is in there?\nHow do you know I'm on this hill?>>$C##\n\n$CYou stand and move toward the tent you are sharing with Theo.#\nYou say, to no one in particular: $c<<Then it's decided.>>$C##\n\n$CYou lie down.# Every thought drains from your head\nlike water through sand.# A profound sleep takes you\nbefore you have finished closing your eyes.##",
-      "childid": 5
+      "type": "Dialogue",
+      "recap": "camp below the hill - the entry plan discussed around a distracted Kriss - the pull, and sleep",
+      "dialogues": [
+        {
+          "actor": "Efeliah",
+          "precomment": "You make camp at the base of the rock spire below the hilltop,\nout of sight of the army in the valley.#\nNo fire.# Cold provisions.# The kind of camp\nyou all know how to make by now without discussion.##\n\nAfter you have eaten in silence, Efeliah speaks first.",
+          "line": "We need to think about how to enter the city."
+        },
+        {
+          "actor": "Theo",
+          "line": "Before the sun rises.# While they sleep."
+        },
+        {
+          "actor": "Corolla",
+          "precomment": "Corolla looks at the valley.",
+          "line": "Two kilometers of open ground once we leave the trees.\nIf we snap even one branch they'll be on us in seconds."
+        },
+        {
+          "actor": "Efeliah",
+          "line": "I can feel the difference between a sleeping mind and a waking one.#\nI can guide us.",
+          "comment": "The discussion continues around you, and you sit in it\nwithout really hearing it, your eyes on the dark valley below\nwhere hundreds of fires describe the shape of the siege camp\nand at the far end, unchanged, unchanged,\nthe white city rises against the mountains.##\n\nThe pull is steady now.# Not urgent, not demanding,\nbut constant, like a compass needle,\nlike a voice too low to make out words\nbut too clear to ignore.##\n\n$c<<What are you?# Who is in there?\nHow do you know I'm on this hill?>>$C",
+          "replies": [
+            {
+              "line": "\"Then it's decided.\"",
+              "nextline": "sleep"
+            },
+            {
+              "line": "Say nothing, and let them settle it without you.",
+              "nextline": "sleep"
+            }
+          ]
+        },
+        {
+          "linename": "sleep",
+          "precomment": "You stand and move toward the tent you are sharing with Theo.",
+          "comment": "You lie down.# Every thought drains from your head\nlike water through sand.# A profound sleep takes you\nbefore you have finished closing your eyes.",
+          "childid": 5
+        }
+      ]
     },
     {
       "id": 5,

@@ -11,10 +11,42 @@
     },
     {
       "id": 2,
-      "type": "Story",
-      "recap": "after dinner - the open terrace, the stars, the plan",
-      "text": "After dinner you climb a staircase to a second terrace, this one\nopen to the sky, the night around you mild and clear,\nand you sit in the candlelight and look at the stars of Noi-Hert\nand Saberinne says, to all of you:#\n\n$G\"There is something we need to tell you.\"$C##\n\nYou explain it together, turn and turn about:\nthe merge, the army, tomorrow at dawn.#\nYou say it simply, the way you have learned to say\ndifficult things, and they listen.##\n\nA silence.# Then$R Corolla$C: $R\"You've already decided, then.\"$C\nIt is not a question.# Then$g Efeliah$C, carefully:#\n$g\"I understand that what passed between you two\nhas been something that goes beyond what I could imagine.\nI believe it must be this way.\"$C##\n\n$Y\"It won't be dangerous, will it?\"$C asks Smiurl.#\nYou smile at him: $c\"Like everything else, there are risks.\nBut they won't stop me, will they, Smiurl?\"$C#\n$Y\"You're right,\"$C he says, and bows his head.##\n\nAnd then Theo stands and crosses to you in two steps\nand closes his arms around you,\nand briefly reorganizes your spine.##",
-      "childid": 3
+      "type": "Dialogue",
+      "recap": "after dinner - the open terrace, the stars, telling them the plan",
+      "dialogues": [
+        {
+          "actor": "Saberinne",
+          "precomment": "After dinner you climb a staircase to a second terrace, this one\nopen to the sky, the night around you mild and clear,\nand you sit in the candlelight and look at the stars of Noi-Hert.##\n\nSaberinne says, to all of you:",
+          "line": "There is something we need to tell you.",
+          "comment": "You explain it together, turn and turn about:\nthe merge, the army, tomorrow at dawn.#\nYou say it simply, the way you have learned to say\ndifficult things, and they listen.##\n\nA silence.",
+          "break": true
+        },
+        {
+          "actor": "Corolla",
+          "line": "You've already decided, then.",
+          "comment": "It is not a question."
+        },
+        {
+          "actor": "Efeliah",
+          "precomment": "Then Efeliah, carefully:",
+          "line": "I understand that what passed between you two\nhas been something that goes beyond what I could imagine.\nI believe it must be this way."
+        },
+        {
+          "actor": "Smiurl",
+          "line": "It won't be dangerous, will it?",
+          "comment": "You smile at him."
+        },
+        {
+          "actor": "Kriss",
+          "line": "Like everything else, there are risks.\nBut they won't stop me, will they, Smiurl?"
+        },
+        {
+          "actor": "Smiurl",
+          "line": "You're right.",
+          "comment": "He says it, and bows his head.##\n\nAnd then Theo stands and crosses to you in two steps\nand closes his arms around you,\nand briefly reorganizes your spine.",
+          "childid": 3
+        }
+      ]
     },
     {
       "id": 3,
@@ -57,10 +89,73 @@
     },
     {
       "id": 4,
-      "type": "Story",
+      "type": "Dialogue",
       "recap": "Kriss and Saberinne alone - the last night",
-      "text": "$c\"Neither will I.# Not any of you.\"$C##\n\n$CYou embrace them all one last time,\nand then they go to their rooms,\nheart-heavy in ways none of you have quite named.##\n\nYou and Saberinne walk away arm in arm,\nand she is quieting, gently, the storm that farewell has stirred in you.##\n\nAfter a while you find a small pavilion at the corner\nof the open terrace, sheltered from other eyes\nby a curve of the stonework, open only to the sky.#\nYou sit together on a narrow bench in the dark.##\n\n$G\"Do you think I'll really never see them again?\"$C you ask her.\n$G\"Who can say, Kriss?# Some things truly cannot be predicted.\"$C\n$c\"For the first time since I've known you,\nI have the feeling you are not telling me everything.\"$C\n$G\"Doesn't everyone enjoy their small secrets?\"$C She looks at the stars.#\nThen: $G\"And if it were a surprise?\"$C\n$c\"You couldn't hide it from me for long.\"$C\n$G\"Time will bring you answers when it brings tomorrow.##\n\n\"Tomorrow we have a great mission, an appointment with destiny.\nBetter not to think about it too much.\"$C##\n\nShe sighs, quietly.# $G\"The night is so brief...\"$C##\n\nShe turns to look at you.##\n\n$G\"And if your companions were right?#\nAnd if this were our last night?\"$C#\nHer words dissolve in the silence between you.##\n\n$c\"We can no longer exist separately, Saberinne.\nNothing will separate me from you, or you from me,\nnot even our own separate wills.\nYou know this.\"$C##\n\n$G\"Of course, my love.# Of course.\"$C##\n\nYou look at each other for a long moment,\nand then everything around you seems to dissolve\nwhen she ends every question, every doubt,\nand closes her mouth over yours.##\n\nThe stars fade.# The first red light of the sun\nfinds you still together, asleep, not letting go.##",
-      "childid": 5
+      "dialogues": [
+        {
+          "actor": "Kriss",
+          "line": "Neither will I.# Not any of you.",
+          "comment": "You embrace them all one last time,\nand then they go to their rooms,\nheart-heavy in ways none of you have quite named.##\n\nYou and Saberinne walk away arm in arm,\nand she is quieting, gently, the storm that farewell has stirred in you.##\n\nAfter a while you find a small pavilion at the corner\nof the open terrace, sheltered from other eyes\nby a curve of the stonework, open only to the sky.#\nYou sit together on a narrow bench in the dark.",
+          "break": true
+        },
+        {
+          "actor": "Kriss",
+          "line": "Do you think I'll really never see them again?"
+        },
+        {
+          "actor": "Saberinne",
+          "line": "Who can say, Kriss?# Some things truly cannot be predicted."
+        },
+        {
+          "actor": "Kriss",
+          "line": "For the first time since I've known you,\nI have the feeling you are not telling me everything."
+        },
+        {
+          "actor": "Saberinne",
+          "line": "Doesn't everyone enjoy their small secrets?",
+          "comment": "She looks at the stars.# Then:"
+        },
+        {
+          "actor": "Saberinne",
+          "line": "And if it were a surprise?",
+          "replies": [
+            {
+              "line": "\"You couldn't hide it from me for long.\"",
+              "nextline": "tomorrow"
+            },
+            {
+              "line": "\"Then don't tell me. Not tonight.\"",
+              "nextline": "tomorrow"
+            }
+          ]
+        },
+        {
+          "linename": "tomorrow",
+          "actor": "Saberinne",
+          "line": "Time will bring you answers when it brings tomorrow.##\n\nTomorrow we have a great mission, an appointment with destiny.\nBetter not to think about it too much.",
+          "comment": "She sighs, quietly."
+        },
+        {
+          "actor": "Saberinne",
+          "line": "The night is so brief...",
+          "comment": "She turns to look at you."
+        },
+        {
+          "actor": "Saberinne",
+          "line": "And if your companions were right?#\nAnd if this were our last night?",
+          "comment": "Her words dissolve in the silence between you."
+        },
+        {
+          "actor": "Kriss",
+          "line": "We can no longer exist separately, Saberinne.\nNothing will separate me from you, or you from me,\nnot even our own separate wills.\nYou know this."
+        },
+        {
+          "actor": "Saberinne",
+          "line": "Of course, my love.# Of course.",
+          "comment": "You look at each other for a long moment,\nand then everything around you seems to dissolve\nwhen she ends every question, every doubt,\nand closes her mouth over yours.##\n\nThe stars fade.# The first red light of the sun\nfinds you still together, asleep, not letting go.",
+          "childid": 5
+        }
+      ]
     },
     {
       "id": 5,

@@ -149,4 +149,56 @@ public class DialogueNodeTests : NodeTestBase
         Assert.AreEqual(ConsoleColor.Black, firstRow.Background,
             "An unselected reply must render on the default background.");
     }
+
+    /// <summary>
+    /// Two reply blocks with no break between them (c16's Øder story, c22's soulmate reveal).
+    /// The arrow-key redraw rewinds to the start of the current beat: if it rewinds past the
+    /// earlier block instead, that block asks its question again and swallows the Enter meant
+    /// for this one, leaving the second choice unreachable.
+    /// </summary>
+    [TestMethod]
+    public void ArrowKeyOnSecondReplyBlock_RedrawsThatBlockAndNotTheFirst()
+    {
+        dialogueNode.Dialogues =
+        [
+            new DialogueLine
+            {
+                Actor = EnCharacter.Corolla, Line = "FirstQuestion", Replies =
+                [
+                    new() { Line = "A1", NextLine = "L2" },
+                    new() { Line = "A2", NextLine = "L2" }
+                ]
+            },
+            new DialogueLine
+            {
+                Actor = EnCharacter.Theo, Line = "SecondQuestion", LineName = "L2", Replies =
+                [
+                    new() { Line = "B1", NextLine = "L3" },
+                    new() { Line = "B2", NextLine = "L3" }
+                ]
+            },
+            new DialogueLine { Actor = EnCharacter.Kriss, Line = "TheEnd", LineName = "L3", ChildId = 3 }
+        ];
+        _ = CreateNode<StoryNode>(nodeId: 3, configure: n => n.Text = "Next node loaded!");
+        SimulateUserInput(ConsoleKey.Enter, ConsoleKey.DownArrow, ConsoleKey.Enter); // A1, then move to B2 and take it
+
+        LoadNode(dialogueNode);
+
+        string output = TerminalMock.GetOutput();
+        Assert.AreEqual(1, CountOf(output, "FirstQuestion"),
+            "The redraw must not replay the first block's question, or its prompt eats the next keypress.");
+        Assert.AreEqual(2, CountOf(output, "SecondQuestion"),
+            "The second block should render once on arrival and once on the arrow-key redraw.");
+        Assert.IsTrue(output.Contains("TheEnd"), "The second block's reply should have been reachable.");
+    }
+
+    static int CountOf(string haystack, string needle)
+    {
+        int count = 0;
+        for (int i = haystack.IndexOf(needle, StringComparison.Ordinal); i >= 0;
+             i = haystack.IndexOf(needle, i + needle.Length, StringComparison.Ordinal))
+            count++;
+
+        return count;
+    }
 }

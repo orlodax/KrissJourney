@@ -41,7 +41,7 @@ public class Chapter16WalkthroughTests
     }
 
     /// <summary>
-    /// Walks the whole 16-node chapter down the "push" branch of node 5's choice: Kriss presses
+    /// Walks the whole chapter down the "push" branch of node 4's replies: Kriss presses
     /// Corolla on how she knows the distance to the coast, she explodes ("Leave me alone!"), and the
     /// evening camp opens the whole Øder backstory dialogue chain (nodes 9-11), Corolla's morning
     /// "Don't" exchange (node 13), and Efeliah's puzzlement over the pull south (node 15), ending at
@@ -62,12 +62,11 @@ public class Chapter16WalkthroughTests
             idx = await ContinueAsync(idx);                                              // node 1 -> node 2
             idx = await ContinueAsync(idx);                                              // node 2 -> node 3
 
+            idx = await ContinueAsync(idx);                                              // node 3: Corolla's "that will probably be a problem" break
             idx = await ContinueAsync(idx);                                              // node 3: Efeliah's "I can hardly argue with that" break
             idx = await ContinueAsync(idx);                                              // node 3: Kriss's childid line -> node 4
 
-            idx = await ContinueAsync(idx);                                              // node 4 -> node 5
-
-            idx = await ChooseAsync(idx, "It's obvious you're hiding something.");        // node 5 -> node 6 (push branch)
+            idx = await ChooseAsync(idx, "It's obvious you're hiding something.");        // node 4: reply on Corolla's "No, we're good." -> node 6 (push branch)
 
             idx = await ContinueAsync(idx);                                              // node 6 -> node 8
 
@@ -117,7 +116,7 @@ public class Chapter16WalkthroughTests
 
         string output = terminal.GetOutput();
         Assert.IsTrue(output.Contains("CHAPTER 16"), "Should have rendered c16's own header at node 1.");
-        Assert.IsTrue(output.Contains("Leave me alone!"), "Push branch should reach Corolla's outburst (node 6).");
+        Assert.IsTrue(output.Contains("LEAVE ME ALONE!"), "Push branch should reach Corolla's outburst (node 6).");
         Assert.IsTrue(output.Contains("We helped you because it was right."), "Should have reached Theo's line in node 10's Øder exchange.");
         Assert.IsTrue(output.Contains("part of the planet"), "Should have reached node 14's hilltop beat.");
         Assert.IsTrue(output.Contains("There must be."), "Should have reached node 15's closing line.");
@@ -125,7 +124,7 @@ public class Chapter16WalkthroughTests
     }
 
     /// <summary>
-    /// Node 5's other branch: letting it go instead of pushing. Node 7 is a short, distinct beat from
+    /// Node 4's other reply: letting it go instead of pushing. Node 7 is a short, distinct beat from
     /// node 6, but both converge on node 8's evening camp and the same Theo-opens-the-story beat at
     /// node 9 - proving the convergence, and that the outburst is unique to the push branch, is enough
     /// without re-walking the whole Øder dialogue chain a second time.
@@ -145,12 +144,11 @@ public class Chapter16WalkthroughTests
             idx = await ContinueAsync(idx);                                              // node 1 -> node 2
             idx = await ContinueAsync(idx);                                              // node 2 -> node 3
 
+            idx = await ContinueAsync(idx);                                              // node 3: Corolla's "that will probably be a problem" break
             idx = await ContinueAsync(idx);                                              // node 3: Efeliah's "I can hardly argue with that" break
             idx = await ContinueAsync(idx);                                              // node 3: Kriss's childid line -> node 4
 
-            idx = await ContinueAsync(idx);                                              // node 4 -> node 5
-
-            idx = await ChooseAsync(idx, "Let it go, and keep walking in silence.", ConsoleKey.DownArrow); // node 5 -> node 7 (back-off branch, choice index 1)
+            idx = await ChooseAsync(idx, "Let it go, and keep walking in silence.", ConsoleKey.DownArrow); // node 4: second reply -> node 7 (back-off branch)
 
             idx = await ContinueAsync(idx);                                              // node 7 -> node 8
 
@@ -180,7 +178,7 @@ public class Chapter16WalkthroughTests
         string output = terminal.GetOutput();
         Assert.IsTrue(output.Contains("You let the words die before they reach your mouth."), "Should have taken node 7 (the back-off branch).");
         Assert.IsTrue(output.Contains("It's time we told you our story."), "Should still converge on node 9 (Theo opens the story) via node 8.");
-        Assert.IsFalse(output.Contains("Leave me alone!"), "The back-off branch should never reach node 6's outburst.");
+        Assert.IsFalse(output.Contains("LEAVE ME ALONE!"), "The back-off branch should never reach node 6's outburst.");
     }
 
     // ---- helpers -------------------------------------------------------------------

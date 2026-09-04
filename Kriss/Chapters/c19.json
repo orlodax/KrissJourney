@@ -6,7 +6,7 @@
       "id": 1,
       "type": "Story",
       "recap": "chapter header + waking alone in metal cell",
-      "text": "-------------------------------\n|          CHAPTER 19          |\n-------------------------------\n\n\n$CA voice calls your name without quite pronouncing it.##\n\nInsistent, anxious, almost frightened, hovering somewhere just above\nthe surface of your unconsciousness, a pulsing pink halo of light\nthat your mind has been dreaming as a sound.##\n\nYou realize you are waking up. And then, all at once, the last moments\non the ship rush back: the sea's tremendous fury that would not let up,\nthe instant of panic when the water poured into the hull\nas the vessel capsized, and then darkness.# And then nothing.##\n\nYou sit up sharply, and in the pitch black you slam your head\nviolently against something metal above you.# A piercing pain\nrings through your skull and you press a hand to your forehead,\ncursing under your breath.# You sit up more slowly,\nextending your hands above you.##\n\nYour left hand goes instinctively to your hip.# The sword is not there.\nNeither is the knife.##\n\nA metallic click, and a hum.# Whatever that sliding sound is,\nit is the door opening,\nand in the doorway a dark silhouette blocks a harsh light from behind.\n$D\"$CBring him with the others.$D\"$C A voice, flat, not quite human.##\n\nHands seize you, bind your wrists, blindfold you, and drag you\nin a direction you cannot map.##",
+      "text": "-------------------------------\n|          CHAPTER 19          |\n-------------------------------\n\n\n$CA voice calls your name without quite pronouncing it.##\n\nInsistent, anxious, almost frightened, hovering somewhere just above\nthe surface of your unconsciousness, a pulsing pink halo of light\nthat your mind has been dreaming as a sound.##\n\nYou realize you are waking up. And then, all at once, the last moments\non the ship rush back: the sea's tremendous fury that would not let up,\nthe instant of panic when the water poured into the hull\nas the vessel capsized, and then darkness.# And then nothing.##\n\nYou sit up sharply, and in the pitch black you slam your head\nviolently against something metal above you.# A piercing pain\nrings through your skull and you press a hand to your forehead,\ncursing under your breath.# You sit up more slowly,\nextending your hands above you.##\n\nYour left hand goes instinctively to your hip.# The sword is not there.\nNeither is the knife.##\n\nA metallic click, and a hum.# Whatever that sliding sound is,\nit is the door opening,\nand in the doorway a dark silhouette blocks a harsh light from behind.\n$D\"$yBring him with the others.$D\"$C A voice, flat, not quite human.##\n\nHands seize you, bind your wrists, blindfold you, and drag you\nin a direction you cannot map.##",
       "childid": 2
     },
     {
@@ -203,7 +203,7 @@
       "id": 8,
       "type": "Story",
       "recap": "running through corridors with hostage - toward the diaphragm door",
-      "text": "$B\"Walk.\"$C# Theo, to the scientist, flat and absolute.##\n\n$c<<You had better walk.>>$C# You press the prod to its back.\n$C\"You'll want to move quickly.\"\n\nFrom the staircase to their right,\na heavy trampling of feet, growing louder.##\n\nYou run left.##\n\nEfeliah runs point with Corolla at her shoulder,\nwounded but barely showing it, ready to strike.\nTheo and you drag the scientist between you.\nThe alarm has not stopped; the whole base is ringing with it,\nand ahead and behind the sound of running feet echoes\nthrough the metal corridors.##\n\nAt a junction, Efeliah stops before a massive circular metal door.##\n\nShe stands before it for some seconds, saying nothing,\nthen takes the scientist's hand and presses it flat against\na plate at the center of the door.# The plate brightens at the touch,\nand the door slides open silently, irising apart,\nrevealing a long glass tunnel ahead.##\n\n$c<<Fingerprints.# Or something like them.>>$C##\n\nYou push through. Efeliah closes the door behind you.##\n\n$g<<It can only be opened by those with sufficient standing in their hierarchy.#\nThey should not be able to follow.>>$C##\n\nYou do not ask what that means, because there is already shouting\non the other side of the door, and no time to weigh it.##",
+      "text": "$B\"Walk.\"$C# Theo, to the scientist, flat and absolute.##\n\n$c<<You had better walk.>>$C# You press the prod to its back.\n$c\"You'll want to move quickly.\"$C\n\nFrom the staircase to their right,\na heavy trampling of feet, growing louder.##\n\nYou run left.##\n\nEfeliah runs point with Corolla at her shoulder,\nwounded but barely showing it, ready to strike.\nTheo and you drag the scientist between you.\nThe alarm has not stopped; the whole base is ringing with it,\nand ahead and behind the sound of running feet echoes\nthrough the metal corridors.##\n\nAt a junction, Efeliah stops before a massive circular metal door.##\n\nShe stands before it for some seconds, saying nothing,\nthen takes the scientist's hand and presses it flat against\na plate at the center of the door.# The plate brightens at the touch,\nand the door slides open silently, irising apart,\nrevealing a long glass tunnel ahead.##\n\n$c<<Fingerprints.# Or something like them.>>$C##\n\nYou push through. Efeliah closes the door behind you.##\n\n$g<<It can only be opened by those with sufficient standing in their hierarchy.#\nThey should not be able to follow.>>$C##\n\nYou do not ask what that means, because there is already shouting\non the other side of the door, and no time to weigh it.##",
       "childid": 9
     },
     {
@@ -224,7 +224,7 @@
       "id": 11,
       "type": "Story",
       "recap": "water rises - the apnea choice",
-      "text": "The water rises faster the farther you go,\nand the tunnel shows no sign of climbing.##\n\nYou wade through it at hip height.\nSmiurl is already swimming.# The others follow.\nYou stop when there is only the thickness of a head between the water\nand the tunnel ceiling, all of you treading,\nand Theo says nothing because there is nothing useful to say.##\n\n$R\"What do we do?\"$C# Corolla asks.##\n\n$g\"Look, the tunnel rises there,\"$C# Efeliah says,\npointing ahead through the water: some meters forward,\nthe tunnel curves sharply upward into the rock,\nclimbing not quite as fast as it descended.\nBeyond that point the water would be shallower again, or at least\nthe ceiling higher.# Then air.##\n\n$B\"You want us to swim it.\"$C# Theo, flat.#\nEfeliah doesn't answer.##\n\n$C\"I don't think we have any other choice,\"$C# you say.##\n\nThey all look at you, each of them deciding the same thing.##\n\n$B\"Smiurl goes first. Then Corolla. Then Ef. Then Kriss.# I am last.\"$C##\n\nSmiurl draws up to the water's edge,\ntakes three, four, five deep breaths with an anguished expression,\nand dives.# Corolla follows instantly, gone clean beneath the surface.##",
+      "text": "The water rises faster the farther you go,\nand the tunnel shows no sign of climbing.##\n\nYou wade through it at hip height.\nSmiurl is already swimming.# The others follow.\nYou stop when there is only the thickness of a head between the water\nand the tunnel ceiling, all of you treading,\nand Theo says nothing because there is nothing useful to say.##\n\n$R\"What do we do?\"$C# Corolla asks.##\n\n$g\"Look, the tunnel rises there,\"$C# Efeliah says,\npointing ahead through the water: some meters forward,\nthe tunnel curves sharply upward into the rock,\nclimbing not quite as fast as it descended.\nBeyond that point the water would be shallower again, or at least\nthe ceiling higher.# Then air.##\n\n$B\"You want us to swim it.\"$C# Theo, flat.#\nEfeliah doesn't answer.##\n\n$c\"I don't think we have any other choice,\"$C# you say.##\n\nThey all look at you, each of them deciding the same thing.##\n\n$B\"Smiurl goes first. Then Corolla. Then Ef. Then Kriss.# I am last.\"$C##\n\nSmiurl draws up to the water's edge,\ntakes three, four, five deep breaths with an anguished expression,\nand dives.# Corolla follows instantly, gone clean beneath the surface.##",
       "childid": 12
     },
     {
@@ -349,17 +349,105 @@
     },
     {
       "id": 20,
-      "type": "Story",
+      "type": "Dialogue",
       "recap": "Kriss figures out the minisub controls",
-      "text": "You pile into the largest minisub and Smiurl seals the hatch.##\n\n$R\"Who knows how to pilot this thing?\"$C#\nCorolla gestures at the control board.##\n\n$g<<I have never seen anything like it.#\nAnd I don't have a pilot nearby to borrow from.>>$C##\n\nYou lean in over the controls.#\nAmidst a field of blinking indicator lights, two things stand out:\na device that looks precisely like the joystick from your computer at home,\nand a flight-style control stick beside it.\nAll the labels are in characters you cannot begin to decipher.##\n\nYou sit in the pilot seat.# You ease the control stick\nlightly upward, and a low vibration runs through the hull.##\n\n$c<<Can't be that complicated.>>$C# You say it partly for their sake.##\n\nYou study the central lever: it can slide vertically.\nYou lower it a few millimeters.##\n\nThe minisub tilts, then begins to descend slowly toward the dock water.##\n\n$Y\"How do you do that?!\"$C# Smiurl, delighted despite everything.##\n\n$c<<This one controls the drive motors,>>$C# you say,\n$c<<and this lever here is for diving and surfacing.>>$C##\n\n$Y\"What about those?\"$C# He points at the twin joysticks.##\n\n$c<<Still working on that.>>$C##\n\n$B\"Two swiveling propellers,\"$C# Theo says, from over your shoulder.\n$B\"Should have about ninety degrees of rotation.\"$C##\n\nYou test it.# The minisub yaws, first right, then left.##\n\n$Y\"What did I tell you?!\"$C# Smiurl shrieks with what passes for joy in a near-death situation.##\n\nGuide channels of pale light mark the path to the cavern mouth.\nYou push the throttle forward.##\n\n$c<<Only one thing we still don't know,>>$C# you say,\nas the rock walls accelerate past either side,\n$c<<is how this thing brakes.>>$C##",
-      "childid": 21
+      "dialogues": [
+        {
+          "actor": "Corolla",
+          "precomment": "You pile into the largest minisub and Smiurl seals the hatch.##\n\nCorolla gestures at the control board.",
+          "line": "Who knows how to pilot this thing?"
+        },
+        {
+          "actor": "Efeliah",
+          "istelepathy": true,
+          "line": "I have never seen anything like it.#\nAnd I don't have a pilot nearby to borrow from.",
+          "comment": "You lean in over the controls.#\nAmidst a field of blinking indicator lights, two things stand out:\na device that looks precisely like the joystick from your computer at home,\nand a flight-style control stick beside it.\nAll the labels are in characters you cannot begin to decipher.##\n\nYou sit in the pilot seat.# You ease the control stick\nlightly upward, and a low vibration runs through the hull."
+        },
+        {
+          "actor": "Kriss",
+          "line": "Can't be that complicated.",
+          "comment": "You say it partly for their sake.##\n\nYou study the central lever: it can slide vertically.\nYou lower it a few millimeters.##\n\nThe minisub tilts, then begins to descend slowly toward the dock water.",
+          "break": true
+        },
+        {
+          "actor": "Smiurl",
+          "line": "How do you do that?!",
+          "comment": "Delighted despite everything."
+        },
+        {
+          "actor": "Kriss",
+          "line": "This one controls the drive motors,#\nand this lever here is for diving and surfacing."
+        },
+        {
+          "actor": "Smiurl",
+          "line": "What about those?",
+          "comment": "He points at the twin joysticks."
+        },
+        {
+          "actor": "Kriss",
+          "line": "Still working on that."
+        },
+        {
+          "actor": "Theo",
+          "precomment": "From over your shoulder:",
+          "line": "Two swiveling propellers.#\nShould have about ninety degrees of rotation.",
+          "comment": "You test it.# The minisub yaws, first right, then left."
+        },
+        {
+          "actor": "Smiurl",
+          "line": "What did I tell you?!",
+          "comment": "He shrieks it with what passes for joy in a near-death situation.##\n\nGuide channels of pale light mark the path to the cavern mouth.\nYou push the throttle forward."
+        },
+        {
+          "actor": "Kriss",
+          "line": "Only one thing we still don't know...#\nis how this thing brakes.",
+          "comment": "You say it as the rock walls accelerate past either side.",
+          "childid": 21
+        }
+      ]
     },
     {
       "id": 21,
-      "type": "Story",
+      "type": "Dialogue",
       "recap": "surfacing - orientation - Smiurl's navigation trick",
-      "text": "You burst from the cavern into open water at full speed.\nThe minisub wobbles, finds itself, and angles sharply upward.##\n\nWhen you break the surface, actual sunlight comes through the viewport,\nand everyone goes quiet for a moment at the fact of it.#\nYou think about embolism for a second, then Smiurl opens the hatch\nand takes a breath and is perfectly fine,\nand you close that particular worry in a drawer at the back of your mind\nwhere it will stay until you have time to look at it properly.##\n\nA collective silence, then a general eruption of relief that is partly noise\nand partly just the absence of dread.##\n\nThe only problem is that there is nothing to eat or drink aboard,\nand the water they have between them is very little.##\n\n$R\"Which way do we go?\"$C# Corolla at the compass.#\n$R\"The cardinal points don't match anything I know.\"$C##\n\n$g<<I have no idea where we are.>>##\n\n$c\"We need to go south,\"$C# you say.##\n\n$R\"And how do we know which way that is?\"$C##\n\nYou had been about to suggest waiting for night\nand navigating by the stars, when Smiurl squeezes past you\nand sticks his head through the hatch for a moment, then drops back in.##\n\n$Y\"South is that way,\"$C# he says, pointing slightly to your right.##\n\n$R\"And how exactly would you know?\"$C# Corolla, genuinely surprised.##\n\n$Y\"Simple.# The sun is low on the horizon.\nIf the city at the bottom of the sea keeps solar time, that's west.\"$C##\n\nNobody says anything.# You all look at Smiurl.##\n\n$c<<Right. Of course. The dwarf.>>$C##\n\nYou turn the minisub to Smiurl's south.#\nThat night, when the stars come out, you check,\nand he is exactly right.##",
-      "childid": 22
+      "dialogues": [
+        {
+          "actor": "Corolla",
+          "precomment": "You burst from the cavern into open water at full speed.\nThe minisub wobbles, finds itself, and angles sharply upward.##\n\nWhen you break the surface, actual sunlight comes through the viewport,\nand everyone goes quiet for a moment at the fact of it.#\nYou think about embolism for a second, then Smiurl opens the hatch\nand takes a breath and is perfectly fine,\nand you close that particular worry in a drawer at the back of your mind\nwhere it will stay until you have time to look at it properly.##\n\nA collective silence, then a general eruption of relief that is partly noise\nand partly just the absence of dread.##\n\nThe only problem is that there is nothing to eat or drink aboard,\nand the water they have between them is very little.##\n\nCorolla is at the compass.",
+          "line": "Which way do we go?#\nThe cardinal points don't match anything I know.",
+          "break": true
+        },
+        {
+          "actor": "Efeliah",
+          "istelepathy": true,
+          "line": "I have no idea where we are."
+        },
+        {
+          "actor": "Kriss",
+          "line": "We need to go south."
+        },
+        {
+          "actor": "Corolla",
+          "line": "And how do we know which way that is?",
+          "comment": "You had been about to suggest waiting for night\nand navigating by the stars, when Smiurl squeezes past you\nand sticks his head through the hatch for a moment, then drops back in."
+        },
+        {
+          "actor": "Smiurl",
+          "line": "South is that way.",
+          "comment": "He points slightly to your right."
+        },
+        {
+          "actor": "Corolla",
+          "line": "And how exactly would you know?",
+          "comment": "Genuinely surprised."
+        },
+        {
+          "actor": "Smiurl",
+          "line": "Simple.# The sun is low on the horizon.\nIf the city at the bottom of the sea keeps solar time, that's west.",
+          "comment": "Nobody says anything.# You all look at Smiurl.##\n\n$c<<Right.# Of course.# The dwarf.>>$C##\n\nYou turn the minisub to Smiurl's south.#\nThat night, when the stars come out, you check,\nand he is exactly right.",
+          "childid": 22
+        }
+      ]
     },
     {
       "id": 22,
@@ -411,7 +499,7 @@
       "id": 23,
       "type": "Story",
       "recap": "closing reflection - 'those mutants are no less human than us'",
-      "text": "$c<<Those mutants…# they are no less human than we are.>>$C##\n\nYou say it aloud before you have decided to.##\n\nNobody answers.# Nobody has the courage to add anything.##\n\nThe minisub runs south, its motors quieter now,\nand ahead of you, the sea.##",
+      "text": "$c\"Those mutants…# they are no less human than we are.\"$C##\n\nYou say it aloud before you have decided to.##\n\nNobody answers.# Nobody has the courage to add anything.##\n\nThe minisub runs south, its motors quieter now,\nand ahead of you, the sea.##",
       "islast": true
     }
   ]

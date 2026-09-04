@@ -113,21 +113,29 @@ public class DialogueNode : NodeBase
             if ((key.Key == ConsoleKey.DownArrow || key.Key == ConsoleKey.RightArrow) && selectedRow < Dialogues[lineId].Replies.Count - 1)
                 selectedRow++;
 
-            do
+            // rewind to the start of the current beat. A break ends a beat, and so does an
+            // earlier line's own reply prompt: redraw past one and it asks its question again,
+            // eating the keypress meant for this one, which makes adjacent reply blocks unusable.
+            int redrawFrom = lineId;
+            while (redrawFrom > 0)
             {
-                if (lineId <= 0)
+                redrawFrom--;
+
+                if (Dialogues[redrawFrom].Break || Dialogues[redrawFrom].Replies is { Count: > 0 })
+                {
+                    redrawFrom++;
                     break;
-
-                lineId--;
+                }
             }
-            while (Dialogues[lineId].Break == false);
 
-            if (Dialogues[lineId].Break)
-                lineId++;
+            // a break on the very first line has already been answered on the way in, so a
+            // redraw from the top would ask for that key a second time
+            if (redrawFrom == 0 && Dialogues[0].Break)
+                redrawFrom = 1;
 
             // redraw the node to allow the selection effect
             Clear();
-            RecursiveDialogues(lineId, isLineFlowing: false);
+            RecursiveDialogues(redrawFrom, isLineFlowing: false);
         }
         else // if there are no replies available, either continue to the next line or jump to the line specified in the current line
         {

@@ -43,7 +43,8 @@
         {
           "actor": "Corolla",
           "precomment": "Corolla raises a finger, the way she does when she's about to\npoint out something obvious.",
-          "line": "You know, that should probably be a problem."
+          "line": "You know, that will probably be a problem.",
+          "break": true
         },
         {
           "actor": "Kriss",
@@ -67,8 +68,8 @@
         },
         {
           "actor": "Efeliah",
-          "precomment": "She finishes the thought before Corolla can.",
-          "line": "—you think that if Kriss is drawn toward some particular place,\nit's worth going to see."
+          "line": "—you think that if Kriss is drawn toward some particular place,\nit's worth going to see.",
+          "comment": "Efeliah finishes the thought before Corolla can."
         },
         {
           "actor": "Corolla",
@@ -83,8 +84,7 @@
         {
           "actor": "Smiurl",
           "precomment": "It is some time later, deeper in the canyon, when Smiurl falls\ninto step beside Kriss and asks the question that has evidently\nbeen troubling him ever since.",
-          "line": "But how long must we walk?# Before the sea, I mean.",
-          "comment": "He says 'the sea' the way a man might say 'the executioner's block.'"
+          "line": "But how long must we walk?# Before# $MThe Sea$Y,# I mean."
         },
         {
           "actor": "Kriss",
@@ -94,7 +94,7 @@
         {
           "actor": "Smiurl",
           "line": "That is outrageous nonsense!# Smiurl does not go 'soft'!",
-          "comment": "He says it, offended, while the others chuckle.# Then, sulking:"
+          "comment": "\nHe says it, offended, while the others chuckle.# Then, sulking:"
         },
         {
           "actor": "Smiurl",
@@ -103,38 +103,47 @@
         {
           "actor": "Corolla",
           "precomment": "Corolla, walking ahead, does not turn around.",
-          "line": "The distance from here to the coast is about the same as from Ayonn\nto Seer's Rock.# A little more, perhaps.# It's just past what you can\nsee at the horizon.",
+          "line": "The distance from here to the coast is about the same as from Ayonn to Seer's Rock.#\nA little more, perhaps.# It's just past what you can see at the horizon.",
           "comment": "She says it the way she says practical things: quickly, without weight, moving on."
         },
         {
           "actor": "Kriss",
           "precomment": "You look at the back of her head.# Something in the way she said it,\nthe precision of it, the ease, catches your attention.",
           "line": "How do you know that?# Did your Horde reach that far?",
-          "comment": "It is an innocent question.# You say it easily, curious, the way you might ask\nsomeone how they know a shortcut.##\n\nCorolla stops walking.##",
+          "comment": "It is an innocent question.#\nYou say it easily, curious, the way you might ask someone how they know a shortcut.##\n\nCorolla stops walking.##",
           "childid": 4
         }
       ]
     },
     {
       "id": 4,
-      "type": "Story",
-      "recap": "Corolla darkens, deflects - Kriss's first push - Theo's glance",
-      "text": "She stops, and for a moment she does not turn around.##\n\nWhen she does, her expression has changed.# Something has closed\nbehind her eyes, something that was not there a moment ago,\nand she looks at you with a flatness you have not seen from her before.##\n\n$R\"It's just a detail.\"$C#\n\nShe turns back to the path and starts walking again.##\n\nEfeliah, a half-step behind you, does not speak.#\nYou glance at her.# She gives you a look that is neither warning nor\nencouragement, only a very slight, almost imperceptible stillness.##\n\n$R\"There's something wrong, isn't there?\"$C# you say.##\n\n$R\"No, nothing,\"$C# she says, without turning around, her voice flat.##\n\nTheo, walking ahead at the front, turns his head a few degrees, just enough\nto look sideways with the corner of his eye.# Then he turns back to the path.##\n\nThe words are already climbing your throat before you decide anything.##",
-      "childid": 5
-    },
-    {
-      "id": 5,
-      "type": "Choice",
-      "recap": "the player's choice - push again or let it go",
-      "text": "Do you push her again?",
-      "choices": [
+      "type": "Dialogue",
+      "recap": "Corolla darkens and deflects - Theo's glance - the player pushes again or lets it go",
+      "dialogues": [
         {
-          "desc": "\"Come on,\" you say.# \"It's obvious you're hiding something.\"",
-          "childid": 6
+          "actor": "Corolla",
+          "precomment": "She stops, and for a moment she does not turn around.##\n\nWhen she does, her expression has changed.# Something has closed\nbehind her eyes, something that was not there a moment ago,\nand she looks at you with a flatness you have not seen from her before.",
+          "line": "It's just a detail.",
+          "comment": "She turns back to the path and starts walking again.##\n\nEfeliah, a half-step behind you, does not speak.#\nYou glance at her.# She gives you a look that is neither warning nor\nencouragement, only a very slight, almost imperceptible stillness."
         },
         {
-          "desc": "Let it go, and keep walking in silence.",
-          "childid": 7
+          "actor": "Kriss",
+          "line": "I said something wrong?"
+        },
+        {
+          "actor": "Corolla",
+          "line": "No, we're good.",
+          "comment": "She says it without turning around, her voice flat.##\n\nTheo, walking ahead at the front, turns his head a few degrees, just enough\nto look sideways with the corner of his eye.# Then he turns back to the path.##\n\nYou feel the words already climbing your throat...",
+          "replies": [
+            {
+              "line": "\"Come on. It's obvious you're hiding something.\"",
+              "childid": 6
+            },
+            {
+              "line": "Let it go, and keep walking in silence.",
+              "childid": 7
+            }
+          ]
         }
       ]
     },
@@ -142,7 +151,7 @@
       "id": 6,
       "type": "Story",
       "recap": "push branch - Corolla EXPLODES, storms off, Theo's odd line, watched all afternoon",
-      "text": "$R\"Come on,\"$C# you say.# $R\"It's obvious you're hiding something.\"$C##\n\nShe stops.##\n\nShe turns.##\n\n$R\"Leave me alone!\"$C##\n\nThe cry hits the canyon walls and comes back at you.#\n$RLeave me alone$C...# and again, fainter,# $Rleave me alone$C...#\nand again, a whisper, fading into the rock.##\n\nNobody moves.# Smiurl has gone an immediate, shocked gray.#\nEfeliah is very still.# Theo does not turn around.##\n\nCorolla's eyes are bright with something you were not expecting,\na fury that has tears at the very edge of it, and she holds your gaze\nfor one burning moment, long enough for you to feel the full weight\nof having accidentally put your hand on something,\nbefore she turns away with a sharp motion of her whole body\nand strides ahead, disappearing around the next bend in the canyon.##\n\nYou look at Efeliah.# She looks back at you, stricken in her quiet way.#\nYou look at Theo.##\n\n$B\"Come.# It'll be dark in a few hours.\"$C##\n\n$c\"And Corolla?\"$C# you ask.##\n\n$B\"Don't worry about her,\"$C# he answers, in a tone that is somehow\nnot quite his own.##\n\nYou walk.# For the rest of the day you do not see Corolla except as\na distant shape ahead of you, never within speaking distance, and more than\nonce you catch what looks like movement on the canyon walls to either side,\na shape, a shift of shadow, and turn to find only bare rock.#\nSmiurl does not make a single sound.",
+      "text": "$c\"Come on.# It's obvious you're hiding something.\"$C# you say.##\n\nShe stops.##\n\nShe turns.##\n\n$R\"LEAVE ME ALONE!\"$C##\n\nThe cry hits the canyon walls and comes back at you.#\n$R\"Leave me alone\"$C...# she repeats, fainter,# and again, a whisper# $R\"...leave me alone...\"$C#\nfading into the rock.##\n\nNobody moves.# Smiurl has gone an immediate, shocked gray.#\nEfeliah is very still.# Theo does not turn around.##\n\nCorolla's eyes are bright with something you were not expecting,\na fury that has tears at the very edge of it, and she holds your gaze\nfor one burning moment, long enough for you to feel the full weight\nof having accidentally put your hand on something,\nbefore she turns away with a sharp motion of her whole body\nand strides ahead, disappearing around the next bend in the canyon.##\n\nYou look at Efeliah.# She looks back at you, stricken in her quiet way.#\nYou look at Theo.##\n\n$B\"Come.# It'll be dark in a few hours.\"$C##\n\n$c\"But...?\"$C# you start.##\n\n$B\"Don't worry about her\"$C# he answers, in a tone that is somehow not quite his own.##\n\nYou walk.# For the rest of the day you do not see Corolla except as\na distant shape ahead of you, never within speaking distance, and more than\nonce you catch what looks like movement on the canyon walls to either side,\na shape, a shift of shadow, and turn to find only bare rock.#\nSmiurl does not make a single sound.",
       "childid": 8
     },
     {
@@ -260,7 +269,7 @@
           "comment": "She looks at the fire.# Not at you.",
           "replies": [
             {
-              "line": "\"Is that why you helped me?# At the beginning?\"",
+              "line": "\"Is that why you helped me? At the beginning?\"",
               "nextline": "helped"
             },
             {
@@ -300,11 +309,11 @@
           "comment": "Her voice drops.# Falls away entirely.##\n\nYou do not move.# None of you do.##\n\nYou look at Efeliah.##\n\nShe is crying.# Silently, her head down, tears falling freely,\nnot with any drama, just the quiet fact of it, impossible to look away from.",
           "replies": [
             {
-              "line": "\"I'm sorry.# I didn't know.\"",
+              "line": "\"I'm sorry. I didn't know.\"",
               "nextline": "forgiven"
             },
             {
-              "line": "\"Please forgive me.# I didn't mean to push.\"",
+              "line": "\"Please forgive me. I didn't mean to push.\"",
               "nextline": "forgiven"
             }
           ]
@@ -407,7 +416,6 @@
         {
           "linename": "callAsked",
           "actor": "Corolla",
-          "precomment": "You say it, eyes lost in the void.",
           "line": "The one that's been leading you this far?"
         },
         {
