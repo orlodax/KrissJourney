@@ -78,4 +78,15 @@ public class SurgeChallenge
     /// second. No <see cref="DuetPattern"/>, no beat.
     /// </summary>
     public float DuetBeat { get; set; } = 0.3f;
+
+    /// <summary>
+    /// What happens to a press that lands on one of Saberinne's glyphs. Left false the
+    /// press is swallowed - no penalty, nothing spent, nothing advanced. Set true it is
+    /// held in a single slot instead (latest press wins) and spent the instant the caret
+    /// comes back to Kriss, exactly as if it had been pressed then: right advances and
+    /// restores, wrong takes the ordinary penalty. The two read differently in the hands -
+    /// on an alternating pattern a player in tempo keeps pressing through her beats - so
+    /// the choice is per instance. No <see cref="DuetPattern"/>, no buffer.
+    /// </summary>
+    public bool BufferInput { get; set; }
 }

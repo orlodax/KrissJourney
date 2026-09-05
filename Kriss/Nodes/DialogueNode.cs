@@ -73,6 +73,13 @@ public class DialogueNode : NodeBase
         // if there are replies available, display choice
         if (currentLine.Replies != null && currentLine.Replies.Count != 0)
         {
+            // selectedRow is node-level, and a later block can be shorter than the one that last
+            // moved the highlight (c21 node 4 offers 3 options, then 2): without this clamp the
+            // highlight lands on a row nobody draws and Enter indexes past the list. Clamped, not
+            // reset, so the row the player last stood on still means something. 2026-09-05
+            if (selectedRow > currentLine.Replies.Count - 1)
+                selectedRow = currentLine.Replies.Count - 1;
+
             for (int i = 0; i < Dialogues[lineId].Replies.Count; i++)
             {
                 // set both colors explicitly on every row: the last rendered speech part leaves

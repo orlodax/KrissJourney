@@ -81,6 +81,26 @@ public class SurgeDeserializationTests
         Assert.AreEqual(0.3f, surge.Challenge.DuetBeat);
     }
 
+    /// <summary>
+    /// "bufferinput" decides what a press on one of Saberinne's glyphs is worth, and every
+    /// Surge authored before it existed was tuned against the swallowing behaviour, so an
+    /// absent key has to keep meaning false rather than picking up the new one.
+    /// </summary>
+    [TestMethod]
+    public void BufferInputDeserializesFromJson()
+    {
+        const string withBuffer = """{"id": 1, "type": "surge", "text": "test", "childid": 2, "challenge": {"duetpattern": ".S", "bufferinput": true}}""";
+        const string withoutBuffer = """{"id": 1, "type": "surge", "text": "test", "childid": 2, "challenge": {"duetpattern": ".S"}}""";
+
+        SurgeNode buffered = JsonSerializer.Deserialize<NodeBase>(withBuffer, JsonHelper.Options) as SurgeNode;
+        SurgeNode unbuffered = JsonSerializer.Deserialize<NodeBase>(withoutBuffer, JsonHelper.Options) as SurgeNode;
+
+        Assert.IsNotNull(buffered?.Challenge);
+        Assert.IsNotNull(unbuffered?.Challenge);
+        Assert.IsTrue(buffered.Challenge.BufferInput, "\"bufferinput\": true must reach SurgeChallenge.BufferInput.");
+        Assert.IsFalse(unbuffered.Challenge.BufferInput, "An absent \"bufferinput\" must stay false.");
+    }
+
     [TestMethod]
     public void SurgeJson_WithoutAChallengeObject_DeserializesWithNullChallenge()
     {

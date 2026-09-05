@@ -27,10 +27,12 @@ public sealed class SurgeState
     readonly double restore;
     readonly double penalty;
     readonly double duetBeat;
+    readonly bool bufferInput; // inert without a duet: only her glyphs ever buffer
     readonly bool[] duet; // null unless the challenge names a duet pattern
     readonly List<SurgeDirection> glyphs;
 
     double duetPending; // seconds Saberinne has spent on the glyph the caret is on
+    SurgeDirection? buffered; // a press made on her glyph, waiting for the caret to come back
 
     public SurgeState(SurgeChallenge challenge, IEnumerable<SurgeDirection> row)
     {
@@ -42,6 +44,7 @@ public sealed class SurgeState
         restore = Math.Max(0, challenge.Restore);
         penalty = Math.Max(0, challenge.Penalty);
         duetBeat = Math.Max(0, challenge.DuetBeat);
+        bufferInput = challenge.BufferInput;
         duet = BuildDuet(challenge.DuetPattern, glyphs.Count);
         MaxRage = Math.Max(1, challenge.MaxRage);
         Rage = Math.Clamp(challenge.StartingRage, 0, MaxRage);
@@ -99,14 +102,31 @@ public sealed class SurgeState
     /// rage and leaves the caret exactly where it was, so mashing never walks the row -
     /// and never sends the player back to the start either. Saberinne's glyphs take no
     /// input at all: pressing ahead into her share is swallowed rather than charged, since
-    /// it was never his to get wrong.
-    /// Returns whether the input was the one the row wanted of the player.
+    /// it was never his to get wrong - unless <see cref="SurgeChallenge.BufferInput"/> holds
+    /// it for the caret's return instead.
+    /// Returns whether the input was the one the row wanted of the player; a buffered press
+    /// has not been answered yet, so it returns false and is judged on the way out.
     /// </summary>
     public bool ApplyInput(SurgeDirection input)
     {
-        if (IsOver || IsSaberinnes(Position))
+        if (IsOver)
             return false;
 
+        if (IsSaberinnes(Position))
+        {
+            // Latest press wins: a player correcting themselves mid-run meant the last one.
+            if (bufferInput)
+                buffered = input;
+
+            return false;
+        }
+
+        return Resolve(input);
+    }
+
+    /// <summary>Judges one arrow against the glyph the caret is actually on.</summary>
+    bool Resolve(SurgeDirection input)
+    {
         if (input != glyphs[Position])
         {
             Spend(penalty);
@@ -126,24 +146,40 @@ public sealed class SurgeState
     /// </summary>
     void PlaySaberinnesShare(double elapsedSeconds)
     {
+        if (!IsOver && IsSaberinnes(Position))
+        {
+            duetPending += elapsedSeconds;
+
+            // The remainder carries over inside a run of hers, so a run takes exactly as many
+            // beats as it has glyphs instead of drifting by a frame each time.
+            while (duetPending >= duetBeat && !IsOver && IsSaberinnes(Position))
+            {
+                duetPending -= duetBeat;
+                Take();
+            }
+        }
+
         if (IsOver || !IsSaberinnes(Position))
         {
             duetPending = 0;
+            ConsumeBuffered();
+        }
+    }
+
+    /// <summary>
+    /// Hands a buffered press to the row the moment her share is done with it, so it costs
+    /// and pays exactly what pressing at that instant would - buffering is never a free
+    /// correct answer. A finished row drops it instead: nothing resolves after the outcome.
+    /// </summary>
+    void ConsumeBuffered()
+    {
+        if (buffered is not SurgeDirection input)
             return;
-        }
 
-        duetPending += elapsedSeconds;
+        buffered = null;
 
-        // The remainder carries over inside a run of hers, so a run takes exactly as many
-        // beats as it has glyphs instead of drifting by a frame each time.
-        while (duetPending >= duetBeat && !IsOver && IsSaberinnes(Position))
-        {
-            duetPending -= duetBeat;
-            Take();
-        }
-
-        if (IsOver || !IsSaberinnes(Position))
-            duetPending = 0;
+        if (!IsOver)
+            Resolve(input);
     }
 
     /// <summary>Consumes the glyph under the caret, whichever of the two it belonged to.</summary>
