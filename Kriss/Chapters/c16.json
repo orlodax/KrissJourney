@@ -64,11 +64,11 @@
         },
         {
           "actor": "Corolla",
-          "line": "Not as far as we know.# Anyway—"
+          "line": "Not as far as we know.# Anyway..."
         },
         {
           "actor": "Efeliah",
-          "line": "—you think that if Kriss is drawn toward some particular place,\nit's worth going to see.",
+          "line": "...you think that if Kriss is drawn toward some particular place,\nit's worth going to see.",
           "comment": "Efeliah finishes the thought before Corolla can."
         },
         {
@@ -374,7 +374,7 @@
       "id": 14,
       "type": "Story",
       "recap": "leaving the labyrinths - the great plain, Kriss runs, the first hint of the unease/pull",
-      "text": "The canyon walls fall back the next morning, and the world opens.##\n\nYou step out of the last gully into a vast plain that slopes gently downward\nfor as far as you can see, and for the first time since you arrived on Noi-Hert\nthe landscape in front of you is $Wnot$C barren.# Great meadows stretch ahead,\nreal grass, and further out, at the edges of sight, the dark shapes of trees.##\n\nYou run.##\n\nYou do it without thinking, without deciding to, just breaking into a run\nbecause the ground is flat and green and the sun is warm and the wind\nis coming up from the south, and you run until you reach the top\nof a low hill and stop there, breathing hard, with your arms out.#\nThere is only the warmth of the sun and the voice of the wind.#\nFor a moment you feel like part of the planet.##\n\nYou feel the others catching up behind you, and Efeliah's presence\nbrushing against your mind, but there is something else too:\na faint, sourceless unease, just past the edge of what you can perceive,\na shadow without a shape.##\n\nThe spell breaks.# You become Kriss on a hill again, with his companions,\nlooking south.# You look at Efeliah; her expression is faintly puzzled.",
+      "text": "The canyon walls fall back the next morning, and the world opens.##\n\nYou step out of the last gully into a vast plain that slopes gently downward\nfor as far as you can see, and for the first time since you arrived on Noi-Hert\nthe landscape in front of you is $Wnot$C barren.# Great meadows stretch ahead,\nreal grass, and further out, at the edges of sight, the dark shapes of trees.##\n\nYou run.##\n\nYou do it without thinking, without deciding to, just breaking into a run\nbecause the ground is flat and green and the sun is warm and the wind\nis coming up from the south, and you run until you reach the top\nof a low hill and stop there, breathing hard, with your arms out.#\nThere is only the warmth of the sun and the voice of the wind.#\nFor a moment you feel like part of the planet.##\n\nYou feel the others catching up behind you, and Efeliah's presence\nbrushing against your mind, but there is something else too:\na faint, sourceless unease, just past the edge of what you can perceive,\na shadow without a shape.##\n\nThe spell breaks.# You become Kriss on a hill again, with your companions,\nlooking south.# You look at Efeliah; her expression is faintly puzzled.",
       "childid": 15
     },
     {

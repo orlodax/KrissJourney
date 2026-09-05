@@ -30,7 +30,7 @@
         },
         {
           "actor": "Efeliah",
-          "line": "They want to run experiments on all of us.#\nThat one must be their leader, or a scientist of some kind…",
+          "line": "They want to run experiments on all of us.#\nThat one must be their leader, or a scientist of some kind...",
           "istelepathy": true
         },
         {
@@ -72,7 +72,7 @@
         {
           "actor": "Smiurl",
           "precomment": "Smiurl is standing very still, staring at nothing, his skin a stunned gray.",
-          "line": "The sea mutants…",
+          "line": "The sea mutants...",
           "comment": "He says it almost to himself, distracted."
         },
         {
@@ -83,7 +83,7 @@
         {
           "actor": "Smiurl",
           "precomment": "Smiurl does not answer immediately. After a moment he begins, slowly.",
-          "line": "My grandfather used to tell me the history of our people, when I was small.#\nThere is something that has come back to me just now.\n\nHe said our race was created by the people from Earth\nthrough manipulation of the genome of normal men.#\nBut alongside ours, other races were created too.#\nOne of them was that of the mysterious sea mutants,\nwhom we believed to be a legend…",
+          "line": "My grandfather used to tell me the history of our people, when I was small.#\nThere is something that has come back to me just now.\n\nHe said our race was created by the people from Earth\nthrough manipulation of the genome of normal men.#\nBut alongside ours, other races were created too.#\nOne of them was that of the mysterious sea mutants,\nwhom we believed to be a legend...",
           "comment": "",
           "replies": [
             {
@@ -151,7 +151,7 @@
         {
           "actor": "Smiurl",
           "precomment": "Smiurl resumes his recitation as if reading from somewhere inside himself.",
-          "line": "The sea mutants can live underwater as easily as in the air,\nand they are endowed with extraordinary strength…",
+          "line": "The sea mutants can live underwater as easily as in the air,\nand they are endowed with extraordinary strength...",
           "comment": "Efeliah's voice cuts through, tight with strain.",
           "childid": 5
         }
@@ -161,7 +161,7 @@
       "id": 5,
       "type": "Surge",
       "recap": "Ef's pain builds - Kriss alone, no guidance - Surge instance 3, difficulty peak - the door-punch",
-      "text": "$g<<They are about to begin attacking my mental defenses.#\nI don't think I can hold out long…>>$C##\n\nA sensation of suffering accompanies the words,\nnot described but transmitted, Efeliah's actual pain\narriving in your chest the way her voice does, directly.##\n\nKriss, the moment that pain reaches him, feels himself go cold with fury.\nHe begins to pace the narrow cell, his footsteps ringing sharp on the metal.##\n\n$B\"We have no weapons.\"$C#\nTheo watches him, almost as if he can hear his thoughts.##\n\n$Y\"And they're strong,\"$C# Smiurl confirms, deflated.##\n\nYou breathe out hard. The helplessness is unbearable.\nCorolla watches you with understanding, having no better answer.##\n\n$c<<Maledizione.>>$C# You plant yourself in front of the door\nand shout it aloud too.\n\n$C\"$cMaledizione!$C\"##\n\nYou close your eyes. You clench your fists.##\n\nYou think of Efeliah on the other side of that wall, suffering,\nwho could be dying or worse from one moment to the next,\nwho has always been close to you,\nclosed to each of you. You think of the sword you don't have,\nof Theo's hammer you don't have, of the door that cannot be opened.#\nThis cannot end here.##\n\nYou can feel Efeliah's suffering growing, her mind stiffening\nin the effort to resist.# You no longer feel anything around you.\nYou are alone, in nothing, with your rage and her voice in your skull.##\n\nNobody is calling the directions this time.# Nobody can.#\nIt is only you, and the door, and whatever this is.##",
+      "text": "$g<<They are about to begin attacking my mental defenses.#\nI don't think I can hold out long...>>$C##\n\nA sensation of suffering accompanies the words,\nnot described but transmitted, Efeliah's actual pain\narriving in your chest the way her voice does, directly.##\n\nThe moment that pain reaches you, you feel yourself go cold with fury,\nand you begin to pace the narrow cell, your footsteps ringing sharp on the metal.##\n\n$B\"We have no weapons.\"$C#\nTheo watches you, almost as if he can hear your thoughts.##\n\n$Y\"And they're strong,\"$C# Smiurl confirms, deflated.##\n\nYou breathe out hard. The helplessness is unbearable.\nCorolla watches you with understanding, having no better answer.##\n\n$c<<Maledizione.>>$C# You plant yourself in front of the door\nand shout it aloud too.\n\n$C\"$cMaledizione!$C\"##\n\nYou close your eyes. You clench your fists.##\n\nYou think of Efeliah on the other side of that wall, suffering,\nwho could be dying or worse from one moment to the next,\nwho has always been close to you,\nclose to each of you. You think of the sword you don't have,\nof Theo's hammer you don't have, of the door that cannot be opened.#\nThis cannot end here.##\n\nYou can feel Efeliah's suffering growing, her mind stiffening\nin the effort to resist.# You no longer feel anything around you.\nYou are alone, in nothing, with your rage and her voice in your skull.##\n\nNobody is calling the directions this time.# Nobody can.#\nIt is only you, and the door, and whatever this is.##",
       "childid": 6,
       "challenge": {
         "sequencelength": 11,
@@ -250,7 +250,7 @@
       "id": 9,
       "type": "Story",
       "recap": "the glass tunnel - city glimpsed on the run - the daylight clue",
-      "text": "The walls of the tunnel are glass.##\n\nYou are already running when you understand this,\nand you do not stop, cannot stop,\nbut you see it as you run: a long crystal tube\nconnecting two structures, and beneath it, dozens of meters down,\nthe sea floor, lit as bright as noon, sprawling out\nfor the area of a small city in every direction.##\n\nTo the left: mutants at work, emerging from minisubs without any protection,\nat ease in the water as you are in air, digging or preparing\nsome new structure, deliberate and purposeful.#\nTo the right, you see something more extraordinary.##\n\nA city.##\n\nA real city, streets and gardens of algae and coral,\nand around what might be a market\na great number of mutants move with the unhurried purpose\nof people who have somewhere to be.# Colorful structures\ncling to the rock face like shells.# Small luminous submersibles\nshuttle between points, ferrying passengers.##\n\nAnd then, from a building, a crowd of small mutants pours out,\nproportioned differently, their enormous eyes not yet fully developed.##\n\n$g<<Children coming out of school…>>$C##\n\nEfeliah says it with a particular hesitation.# Nobody says anything else.\nYou keep running, but you are all looking, and something about the light\nover all of it needles at you: it isn't torchlight, and it isn't the harsh\nglare of the scientist's room above.# It's warm, angled, alive,\nthe way daylight is alive.##\n\n$c<<Whatever they've built to fake a sky down here, it's keeping actual\ntime with a sun.# Wherever the surface is right now, above all this water...\nit has to still be day up there.>>$C##\n\nThe scientist-mutant you are dragging along has taken on\nthe expression of something like pride,\nthough it says nothing, not a syllable.##\n\n$g<<They're entering the tunnel! We must keep moving!>>$C##",
+      "text": "The walls of the tunnel are glass.##\n\nYou are already running when you understand this,\nand you do not stop, cannot stop,\nbut you see it as you run: a long crystal tube\nconnecting two structures, and beneath it, dozens of meters down,\nthe sea floor, lit as bright as noon, sprawling out\nfor the area of a small city in every direction.##\n\nTo the left: mutants at work, emerging from minisubs without any protection,\nat ease in the water as you are in air, digging or preparing\nsome new structure, deliberate and purposeful.#\nTo the right, you see something more extraordinary.##\n\nA city.##\n\nA real city, streets and gardens of algae and coral,\nand around what might be a market\na great number of mutants move with the unhurried purpose\nof people who have somewhere to be.# Colorful structures\ncling to the rock face like shells.# Small luminous submersibles\nshuttle between points, ferrying passengers.##\n\nAnd then, from a building, a crowd of small mutants pours out,\nproportioned differently, their enormous eyes not yet fully developed.##\n\n$g<<Children coming out of school...>>$C##\n\nEfeliah says it with a particular hesitation.# Nobody says anything else.\nYou keep running, but you are all looking, and something about the light\nover all of it needles at you: it isn't torchlight, and it isn't the harsh\nglare of the scientist's room above.# It's warm, angled, alive,\nthe way daylight is alive.##\n\n$c<<Whatever they've built to fake a sky down here, it's keeping actual\ntime with a sun.# Wherever the surface is right now, above all this water...\nit has to still be day up there.>>$C##\n\nThe scientist-mutant you are dragging along has taken on\nthe expression of something like pride,\nthough it says nothing, not a syllable.##\n\n$g<<They're entering the tunnel! We must keep moving!>>$C##",
       "childid": 10
     },
     {
@@ -729,7 +729,7 @@
       "id": 23,
       "type": "Story",
       "recap": "closing reflection - 'those mutants are no less human than us'",
-      "text": "$c\"Those mutants…# they are no less human than we are.\"$C##\n\nYou say it aloud before you have decided to.##\n\nNobody answers.# Nobody has the courage to add anything.##\n\nThe minisub runs south, its motors quieter now,\nand ahead of you, the sea.##",
+      "text": "$c\"Those mutants...# they are no less human than we are.\"$C##\n\nYou say it aloud before you have decided to.##\n\nNobody answers.# Nobody has the courage to add anything.##\n\nThe minisub runs south, its motors quieter now,\nand ahead of you, the sea.##",
       "islast": true
     }
   ]

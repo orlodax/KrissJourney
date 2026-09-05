@@ -342,7 +342,9 @@ public class Chapter14And15WalkthroughTests
             idx = await ContinueAsync(idx);                                              // node 12: Math's childid line -> node 13
             idx = await ContinueAsync(idx);                                              // node 13 -> node 14
 
-            idx = await ChooseAsync(idx, "\"Actually… I remember. You didn't notice, but I was right behind you. I was listening.\"");
+            // Marker deliberately avoids the reply's leading punctuation: c15's ellipses were
+            // normalised from "…" to "..." for CP437, and a marker spanning them broke this walk.
+            idx = await ChooseAsync(idx, "I was right behind you. I was listening.");
                                                                                            // node 14: reply 0 on Efeliah's line -> efShocked
             idx = await ContinueAsync(idx);                                              // node 14: Corolla's childid line -> node 15
 

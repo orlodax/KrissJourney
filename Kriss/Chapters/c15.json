@@ -1,4 +1,4 @@
-﻿{
+{
   "id": 15,
   "title": "THE LIBERATION",
   "nodes": [
@@ -6,7 +6,7 @@
       "id": 1,
       "type": "Story",
       "recap": "chapter header - aftermath of the Projector, Corolla treated, Kriss recounts the call to the group",
-      "text": "-------------------------------\n|          CHAPTER 15          |\n-------------------------------\n\n\nNobody speaks for a moment.##\n\nTheo is looking at you with his brow very slightly furrowed, which on Theo is the equivalent of a dropped jaw.#\nSmiurl has crept out from behind Corolla and is staring at you from roughly the height of your knee,\nhis skin running through small rapid pulses of uncertain orange.##\n\nEfeliah says nothing.# She already knows.##\n\nFrom the floor, a sound.# And then Corolla shifts, her hand moving first,\nfingers pressing flat against the ground.##\n\n$m\"She will be all right,\"$C# Math says quietly, his eyes not leaving you.#\n$m\"It is a superficial burn.# We have already contained the pain.\"$C##\n\nYou look at her, and believe him.##\nSmiurl's skin flushes, slowly, into a relieved and luminous gold.##\nTheo puts one hand briefly on Math's shoulder as he passes, crouching beside Corolla.#\nNo words.# He doesn't need them.##\n\nThey carry her two floors down, to the Municipal infirmary, and lay her on a cot\nwhile Efeliah dresses the burn with salve and steady hands.#\nYou sit close by, and somewhere in the telling, the door, the pull, the white, the voice that called\nyou south, you find yourself walking them through all of it, the only way you know how.##",
+      "text": "-------------------------------\n|          CHAPTER 15          |\n-------------------------------\n\n\nNobody speaks for a moment.##\n\nTheo is looking at you with his brow very slightly furrowed,\nwhich on Theo is the equivalent of a dropped jaw.#\nSmiurl has crept out from behind Corolla and is staring at you from roughly the height of your knee,\nhis skin running through small rapid pulses of uncertain orange.##\n\nEfeliah says nothing.# She already knows.##\n\nFrom the floor, a sound.# And then Corolla shifts, her hand moving first,\nfingers pressing flat against the ground.##\n\n$m\"She will be all right,\"$C# Math says quietly, his eyes not leaving you.#\n$m\"It is a superficial burn.# We have already contained the pain.\"$C##\n\nYou look at her, and believe him.##\nSmiurl's skin flushes, slowly, into a relieved and luminous gold.##\nTheo puts one hand briefly on Math's shoulder as he passes, crouching beside Corolla.#\nNo words.# He doesn't need them.##\n\nThey carry her two floors down, to the Municipal infirmary, and lay her on a cot\nwhile Efeliah dresses the burn with salve and steady hands.#\nYou sit close by, and somewhere in the telling, the door, the pull, the white, the voice that called\nyou south, you find yourself walking them through all of it, the only way you know how.##",
       "childid": 2
     },
     {
@@ -62,11 +62,11 @@
         },
         {
           "actor": "Theo",
-          "line": "One moment—"
+          "line": "One moment..."
         },
         {
           "actor": "Kriss",
-          "line": "—and Joe?",
+          "line": "...and Joe?",
           "comment": "You finish the thought for him."
         },
         {
@@ -75,7 +75,7 @@
         },
         {
           "actor": "Riff",
-          "line": "We've already sent a squad of our best after him.# He'll be brought here soon,#\nand justice will be done…",
+          "line": "We've already sent a squad of our best after him.# He'll be brought here soon,#\nand justice will be done...",
           "comment": "As he says the last of it, something darkens in him.#\nAn old resentment surfaces on his face.",
           "childid": 4
         }
@@ -122,7 +122,7 @@
         },
         {
           "actor": "Riff",
-          "line": "I don't think so…# I am tired of seeing people die.#\nIf it were up to me, he would end his days in those 'privileged' quarters\nhe kept reserved for us, for years.",
+          "line": "I don't think so...# I am tired of seeing people die.#\nIf it were up to me, he would end his days in those 'privileged' quarters\nhe kept reserved for us, for years.",
           "comment": "He says it flatly, without triumph.",
           "childid": 6
         }
@@ -136,7 +136,7 @@
         {
           "actor": "Corolla",
           "precomment": "A small, disgruntled sound comes from the cot.",
-          "line": "Mhn…# Did they hit me?# Damn, I must be getting old…",
+          "line": "Mhn...# Did they hit me?# Damn, I must be getting old...",
           "comment": "A general laugh breaks out.# You and Smiurl rush to hug her,\nas much as the bandage across her back will allow.",
           "break": true
         },
@@ -162,7 +162,7 @@
         },
         {
           "actor": "Kriss",
-          "line": "If it hadn't been me, it would have been Theo, or one of the others—",
+          "line": "If it hadn't been me, it would have been Theo, or one of the others...",
           "comment": "She silences you\nwith a hand pressed flat over your mouth."
         },
         {
@@ -220,7 +220,7 @@
         },
         {
           "actor": "Math",
-          "line": "Given the great scientific and cultural patrimony that lies in this place,#\nand the many machines built by the Master, I would like to ask the future mayor\nto let me remain in this city as Municipal scholar, or something of the kind…#\nif everyone present agrees, of course."
+          "line": "Given the great scientific and cultural patrimony that lies in this place,#\nand the many machines built by the Master, I would like to ask the future mayor\nto let me remain in this city as Municipal scholar, or something of the kind...#\nif everyone present agrees, of course."
         },
         {
           "actor": "Efeliah",
@@ -284,7 +284,7 @@
         {
           "actor": "Efeliah",
           "precomment": "After a few moments, in a voice not quite steady, she answers.",
-          "line": "Of course.# If you want to stay, if you feel you must, then you must stay…",
+          "line": "Of course.# If you want to stay, if you feel you must, then you must stay...",
           "comment": "She shrugs, resigned."
         },
         {
@@ -327,10 +327,10 @@
         },
         {
           "actor": "Efeliah",
-          "line": "It isn't that anything is wrong…# While you were connected to the Projector,#\nMath and I could not help but examine it, study every point of it.#\n\nDuring the connection to the machine, in fact, your brain's functions 'expanded', so to speak,\nin every direction.# We didn't need to work around the blocks you've had since birth.#\n\nYour mind laid itself open before us, like a painting at an exhibition.#\nA few days ago, right after we left the Rock, I spoke with Math about something in your mind\nthat puzzled us both, and I proposed examining you.",
+          "line": "It isn't that anything is wrong...# While you were connected to the Projector,#\nMath and I could not help but examine it, study every point of it.#\n\nDuring the connection to the machine, in fact, your brain's functions 'expanded', so to speak,\nin every direction.# We didn't need to work around the blocks you've had since birth.#\n\nYour mind laid itself open before us, like a painting at an exhibition.#\nA few days ago, right after we left the Rock, I spoke with Math about something in your mind\nthat puzzled us both, and I proposed examining you.",
           "replies": [
             {
-              "line": "\"Actually… I remember. You didn't notice, but I was right behind you. I was listening.\"",
+              "line": "\"Actually... I remember. You didn't notice, but I was right behind you. I was listening.\"",
               "nextline": "efShocked"
             },
             {
@@ -411,17 +411,17 @@
         },
         {
           "actor": "Efeliah",
-          "line": "I fainted…# under the shock of an empathic overload.#\nSomehow you partook in my sensations.# That alone would be remarkable,\nbut the point is that from that moment, until you collapsed at Smiurl's side, those areas I mentioned went,\nso to speak, wild.# They received energy tens, perhaps hundreds times above normal.#\nWhat happened after that, we don't know.# We found you beside the Oxengutter's smashed skull.#\nYour mental activity had ceased, but those areas were, in a way, 'burning',\nfrom the sudden discharge of energy they'd received.#\n\nThat's why you had the fever, and the delirium, all that night.# It's understandable."
+          "line": "I fainted...# under the shock of an empathic overload.#\nSomehow you partook in my sensations.# That alone would be remarkable,\nbut the point is that from that moment, until you collapsed at Smiurl's side,\nthose areas I mentioned went,\nso to speak, wild.# They received energy tens, perhaps hundreds times above normal.#\nWhat happened after that, we don't know.# We found you beside the Oxengutter's smashed skull.#\nYour mental activity had ceased, but those areas were, in a way, 'burning',\nfrom the sudden discharge of energy they'd received.#\n\nThat's why you had the fever, and the delirium, all that night.# It's understandable."
         },
         {
           "actor": "Corolla",
           "precomment": "You stare at her, shaken, unable to quite believe it.# But you know she's\ntelling the truth.# You feel a hand on your shoulder.# It's Corolla.",
-          "line": "No lasting damage…?",
+          "line": "No lasting damage...?",
           "comment": "She asks, worried."
         },
         {
           "actor": "Efeliah",
-          "line": "No, his mind is strong, and it's back in shape now.# However…",
+          "line": "No, his mind is strong, and it's back in shape now.# However...",
           "break": true
         },
         {
@@ -487,7 +487,7 @@
                 "story",
                 "journey"
               ],
-              "answer": "You find yourself telling the councillors, and Riff, seated among them,\nyour whole story again, how you felt the irresistible pull toward this city.#\n$c\"…and now we'll be leaving again,\"$y you finish.# They wish you well, and one\nof them remarks that having friends willing to follow you to the end of the world\nis luck enough on its own.# $c\"It is,\"$y you agree, nodding at all of them in turn.#\n$c\"I wouldn't be anywhere, right now, if it weren't for every one of them.\"$y"
+              "answer": "You find yourself telling the councillors, and Riff, seated among them,\nyour whole story again, how you felt the irresistible pull toward this city.#\n$c\"...and now we'll be leaving again,\"$y you finish.# They wish you well, and one\nof them remarks that having friends willing to follow you to the end of the world\nis luck enough on its own.# $c\"It is,\"$y you agree, nodding at all of them in turn.#\n$c\"I wouldn't be anywhere, right now, if it weren't for every one of them.\"$y"
             },
             {
               "objs": [
@@ -661,7 +661,7 @@
         },
         {
           "actor": "Theo",
-          "line": "Oh, this one is much heavier.# I won't have any trouble carrying\nthe other as well…",
+          "line": "Oh, this one is much heavier.# I won't have any trouble carrying\nthe other as well...",
           "comment": "It's an astonishing number of words to come out of his mouth, and the satisfaction\non his face is just as plain.",
           "childid": 19
         }
@@ -730,7 +730,7 @@
         {
           "actor": "Smiurl",
           "precomment": "A few minutes later Corolla comes down, Smiurl in tow.# The moment he arrives,\nthe dwarf says:",
-          "line": "Must we really leave…?# I rather like it here…",
+          "line": "Must we really leave...?# I rather like it here...",
           "comment": "\nHe lights up faintly, remembering the culinary delights he's been allowed to enjoy."
         },
         {
@@ -740,18 +740,18 @@
         },
         {
           "actor": "Smiurl",
-          "line": "Well…",
+          "line": "Well...",
           "comment": "He looks at the ground, and shrugs."
         },
         {
           "actor": "Corolla",
-          "line": "You can stay here if you want…# Math will be here with you anyway…",
+          "line": "You can stay here if you want...# Math will be here with you anyway...",
           "comment": "She says it partly to test him."
         },
         {
           "actor": "Smiurl",
           "precomment": "Smiurl groans, torn apart by the conflict.# In the end he speaks up, sighing:",
-          "line": "I'll come with you…# I can't play the coward and abandon my friends!#\nMy honor as a third-generation mutant is at stake!"
+          "line": "I'll come with you...# I can't play the coward and abandon my friends!#\nMy honor as a third-generation mutant is at stake!"
         },
         {
           "actor": "Efeliah",
@@ -762,11 +762,11 @@
         {
           "actor": "Smiurl",
           "precomment": "He looks at her, eyes wide, and after lowering them again, his voice trembling:",
-          "line": "Well… I suppose…"
+          "line": "Well... I suppose..."
         },
         {
           "actor": "Efeliah",
-          "line": "You don't trust him…# Or rather, you're afraid of me too, somewhere\nat the back of your mind…",
+          "line": "You don't trust him...# Or rather, you're afraid of me too, somewhere\nat the back of your mind...",
           "comment": "He looks at her, even more intimidated.# She points at his own reaction."
         },
         {
@@ -795,7 +795,7 @@
         },
         {
           "actor": "Efeliah",
-          "line": "Works for me…# You, Kriss?"
+          "line": "Works for me...# You, Kriss?"
         },
         {
           "actor": "Kriss",
