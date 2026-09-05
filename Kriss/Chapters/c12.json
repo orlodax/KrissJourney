@@ -52,7 +52,53 @@
         },
         {
           "actor": "Math",
-          "line": "I cannot reach beyond these walls. Not yet. I need time to recover."
+          "line": "I cannot reach beyond these walls. Not yet. I need time to recover.",
+          "replies": [
+            {
+              "line": "\"What happened out there? At the shield?\"",
+              "nextline": "shield"
+            },
+            {
+              "line": "\"Forget the shield. How do we get out of here?\"",
+              "nextline": "out"
+            }
+          ]
+        },
+        {
+          "actor": "Math",
+          "linename": "shield",
+          "line": "You went through it.# I was holding on to you and I still cannot tell you how.##\nThen the light went out of the world, and so did we.",
+          "comment": "\nHe reports it the way a man reports something he watched happen\nand does not believe he watched."
+        },
+        {
+          "actor": "Efeliah",
+          "line": "I was already unconscious, and my mind recorded it anyway.#\nA pulse of psychic energy, enormous.# I think you shorted the shield out.",
+          "comment": "\nA pause, and then, quieter:"
+        },
+        {
+          "actor": "Efeliah",
+          "line": "I do not think it was enough to destroy it."
+        },
+        {
+          "actor": "Corolla",
+          "line": "And then somebody scraped us up off the ground and carried us in here.",
+          "comment": "\nShe says it flatly, the way you would read out a list."
+        },
+        {
+          "actor": "Smiurl",
+          "line": "I said we should not come!# I said it!# A cursed city, I said!##\nAnd now we are going to die down here and nobody will ever know it.",
+          "comment": "\nNobody argues with him. That is the worst part."
+        },
+        {
+          "actor": "Corolla",
+          "linename": "out",
+          "precomment": "You put your palm flat against the wall beside the opening.#\nSmooth, seamless, cold.",
+          "line": "Not through that.# The walls are solid and the doorway is not a doorway.##\nWhatever that curtain is, it does not care how hard you hit it."
+        },
+        {
+          "actor": "Math",
+          "line": "It is an electric field.# Whoever touches it takes a shock.#\nI can promise you that much.",
+          "comment": "\nYou cradle your wrist, which is still not entirely on speaking terms with you,\nand say nothing.##\n\nIt occurs to you, slowly, that Math knows what an electric field is.#\nNobody at Seer's Rock ever mentioned a wire.# The decay of this planet\nis beginning to show you its seams."
         },
         {
           "actor": "Efeliah",
@@ -73,8 +119,54 @@
       "id": 3,
       "type": "Story",
       "recap": "guard patrol observation",
-      "text": "Time passes.# You have no way to measure it: minutes or hours swallowed by the hum and the bleached light.##\n\nAnd then you hear it.# Footsteps.##\n\nSlow and metronomic, soon enough a figure rounds the corner of the corridor.##\n\nA guard. A woman, perhaps thirty, in a grayish uniform that hangs loose on her frame.#\nHer face...## blank.##\n\nEmpty. Wiped clean.# Her eyes are open, but there is no one behind them.#\nAcross her forehead, a thin $Wmetal headband$C, its surface dull and featureless,\nexcept for two small nodes at the temples that pulse with a faint, rhythmic light.##",
-      "childid": 13
+      "text": "Time passes.# You have no way to measure it:\nminutes or hours swallowed by the hum and the bleached light.##\n\nAnd then you hear it.# Footsteps.##\n\nSlow and metronomic, soon enough a figure rounds the corner of the corridor.##\n\nA guard. A woman, perhaps thirty, in a grayish uniform that hangs loose on her frame.#\nHer face...## blank.##\n\nEmpty. Wiped clean.# Her eyes are open, but there is no one behind them.#\nAcross her forehead, a thin $Wmetal headband$C, its surface dull and featureless,\nexcept for two small nodes at the temples that pulse with a faint, rhythmic light.##",
+      "childid": 32
+    },
+    {
+      "id": 32,
+      "type": "Dialogue",
+      "recap": "the guard walks the corridor: call out, study the band, or stay quiet [DECISION: replies]",
+      "text": "She has not looked at any of you yet.##\n\nShe is coming.##",
+      "dialogues": [
+        {
+          "actor": "Math",
+          "precomment": "Math's voice comes low and flat from the cell on your left.",
+          "line": "She is not a machine.# I am dulled and half blind tonight\nand I can still tell you that much.##\nWhatever has been done to her, the mind inside there is a human mind.",
+          "comment": "\nHe does not sound comforted by that, and neither are you.",
+          "replies": [
+            {
+              "line": "Call out to her.",
+              "nextline": "callout"
+            },
+            {
+              "line": "Watch the band on her head instead.",
+              "nextline": "band"
+            },
+            {
+              "line": "Say nothing, and let her pass.",
+              "nextline": "silence"
+            }
+          ]
+        },
+        {
+          "actor": "Narrator",
+          "linename": "callout",
+          "comment": "You call to her through the shimmer.# You ask her name.##\n\nHer stride does not change by so much as a fraction.# Not a flinch,#\nnot a glance, not the smallest hitch anywhere in her.# Whatever the word\nfor what she is doing is, it is not ignoring you.##",
+          "nextline": "silence"
+        },
+        {
+          "actor": "Math",
+          "linename": "band",
+          "precomment": "You keep your eyes on the circlet, on the dull metal and the small steady\npulse of it, and you try to fix the shape of the thing in your memory.",
+          "line": "I would want a longer look at that thing than she will give us.#\nAnd I am too dulled, tonight, to take one."
+        },
+        {
+          "actor": "Narrator",
+          "linename": "silence",
+          "comment": "So you do the only thing left to do, which is nothing at all.##\n\nYou stand at the edge of your cell, just back from the shimmer,# and you watch\nher come.##",
+          "childid": 13
+        }
+      ]
     },
     {
       "id": 13,
@@ -88,7 +180,55 @@
       "type": "Story",
       "recap": "Efeliah senses static minds",
       "text": "Silence returns, and the hum fills the void.##\n\n$g<<There is a mind in there. I can feel the outline of it.#\nBut the inside is...# static. White noise where a person should be.>>$C#\n\nEfeliah's telepathic voice cracks.#\n\n$g<<Every one of them. Every guard, every patrol, all of them still in there.#\nAnd no one can hear them.>>$C##\n\nYou look at Theo.##\n\nFor the first time since you woke up, his expression has changed.#\nHis jaw is set, his eyes are hard, and the calm, patient observation\nhas been replaced by something colder.###\n\nSteeled determination.",
-      "childid": 4
+      "childid": 25
+    },
+    {
+      "id": 25,
+      "type": "Dialogue",
+      "recap": "the cells: what Kriss does while Theo prepares [DECISION: replies]",
+      "text": "Nobody says anything for a while.##\n\nTheo has not moved from the front of his cell.# The expression is still there,\nthe hard one, and his eyes are still travelling the corridor, slowly,\nmeasuring something none of the rest of you can see.##\n\nMath and Efeliah look at each other across the width of the passage, and say\nnothing at all.# You find yourself straining to hear it, the thing that must be\npassing between them,# and for half a second you would swear that you almost do.##",
+      "dialogues": [
+        {
+          "actor": "Smiurl",
+          "precomment": "Smiurl's light has gone a thin, unhappy blue.",
+          "line": "Why is he doing that?# Why is nobody saying anything about it?",
+          "replies": [
+            {
+              "line": "Ask Corolla what Theo is planning.",
+              "nextline": "corolla"
+            },
+            {
+              "line": "Ask Math and Efeliah to bring the guard back here.",
+              "nextline": "lure"
+            },
+            {
+              "line": "Say nothing, and watch him.",
+              "nextline": "watch"
+            }
+          ]
+        },
+        {
+          "actor": "Corolla",
+          "linename": "corolla",
+          "precomment": "You catch Corolla's eye across the corridor\nand tip your head toward Theo's cell.",
+          "line": "Don't look at me.# I have no idea what he intends to do.",
+          "comment": "\nShe does not look worried, though, and somehow that is worse.#\nWhatever it is, she has already decided to let him do it.",
+          "nextline": "watch"
+        },
+        {
+          "actor": "Math",
+          "linename": "lure",
+          "precomment": "The two telepaths confer, briefly, without a sound.",
+          "line": "Perhaps.# His mind is hypnotized, and a hypnotized mind is not easy to speak to.##\nBut we can try.",
+          "comment": "\nEfeliah closes her eyes. A moment later, so does Math."
+        },
+        {
+          "actor": "Narrator",
+          "linename": "watch",
+          "comment": "You sit down with your back against the wall, and you settle in to watch him.##\n\nHe does not blink more than a man has to.# He does not shift his weight.##\n\nHe simply waits, and because he waits, so do the rest of you.##",
+          "childid": 4
+        }
+      ]
     },
     {
       "id": 4,
@@ -395,10 +535,7 @@
                 "prod",
                 "stick"
               ],
-              "answer": "You take the guard's baton. It is heavier than it looks: solid metal with a rubberized grip. Not a sword, but better than bare hands.",
-              "effect": {
-                "gainitem": "guardBaton"
-              }
+              "answer": "You take the guard's baton. It is heavier than it looks:\nsolid metal with a rubberized grip. Not a sword, but better than bare hands."
             },
             {
               "objs": [
@@ -415,7 +552,7 @@
                 "medicine",
                 "bandages"
               ],
-              "answer": "You grab the medical kit from the storage alcove. Old but intact, with bandages, salve, and antiseptic.",
+              "answer": "You grab the medical kit from the storage alcove.\nOld but intact, with bandages, salve, and antiseptic.",
               "effect": {
                 "gainitem": "medkit"
               }
@@ -467,16 +604,22 @@
           "actor": "Riff",
           "precomment": "The freed prisoners stir like sleepwalkers. Most sit where they are,#\nblinking, confused, the headbands dark and lifeless on their foreheads.#\nSome pull at the bands with trembling hands, others simply stare.##\n\nBut one figure stands.##\n\nHe is wiry, medium height, with close-cropped hair and a jaw-length scar\nthat pulls the left side of his mouth into a permanent half-grimace.#\nHis eyes are sharp and alert, and $Whe is not wearing a headband.$C##\n\nHe steps out of his cell and looks at your group with the expression of a man\nwho has been waiting for something impossible and just watched it walk through the door.",
           "line": "You.# You brought the barrier down.",
-          "comment": "His voice is rough, cracked from disuse, but underneath the rasp\nthere is something fierce, something unbroken."
-        },
-        {
-          "actor": "Kriss",
-          "line": "That was mostly him.",
-          "comment": "You gesture at Theo, who is leaning against the wall,#\ncradling his burned arm with quiet stoicism."
+          "comment": "His voice is rough, cracked from disuse, but underneath the rasp\nthere is something fierce, something unbroken.",
+          "replies": [
+            {
+              "line": "\"That was mostly him.\"",
+              "nextline": "respect"
+            },
+            {
+              "line": "\"Him, mostly. He put his arm through it.\"",
+              "nextline": "respect"
+            }
+          ]
         },
         {
           "actor": "Riff",
-          "precomment": "The man looks at Theo, taking in the burn marks, the size of him,\nthe fact that he is standing at all.",
+          "linename": "respect",
+          "precomment": "You gesture at Theo, who is leaning against the wall,#\ncradling his burned arm with quiet stoicism.##\n\nThe man looks at Theo, taking in the burn marks, the size of him,\nthe fact that he is standing at all.",
           "line": "Then he has my respect. And my thanks.",
           "comment": "He turns back to you and studies your face."
         },
@@ -558,10 +701,21 @@
         {
           "actor": "Riff",
           "line": "We lost good people.# A lot of good people.#\nAnd every one we didn't, Joe put a headband on and sent back against us.",
-          "comment": "His voice is steady. But his eyes are not."
+          "comment": "His voice is steady. But his eyes are not.",
+          "replies": [
+            {
+              "line": "\"I am sorry. For all of them.\"",
+              "nextline": "door"
+            },
+            {
+              "line": "\"Then we finish what they started.\"",
+              "nextline": "door"
+            }
+          ]
         },
         {
           "actor": "Corolla",
+          "linename": "door",
           "precomment": "A heavy silence settles over the group.#\nCorolla breaks it.",
           "line": "About that door.# There must be a way to open it or get past it.",
           "break": true
@@ -606,16 +760,240 @@
     {
       "id": 22,
       "type": "Story",
-      "recap": "food and tending wounds",
-      "text": "Someone finds food, bread and dried meat and a thin, sharp broth\nthat warms you from the inside out.# You eat ravenously, barely tasting it,#\nand it is the best thing you have ever put in your mouth.##\n\nEfeliah sits beside Theo, her hands gentle on his burned arm, her brow furrowed\nin concentration as she channels what little psychic energy she has recovered\ninto easing the pain.# Theo watches her work with an expression of faint,\ngrudging gratitude.##\n\nIn the corner, Smiurl has attracted a small cluster of rebel children.##",
-      "childid": 23
+      "recap": "food at the rebel base",
+      "text": "Someone finds food, bread and dried meat and a thin, sharp broth\nthat warms you from the inside out.# You eat ravenously, barely tasting it,#\nand it is the best thing you have ever put in your mouth.##",
+      "childid": 26
     },
     {
-      "id": 23,
+      "id": 26,
+      "type": "Choice",
+      "recap": "the free night [DECISION: choice hub] - four vignettes in any order, all four open the plan",
+      "text": "The room settles into something that is almost peace.##\n\nYou have an hour, maybe two, before anybody starts saying the word tomorrow.",
+      "alttext": "The lanterns burn on, and the room is still awake around you.",
+      "choices": [
+        {
+          "desc": "Sit with Efeliah while she works on Theo's arm.",
+          "isnotrepeatable": true,
+          "childid": 27
+        },
+        {
+          "desc": "Watch Smiurl in the corner with the rebel children.",
+          "isnotrepeatable": true,
+          "childid": 33
+        },
+        {
+          "desc": "Go over to the map table, where Corolla and Riff are.",
+          "isnotrepeatable": true,
+          "childid": 28
+        },
+        {
+          "desc": "Look for Math.",
+          "isnotrepeatable": true,
+          "childid": 29
+        },
+        {
+          "desc": "Say the thing you have been turning over since the cells.",
+          "condition": {
+            "all": [
+              {
+                "type": "isNodeVisited",
+                "item": "27"
+              },
+              {
+                "type": "isNodeVisited",
+                "item": "33"
+              },
+              {
+                "type": "isNodeVisited",
+                "item": "28"
+              },
+              {
+                "type": "isNodeVisited",
+                "item": "29"
+              }
+            ]
+          },
+          "childid": 30
+        }
+      ]
+    },
+    {
+      "id": 27,
       "type": "Story",
-      "recap": "children plans and memories",
-      "text": "His skin is cycling through soft, gentle colors, lavender, warm gold,\na shy seafoam green, and the children are reaching out to touch his arm,#\ngiggling, pulling their hands back and then reaching again.# He is telling them\nsomething, gesturing wildly, and they are rapt.# For a moment, in the orange\nlamplight, he is not afraid.##\n\nCorolla and Riff are bent over the map table, heads close together.#\nShe is pointing at something, and he is shaking his head. She insists.#\nHe pauses, looks at her with narrowed eyes, then nods, slowly.#\nSomething has just been decided.##\n\nMath sits apart, cross-legged, eyes closed, his lips moving silently,\nreciting, perhaps, the Master's Memories, drawing strength from ancient words\nagainst a very modern darkness.##",
-      "childid": 24
+      "recap": "Efeliah tends Theo's burn",
+      "text": "Efeliah sits beside Theo, her hands gentle on his burned arm, her brow furrowed\nin concentration as she channels what little psychic energy she has recovered\ninto easing the pain.# Theo watches her work with an expression of faint,\ngrudging gratitude.##\n\nYou sit down near them, and you do not interrupt.##",
+      "childid": 26
+    },
+    {
+      "id": 33,
+      "type": "Story",
+      "recap": "Smiurl and the rebel children",
+      "text": "In the corner, Smiurl has attracted a small cluster of rebel children.##\n\nHis skin is cycling through soft, gentle colors, lavender, warm gold,\na shy seafoam green, and the children are reaching out to touch his arm,#\ngiggling, pulling their hands back and then reaching again.# He is telling them\nsomething, gesturing wildly, and they are rapt.# For a moment, in the orange\nlamplight, he is not afraid.##",
+      "childid": 26
+    },
+    {
+      "id": 28,
+      "type": "Dialogue",
+      "recap": "the map table, and what Riff has lost [DECISION: replies]",
+      "text": "Corolla and Riff are bent over the map table, heads close together.#\nShe is pointing at something, and he is shaking his head. She insists.#\nHe pauses, looks at her with narrowed eyes, then nods, slowly.#\nSomething has just been decided.##",
+      "dialogues": [
+        {
+          "actor": "Riff",
+          "precomment": "Corolla straightens, taps the map once more with two fingers,\nand goes off to see what the rebels can spare in the way of a blade.##\n\nRiff stays where he is, both hands flat on the table, looking down at a city\nhe has drawn from memory more times than he can possibly remember.",
+          "line": "We had wives.# Children.# Houses with doors that locked from the inside.##\nJoe took all of it, one piece at a time.",
+          "comment": "\nHe does not look up while he says it."
+        },
+        {
+          "actor": "Riff",
+          "line": "And the taking is not the worst of it.# Before he found the signal\nthere was still a light out there somewhere, small, but there.##\nNow there is not even that."
+        },
+        {
+          "actor": "Riff",
+          "line": "We have lost everything.# Even the hope of it.",
+          "comment": "\nHe stops.# His throat works, once.",
+          "replies": [
+            {
+              "line": "\"You are still fighting. That is not nothing.\"",
+              "nextline": "answer"
+            },
+            {
+              "line": "\"Then we will bring you back something better.\"",
+              "nextline": "answer"
+            }
+          ]
+        },
+        {
+          "actor": "Riff",
+          "linename": "answer",
+          "line": "Hope.# I had forgotten I was allowed to want it.",
+          "comment": "\nMath has come to stand at his shoulder without anybody noticing him do it,\nand Efeliah is already there on the other side.# Neither of them says a word.##\n\nRiff lets out a breath that has clearly been inside him a long time.##",
+          "childid": 26
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "type": "Story",
+      "recap": "Math reciting the Memories",
+      "text": "Math sits apart, cross-legged, eyes closed, his lips moving silently,\nreciting, perhaps, the Master's Memories, drawing strength from ancient words\nagainst a very modern darkness.##\n\nYou watch him for a while, and you leave him to it.##",
+      "childid": 26
+    },
+    {
+      "id": 30,
+      "type": "Dialogue",
+      "recap": "Kriss proposes the diversion, and the objections [DECISION: replies]",
+      "text": "You have been holding it since the cells, turning it over,#\nlooking for the place where it comes apart in your hands.##\n\nIt has not come apart yet.# So you say it out loud.##",
+      "dialogues": [
+        {
+          "actor": "Corolla",
+          "precomment": "The room goes quiet in the particular way a room goes quiet when everybody\nin it has decided to pretend they were not listening.",
+          "line": "Let me be sure I have understood.# That is your plan?##\nPerhaps you had better say it to me again."
+        },
+        {
+          "actor": "Kriss",
+          "line": "It is surprisingly simple.# Your people pull the municipal guard to the front\nof that building,# we go in from the side,# we find the machine,#\nwe shut it off.# Everything after that takes care of itself.",
+          "comment": "\nYou say it to all of them, one at a time, and it sounds better out loud\nthan it has any right to.",
+          "break": true
+        },
+        {
+          "actor": "Riff",
+          "line": "You said it yourself.# It is too simple.",
+          "comment": "\nHe is not remotely infected by your optimism."
+        },
+        {
+          "actor": "Corolla",
+          "line": "You have to admit that he is right.# You have not the faintest idea where the\nMunicipal building is, nor where this Projector sits inside it, nor how anybody\nturns such a thing off once they have found it.##\nAnd suppose you manage all three.# How do we come out again?#\nThis Joe will have men who follow him without a band on their heads.",
+          "comment": "\nRiff nods slowly. He does not enjoy agreeing with her.",
+          "replies": [
+            {
+              "line": "\"I know that we will manage it.\"",
+              "nextline": "conviction"
+            },
+            {
+              "line": "\"Because it is the right thing to do.\"",
+              "nextline": "conviction"
+            }
+          ]
+        },
+        {
+          "actor": "Math",
+          "linename": "conviction",
+          "precomment": "You shift your weight from one foot to the other, and your hands go looking\nfor the pommel of a sword that is locked in a cupboard somewhere in this city.##\n\nHow could anybody walk out and leave this place, and these people, in the hands\nof a man like that?# You say so, and you say the rest of it too, with all the\nconviction you can put into your voice, which turns out to be a great deal more\nthan you expected to find in there.",
+          "line": "You do not intend to stake a matter of life and death on a feeling.",
+          "comment": "\nIt is not quite a question."
+        },
+        {
+          "actor": "Kriss",
+          "line": "It is more than a feeling.# I cannot explain it.#\nIt is as though I can feel that this is the thing I am meant to do.##\nThe same as when I decided I would walk all the way here.#\nOr when I climbed your Rock.",
+          "comment": "\nThey look at you for a long moment, and nobody says anything at all.",
+          "childid": 31
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "type": "Dialogue",
+      "recap": "Efeliah's probe and the vote [DECISION: replies]",
+      "dialogues": [
+        {
+          "actor": "Efeliah",
+          "precomment": "Efeliah has not taken her eyes off you since you started talking.",
+          "line": "But there is something else. Isn't there.",
+          "replies": [
+            {
+              "line": "\"I want to see the Projector. I want to know what it is.\"",
+              "nextline": "answers"
+            },
+            {
+              "line": "\"I am curious. More than curious. And I cannot say why.\"",
+              "nextline": "answers"
+            }
+          ]
+        },
+        {
+          "actor": "Efeliah",
+          "linename": "answers",
+          "line": "...and you think that it may answer one or two of your questions.",
+          "comment": "\nShe finishes the sentence before you can get to the end of it yourself.##\n\nYou admit that yes, that is more or less it."
+        },
+        {
+          "actor": "Efeliah",
+          "line": "I have a vague presentiment about that, as it happens.",
+          "comment": "\nShe does not explain it, and you do not ask.",
+          "break": true
+        },
+        {
+          "actor": "Efeliah",
+          "line": "I am in.# I vote for Kriss's plan, whatever it turns out to be.##\nWho else?"
+        },
+        {
+          "actor": "Math",
+          "line": "Naturally, I am coming with you.",
+          "comment": "\nNo hesitation at all, which from Math is practically a shout."
+        },
+        {
+          "actor": "Smiurl",
+          "precomment": "A small voice, from somewhere near the floor.",
+          "line": "Smiurl is ready to fight.",
+          "comment": "\nHe says it in the third person, which he only ever does when he is terrified,#\nand he glitters faintly while he says it.# His friends stare at him.#\nNobody expected that, least of all him."
+        },
+        {
+          "actor": "Theo",
+          "line": "I do not fear these automata."
+        },
+        {
+          "actor": "Corolla",
+          "precomment": "Corolla looks at the lot of them, half surprised and half entertained,\nand shrugs.",
+          "line": "Well then. It is decided.## Provided...",
+          "comment": "\nShe looks at Riff.# Riff looks back at her with a strange light in his eyes."
+        },
+        {
+          "actor": "Riff",
+          "line": "In truth, I do not believe we have any other choice.",
+          "comment": "\nHe says it with resignation, and he is smiling while he says it.##",
+          "childid": 24
+        }
+      ]
     },
     {
       "id": 24,

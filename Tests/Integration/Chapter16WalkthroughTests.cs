@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -41,7 +41,8 @@ public class Chapter16WalkthroughTests
     }
 
     /// <summary>
-    /// Walks the whole chapter down the "push" branch of node 4's replies: Kriss presses
+    /// Walks the whole chapter down the "push" branch of node 4's replies: the canyon camp with
+    /// c15's amplifier in the bag (node 17 -> node 18, Math's news out of Ayonn), then Kriss presses
     /// Corolla on how she knows the distance to the coast, she explodes ("Leave me alone!"), and the
     /// evening camp opens the whole Øder backstory dialogue chain (nodes 9-11), Corolla's morning
     /// "Don't" exchange (node 13), and Efeliah's puzzlement over the pull south (node 15), ending at
@@ -53,6 +54,9 @@ public class Chapter16WalkthroughTests
         GameEngine engine = BuildScopedEngine(16);
         SetCurrentChapter(engine, 16);
 
+        // What watching Efeliah and Math take their prize at c15 node 19 would have left in the bag.
+        engine.AddItemToInventory(new Effect { GainItem = "mathAmplifier" });
+
         ArgumentNullException stoppedAt = null;
 
         Task script = Task.Run(async () =>
@@ -60,7 +64,12 @@ public class Chapter16WalkthroughTests
             int idx = 0;
 
             idx = await ContinueAsync(idx);                                              // node 1 -> node 2
-            idx = await ContinueAsync(idx);                                              // node 2 -> node 3
+            idx = await ContinueAsync(idx);                                              // node 2 -> node 17 (Choice)
+
+            // The ask is an ITEM condition, so it is listed either way; with mathAmplifier in the
+            // bag it is satisfied and plays node 18 instead of its refusal.
+            idx = await ChooseAsync(idx, "Ask her what she was listening to.");           // node 17 -> node 18
+            idx = await ContinueAsync(idx);                                              // node 18: Efeliah's childid line -> node 3
 
             idx = await ContinueAsync(idx);                                              // node 3: Corolla's "that will probably be a problem" break
             idx = await ContinueAsync(idx);                                              // node 3: Efeliah's "I can hardly argue with that" break
@@ -116,6 +125,10 @@ public class Chapter16WalkthroughTests
 
         string output = terminal.GetOutput();
         Assert.IsTrue(output.Contains("CHAPTER 16"), "Should have rendered c16's own header at node 1.");
+        Assert.IsTrue(output.Contains("Riff is mayor of Ayonn."),
+            "With mathAmplifier in the bag, node 17's ask should pay off c15's award ceremony at node 18.");
+        Assert.IsFalse(output.Contains("Nothing that carries a name"),
+            "Node 17's refusal must not play with the flag set.");
         Assert.IsTrue(output.Contains("LEAVE ME ALONE!"), "Push branch should reach Corolla's outburst (node 6).");
         Assert.IsTrue(output.Contains("We helped you because it was right."), "Should have reached Theo's line in node 10's Øder exchange.");
         Assert.IsTrue(output.Contains("part of the planet"), "Should have reached node 14's hilltop beat.");
@@ -128,6 +141,9 @@ public class Chapter16WalkthroughTests
     /// node 6, but both converge on node 8's evening camp and the same Theo-opens-the-story beat at
     /// node 9 - proving the convergence, and that the outburst is unique to the push branch, is enough
     /// without re-walking the whole Øder dialogue chain a second time.
+    /// This walk seeds nothing, so it also covers node 17's negative space: an item condition still
+    /// LISTS its choice, so picking the ask without mathAmplifier must play the refusal and hand the
+    /// same choice back rather than hiding it or stranding the player.
     /// </summary>
     [TestMethod]
     public void Chapter16BackOffBranch_ConvergesAtNode8AndStillReachesTheosOpening()
@@ -142,7 +158,15 @@ public class Chapter16WalkthroughTests
             int idx = 0;
 
             idx = await ContinueAsync(idx);                                              // node 1 -> node 2
-            idx = await ContinueAsync(idx);                                              // node 2 -> node 3
+            idx = await ContinueAsync(idx);                                              // node 2 -> node 17 (Choice)
+
+            idx = await ChooseAsync(idx, "Ask her what she was listening to.");          // node 17: no amplifier -> refusal, stays put
+            idx = await ContinueAsync(idx);                                              // node 17: the refusal's own "press a key"
+
+            // The refusal leaves selectedRow on row 0, so the second option still needs a DownArrow.
+            idx = await ChooseAsync(idx, "Leave her to it, and take what sleep the rock allows.", ConsoleKey.DownArrow);
+                                                                                           // node 17 -> node 19
+            idx = await ContinueAsync(idx);                                              // node 19 -> node 3
 
             idx = await ContinueAsync(idx);                                              // node 3: Corolla's "that will probably be a problem" break
             idx = await ContinueAsync(idx);                                              // node 3: Efeliah's "I can hardly argue with that" break
@@ -176,6 +200,11 @@ public class Chapter16WalkthroughTests
             "Expected exception message in testing environment only: System.Console.ReadKey never throws this way.");
 
         string output = terminal.GetOutput();
+        Assert.IsTrue(output.Contains("Nothing that carries a name"),
+            "Without mathAmplifier, node 17's ask must still be offered and must play its refusal.");
+        Assert.IsTrue(output.Contains("You are asleep before you finish deciding not to ask."),
+            "The ungated option must still get the player through node 19 to node 3.");
+        Assert.IsFalse(output.Contains("Riff is mayor of Ayonn."), "Node 18 must stay behind its flag.");
         Assert.IsTrue(output.Contains("You let the words die before they reach your mouth."), "Should have taken node 7 (the back-off branch).");
         Assert.IsTrue(output.Contains("It's time we told you our story."), "Should still converge on node 9 (Theo opens the story) via node 8.");
         Assert.IsFalse(output.Contains("LEAVE ME ALONE!"), "The back-off branch should never reach node 6's outburst.");

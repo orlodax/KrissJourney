@@ -599,6 +599,9 @@
             "item": "35"
           },
           "isnotrepeatable": true,
+          "effect": {
+            "gainitem": "mathAmplifier"
+          },
           "childid": 39
         },
         {
@@ -851,34 +854,66 @@
     {
       "id": 24,
       "type": "Choice",
-      "recap": "the goodbye remembers Kriss's earlier stance on Math staying [DECISION: gated choice, isNodeVisited on 9/10/11]",
+      "recap": "the goodbye to Math [DECISION: choice] - the branch remembering node 8's stance (gated on 9/10/11) sits beside an always-available option, so the menu is never one line long; the narration lives in 41-44, where colors and pauses actually render",
       "text": "Then it is Math's turn.# He looks at you for a moment before he speaks,\ngiving you a second to meet his eyes.",
       "choices": [
         {
-          "desc": "He remembers what you told him in the infirmary, and something in his glance thanks you for it.",
+          "desc": "Tell him you meant what you said in the infirmary.",
           "condition": {
             "type": "isNodeVisited",
             "item": "9"
           },
-          "childid": 25
+          "childid": 41
         },
         {
-          "desc": "He remembers the doubt you raised, and doesn't seem to hold it against you.",
+          "desc": "Tell him you hope the doubt you raised was misplaced.",
           "condition": {
             "type": "isNodeVisited",
             "item": "10"
           },
-          "childid": 25
+          "childid": 42
         },
         {
-          "desc": "Give him a small nod. He remembers the silence you gave Efeliah, and seems to understand it.",
+          "desc": "Give him a small nod, and nothing more.",
           "condition": {
             "type": "isNodeVisited",
             "item": "11"
           },
-          "childid": 25
+          "childid": 43
+        },
+        {
+          "desc": "Say nothing, and let him have the first word.",
+          "childid": 44
         }
       ]
+    },
+    {
+      "id": 41,
+      "type": "Story",
+      "recap": "goodbye branch: Kriss backed Math staying (node 9) - Math's silent thanks",
+      "text": "You tell him you meant it, back in the infirmary, and that you are glad\nhe is staying where the work is.##\n\nMath inclines his head, very slightly.# Something in the look he gives you\nthanks you for it, and does not trouble itself to say so out loud.",
+      "childid": 25
+    },
+    {
+      "id": 42,
+      "type": "Story",
+      "recap": "goodbye branch: Kriss doubted Ayonn's safety (node 10) - Math takes the doubt seriously and does not resent it",
+      "text": "You tell him you hope the doubt you raised was misplaced, and that you would\nbe glad to be wrong about it.##\n\nMath considers that the way he considers everything, without hurry.#\nHe does not hold the question against you.# You get the impression\nhe has already answered it for himself, several times over.",
+      "childid": 25
+    },
+    {
+      "id": 43,
+      "type": "Story",
+      "recap": "goodbye branch: Kriss stayed silent for Efeliah (node 11) - the nod, and Math's reading of that silence",
+      "text": "You give him a small nod, and nothing more than that.##\n\nHe returns it.# He remembers the silence you left Efeliah in the infirmary,\nand something in his face says he understood exactly what it had been for.",
+      "childid": 25
+    },
+    {
+      "id": 44,
+      "type": "Story",
+      "recap": "goodbye branch: Kriss says nothing at all, always available",
+      "text": "You say nothing at all, and leave him the first word.##\n\nHe takes his time about it, and does not appear to mind the wait.",
+      "childid": 25
     },
     {
       "id": 25,

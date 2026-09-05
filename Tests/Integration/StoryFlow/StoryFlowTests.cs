@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using KrissJourney.Kriss.Models;
@@ -281,8 +281,9 @@ public class StoryFlowTests
 
     /// <summary>
     /// Every chapter from c11 on ends in exactly one place. Game-over nodes are excluded - an
-    /// isclosing Story node returns to the menu instead of starting the next chapter, so c18's
-    /// drowning (node 181) legitimately sits alongside node 19, the real ending.
+    /// isclosing Story node returns to the menu instead of starting the next chapter - but as of
+    /// issue 21 no chapter uses one: c18's drowning (node 181) became a survivable near-drowning
+    /// that routes back into node 18, so node 19 is now c18's only islast node.
     /// c1-c10 are canon and are not held to this: c1 deliberately ends on either node 7 or node 8
     /// depending on where the player was standing when the voice called.
     /// </summary>
@@ -306,7 +307,8 @@ public class StoryFlowTests
     /// an ungated flag is usually the visible half of a setup whose payoff was cut, or a payoff
     /// whose gate was written against the wrong name, and both look identical in the JSON.
     /// The list is deliberately explicit so that a NEW ungated flag fails here and has to be
-    /// argued for, rather than joining the pile silently.
+    /// argued for, rather than joining the pile silently - and it is checked in both directions,
+    /// so an entry that has stopped being true fails too rather than quietly going on lying.
     /// </summary>
     [TestMethod]
     public void AllChapters_EveryAwardedFlagIsEitherGatedOrKnowinglyUnspent()
@@ -314,17 +316,10 @@ public class StoryFlowTests
         // Each of these was checked by hand; the reason it is here is beside it.
         HashSet<string> knowinglyUnspent =
         [
-            "securedRigging",      // c18: the partner of corollaSecuredBelow. c19 node 17 reads the
-                                   // pair by checking only corollaSecuredBelow, so this flag's whole
-                                   // meaning is carried by the OTHER one's absence. Not dead.
-            "lightSphere",         // c15 award: Kriss's prize, never gated by later content
-            "daggerReplica",       // c15 award: the same
+            "daggerReplica",       // c15 award: a ceremonial replica, and the acquisition beat IS
+                                   // the point. Kriss is handed a copy of a weapon he already
+                                   // carries; nothing later is meant to spend it.
             "heardRockHistory",    // c15: a knowledge flag nothing asks about later
-            "edzzenclose",         // c17
-            "foundLocker",         // c13
-            "guardBaton",          // c12 and c13 both award it; nothing checks for it
-            "forestLost",          // c20: both forest junctions set it, and the dusk arrival is
-                                   // routed by node id instead, so nothing reads the flag
         ];
 
         Dictionary<string, List<int>> awarded = [];
@@ -360,6 +355,45 @@ public class StoryFlowTests
         Assert.AreEqual(0, gatedButNeverAwarded.Count,
             "These items gate content but no chapter ever awards them, so the content behind them is unreachable: "
             + string.Join(", ", gatedButNeverAwarded));
+
+        // The list is checked in BOTH directions. Without this half it silently tolerates its own
+        // rot: a name that stops being awarded, or that later content starts gating properly,
+        // costs no failure and the exemption goes on claiming something that is no longer true.
+        // That is exactly what happened over issues 19-23, when six of the eight entries here
+        // went stale at once and nothing went red. 2026-09-05
+        List<string> staleExemptions = [.. knowinglyUnspent
+            .Where(item => !awarded.ContainsKey(item) || gated.Contains(item))
+            .OrderBy(item => item)];
+
+        Assert.AreEqual(0, staleExemptions.Count,
+            "These names are on the knowingly-unspent list but no longer need to be - each is either "
+            + "no longer awarded by any chapter, or is now properly gated by later content. Remove them: "
+            + string.Join(", ", staleExemptions));
+    }
+
+    /// <summary>
+    /// A Surge that prints the same words whether you held the rage or lost it is a challenge only
+    /// on paper: the player cannot tell the two outcomes apart, so the mechanic reads as decoration.
+    /// Four of c11's shield-crossing attempts were written that way and were rewritten under issue
+    /// 23; this keeps the pairing from drifting back. A message may be null - SurgeNode falls back
+    /// to its own generic line, which is what the two deliberately unfailable Surges use (c11 node
+    /// 18, c23 node 9) - but two non-null messages must differ. 2026-09-05
+    /// </summary>
+    [TestMethod]
+    public void AllChapters_NoSurgeSaysTheSameThingOnSuccessAndOnFailure()
+    {
+        foreach (Chapter chapter in gameEngine.GetChapters())
+            foreach (SurgeNode surge in chapter.Nodes.OfType<SurgeNode>())
+            {
+                string success = surge.Challenge?.SuccessMessage;
+                string failure = surge.Challenge?.FailureMessage;
+
+                if (success is null || failure is null)
+                    continue;
+
+                Assert.AreNotEqual(success, failure,
+                    $"Chapter {chapter.Id} node {surge.Id}'s Surge reads identically whether it is won or lost.");
+            }
     }
 
     static IEnumerable<Effect> EffectsIn(Chapter chapter)

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -113,7 +113,8 @@ public class Chapter18WalkthroughTests
     /// homesickness dialogues (nodes 5-6, taking the "share"/"voice" reply branch), the evening
     /// cabin scene's own reply (node 7), the storm preparation choices (nodes 10 and 13, taking the
     /// medbay and rigging branches), and the underwater choice (node 18, the correct "go still"
-    /// branch), ending at node 19's closing beat.
+    /// branch taken first time), ending at node 19's closing beat. The wrong branch is walked by
+    /// <see cref="Chapter18Node18_KickingHard_CostsTheAirAndHandsTheChoiceBack"/>.
     /// </summary>
     [TestMethod]
     public void Chapter18_WalksFromNode1ThroughNode19_SolvesConsoleAndSurvivesTheStorm()
@@ -161,7 +162,8 @@ public class Chapter18WalkthroughTests
             idx = await ContinueAsync(idx);                                              // node 11 -> node 13 (Choice)
 
             idx = await ChooseAsync(idx, "Stay topside, and help Theo finish the rigging instead.", ConsoleKey.DownArrow);
-                                                                                           // node 13 -> node 15, grants securedRigging
+                                                                                           // node 13 -> node 15; grants nothing, and the
+                                                                                           // absence of corollaSecuredBelow IS the record
             idx = await ContinueAsync(idx);                                              // node 15 -> node 16
 
             idx = await ContinueAsync(idx);                                              // node 16 -> node 17
@@ -202,8 +204,9 @@ public class Chapter18WalkthroughTests
         Assert.IsTrue(statusManager.IsItemInInventory("learnedSeabedFix"), "Examining the screens should have granted learnedSeabedFix.");
         Assert.IsTrue(statusManager.IsItemInInventory("securedMedbay"), "Node 10's medbay branch should have granted securedMedbay.");
         Assert.IsFalse(statusManager.IsItemInInventory("securedGalley"), "The galley branch was not taken, so securedGalley should not be granted.");
-        Assert.IsTrue(statusManager.IsItemInInventory("securedRigging"), "Node 13's rigging branch should have granted securedRigging.");
-        Assert.IsFalse(statusManager.IsItemInInventory("corollaSecuredBelow"), "The Corolla branch was not taken, so corollaSecuredBelow should not be granted.");
+        Assert.IsFalse(statusManager.IsItemInInventory("corollaSecuredBelow"),
+            "The rigging branch was taken instead, and it grants nothing: c19 node 17 reads this pair by "
+            + "checking corollaSecuredBelow alone, so the rigging half is recorded by that flag's absence.");
     }
 
     /// <summary>
@@ -244,6 +247,89 @@ public class Chapter18WalkthroughTests
         Assert.IsTrue(statusManager.IsItemInInventory("learnedSolarGlyph"));
         Assert.IsFalse(statusManager.IsItemInInventory("learnedHelmBearing"));
         Assert.IsFalse(statusManager.IsItemInInventory("learnedSeabedFix"));
+    }
+
+    /// <summary>
+    /// Node 18's wrong branch. Issue 21 turned node 181 from a game over that ejected to the menu
+    /// into a survivable near-drowning that routes back into node 18, so kicking hard costs the
+    /// last of Kriss's air and hands the same choice back rather than ending the run. The second
+    /// pass sees node 18's alttext, and "Kick hard" - now isnotrepeatable - is greyed out but
+    /// still listed, which is why the recovery needs an UpArrow: ChoiceNode.selectedRow is an
+    /// instance field and is still sitting on the row the first pass spent.
+    /// </summary>
+    [TestMethod]
+    public void Chapter18Node18_KickingHard_CostsTheAirAndHandsTheChoiceBack()
+    {
+        GameEngine engine = BuildScopedEngine(18);
+        SetCurrentChapter(engine, 18);
+
+        ArgumentNullException stoppedAt = null;
+
+        Task script = Task.Run(async () =>
+        {
+            int idx = 0;
+
+            idx = await ChooseAsync(idx, "Kick hard, any direction. Up is probably one of them.", ConsoleKey.DownArrow);
+                                                                                           // node 18 -> node 181
+            idx = await ContinueAsync(idx);                                              // node 181 -> back to node 18
+
+            idx = await ChooseAsync(idx, "Go still, and let your body find its own buoyancy.", ConsoleKey.UpArrow);
+                                                                                           // node 18 (second pass) -> node 19
+
+            idx = await ContinueAsync(idx);                                              // node 19 -> StartNextChapter(19), out of scope
+        });
+
+        try
+        {
+            engine.LoadNode(18);
+            Assert.Fail("Expected the walk to end trying to start chapter 19, which this scoped engine does not have loaded.");
+        }
+        catch (ArgumentNullException ex)
+        {
+            stoppedAt = ex;
+        }
+
+        Assert.IsTrue(script.Wait(TimeSpan.FromSeconds(30)), "Input script timed out.");
+        Assert.IsNotNull(stoppedAt);
+        Assert.AreEqual("Chapter with ID 19 not found.", stoppedAt.ParamName,
+            "The wrong branch must still reach node 19: it costs air, not the run.");
+        Assert.AreEqual(0, terminal.KeyQueueCount, "Every queued key should have been consumed exactly once.");
+
+        string output = terminal.GetOutput();
+        Assert.IsTrue(output.Contains("you have been swimming down."), "Kicking hard should play node 181's mistake.");
+        Assert.IsTrue(output.Contains("there is a good deal less of you"),
+            "Coming back to node 18 a second time should render its alttext, not the first-visit text.");
+        Assert.IsTrue(output.Contains("Down."), "The recovery should still flow all the way to node 19's closing beat.");
+    }
+
+    /// <summary>
+    /// The structural half of the test above, and the guard against the ejection coming back:
+    /// node 181 must carry a childid home and neither islast nor isclosing. With either flag set,
+    /// NodeBase.AdvanceToNext takes that branch before LoadNode and the player is thrown out to
+    /// the menu (isclosing) or into c19 (islast) for making one wrong guess in the dark.
+    /// </summary>
+    [TestMethod]
+    public void Chapter18Node181_RoutesBackIntoTheChoiceAndIsNotAnEnding()
+    {
+        Chapter chapter = GetChapter(BuildScopedEngine(18), 18);
+
+        KrissJourney.Kriss.Nodes.NodeBase node181 = chapter.Nodes.Single(n => n.Id == 181);
+
+        Assert.AreEqual(18, node181.ChildId, "The near-drowning must hand the player back to the choice it came from.");
+        Assert.IsFalse(node181.IsLast, "Node 181 is not an ending: islast here would skip the player into c19.");
+        Assert.IsFalse(node181.IsClosing, "Node 181 is not a game over: isclosing here would eject the player to the menu.");
+
+        KrissJourney.Kriss.Nodes.ChoiceNode node18 = (KrissJourney.Kriss.Nodes.ChoiceNode)chapter.Nodes.Single(n => n.Id == 18);
+
+        Assert.IsFalse(string.IsNullOrWhiteSpace(node18.AltText),
+            "Node 18 is now re-entered, so it needs alttext: without it the second pass replays the first-visit prose.");
+
+        Choice kick = node18.Choices.Single(c => c.ChildId == 181);
+        Assert.IsTrue(kick.IsNotRepeatable,
+            "The wrong branch must be spendable only once, or the player can loop through the same mistake forever.");
+
+        Choice goStill = node18.Choices.Single(c => c.ChildId == 19);
+        Assert.IsNull(goStill.Condition, "The way out must never be gated: it is the only route to the chapter's ending.");
     }
 
     // ---- helpers -------------------------------------------------------------------

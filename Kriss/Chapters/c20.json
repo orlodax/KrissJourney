@@ -301,10 +301,44 @@
         },
         {
           "actor": "Kriss",
-          "precomment": "You swallow the curiosity, kick a stone for lack of anything\nbetter to do, and after a short, aimless walk, decide there's\nnothing left to do tonight but sleep.",
-          "childid": 10
+          "precomment": "You swallow the curiosity, kick a stone for lack of anything\nbetter to do, and take a short, aimless walk that brings you\nstraight back to the fire anyway.",
+          "childid": 16
         }
       ]
+    },
+    {
+      "id": 16,
+      "type": "Choice",
+      "recap": "last of the night [DECISION: choice] - the payoff for the light-sphere awarded at c15 n19: Smiurl has gone dark since the forest was named, and the sphere is the one light Kriss can command; the other option always advances",
+      "text": "$CTheo is still at the fire, with the air of a man who has decided\nthe fire is his business until morning, and the fire itself is down\nto the part of the night where it does more remembering than\nburning.##\n\nSmiurl is awake too.# He has stopped playing with the embers, and\nhe has stopped talking, and his skin has gone flat and colorless,\nwhich it does not usually do where there is company and food and\nnothing immediately trying to kill anybody.# He is looking at the\nhills, and at the calls coming out of them, and at the forest\nCorolla has just finished calling dangerous.",
+      "choices": [
+        {
+          "desc": "Wake the sphere from Ayonn and set it over the camp.",
+          "condition": {
+            "item": "lightSphere"
+          },
+          "refusal": "You go twice through everything the sea left you, looking for\nsomething that makes light, and find rope, a spear head and sand.",
+          "childid": 17
+        },
+        {
+          "desc": "Sit down beside him until the fire goes out.",
+          "childid": 18
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "type": "Story",
+      "recap": "lightSphere spent: the canyon light, commanded, holds the tree line for Smiurl",
+      "text": "$CYou still have the sphere.# Of everything Ayonn put into your hands\non that stage, it was the only thing small enough to come through\nthe sea with you, and you had half forgotten it was there.# You take\nit out and do to it whatever it is you do, which turns out to be no\nmore difficult than wanting it.##\n\nIt wakes.# It lifts off your palm and hangs a little above the\nembers, and the light it throws is nothing like the fire's: cold\nand level and patient, reaching past the ring of warmth to the\nfirst trees and holding them there, ordinary, made of bark and\nleaf and nothing whatsoever else.##\n\nSmiurl watches it for a long time without saying anything.# Then\nhis own light comes back to him, slowly, a low returning amber\nthat steadies as it goes, until there are two lights sitting over\nthe embers and neither of them is the fire.##\n\nYou leave it burning above the camp, and sleep better than you\nhave any right to.",
+      "childid": 10
+    },
+    {
+      "id": 18,
+      "type": "Story",
+      "recap": "no sphere, or the player chose company instead: the same fear, answered the slow way",
+      "text": "$CYou sit down beside him and say nothing useful, which turns out to\nbe roughly what was wanted.# The calls go on coming out of the\nhills, and he goes on watching the place they come from, and after\na while the two of you are simply two people awake in the dark\ninstead of one.##\n\nBy the time the fire gives up, some of his color has come back on\nits own.# Not much.# Enough.",
+      "childid": 10
     },
     {
       "id": 10,
@@ -460,10 +494,49 @@
     },
     {
       "id": 12,
-      "type": "Story",
-      "recap": "the monolith - climbing to the platform, looking back at the sea",
-      "text": "$CThe trees thin out at last around a bare, rocky summit that must\nsit some two hundred meters above the sea you left behind.# A\nformation of grey rock juts up from the highest point of the hill,\nand you climb it, glad for once of a climb that doesn't ask you to\nguess at anything, until you come out onto a kind of platform, wide\nand flat enough for all five of you to stand on without anyone\nrisking a fall.##\n\nWith your backs to the south, you look out over the sea and the\ndistance you've actually covered on foot, a handful of kilometers\nthat took every hour of daylight you had, and privately agree it\nwas no small thing to manage.##\n\nThen you turn around.",
-      "childid": 13
+      "type": "Action",
+      "recap": "the monolith [DECISION: action] - the climb always advances; the optional stock-taking reads forestLost and gives the ragged variant, its refusal the sharp one",
+      "text": "$CThe trees thin out at last around a bare, rocky summit that must\nsit some two hundred meters above the sea you left behind.# A\nformation of grey rock juts up from the highest point of the hill,\nand there is nothing left between you and the top of it except\nwhatever the day has already taken out of the five of you.",
+      "actions": [
+        {
+          "verbs": [
+            "climb",
+            "go",
+            "ascend",
+            "scale",
+            "up",
+            "continue"
+          ],
+          "answer": "You climb, glad for once of a climb that doesn't ask you to guess\nat anything, until you come out onto a kind of platform, wide and\nflat enough for all five of you to stand on without anyone risking\na fall.##\n\nWith your backs to the south, you look out over the sea and the\ndistance you actually covered on foot, a handful of kilometers that\ntook every hour of daylight you had, and privately agree it was no\nsmall thing to manage.# Then you turn around.",
+          "childid": 13
+        },
+        {
+          "verbs": [
+            "look",
+            "check",
+            "examine",
+            "rest",
+            "count"
+          ],
+          "objects": [
+            {
+              "objs": [
+                "forest",
+                "trees",
+                "day",
+                "company",
+                "party",
+                "others"
+              ],
+              "condition": {
+                "item": "forestLost",
+                "refusal": "We came through that clean.# Nobody is limping, nobody is arguing\nabout the way, and there is still a good deal of daylight sitting\non that rock."
+              },
+              "answer": "You look back at the forest before you climb.# Everyone is\nscratched to the elbow, Smiurl has stopped complaining, which is\nconsiderably worse than the complaining, and Corolla keeps looking\nat the light on the rock and not saying out loud what she is\ncounting.##\n\nThe trees took more of the day than they ever needed to, and every\none of you knows precisely whose bearings did it."
+            }
+          ]
+        }
+      ]
     },
     {
       "id": 13,

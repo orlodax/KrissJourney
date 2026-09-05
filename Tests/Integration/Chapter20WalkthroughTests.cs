@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,10 +16,10 @@ namespace KrissJourney.Tests.Integration;
 ///
 /// The first two walks take both options of every one of the chapter's decision points, and
 /// differ in one more thing: the first is played by a Kriss who watched Corolla take the rifle
-/// in c15 and burned a day on the wrong bearing in c19, the second by one who did neither. Both
-/// flags are inventory conditions rather than isNodeVisited ones, so the gated scenes are still
-/// offered either way and answer with their refusals instead - which is exactly what those two
-/// walks check.
+/// and took the light sphere at c15's ceremony and burned a day on the wrong bearing in c19, the
+/// second by one who did none of it. All three flags are inventory conditions rather than
+/// isNodeVisited ones, so the gated scenes are still offered either way and answer with their
+/// refusals instead - which is exactly what those two walks check.
 ///
 /// They cannot between them cover the chapter, because the forest crossing is a 2x2 grid rather
 /// than a fork: junction 1 routes to a different copy of junction 2 (105 clean, 115 adrift), and
@@ -39,6 +39,7 @@ public class Chapter20WalkthroughTests : ChapterWalkthroughTestBase
 
         // What c15's award ceremony and c19's bearing puzzle would have left in the bag by now.
         engine.AddItemToInventory(new Effect { GainItem = "corollaArmed" });
+        engine.AddItemToInventory(new Effect { GainItem = "lightSphere" });
         engine.AddItemToInventory(new Effect { GainItem = "lostDayAtSea" });
 
         Task script = Task.Run(async () =>
@@ -65,7 +66,10 @@ public class Chapter20WalkthroughTests : ChapterWalkthroughTestBase
             idx = await ContinueAsync(idx);                                          // node 9: Corolla's "By the way," break
             idx = await ChooseAsync(idx, "After everything I've been through, a few trees won't stop me."); // -> "confident"
             idx = await ContinueAsync(idx);                                          // node 9: Corolla's verdict break
-            idx = await ContinueAsync(idx);                                          // node 9: Kriss's childid line -> node 10
+            idx = await ContinueAsync(idx);                                          // node 9: Kriss's childid line -> node 16 (Choice)
+
+            idx = await ChooseAsync(idx, "Wake the sphere from Ayonn and set it over the camp."); // node 16 -> node 17
+            idx = await ContinueAsync(idx);                                          // node 17 -> node 10
 
             idx = await ContinueAsync(idx);                                          // node 10 -> node 101
 
@@ -77,7 +81,8 @@ public class Chapter20WalkthroughTests : ChapterWalkthroughTestBase
             idx = await ContinueAsync(idx);                                          // node 108 -> node 110
             idx = await ContinueAsync(idx);                                          // node 110 -> node 12
 
-            idx = await ContinueAsync(idx);                                          // node 12 -> node 13
+            idx = await ActAsync(idx, "look forest");                                // node 12: no forestLost -> the sharp refusal
+            idx = await DoActionAsync(idx, "climb");                                 // node 12 -> node 13
             idx = await ContinueAsync(idx);                                          // node 13 -> node 14
             idx = await ContinueAsync(idx);                                          // node 14 -> node 15
 
@@ -100,11 +105,21 @@ public class Chapter20WalkthroughTests : ChapterWalkthroughTestBase
             "Two climbs should reach node 106, the on-track branch.");
         Assert.IsTrue(output.Contains("with hours of good light still ahead of you"),
             "The clean crossing should arrive mid-afternoon (node 110).");
+        Assert.IsTrue(output.Contains("It wakes."),
+            "With lightSphere in the bag, node 16 should pay off c15's first prize at node 17.");
+        Assert.IsTrue(output.Contains("We came through that clean."),
+            "A crossing with no wrong turns should get node 12's stock-taking refusal, not its ragged answer.");
+        Assert.IsTrue(output.Contains("glad for once of a climb that doesn't ask you to guess"),
+            "The climb verb must carry the player off node 12 regardless.");
         Assert.IsTrue(output.Contains("You don't need to come with me"), "Should offer to go alone at node 15.");
         Assert.IsTrue(output.Contains("We won't leave you, boy."), "Should reach Theo's refusal, the chapter's last beat.");
 
         Assert.IsFalse(output.Contains("It stopped mattering a while ago"), "The day-counting refusal must not play with the flag set.");
         Assert.IsFalse(output.Contains("you're too hungry to insist"), "The rifle refusal must not play with the flag set.");
+        Assert.IsFalse(output.Contains("You go twice through everything the sea left you"),
+            "Node 16's refusal must not play with lightSphere set.");
+        Assert.IsFalse(output.Contains("The trees took more of the day than they ever needed to"),
+            "Node 12's ragged stock-taking belongs to a crossing that went wrong.");
         Assert.IsFalse(output.Contains("You've walked in a slow, complete circle"), "Never the full circle on this walk (node 117).");
         Assert.IsFalse(output.Contains("the light is already turning gold and low"), "Never the dusk arrival on this walk (node 111).");
         Assert.IsFalse(output.Contains("the light already going long and yellow"), "Nor the late-afternoon one (node 112).");
@@ -143,7 +158,15 @@ public class Chapter20WalkthroughTests : ChapterWalkthroughTestBase
             idx = await ContinueAsync(idx);                                          // node 9: "By the way," break
             idx = await ChooseAsync(idx, "I'm not thrilled either, but I'm not turning back now.", ConsoleKey.DownArrow); // -> "reluctant"
             idx = await ContinueAsync(idx);                                          // node 9: Corolla's verdict break
-            idx = await ContinueAsync(idx);                                          // node 9 -> node 10
+            idx = await ContinueAsync(idx);                                          // node 9 -> node 16 (Choice)
+
+            idx = await ChooseAsync(idx, "Wake the sphere from Ayonn and set it over the camp."); // node 16: no sphere -> refusal
+            idx = await ContinueAsync(idx);                                          // node 16: the refusal's own "press a key"
+
+            // The refusal leaves selectedRow on row 0, so the second option still needs a DownArrow.
+            idx = await ChooseAsync(idx, "Sit down beside him until the fire goes out.", ConsoleKey.DownArrow);
+                                                                                     // node 16 -> node 18
+            idx = await ContinueAsync(idx);                                          // node 18 -> node 10
 
             idx = await ContinueAsync(idx);                                          // node 10 -> node 101
 
@@ -155,7 +178,8 @@ public class Chapter20WalkthroughTests : ChapterWalkthroughTestBase
             idx = await ContinueAsync(idx);                                          // node 119 -> node 111
             idx = await ContinueAsync(idx);                                          // node 111 -> node 12
 
-            idx = await ContinueAsync(idx);                                          // node 12 -> node 13
+            idx = await ActAsync(idx, "look forest");                                // node 12: forestLost is set -> the ragged answer
+            idx = await DoActionAsync(idx, "climb");                                 // node 12 -> node 13
             idx = await ContinueAsync(idx);                                          // node 13 -> node 14
             idx = await ContinueAsync(idx);                                          // node 14 -> node 15
 
@@ -175,9 +199,18 @@ public class Chapter20WalkthroughTests : ChapterWalkthroughTestBase
         Assert.IsTrue(output.Contains("You've walked in a slow, complete circle"), "Guessing twice should reach node 117.");
         Assert.IsTrue(output.Contains("the light is already turning gold and low"),
             "Only the doubly-lost crossing arrives at dusk, and it gets there through node 119 (node 111).");
+        Assert.IsTrue(output.Contains("You go twice through everything the sea left you"),
+            "Without lightSphere the sphere option must still be offered and must refuse.");
+        Assert.IsTrue(output.Contains("some of his color has come back on"),
+            "The ungated option must still get the player through node 18 to node 10.");
+        Assert.IsTrue(output.Contains("The trees took more of the day than they ever needed to"),
+            "Two wrong turns bank forestLost, so node 12's stock-taking should play its ragged answer.");
         Assert.IsTrue(output.Contains("I can never repay what I already owe"), "Should frame the offer as a debt at node 15.");
 
         Assert.IsFalse(output.Contains("This laser rifle isn't just an honorific"), "The rifle payoff must stay behind its flag.");
+        Assert.IsFalse(output.Contains("It wakes."), "The sphere payoff must stay behind its flag.");
+        Assert.IsFalse(output.Contains("We came through that clean."),
+            "Node 12's clean refusal belongs to a crossing that went right.");
         Assert.IsFalse(output.Contains("You keep forgetting the one you spent chasing the wrong"), "The day-count payoff must stay behind its flag.");
         Assert.IsFalse(output.Contains("with hours of good light still ahead of you"), "Never the on-time arrival on this walk.");
         Assert.IsFalse(output.Contains("the light already going long and yellow"), "Nor the late-afternoon one (node 112).");
@@ -255,8 +288,9 @@ public class Chapter20WalkthroughTests : ChapterWalkthroughTestBase
 
         RunWalkToUnansweredPrompt(engine, script, startNodeId: 101);
 
-        // No chapter reads forestLost yet, so this is the only thing that would notice if
-        // junction 1's Effect stopped firing - or if 115's climb somehow cleared it.
+        // Node 12's optional stock-taking is the only thing that reads forestLost, and this walk
+        // stops short of it, so this assertion is what would notice if junction 1's Effect stopped
+        // firing - or if 115's climb somehow cleared it.
         Assert.IsTrue(engine.Evaluate(new Condition { Item = "forestLost" }),
             "Junction 1's guess should have banked forestLost on the way through, and nothing at 115 takes it back.");
 
@@ -298,10 +332,11 @@ public class Chapter20WalkthroughTests : ChapterWalkthroughTestBase
             Assert.IsNull(junction.Choices[0].Effect, $"Junction {junctionId}'s climb costs only time.");
         }
 
-        // Where the flag is set. Nothing reads forestLost today - the arrival tier is routed by
-        // node id instead, and StoryFlowTests lists it as knowingly unspent - so this is only
-        // asserting the record is kept. It is a flag rather than a counter: 115 is reached only by
-        // a player who already holds it, which is why the loop above cannot assert on choices[1].
+        // Where the flag is set. The arrival tier is routed by node id, not by the flag; what reads
+        // forestLost is node 12's optional stock-taking, which gives the ragged variant to a player
+        // who wandered and its refusal to one who did not. It is a flag rather than a counter: 115
+        // is reached only by a player who already holds it, which is why the loop above cannot
+        // assert on choices[1].
         Assert.AreEqual("forestLost", ((ChoiceNode)chapter.Nodes.Single(n => n.Id == 101)).Choices[1].Effect?.GainItem,
             "Junction 1's guess is where the flag is earned.");
         Assert.AreEqual("forestLost", ((ChoiceNode)chapter.Nodes.Single(n => n.Id == 105)).Choices[1].Effect?.GainItem,
@@ -354,5 +389,32 @@ public class Chapter20WalkthroughTests : ChapterWalkthroughTestBase
         Assert.IsFalse(string.IsNullOrWhiteSpace(rifle.Condition.Refusal),
             "An item condition still lists its object, so it needs a refusal to play when it is not met.");
         Assert.IsFalse(rifle.ChildId.HasValue, "The payoff is flavour: it must hand the prompt back, not advance.");
+    }
+
+    /// <summary>
+    /// The same shape at node 12, which this batch turned from a Story node into an Action: the
+    /// stock-taking is optional and reads forestLost, so the climb has to be the unconditional way
+    /// out. It is the chapter's last node before the monolith, so a gate on it would strand the
+    /// player at the summit with nowhere to go.
+    /// </summary>
+    [TestMethod]
+    public void Chapter20Node12_TheClimbIsUnconditionalAndTheStockTakingIsOptional()
+    {
+        Chapter chapter = GetScopedChapters(BuildScopedEngine(20)).Single();
+        ActionNode node12 = (ActionNode)chapter.Nodes.Single(n => n.Id == 12);
+
+        List<Kriss.Models.Action> advancing = [.. node12.Actions.Where(a => a.ChildId.HasValue)];
+
+        Assert.AreEqual(1, advancing.Count, "Exactly one action should leave node 12.");
+        Assert.AreEqual(13, advancing[0].ChildId);
+        Assert.IsNull(advancing[0].Condition, "The climb must never be gated: it is the only way off the summit.");
+        Assert.AreEqual(0, advancing[0].Objects.Count, "The way out must not need an object to be guessed by name.");
+
+        ActionObject stockTaking = node12.Actions.SelectMany(a => a.Objects).Single(o => o.Objs.Contains("forest"));
+        Assert.AreEqual("forestLost", stockTaking.Condition.Item,
+            "The stock-taking is where c20's own forest crossing is read back.");
+        Assert.IsFalse(string.IsNullOrWhiteSpace(stockTaking.Condition.Refusal),
+            "An item condition still lists its object, so it needs a refusal for the player who crossed clean.");
+        Assert.IsFalse(stockTaking.ChildId.HasValue, "The stock-taking is flavour: it must hand the prompt back, not advance.");
     }
 }

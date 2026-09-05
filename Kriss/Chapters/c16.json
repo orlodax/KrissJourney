@@ -14,6 +14,61 @@
       "type": "Story",
       "recap": "days of travel south through the southern labyrinths",
       "text": "The land south of Ayonn is cut through by long canyon passages,\nthe southern labyrinths: deep-walled gullies of pale rock\nthat channel the wind and swallow sound and make the days feel both faster\nand smaller than they are.##\n\nYou cover ground.# The party moves efficiently, automatically,\nthe rhythms of travel long since internalized.# Corolla reads the\ndistances with easy competence, Theo sets the pace,\nand Efeliah walks and listens, as she always does, to things\nyou cannot hear.##\n\nSmiurl has not yet recovered from the discovery that south means sea.##",
+      "childid": 17
+    },
+    {
+      "id": 17,
+      "type": "Choice",
+      "recap": "camp in the labyrinths [DECISION: choice] - the payoff for Math's amplifier (c15 award) and for his promise to make himself heard; the ask is gated on mathAmplifier and the other option always advances",
+      "text": "$COn the third evening you camp hard against the canyon wall,\nand eat what Ayonn packed for you with your backs to the rock.##\n\nEfeliah is sitting a little apart from the light, her eyes open\nand not looking at anything in the canyon.# You have seen her do this\nbefore, at the Rock, and you know better than to walk in front of her\nwhile she is doing it.##\n\nThen she comes back into her own face, and blinks at the fire.",
+      "choices": [
+        {
+          "desc": "Ask her what she was listening to.",
+          "condition": {
+            "item": "mathAmplifier"
+          },
+          "refusal": "She only shakes her head.# Nothing that carries a name, she says.#\nJust the country, listening back.",
+          "childid": 18
+        },
+        {
+          "desc": "Leave her to it, and take what sleep the rock allows.",
+          "childid": 19
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "type": "Dialogue",
+      "recap": "Math keeps his promise: the amplifier reaches them, and his 98% prediction lands - Riff is mayor",
+      "dialogues": [
+        {
+          "actor": "Efeliah",
+          "precomment": "She looks over at you, and there is something pleased sitting\nunderneath the composure.",
+          "line": "Math.# The device works.# It reaches further than he expected it to,\nand he is unbearably pleased with himself about it."
+        },
+        {
+          "actor": "Efeliah",
+          "line": "They held the vote yesterday.# Riff is mayor of Ayonn."
+        },
+        {
+          "actor": "Corolla",
+          "precomment": "Corolla does not look up from the blade she is cleaning.",
+          "line": "Ninety-eight percent.",
+          "comment": "She says it flatly, and Smiurl laughs out loud for the first time\nsince the gates closed behind you."
+        },
+        {
+          "actor": "Efeliah",
+          "line": "He says he will make himself heard again.# He was quite firm about that.",
+          "comment": "Then she closes her eyes and is gone again, briefly,\nsomewhere several days north of here.",
+          "childid": 3
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "type": "Story",
+      "recap": "the player left Efeliah alone - the contact goes unreported",
+      "text": "You leave her to it.# Whatever she is listening to, she will say so\nif it wants saying, and the fire is warm, and tomorrow is more canyon.##\n\nYou are asleep before you finish deciding not to ask.",
       "childid": 3
     },
     {
@@ -83,7 +138,7 @@
         },
         {
           "actor": "Smiurl",
-          "precomment": "It is some time later, deeper in the canyon, when Smiurl falls\ninto step beside Kriss and asks the question that has evidently\nbeen troubling him ever since.",
+          "precomment": "It is some time later, deeper in the canyon, when Smiurl falls\ninto step beside you and asks the question that has evidently\nbeen troubling him ever since.",
           "line": "But how long must we walk?# Before# $MThe Sea$Y,# I mean."
         },
         {
@@ -165,7 +220,7 @@
       "id": 8,
       "type": "Story",
       "recap": "evening camp in the canyon - Corolla's absence/withdrawal",
-      "text": "They find a natural clearing where the canyon widens\naround a junction of three gullies, old stones arranged in a circle\nfor a fire: the remnant of someone else's camp, long ago.##\n\nTheo makes the fire without ceremony.# Corolla is already there\nwhen you arrive, sitting at the far edge of the firelight with her back\npartly to the group, tending to her pack.# She does not speak,\nand nobody speaks to her.##\n\nYou cook the meat from the Ayonn stores in silence.#\nEfeliah sits with her eyes half-closed, and you are not sure if she is\nlistening to anyone's thoughts or simply doing them the courtesy\nof not listening.# Smiurl eats very quietly, which is not a thing\nhe does naturally, and the effort of it is visible.##\n\nThe fire settles.# Night comes in from the canyon walls above.##\n\nNobody seems to want to sleep.# Nobody seems to want to speak.##\n\nAnd then Theo speaks.##",
+      "text": "You find a natural clearing where the canyon widens\naround a junction of three gullies, old stones arranged in a circle\nfor a fire: the remnant of someone else's camp, long ago.##\n\nTheo makes the fire without ceremony.# Corolla is already there\nwhen you arrive, sitting at the far edge of the firelight with her back\npartly to the group, tending to her pack.# She does not speak,\nand nobody speaks to her.##\n\nYou cook the meat from the Ayonn stores in silence.#\nEfeliah sits with her eyes half-closed, and you are not sure if she is\nlistening to anyone's thoughts or simply doing them the courtesy\nof not listening.# Smiurl eats very quietly, which is not a thing\nhe does naturally, and the effort of it is visible.##\n\nThe fire settles.# Night comes in from the canyon walls above.##\n\nNobody seems to want to sleep.# Nobody seems to want to speak.##\n\nAnd then Theo speaks.##",
       "childid": 9
     },
     {

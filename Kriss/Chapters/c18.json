@@ -442,10 +442,7 @@
         },
         {
           "desc": "Stay topside, and help Theo finish the rigging instead.",
-          "childid": 15,
-          "effect": {
-            "gainitem": "securedRigging"
-          }
+          "childid": 15
         }
       ]
     },
@@ -480,8 +477,9 @@
     {
       "id": 18,
       "type": "Choice",
-      "recap": "underwater - which way is up",
-      "text": "You are underwater.##\n\nYou know this because of the cold and the silence and the burning in your lungs,\nwhich have apparently made the executive decision to remind you they exist.#\nThe water is dark, no light in any direction, no surface visible,\nand you do not know which way is up.##\n\nYour body wants to panic.# You are familiar with this impulse,\nand you do not have the time for it.##",
+      "recap": "underwater - which way is up - the cue is his own weight",
+      "text": "You are underwater.##\n\nYou know this because of the cold and the silence and the burning in your lungs,\nwhich have apparently made the executive decision to remind you they exist.#\nThe water is dark, no light in any direction, no surface visible,\nand you do not know which way is up.##\n\nThere is nothing down here to steer by, no glimmer, no sound with a direction\nin it, nothing at all except your own weight, which is the only thing left\nin this whole black ocean that still knows something you don't.##\n\nYour body wants to panic.# You are familiar with this impulse,\nand you do not have the time for it.##",
+      "alttext": "You are still underwater, and there is a good deal less of you\nthan there was a moment ago.##\n\nNo light.# No surface.# No air worth the name.#\nAnd your own weight, patient as ever, still trying to tell you something.##",
       "choices": [
         {
           "desc": "Go still, and let your body find its own buoyancy.",
@@ -489,17 +487,17 @@
         },
         {
           "desc": "Kick hard, any direction. Up is probably one of them.",
-          "childid": 181
+          "childid": 181,
+          "isnotrepeatable": true
         }
       ]
     },
     {
       "id": 181,
       "type": "Story",
-      "recap": "wrong choice - kicked downward",
-      "text": "You kick hard, downward.##\n\nThe pressure builds instead of releasing, and the burning in your lungs becomes a roar,\nand you realize your error just as the darkness at the edges of your vision\nbegins to move inward, quietly and with great finality.##\n\nThe sea keeps all of its secrets.##",
-      "islast": true,
-      "isclosing": true
+      "recap": "wrong choice - kicked downward, costs the last of his air, routes back into 18",
+      "text": "You kick, hard, because doing something is always easier than doing nothing.##\n\nThe water gives you nothing back.# No resistance you can read, no direction,\nnothing but its own black weight in every direction at once, and after five\nor six strokes the pressure in your ears has gone from an ache to a hard,\ninsistent squeeze, which tells you exactly one thing, somewhat too late:\nyou have been swimming down.##\n\nThe last of your air leaves you in a rush you cannot stop, one fat mouthful\nof it going somewhere you cannot see, and the cold closes over the panic\nand puts it out like a candle.# You stop.# You have nothing left to spend,\nand no way at all left to spend it.##\n\nAnd your body, which has been trying to tell you something for rather longer\nthan you have been listening, is still trying.##",
+      "childid": 18
     },
     {
       "id": 19,

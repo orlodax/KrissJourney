@@ -85,7 +85,7 @@ public class Chapter14And15WalkthroughTests
 
             idx = await ContinueAsync(idx);                                              // node 90 -> node 900
 
-            idx = await ChooseAsync(idx, "Let the ascent carry you.");                    // node 900 -> 901
+            idx = await ContinueAsync(idx);                                              // node 900 (Story since issue 24) -> node 901
             idx = await ContinueAsync(idx);                                              // node 901 -> node 902
             idx = await ChooseAsync(idx, "Look to the Rock.");                            // node 902 -> 9021
             idx = await ContinueAsync(idx);                                              // node 9021 -> node 903
@@ -235,7 +235,7 @@ public class Chapter14And15WalkthroughTests
 
             idx = await ContinueAsync(idx);                                              // node 90 -> node 900
 
-            idx = await ChooseAsync(idx, "Let the ascent carry you.");                    // node 900 -> 901
+            idx = await ContinueAsync(idx);                                              // node 900 (Story since issue 24) -> node 901
             idx = await ContinueAsync(idx);                                              // node 901 -> node 902
             idx = await ChooseAsync(idx, "Look to the Rock.");                            // node 902 -> 9021
             idx = await ContinueAsync(idx);                                              // node 9021 -> node 903
@@ -299,7 +299,8 @@ public class Chapter14And15WalkthroughTests
     /// math before wait is allowed to advance), node 19's award-ceremony Action (all four items,
     /// then leave), the dawn-departure reply (node 21), and node 24's isNodeVisited-gated
     /// farewell choice - which, since this walk took node 8's "Math should stay" branch (-> node
-    /// 9), should show only that choice's callback text. Ends at node 27 (islast).
+    /// 9), lists that choice plus the ungated fallback, and nothing else. Its answer narrates at
+    /// node 41 before rejoining node 25. Ends at node 27 (islast).
     /// </summary>
     [TestMethod]
     public void Chapter15Standalone_WalksFromNode1ThroughNode27_CollectsAllFourAwardItems()
@@ -397,7 +398,13 @@ public class Chapter14And15WalkthroughTests
 
             idx = await ContinueAsync(idx);                                              // node 40: Efeliah's childid line -> node 24
 
-            idx = await ChooseAsync(idx, "something in his glance thanks you for it.");   // node 24: only visible choice (gated on node 9)
+            // Node 24 lists two choices for this walk: the one gated on node 9 (visited, because
+            // this walk took node 8's "Math should stay" branch) and the ungated fallback. The
+            // ones gated on nodes 10 and 11 stay out of the list, since an unmet isNodeVisited
+            // hides its choice outright. selectedRow starts at 0, so no navigation is needed.
+            idx = await ChooseAsync(idx, "Tell him you meant what you said in the infirmary."); // node 24 -> node 41
+
+            idx = await ContinueAsync(idx);                                              // node 41 -> node 25
 
             idx = await ContinueAsync(idx);                                              // node 25: Kriss's childid line -> node 26
 
@@ -427,25 +434,26 @@ public class Chapter14And15WalkthroughTests
         Assert.IsTrue(output.Contains("Hail to the saviors!"), "Should have reached node 3 (Riff's arrival).");
         Assert.IsTrue(output.Contains("So THIS is what you were hiding from me!"), "Should have reached node 7 (Math's announcement).");
         Assert.IsTrue(output.Contains("Ayonn is changed."), "Should have reached node 22 (the atrium gathering).");
-        Assert.IsTrue(output.Contains("something in his glance thanks you for it."),
-            "Node 24 should show the callback tied to node 9 (the branch this walk took at node 8).");
-        Assert.IsFalse(output.Contains("doesn't seem to hold it against you."),
-            "Node 24's node-10 callback should not be visible: this walk never visited node 10.");
-        Assert.IsFalse(output.Contains("seems to understand it."),
-            "Node 24's node-11 callback should not be visible: this walk never visited node 11.");
+        Assert.IsTrue(output.Contains("Something in the look he gives you"),
+            "Node 41 should play the callback tied to node 9 (the branch this walk took at node 8).");
+        Assert.IsFalse(output.Contains("Tell him you hope the doubt you raised was misplaced."),
+            "Node 24's node-10 choice should not be listed: this walk never visited node 10.");
+        Assert.IsFalse(output.Contains("Give him a small nod, and nothing more."),
+            "Node 24's node-11 choice should not be listed: this walk never visited node 11.");
         Assert.IsTrue(output.Contains("Ahead: the road, and whatever comes next."), "Should have flowed all the way to node 27's closing beat.");
 
         Assert.IsTrue(statusManager.IsItemInInventory("heardMathMotive"), "Node 17's 'ask math' should have granted heardMathMotive.");
         Assert.IsTrue(statusManager.IsItemInInventory("lightSphere"), "Node 19's first prize should have granted lightSphere.");
         Assert.IsTrue(statusManager.IsItemInInventory("daggerReplica"), "Node 19's second prize should have granted daggerReplica.");
         Assert.IsFalse(statusManager.IsItemInInventory("laserRifle"), "Corolla's rifle is hers; watching her receive it grants Kriss nothing.");
-        Assert.IsFalse(statusManager.IsItemInInventory("amplifier"), "The amplifier is Math's; watching him receive it grants Kriss nothing.");
+        Assert.IsTrue(statusManager.IsItemInInventory("mathAmplifier"),
+            "Watching Math and Efeliah receive the amplifier is what unlocks c16 node 17's canyon-camp scene.");
     }
 
     /// <summary>
-    /// Node 24's gating is the payoff of the node-8 poll: proving a SECOND branch shows a
-    /// DIFFERENT callback would otherwise mean re-running the whole 31-node walk above just to
-    /// change one earlier choice. Since GameEngine.LoadNode can jump straight to any node id in
+    /// Node 24's gating is the payoff of the node-8 poll: proving a SECOND branch lists a
+    /// DIFFERENT choice and narrates a DIFFERENT beat would otherwise mean re-running the whole
+    /// walk above just to change one earlier choice. Since GameEngine.LoadNode can jump straight to any node id in
     /// the current chapter, and the gate itself only reads VisitedNodes through the real
     /// TestStatusManager (the same one AllChapters... /ChoiceNode.DisplayChoices reads in
     /// production), pre-seeding node 10 as visited and loading node 24 directly exercises the
@@ -465,7 +473,9 @@ public class Chapter14And15WalkthroughTests
         {
             int idx = 0;
 
-            idx = await ChooseAsync(idx, "doesn't seem to hold it against you.");         // node 24's only visible choice (gated on node 10)
+            idx = await ChooseAsync(idx, "Tell him you hope the doubt you raised was misplaced."); // node 24 -> node 42
+
+            idx = await ContinueAsync(idx);                                              // node 42 -> node 25
 
             idx = await ContinueAsync(idx);                                              // node 25: Kriss's childid line -> node 26
 
@@ -491,12 +501,12 @@ public class Chapter14And15WalkthroughTests
         Assert.AreEqual(0, terminal.KeyQueueCount, "Every queued key should have been consumed exactly once.");
 
         string output = terminal.GetOutput();
-        Assert.IsTrue(output.Contains("doesn't seem to hold it against you."),
-            "Node 24 should show the callback tied to node 10 (the node pre-seeded as visited).");
-        Assert.IsFalse(output.Contains("something in his glance thanks you for it."),
-            "Node 24's node-9 callback should not be visible: node 9 was never visited.");
-        Assert.IsFalse(output.Contains("seems to understand it."),
-            "Node 24's node-11 callback should not be visible: node 11 was never visited.");
+        Assert.IsTrue(output.Contains("He does not hold the question against you."),
+            "Node 42 should play the callback tied to node 10 (the node pre-seeded as visited).");
+        Assert.IsFalse(output.Contains("Tell him you meant what you said in the infirmary."),
+            "Node 24's node-9 choice should not be listed: node 9 was never visited.");
+        Assert.IsFalse(output.Contains("Give him a small nod, and nothing more."),
+            "Node 24's node-11 choice should not be listed: node 11 was never visited.");
     }
 
     // ---- helpers -------------------------------------------------------------------

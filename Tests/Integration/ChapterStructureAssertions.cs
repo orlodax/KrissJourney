@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using KrissJourney.Kriss.Models;
 using KrissJourney.Kriss.Nodes;
@@ -93,9 +93,10 @@ public static class ChapterStructureAssertions
     /// Walking forward from node 1, the chapter hands over to the next one at exactly the node
     /// the caller names, and nowhere else. A second reachable islast node is only tolerated when
     /// it is also isclosing - <see cref="NodeBase.AdvanceToNext"/> takes that branch first and
-    /// goes back to the menu, so it is a game over rather than a way onward (c18's node 181, the
-    /// drowning). The named ending may itself be isclosing: c24 node 15 both ends the chapter and
-    /// ends the game.
+    /// goes back to the menu, so it is a game over rather than a way onward. No chapter uses that
+    /// tolerance today: c18's node 181 was the one that did, and issue 21 turned the drowning into
+    /// a survivable near-drowning that routes back into node 18. The named ending may itself be
+    /// isclosing: c24 node 15 both ends the chapter and ends the game.
     /// </summary>
     public static void AssertChapterEndsAt(Chapter chapter, int endsAtNodeId)
     {

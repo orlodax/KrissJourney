@@ -112,16 +112,18 @@ public class Chapter14And15ContentDeserializationTests
     }
 
     [TestMethod]
-    public void Chapter15_HasFortyNodesInContiguousOrder()
+    public void Chapter15_HasFortyFourNodesInContiguousOrder()
     {
         // Issue 8 replaced c15's 6-node stub (1, 10, 11, 110, 12, 13 moved from c14 under
         // issue 7) with 31 authored nodes; splitting the banquet setup (old node 16) into
         // three Story beats added 32 and 33, and turning the award ceremony (node 19) from one
         // Action node into a Choice hub gave each prize its own branch, 34-39. Splitting the
         // departure (node 23) so the travel clothes and the councillors' send-off narrate as
-        // one Story beat before Riff speaks added 40, so ids 1-40 are contiguous.
+        // one Story beat before Riff speaks added 40. Issue 23 then gave node 24's send-off
+        // poll a spoken beat per answer instead of routing every branch straight at node 25,
+        // adding 41-44, so ids 1-44 are contiguous.
         List<int> ids = [.. c15.Nodes.Select(n => n.Id).OrderBy(i => i)];
-        CollectionAssert.AreEqual(Enumerable.Range(1, 40).ToList(), ids);
+        CollectionAssert.AreEqual(Enumerable.Range(1, 44).ToList(), ids);
     }
 
     [TestMethod]
@@ -190,7 +192,8 @@ public class Chapter14And15ContentDeserializationTests
 
         Choice sphere = node19.Choices[0];
         Assert.IsNull(sphere.Condition, "Kriss's first prize is the only choice that is open from the start.");
-        Assert.AreEqual("lightSphere", sphere.Effect.GainItem);
+        Assert.AreEqual("lightSphere", sphere.Effect.GainItem,
+            "The sphere is Kriss's own prize, and c20 node 16 gates the camp-light beat on it.");
         Assert.AreEqual(34, sphere.ChildId);
 
         Choice dagger = node19.Choices[1];
@@ -209,14 +212,17 @@ public class Chapter14And15ContentDeserializationTests
                 "A companion's prize only appears once Kriss has taken both of his own; the four are then free in any order.");
         }
 
-        // Corolla's rifle is the one companion prize that later content reads back: c20 node 6
-        // gates its "ask about the rifle" object on corollaArmed and plays a refusal without it,
-        // so watching her receive it here is what earns that scene. The other three prizes stay
-        // theirs alone and grant nothing.
+        // Two of the companion prizes are read back by later content, and both gates are item
+        // conditions, so the scene is still offered without the flag and answers with a refusal:
+        // c20 node 6 gates "ask about the rifle" on corollaArmed, and c16 node 17 gates asking
+        // Efeliah what she was listening to on mathAmplifier. Watching those two prizes handed
+        // over here is what earns those scenes.
         Assert.AreEqual("corollaArmed", companions[0].Effect?.GainItem,
             "Corolla's branch must set the flag c20's rifle payoff gates on.");
-        foreach (Choice companion in companions.Skip(1))
-            Assert.IsNull(companion.Effect, "Theo's, Smiurl's and Math's prizes are theirs, and nothing later reads them back.");
+        Assert.AreEqual("mathAmplifier", companions[3].Effect?.GainItem,
+            "Efeliah and Math's branch must set the flag c16 node 17's canyon-camp payoff gates on.");
+        foreach (Choice companion in companions.Skip(1).Take(2))
+            Assert.IsNull(companion.Effect, "Theo's and Smiurl's prizes are theirs, and nothing later reads them back.");
 
         Choice leave = node19.Choices[6];
         Assert.AreEqual(20, leave.ChildId);
@@ -249,22 +255,38 @@ public class Chapter14And15ContentDeserializationTests
     /// Chapter14And15WalkthroughTests, not here.
     /// </summary>
     [TestMethod]
-    public void Chapter15_Node24_ChoicesAreGatedOnNodesNineTenAndEleven()
+    public void Chapter15_Node24_ChoicesAreGatedOnNodesNineTenAndEleven_PlusAnUngatedFallback()
     {
         ChoiceNode node24 = (ChoiceNode)c15.Nodes.Single(n => n.Id == 24);
 
-        Assert.AreEqual(3, node24.Choices.Count);
+        Assert.AreEqual(4, node24.Choices.Count, "Three callbacks plus the ungated fallback.");
+
+        List<Choice> gated = [.. node24.Choices.Where(c => c.Condition is not null)];
+        Assert.AreEqual(3, gated.Count);
 
         List<string> expectedItems = ["9", "10", "11"];
-        foreach (Choice choice in node24.Choices)
+        foreach (Choice choice in gated)
         {
-            Assert.IsNotNull(choice.Condition);
             Assert.AreEqual("isNodeVisited", choice.Condition.Type);
             Assert.IsTrue(expectedItems.Remove(choice.Condition.Item),
                 $"Unexpected or duplicate isNodeVisited target: {choice.Condition.Item}");
-            Assert.AreEqual(25, choice.ChildId);
         }
 
         Assert.AreEqual(0, expectedItems.Count, $"Missing isNodeVisited targets: {string.Join(", ", expectedItems)}.");
+
+        // An unmet isNodeVisited keeps its choice OUT of the list entirely, so the poll needs one
+        // choice nobody's history can hide, or a player who somehow reached node 24 having visited
+        // none of 9/10/11 would face an empty hub. 2026-09-05
+        Assert.AreEqual(1, node24.Choices.Count(c => c.Condition is null),
+            "Exactly one choice must be ungated, so the hub can never render empty.");
+
+        // Issue 23 gave each answer its own spoken beat instead of routing all of them at node 25
+        // unspoken; the four Story nodes then converge on 25, so the poll still costs one node.
+        CollectionAssert.AreEqual(new List<int> { 41, 42, 43, 44 }, node24.Choices.ConvertAll(c => c.ChildId),
+            "Each answer gets its own Story beat, in the order the choices are listed.");
+
+        foreach (int beatId in new[] { 41, 42, 43, 44 })
+            Assert.AreEqual(25, c15.Nodes.Single(n => n.Id == beatId).ChildId,
+                $"Node {beatId} should rejoin the spine at node 25.");
     }
 }

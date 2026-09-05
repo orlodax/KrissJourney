@@ -24,10 +24,21 @@
         {
           "actor": "Riff",
           "line": "Our fighters take the front entrance.# Loud, direct, as much noise as we can make.#\nThe guards will respond.# They have to, Joe's programming does not allow\nfor ignoring a frontal assault.# That draws them down and toward the main doors.#\nWhile they are focused there, you go in the side.",
-          "comment": "He taps a point on the east wall of the building."
+          "comment": "He taps a point on the east wall of the building.",
+          "replies": [
+            {
+              "line": "\"And once we are inside? Give me the route.\"",
+              "nextline": "service"
+            },
+            {
+              "line": "\"Where do we go, exactly, once we are through that door?\"",
+              "nextline": "service"
+            }
+          ]
         },
         {
           "actor": "Riff",
+          "linename": "service",
           "line": "Service entrance, maintenance corridor, stairwell to your left.# Go straight up,#\nand do not stop to fight unless you have to.# Every second you spend on the lower floors\nis a second a free person is dying out front to buy you time.",
           "comment": "His voice does not waver, but his jaw tightens.",
           "break": true
@@ -92,7 +103,70 @@
       "type": "Story",
       "recap": "moving out through rebel tunnels toward the building",
       "text": "The rebels arm themselves in silence.# Riff distributes what weapons they have,#\nknives mostly, a few short clubs, two bows, simple tools for a desperate job.##\n\nYou move out in single file, back into the maintenance passages.#\nRiff leads, you follow, and Corolla takes the rear.##\n\nThe city above bleeds through the grates in the ceiling, and you catch glimpses\nas you pass beneath them: blue-white light and shadow, the undersides of boots,#\nthe mechanical even cadence of guards on patrol, the golden shimmer that passes\nfor sky on the streets above, beautiful and false.##\n\n$c<<All of this.# All of this just to keep one man's hands around everyone's throat.>>#\n\n$CThe thought makes something cold and sharp settle in your chest. You keep walking.##",
-      "childid": 4
+      "childid": 14
+    },
+    {
+      "id": 14,
+      "type": "Dialogue",
+      "recap": "parting from Riff, and what the diversion is going to cost them [DECISION: replies]",
+      "text": "The passage ends at a stairwell that smells of the street above, and the rebels\ncome up out of the dark in twos and threes and gather at its mouth,#\nwithout a word being given.##\n\nRiff stops on the top step.##",
+      "dialogues": [
+        {
+          "actor": "Riff",
+          "line": "This is where we separate.# Take that road,# then the first turning left,#\nand you will be standing at the side of the Municipal building.##\nWhen you hear our signal, move.# We will not be able to hold for long.",
+          "comment": "\nHe puts out a hand, grips Theo's forearm once, and lets it go."
+        },
+        {
+          "actor": "Riff",
+          "line": "Good luck.",
+          "comment": "\nThen he turns, and he is gone among his own people.",
+          "break": true
+        },
+        {
+          "actor": "Corolla",
+          "precomment": "You stay where you are, watching them go.",
+          "line": "Come on.",
+          "replies": [
+            {
+              "line": "\"Wait. What does 'we cannot hold for long' mean?\"",
+              "nextline": "maximum"
+            },
+            {
+              "line": "\"Not yet. How much risk are they taking out there?\"",
+              "nextline": "maximum"
+            }
+          ]
+        },
+        {
+          "actor": "Corolla",
+          "linename": "maximum",
+          "precomment": "She looks at you for a moment.# Then she turns and looks at the rebels\nas they thin out into the side streets, and at the little three-wheeled\ncarts they have pulled up behind them, ready to run.",
+          "line": "Maximum.##\n\nMaximum risk.",
+          "comment": "\nShe says it twice, and the second time is much worse than the first.",
+          "break": true
+        },
+        {
+          "actor": "Kriss",
+          "line": "Then perhaps we really should not have come.",
+          "comment": "\nYou say it to the ground between your boots."
+        },
+        {
+          "actor": "Corolla",
+          "line": "Don't.# They said it themselves, remember?# They have no other choice.##\nThis was going to be their ending either way."
+        },
+        {
+          "actor": "Efeliah",
+          "precomment": "Efeliah steps up beside you, and her voice is not gentle at all.",
+          "line": "Which is exactly why we have to be quick.# Shut the Projector down in time\nand the troops sent after them will lose their orders in the middle of the chase.##\nRiff's people will reach the Mazerock alive."
+        },
+        {
+          "actor": "Kriss",
+          "precomment": "You look at her for a few seconds. Then you sigh, and you go.##\n\nYou are almost at the end of the street before the question occurs to you.",
+          "line": "What exactly is their signal?",
+          "comment": "\nTheo does not even answer.",
+          "childid": 4
+        }
+      ]
     },
     {
       "id": 4,
@@ -156,10 +230,7 @@
                 "storage",
                 "wall"
               ],
-              "answer": "A weapons locker, locked with a standard key mechanism. The guard must carry the key.",
-              "effect": {
-                "gainitem": "foundLocker"
-              }
+              "answer": "A weapons locker, locked with a standard key mechanism. The guard must carry the key."
             },
             {
               "objs": [
@@ -201,10 +272,7 @@
                 "weapon",
                 "weapons"
               ],
-              "answer": "You take a guard's baton. Better than bare hands.",
-              "effect": {
-                "gainitem": "guardBaton"
-              }
+              "answer": "You take a guard's baton. Better than bare hands."
             },
             {
               "objs": [

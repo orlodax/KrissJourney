@@ -27,7 +27,7 @@
       "id": 4,
       "type": "Story",
       "recap": "inside the building - the bar, the chandelier, the dark porticos",
-      "text": "The room inside is large and quadrangular, high-ceilinged,\nand dark in the way that a great deal of firelight paradoxically creates darkness\nbeyond its own reach.# From the center of the ceiling hangs what appears to be\na chandelier made of bone, or at least of something that may have been bone,\nhung with dozens of candles that do little against the shadows pooled\nin the colonnaded porticos running around all four walls.# A shaft of light\nfalls obliquely from a skylight in the upper level and disappears into the dark above.##\n\nAhead of them, a raised bar counter occupies most of the far wall.##\n\nThey advance carefully between overturned chairs and ropes that coil\nacross the floor like sleeping snakes, watching the shadows,\nuntil behind them, with a tremendous and sadistic creak, the door swings shut.##\n\nThe room goes darker.##\n\nKriss's hand is on his sword.# Only Efeliah seems, on the surface, calm.##\n\n$g\"We are not alone.\"$C##\n\nHer thought barely has time to land before the porticos fill with light.\nTiny torches, dozens of them, crowding into every alcove on every floor,\nand then their bearers swarm down from the shadows into the room around them.##\n\nThey are small, dwarf-small, dense, compact, and they are all old:#\nwrinkled faces, vacant eyes, scalps cracked and browned by the sun,\nbent backs, and on every face the same expression of consuming, irrational,\npersonally offended contempt for the people standing in their room.##\n\nAnd then the worst one climbs onto the bar counter.##\n\nHe is perhaps the oldest, or the cruelest, or the ugliest,\nor all three at once, the combination being greater than the sum of its parts.\nFive others stand at his back on the counter.# He surveys your group\nwith tiny eyes the color of yellowed ice, lit from within by a lurid and\ncompletely committed madness, and then he opens his mouth and says,\nin a voice of terrible authority:##\n\n$r\"'Oukurtzen los.'\"$C##",
+      "text": "The room inside is large and quadrangular, high-ceilinged,\nand dark in the way that a great deal of firelight paradoxically creates darkness\nbeyond its own reach.# From the center of the ceiling hangs what appears to be\na chandelier made of bone, or at least of something that may have been bone,\nhung with dozens of candles that do little against the shadows pooled\nin the colonnaded porticos running around all four walls.# A shaft of light\nfalls obliquely from a skylight in the upper level and disappears into the dark above.##\n\nAhead of you, a raised bar counter occupies most of the far wall.##\n\nYou advance carefully between overturned chairs and ropes that coil\nacross the floor like sleeping snakes, watching the shadows,\nuntil behind you, with a tremendous and sadistic creak, the door swings shut.##\n\nThe room goes darker.##\n\nYour hand is on your sword.# Only Efeliah seems, on the surface, calm.##\n\n$g\"We are not alone.\"$C##\n\nHer thought barely has time to land before the porticos fill with light.\nTiny torches, dozens of them, crowding into every alcove on every floor,\nand then their bearers swarm down from the shadows into the room around you.##\n\nThey are small, dwarf-small, dense, compact, and they are all old:#\nwrinkled faces, vacant eyes, scalps cracked and browned by the sun,\nbent backs, and on every face the same expression of consuming, irrational,\npersonally offended contempt for the people standing in their room.##\n\nAnd then the worst one climbs onto the bar counter.##\n\nHe is perhaps the oldest, or the cruelest, or the ugliest,\nor all three at once, the combination being greater than the sum of its parts.\nFive others stand at his back on the counter.# He surveys your group\nwith tiny eyes the color of yellowed ice, lit from within by a lurid and\ncompletely committed madness, and then he opens his mouth and says,\nin a voice of terrible authority:##\n\n$r\"'Oukurtzen los.'\"$C##",
       "childid": 5
     },
     {
@@ -152,7 +152,6 @@
         },
         {
           "verbs": ["wait", "hide", "rest", "stay", "fight", "attack"],
-          "effect": { "gainitem": "edzzenclose" },
           "answer": "You hesitate half a second too long, weighing rope against ring against timber,\nand in that half second the door takes a blow that splits one plank clean through.##\n\nThere is no time left to do this properly.# You shove Smiurl toward the stair instead.",
           "childid": 90
         }
@@ -175,7 +174,6 @@
         },
         {
           "verbs": ["wait", "rest", "stop", "hide"],
-          "effect": { "gainitem": "edzzenclose" },
           "answer": "You slow, and somewhere below something heavy hits the floor.# That decides it.",
           "childid": 100
         }
@@ -198,7 +196,6 @@
         },
         {
           "verbs": ["wait", "rest", "hide", "stop"],
-          "effect": { "gainitem": "edzzenclose" },
           "answer": "You wait one second too many, and the stair behind you fills with the sound of feet.",
           "childid": 110
         }
@@ -221,7 +218,6 @@
         },
         {
           "verbs": ["wait", "rest", "hide", "stop"],
-          "effect": { "gainitem": "edzzenclose" },
           "answer": "You hesitate, and the hatch bucks once under a fist from below.",
           "childid": 130
         }
@@ -249,7 +245,6 @@
         },
         {
           "verbs": ["wait", "rest", "hide", "stop"],
-          "effect": { "gainitem": "edzzenclose" },
           "answer": "Another crash below, and Corolla's hand finds your shoulder and simply shoves.#\nYou do not so much decide to jump as discover that you already have.",
           "childid": 130
         }

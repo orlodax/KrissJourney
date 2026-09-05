@@ -117,7 +117,7 @@
       "id": 40,
       "type": "Story",
       "recap": "on the platform - the screens and the two terminals",
-      "text": "Up there, set into the gaps between the cable runs, are screens:\na dozen of them at odd angles, continuously running what looks to be logs and reports, diagrams and maps.##\n\nAnd at the center of the platform, two seats, numbered 1 and 2.#\nThey are low and reclined and molded to the body, their armrests worn pale.#\nCable comes out from under them and goes down into everything.#\nAbove each, folded back against a bracket, hangs a jointed metal arm.#",
+      "text": "Up there, set into the gaps between the cable runs, are screens:\na dozen of them at odd angles,\ncontinuously running what looks to be logs and reports, diagrams and maps.##\n\nAnd at the center of the platform, two seats, numbered 1 and 2.#\nThey are low and reclined and molded to the body, their armrests worn pale.#\nCable comes out from under them and goes down into everything.#\nAbove each, folded back against a bracket, hangs a jointed metal arm.#",
       "childid": 5
     },
     {
@@ -239,19 +239,10 @@
     },
     {
       "id": 900,
-      "type": "Choice",
+      "type": "Story",
       "recap": "flight stage 1 - the ascent begins",
       "text": "All is milky white,# luminous,# empty and full at once.#\nA single thought moves through you: $c<<Where am I?>>$C#\nAnd in the same instant that you think it,\na gap opens in the white ahead of you.##\n\nAt the speed of light,# you rise.",
-      "choices": [
-        {
-          "desc": "Let the ascent carry you.",
-          "childid": 901
-        },
-        {
-          "desc": "Try to steady yourself as you climb.",
-          "childid": 901
-        }
-      ]
+      "childid": 901
     },
     {
       "id": 901,
