@@ -123,6 +123,59 @@ public void TerminalInteractionTest()
 }
 ```
 
+## Chapter walkthroughs (Integration)
+
+`Tests/Integration/Chapter*WalkthroughTests.cs` drive a real chapter, through a real
+`GameEngine`, against `TerminalMock`. They exist because most content bugs are not visible in
+the JSON: a missing `break`, a reply block that renumbers the highlight, a gate that hides the
+only way forward. Cheap structural checks come first (`ChapterStructureAssertions`,
+`Integration/StoryFlow/StoryFlowTests.cs`); a walkthrough is for what only playing can show.
+
+### How a walk is shaped
+
+The engine's node loop is blocking and recursive - `node.Load()` -> `AdvanceToNext` ->
+`GameEngine.LoadNode` -> the next `node.Load()` - and it never returns until the chapter runs
+out. So the test thread runs the engine, and a background `Task` plays the player: it polls
+`TerminalMock.GetOutput()` for the next prompt and only then enqueues the key that answers it.
+Queuing keys blindly ahead of time does not work, because several nodes flush pending input
+before they start reading.
+
+`ChapterWalkthroughTestBase` holds the whole harness:
+
+- `BuildScopedEngine(ids)` loads every real chapter through the production embedded-resource
+  path, then narrows the engine's list to the ids given. A chapter's `islast` node then runs
+  off the end of the list and throws a clean `ArgumentNullException`, which is how a walk
+  proves it reached the end and went no further (`RunWalkToChapterEnd`). A walk that stops
+  mid-chapter instead leaves the last prompt unanswered and lets the mock's `ReadKey` time out
+  (`RunWalkToUnansweredPrompt`).
+- `ContinueAsync` answers a `Typist.WaitForKey` banner; `ChooseAsync` answers a Choice or
+  reply prompt, which prints no banner, so it waits on the option's own text instead;
+  `ActAsync` / `DoActionAsync` type at an Action node's `\>` prompt.
+- `DriveFightAsync` wins a `FightNode` by reacting to the oscillating-cursor frames as they are
+  drawn rather than by predicting them.
+- `PlaySurgeToVictoryAsync` reads the row a `SurgeNode` generated straight out of the drawn
+  frame and plays it back. `PlayAlternatingDuetSurgeAsync` is its duet counterpart: under a
+  `.S` pattern half the row is Saberinne's and presses on her glyphs are swallowed, so it
+  presses one glyph per turn, reading whose turn it is from the caret's colour.
+
+### Writing one
+
+Walk the chapter JSON first and count the prompts: a Story node is one, a Dialogue line is one
+only if it has `break` or a `childid`, a reply or choice is one, and an Action command that
+carries a `childid` produces one after its answer. Then pick markers from the rendered text -
+short, and never spanning one of the content's own `\n` line breaks, because the mock captures
+the newlines exactly as authored.
+
+Two more things bite. `ChoiceNode.selectedRow` and `DialogueNode.selectedRow` persist across
+prompts, so navigation keys are relative to wherever the last pick left the highlight, and node
+objects are shared for the life of the engine, so a hub revisited later remembers what was
+already played. When a Dialogue node's next reply block is shorter than the one that last moved
+the highlight, `DialogueNode` clamps the row down to that block's last option rather than
+resetting it to the top, so a script that navigated in an earlier block may need no navigation
+in the later one (c21 node 4, blocks of 3 then 2). And every walkthrough must consume every key it queues: the base class asserts
+`KeyQueueCount` is zero at the end, which is what catches a walk that silently answered the
+wrong prompt.
+
 ## Best Practices
 
 1. Place tests in the appropriate folder:

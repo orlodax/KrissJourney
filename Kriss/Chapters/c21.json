@@ -5,165 +5,331 @@
     {
       "id": 1,
       "type": "Story",
-      "recap": "chapter header + the southern plains",
-      "text": "-------------------------------\n|          CHAPTER 21          |\n-------------------------------\n\n\n$CThe south is green.##\n\nYou have been walking through it for three days\nand you have not finished believing it.#\nAfter the desert and the scrubland and the sea,\nthe south is $Wgreen$C, real green, deep and various,\ngrass in the valleys and low forest on the hillsides\nand flowers in colors that feel almost aggressive after\nthe palette of the rest of this planet.##\n\nThe land is empty of people, or nearly,\nand you pass the remains of farmsteads, old ones,\nlong abandoned, the walls returned to the hillside.#\nWhatever this place once was, it has been quiet for a long time.##\n\nBut the city is there, somewhere ahead of you.#\nYou know this without any evidence yet,\nwithout having seen anything beyond these hills,\nand you have known it since you stepped off the beach\nand onto the southern grass.##\n\n$c<<Something is pulling.# I have been ignoring it for three days,\nand I am becoming less successful at this.>>$C##",
-      "childid": 2
-    },
-    {
-      "id": 2,
-      "type": "Story",
-      "recap": "first sight of the besieged white city from the hills",
-      "text": "You crest the hill on the third evening and see the army.##\n\nIt is not a small one.##\n\nThe valley below is perhaps five kilometers across at its widest,\nand the floor of it, what would be meadow, what was probably\npasture once, or crops, is occupied,\ntents, fires, supply wagons, corrals of animals,\nthe accumulated infrastructure of a force that has been\nsitting in one place for some time and has gotten comfortable doing it.#\nThousands of them, more than thousands.##\n\nAnd beyond them, across the valley, at the southern end,\nset against the curve of the hills with its back to the mountains,\nthe city.##\n\nWhite.##\n\nNot the muddy cream of old stone but$W white$C,\nactual white, its walls catching the last light\nlike a thing that generates its own illumination,\nwith towers, colonnades, porticoes, and a palace at its center\nthat rises above everything in calm, absolute authority.##\n\nSomething in you responds to the sight of it\nlike a string being plucked.# You look at those walls\nand feel a certainty you cannot explain\nand do not try to.##\n\n$c<<I know this place.##\n\nThat is impossible.# I have never been here,\nnever been on this planet before six months ago.##\n\nAnd yet.>>$C##",
-      "childid": 3
-    },
-    {
-      "id": 3,
-      "type": "Dialogue",
-      "recap": "companions discuss the situation on the hill",
-      "dialogues": [
-        {
-          "actor": "Corolla",
-          "precomment": "You are crouched at the hilltop in the long grass,\nall five of you, looking down at the valley.#\nThe army's nearest cookfires are perhaps a kilometer below.#\nThe wind is from the north, carrying wood smoke and the smell\nof a camp that has been here long enough to develop its own character.",
-          "line": "Siege.# Established position, multiple supply lines coming\nfrom the east.# They have been here at least two months, maybe more."
-        },
-        {
-          "actor": "Smiurl",
-          "precomment": "Smiurl is staring at the army below.#\nHis skin has gone a contemplative gray.",
-          "line": "How do we get past them?",
-          "comment": "Practical."
-        },
-        {
-          "actor": "Corolla",
-          "line": "We don't.# Not directly.# The siege line runs\nall the way to the hills on each side.#\nThere is a gap on the western slope, there, but\nit's watched, and we would need a diversion.",
-          "break": true
-        },
-        {
-          "actor": "Efeliah",
-          "precomment": "Efeliah has been looking not at the army but at the city.#\nShe turns from it to you, and her expression is unusual,\nnot calm, not concerned, but searching.",
-          "line": "Kriss.# What do you feel?",
-          "istelepathy": true
-        },
-        {
-          "actor": "Kriss",
-          "precomment": "Everyone looks at you.# You look at the white walls below.\nYou let yourself feel what you have been not-feeling for three days.##",
-          "line": "Like I am supposed to be there.#\nLike something in the city is waiting for me specifically.",
-          "comment": "A silence.##\n\nEfeliah looks at the city, then at you.\nShe says nothing, but her expression does something quiet and certain."
-        },
-        {
-          "actor": "Corolla",
-          "precomment": "Corolla studies you for a moment.# Then nods once.",
-          "line": "Then we figure out how to get you there.",
-          "comment": "She says it as simply as if you have asked her\nto help you find a street in Ayonn.##",
-          "childid": 4
-        }
-      ]
+      "recap": "chapter header + bridge from c20's monolith down to camp at its base, then the night valley from the platform: hundreds of fires, drums, singing, the Jeorghe memory, and the small hidden campfire",
+      "text": "-------------------------------\n|          CHAPTER 21          |\n-------------------------------\n\n\n$CThe light goes gray around the platform as you start back down from\nthe outcrop, and whatever daylight the crossing cost you, the climb\ndown finishes spending.##\n\nNobody argues about where to make camp.# The base of the same rock,\nout of sight of the valley below, will do.##\n\nLater, with the dark properly down, you go up the rock one last\ntime and stand on the platform on your own, looking out.# The\nvalley has become a scatter of fires, hundreds of them, spread from\none side of it to the other, and around each of them men are eating\nand drinking, and if you hold still and listen long enough you can\ncatch a drum, and voices singing.##\n\nYou have seen this before.# You saw it your first night on this\nplanet, when a horde welcomed you in its own particular way, and\nyou find you are thinking about Jeorghe's face, and deciding that\nnothing in this world or the other one could ever make you want to\nsee it again.##\n\nYou go back down to the others.##\n\nThe fire they have built is small, and it sits in the middle of\nfoliage thick enough that no part of it can be seen from the valley\nbelow.# They caught something before sundown, animals not unlike\ncats, and you all eat them in silence and without much appetite.",
+      "childid": 4
     },
     {
       "id": 4,
       "type": "Dialogue",
-      "recap": "camp below the hill - the entry plan discussed around a distracted Kriss - the pull, and sleep",
+      "recap": "the plan for entering the city [DECISION x2: how Kriss deflects Corolla, and how he answers Efeliah] - then the dissociation, 'then it's decided', and dreamless sleep",
       "dialogues": [
         {
           "actor": "Efeliah",
-          "precomment": "You make camp at the base of the rock spire below the hilltop,\nout of sight of the army in the valley.#\nNo fire.# Cold provisions.# The kind of camp\nyou all know how to make by now without discussion.##\n\nAfter you have eaten in silence, Efeliah speaks first.",
-          "line": "We need to think about how to enter the city."
+          "precomment": "A few minutes after the last of it is gone, Ef is the one who\nspeaks first.",
+          "line": "We have to work out a plan for getting into the city."
         },
         {
           "actor": "Theo",
-          "line": "Before the sun rises.# While they sleep."
+          "line": "We move under the dark.# A little before the sun comes up.# That\nis the smallest risk."
         },
         {
           "actor": "Corolla",
-          "precomment": "Corolla looks at the valley.",
-          "line": "Two kilometers of open ground once we leave the trees.\nIf we snap even one branch they'll be on us in seconds."
-        },
-        {
-          "actor": "Efeliah",
-          "line": "I can feel the difference between a sleeping mind and a waking one.#\nI can guide us.",
-          "comment": "The discussion continues around you, and you sit in it\nwithout really hearing it, your eyes on the dark valley below\nwhere hundreds of fires describe the shape of the siege camp\nand at the far end, unchanged, unchanged,\nthe white city rises against the mountains.##\n\nThe pull is steady now.# Not urgent, not demanding,\nbut constant, like a compass needle,\nlike a voice too low to make out words\nbut too clear to ignore.##\n\n$c<<What are you?# Who is in there?\nHow do you know I'm on this hill?>>$C",
+          "precomment": "Corolla lets that sit for about a second and a half.",
+          "line": "And then there is the other problem.# Once we are standing at the\ngates, how do we get them opened?# Do you want to go and knock and\nsay: friends?",
           "replies": [
             {
-              "line": "\"Then it's decided.\"",
-              "nextline": "sleep"
+              "line": "Put it off. You'll think about it when you're there.",
+              "nextline": "krissgates1"
             },
             {
-              "line": "Say nothing, and let them settle it without you.",
-              "nextline": "sleep"
+              "line": "Tell her the gates will not be what stops you.",
+              "nextline": "krissgates2"
+            },
+            {
+              "line": "Say nothing, and keep looking into the dark.",
+              "nextline": "krissgates3"
             }
           ]
         },
         {
-          "linename": "sleep",
-          "precomment": "You stand and move toward the tent you are sharing with Theo.",
-          "comment": "You lie down.# Every thought drains from your head\nlike water through sand.# A profound sleep takes you\nbefore you have finished closing your eyes.",
+          "linename": "cross",
+          "actor": "Corolla",
+          "precomment": "Corolla sighs, and turns back to the fire.",
+          "line": "And crossing the camp?# How do we do that without being seen or\nheard?# It is not a courtyard.# Once we are out of the forest it is\na couple of kilometres in the open..."
+        },
+        {
+          "actor": "Efeliah",
+          "line": "I can feel the difference between a waking mind and a sleeping\none.",
+          "replies": [
+            {
+              "line": "Then that settles it: she guides.",
+              "nextline": "krissguide1"
+            },
+            {
+              "line": "Say nothing, and let it stand.",
+              "nextline": "krissguide2"
+            }
+          ]
+        },
+        {
+          "linename": "theolast",
+          "actor": "Theo",
+          "line": "Two kilometres.# Not one stone to hide behind."
+        },
+        {
+          "actor": "Corolla",
+          "line": "Exactly.# Not so much as a hole to crawl into.# And if we snap one\ntwig they will be on us in their hundreds inside of seconds.",
+          "comment": "The silence comes down over all of you.# You sit and watch the\nfire, the only source of light and of sound in the world just now,\nwith its low, steady crackling.##\n\nYou could not describe your own state of mind if somebody asked you\nto.# You cannot get your attention to hold on to anything real, you\nfeel dissociated from it, set very slightly to one side of it, and\nthe only thing anywhere in your head is the city."
+        },
+        {
+          "actor": "Kriss",
+          "precomment": "After a while you stand up and start toward the tent.# Before you\ndisappear into it, you say:",
+          "line": "Then it's decided.",
+          "comment": "You say it in the same absent tone you have used all evening.##\n\nYou lie down on your pallet, and every thought leaves your head at\nonce, and a deep sleep takes you.# A sleep without dreams.",
           "childid": 5
+        },
+        {
+          "linename": "krissgates1",
+          "actor": "Kriss",
+          "line": "We'll think about that when we're there...",
+          "nextline": "cross"
+        },
+        {
+          "linename": "krissgates2",
+          "actor": "Kriss",
+          "line": "The gates will not be what stops us.",
+          "nextline": "cross"
+        },
+        {
+          "linename": "krissgates3",
+          "precomment": "You do not answer her.# You keep your eyes on the dark past the\nfire, where the trees begin.",
+          "nextline": "cross"
+        },
+        {
+          "linename": "krissguide1",
+          "actor": "Kriss",
+          "line": "Then you'll guide us.",
+          "nextline": "theolast"
+        },
+        {
+          "linename": "krissguide2",
+          "precomment": "You nod, once, and leave it there.",
+          "nextline": "theolast"
         }
       ]
     },
     {
       "id": 5,
+      "type": "Choice",
+      "recap": "dream-flight hub 1: the forest. Spokes 50 (nothing stirs) and 51 (the call). Advance gated on having heard the call",
+      "text": "$CIt is still dark.# The dark will hold a while longer yet.##\n\nYou are moving, silent, invisible, through vegetation thicker than\nany you have ever seen, and it does not touch you, and you do not\ntouch it.",
+      "choices": [
+        {
+          "desc": "Look at what is moving in the forest around you.",
+          "childid": 50,
+          "isnotrepeatable": true
+        },
+        {
+          "desc": "Look out toward the city, far off in the dark.",
+          "childid": 51,
+          "isnotrepeatable": true
+        },
+        {
+          "desc": "Follow the call.",
+          "childid": 6,
+          "condition": {
+            "type": "isNodeVisited",
+            "item": "51"
+          }
+        }
+      ]
+    },
+    {
+      "id": 50,
       "type": "Story",
-      "recap": "the dream-flight begins: moving invisible through the forest",
-      "text": "It is still dark.# Darkness will reign a while longer.##\n\nYou move, silent, invisible,\nthrough forest as dense as anything you have seen on this planet,\nand nothing stirs as you pass through it.#\nNot the night animals, not a single branch.#\nThe world does not notice you.##\n\nFrom the direction of the city a slow, aching sound\nreaches you through the trees, distant but clear,\nfloating from the palace where a single high window\nstill holds light.# Something between a song and a lament,\na call that does not expect an answer\nbut that you feel anyway in the center of your chest,\nan ache you recognize without knowing why.##\n\n$c<<That sound.# I know that sound.#\nI have always known it.>>$C##\n\n$CYou move toward it without deciding to.##",
-      "childid": 6
+      "recap": "spoke: nothing stirs, not even the night animals notice him",
+      "text": "$CNothing is moving.##\n\nNothing at all, anywhere around you.# Not a branch, not a leaf, and\nnot one of the night animals that ought to be awake at this hour\nand ought, at the very least, to startle.##\n\nThey do not startle.# Not one of them is able to tell that anything\nhas gone past.",
+      "childid": 5
+    },
+    {
+      "id": 51,
+      "type": "Story",
+      "recap": "spoke: the slow aching sound from the palace, the single lit window - a song, a lament, a call",
+      "text": "$CYou look out past the trees, down the length of the valley.##\n\nThe city is a pale shape in the dark, and in the palace at the\nheart of it a single high window is still lit, and out of that\nwindow comes a sound.##\n\nIt is slow, and it aches, and it crosses two kilometres of sleeping\narmy to reach you as clearly as if it were being made an arm's\nlength from your ear.##\n\nIt could be a song.# It could be a lament.# It could be a call.",
+      "childid": 5
     },
     {
       "id": 6,
+      "type": "Choice",
+      "recap": "dream-flight hub 2: over the sleeping army. Spokes 52 (the stripped ground) and 53 (first light behind him)",
+      "text": "$CYou come out of the trees, over open ground, and beneath you the\ncamp begins.##\n\nYou feel them before you see them: thousands of men asleep under\nyou, and among them the smaller, harder points of the ones who are\nawake and standing guard.# Not one of them can see you.# Not one of\nthem can hear you.# You slip into the shadows and through their\nbreathing, and the only trace of yourself you leave anywhere is in\nthe oblivion of the sleepers.",
+      "choices": [
+        {
+          "desc": "Look at what the army has done to the ground.",
+          "childid": 52,
+          "isnotrepeatable": true
+        },
+        {
+          "desc": "Look behind you, without turning.",
+          "childid": 53,
+          "isnotrepeatable": true
+        },
+        {
+          "desc": "Sail on toward the walls.",
+          "childid": 7
+        }
+      ]
+    },
+    {
+      "id": 52,
       "type": "Story",
-      "recap": "the dream-flight continues: over the sleeping army",
-      "text": "Below you, the siege camp.##\n\nThousands of sleeping men, spread across the stripped valley floor,\nthe cookfires burned to orange coals,\nthe sentries walking their rounds with a boredom that makes them\nalmost as absent as the sleepers.#\nYou feel their minds like a dim heat, a mass of slow breathing thought,\nand you pass through them like a current through still water,\nleaving no ripple.##\n\nYou sail above the bare earth they have made of what was pasture,\nabove their tents and their stacked weapons and their horses,\nand not one of them looks up.#\nNot one of them senses you.##\n\nThe white walls are ahead.# The lament from the high window\ngrows stronger with each moment, pulling you on,\nand you feel the first pale light beginning to build\nat the edge of the world behind you.#\nYou move faster.##",
-      "childid": 7
+      "recap": "spoke: sailing like a ghost ship over ground stripped bare by the army",
+      "text": "$CYou sail over it like some spectral ship: ground stripped down to\nnothing by an army of brutes whose heads, so far as you can feel\nthem from up here, hold nothing at all but death, and violence, and\nrot.##\n\nWhat was forest yesterday is bare earth tonight, all the way to the\nwalls.",
+      "childid": 6
+    },
+    {
+      "id": 53,
+      "type": "Story",
+      "recap": "spoke: looking back without turning, the first light, moving faster",
+      "text": "$CWithout turning, you look behind you.##\n\nThere is a faint glow along the edge of the world back there, the\nkind that runs ahead of the day-star, and it is not faint enough.##\n\nYou move faster.",
+      "childid": 6
     },
     {
       "id": 7,
+      "type": "Choice",
+      "recap": "dream-flight hub 3: beneath the walls, no gates. Spoke 54 (moonstone walls)",
+      "text": "$CYou are beneath the walls.##\n\nThere is no time to find the gates.##\n\n$c<<And what would they be for?>>$C##\n\n$CThe voice is stronger here.",
+      "choices": [
+        {
+          "desc": "Look up at the walls.",
+          "childid": 54,
+          "isnotrepeatable": true
+        },
+        {
+          "desc": "Go up.",
+          "childid": 8
+        }
+      ]
+    },
+    {
+      "id": 54,
       "type": "Story",
-      "recap": "the dream-flight: over the walls and into the palace gardens",
-      "text": "The walls.##\n\nIn the faint pre-dawn light they glow like moonstones,\nimmense, ancient, rising sheer above the base of the valley.#\nThere is no time to look for gates.#\n$c<<What would they be for?>>$C##\n\n$CYou rise along the outer face of the wall as if dancing,\ncaught by nothing but the song, drawn by nothing but that voice\nsomewhere above in the palace.#\nYou crest the wall as you would crest a wave,\nand below you on the other side the sleeping city\nopens in all its white quiet.##\n\nYou pass over rooftops that still hold a little warmth\nfrom the day's sun.# Over fountains that go on murmuring\nto themselves in the empty streets.# Over the dark shapes\nof gardens and colonnades and streets of pale stone.##\n\nThe palace gate is open.# You descend through it.##\n\nThe gardens inside are wonderful,\nenchanting trees still lost in sleep,\nfountains sounding in the dark with their mysterious murmur,\nand the scent of something alive and growing\nthat should not exist in a besieged city,\nor perhaps that exists precisely because of it.##\n\nThe lament is very close now.#\nA great white staircase rises before you,\nthe marble softened to something liquid in the milky light,\nand there is a figure at the top of it,\narms open, a silhouette against the window's dying glow,\nand the figure is$W whispering.##\n\nYour name.##",
-      "childid": 8
+      "recap": "spoke: the walls shining like moonstones, evanescent and ethereal",
+      "text": "$CIn the pale, indistinct glow that goes before the day they shine\nlike moonstones, evanescent, ethereal.##\n\nAnd at the same time they are exactly what they have always been:\nmighty bulwarks, immense and old, rising sheer out of the floor of\nthe valley.",
+      "childid": 7
     },
     {
       "id": 8,
+      "type": "Choice",
+      "recap": "dream-flight hub 4: dancing up the wall and over the roofs. Spoke 55 (the trembling window)",
+      "text": "$CYou go up the face of the wall as though you were dancing, prisoner\nof nothing in this world but that song, and you crest it, and the\nsleeping city opens underneath you.##\n\nYou pass over it like a cloud, over lovely roofs that are still\nholding a little of yesterday's warmth, leaving the army and its\nthreat behind you.##\n\nThe first rays of the sun are arriving now, refracted, washing the\nwhole landscape in a light that belongs to dreams.",
+      "choices": [
+        {
+          "desc": "Look at the lit window in the palace.",
+          "childid": 55,
+          "isnotrepeatable": true
+        },
+        {
+          "desc": "Go down into the gardens.",
+          "childid": 9
+        }
+      ]
+    },
+    {
+      "id": 55,
       "type": "Story",
-      "recap": "the light engulfs him; he wakes physically in the palace gardens",
-      "text": "The first ray of true sunlight pierces the sky like an arrow.##\n\nIt strikes the white staircase and the marble ignites,\nflaring gold and orange, molten, flooding upward,\nand the light grows and grows until there is nothing else,\nuntil you are inside it,\nuntil you are $Wlight$C,\nheat and radiance, no body, no weight, no dark.##\n\nYou open your eyes slowly.##\n\nDaylight.# Actual daylight, morning, the sun already clear\nof the mountains behind the city.##\n\nYou are not in the tent.##\n\nA garden surrounds you, glorious and real,\nfountains, flowers, trees moving in a gentle morning breeze,\nthe scent of stone and water and living things.#\nOn the ground around you your companions are stirring,\nblinking, sitting up one by one in the grass of the garden,\nand their expressions are the mirrors of yours:##\n\nTheo, sitting upright and still, looking at the garden\nwith a soldier's unhurried assessment.#\nCorolla, already on her feet, hand on her knife, eyes moving fast.#\nSmiurl, both hands pressed to his face, glowing a bright, disbelieving gold.#\nEfeliah, eyes wide, feeling the space around her with the invisible sense\nthat is always open, her gaze finding yours with a look of calm, wondering certainty.##\n\nYou turn.##\n\nBefore you rises the white staircase.#\nExactly as you dreamed it.##",
-      "childid": 9
+      "recap": "spoke: the light in the high window trembling as if it senses him",
+      "text": "$CThe high window is close now, and closer every moment, and the\nlight inside it is trembling.##\n\nIt trembles the way a candle does when a door opens somewhere else\nin the house.# It trembles as though it can feel you coming.",
+      "childid": 8
     },
     {
       "id": 9,
-      "type": "Dialogue",
-      "recap": "companions react to finding themselves in the palace gardens",
-      "dialogues": [
+      "type": "Choice",
+      "recap": "dream-flight hub 5: the palace gardens and the white stair. Spoke 56 (sleeping trees, murmuring fountains)",
+      "text": "$CYou come down into the gardens of the palace.##\n\nAhead of you a great white staircase rises, its marble gone soft,\nalmost liquid, in that milky light.",
+      "choices": [
         {
-          "actor": "Corolla",
-          "precomment": "Corolla has finished her scan of the garden walls.\nShe turns to you, and whatever she had been going to say\nstays behind her teeth for a moment.",
-          "line": "We didn't walk here.",
-          "comment": "It is not a question.# It is the plainest sentence\nshe has ever said to you.#"
+          "desc": "Stay a moment among the trees and the fountains.",
+          "childid": 56,
+          "isnotrepeatable": true
         },
         {
-          "actor": "Kriss",
-          "line": "No.# We didn't.",
-          "comment": "A pause.##"
-        },
-        {
-          "actor": "Smiurl",
-          "line": "How... how are we inside?# The walls... the army...",
-          "comment": "He trails off, his skin cycling through uncertain colors."
-        },
-        {
-          "actor": "Efeliah",
-          "precomment": "Efeliah has been standing very still, her eyes on the staircase.",
-          "line": "Something brought us here.# Something very old, and very strong,\nand it knows who we are.",
-          "istelepathy": true,
-          "comment": "The garden is quiet around you,\nthe fountains running, the trees moving in their gentle way,\nand the morning light is gold on the white marble of the staircase\nthat rises before you, exactly as you dreamed it.##",
+          "desc": "Go up the stair.",
           "childid": 10
         }
       ]
     },
     {
+      "id": 56,
+      "type": "Story",
+      "recap": "spoke: the enchanting sleeping trees and the mysterious murmur of the fountains",
+      "text": "$CThe trees here are enchanting and still fast asleep, and between\nthem the fountains go on with their mysterious murmuring in the\ndark, to nobody at all.",
+      "childid": 9
+    },
+    {
       "id": 10,
       "type": "Story",
-      "recap": "approaching the elliptical hall - end of chapter",
-      "text": "You climb the staircase.##\n\nYour companions follow without discussion, as they have always followed,\nthrough everything you have asked them to walk into.##\n\nAt the top, a corridor of pale stone leads inward\nthrough the palace's heart, lit by windows that face\nsome inner court you cannot see, the light coming\nfrom no visible source and going nowhere visible.#\nThe corridor is wide and white and at its end\nstands a pair of high doors, open,\nonto a space you feel before you see.##\n\nAn elliptical hall.##\n\nIts ceiling rises into shadow.# Its floor is a single expanse\nof white marble, worn smooth and polished to a deep luster\nby some long continuity of use you can only guess at.\nThe hall is vast and empty and it holds\na silence that is not like the silence outside,\nnot the silence of absence but the silence of waiting,\nof something that has been patient here for longer\nthan you can hold in your mind at once.##\n\n$c<<Whoever is coming, whatever is coming,\nI am ready.\nI have been ready since a lightning bolt\ndropped me on a dead planet with no shoes.>>$C##\n\n$CYou cross the threshold.##\n\nThe doors close.##",
+      "recap": "the figure at the top of the stair whispering his name, then the first ray of sun and the light taking everything",
+      "text": "$CHalfway up, you see it.##\n\nOr you believe you see it: a figure at the top of the staircase,\narms held open, whispering, and what it is whispering is your\nname.##\n\nIn that same instant the first ray of the sun goes through the sky\nlike a burning dart and breaks across those steps, and the steps\ncatch it and run like molten lava, and the light grows, and grows,\nuntil it is blinding, until it is irresistible, until everything\nhas been swallowed by it and there is nothing left around you at\nall but heat, and light.",
+      "childid": 11
+    },
+    {
+      "id": 11,
+      "type": "Story",
+      "recap": "waking physically in the palace gardens, the friends waking around him, and the stair from the dream in front of him",
+      "text": "$CYou open your eyes slowly.# The daylight blinds you.##\n\nYou look around, and it takes you no time at all to work out that\nyou are not in your tent.##\n\nA wonderful garden lies in front of you, full of fountains and\nflowers and trees swaying gently under a light breeze, and on the\nground around you your friends are still lying where they went to\nsleep, and they are waking now, one by one.##\n\nYou turn, and you are dumbstruck.##\n\nThe staircase you saw last night is standing right in front of\nyou.##\n\n$c<<It cannot have been only a dream.##\n\nOr am I still dreaming?>>$C",
+      "childid": 12
+    },
+    {
+      "id": 12,
+      "type": "Dialogue",
+      "recap": "the companions wake in the gardens with no idea how [DECISION: how Kriss answers, or fails to] - then the climb begins",
+      "dialogues": [
+        {
+          "actor": "Corolla",
+          "precomment": "Corolla is on her feet before any of the rest of you, knife in\nhand, reading walls that are not the walls she went to sleep\ninside.",
+          "line": "We did not walk here.",
+          "comment": "It is not a question."
+        },
+        {
+          "actor": "Smiurl",
+          "precomment": "Smiurl has both hands over his face and is going through four\ncolours without settling on any of them.",
+          "line": "The walls...# the army...# how are we inside?",
+          "replies": [
+            {
+              "line": "Tell them about the staircase.",
+              "nextline": "krisswake1"
+            },
+            {
+              "line": "Say you are not sure you are awake.",
+              "nextline": "krisswake2"
+            },
+            {
+              "line": "Say nothing at all.",
+              "nextline": "krisswake3"
+            }
+          ]
+        },
+        {
+          "linename": "climb",
+          "precomment": "Efeliah has not said anything.# She is standing very still with her\neyes on the top of the staircase.##\n\nIn that half-conscious state of doubt you start up the steps, and\nyou feel your own unease and your own excitement climbing with you,\none step at a time.##\n\nYou do not even notice that the others have begun to follow.",
+          "childid": 13
+        },
+        {
+          "linename": "krisswake1",
+          "actor": "Kriss",
+          "line": "I saw that staircase last night.# I was standing right here.",
+          "nextline": "climb"
+        },
+        {
+          "linename": "krisswake2",
+          "actor": "Kriss",
+          "line": "I am not sure I am awake yet.",
+          "nextline": "climb"
+        },
+        {
+          "linename": "krisswake3",
+          "precomment": "You do not answer him.# You are not certain you could.",
+          "nextline": "climb"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "type": "Story",
+      "recap": "the top of the stair: the veiled atrium - end of chapter, c22 opens inside the hall",
+      "text": "$CFrom partway up you can already make out a vast atrium at the head\nof the stair, cut off from the outside by veils that fall from a\nvery high ceiling and dance in the breath of air that moves over\nthis land like something alive.##\n\nYou come to the end of the staircase.##",
       "islast": true
     }
   ]

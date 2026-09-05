@@ -46,7 +46,7 @@
     {
       "id": 4,
       "type": "Dialogue",
-      "recap": "cell - Ef's warning from the other room, Smiurl's lore",
+      "recap": "cell - Ef's warning from the other room, Smiurl's lore (reply: walk into or avoid Corolla's slip)",
       "dialogues": [
         {
           "actor": "Kriss",
@@ -84,11 +84,22 @@
           "actor": "Smiurl",
           "precomment": "Smiurl does not answer immediately. After a moment he begins, slowly.",
           "line": "My grandfather used to tell me the history of our people, when I was small.#\nThere is something that has come back to me just now.\n\nHe said our race was created by the people from Earth\nthrough manipulation of the genome of normal men.#\nBut alongside ours, other races were created too.#\nOne of them was that of the mysterious sea mutants,\nwhom we believed to be a legend…",
-          "comment": ""
+          "comment": "",
+          "replies": [
+            {
+              "line": "Test-tube crossbreeds, then?",
+              "nextline": "blunt"
+            },
+            {
+              "line": "That must be strange to carry.",
+              "nextline": "gentle"
+            }
+          ]
         },
         {
+          "linename": "blunt",
           "actor": "Corolla",
-          "precomment": "Corolla interrupts.",
+          "precomment": "Corolla doesn't dress it up.",
           "line": "You mean these monsters were grown in a test tube?",
           "comment": "Smiurl darkens, and Corolla sees it at once."
         },
@@ -100,7 +111,26 @@
         {
           "actor": "Smiurl",
           "precomment": "He waves it away, though it has landed.",
-          "line": "Leave it. It doesn't matter.##\n\nBut yes: they are modified-DNA beings,\nand I'd wager that like my people they can reproduce naturally.##\n\nThe story said, also, that those men without morals wanted\nto create intelligent beings capable of living in hostile environments,\nlike the sea floor. To exploit the energies and resources\nhidden in the planet: that was their purpose.##\n\nThey say they built a submarine city from which one could access\nthe fire beneath the earth beneath the sea.",
+          "line": "Leave it. It doesn't matter.",
+          "comment": "",
+          "nextline": "resume"
+        },
+        {
+          "linename": "gentle",
+          "actor": "Corolla",
+          "line": "So he's kin to your own people, in a way?",
+          "comment": "Smiurl doesn't darken at all. If anything, he looks glad someone finally asked."
+        },
+        {
+          "actor": "Smiurl",
+          "line": "In a way, yes.",
+          "comment": "",
+          "nextline": "resume"
+        },
+        {
+          "linename": "resume",
+          "actor": "Smiurl",
+          "line": "But yes: they are modified-DNA beings,\nand I'd wager that like my people they can reproduce naturally.##\n\nThe story said, also, that those men without morals wanted\nto create intelligent beings capable of living in hostile environments,\nlike the sea floor. To exploit the energies and resources\nhidden in the planet: that was their purpose.##\n\nThey say they built a submarine city from which one could access\nthe fire beneath the earth beneath the sea.",
           "comment": ""
         },
         {
@@ -129,10 +159,20 @@
     },
     {
       "id": 5,
-      "type": "Story",
-      "recap": "Ef's pain builds - Kriss's rage - the door-punch",
-      "text": "$g<<They are about to begin attacking my mental defenses.#\nI don't think I can hold out long…>>$C##\n\nA sensation of suffering accompanies the words,\nnot described but transmitted, Efeliah's actual pain\narriving in your chest the way her voice does, directly.##\n\nKriss, the moment that pain reaches him, feels himself go cold with fury.\nHe begins to pace the narrow cell, his footsteps ringing sharp on the metal.##\n\n$B\"We have no weapons.\"$C#\nTheo watches him, almost as if he can hear his thoughts.##\n\n$Y\"And they're strong,\"$C# Smiurl confirms, deflated.##\n\nYou breathe out hard. The helplessness is unbearable.\nCorolla watches you with understanding, having no better answer.##\n\n$c<<Maledizione.>>$C# You plant yourself in front of the door\nand shout it aloud too.\n\n$C\"$cMaledizione!$C\"##\n\nYou close your eyes. You clench your fists.##\n\nYou think of Efeliah on the other side of that wall, suffering,\nwho could be dying or worse from one moment to the next,\nwho has always been close to you,\nclosed to each of you. You think of the sword you don't have,\nof Theo's hammer you don't have, of the door that cannot be opened.#\nThis cannot end here.##\n\nYou can feel Efeliah's suffering growing, her mind stiffening\nin the effort to resist.# You no longer feel anything around you.\nYou are alone, in nothing, with your rage and her voice in your skull.##\n\nIt happens in an instant.# Without realizing what you are doing,\nyou begin to scream, and your hand snaps forward\nas if it were your sword,\nstruck the door with all the force of desperation.##\n\nA detonation fills the room.###\n\nYou open your eyes.# The door is against the opposite wall,\nand two guards are pinned beneath it, motionless.\nThe metal is twisted at the exact point where your fist connected.##\n\nYour head swims. Colored lights streak past your vision.\nYour hand is bleeding, but after a moment you can move it.##\n\nYou stand perfectly still, trying to understand what just happened,\nand cannot, and then the others push past you\nand take the guards' weapons from the floor.##",
-      "childid": 6
+      "type": "Surge",
+      "recap": "Ef's pain builds - Kriss alone, no guidance - Surge instance 3, difficulty peak - the door-punch",
+      "text": "$g<<They are about to begin attacking my mental defenses.#\nI don't think I can hold out long…>>$C##\n\nA sensation of suffering accompanies the words,\nnot described but transmitted, Efeliah's actual pain\narriving in your chest the way her voice does, directly.##\n\nKriss, the moment that pain reaches him, feels himself go cold with fury.\nHe begins to pace the narrow cell, his footsteps ringing sharp on the metal.##\n\n$B\"We have no weapons.\"$C#\nTheo watches him, almost as if he can hear his thoughts.##\n\n$Y\"And they're strong,\"$C# Smiurl confirms, deflated.##\n\nYou breathe out hard. The helplessness is unbearable.\nCorolla watches you with understanding, having no better answer.##\n\n$c<<Maledizione.>>$C# You plant yourself in front of the door\nand shout it aloud too.\n\n$C\"$cMaledizione!$C\"##\n\nYou close your eyes. You clench your fists.##\n\nYou think of Efeliah on the other side of that wall, suffering,\nwho could be dying or worse from one moment to the next,\nwho has always been close to you,\nclosed to each of you. You think of the sword you don't have,\nof Theo's hammer you don't have, of the door that cannot be opened.#\nThis cannot end here.##\n\nYou can feel Efeliah's suffering growing, her mind stiffening\nin the effort to resist.# You no longer feel anything around you.\nYou are alone, in nothing, with your rage and her voice in your skull.##\n\nNobody is calling the directions this time.# Nobody can.#\nIt is only you, and the door, and whatever this is.##",
+      "childid": 6,
+      "challenge": {
+        "sequencelength": 11,
+        "drainrate": 35,
+        "restore": 6,
+        "penalty": 10,
+        "startingrage": 100,
+        "maxrage": 100,
+        "successmessage": "It happens in an instant.# Without realizing what you are doing,\nyou begin to scream, and your hand snaps forward\nas if it were your sword,\nstruck the door with all the force of desperation.##\n\nA detonation fills the room.###\n\nYou open your eyes.# The door is against the opposite wall,\nand two guards are pinned beneath it, motionless.\nThe metal is twisted at the exact point where your fist connected.##\n\nYour head swims. Colored lights streak past your vision.\nYour hand is bleeding, but after a moment you can move it.##\n\nYou stand perfectly still, trying to understand what just happened,\nand cannot, and then the others push past you\nand take the guards' weapons from the floor.##",
+        "failuremessage": "The rage slips through your fingers before it becomes anything.#\nThe door does not move.##\n\nEfeliah's pain flares again behind your eyes, and you grit your teeth,\nand try once more."
+      }
     },
     {
       "id": 6,
@@ -209,8 +249,8 @@
     {
       "id": 9,
       "type": "Story",
-      "recap": "the glass tunnel - city glimpsed on the run",
-      "text": "The walls of the tunnel are glass.##\n\nYou are already running when you understand this,\nand you do not stop, cannot stop,\nbut you see it as you run: a long crystal tube\nconnecting two structures, and beneath it, dozens of meters down,\nthe sea floor, lit as bright as noon, sprawling out\nfor the area of a small city in every direction.##\n\nTo the left: mutants at work, emerging from minisubs without any protection,\nat ease in the water as you are in air, digging or preparing\nsome new structure, deliberate and purposeful.#\nTo the right, you see something more extraordinary.##\n\nA city.##\n\nA real city, streets and gardens of algae and coral,\nand around what might be a market\na great number of mutants move with the unhurried purpose\nof people who have somewhere to be.# Colorful structures\ncling to the rock face like shells.# Small luminous submersibles\nshuttle between points, ferrying passengers.##\n\nAnd then, from a building, a crowd of small mutants pours out,\nproportioned differently, their enormous eyes not yet fully developed.##\n\n$g<<Children coming out of school…>>$C##\n\nEfeliah says it with a particular hesitation.# Nobody says anything else.\nYou keep running, but you are all looking,\nand the scientist-mutant you are dragging along has taken on\nthe expression of something like pride,\nthough it says nothing, not a syllable.##\n\n$g<<They're entering the tunnel! We must keep moving!>>$C##",
+      "recap": "the glass tunnel - city glimpsed on the run - the daylight clue",
+      "text": "The walls of the tunnel are glass.##\n\nYou are already running when you understand this,\nand you do not stop, cannot stop,\nbut you see it as you run: a long crystal tube\nconnecting two structures, and beneath it, dozens of meters down,\nthe sea floor, lit as bright as noon, sprawling out\nfor the area of a small city in every direction.##\n\nTo the left: mutants at work, emerging from minisubs without any protection,\nat ease in the water as you are in air, digging or preparing\nsome new structure, deliberate and purposeful.#\nTo the right, you see something more extraordinary.##\n\nA city.##\n\nA real city, streets and gardens of algae and coral,\nand around what might be a market\na great number of mutants move with the unhurried purpose\nof people who have somewhere to be.# Colorful structures\ncling to the rock face like shells.# Small luminous submersibles\nshuttle between points, ferrying passengers.##\n\nAnd then, from a building, a crowd of small mutants pours out,\nproportioned differently, their enormous eyes not yet fully developed.##\n\n$g<<Children coming out of school…>>$C##\n\nEfeliah says it with a particular hesitation.# Nobody says anything else.\nYou keep running, but you are all looking, and something about the light\nover all of it needles at you: it isn't torchlight, and it isn't the harsh\nglare of the scientist's room above.# It's warm, angled, alive,\nthe way daylight is alive.##\n\n$c<<Whatever they've built to fake a sky down here, it's keeping actual\ntime with a sun.# Wherever the surface is right now, above all this water...\nit has to still be day up there.>>$C##\n\nThe scientist-mutant you are dragging along has taken on\nthe expression of something like pride,\nthough it says nothing, not a syllable.##\n\n$g<<They're entering the tunnel! We must keep moving!>>$C##",
       "childid": 10
     },
     {
@@ -230,26 +270,99 @@
     {
       "id": 12,
       "type": "Choice",
-      "recap": "the apnea swim - two approaches",
+      "recap": "the apnea swim - first stroke decision",
       "text": "Theo's hand finds your shoulder.##\n\n$B\"Stay close.\"$C##\n\nEfeliah goes under.# You take your breath, the deepest you can,\nand follow.##\n\nThe illumination of the tunnel carries through the water,\nso you can see where you are going: the curve upward a dozen\nmeters ahead, the wavering green light above it,\nthe others' shapes moving through the dark.##\n\nHow do you approach the swim?",
       "choices": [
         {
-          "desc": "Long, steady strokes, measured, don't burn it all at once.",
-          "childid": 13
+          "desc": "Long, steady strokes. Pace yourself.",
+          "childid": 1201
         },
         {
-          "desc": "Go as hard as you can, straight to the surface.",
-          "childid": 121
+          "desc": "Kick hard, straight for the light.",
+          "childid": 1202
         }
       ]
     },
     {
-      "id": 121,
+      "id": 1201,
+      "type": "Choice",
+      "recap": "steady first stroke - air holds - second stroke decision",
+      "text": "You measure it out, stroke by stroke, and the burning in your chest\nstays a promise instead of becoming a fact.# The curve is closer now,\na dozen shapes of shadow and green light ahead of you in the water.##\n\nWhat now?",
+      "choices": [
+        {
+          "desc": "Keep the same steady rhythm.",
+          "childid": 1211
+        },
+        {
+          "desc": "The curve's close. Push harder now.",
+          "childid": 1212
+        }
+      ]
+    },
+    {
+      "id": 1202,
+      "type": "Choice",
+      "recap": "hard first stroke - air burning - second stroke decision",
+      "text": "You go at it hard, and the water churns white around you,\nand the burn arrives all at once instead of by degrees,\na fist closing slowly around your chest.# The curve is still not close.##\n\nWhat now?",
+      "choices": [
+        {
+          "desc": "Try to ease off. Save what's left.",
+          "childid": 1213
+        },
+        {
+          "desc": "Keep kicking. No turning back now.",
+          "childid": 1214
+        }
+      ]
+    },
+    {
+      "id": 1211,
       "type": "Story",
-      "recap": "wrong choice - burned through air",
-      "text": "You go hard, everything at once, churning the water.\nTwenty meters and your lungs are already screaming,\nbut the curve is just there, and past it the ceiling opens,\nyou can see the pale air above the waterline...##\n\nYou let go of the breath. The cold water fills your throat.\nYour vision goes at the edges, gently, the way the sea does everything.##\n\nThe dark comes in like a tide.##",
-      "islast": true,
-      "isclosing": true
+      "recap": "steady + steady - reaches the curve with air to spare",
+      "text": "You hold the rhythm, and it holds you back.# The curve arrives,\nthen passes beneath you, and the ceiling lifts away by degrees,\nthe green light overhead spreading wider with every pull.##\n\nYour lungs ache, but they are not empty, not yet, and the shapes\nof the others are climbing ahead of you toward a paler kind of dark.##",
+      "childid": 1220
+    },
+    {
+      "id": 1212,
+      "type": "Story",
+      "recap": "steady + hard - reaches the curve, tighter but intact",
+      "text": "You break the rhythm and drive for it, and the reserve you banked\nearlier spends fast but spends clean.# The curve passes beneath you\nwith your lungs already screaming, but screaming is not the same as empty.##\n\nThe ceiling lifts.# The green light overhead spreads wider.# You are still moving.##",
+      "childid": 1220
+    },
+    {
+      "id": 1213,
+      "type": "Story",
+      "recap": "hard + ease off - too late to recover, drowns",
+      "text": "You try to rein it in, but the air is already spent,\nspent before you knew you were spending it, and easing off now\nonly means dying slower.# The curve is still ahead of you\nwhen your body stops asking and starts deciding.##",
+      "childid": 13
+    },
+    {
+      "id": 1214,
+      "type": "Story",
+      "recap": "hard + hard - burns through everything, drowns",
+      "text": "You give everything that is left, and everything that is left\nturns out not to be much.# The curve does not get any closer\nfast enough, and somewhere short of it your lungs stop\nnegotiating and simply take what they are owed.##",
+      "childid": 13
+    },
+    {
+      "id": 1220,
+      "type": "Story",
+      "recap": "clean exit - barely surfaced, no drowning",
+      "text": "You haul yourself past the last of the rising rock,\nand the ceiling opens all at once into a wider, shallower stretch\nwhere the water barely reaches your chest.##\n\nYou break through gasping, dragging air in ragged pulls,\nand find the others already standing in it, drenched and pale\nand entirely, gloriously alive.# Theo surfaces a moment after you,\nunbothered, as if the whole thing had been a formality.##",
+      "childid": 1221
+    },
+    {
+      "id": 1221,
+      "type": "Dialogue",
+      "recap": "clean exit continuation - no rest, press on",
+      "dialogues": [
+        {
+          "actor": "Efeliah",
+          "precomment": "Efeliah is still catching her own breath, but she does not let the moment settle.",
+          "line": "We cannot stop even now.#\nFor them the water is no obstacle.",
+          "istelepathy": true,
+          "childid": 15
+        }
+      ]
     },
     {
       "id": 13,
@@ -312,10 +425,71 @@
     },
     {
       "id": 17,
-      "type": "Story",
-      "recap": "the grotto with their ship being dismantled",
-      "text": "The left corridor is the same reddish rock,\nelectric cables strung between bulbs at regular intervals.\nYou follow it for a minute or two without meeting anything,\nthen it ends, opening onto a metal landing above a vast cavern.##\n\nWhat you see stops the breath in your lungs.##\n\nThe ship.##\n\nIn the center of the cavern, an enormous grotto cut into the rock,\ntheir ship lies at rest,\nthe one you sailed south on, the one that took you all down with it.#\nMechanical arms hiss and clank around the hull, the mast, the solar sails,\ndismantling it piece by piece with methodical indifference.#\nAlready the forward half is in sections on the floor;\nonly the stern remains intact.##\n\nYou descend to explore, keeping your distance from the mechanical arms\nthat would crush you without noticing.##\n\nThen a mutant stares down at you from a control booth\nhigh on the cavern wall, frozen in surprise for a moment,\nthen recovers and reaches for something like a telephone.##\n\n$R\"It's calling reinforcements,\"$C# Corolla says,\nreading it the same moment you do.##\n\n$c<<As if we didn't have enough problems.>>$C##\n\nA hiss cuts the air between you, and something metal\nstikes the floor just behind you.# The technician\nthat calls reinforcements also shoots at you with something like a harpoon gun.##\n\nYou run.##",
-      "childid": 18
+      "type": "Action",
+      "recap": "the grotto with their ship being dismantled - optional search pays off c18's storm-prep pairs",
+      "text": "The left corridor is the same reddish rock,\nelectric cables strung between bulbs at regular intervals.\nYou follow it for a minute or two without meeting anything,\nthen it ends, opening onto a metal landing above a vast cavern.##\n\nWhat you see stops the breath in your lungs.##\n\nThe ship.##\n\nIn the center of the cavern, an enormous grotto cut into the rock,\ntheir ship lies at rest,\nthe one you sailed south on, the one that took you all down with it.#\nMechanical arms hiss and clank around the hull, the mast, the solar sails,\ndismantling it piece by piece with methodical indifference.#\nAlready the forward half is in sections on the floor;\nonly the stern remains intact.##\n\nYou descend to explore, keeping your distance from the mechanical arms\nthat would crush you without noticing.##\n\nThen a mutant stares down at you from a control booth\nhigh on the cavern wall, frozen in surprise for a moment,\nthen recovers and reaches for something like a telephone.##\n\n$R\"It's calling reinforcements,\"$C# Corolla says,\nreading it the same moment you do.##\n\n$c<<As if we didn't have enough problems.>>$C##\n\nA hiss cuts the air between you, and something metal\nstrikes the floor just behind you.# The technician\nthat calls reinforcements also shoots at you with something like a harpoon gun.##\n\nThere is no time for a proper search, but a few things are worth\na glance before you move.",
+      "actions": [
+        {
+          "verbs": [
+            "examine",
+            "search",
+            "check",
+            "look"
+          ],
+          "answer": "There's no time for that here.# Whatever you needed, you already know\nwhere to look for it.",
+          "objects": [
+            {
+              "objs": [
+                "galley",
+                "food",
+                "stores",
+                "provisions",
+                "water"
+              ],
+              "condition": {
+                "item": "securedGalley",
+                "refusal": "You dig for the galley locker anyway.# Whatever was in it went into\nthe sea somewhere off the coast, along with most of what you lashed\ndown that day.# There's nothing here."
+              },
+              "answer": "The galley locker is still wedged where you left it, dented but sealed.#\nWhatever's inside survived the wreck as well as you did."
+            },
+            {
+              "objs": [
+                "medbay",
+                "medicine",
+                "medicines",
+                "cabinet",
+                "bandages"
+              ],
+              "condition": {
+                "item": "securedMedbay",
+                "refusal": "You look for the medical stores, but the mechanical arms have already\nreduced that whole section to pieces on the floor.# Whatever survived\nthe storm did not survive this."
+              },
+              "answer": "The medical case you lashed down is still intact among the wreckage,\nand Efeliah's face does something complicated with relief when she sees it."
+            },
+            {
+              "objs": [
+                "corolla"
+              ],
+              "condition": {
+                "item": "corollaSecuredBelow",
+                "refusal": "Corolla moves like someone running on nothing, which is more or less\nwhat she is.# She never did get her rest, and it shows in the set\nof her jaw."
+              },
+              "answer": "Corolla moves easily, rested and sharp, the burn-scar under her shirt\nthe only sign anything happened to her at all."
+            }
+          ]
+        },
+        {
+          "verbs": [
+            "run",
+            "go",
+            "flee",
+            "move",
+            "continue"
+          ],
+          "answer": "There's no time for more of this.# You run.",
+          "childid": 18
+        }
+      ]
     },
     {
       "id": 18,
@@ -409,11 +583,11 @@
     {
       "id": 21,
       "type": "Dialogue",
-      "recap": "surfacing - orientation - Smiurl's navigation trick",
+      "recap": "surfacing - orientation - transition into the bearing puzzle",
       "dialogues": [
         {
           "actor": "Corolla",
-          "precomment": "You burst from the cavern into open water at full speed.\nThe minisub wobbles, finds itself, and angles sharply upward.##\n\nWhen you break the surface, actual sunlight comes through the viewport,\nand everyone goes quiet for a moment at the fact of it.#\nYou think about embolism for a second, then Smiurl opens the hatch\nand takes a breath and is perfectly fine,\nand you close that particular worry in a drawer at the back of your mind\nwhere it will stay until you have time to look at it properly.##\n\nA collective silence, then a general eruption of relief that is partly noise\nand partly just the absence of dread.##\n\nThe only problem is that there is nothing to eat or drink aboard,\nand the water they have between them is very little.##\n\nCorolla is at the compass.",
+          "precomment": "You burst from the cavern into open water at full speed.\nThe minisub wobbles, finds itself, and angles sharply upward.##\n\nWhen you break the surface, actual sunlight comes through the viewport,\nand everyone goes quiet for a moment at the fact of it.#\nYou think about embolism for a second, then Smiurl opens the hatch\nand takes a breath and is perfectly fine,\nand you close that particular worry in a drawer at the back of your mind\nwhere it will stay until you have time to look at it properly.##\n\nA collective silence, then a general eruption of relief that is partly noise\nand partly just the absence of dread.##\n\nWhatever they managed to grab from the wreck in the grotto, or didn't,\nis not going to carry them far: there is little enough food between them,\nand even less water.##\n\nCorolla is at the compass.",
           "line": "Which way do we go?#\nThe cardinal points don't match anything I know.",
           "break": true
         },
@@ -424,30 +598,80 @@
         },
         {
           "actor": "Kriss",
-          "line": "We need to go south."
+          "precomment": "You look for the sun instead.# It sits low and heavy near the waterline,\noff to one side, and something about it needles at a memory:\nthat warm, daylight-colored glow in the tunnel far below,\ntuned to nothing you understood at the time.",
+          "line": "Give me a second to think.",
+          "childid": 210
+        }
+      ]
+    },
+    {
+      "id": 210,
+      "type": "Choice",
+      "recap": "the bearing puzzle - daylight clue plus sun position fixes west",
+      "text": "The light in that tunnel comes back to you: steady, warm, tuned like\nnothing else down there to match a sky none of you could see.#\nIf the mutants really do keep solar time, that fixes it to this sun,\nright now, low and heavy near the waterline off to your right.##\n\nWhich way does that make it?",
+      "choices": [
+        {
+          "desc": "West. The sun's low enough to be setting.",
+          "childid": 211
         },
         {
-          "actor": "Corolla",
-          "line": "And how do we know which way that is?",
-          "comment": "You had been about to suggest waiting for night\nand navigating by the stars, when Smiurl squeezes past you\nand sticks his head through the hatch for a moment, then drops back in."
+          "desc": "East. The sun only rises, never sets.",
+          "childid": 212,
+          "effect": {
+            "gainitem": "lostDayAtSea"
+          }
+        },
+        {
+          "desc": "South. That's the direction we need anyway.",
+          "childid": 212,
+          "effect": {
+            "gainitem": "lostDayAtSea"
+          }
+        },
+        {
+          "desc": "North. The light must be playing tricks.",
+          "childid": 212,
+          "effect": {
+            "gainitem": "lostDayAtSea"
+          }
+        }
+      ]
+    },
+    {
+      "id": 211,
+      "type": "Dialogue",
+      "recap": "correct bearing - Smiurl confirms simultaneously - stars verify that night",
+      "dialogues": [
+        {
+          "actor": "Kriss",
+          "precomment": "You turn it over, checking the logic against the sky.",
+          "line": "West.# The sun's low enough to be setting, not rising.",
+          "comment": "The word is barely out of your mouth when another voice lands on it\nat the exact same moment, and it isn't Corolla's, and it isn't Efeliah's."
         },
         {
           "actor": "Smiurl",
-          "line": "South is that way.",
-          "comment": "He points slightly to your right."
+          "line": "West!# It has to be west!",
+          "comment": "Every head turns.# Even Theo's."
         },
         {
           "actor": "Corolla",
-          "line": "And how exactly would you know?",
-          "comment": "Genuinely surprised."
+          "line": "And how exactly would you know that?",
+          "comment": "Genuinely astonished."
         },
         {
           "actor": "Smiurl",
           "line": "Simple.# The sun is low on the horizon.\nIf the city at the bottom of the sea keeps solar time, that's west.",
-          "comment": "Nobody says anything.# You all look at Smiurl.##\n\n$c<<Right.# Of course.# The dwarf.>>$C##\n\nYou turn the minisub to Smiurl's south.#\nThat night, when the stars come out, you check,\nand he is exactly right.",
+          "comment": "$c<<Right.# Of course.# The dwarf.>>$C##\n\nYou turn the minisub to Smiurl's south.#\nThat night, when the stars come out, you check,\nand he is exactly right.",
           "childid": 22
         }
       ]
+    },
+    {
+      "id": 212,
+      "type": "Story",
+      "recap": "wrong bearing - a day and water burned before Smiurl corrects it",
+      "text": "You settle on it, confident enough, and turn the minisub to your\nchosen heading.# The others take your word for it; there is nothing\nelse to take.##\n\nYou run that bearing through the day, the water opening flat and empty\nin every direction, until the light fails and the stars come out.##\n\nCorolla is the one who notices first, tracing a pattern of stars overhead\nagainst nothing in particular, and swearing under her breath.#\nWhatever you're heading toward, it isn't south.##\n\nA full day gone, and the water between you all is lower\nthan it was that morning.##\n\nIt is Smiurl, in the end, who works it out, sticking his head through\nthe hatch the way he did that first morning and coming back in\nalmost sheepish.##\n\n$Y\"South is that way,\"$C# he says, pointing.#\n$Y\"The sun's low on the horizon.# If the city at the bottom of the sea\nkeeps solar time, that's west.\"$C##\n\nNobody says anything for a moment, and then Corolla laughs,\nshort and disbelieving, and turns the minisub onto his heading.##\n\n$c<<We could have used that yesterday.>>$C",
+      "childid": 22
     },
     {
       "id": 22,
@@ -458,14 +682,20 @@
           "actor": "Efeliah",
           "precomment": "The night passes in shifts at the controls.\nBy morning, when you are all awake,\nEfeliah speaks.# She has been quiet since the tunnel,\nquieter than usual, and there is something in the way she chooses\nher words now that tells you she has been sitting with this for hours.",
           "line": "There is something I need to tell you.",
-          "istelepathy": true
+          "istelepathy": true,
+          "replies": [
+            {
+              "line": "Go on.",
+              "nextline": "goon"
+            },
+            {
+              "line": "That doesn't sound good.",
+              "nextline": "goon"
+            }
+          ]
         },
         {
-          "actor": "Kriss",
-          "line": "Go on.",
-          "comment": ""
-        },
-        {
+          "linename": "goon",
           "actor": "Efeliah",
           "line": "The storm that sank us.# It was not a natural phenomenon.",
           "comment": "She lets that sit a moment.## ",

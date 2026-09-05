@@ -5,8 +5,548 @@
     {
       "id": 1,
       "type": "Story",
-      "recap": "STUB - placeholder from the 22-to-24 renumber; real chapter lands in issue 13 (source ch. XXI)",
-      "text": "-------------------------------\n|          CHAPTER 20          |\n-------------------------------\n\n\n$D[Placeholder chapter created by the 22-to-24 restructure.\nThe Long Crossing (source chapter XXI) will be written here\nunder issue 13. Press any key to continue to the next chapter.]$C",
+      "recap": "chapter header + the ordeal begins: five more days south, food and water gone, motors weakening",
+      "text": "-------------------------------\n|          CHAPTER 20          |\n-------------------------------\n\n\n$CThe minisub runs south for five more days.##\n\nYou keep to a few meters below the surface, since the motors, whatever\nthey were built for, were never meant to push a hull through open air.#\nThey groan and falter the moment the hatch breaks water, and running\nsubmerged is the only way to make any real distance at all.##\n\nBy the second day the last of your food is gone.# Theo takes to diving\nwith a fishing spear scavenged from the wreck, guided by Efeliah, who\ncan feel the shape of every living thing moving through the dark water\naround you and calls it out to him before he goes under.# The catch,\nwhen there is one, is thin and strange and eaten raw.# More often there\nis no catch at all.##\n\nThe water lasts a little longer than the food, rationed out in careful\nsips, but not much longer.# Then it, too, is gone.##\n\nHour by hour the motors seem to hold less charge than they did at the\nstart, and the minisub's pace bleeds away with them.# You wonder, in\nthe quiet, whether you survived everything behind you only to starve\nto death in an ocean with no name, thousands of kilometers from\nwherever it is you are actually going.##\n\nYou lie in the cramped metal berths built into the hull, saving your\nstrength, saying little, because there is little worth saying.",
+      "childid": 2
+    },
+    {
+      "id": 2,
+      "type": "Action",
+      "recap": "your turn at the helm - required verb holds course; optional flavor object gated on lostDayAtSea",
+      "text": "It's your turn at the controls again.##\n\nEfeliah's shift before yours left her folded into the pilot's seat,\nutterly absorbed in the flat, uniform blue beyond the polymer nose of\nthe minisub, as if the water itself might answer a question she hasn't\nasked aloud.# Now it's you holding the wheel steady, the compass\nneedle your only proof that you're going anywhere on purpose at all.##\n\nMore than once you're sure you hear voices, low and urgent, somewhere\nbehind you in the hull.# Every time, it turns out to be stomachs,\nyours included, complaining loudly about a meal that never comes.##\n\nNight has stopped meaning anything different from day.# Sleep, when it\ncomes, does not rest you.",
+      "actions": [
+        {
+          "verbs": [
+            "hold",
+            "watch",
+            "keep",
+            "steer",
+            "check"
+          ],
+          "objects": [
+            {
+              "objs": [
+                "compass",
+                "course",
+                "wheel",
+                "controls",
+                "needle",
+                "heading"
+              ],
+              "answer": "You keep your hand steady on the wheel and your eyes on the needle,\nthe only thing in this whole dark ocean that seems to know where\nit's going.# Somewhere behind you, someone's stomach growls, long\nand mournful, and for a moment you could swear it was a voice\ncalling your name.",
+              "childid": 3
+            }
+          ]
+        },
+        {
+          "verbs": [
+            "think",
+            "count",
+            "reckon"
+          ],
+          "objects": [
+            {
+              "objs": [
+                "days",
+                "time"
+              ],
+              "condition": {
+                "item": "lostDayAtSea",
+                "refusal": "You try to count the days and lose the thread almost immediately.#\nSix, you think.# Maybe seven.# It stopped mattering a while ago."
+              },
+              "answer": "You try to count the days backward and the number keeps coming out\nwrong.# You keep forgetting the one you spent chasing the wrong\nbearing, the one that cost you clean water before this ordeal had\neven properly started.# Call it six days at sea.# Really it's seven,\nif you're honest about it."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "type": "Story",
+      "recap": "the call changes: sixth day, half-conscious, hears it far stronger, urging and afraid - no invented quote, source stays indirect - then Land!",
+      "text": "$CIt happens on the sixth day, in one of those long stretches where\nyou can no longer tell if you're asleep or only failing to be awake.##\n\nYou hear it again.# The voice you had half convinced yourself you\nonly imagined, long before any of this, before Ayonn, before the\ndesert, before any of it.# It is louder now than it has ever been,\nand it will not stop calling your name, insistent in a way that feels\nlike it can no longer afford not to be, urging you, somehow, not to\ngive up.##\n\nAnd for the first time, underneath the urgency, you feel something\nelse in it.# Something you would not have expected from a presence\nthat has never once sounded anything less than certain of itself.##\n\nFear.##\n\nYou don't know whose voice it is, or what it wants, or why it has\nbeen finding you since the day a thunderstorm dropped you onto this\nplanet with no shoes on.# But you understand, with a clarity that\nstartles you, that you are not permitted to stop now.# You have to\nkeep going until you learn the answer.##\n\nThat clarity is worth something.# It's just enough to drag you back\nto the surface of yourself in time to hear Smiurl, shouting with\nwhatever strength he has left:##\n\n$Y\"Land!\"$C",
+      "childid": 4
+    },
+    {
+      "id": 4,
+      "type": "Story",
+      "recap": "grounding on the beach, dragging themselves up, collapsing under the trees",
+      "text": "$CWithin the hour the minisub grounds itself on a sandy bottom, most of\nits hull breaking the surface at a shallow angle.# You claw the hatch\nopen and drag yourselves out and up a gentle slope of the finest,\nwhitest sand you've ever felt, one body length at a time, until the\nsand simply receives you and you cannot make yourself move again.##\n\nYou don't so much fall asleep as stop being conscious, there in the\nshade of broad-leafed trees crowding the edge of the beach, oddly\nlike the palms of the world you used to live on.",
+      "childid": 5
+    },
+    {
+      "id": 5,
+      "type": "Dialogue",
+      "recap": "waking on the beach to Theo and Corolla - water found, game mentioned but not yet explained (rifle payoff moves to node 6)",
+      "dialogues": [
+        {
+          "actor": "Theo",
+          "precomment": "You wake to find Theo and Corolla standing over you, and for a\nmoment you can't work out how much time has passed, or whether any\nof this is real.",
+          "line": "We found water."
+        },
+        {
+          "actor": "Corolla",
+          "line": "There's a lovely little stream a few hundred meters that way.# I\neven managed to wash.# And we've got a bit of game, too...",
+          "comment": "She trails off, one hand resting on the laser rifle at her hip.",
+          "childid": 6
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "type": "Action",
+      "recap": "the rifle payoff for c15's award (corollaArmed) - gated optional object; a fallback verb always advances so nobody gets stuck",
+      "text": "You sit up too fast and your head spins.# Whatever they've found,\nyou want it, immediately and without conditions.",
+      "actions": [
+        {
+          "verbs": [
+            "ask",
+            "examine",
+            "look"
+          ],
+          "objects": [
+            {
+              "objs": [
+                "rifle",
+                "gun",
+                "weapon",
+                "corolla"
+              ],
+              "condition": {
+                "item": "corollaArmed",
+                "refusal": "Whatever brought down dinner, Corolla isn't explaining it right\nnow, and you're too hungry to insist."
+              },
+              "answer": "\"This laser rifle isn't just an honorific,\" she finishes, patting\nit once.##\n\nThe memory arrives before you can stop it: the stage in Ayonn, the\ncrowd, the moment they pressed that very rifle into her hands.# It\nfeels like it happened to somebody else, in another life, and your\nstomach seizes so hard and so loudly that everyone within ten feet\nof you hears it.##\n\n\"Give it to me raw, whatever it is, or I swear I'll die right here,\"\nyou say, after drinking for what feels like a full minute straight."
+            }
+          ]
+        },
+        {
+          "verbs": [
+            "eat",
+            "drink",
+            "wake",
+            "rise",
+            "continue"
+          ],
+          "answer": "You drink long and hard, then tear into whatever they've managed\nto cook, not particular anymore about how well done it is.",
+          "childid": 7
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "type": "Story",
+      "recap": "daytime exploration of the tropical beach, hills behind, sunset",
+      "text": "$CAfter you've eaten, you go exploring, and the place turns out to be\nsomewhere worth exploring.# Every angle of it looks like a postcard\nfrom a tropical beach back on Earth, the kind that used to make you\nroll your eyes in a travel agency window.# The air is warm and\ngentle, carried on a light sea breeze, and the water stretches blue\nto the horizon, arriving mild and unhurried at the sand, probably\nkept that way by a reef somewhere just offshore.##\n\nBehind you, low hills rise thick with vegetation, and every so\noften a call comes out of it that is unmistakably an animal and\nunmistakably not from anywhere you know, unsettling in a way you\ncan't quite name.##\n\nYou walk one direction and then the other until the sun starts to\nsink, setting the sea on fire with a thousand small orange\nreflections.# You lie down by the fire Efeliah has going, grateful,\nfor once, simply to be alive, and wait for Theo, Smiurl and Corolla\nto come back with dinner.",
+      "childid": 8
+    },
+    {
+      "id": 8,
+      "type": "Choice",
+      "recap": "flavor choice while waiting for dinner - both converge, at minimum different text",
+      "text": "There isn't much to do but wait, and watch the fire find its\nrhythm.",
+      "choices": [
+        {
+          "desc": "Watch the flames and let your mind empty out.",
+          "childid": 81
+        },
+        {
+          "desc": "Try to place the animal calls coming from the hills.",
+          "childid": 82
+        }
+      ]
+    },
+    {
+      "id": 81,
+      "type": "Story",
+      "recap": "flavor branch A",
+      "text": "You watch the flames for a long time, until your thoughts stop\nbeing about anything in particular.",
+      "childid": 9
+    },
+    {
+      "id": 82,
+      "type": "Story",
+      "recap": "flavor branch B",
+      "text": "You spend a while trying to guess which of the sounds from the\nhills belongs to which invisible animal, and get nowhere, which is\nsomehow satisfying anyway.",
+      "childid": 9
+    },
+    {
+      "id": 9,
+      "type": "Dialogue",
+      "recap": "campfire scene: Ef's telepathic check-in, Corolla's test [DECISION: reply on Kriss's stance], the tease, Kriss goes to sleep",
+      "dialogues": [
+        {
+          "actor": "Efeliah",
+          "precomment": "Night falls before you've finished making the fire disappear into\ndinner.# For the first time in what feels like weeks, nothing is\nchasing you, nothing is bleeding, nothing is about to explode, and\nyou let yourself feel something close to peace.# The firelight does\nsomething generous to Corolla's face, and to Efeliah's, and sparks\nlift into the dark, carried on the warm air, or maybe on one of\nSmiurl's increasingly impossible stories.##\n\nYou would give almost anything to stay exactly like this forever.#\nYou don't quite manage to relax anyway.# Something keeps nagging at\nthe edge of you, as if every stone underfoot and every stick in the\nfire were humming very quietly with the same restless energy.##\n\nEfeliah notices, even mid-laugh at one of Smiurl's jokes.",
+          "line": "Something wrong?",
+          "istelepathy": true
+        },
+        {
+          "actor": "Kriss",
+          "line": "I can't explain it.# Do you think it's connected to that call,\nwhatever it is?",
+          "istelepathy": true
+        },
+        {
+          "actor": "Efeliah",
+          "line": "I don't see how it could be anything else.",
+          "istelepathy": true,
+          "comment": "Before you can say anything more, Corolla cuts in, out loud."
+        },
+        {
+          "actor": "Corolla",
+          "line": "By the way,",
+          "break": true
+        },
+        {
+          "actor": "Kriss",
+          "line": "Hm? What is it?",
+          "comment": "You surface back into ordinary conversation."
+        },
+        {
+          "actor": "Corolla",
+          "line": "We're not staying on this beach, I take it?"
+        },
+        {
+          "actor": "Kriss",
+          "line": "Actually, I was thinking we'd leave in the morning."
+        },
+        {
+          "actor": "Corolla",
+          "line": "Still south?"
+        },
+        {
+          "actor": "Smiurl",
+          "precomment": "He sounds genuinely wounded by the suggestion.",
+          "line": "Why, what's wrong with staying here?"
+        },
+        {
+          "actor": "Kriss",
+          "line": "Yes.# But why do you ask?",
+          "comment": "You don't dignify Smiurl's protest with a reply."
+        },
+        {
+          "actor": "Theo",
+          "line": "The forest."
+        },
+        {
+          "actor": "Corolla",
+          "precomment": "She explains, since Theo rarely bothers to finish a thought out\nloud.",
+          "line": "What he means is: skirting the forest to the east or west is one\nthing.# Crossing it is another matter entirely.# We don't know\nwhat's in there.# It could be dangerous.",
+          "replies": [
+            {
+              "line": "After everything I've been through, a few trees won't stop me.",
+              "nextline": "confident"
+            },
+            {
+              "line": "I'm not thrilled either, but I'm not turning back now.",
+              "nextline": "reluctant"
+            }
+          ]
+        },
+        {
+          "linename": "confident",
+          "actor": "Kriss",
+          "precomment": "You feel a little guilty about it anyway, and say it regardless.",
+          "line": "After everything I've already been through, a few trees aren't\ngoing to stop me.",
+          "nextline": "corollaverdict"
+        },
+        {
+          "linename": "reluctant",
+          "actor": "Kriss",
+          "precomment": "You feel a little guilty about it anyway, and say it regardless.",
+          "line": "I'm not thrilled about it, if I'm honest.# But I'm not turning\nback now.",
+          "nextline": "corollaverdict"
+        },
+        {
+          "linename": "corollaverdict",
+          "actor": "Corolla",
+          "precomment": "Corolla studies you a moment, an odd, almost satisfied look\ncrossing her face, as if she'd expected exactly that answer, or\nmaybe its opposite, and either one would have told her something.",
+          "line": "It was only ever to hear your opinion.# Tomorrow we cross that\nforest!",
+          "comment": "She gets to her feet and disappears into the tent you all put up\ntogether, once the canvas had dried in the sun.",
+          "break": true
+        },
+        {
+          "actor": "Kriss",
+          "precomment": "Theo goes on staring at the fire, unmoved.# Smiurl has started\nplaying with a stick and a few dying embers.# You look at Efeliah,\nquestioningly.",
+          "line": "So?",
+          "istelepathy": true
+        },
+        {
+          "actor": "Efeliah",
+          "line": "I think she's satisfied with you.# That she approves of your...\napproach.# At least in part, certainly.",
+          "istelepathy": true
+        },
+        {
+          "actor": "Kriss",
+          "line": "And the other part?",
+          "istelepathy": true
+        },
+        {
+          "actor": "Efeliah",
+          "precomment": "She rises and heads for the tent she shares with Corolla, and\nthere's a note in her voice you don't quite understand, as if she's\nholding back a laugh.",
+          "line": "Hmm.# I'm not sure.# You know they say a woman's mind is far more\ncomplicated than a man's?",
+          "istelepathy": true
+        },
+        {
+          "actor": "Kriss",
+          "precomment": "You get to your feet.",
+          "line": "You're hiding something from me!",
+          "comment": "Smiurl looks at you like you've completely lost your mind."
+        },
+        {
+          "actor": "Efeliah",
+          "line": "What makes you think that?",
+          "istelepathy": true,
+          "comment": "She's gone, into the tent, before you can come up with an answer."
+        },
+        {
+          "actor": "Kriss",
+          "precomment": "You swallow the curiosity, kick a stone for lack of anything\nbetter to do, and after a short, aimless walk, decide there's\nnothing left to do tonight but sleep.",
+          "childid": 10
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "type": "Story",
+      "recap": "dawn, breaking camp, heading into the forest",
+      "text": "$CYou break camp at dawn and start toward the hills to the south, and\nwithin the first hour you understand exactly what Corolla meant.##\n\nVines, low branches, fallen trunks and thick undergrowth close off\nyour view after no more than two meters in any direction, and the\nforest turns into a maze of green that gives up nothing for free.",
+      "childid": 101
+    },
+    {
+      "id": 101,
+      "type": "Choice",
+      "recap": "FOREST CROSSING PUZZLE - junction 1 of 2: climb costs nothing but time, guessing costs the afternoon by routing you to the adrift copy of junction 2 (115)",
+      "text": "There is no way to tell if you're still heading the right way, and\nthe trees are too dense at ground level to check anything by eye.",
+      "choices": [
+        {
+          "desc": "Send Smiurl scrambling up the tallest tree in reach.",
+          "childid": 102
+        },
+        {
+          "desc": "Keep pushing forward and trust your bearings.",
+          "childid": 103,
+          "effect": {
+            "gainitem": "forestLost"
+          }
+        }
+      ]
+    },
+    {
+      "id": 102,
+      "type": "Story",
+      "recap": "junction 1 - climbed, on track",
+      "text": "Smiurl is up the trunk before anyone can offer to help, vanishing\ninto the canopy, and comes back down a minute later utterly certain\nof the way.# You adjust course and press on with something like\nconfidence.",
+      "childid": 105
+    },
+    {
+      "id": 103,
+      "type": "Story",
+      "recap": "junction 1 - guessed, forestLost gained on the choice; routes to 115, the adrift copy of junction 2, so the mistake cannot be undone for free",
+      "text": "Nobody feels like stopping to climb anything yet, so you keep\nwalking on instinct, choosing whichever gap in the undergrowth\nlooks most like a path.# More than once you have the uncomfortable\nsense that a particular root or fallen log has already gone by\nonce before.",
+      "childid": 115
+    },
+    {
+      "id": 105,
+      "type": "Choice",
+      "recap": "FOREST CROSSING PUZZLE - junction 2 of 2, reached with the morning still intact; its twin is 115, reached having already guessed once",
+      "text": "The canopy opens for a moment overhead, just enough to catch the\nangle of the sun before it closes again.# It's your last real\nchance before midday to be sure of the way.",
+      "choices": [
+        {
+          "desc": "Send Smiurl up once more to fix the bearing.",
+          "childid": 106
+        },
+        {
+          "desc": "Keep moving; there's no time to keep stopping.",
+          "childid": 107,
+          "effect": {
+            "gainitem": "forestLost"
+          }
+        }
+      ]
+    },
+    {
+      "id": 106,
+      "type": "Story",
+      "recap": "junction 2 - climbed, on track -> clean midday clearing",
+      "text": "Smiurl climbs again, and comes down nodding, satisfied.# Whatever\nground you've covered since this morning, it's the right ground.",
+      "childid": 108
+    },
+    {
+      "id": 107,
+      "type": "Story",
+      "recap": "junction 1 climbed, junction 2 guessed - one mistake: you drift off a line you started the day certain of",
+      "text": "You push on without checking, and the forest quietly takes back\neverything Smiurl bought you this morning.# Nothing announces it.#\nThe ground simply stops agreeing with the line you thought you\nwere walking, and by the time anyone says so out loud there is no\ntelling how far off it has carried you.",
+      "childid": 109
+    },
+    {
+      "id": 108,
+      "type": "Story",
+      "recap": "midday clearing - both climbs made, on track",
+      "text": "By midday, exhausted, you stumble into a small natural clearing\nand stop to eat, grateful for the two meters of open sky directly\nabove your heads.# An hour later, some strength recovered, you push\non into the trees again, well ahead of where you feared you'd be.",
+      "childid": 110
+    },
+    {
+      "id": 109,
+      "type": "Story",
+      "recap": "midday clearing - one mistake, made at junction 2",
+      "text": "By midday, exhausted and more than a little frustrated, you\nstumble into a small natural clearing and stop to eat, working out\nbetween mouthfuls how much of the morning went on ground you never\nneeded to cover.# An hour later you push on, no more certain of\nthe way than you were before you stopped.",
+      "childid": 112
+    },
+    {
+      "id": 110,
+      "type": "Story",
+      "recap": "arrival, on time (mid-afternoon) - both climbs made",
+      "text": "You cross the last stretch of forest at a pace that feels almost\neasy after the morning, and reach the base of a rocky hill in the\nmid-afternoon, with hours of good light still ahead of you.",
+      "childid": 12
+    },
+    {
+      "id": 111,
+      "type": "Story",
+      "recap": "arrival, dusk - both junctions guessed",
+      "text": "The rest of the crossing costs you the afternoon along with the\nmorning, and by the time the trees finally start to thin around a\nrocky hill, the light is already turning gold and low.# There will\nbe no time to waste once you're up there.",
+      "childid": 12
+    },
+    {
+      "id": 112,
+      "type": "Story",
+      "recap": "arrival, late afternoon - exactly one junction guessed, whichever one it was",
+      "text": "The rest of the crossing costs you nothing you hadn't already\nspent, but the morning is not coming back, and the trees thin out\naround a rocky hill with the light already going long and yellow.#\nThere's enough of the day left to climb it, and not a great deal\nmore than that.",
+      "childid": 12
+    },
+    {
+      "id": 115,
+      "type": "Choice",
+      "recap": "FOREST CROSSING PUZZLE - junction 2, reached having already guessed at junction 1; same two options as 105, worse ground under them",
+      "text": "The canopy opens for a moment overhead, just enough to catch the\nangle of the sun before it closes again.# Nobody can say how far\nthe morning's guessing has pulled you off the line, and this is\nyour last real chance before midday to find out.",
+      "choices": [
+        {
+          "desc": "Send Smiurl up once more to fix the bearing.",
+          "childid": 116
+        },
+        {
+          "desc": "Keep moving; there's no time to keep stopping.",
+          "childid": 117
+        }
+      ]
+    },
+    {
+      "id": 116,
+      "type": "Story",
+      "recap": "junction 1 guessed, junction 2 climbed - one mistake, recovered late",
+      "text": "Smiurl goes up, and takes longer coming back down than he should.#\nWhen he does, he tells it to you straight: you have drifted a good\nway west of where you meant to be, and everything walked since dawn\nwas bought at a poor rate.# You turn onto the right line at last,\nknowing exactly what it has cost to find it.",
+      "childid": 118
+    },
+    {
+      "id": 117,
+      "type": "Story",
+      "recap": "both junctions guessed - the full circle",
+      "text": "You push on without checking, and it costs you.# Sometime later,\nworking your way around a stand of fallen trunks, you all stop\ndead: they're the same trunks you climbed over an hour before.#\nYou've walked in a slow, complete circle, and none of you noticed.",
+      "childid": 119
+    },
+    {
+      "id": 118,
+      "type": "Story",
+      "recap": "midday clearing - one mistake, made at junction 1 and corrected",
+      "text": "By midday you stumble into a small natural clearing and stop to\neat, certain of the way at last and just as certain the certainty\ncame late.# An hour later you push on along a bearing you actually\ntrust, with a good deal less daylight left to spend on it than you\nwould have liked.",
+      "childid": 112
+    },
+    {
+      "id": 119,
+      "type": "Story",
+      "recap": "midday clearing - both junctions guessed, hopelessly lost",
+      "text": "By midday, exhausted and more than a little frustrated, you\nstumble into a small natural clearing and stop to eat, all too\naware of how much of the morning you've already burned going in\ncircles.# An hour later you push on, no more certain of the way\nthan you were before you stopped.",
+      "childid": 111
+    },
+    {
+      "id": 12,
+      "type": "Story",
+      "recap": "the monolith - climbing to the platform, looking back at the sea",
+      "text": "$CThe trees thin out at last around a bare, rocky summit that must\nsit some two hundred meters above the sea you left behind.# A\nformation of grey rock juts up from the highest point of the hill,\nand you climb it, glad for once of a climb that doesn't ask you to\nguess at anything, until you come out onto a kind of platform, wide\nand flat enough for all five of you to stand on without anyone\nrisking a fall.##\n\nWith your backs to the south, you look out over the sea and the\ndistance you've actually covered on foot, a handful of kilometers\nthat took every hour of daylight you had, and privately agree it\nwas no small thing to manage.##\n\nThen you turn around.",
+      "childid": 13
+    },
+    {
+      "id": 13,
+      "type": "Story",
+      "recap": "the valley reveal - the white city, the siege army on cleared forest ground",
+      "text": "$CWhat greets you on the other side of the hill stops the\nconversation entirely.##\n\nA vast valley opens beneath you, running back to a wall of high\nmountains, and at the bottom of it, impossibly, a city.# You can\nmake out the shapes of the nearest buildings past its high walls,\nwhite in the last of the sun.# At its center a palace rises well\nabove everything around it, also white, ivory almost, built from\nwhat must be marble, ringed with towers and colonnades and\nporticoes and gardens.# Next to it, beautiful as the rest of the\ncity already is, every other building simply disappears.##\n\nBut something is wrong with the picture.# The forest that should\nrun right up to the northern wall has been cut down to bare ground,\nand on that cleared ground an enormous army sits encamped, cookfires\nscattered across it in every direction, movement everywhere you\nlook.# There is no mistaking what you're seeing.# That city is\nunder attack.# Perhaps under siege.",
+      "childid": 14
+    },
+    {
+      "id": 14,
+      "type": "Story",
+      "recap": "Kriss's vision of the sack, and the certainty he must enter the city",
+      "text": "$CIt makes a kind of sense, when you think about it.# A city that\nbeautiful, that rich, would tempt anyone standing outside its\nwalls.# But you find you cannot accept the idea of it falling to\nthat swarm of black ants crawling under its white walls.# It\nwouldn't just be a defeat.# It would be, in some way you can't\nfully explain, a profanation.##\n\nYou see it happen anyway, whether you want to or not: an army a\nthousand times the size of the horde that once held your companions\nprisoner, pouring through those gates, moving down the loveliest\nstreets, carrying off statues and jewels, killing without mercy or\ndistinction, old, young, it wouldn't matter to them.# You see the\ngreat palace emptied first, stripped of everything worth taking,\nand then burned, left standing like the carcass of something that\nused to be alive.##\n\nAnd you know, with total certainty, that you have to go in.##\n\nYou have to walk those streets yourself.# Talk to whoever still\nlives there.# Stand inside that palace.# Everything around you, the\npull that's been dragging at you for days, the dread that's\nfollowed you since the beach, seems to have been pushing you toward\nexactly this the whole time.# You understand it now.# You have to\nreach that city.",
+      "childid": 15
+    },
+    {
+      "id": 15,
+      "type": "Dialogue",
+      "recap": "the offer and both refusals [DECISION: reply on how Kriss frames the offer] - chapter ends here",
+      "dialogues": [
+        {
+          "actor": "Efeliah",
+          "precomment": "You say it aloud before anyone asks, because there's no point\npretending otherwise.",
+          "line": "Kriss wants to enter the city.",
+          "comment": "Theo, beside her, shakes his head."
+        },
+        {
+          "actor": "Corolla",
+          "precomment": "She gestures, taking in the whole width of the valley.",
+          "line": "It's not possible!# How exactly do you plan to slip through that\ncamp unnoticed?# Look at it, it runs from one side of the valley to\nthe other.",
+          "comment": "Her logic is unassailable, and you know it."
+        },
+        {
+          "actor": "Kriss",
+          "line": "I know it doesn't make sense, and that you don't understand why.#\nBut I know I have to go into that city.# I know now that's the\nwhole reason we came this far."
+        },
+        {
+          "actor": "Smiurl",
+          "precomment": "As usual, he's listened to the whole exchange in silence.",
+          "line": "We're going to end up playing heroes again...",
+          "comment": "There's poorly hidden apprehension in his voice.",
+          "replies": [
+            {
+              "line": "Offer to go alone, plainly.",
+              "nextline": "offerplain"
+            },
+            {
+              "line": "Offer, but frame it as repaying a debt.",
+              "nextline": "offerdebt"
+            }
+          ]
+        },
+        {
+          "linename": "offerplain",
+          "actor": "Kriss",
+          "precomment": "You look straight ahead, at the city, and not at any of them.",
+          "line": "You don't need to come with me.# You've already risked enough.",
+          "nextline": "corollasnaps"
+        },
+        {
+          "linename": "offerdebt",
+          "actor": "Kriss",
+          "precomment": "You look straight ahead, at the city, and not at any of them.",
+          "line": "You don't have to come.# I can never repay what I already owe\nyou, as it is.",
+          "nextline": "corollasnaps"
+        },
+        {
+          "linename": "corollasnaps",
+          "actor": "Corolla",
+          "precomment": "She looks offended, immediately and completely.",
+          "line": "Don't talk nonsense.# We're coming with you, wherever you decide\nto go."
+        },
+        {
+          "actor": "Theo",
+          "line": "We won't leave you, boy."
+        },
+        {
+          "actor": "Kriss",
+          "precomment": "You look at the city a moment longer, then lower your head.",
+          "line": "Thank you.",
+          "comment": "You say it quietly, and mean every part of it."
+        }
+      ],
       "islast": true
     }
   ]

@@ -207,8 +207,16 @@ public class Chapter14And15ContentDeserializationTests
             Assert.AreEqual("isNodeVisited", companion.Condition.Type);
             Assert.AreEqual("35", companion.Condition.Item,
                 "A companion's prize only appears once Kriss has taken both of his own; the four are then free in any order.");
-            Assert.IsNull(companion.Effect, "The companions' prizes are theirs, not additions to Kriss's inventory.");
         }
+
+        // Corolla's rifle is the one companion prize that later content reads back: c20 node 6
+        // gates its "ask about the rifle" object on corollaArmed and plays a refusal without it,
+        // so watching her receive it here is what earns that scene. The other three prizes stay
+        // theirs alone and grant nothing.
+        Assert.AreEqual("corollaArmed", companions[0].Effect?.GainItem,
+            "Corolla's branch must set the flag c20's rifle payoff gates on.");
+        foreach (Choice companion in companions.Skip(1))
+            Assert.IsNull(companion.Effect, "Theo's, Smiurl's and Math's prizes are theirs, and nothing later reads them back.");
 
         Choice leave = node19.Choices[6];
         Assert.AreEqual(20, leave.ChildId);

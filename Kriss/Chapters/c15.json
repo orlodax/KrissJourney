@@ -569,6 +569,9 @@
             "item": "35"
           },
           "isnotrepeatable": true,
+          "effect": {
+            "gainitem": "corollaArmed"
+          },
           "childid": 36
         },
         {

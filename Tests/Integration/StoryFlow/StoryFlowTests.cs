@@ -179,7 +179,10 @@ public class StoryFlowTests
     [TestMethod]
     public void AllChapters_HaveANodeWithId1()
     {
-        // GameEngine.StartChapter always calls LoadNode(nodeId: 1) as a chapter's entry point.
+        // Node 1 is load-bearing twice over: GameEngine.StartChapter enters a chapter through
+        // LoadNode(nodeId: 1), and FightNode.GameOver restarts one the same way. A chapter
+        // without it would throw ArgumentNullException on entry, and any chapter holding a Fight
+        // would throw it again on every defeat.
         foreach (Chapter chapter in gameEngine.GetChapters())
             Assert.IsTrue(chapter.Nodes.Any(n => n.Id == 1), $"Chapter {chapter.Id} has no node with Id 1.");
     }
@@ -260,85 +263,158 @@ public class StoryFlowTests
     }
 
     /// <summary>
-    /// Issue 7 (c14/c15 restructure): every Dialogue reply's/line's "nextline" jump must
-    /// resolve to a "linename" within the SAME DialogueNode. This is not caught by
-    /// <see cref="AllChapters_HaveNoUnreachableOrMissingNodes"/>, whose BFS only follows
-    /// inter-node "childid" links: <see cref="GetAllOutgoingLinks"/> deliberately does not
-    /// yield NextLine jumps, because they are not node ids at all. Scoped to chapters 14/15
-    /// (this issue's changed files) rather than made a repo-wide invariant, since other
-    /// chapters (c5, c8, c11) also use nextline/linename and are out of this issue's scope.
+    /// Every Dialogue reply's/line's "nextline" jump must resolve to a "linename" within the SAME
+    /// DialogueNode. This is not caught by <see cref="AllChapters_HaveNoUnreachableOrMissingNodes"/>,
+    /// whose BFS only follows inter-node "childid" links: <see cref="GetAllOutgoingLinks"/>
+    /// deliberately does not yield NextLine jumps, because they are not node ids at all.
+    /// Was scoped to chapters 14/15 when only those used nextline heavily; the c16-c24 pass moved
+    /// most speech into Dialogue nodes with reply jumps, so it is now the repo-wide invariant it
+    /// always should have been - together with id uniqueness and childid resolution, which
+    /// <see cref="ChapterStructureAssertions.AssertReferencesResolve"/> checks in the same walk.
     /// </summary>
     [TestMethod]
-    public void Chapter14And15_DialogueNextLineReferencesResolveWithinTheSameNode()
+    public void AllChapters_NodeReferencesAndDialogueNextLineJumpsAllResolve()
     {
-        foreach (int chapterId in new[] { 14, 15 })
-        {
-            Chapter chapter = gameEngine.GetChapters().Single(c => c.Id == chapterId);
-
-            foreach (DialogueNode dialogueNode in chapter.Nodes.OfType<DialogueNode>())
-            {
-                HashSet<string> lineNames = [.. dialogueNode.Dialogues
-                    .Where(d => !string.IsNullOrEmpty(d.LineName))
-                    .Select(d => d.LineName)];
-
-                foreach (DialogueLine line in dialogueNode.Dialogues)
-                {
-                    if (!string.IsNullOrEmpty(line.NextLine))
-                        Assert.IsTrue(lineNames.Contains(line.NextLine),
-                            $"Chapter {chapterId} node {dialogueNode.Id}: line nextline '{line.NextLine}' has no matching linename.");
-
-                    if (line.Replies == null)
-                        continue;
-
-                    foreach (Reply reply in line.Replies)
-                        if (!string.IsNullOrEmpty(reply.NextLine))
-                            Assert.IsTrue(lineNames.Contains(reply.NextLine),
-                                $"Chapter {chapterId} node {dialogueNode.Id}: reply nextline '{reply.NextLine}' has no matching linename.");
-                }
-            }
-        }
+        foreach (Chapter chapter in gameEngine.GetChapters())
+            ChapterStructureAssertions.AssertReferencesResolve(chapter);
     }
 
     /// <summary>
-    /// Issue 7 ended c14 at node 95; issue 8 rewrote c15 into 31 nodes (1-31) ending at node 27.
-    /// Confirms exactly one reachable node per chapter carries islast, and that it is the
-    /// specific node the content report names - not just "any one node", which would pass
-    /// even if the wrong node were marked.
-    /// Scoped to 14/15: c1, c2, c18 and c19 do not currently satisfy "exactly one" (0 or 2
-    /// islast nodes respectively), so this is not yet safe as a repo-wide invariant.
+    /// Every chapter from c11 on ends in exactly one place. Game-over nodes are excluded - an
+    /// isclosing Story node returns to the menu instead of starting the next chapter, so c18's
+    /// drowning (node 181) legitimately sits alongside node 19, the real ending.
+    /// c1-c10 are canon and are not held to this: c1 deliberately ends on either node 7 or node 8
+    /// depending on where the player was standing when the voice called.
     /// </summary>
     [TestMethod]
-    public void Chapter14And15_ExactlyOneReachableIsLastNode()
+    public void ChaptersElevenToTwentyFour_EachEndAtExactlyOneIsLastNode()
     {
-        AssertSingleReachableIsLast(chapterId: 14, expectedIsLastNodeId: 95);
-        AssertSingleReachableIsLast(chapterId: 15, expectedIsLastNodeId: 27);
+        (int chapterId, int endsAt)[] endings =
+        [
+            (11, 10), (12, 24), (13, 13), (14, 95), (15, 27), (16, 16), (17, 15),
+            (18, 19), (19, 23), (20, 15), (21, 13), (22, 24), (23, 16), (24, 15),
+        ];
+
+        foreach ((int chapterId, int endsAt) in endings)
+            ChapterStructureAssertions.AssertChapterEndsAt(
+                gameEngine.GetChapters().Single(c => c.Id == chapterId), endsAt);
     }
 
-    void AssertSingleReachableIsLast(int chapterId, int expectedIsLastNodeId)
+    /// <summary>
+    /// Every "gainitem" a chapter awards is either read back by a later Condition, or is on the
+    /// list below of flags that are knowingly awarded and never gated. This is not a style rule:
+    /// an ungated flag is usually the visible half of a setup whose payoff was cut, or a payoff
+    /// whose gate was written against the wrong name, and both look identical in the JSON.
+    /// The list is deliberately explicit so that a NEW ungated flag fails here and has to be
+    /// argued for, rather than joining the pile silently.
+    /// </summary>
+    [TestMethod]
+    public void AllChapters_EveryAwardedFlagIsEitherGatedOrKnowinglyUnspent()
     {
-        Chapter chapter = gameEngine.GetChapters().Single(c => c.Id == chapterId);
-        Dictionary<int, NodeBase> nodeMap = chapter.Nodes.ToDictionary(n => n.Id);
+        // Each of these was checked by hand; the reason it is here is beside it.
+        HashSet<string> knowinglyUnspent =
+        [
+            "securedRigging",      // c18: the partner of corollaSecuredBelow. c19 node 17 reads the
+                                   // pair by checking only corollaSecuredBelow, so this flag's whole
+                                   // meaning is carried by the OTHER one's absence. Not dead.
+            "lightSphere",         // c15 award: Kriss's prize, never gated by later content
+            "daggerReplica",       // c15 award: the same
+            "heardRockHistory",    // c15: a knowledge flag nothing asks about later
+            "edzzenclose",         // c17
+            "foundLocker",         // c13
+            "guardBaton",          // c12 and c13 both award it; nothing checks for it
+            "forestLost",          // c20: both forest junctions set it, and the dusk arrival is
+                                   // routed by node id instead, so nothing reads the flag
+        ];
 
-        HashSet<int> visited = [];
-        Queue<NodeBase> queue = new();
-        queue.Enqueue(nodeMap[1]);
+        Dictionary<string, List<int>> awarded = [];
+        HashSet<string> gated = [];
 
-        while (queue.Count > 0)
+        foreach (Chapter chapter in gameEngine.GetChapters())
         {
-            NodeBase node = queue.Dequeue();
-            if (!visited.Add(node.Id))
-                continue;
+            foreach (Effect effect in EffectsIn(chapter))
+                if (!string.IsNullOrEmpty(effect.GainItem))
+                {
+                    if (!awarded.TryGetValue(effect.GainItem, out List<int> chapters))
+                        awarded[effect.GainItem] = chapters = [];
 
-            foreach (int nextId in GetAllOutgoingLinks(node))
-                queue.Enqueue(nodeMap[nextId]);
+                    if (!chapters.Contains(chapter.Id))
+                        chapters.Add(chapter.Id);
+                }
+
+            foreach (Condition condition in ConditionsIn(chapter))
+                CollectGatedItems(condition, gated);
         }
 
-        List<int> reachableIsLastIds = [.. visited.Where(id => nodeMap[id].IsLast)];
+        List<string> unexpectedlyUnspent = [.. awarded.Keys
+            .Where(item => !gated.Contains(item) && !knowinglyUnspent.Contains(item))
+            .OrderBy(item => item)];
 
-        Assert.AreEqual(1, reachableIsLastIds.Count,
-            $"Chapter {chapterId}: expected exactly one reachable islast node, found [{string.Join(", ", reachableIsLastIds)}].");
-        Assert.AreEqual(expectedIsLastNodeId, reachableIsLastIds[0],
-            $"Chapter {chapterId}: the reachable islast node should be {expectedIsLastNodeId}.");
+        Assert.AreEqual(0, unexpectedlyUnspent.Count,
+            "These flags are awarded but never gated on, and are not on the known-unspent list: "
+            + string.Join(", ", unexpectedlyUnspent.Select(i => $"{i} (from c{string.Join("/c", awarded[i])})"))
+            + ". Either something later should read them, or they should be added to the list with a reason.");
+
+        List<string> gatedButNeverAwarded = [.. gated.Where(item => !awarded.ContainsKey(item)).OrderBy(item => item)];
+
+        Assert.AreEqual(0, gatedButNeverAwarded.Count,
+            "These items gate content but no chapter ever awards them, so the content behind them is unreachable: "
+            + string.Join(", ", gatedButNeverAwarded));
+    }
+
+    static IEnumerable<Effect> EffectsIn(Chapter chapter)
+    {
+        foreach (NodeBase node in chapter.Nodes)
+        {
+            if (node is ChoiceNode choiceNode)
+                foreach (Choice choice in choiceNode.Choices)
+                    if (choice.Effect is not null)
+                        yield return choice.Effect;
+
+            if (node is ActionNode actionNode and not MiniGame01)
+                foreach (Kriss.Models.Action action in actionNode.Actions)
+                {
+                    if (action.Effect is not null)
+                        yield return action.Effect;
+
+                    foreach (ActionObject obj in action.Objects ?? [])
+                        if (obj.Effect is not null)
+                            yield return obj.Effect;
+                }
+        }
+    }
+
+    static IEnumerable<Condition> ConditionsIn(Chapter chapter)
+    {
+        foreach (NodeBase node in chapter.Nodes)
+        {
+            if (node is ChoiceNode choiceNode)
+                foreach (Choice choice in choiceNode.Choices)
+                    if (choice.Condition is not null)
+                        yield return choice.Condition;
+
+            if (node is ActionNode actionNode and not MiniGame01)
+                foreach (Kriss.Models.Action action in actionNode.Actions)
+                {
+                    if (action.Condition is not null)
+                        yield return action.Condition;
+
+                    foreach (ActionObject obj in action.Objects ?? [])
+                        if (obj.Condition is not null)
+                            yield return obj.Condition;
+                }
+        }
+    }
+
+    /// <summary>Inventory items only: an "isNodeVisited" condition's Item is a node id, not a flag.</summary>
+    static void CollectGatedItems(Condition condition, HashSet<string> gated)
+    {
+        if (condition.All is { Count: > 0 })
+            foreach (Condition nested in condition.All)
+                CollectGatedItems(nested, gated);
+
+        if (!string.IsNullOrEmpty(condition.Item) && condition.Type != "isNodeVisited")
+            gated.Add(condition.Item);
     }
 
     /// <summary>

@@ -17,8 +17,53 @@
         {
           "actor": "Saberinne",
           "precomment": "After dinner you climb a staircase to a second terrace, this one\nopen to the sky, the night around you mild and clear,\nand you sit in the candlelight and look at the stars of Noi-Hert.##\n\nSaberinne says, to all of you:",
-          "line": "There is something we need to tell you.",
-          "comment": "You explain it together, turn and turn about:\nthe merge, the army, tomorrow at dawn.#\nYou say it simply, the way you have learned to say\ndifficult things, and they listen.##\n\nA silence.",
+          "line": "There is something we need to tell you."
+        },
+        {
+          "actor": "Kriss",
+          "line": "My coming here was no accident, in the end.#\nThere is a reason I was brought to this world,\nand a reason the four of you have carried me safely this far."
+        },
+        {
+          "actor": "Saberinne",
+          "line": "As I told you this morning, the city is under siege.#\nIt had no hope of surviving,# if you had not come."
+        },
+        {
+          "actor": "Saberinne",
+          "line": "Our minds, Kriss's and mine, can merge, perfectly,\ninto a single entity.",
+          "replies": [
+            {
+              "line": "Ask what the two of you would become.",
+              "nextline": "askbecome"
+            },
+            {
+              "line": "Ask what it would let you do.",
+              "nextline": "askdo"
+            }
+          ]
+        },
+        {
+          "linename": "askbecome",
+          "actor": "Kriss",
+          "line": "And what would we become?",
+          "comment": "You ask it in front of all four of them,\nand find that you do not much care that they hear you ask it.",
+          "nextline": "entity"
+        },
+        {
+          "linename": "askdo",
+          "actor": "Kriss",
+          "line": "And what would that let us do?",
+          "comment": "You ask the practical question, the one that is owed\nto four people who have carried you this far\nfor practical reasons.",
+          "nextline": "entity"
+        },
+        {
+          "linename": "entity",
+          "actor": "Saberinne",
+          "line": "It would keep what makes each of us who we are,#\nand yet be something else.# Something more.##\n\nThe power of two minds already vast would multiply\npast measuring, enough, we believe, to turn the Hordes back\nfrom the wall to the north."
+        },
+        {
+          "actor": "Kriss",
+          "line": "Tomorrow, at dawn, we go into the elliptical hall\nand join our minds.# All you need do is wait,# and trust us.",
+          "comment": "You say it simply, the way you have learned to say\ndifficult things, and they listen.##\n\nA silence.",
           "break": true
         },
         {
@@ -51,38 +96,38 @@
     {
       "id": 3,
       "type": "Dialogue",
-      "recap": "the goodbyes on the rooftop terrace - each companion",
+      "recap": "Theo's farewell - reply, then Kriss's protest",
       "dialogues": [
         {
           "actor": "Theo",
           "precomment": "He holds on for one second, two, then releases you\nand takes one step back and looks at you\nwith the expression you know now as Theo's everything:",
           "line": "This is my farewell.#\nI have a strange presentiment, boy.#\nIn case we should not meet again.",
-          "comment": "He says it flatly, in his way, and means every word.##"
+          "comment": "He says it flatly, in his way, and means every word.",
+          "replies": [
+            {
+              "line": "Answer at once, before the presentiment can land.",
+              "nextline": "theobrush"
+            },
+            {
+              "line": "Let it land, and refuse it anyway.",
+              "nextline": "theohold"
+            }
+          ]
         },
         {
+          "linename": "theobrush",
+          "comment": "You answer him straight away, before the thing he has said\ncan find anywhere in you to settle,\nthe way a hand comes back from something hot.",
+          "nextline": "theoreply"
+        },
+        {
+          "linename": "theohold",
+          "comment": "You let it settle exactly where he meant it to,\nand you hold it there a moment before you say anything,\nbecause refusing it is the last thing you have left to give him.",
+          "nextline": "theoreply"
+        },
+        {
+          "linename": "theoreply",
           "actor": "Kriss",
           "line": "I assure you it isn't necessary...",
-          "comment": ""
-        },
-        {
-          "actor": "Corolla",
-          "precomment": "Corolla does not wait.# With her voice slightly uneven,\nwhich is a thing she will never acknowledge,\nshe throws her arms around your neck.",
-          "line": "We don't care!",
-          "comment": "She holds you for a moment, then draws back slowly,\nher hands lingering in yours.##\n\n$R\"Don't get hurt.\"$C she whispers against your ear.#\nThen she steps back, chin up, eyes completely dry,\njaw set.##"
-        },
-        {
-          "actor": "Efeliah",
-          "precomment": "Efeliah looks at you for a long moment with that gaze\nthat has always seen more than it should\nand held it without judgment.#\nThen she says:",
-          "line": "Goodbye, Kriss.",
-          "comment": "$g<<I don't know why, but I feel that Theo is right...>>$C##\n\nAll of them moved, and none of them entirely\nunderstanding why, and that somehow makes it worse.##",
-          "istelepathy": true,
-          "break": true
-        },
-        {
-          "actor": "Smiurl",
-          "precomment": "Smiurl says nothing.# He launches himself at you\nwith enough force to nearly knock you over,\nhis arms around your neck, his skin\nflooding a quiet and complicated pattern of light:\nevery color, none of them quite settling.##\n\nWhen he comes back down to earth:",
-          "line": "We will never forget you.",
-          "comment": "He says it simply.# Then he steps back and will not look at you,\nbecause he is not going to make this harder,\nand that is final.##",
           "childid": 4
         }
       ]
@@ -90,17 +135,118 @@
     {
       "id": 4,
       "type": "Dialogue",
-      "recap": "Kriss and Saberinne alone - the last night",
+      "recap": "Corolla's farewell - reply about how Kriss receives it",
+      "dialogues": [
+        {
+          "actor": "Corolla",
+          "precomment": "Corolla does not wait.# With her voice slightly uneven,\nwhich is a thing she will never acknowledge,\nshe throws her arms around your neck.",
+          "line": "We don't care!",
+          "comment": "She holds you for a moment, then draws back slowly,\nher hands lingering in yours.##\n\n$R\"Don't get hurt.# Understood?\"$C she whispers against your ear.",
+          "replies": [
+            {
+              "line": "Hold her gaze and say nothing.",
+              "nextline": "corollagaze"
+            },
+            {
+              "line": "Let her be the one to step back.",
+              "nextline": "corollawait"
+            }
+          ]
+        },
+        {
+          "linename": "corollagaze",
+          "comment": "You hold her eyes, and for one unguarded instant\nthe composure cracks completely before she catches it,\nchin lifting, jaw setting itself back into place.",
+          "childid": 5
+        },
+        {
+          "linename": "corollawait",
+          "comment": "You let her go at her own pace, and understand,\nwatching her chin come up and her eyes stay dry,\nthat this, for Corolla, is exactly as much as she has to give.",
+          "childid": 5
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "type": "Dialogue",
+      "recap": "Efeliah's farewell - reply about how Kriss meets her look",
+      "dialogues": [
+        {
+          "actor": "Efeliah",
+          "precomment": "Efeliah looks at you for a long moment with that gaze\nthat has always seen more than it should\nand held it without judgment.# Then she says:",
+          "line": "Goodbye, Kriss.#\nI don't know why, but I feel that Theo is right...",
+          "replies": [
+            {
+              "line": "Meet her searching look.",
+              "nextline": "efgaze"
+            },
+            {
+              "line": "Let the silence answer for you.",
+              "nextline": "efsilent"
+            }
+          ]
+        },
+        {
+          "linename": "efgaze",
+          "comment": "You look back at her until she is the one who glances away,\nsomething passing between you that needs no telepathy to read.",
+          "childid": 6
+        },
+        {
+          "linename": "efsilent",
+          "comment": "You say nothing, and she seems to prefer it that way,\nas though the silence itself were the honest answer.",
+          "childid": 6
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "type": "Dialogue",
+      "recap": "Smiurl's farewell - reply, then Kriss's collective goodbye to all four",
+      "dialogues": [
+        {
+          "actor": "Smiurl",
+          "precomment": "They have all spoken now,# moved without quite understanding why,\nand that only makes it worse.##\n\nSmiurl says nothing.# He launches himself at you\nwith enough force to nearly knock you over,\nhis arms around your neck, his skin\nflooding a quiet and complicated pattern of light:\nevery color, none of them quite settling.##\n\nWhen he comes back down to earth:",
+          "line": "We will never forget you.",
+          "comment": "He says it simply.",
+          "replies": [
+            {
+              "line": "Hug him back before he lets go.",
+              "nextline": "smiurlhug"
+            },
+            {
+              "line": "Let him have this on his own terms.",
+              "nextline": "smiurlterms"
+            }
+          ]
+        },
+        {
+          "linename": "smiurlhug",
+          "comment": "You catch him properly this time,# and for a moment\nhe glows so brightly you can feel the warmth of it.",
+          "nextline": "farewellclose"
+        },
+        {
+          "linename": "smiurlterms",
+          "comment": "You let him step back and will not look at him either,\nbecause he has decided this is not going to be harder than it must be,\nand you owe him that much.",
+          "nextline": "farewellclose"
+        },
+        {
+          "linename": "farewellclose",
+          "actor": "Kriss",
+          "line": "Neither will I.# Not any of you.",
+          "comment": "You embrace them all one last time,\nand then they go to their rooms,\nheart-heavy in ways none of you have quite named.##\n\nYou and Saberinne walk away arm in arm,\nand she is quieting, gently, the storm that farewell has stirred in you.",
+          "childid": 7
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "type": "Dialogue",
+      "recap": "Kriss and Saberinne alone - the last night - one reply about the secret",
       "dialogues": [
         {
           "actor": "Kriss",
-          "line": "Neither will I.# Not any of you.",
-          "comment": "You embrace them all one last time,\nand then they go to their rooms,\nheart-heavy in ways none of you have quite named.##\n\nYou and Saberinne walk away arm in arm,\nand she is quieting, gently, the storm that farewell has stirred in you.##\n\nAfter a while you find a small pavilion at the corner\nof the open terrace, sheltered from other eyes\nby a curve of the stonework, open only to the sky.#\nYou sit together on a narrow bench in the dark.",
+          "precomment": "After a while you find a small pavilion at the corner\nof the open terrace, sheltered from other eyes\nby a curve of the stonework, open only to the sky.#\nYou sit together on a narrow bench in the dark,\nand for once you reach for actual words\nrather than the silent kind.",
+          "line": "Do you think I'll really never see them again?",
           "break": true
-        },
-        {
-          "actor": "Kriss",
-          "line": "Do you think I'll really never see them again?"
         },
         {
           "actor": "Saberinne",
@@ -120,18 +266,33 @@
           "line": "And if it were a surprise?",
           "replies": [
             {
-              "line": "\"You couldn't hide it from me for long.\"",
-              "nextline": "tomorrow"
+              "line": "Tell her she could not keep it from you for long.",
+              "nextline": "presssecret"
             },
             {
-              "line": "\"Then don't tell me. Not tonight.\"",
-              "nextline": "tomorrow"
+              "line": "Tell her not to say it. Not tonight.",
+              "nextline": "leavesecret"
             }
           ]
         },
         {
+          "linename": "presssecret",
+          "actor": "Kriss",
+          "line": "I don't think you could hide it from me for long.",
+          "comment": "She smiles at that, and does not deny it,\nand does not tell you either.",
+          "nextline": "tomorrow"
+        },
+        {
+          "linename": "leavesecret",
+          "actor": "Kriss",
+          "line": "Then don't tell me.# Not tonight.",
+          "comment": "You leave her the one thing she has asked to keep,\nand she is quiet a moment, and you feel her take it.",
+          "nextline": "tomorrow"
+        },
+        {
           "linename": "tomorrow",
           "actor": "Saberinne",
+          "precomment": "She rests her head on your shoulder.",
           "line": "Time will bring you answers when it brings tomorrow.##\n\nTomorrow we have a great mission, an appointment with destiny.\nBetter not to think about it too much.",
           "comment": "She sighs, quietly."
         },
@@ -147,43 +308,243 @@
         },
         {
           "actor": "Kriss",
-          "line": "We can no longer exist separately, Saberinne.\nNothing will separate me from you, or you from me,\nnot even our own separate wills.\nYou know this."
+          "line": "We can no longer exist separately, Saberinne.\nNothing will separate me from you, or you from me,\nnot even our own separate wills.# You know this."
         },
         {
           "actor": "Saberinne",
           "line": "Of course, my love.# Of course.",
           "comment": "You look at each other for a long moment,\nand then everything around you seems to dissolve\nwhen she ends every question, every doubt,\nand closes her mouth over yours.##\n\nThe stars fade.# The first red light of the sun\nfinds you still together, asleep, not letting go.",
-          "childid": 5
+          "childid": 8
         }
       ]
     },
     {
-      "id": 5,
+      "id": 8,
       "type": "Story",
       "recap": "dawn - the companions give them space - into the elliptical hall",
       "text": "The companions understood, without being told,\nthat you and Saberinne would need complete concentration\nand solitude.# They gather in one room,\nasking each other what the outcome will be,\nand whether they will truly see you again.##\n\nYou and Saberinne are ready.##\n\nYou enter the elliptical hall together, silent,\nand walk to its center.# Then you separate,\nmoving in mirror-image to each of the two focal points\nof the ellipse, and kneel,\nhands resting on your thighs.##\n\nYou look at each other across the polished marble\none last time with your individual eyes.##\n\nThen you open your minds to each other,\nmore deeply, more completely, than even in the garden.##",
-      "childid": 6
+      "childid": 9
     },
     {
-      "id": 6,
-      "type": "Story",
-      "recap": "the mind-merge - fusion into one entity",
-      "text": "Space and time lose part of their meaning.##\n\nYou perceive your bodies as if from outside them.\nYou are several meters apart and yet you can feel\neach other's touch.# You let go of every resistance,\nevery tension, every individual thread.##\n\nYou see your minds as an indescribable tapestry\nof light and sound and thought.#\nYou concentrate on that perception, forgetting your bodies,\nforgetting the elliptical hall, forgetting the city,\nforgetting the planet.##\n\nYour thoughts, your memories, your sensations, your souls:\nthey mix, they merge, they become a single thing.##\n\nIt is no longer Saberinne.# It is no longer Kriss.##\n\nThat enormous power lifts toward the sky,\nextending in every direction,\naware of every house, every person, every blade of grass,\nevery molecule of the valley.##\n\nBelow it the whole planet pulses like an enormous heart,\ntransmitting an unimaginable energy upward.##\n\nInvisible, it extends over the city,\nthen reaches north.##",
-      "childid": 7
+      "id": 9,
+      "type": "Surge",
+      "recap": "the mind-merge - Surge instance 5, the duet with Saberinne (unfailable)",
+      "text": "Space and time lose part of their meaning.##\n\nYou perceive your bodies as if from outside them.\nYou are several meters apart and yet you can feel\neach other's touch.# You let go of every resistance,\nevery tension, every individual thread.##\n\nYou see your minds as an indescribable tapestry\nof light and sound and thought.#\nYou concentrate on that perception, forgetting your bodies,\nforgetting the elliptical hall, forgetting the city,\nforgetting the planet.##\n\nYour thoughts, your memories, your sensations, your souls:\nthey mix, they merge, they become a single thing.##\n\nIt is no longer Saberinne.# It is no longer Kriss.##\n\nSomething reaches for the rest of itself, and finds it waiting.",
+      "childid": 10,
+      "challenge": {
+        "sequencelength": 20,
+        "drainrate": 0,
+        "penalty": 0,
+        "startingrage": 20,
+        "restore": 4,
+        "maxrage": 100,
+        "duetpattern": ".S",
+        "successmessage": "That enormous power lifts toward the sky,\nextending in every direction,\naware of every house, every person, every blade of grass,\nevery molecule of the valley.##\n\nBelow it the whole planet pulses like an enormous heart,\ntransmitting an unimaginable energy upward.##\n\nInvisible, it extends over the city, then reaches north,\nwhere so many small men are certain that this is the decisive assault,\nthe one that will deliver the city into their hands.#\nThey do not know they are transparent under the eye\nof something they could not begin to conceive.##\n\nFor only a moment it hesitates.#\nThen, exercising nothing more than its will, it begins."
+      }
     },
     {
-      "id": 7,
-      "type": "Story",
-      "recap": "the army is destroyed - the tornado",
-      "text": "So many small men, certain that this is the decisive assault,\nthe one that will deliver the city into their hands.#\nThey do not know they are transparent under the eye\nof something they could not begin to conceive.##\n\nFor only a moment it hesitates.#\nThen, exercising nothing more than its will, it acts.##\n\nThe deepest and most total panic floods the minds\nof most of the attackers at once.# They run in every direction,\nsmashing into each other, trampling each other,\ntwo companions turning suddenly to fight each other\nwithout understanding why.# Others fire their arrows\nand only then, with horror, realize they have not aimed\nat the city's sparse defenders but at their own allies,\nwho now turn on them furiously.##\n\nEvery firearm explodes in its holster.#\nEnergy weapons lose their charge, sucked dry by an invisible force.##\n\nThe army scatters, it flees, but some still resist,\nsome animal stubbornness holding them together.##\n\nThen a wind rises from the south,\ndriving a wall of clouds the color of a sick, rusty red,\nand behind the clouds come lightning storms that scorch\nthe ground in multiple places where the forest once stood.##\n\nTransport vehicles explode, catch fire.#\nHorses bolt, as panicked as their riders.##\n\nThe plain north of the city is devastation now:\nfires, the fallen, swarms of soldiers running without direction\nor comprehension.# Chaos absolute.##\n\nAt that sight something stirs.# And with a final surge\nit sweeps the ruin from before it.##\n\nAn enormous black vortex descends from the clouds,\nbending every remaining tree before it as it passes.##\n\nEverything in its path is dragged upward into its coils,\nimplacable, not distinguishing.# The greater part of that army\nis lifted from the ground like sand.##\n\nIt is a terrifying sight.# Almost no one on the city walls\nhas the courage to watch it.##\n\nThe vortex moves north and disappears over the horizon,\ncarrying an entire army with it, taking them,\nif any survive, to the most remote land on the planet.##\n\nThose few who fled first through the forest escape,\nand they reach their ships and drive them at full speed\nfor days, dispersing into the ocean, making landfall\nfinally on the northern continent.# And those survivors\nwill carry the memory of the terror of Saberinne\nto every corner of the world,\nand a legend will be born from what they witnessed.##\n\nAt his rock far away in the desert,\nElder Long perceives the pulse of that enormous energy\nand is shaken by it, even from that distance.##",
-      "childid": 8
+      "id": 10,
+      "type": "Choice",
+      "recap": "army step 1 - the panic; DECISION: how closely the entity looks, which decides which rendering of the archers (101/102) plays",
+      "text": "The deepest and most total panic floods the minds\nof most of the attackers at once.# They run in every direction,\nsmashing into each other, trampling each other,\ntwo companions turning suddenly to fight each other\nwithout understanding why.##\n\nIt arrives in you as your own nerve endings firing,\nsmall terrors past counting lit in the same instant,\nand the thing you have become discovers that it must settle\none question before it acts again:# how closely it intends\nto look at what it is doing.",
+      "choices": [
+        {
+          "desc": "Keep hold of them singly, and know what each one feels.",
+          "childid": 101
+        },
+        {
+          "desc": "Take them in as one mass, and do not look closer.",
+          "childid": 102
+        }
+      ]
     },
     {
-      "id": 8,
+      "id": 101,
       "type": "Story",
-      "recap": "the merge ends - separation begins - the irreversible truth",
-      "text": "Done.##\n\nThe city is safe.# Gradually, the immense energies are released,\nand it diminishes, withdraws, returns framing toward the hall\nwhere two bodies breathe quietly, waiting.##\n\nSlowly, with an immense pain that passes through them\nto the smallest fiber of their being, they begin to separate.#\nTheir thoughts divide, their perception diverges,\nand they fall back, each toward their own body.##\n\nYou feel yourself returning, on the edge of opening your eyes,\nwhen a new surge of energy engulfs you.##\n\n$c<<What is happening?!>>$C you cry, without making any sound.##\n\n$G<<Kriss, you do not belong to this world.#\nThis is not your universe.>>$C##\n\n$c<<I don't understand.>>$C\n\n$G<<The process is now irreversible.# We would not have had\na second attempt.>>$C\n\n$c<<What are you talking about?>>$C\n\n$G<<Our joined effort can carry you back to your universe of origin.\nWe drew on tremendous energies, and they can give you\nthe push you need.>>$C\n\n$c<<But I don't want to go back.>>$C##\n\nGreat pain in those five words.##\n\n$G<<Kriss, you must.# This is your world, not that one...#\nDon't think it is easy for me.#\nYou know exactly what I feel.>>$C##\n\nAnd you do.# Her mind is open to you,\nand her pain is your pain, exact and equal.##\n\n$G<<The same risks you run, I run.#\nThere is a possibility that one of us, or both,\ncould be lost in the continuum,\nstranded between two dimensions, or in another parallel universe entirely...>>$C##\n\n$c<<We cannot lose each other.#\nI won't survive you.>>$C##\n\n$G<<Nor I you.>>$C she says,\nwith the same note in her voice.#\n$G<<But this sacrifice is necessary.#\nDo you remember what you said to me last night?#\nNothing can separate us.# Keep this with you always:#\nwe will be united, wherever in space and time\nwe find ourselves, across any distance,\nacross any universe.>>$C##\n\n$W\"And now, with that knowledge in our hearts,\nwe throw ourselves toward this unknown\nand hope that all will be well.\"$C##\n\nYou say it together, both of you,\nin one voice and not without fear.##\n\n$c<<I will not forget you.# I will not let you go.# Never.>>$C\n$G<<Never.>>$C##\n\nWeeping without tears, you vanish in a blinding flash of light.##\n\nThe translucent drapes of the elliptical hall\nare blasted to dust.# A strong wind\nruns through the city of Saberinne.##\n\nThe echo of that explosion of grief\ncircles the planet multiple times,\nand drowns, in its intensity and passion,\nevery other emotion in the entire solar system of Noi-Hert.##",
-      "islast": true
+      "recap": "the archers, rendered close: one man, known individually",
+      "text": "You hold them one at a time, and so you are there for it\nwhen the arrows go up:# there inside the man who understands,\na half-second too late, that the shapes his volley is falling\namong are not the city's sparse defenders but his own allies,\nwho turn on him now, furious, and do not listen.##\n\nYou know his name.# You are going to go on knowing it.",
+      "childid": 11
+    },
+    {
+      "id": 102,
+      "type": "Story",
+      "recap": "the archers, rendered distant: a movement across a surface",
+      "text": "You take them as a single surface, and the archers are\nno more than a movement across it:# a volley loosed,\nfalling among their own allies, and the furious turning\nthat answers it, begun and finished before any one\nof those minds has the time to become a person to you.##\n\nThat, you understand, is the point of holding them this way.",
+      "childid": 11
+    },
+    {
+      "id": 11,
+      "type": "Story",
+      "recap": "army step 2 - firearms explode or lose their charge, the army comes apart",
+      "text": "Every firearm explodes in its holster.#\nEnergy weapons lose their charge, sucked dry\nby an invisible force.##\n\nThe army has come apart, and is fleeing,\nthough some among them still resist.",
+      "childid": 12
+    },
+    {
+      "id": 12,
+      "type": "Story",
+      "recap": "army step 3 - the southern wind, red clouds, lightning, the devastated plain",
+      "text": "Then a wind rises from the south, driving a wall of clouds\nthe color of a sick, rusty red, and behind them come\nlightning storms that scorch the ground in multiple places\nwhere the forest once stood.##\n\nTransport vehicles explode, catch fire.# Horses bolt,\nas panicked as their riders.##\n\nThe plain north of the city is devastation now:\nfires, the fallen, swarms of soldiers running\nwithout direction or comprehension.# Chaos absolute.",
+      "childid": 13
+    },
+    {
+      "id": 13,
+      "type": "Choice",
+      "recap": "army step 4 - the final impulse; DECISION: whether the entity watches its own act (131/132), which changes nothing it does",
+      "text": "At that sight, something in what is left of you stirs,\nand with one last impulse you gather yourself\nto sweep the ruin from in front of you.##\n\nIt takes a moment to arrive.# You have that moment,\nand nothing to spend it on but the question\nof whether you mean to be present for what comes next.",
+      "choices": [
+        {
+          "desc": "Hold your attention on them while it happens.",
+          "childid": 131
+        },
+        {
+          "desc": "Turn your attention away and let it be done.",
+          "childid": 132
+        }
+      ]
+    },
+    {
+      "id": 131,
+      "type": "Story",
+      "recap": "the impulse, watched",
+      "text": "You stay, and you spare yourself none of it.#\nWhatever you carry out of that hall afterwards,\nit is not going to be the comfort of not having seen.",
+      "childid": 14
+    },
+    {
+      "id": 132,
+      "type": "Story",
+      "recap": "the impulse, unwatched - and the not-watching changes nothing",
+      "text": "You turn away inside yourself, the way you would close\na hand over an eye, and the act goes forward regardless,\nas exact and as complete as it would have been.##\n\nThe not-looking costs it nothing, and spares you nothing,\nand you know both of those things while you do it.",
+      "childid": 14
+    },
+    {
+      "id": 14,
+      "type": "Story",
+      "recap": "army step 5 - the black vortex sweeps the army away",
+      "text": "An enormous black vortex descends from the clouds,\nbending every remaining tree before it as it passes.#\nEverything in its path is dragged upward into its coils,\nimplacable, not distinguishing.# The greater part of that army\nis lifted from the ground like sand.##\n\nIt is a terrifying sight.# Almost no one on the city walls\nhas the courage to watch it.##\n\nThe vortex moves north and disappears over the horizon,\ncarrying an entire army with it, taking them,\nif any survive, to the most remote land on the planet.",
+      "childid": 15
+    },
+    {
+      "id": 15,
+      "type": "Story",
+      "recap": "aftermath - survivors and the legend - Elder Long feels the pulse",
+      "text": "Those few who fled first through the forest escape,\nand they reach their ships and drive them at full speed\nfor days, dispersing into the ocean, making landfall\nfinally on the northern continent.# And those survivors\nwill carry the memory of the terror of Saberinne\nto every corner of the world,\nand a legend will be born from what they witnessed.##\n\nAt his rock far away in the desert,\nElder Long perceives the pulse of that enormous energy\nand is shaken by it, even from that distance.",
+      "childid": 16
+    },
+    {
+      "id": 16,
+      "type": "Dialogue",
+      "recap": "the merge ends - separation - friends' vision restored - the irreversible truth",
+      "islast": true,
+      "dialogues": [
+        {
+          "precomment": "Done.##\n\nThe city is safe.# Gradually, the immense energies are released,\nand it diminishes, withdraws, folding back toward the hall\nwhere two bodies breathe quietly, waiting.##\n\nSlowly, with an immense pain that passes through them\nto the smallest fiber of their being, they begin to separate.#\nTheir thoughts divide, their perception diverges,\nand they fall back, each toward their own body.##\n\nYou feel yourself returning, on the edge of opening your eyes,\nwhen a new surge of energy engulfs you."
+        },
+        {
+          "actor": "Kriss",
+          "istelepathy": true,
+          "line": "What is happening?!",
+          "comment": "You cry it without making any sound."
+        },
+        {
+          "actor": "Saberinne",
+          "istelepathy": true,
+          "line": "Kriss, you do not belong to this world.# This is not your universe."
+        },
+        {
+          "actor": "Kriss",
+          "istelepathy": true,
+          "line": "I don't understand."
+        },
+        {
+          "actor": "Saberinne",
+          "istelepathy": true,
+          "line": "The process is now irreversible.#\nWe would not have had a second attempt."
+        },
+        {
+          "actor": "Kriss",
+          "istelepathy": true,
+          "line": "What are you talking about?"
+        },
+        {
+          "actor": "Saberinne",
+          "istelepathy": true,
+          "line": "Our joined effort can carry you back to your universe of origin.\nWe drew on tremendous energies, and they can give you\nthe push you need."
+        },
+        {
+          "actor": "Kriss",
+          "istelepathy": true,
+          "line": "But I don't want to go back.",
+          "comment": "Great pain in those five words."
+        },
+        {
+          "actor": "Saberinne",
+          "istelepathy": true,
+          "line": "Kriss, you must.# This is your world, not that one...#\nDon't think it is easy for me.# You know exactly what I feel.",
+          "comment": "And you do.# Her mind is open to you,\nand her pain is your pain, exact and equal."
+        },
+        {
+          "precomment": "You think of your companions, and see them,\nall of them, in that one room, worrying over what has become of you.##\n\nThey had been right.# You will surely never see them again.##\n\nSaberinne lets you see it: what is in their minds, right now,\nas if it were your own.##\n\nCorolla considers you a brother, and you understand at last\nthe contradiction that has run through her these last days:\nhow she could approve what you chose to do\nand still, at the same time, want only to protect you from it.##\n\nTheo, loyal and immovable as rock, has fixed your image\nin that enormous heart of his, next to the small one\nhe keeps for Smiurl.##\n\nEfeliah, dear friend, is saying goodbye to you even now,\nand you answer the touch in her mind, which flares at once,\nbright as a struck match.##\n\nAnd inside that same mind, Saberinne plants something else:\na thought, the shape of a thing to come.# You see Efeliah,\nyears from now, leading the city, raising with Math\na projector greater than anything Ayonn ever built.",
+          "line": "Why?",
+          "comment": "You ask it, and Saberinne does not answer in words.",
+          "replies": [
+            {
+              "line": "Go looking in her mind for the reason.",
+              "nextline": "whyreach"
+            },
+            {
+              "line": "Ask nothing more, and let it come or not.",
+              "nextline": "whywait"
+            }
+          ]
+        },
+        {
+          "linename": "whyreach",
+          "comment": "You go looking, and she does not stop you,\nand what you find is not a reason so much as a preparation:\nthe city put into hands that will still be holding it\nlong after hers have let go of it.",
+          "nextline": "risksrun"
+        },
+        {
+          "linename": "whywait",
+          "comment": "You ask nothing further.# It reaches you anyway, unoffered,\nthe way her pain reaches you:# the city put into hands\nthat will still be holding it long after hers have let go of it.",
+          "nextline": "risksrun"
+        },
+        {
+          "linename": "risksrun",
+          "actor": "Saberinne",
+          "istelepathy": true,
+          "line": "The same risks you run, I run.#\nThere is a possibility that one of us, or both,\ncould be lost in the continuum, stranded between two dimensions,\nor in another parallel universe entirely...",
+          "comment": "You cannot lose each other."
+        },
+        {
+          "actor": "Kriss",
+          "istelepathy": true,
+          "line": "We cannot lose each other.# I won't survive you."
+        },
+        {
+          "actor": "Saberinne",
+          "istelepathy": true,
+          "line": "Nor I you.",
+          "comment": "She says it with the same note in her voice."
+        },
+        {
+          "actor": "Saberinne",
+          "istelepathy": true,
+          "line": "But this sacrifice is necessary.#\nDo you remember what you said to me last night?#\nNothing can separate us.# Keep this with you always:#\nwe will be united, wherever in space and time\nwe find ourselves, across any distance, across any universe."
+        },
+        {
+          "precomment": "$W\"And now, with that knowledge in our hearts,\nwe throw ourselves toward this unknown\nand hope that all will be well.\"$C##\n\nYou say it together, both of you,\nin one voice and not without fear."
+        },
+        {
+          "actor": "Kriss",
+          "istelepathy": true,
+          "line": "I will not forget you.# I will not let you go.# Never."
+        },
+        {
+          "actor": "Saberinne",
+          "istelepathy": true,
+          "line": "Never.",
+          "comment": "Weeping without tears, you vanish in a blinding flash of light.##\n\nThe translucent drapes of the elliptical hall\nare blasted to dust.# A strong wind\nruns through the city of Saberinne.##\n\nThe echo of that explosion of grief\ncircles the planet multiple times,\nand drowns, in its intensity and passion,\nevery other emotion in the entire solar system of Noi-Hert."
+        }
+      ]
     }
   ]
 }
