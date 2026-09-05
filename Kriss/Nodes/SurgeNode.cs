@@ -210,7 +210,7 @@ public class SurgeNode : NodeBase
         WriteGlyphRow(state);
 
         SetCursorPosition(0, top + 1);
-        Write(CaretRow(state), ConsoleColor.White);
+        Write(CaretRow(state), CaretColor(state));
 
         SetCursorPosition(0, top + 3);
         WriteRageBar(filled);
@@ -234,28 +234,25 @@ public class SurgeNode : NodeBase
     /// <summary>
     /// Spent glyphs go grey, the one owed right now is white, and the rest are the
     /// narrator's dark cyan - except in the mind-merge, where Saberinne's share of the row
-    /// waits in her own green.
+    /// is hers in her own green from first sight to the moment she takes it. It never turns
+    /// white, because white means "press this" and pressing hers does nothing.
     /// </summary>
-    ConsoleColor GlyphColor(SurgeState state, int index)
+    static ConsoleColor GlyphColor(SurgeState state, int index)
     {
         if (index < state.Position)
             return ConsoleColor.DarkGray;
 
-        if (index == state.Position)
-            return ConsoleColor.White;
+        if (state.IsSaberinnes(index))
+            return EnCharacter.Saberinne.Color();
 
-        return IsSaberinnes(index) ? EnCharacter.Saberinne.Color() : ConsoleColor.DarkCyan;
+        return index == state.Position ? ConsoleColor.White : ConsoleColor.DarkCyan;
     }
 
-    bool IsSaberinnes(int index)
-    {
-        string pattern = Challenge.DuetPattern;
-
-        if (string.IsNullOrEmpty(pattern))
-            return false;
-
-        return char.ToUpperInvariant(pattern[index % pattern.Length]) == 'S';
-    }
+    /// <summary>
+    /// The caret carries whoever is playing, so a glance at it says whether to press.
+    /// </summary>
+    static ConsoleColor CaretColor(SurgeState state) =>
+        state.IsSaberinnes(state.Position) ? EnCharacter.Saberinne.Color() : ConsoleColor.White;
 
     string CaretRow(SurgeState state)
     {

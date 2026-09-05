@@ -36,7 +36,8 @@ public class SurgeDeserializationTests
             "successmessage": "The door gives.",
             "failuremessage": "The door holds.",
             "failurechildid": 44,
-            "duetpattern": ".S"
+            "duetpattern": ".S",
+            "duetbeat": 0.25
         }
     }
     """;
@@ -65,6 +66,19 @@ public class SurgeDeserializationTests
         Assert.AreEqual("The door holds.", surge.Challenge.FailureMessage);
         Assert.AreEqual(44, surge.Challenge.FailureChildId);
         Assert.AreEqual(".S", surge.Challenge.DuetPattern);
+        Assert.AreEqual(0.25f, surge.Challenge.DuetBeat);
+    }
+
+    [TestMethod]
+    public void SurgeJson_WithoutADuetBeat_DefaultsToThreeTenthsOfASecond()
+    {
+        const string json = """{"id": 1, "type": "surge", "text": "test", "childid": 2, "challenge": {"duetpattern": ".S"}}""";
+
+        NodeBase node = JsonSerializer.Deserialize<NodeBase>(json, JsonHelper.Options);
+
+        SurgeNode surge = node as SurgeNode;
+        Assert.IsNotNull(surge?.Challenge);
+        Assert.AreEqual(0.3f, surge.Challenge.DuetBeat);
     }
 
     [TestMethod]

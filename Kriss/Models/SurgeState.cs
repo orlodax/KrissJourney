@@ -15,17 +15,22 @@ public enum SurgeOutcome
 /// went by and which arrow was pressed. Keeping the clock outside is what makes the
 /// minigame testable, and it is also where the mechanic's whole intent is enforced.
 /// Rage at any moment is
-/// <c>starting - drain * elapsed + restore * correct - penalty * wrong</c>,
+/// <c>starting - drain * elapsed + restore * taken - penalty * wrong</c>,
 /// so for the same keys in the same order, pressing them sooner is always worth strictly
 /// more rage. That is the "fast and sloppy beats slow and careful" property: a mistake
 /// costs a fixed amount once, while hesitation costs for as long as it lasts.
+/// In a duet part of the row is Saberinne's and she takes it herself - <see cref="IsSaberinnes"/>.
 /// </summary>
 public sealed class SurgeState
 {
     readonly double drainRate;
     readonly double restore;
     readonly double penalty;
+    readonly double duetBeat;
+    readonly bool[] duet; // null unless the challenge names a duet pattern
     readonly List<SurgeDirection> glyphs;
+
+    double duetPending; // seconds Saberinne has spent on the glyph the caret is on
 
     public SurgeState(SurgeChallenge challenge, IEnumerable<SurgeDirection> row)
     {
@@ -36,6 +41,8 @@ public sealed class SurgeState
         drainRate = Math.Max(0, challenge.DrainRate);
         restore = Math.Max(0, challenge.Restore);
         penalty = Math.Max(0, challenge.Penalty);
+        duetBeat = Math.Max(0, challenge.DuetBeat);
+        duet = BuildDuet(challenge.DuetPattern, glyphs.Count);
         MaxRage = Math.Max(1, challenge.MaxRage);
         Rage = Math.Clamp(challenge.StartingRage, 0, MaxRage);
 
@@ -67,7 +74,15 @@ public sealed class SurgeState
     public bool IsOver => Outcome != SurgeOutcome.InProgress;
 
     /// <summary>
-    /// Time passing, in seconds. Rage that reaches zero has emptied and the Surge is lost;
+    /// Whether the glyph at <paramref name="index"/> is Saberinne's rather than Kriss's.
+    /// The one source of truth for the split: the renderer takes its colour from this and
+    /// the arithmetic resolves from it, so what shows as hers is exactly what she plays.
+    /// </summary>
+    public bool IsSaberinnes(int index) => duet is not null && index >= 0 && index < duet.Length && duet[index];
+
+    /// <summary>
+    /// Time passing, in seconds: the bar drains, then Saberinne takes whatever of her share
+    /// the caret is resting on. Rage that reaches zero has emptied and the Surge is lost;
     /// an outcome, once reached, is final, so a won row cannot be drained into a loss.
     /// </summary>
     public void Drain(double elapsedSeconds)
@@ -76,17 +91,20 @@ public sealed class SurgeState
             return;
 
         Spend(drainRate * elapsedSeconds);
+        PlaySaberinnesShare(elapsedSeconds);
     }
 
     /// <summary>
     /// One arrow. The right one advances the caret and restores rage; a wrong one costs
     /// rage and leaves the caret exactly where it was, so mashing never walks the row -
-    /// and never sends the player back to the start either.
-    /// Returns whether the input was the one the row wanted.
+    /// and never sends the player back to the start either. Saberinne's glyphs take no
+    /// input at all: pressing ahead into her share is swallowed rather than charged, since
+    /// it was never his to get wrong.
+    /// Returns whether the input was the one the row wanted of the player.
     /// </summary>
     public bool ApplyInput(SurgeDirection input)
     {
-        if (IsOver)
+        if (IsOver || IsSaberinnes(Position))
             return false;
 
         if (input != glyphs[Position])
@@ -95,13 +113,64 @@ public sealed class SurgeState
             return false;
         }
 
+        Take();
+
+        return true;
+    }
+
+    /// <summary>
+    /// Saberinne's half plays itself: the caret rests on one of her glyphs for a beat, then
+    /// she takes it and puts back the rage a correct input would have. A run of hers goes
+    /// one glyph per beat rather than all in one frame, so being carried keeps a tempo. Her
+    /// clock only runs while the caret is actually on her glyph.
+    /// </summary>
+    void PlaySaberinnesShare(double elapsedSeconds)
+    {
+        if (IsOver || !IsSaberinnes(Position))
+        {
+            duetPending = 0;
+            return;
+        }
+
+        duetPending += elapsedSeconds;
+
+        // The remainder carries over inside a run of hers, so a run takes exactly as many
+        // beats as it has glyphs instead of drifting by a frame each time.
+        while (duetPending >= duetBeat && !IsOver && IsSaberinnes(Position))
+        {
+            duetPending -= duetBeat;
+            Take();
+        }
+
+        if (IsOver || !IsSaberinnes(Position))
+            duetPending = 0;
+    }
+
+    /// <summary>Consumes the glyph under the caret, whichever of the two it belonged to.</summary>
+    void Take()
+    {
         Position++;
         Rage = Math.Min(MaxRage, Rage + restore);
 
         if (Position >= glyphs.Count)
             Outcome = SurgeOutcome.Won;
+    }
 
-        return true;
+    /// <summary>
+    /// Expands the cycled "S" mask over the actual row once, so ownership is a lookup and
+    /// cannot be computed two different ways in two different places.
+    /// </summary>
+    static bool[] BuildDuet(string pattern, int length)
+    {
+        if (string.IsNullOrEmpty(pattern) || length == 0)
+            return null;
+
+        bool[] mask = new bool[length];
+
+        for (int i = 0; i < length; i++)
+            mask[i] = char.ToUpperInvariant(pattern[i % pattern.Length]) == 'S';
+
+        return mask;
     }
 
     void Spend(double amount)

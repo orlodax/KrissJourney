@@ -166,7 +166,8 @@ public class SurgeTests : NodeTestBase
             int idx = await WaitForOutputIndexAsync("Press a key to continue...", 0);
             SimulateUserInput(ConsoleKey.Enter);
 
-            // DrainRate 0 with no input never ends the row, so both keys must be played.
+            // Up is Saberinne's now and resolves itself on the beat; pressing it anyway is
+            // harmless since it lands on her glyph and is swallowed rather than consumed.
             idx = await WaitForOutputIndexAsync("RAGE", idx);
             SimulateUserInput(ConsoleKey.LeftArrow, ConsoleKey.UpArrow);
         });
@@ -177,6 +178,45 @@ public class SurgeTests : NodeTestBase
         string output = TerminalMock.GetOutput();
         Assert.IsTrue(output.Contains(Green('↑')),
             "The duet-marked pending glyph (Up, index 1, pattern \".S\") should render in Saberinne's green while pending.");
+    }
+
+    [TestMethod]
+    public void DuetPattern_HerShareResolvesOnItsOwn_PlayerNeedOnlyPressHisGlyphs()
+    {
+        CreateNode<StoryNode>(nodeId: 2); // dummy target, created first - see the render test above for why
+
+        _surge = CreateNode<SurgeNode>(configure: node =>
+        {
+            node.Challenge = new SurgeChallenge
+            {
+                Sequence = "L U", // Kriss's Left, then Saberinne's Up
+                DrainRate = 0,
+                StartingRage = 100,
+                MaxRage = 100,
+                DuetPattern = ".S",
+                SuccessMessage = "The door gives.",
+            };
+            node.ChildId = 2;
+        });
+
+        Task script = Task.Run(async () =>
+        {
+            int idx = await WaitForOutputIndexAsync("Press a key to continue...", 0);
+            SimulateUserInput(ConsoleKey.Enter);
+
+            idx = await WaitForOutputIndexAsync("RAGE", idx);
+            SimulateUserInput(ConsoleKey.LeftArrow); // only his glyph; her Up resolves after the beat with no key at all
+
+            idx = await WaitForOutputIndexAsync("The door gives.", idx);
+            idx = await WaitForOutputIndexAsync("Press a key to continue...", idx);
+            SimulateUserInput(ConsoleKey.Enter);
+        });
+
+        LoadNode(_surge);
+        Assert.IsTrue(script.Wait(TimeSpan.FromSeconds(8)), "Input script timed out.");
+
+        Assert.IsTrue(TerminalMock.GetOutput().Contains("Test StoryNode node"),
+            "Winning a duet row by pressing only Kriss's glyph should still advance to childid.");
     }
 
     [TestMethod]

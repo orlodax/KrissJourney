@@ -62,10 +62,20 @@ public class SurgeChallenge
     public int? FailureChildId { get; set; }
 
     /// <summary>
-    /// Duet mask, cycled over the row: "S" marks a glyph as Saberinne's and renders it in
-    /// her green ($G) while it is still pending, anything else is Kriss's. ".S" alternates.
-    /// Purely a colour: the player still plays every glyph, because the mind-merge is one
-    /// act performed by two people rather than a turn-taking contest.
+    /// Duet mask, cycled over the row: "S" marks a glyph as Saberinne's, anything else is
+    /// Kriss's, so ".S" alternates. Hers are not the player's to press. They render in her
+    /// green ($G), resolve on their own once the caret reaches them, and put back exactly
+    /// the rage a correct input would - she carries her share of the working rather than
+    /// costing him anything, which is the whole point of the mind-merge.
     /// </summary>
     public string DuetPattern { get; set; }
+
+    /// <summary>
+    /// Seconds Saberinne takes over each of her glyphs, one per beat through a run of them.
+    /// The default is the tempo of brisk play, so her share lands on the same pulse the
+    /// player is already producing; raise it to make her more deliberate, and it stops
+    /// reading as a shared rhythm and starts reading as dead time somewhere past half a
+    /// second. No <see cref="DuetPattern"/>, no beat.
+    /// </summary>
+    public float DuetBeat { get; set; } = 0.3f;
 }
