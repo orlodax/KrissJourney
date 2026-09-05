@@ -374,9 +374,17 @@ public class StoryFlowTests
                 if (choice.ChildId > 0)
                     yield return choice.ChildId;
 
-        if (node is DialogueNode d && d.Dialogues != null)
+        if (node is DialogueNode d)
         {
-            foreach (DialogueLine dlg in d.Dialogues)
+            // DialogueNode.Load falls through to AdvanceToNext(ChildId) once the lines run out,
+            // so a Dialogue node's own childid is a real link and not only its lines' ones.
+            if (d.ChildId > 0)
+                yield return d.ChildId;
+        }
+
+        if (node is DialogueNode dn && dn.Dialogues != null)
+        {
+            foreach (DialogueLine dlg in dn.Dialogues)
             {
                 if (dlg.ChildId.HasValue && dlg.ChildId.Value > 0)
                     yield return dlg.ChildId.Value;
