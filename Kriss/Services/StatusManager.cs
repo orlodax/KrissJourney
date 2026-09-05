@@ -13,17 +13,38 @@ public class StatusManager
     /// <summary>
     /// Gets the path to the application data directory (location of status file).
     /// </summary>
-    protected virtual string AppDataPath { get; private set; } = string.Empty;
+    protected string AppDataPath { get; }
 
     /// <summary>
     /// Gets the status object that represents the game save.
     /// </summary>
-    protected virtual Status Status { get; private set; } = new();
+    protected virtual Status Status => _status;
 
+    private readonly Status _status;
     private readonly string _localStatusFilePath;
     private const string CloudFileName = "status.json";
 
     public StatusManager()
+        : this(ResolveDefaultAppDataPath())
+    { }
+
+    // The save folder is handed in, never read back through a virtual getter (issue 26,
+    // 2026-09-05): a subclass redirecting the file by overriding a property the constructor
+    // called was the only thing keeping the test suite off the player's real save.
+    // Tests/README.md, "Save file isolation".
+    protected StatusManager(string appDataPath)
+    {
+        AppDataPath = appDataPath;
+
+        if (!Directory.Exists(AppDataPath))
+            Directory.CreateDirectory(AppDataPath);
+
+        _localStatusFilePath = Path.Combine(AppDataPath, CloudFileName);
+
+        _status = LoadStatus();
+    }
+
+    private static string ResolveDefaultAppDataPath()
     {
         string baseAppDataPath = Path.Combine(
             Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
@@ -31,19 +52,12 @@ public class StatusManager
 
         // Include Steam player ID in the path if available
         if (SteamManager.Initialized && SteamManager.GetSteamId() != 0)
-            AppDataPath = Path.Combine(baseAppDataPath, SteamManager.GetSteamId().ToString());
-        else
-            AppDataPath = Path.Combine(baseAppDataPath, "default");
+            return Path.Combine(baseAppDataPath, SteamManager.GetSteamId().ToString());
 
-        if (!Directory.Exists(AppDataPath))
-            Directory.CreateDirectory(AppDataPath);
-
-        _localStatusFilePath = Path.Combine(AppDataPath, CloudFileName);
-
-        LoadStatus();
+        return Path.Combine(baseAppDataPath, "default");
     }
 
-    private void LoadStatus()
+    private Status LoadStatus()
     {
         if (SteamManager.Initialized && SteamManager.CloudFileExists(CloudFileName))
         {
@@ -53,12 +67,12 @@ public class StatusManager
             {
                 try
                 {
-                    Status = JsonSerializer.Deserialize<Status>(cloudData, JsonHelper.Options);
+                    Status cloudStatus = JsonSerializer.Deserialize<Status>(cloudData, JsonHelper.Options);
                     // Sync to local file
                     File.WriteAllBytes(_localStatusFilePath, cloudData);
                     Debug.WriteLine($"'{CloudFileName}' loaded from Steam Cloud and synced to local: '{_localStatusFilePath}'.");
 
-                    return; // Exit early since we successfully loaded from cloud
+                    return cloudStatus; // Exit early since we successfully loaded from cloud
                 }
                 catch (JsonException ex)
                 {
@@ -78,61 +92,63 @@ public class StatusManager
         if (!File.Exists(_localStatusFilePath))
         {
             Debug.WriteLine($"No local status file found ('{_localStatusFilePath}') and no/invalid cloud save. Initializing new status.");
-            Status = new Status();
+            Status newStatus = new();
             // Save this new empty status locally and to cloud immediately if Steam is initialized.
-            SaveInternal(); // This will save locally and attempt cloud if Steam is up.
-        }
-        else
-        {
-            Debug.WriteLine($"Attempting to load status from local file: '{_localStatusFilePath}'.");
-            try
-            {
-                string localJson = File.ReadAllText(_localStatusFilePath);
-                if (!string.IsNullOrWhiteSpace(localJson)) // Ensure local file is not empty
-                {
-                    Status = JsonSerializer.Deserialize<Status>(localJson, JsonHelper.Options);
-                    Debug.WriteLine($"Status loaded from local file: '{_localStatusFilePath}'.");
+            SaveInternal(newStatus);
 
-                    // If Steam is initialized and we loaded locally (meaning cloud was missing, empty, or failed to load),
-                    // attempt to upload this local version to the cloud.
-                    if (SteamManager.Initialized)
-                    {
-                        Debug.WriteLine($"Attempting to sync local '{_localStatusFilePath}' to Steam Cloud ('{CloudFileName}').");
-                        byte[] localData = File.ReadAllBytes(_localStatusFilePath);
-                        if (SteamManager.WriteCloudFile(CloudFileName, localData))
-                            Debug.WriteLine($"Local '{_localStatusFilePath}' synced to Steam Cloud ('{CloudFileName}').");
-                        else
-                            Debug.WriteLine($"Failed to sync local '{_localStatusFilePath}' to Steam Cloud ('{CloudFileName}').");
-                    }
-                }
-                else
+            return newStatus;
+        }
+
+        Debug.WriteLine($"Attempting to load status from local file: '{_localStatusFilePath}'.");
+        try
+        {
+            string localJson = File.ReadAllText(_localStatusFilePath);
+            if (!string.IsNullOrWhiteSpace(localJson)) // Ensure local file is not empty
+            {
+                Status localStatus = JsonSerializer.Deserialize<Status>(localJson, JsonHelper.Options);
+                Debug.WriteLine($"Status loaded from local file: '{_localStatusFilePath}'.");
+
+                // If Steam is initialized and we loaded locally (meaning cloud was missing, empty, or failed to load),
+                // attempt to upload this local version to the cloud.
+                if (SteamManager.Initialized)
                 {
-                    Debug.WriteLine($"Local status file '{_localStatusFilePath}' is empty. Initializing new status.");
-                    Status = new Status();
-                    // Optionally save this new empty status if Steam is up, as it implies no valid save anywhere.
-                    if (SteamManager.Initialized)
-                        SaveInternal();
+                    Debug.WriteLine($"Attempting to sync local '{_localStatusFilePath}' to Steam Cloud ('{CloudFileName}').");
+                    byte[] localData = File.ReadAllBytes(_localStatusFilePath);
+                    if (SteamManager.WriteCloudFile(CloudFileName, localData))
+                        Debug.WriteLine($"Local '{_localStatusFilePath}' synced to Steam Cloud ('{CloudFileName}').");
+                    else
+                        Debug.WriteLine($"Failed to sync local '{_localStatusFilePath}' to Steam Cloud ('{CloudFileName}').");
                 }
+
+                return localStatus;
             }
-            catch (JsonException ex)
-            {
-                Debug.WriteLine($"Error deserializing status from local file '{_localStatusFilePath}': {ex.Message}. Initializing new status.");
-                Status = new Status();
-            }
-            catch (IOException ex)
-            {
-                Debug.WriteLine($"Error reading local status file '{_localStatusFilePath}': {ex.Message}. Initializing new status.");
-                Status = new Status();
-            }
+
+            Debug.WriteLine($"Local status file '{_localStatusFilePath}' is empty. Initializing new status.");
+            Status emptyStatus = new();
+            // Optionally save this new empty status if Steam is up, as it implies no valid save anywhere.
+            if (SteamManager.Initialized)
+                SaveInternal(emptyStatus);
+
+            return emptyStatus;
+        }
+        catch (JsonException ex)
+        {
+            Debug.WriteLine($"Error deserializing status from local file '{_localStatusFilePath}': {ex.Message}. Initializing new status.");
+            return new Status();
+        }
+        catch (IOException ex)
+        {
+            Debug.WriteLine($"Error reading local status file '{_localStatusFilePath}': {ex.Message}. Initializing new status.");
+            return new Status();
         }
     }
 
-    private void SaveInternal()
+    private void SaveInternal(Status status)
     {
         byte[] statusData;
         try
         {
-            statusData = JsonSerializer.SerializeToUtf8Bytes(Status, JsonHelper.Options);
+            statusData = JsonSerializer.SerializeToUtf8Bytes(status, JsonHelper.Options);
         }
         catch (JsonException ex)
         {
@@ -180,7 +196,7 @@ public class StatusManager
         }
 
         if (changed)
-            SaveInternal();
+            SaveInternal(Status);
     }
 
     public virtual bool HasVisitedNodes()
@@ -210,7 +226,7 @@ public class StatusManager
         if (!Status.Inventory.Contains(item))
         {
             Status.Inventory.Add(item);
-            SaveInternal();
+            SaveInternal(Status);
         }
     }
 

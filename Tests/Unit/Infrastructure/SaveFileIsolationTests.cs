@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.IO;
 using System.Reflection;
 using System.Security.Cryptography;
@@ -11,9 +11,9 @@ namespace KrissJourney.Tests.Unit.Infrastructure;
 
 /// <summary>
 /// The suite must never read or write the player's own status.json under LocalApplicationData.
-/// Isolation hangs on one subtle thread: StatusManager's constructor reads AppDataPath through
-/// the virtual getter, so TestStatusManager's override redirects the save file before any I/O.
-/// Details in Tests/README.md, "Save file isolation".
+/// Since issue 26 the save folder is a constructor parameter rather than a virtual getter the
+/// base reads back, so TestStatusManager redirects the file by passing "test_path" to
+/// base(appDataPath). Details in Tests/README.md, "Save file isolation".
 /// </summary>
 [TestClass]
 public class SaveFileIsolationTests
@@ -75,7 +75,7 @@ public class SaveFileIsolationTests
         Assert.IsFalse(
             resolved.StartsWith(Path.GetFullPath(RealSaveDirectory), StringComparison.OrdinalIgnoreCase),
             $"TestStatusManager resolved its save file to '{resolved}', inside the player's own save folder. " +
-            "StatusManager's constructor must keep reading AppDataPath through the virtual getter.");
+            "StatusManager's constructor must keep deriving _localStatusFilePath from its appDataPath argument.");
     }
 
     [TestMethod]

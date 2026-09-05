@@ -10,23 +10,21 @@ namespace KrissJourney.Tests.Infrastructure.Mocks;
 public class TestStatusManager : StatusManager
 {
     // Fields to use instead of relying on base class properties
-    private readonly string testPath = "test_path";
+    private const string TestPath = "test_path";
     private readonly Status testStatus = new()
     {
         VisitedNodes = [],
         Inventory = []
     };
 
-    // Override the protected properties
-    protected override string AppDataPath => testPath;
+    // Override the protected property
     protected override Status Status => testStatus;
 
-    // Constructor with base() call to ensure initialization
-    public TestStatusManager() : base()
-    {
-        // Override the initialization behavior from the base class
-        // We'll use our _testStatus and _testPath instead
-    }
+    // The save folder is passed to the base constructor (issue 26). Overriding AppDataPath no
+    // longer redirects anything: the base no longer reads it back. Tests/README.md, "Save file
+    // isolation".
+    public TestStatusManager() : base(TestPath)
+    { }
 
     // Override methods to avoid file system operations
     public override void SaveProgress(int chapterId, int nodeId)

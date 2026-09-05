@@ -94,14 +94,15 @@ exist either, is residue of the same kind.
 `GameEngineTestExtensions.Setup()` therefore builds on `TestStatusManager`, and so does every
 other engine the suite constructs.
 
-The isolation rests on one subtle detail worth knowing before touching `StatusManager`'s
-constructor. `AppDataPath` is a `protected virtual` property with a private setter: the
-constructor assigns the real path through the private setter, but every subsequent use - the
-`Directory.CreateDirectory` call and the `Path.Combine` that fixes `_localStatusFilePath` - reads
-it back through the **virtual getter**, which `TestStatusManager` overrides to `test_path`. A
-virtual call from a constructor is normally a smell; here it is the entire reason the mock never
-opens the real file. Rewriting those lines to use the local variable instead of the property
-would silently point the whole suite at the author's save.
+The isolation used to rest on a virtual call from `StatusManager`'s constructor: `AppDataPath`
+was `protected virtual` with a private setter, and `TestStatusManager` overrode the getter to
+`test_path`, so rewriting the constructor to use a local variable instead of the property would
+have silently pointed the whole suite at the author's save. Issue 26 (2026-09-05) removed that
+trap. The save folder is now a constructor parameter: `protected StatusManager(string
+appDataPath)` sets the non-virtual `AppDataPath` and derives `_localStatusFilePath` from the
+argument, the public parameterless constructor resolves the real path and chains to it, and
+`TestStatusManager` passes `test_path` with `: base(TestPath)`. Overriding `AppDataPath` no
+longer redirects anything, because nothing reads it back.
 
 `Unit/Infrastructure/SaveFileIsolationTests.cs` guards both halves:
 
