@@ -17,6 +17,7 @@ Tests/
 │   │   └── TestUtils.cs      # General test utilities
 │   └── NodeTestRunner.cs     # Unified test runner for nodes
 ├── Unit/                     # Unit tests for specific components
+│   ├── Infrastructure/       # Tests that guard the test harness itself
 │   ├── Models/               # Tests for model classes
 │   ├── Nodes/                # Tests for node behaviors (non-UI)
 │   ├── Services/             # Tests for services
@@ -77,6 +78,38 @@ public class MyNodeTests : NodeTestBase
 - Overrides file system operations to use in-memory data structures
 - Provides the same interface as the real StatusManager
 - Enables testing without file system dependencies
+
+### Save file isolation
+
+**No test may construct the production `StatusManager`.** Its constructor loads - and, when no
+save exists yet, immediately writes - `status.json` under `LocalApplicationData/KrissJourney/`,
+which on a developer machine is the author's own playthrough. Two things follow from that: a
+test can silently mutate a real save, and a test's outcome can depend on how far the machine's
+owner has played. Both have already happened once. The author's save carries an inventory item
+`magic_key` that appears nowhere in any chapter JSON; it is the fixture item from
+`GameEngineTests.AddItemToInventory_And_EvaluateWithItemCondition_ReturnsTrue`, written there by
+a past test run through the real manager. A `VisitedNodes` entry for chapter `99`, which does not
+exist either, is residue of the same kind.
+
+`GameEngineTestExtensions.Setup()` therefore builds on `TestStatusManager`, and so does every
+other engine the suite constructs.
+
+The isolation rests on one subtle detail worth knowing before touching `StatusManager`'s
+constructor. `AppDataPath` is a `protected virtual` property with a private setter: the
+constructor assigns the real path through the private setter, but every subsequent use - the
+`Directory.CreateDirectory` call and the `Path.Combine` that fixes `_localStatusFilePath` - reads
+it back through the **virtual getter**, which `TestStatusManager` overrides to `test_path`. A
+virtual call from a constructor is normally a smell; here it is the entire reason the mock never
+opens the real file. Rewriting those lines to use the local variable instead of the property
+would silently point the whole suite at the author's save.
+
+`Unit/Infrastructure/SaveFileIsolationTests.cs` guards both halves:
+
+- an `[AssemblyInitialize]`/`[AssemblyCleanup]` pair hashes the real save file before the first
+  test and re-checks hash and mtime after the last, so any write anywhere in the run fails it
+  (verified: an `AssemblyCleanup` throw is reported as a failed test and `dotnet test` exits 1);
+- two test methods assert that `TestStatusManager` resolves its save file outside the real
+  save folder, and that `Setup()` hands back an engine built on `TestStatusManager`.
 
 ## Usage Examples
 

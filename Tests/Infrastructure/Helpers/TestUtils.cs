@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using KrissJourney.Kriss.Models;
 using KrissJourney.Kriss.Services;
+using KrissJourney.Tests.Infrastructure.Mocks;
 
 namespace KrissJourney.Tests.Infrastructure.Helpers;
 
@@ -20,11 +21,14 @@ public static class GameEngineTestExtensions
     }
 
     /// <summary>
-    /// Setup a GameEngine instance with the default StatusManager
+    /// Setup a GameEngine instance backed by the in-memory TestStatusManager.
+    /// Never the production StatusManager: that one loads (and saves to) the author's own
+    /// status.json under LocalApplicationData, so tests would read - and eventually rewrite -
+    /// a real playthrough. See SaveFileIsolationTests, which guards this.
     /// </summary>
     public static GameEngine Setup()
     {
-        GameEngine gameEngine = new(new StatusManager());
+        GameEngine gameEngine = new(new TestStatusManager());
         gameEngine.Run();
         return gameEngine;
     }
