@@ -5,7 +5,7 @@
     {
       "id": 1,
       "type": "Dialogue",
-      "recap": "Corolla wakes - anxious bedside, Theo on the tech",
+      "recap": "Corolla wakes - anxious bedside, Theo on the tech, console left unsolved as a hook",
       "text": "-------------------------------\n|          CHAPTER 18          |\n-------------------------------\n\n\n",
       "dialogues": [
         {
@@ -38,24 +38,163 @@
         },
         {
           "actor": "Theo",
-          "precomment": "Theo, standing in the doorway, which he barely fits in,\nhas the look of a man who has just been given an enormous gift and is not\nentire sure what to do with the feeling.",
+          "precomment": "Theo, standing in the doorway, which he barely fits in,\nhas the look of a man who has just been given an enormous gift and is not\nentirely sure what to do with the feeling.",
           "line": "Solar energy.# The sails collect sunlight, feed electric motors below the waterline.#\nElectric motors.# We had examples of this technology at Øder,\nbut very few.# Very limited examples.#\nNothing like this.",
-          "comment": "He looks over his shoulder, back at the ship around him,\nwith an expression you rarely see on Theo's face: something close to wonder.#\nHe adds, as if to himself:"
+          "comment": "He looks over his shoulder, back at the ship around him,\nwith an expression you rarely see on Theo's face: something close to wonder."
+        },
+        {
+          "actor": "Corolla",
+          "precomment": "She asks it with her eyes still on the ceiling, half a smile in it.",
+          "line": "...and who's at the helm?",
+          "comment": ""
         },
         {
           "actor": "Theo",
-          "line": "I have set the route in the navigation computer.#\nWe are underway.",
-          "comment": "Corolla looks at the ceiling for a moment.# Then she closes her eyes.#\n\n$R\"Don't let me sleep too long.\"$C##\n\nSmiurl immediately sets about arranging himself in the chair beside her bunk\nwith the air of someone who has been waiting for a job.",
+          "precomment": "Theo's satisfaction dims, just a little.",
+          "line": "I found the console at the stern.# There's a script on it I don't recognize.#\nNot yours, not ours.# There seemed to be enough there to work something out,\nso I tried.# I can't tell you if it's right.",
+          "comment": "He says it plainly, the way he says most things.# But you catch,\nunderneath it, something that in anyone else you would call embarrassment."
+        },
+        {
+          "actor": "Theo",
+          "precomment": "He looks at you, which from Theo counts as a direct request.",
+          "line": "We are sailing somewhere.# I would rather it were south."
+        },
+        {
+          "actor": "Kriss",
+          "line": "I'll go take a look.",
+          "comment": "Corolla's eyes are already closing.##\n\n$R\"Don't let me sleep too long.\"$C##\n\nSmiurl immediately sets about arranging himself in the chair beside her bunk\nwith the air of someone who has been waiting for a job.",
           "childid": 2
         }
       ]
     },
     {
       "id": 2,
-      "type": "Story",
-      "recap": "exploring the ship - glass prow observation room",
-      "text": "You leave Corolla to Smiurl's enthusiastic nursing and go to see the rest of the ship.##\n\nThe main cabin runs most of the hull's length below deck:\npale walls, smooth and clean and unscratched, narrow bunks folded into alcoves,\nlight coming from fixtures with no visible source.# At the stern end,\na panel of screens and switches sits dark until you approach it,\nand then the whole board illuminates, amber characters scrolling\nacross a central display in characters that Efeliah, appearing at your elbow,\nbegins deciphering with quiet attention.##\n\nThe forward compartment is what stops you cold.##\n\nThe floor is glass.# Not glass-like, not translucent.# Actual clear glass,\nthick as your fist, running the full width of the prow,\nand below it the sea floor is visible: pale sand, dark weed,\nthe slow unhurried movement of creatures going about their lives.#\nThe walls bow outward around the glass and curve to meet the floor,\nso that the whole room feels like standing inside a bubble at the water's surface.##\n\nYou stand there for a long moment, looking down,\nas a flat fish glides across the sand below you without acknowledgement,\nand you have the clear and irrational sense that you are flying.##\n\n$c<<Earth is a very long way away.#\nRight now that is not the worst thought I can have.>>$C##",
-      "childid": 3
+      "type": "Action",
+      "recap": "the console puzzle - examine sails/helm/observation screens for clues, then enter the heading",
+      "text": "You leave Corolla to Smiurl's enthusiastic nursing and go looking for Theo's console.##\n\nThe main cabin runs most of the hull's length below deck: pale walls,\nsmooth and unscratched, narrow bunks folded into alcoves, light coming\nfrom fixtures with no visible source.# At the stern end, a panel of\nswitches waits, dark until you get close, and then the whole board lights\nat once, amber characters in a script that means nothing to you.##\n\nThere is a lot of ship to get lost in before you trust yourself with that panel.",
+      "actions": [
+        {
+          "verbs": [
+            "examine",
+            "look",
+            "study",
+            "inspect",
+            "observe",
+            "watch",
+            "read"
+          ],
+          "answer": "There's plenty else on this ship worth a look before you trust that panel.",
+          "objects": [
+            {
+              "objs": [
+                "sail",
+                "sails",
+                "mast",
+                "masts"
+              ],
+              "answer": "You climb back on deck for a proper look.# Broad, layered panels of some\ndark material, catching what little afternoon light there is, and as you\nwatch, one shifts a few degrees on its mount, unhurried, tracking the sun\nthe way a flower does.##\n\nDown at the base of the mast, a small plate glows the same amber as the\nconsole below, one symbol only, worn smooth by a thousand hands that were\nnever yours.# Whatever it means, it means the sun.",
+              "effect": {
+                "gainitem": "learnedSolarGlyph"
+              }
+            },
+            {
+              "objs": [
+                "helm",
+                "wheel",
+                "tiller",
+                "rudder"
+              ],
+              "answer": "At the stern, behind the console, sits an old-style helm: an actual wheel,\nspoked and worn, usable by hand if you ever wanted to steer this thing\nyourself.# Set into the deck below it, a compass rose, tarnished but\nlegible, an old script you can almost place.# North, south, and the\nordinal points between them, exactly where you would expect to find them\non a wheel that looks like nothing else on this ship.",
+              "effect": {
+                "gainitem": "learnedHelmBearing"
+              }
+            },
+            {
+              "objs": [
+                "screen",
+                "screens",
+                "monitor",
+                "monitors",
+                "observation",
+                "prow",
+                "window",
+                "video",
+                "seabed",
+                "fauna"
+              ],
+              "answer": "Forward, the compartment with the glass floor holds a bank of screens\nalong one wall: seabed readings, a slow procession of marine life\ndrifting past unseen cameras, and one display given over entirely to a\nsmall blinking mark trailing a thin line behind it, back the way you\ncame.# North, if the mark means what you think it means, and the line\nruns off the edge of the screen in the one direction you already know.",
+              "effect": {
+                "gainitem": "learnedSeabedFix"
+              }
+            },
+            {
+              "objs": [
+                "console",
+                "panel",
+                "computer",
+                "controls",
+                "board"
+              ],
+              "answer": "Up close, the amber script resolves into clusters of symbols arranged in\na ring around a single dial, with a lever beneath it that clearly wants\npulling once the dial is set.# Somewhere in that ring, one cluster means\nsouth.# You just have to work out which."
+            },
+            {
+              "objs": [
+                "cabin",
+                "cabins",
+                "bunk",
+                "bunks"
+              ],
+              "answer": "Three more cabins line the corridor, each with its own narrow bunk and\nits own set of ship's amenities.# It resembles nothing so much as a rich\nman's pleasure yacht, borrowed from a much richer century."
+            },
+            {
+              "objs": [
+                "galley",
+                "kitchen",
+                "porthole",
+                "portholes",
+                "glass"
+              ],
+              "answer": "Down a ladder through a hatch in the floor, a dining area opens up: a\ngalley at the stern end, a scatter of tables and chairs, and\nfloor-to-ceiling portholes on either side through which the sea outside\nis somehow more visible than the sea usually is.# You try to find the\nbottom with your eyes, and fail."
+            }
+          ]
+        },
+        {
+          "verbs": [
+            "enter",
+            "set",
+            "input",
+            "turn",
+            "pull",
+            "use"
+          ],
+          "answer": "Enter what, exactly?# You will want to know what you are setting before\nyou touch that dial.",
+          "objects": [
+            {
+              "objs": [
+                "route",
+                "heading",
+                "course",
+                "dial",
+                "lever",
+                "console",
+                "panel",
+                "computer",
+                "controls"
+              ],
+              "condition": {
+                "all": [
+                  { "item": "learnedSolarGlyph" },
+                  { "item": "learnedHelmBearing" },
+                  { "item": "learnedSeabedFix" }
+                ],
+                "refusal": "You turn the dial to a cluster of symbols that looks close enough.#\nOn deck, the sails give an uncertain shudder and start folding in on\nthemselves; the ship yaws a few degrees and settles, entirely\nunconvinced.# Whatever you just told it, the ship doesn't like it."
+              },
+              "answer": "$c<<Sun, north, and a line pointing the way you came.# That should be\nenough to find south.>>$C##\n\nYou turn the dial until it settles on the cluster of symbols opposite the\none glowing at the base of the mast, and pull the lever beneath it.##\n\nSomewhere below, something changes pitch.# On deck, the sails swing\ntogether, smooth and certain this time, and hold.##\n\nTheo appears at the top of the ladder, looks at the board, then at you,\nand something in his face that you have not seen before settles into\nplace.##\n\n$B\"You had it.\"$C# he says, and for Theo that is practically a cheer.",
+              "childid": 3
+            }
+          ]
+        }
+      ]
     },
     {
       "id": 3,
@@ -74,11 +213,11 @@
     {
       "id": 5,
       "type": "Dialogue",
-      "recap": "Efeliah describes the ocean mental field - Kriss's homesickness",
+      "recap": "Efeliah's ocean meditation, pt.1 - the chorus beneath the sea, reply picks how Kriss responds",
       "dialogues": [
         {
           "actor": "Efeliah",
-          "precomment": "On the second evening at sea, the sun goes down ahead of you,\npainting the water in wide bands of copper and rose.#\nThe others are below, and Efeliah is sitting cross-legged at the very front\nof the prow deck, directly above the glass floor of the observation room,\nher eyes closed.# You come to sit beside her.##\n\nShe does not open her eyes, but she smiles.",
+          "precomment": "On the second evening at sea, the sun goes down ahead of you,\npainting the water in wide bands of copper and rose.# The others are below,\nand Efeliah is sitting cross-legged at the very front of the prow deck,\ndirectly above the glass floor of the observation room, her eyes closed.#\nYou come to sit beside her.##\n\nShe does not open her eyes, but she smiles.",
           "line": "I am listening.",
           "istelepathy": true
         },
@@ -97,24 +236,64 @@
           "actor": "Efeliah",
           "line": "It would be a superb sight.",
           "istelepathy": true,
-          "break": true
+          "replies": [
+            {
+              "line": "Ask her to share it with you.",
+              "nextline": "share"
+            },
+            {
+              "line": "Say nothing, and just listen.",
+              "nextline": "listen"
+            }
+          ]
         },
         {
+          "linename": "share",
           "actor": "Kriss",
           "precomment": "You look at the water spreading around you in every direction.\nYou cannot hear what she describes, or not exactly, but there is something:\na faint, sourceless sense of presence, vast and unhurried,\nmoving underneath the surface like a tide that has nothing to do with the moon.",
           "line": "Can you try to share it with me?# What you're hearing?",
-          "istelepathy": true
+          "istelepathy": true,
+          "childid": 6
         },
+        {
+          "linename": "listen",
+          "actor": "Kriss",
+          "precomment": "You say nothing.# You only watch the water, and let the quiet stretch\nbetween you, and try, without much hope, to catch some fraction of what\nshe is describing."
+        },
+        {
+          "actor": "Efeliah",
+          "line": "You don't have to ask.# I heard the question before you shaped it.",
+          "comment": "There is warmth in it, and no mockery at all.",
+          "istelepathy": true,
+          "childid": 6
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "type": "Dialogue",
+      "recap": "why she can't transmit it - Kriss's homesickness, reply picks how he lets it out",
+      "dialogues": [
         {
           "actor": "Efeliah",
           "line": "Your mind, though exceptional, is not naturally receptive in the way\nthat nearly all minds I have encountered on Noi-Hert are.#\nSometimes you have spikes of energy and catch external images,\nbut you are not made for this.#\nThe only hope you have of understanding what lives in your mind\nis to follow this pull that has guided you so far.",
           "comment": "She opens her eyes and looks at you.# The light on the water.",
           "istelepathy": true,
-          "break": true
+          "replies": [
+            {
+              "line": "Admit you would rather just go home.",
+              "nextline": "voice"
+            },
+            {
+              "line": "Try to make a joke of it instead.",
+              "nextline": "voice"
+            }
+          ]
         },
         {
+          "linename": "voice",
           "actor": "Kriss",
-          "precomment": "You look at the water, and the light on it, and the deepening sky.#\nAnd something comes up that you have been pushing down for some time.",
+          "precomment": "You look at the water, and the light on it, and the deepening sky.#\nNo joke quite manages to cover it, and something comes up that you have\nbeen pushing down for some time.",
           "line": "Honestly?# I don't much care what's in my head.#\nI just want to go home.",
           "comment": "You say it quietly, and then you are surprised to find that your eyes\nhave filled without your permission, which is not the effect you were looking for.##"
         },
@@ -124,12 +303,12 @@
           "line": "Perhaps you will find an answer to that too.#\nWe don't know what awaits us.# You'll see.# It will all work out.",
           "comment": "But even as she says it, she is thinking something she does not transmit:\nthat she cannot begin to comprehend how she can say those words\nto someone who is light-years from his planet and millennia from his time.##\n\nShe closes her eyes.# She keeps her arm around your shoulders.#\nYou look out into the ocean depths of this strange planet while the last\nof the sun goes below the horizon and the stars come out, one by one.##",
           "istelepathy": true,
-          "childid": 6
+          "childid": 7
         }
       ]
     },
     {
-      "id": 6,
+      "id": 7,
       "type": "Dialogue",
       "recap": "evening in the cabin - companionship at sea",
       "dialogues": [
@@ -171,9 +350,19 @@
           "actor": "Corolla",
           "line": "I did not expect us to make it this far.",
           "comment": "Nobody speaks for a moment.# It is not a complaint,\nbut simply the truth, offered plainly,\nthe way Corolla sometimes offers things when her guard slips.",
-          "break": true
+          "replies": [
+            {
+              "line": "Say nothing, and let it sit.",
+              "nextline": "keepgoing"
+            },
+            {
+              "line": "Tell her you didn't expect it either.",
+              "nextline": "keepgoing"
+            }
+          ]
         },
         {
+          "linename": "keepgoing",
           "actor": "Theo",
           "precomment": "Theo, sitting with his back against the hull and his eyes half-closed, says:",
           "line": "We keep going.",
@@ -184,56 +373,128 @@
           "precomment": "Corolla turns her head and looks at him.",
           "line": "Yeah.",
           "comment": "She says it softly, and looks back at the ceiling.##\n\nSmiurl has fallen asleep sitting up,\nleaning against Efeliah's shoulder, his face entirely unguarded,\nand Efeliah looks at him with quiet fondness and does not move.",
-          "childid": 7
+          "childid": 8
         }
       ]
     },
     {
-      "id": 7,
+      "id": 8,
       "type": "Story",
       "recap": "three days of peace at sea",
       "text": "Three days pass like something out of a dream you did not know you were allowed to have.##\n\nThe sea is calm, the sails track the sun with their slow mechanical patience,\nand the navigation computer adjusts course twice a day with soft chirps that bother no one.#\nYou sleep in an actual bunk, between actual walls,\nwithout one ear listening for the sound of footsteps in the dark.##\n\nYou talk, all of you, in various combinations, about nothing in particular.#\nEfeliah tells you about Seer's Rock, about the library of stone-tablet Memories,\nabout the Master's belief that the mind was not separate from the universe\nbut simply a finer arrangement of it.#\nCorolla teaches you a card game using a deck improvised from torn scraps\nof the ship's technical manual, and she cheats badly and dares you to call her on it.#\nSmiurl gets seasick on the second day, recovers on the third,\nand spends the fourth leaning over the prow, watching the water,\nhis skin a meditative pale blue.##\n\nEfeliah listens to the chorus, and you watch her listen,\nand the peace on her face is something you want to remember.##",
-      "childid": 8
-    },
-    {
-      "id": 8,
-      "type": "Story",
-      "recap": "storm approaches - sky darkens",
-      "text": "On the morning of the fifth day, the horizon ahead turns the color of a bruise.##\n\nIt happens gradually at first.#\nThe blue-white sky thickens to a hazier white,\nthen to a flat gray that strips the water of its glitter and leaves it leaden and cold,\nand the swells grow, not dramatically but steadily,\nthe ship beginning to lift and dip on rollers that are still comfortable but no longer gentle.#\nThe sails retract automatically, folding themselves inward with a mechanical whisper\nthat sounds, in the new silence, like a held breath.##\n\nThe navigation console emits a series of chirps\nand then a sustained tone that Efeliah identifies,\nafter some study of the screen's amber characters,\nas a storm alert.##\n\n$c<<Of course.# Of course there is a storm.\nWe were having a nice time,\nwhich historically has been the universe's preferred trigger.>>#\n\n$CTheo looks at the sky and says nothing.##",
       "childid": 9
     },
     {
       "id": 9,
       "type": "Story",
-      "recap": "storm worsens - real danger",
-      "text": "By midday, there is no question about it anymore.##\n\nThe swells are three meters, then four,\nand the ship climbs each one in a long, lunging motion\nand comes down the far side with a crash that sends water sheeting across the deck.#\nThe sky has closed completely, a low ceiling of boiling gray-black\nthat flickers with interior light, and the wind has gone from a whisper to a roar,\nand when it hits you in the face it carries water, not spray but solid,\npelting rain that strikes with unexpected force.##\n\nSmiurl is below, and everyone not needed on deck is below,\nwhile Corolla and Theo are lashed to the stern rail,\nfighting the wheel in turns as the computer struggles\nwith a sea that no longer follows any of its models.#\nThe masts creak, and something deep in the hull makes a sound\nthat you do not want to interpret.##\n\n$c<<We are going to lose this ship.#\nI know it with the bone-cold certainty of someone who has already lost\nseveral things on this planet and developed an instinct for it.>>$C##",
+      "recap": "storm approaches - sky darkens - Theo's order to secure the ship",
+      "text": "On the morning of the fifth day, the horizon ahead turns the color of a bruise.##\n\nIt happens gradually at first.#\nThe blue-white sky thickens to a hazier white,\nthen to a flat gray that strips the water of its glitter and leaves it leaden and cold,\nand the swells grow, not dramatically but steadily,\nthe ship beginning to lift and dip on rollers that are still comfortable but no longer gentle.#\nThe sails retract automatically, folding themselves inward with a mechanical whisper\nthat sounds, in the new silence, like a held breath.##\n\nThe navigation console emits a series of chirps\nand then a sustained tone that Efeliah identifies,\nafter some study of the screen's amber characters,\nas a storm alert.##\n\n$c<<Of course.# Of course there is a storm.\nWe were having a nice time,\nwhich historically has been the universe's preferred trigger.>>#\n\n$CTheo looks at the sky, then at the console, and does the math out loud.##\n\n$B\"There's little the computer can do about this.# Without sun the motors'\ncharge won't hold, and if the wind picks up we could lose the sails\noutright.\"$C##\n\nHe is already moving, hauling the rope locker shut, checking the deck for\nanything that isn't fixed down.##\n\n$B\"Get below.# Bring anything loose that could be lost, and bring it now.#\nWe won't have time later.\"$C##\n\nYou have maybe a few minutes before the weather takes the choice away from you.##",
       "childid": 10
     },
     {
       "id": 10,
-      "type": "Story",
-      "recap": "the decisive wave - ship goes down",
-      "text": "The wave that decides it comes out of the dark.##\n\nYou see it for perhaps two seconds before it hits,\na black wall of water, twice the height of the mast,\ncarrying the low groaning sound of something vast being moved against its will.#\nThere is no time to shout.#\nTheo lets go of the wheel and throws himself flat,\nand Corolla grabs the rail with both hands and locks her elbows.##\n\nThe wave takes the ship broadside.###\n\nThe world becomes white and cold and violent and there is no up.#\nThe deck tilts past ninety degrees and you are not on it anymore,\nyou are in the water, and the water is black and enormous and full of noise.#\nSomething hits you, a piece of the ship, the mast, you do not know,\nand the noise cuts out.##",
-      "childid": 11
+      "type": "Choice",
+      "recap": "storm prep A - medbay vs galley, real cost, gates c19 supplies",
+      "text": "There isn't time for everything.# You have to choose.",
+      "choices": [
+        {
+          "desc": "Get to the medical bay, and lash down the medicines before they shatter.",
+          "childid": 11,
+          "effect": {
+            "gainitem": "securedMedbay"
+          }
+        },
+        {
+          "desc": "Get to the galley, and save what food and water you can reach.",
+          "childid": 12,
+          "effect": {
+            "gainitem": "securedGalley"
+          }
+        }
+      ]
     },
     {
       "id": 11,
+      "type": "Story",
+      "recap": "medbay secured - galley lost",
+      "text": "You throw yourself down the ladder into the medical bay and start\nstrapping down cabinets, jars, the sealed cases of instruments,\nworking fast while the deck tilts under you more with every passing minute.##\n\nYou hear, from further down the hull, the unmistakable sound of things\nbreaking loose in the galley: glass, tins, whatever Efeliah didn't\nhave time to reach.# There is nothing to be done about it now.##\n\nYou finish, breathless, everything in the medical bay lashed as tight\nas you can manage, and haul yourself back toward the ladder.##",
+      "childid": 13
+    },
+    {
+      "id": 12,
+      "type": "Story",
+      "recap": "galley secured - medbay lost",
+      "text": "You throw yourself down the ladder toward the galley and grab\nwhat you can reach: the water canisters, sealed tins, a net bag\nof something dense and durable-looking, jamming it all into a locker\nand wedging the locker shut with your own boots.##\n\nSomewhere behind you, in the medical bay, you hear the specific,\nunmistakable sound of glass breaking against a wall, more than once.#\nEfeliah's medicines, unattended.# There is nothing to be done about it now.##\n\nYou finish, breathless, and haul yourself back toward the ladder.##",
+      "childid": 13
+    },
+    {
+      "id": 13,
+      "type": "Choice",
+      "recap": "storm prep B - Corolla vs rigging, real cost",
+      "text": "On deck, the wind has already found a new register, higher and meaner.#\nTheo is fighting the last of the rigging alone, and Corolla, half-dressed\nand furious about it, has appeared at the top of the ladder insisting\nshe's fine to help.##",
+      "choices": [
+        {
+          "desc": "Go make Corolla lie back down. She won't listen to anyone else.",
+          "childid": 14,
+          "effect": {
+            "gainitem": "corollaSecuredBelow"
+          }
+        },
+        {
+          "desc": "Stay topside, and help Theo finish the rigging instead.",
+          "childid": 15,
+          "effect": {
+            "gainitem": "securedRigging"
+          }
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "type": "Story",
+      "recap": "Corolla secured - rigging left half-done",
+      "text": "You go to her, and it costs you most of what patience you have left,\nbut you get an arm under hers and walk her bodily back to her bunk,\nover every objection she has, which are numerous and creative.##\n\nBehind you, above, you hear Theo working alone, and later,\nwhen you finally climb back up, you find a length of loose cable\nstill snapping in the wind that he never had the extra hands to secure.##\n\n$R\"I could have helped,\"$C# she says, from the bunk, not quite meeting your eyes.##\n\n$c\"I know,\"$C# you say.# $c\"That's why I did it.\"$C##",
+      "childid": 16
+    },
+    {
+      "id": 15,
+      "type": "Story",
+      "recap": "rigging secured - Efeliah handles Corolla instead",
+      "text": "You stay, and between you and Theo the last of the exposed gear\ngets lashed down or hauled below in something close to good order.##\n\nCorolla is still arguing from the top of the ladder when Efeliah\nfinally appears behind her, says something too quiet for you to hear,\nand walks her back down by the elbow without further protest.##\n\n$B\"Good,\"$C# Theo says, of the rigging, which from him is a commendation.##",
+      "childid": 16
+    },
+    {
+      "id": 16,
+      "type": "Story",
+      "recap": "storm worsens - real danger",
+      "text": "By midday, there is no question about it anymore.##\n\nThe swells are three meters, then four,\nand the ship climbs each one in a long, lunging motion\nand comes down the far side with a crash that sends water sheeting across the deck.#\nThe sky has closed completely, a low ceiling of boiling gray-black\nthat flickers with interior light, and the wind has gone from a whisper to a roar,\nand when it hits you in the face it carries water, not spray but solid,\npelting rain that strikes with unexpected force.##\n\nSmiurl is below, and everyone not needed on deck is below,\nwhile Corolla and Theo are lashed to the stern rail,\nfighting the wheel in turns as the computer struggles\nwith a sea that no longer follows any of its models.#\nThe masts creak, and something deep in the hull makes a sound\nthat you do not want to interpret.##\n\n$c<<We are going to lose this ship.#\nI know it with the bone-cold certainty of someone who has already lost\nseveral things on this planet and developed an instinct for it.>>$C##",
+      "childid": 17
+    },
+    {
+      "id": 17,
+      "type": "Story",
+      "recap": "the decisive wave - ship goes down",
+      "text": "The wave that decides it comes out of the dark.##\n\nYou see it for perhaps two seconds before it hits,\na black wall of water, twice the height of the mast,\ncarrying the low groaning sound of something vast being moved against its will.#\nThere is no time to shout.#\nTheo lets go of the wheel and throws himself flat,\nand Corolla grabs the rail with both hands and locks her elbows.##\n\nThe wave takes the ship broadside.###\n\nThe world becomes white and cold and violent and there is no up.#\nThe deck tilts past ninety degrees and you are not on it anymore,\nyou are in the water, and the water is black and enormous and full of noise.#\nSomething hits you, a piece of the ship, the mast, you do not know,\nand the noise cuts out.##",
+      "childid": 18
+    },
+    {
+      "id": 18,
       "type": "Choice",
       "recap": "underwater - which way is up",
       "text": "You are underwater.##\n\nYou know this because of the cold and the silence and the burning in your lungs,\nwhich have apparently made the executive decision to remind you they exist.#\nThe water is dark, no light in any direction, no surface visible,\nand you do not know which way is up.##\n\nYour body wants to panic.# You are familiar with this impulse,\nand you do not have the time for it.##",
       "choices": [
         {
           "desc": "Go still, and let your body find its own buoyancy.",
-          "childid": 12
+          "childid": 19
         },
         {
           "desc": "Kick hard, any direction. Up is probably one of them.",
-          "childid": 111
+          "childid": 181
         }
       ]
     },
     {
-      "id": 111,
+      "id": 181,
       "type": "Story",
       "recap": "wrong choice - kicked downward",
       "text": "You kick hard, downward.##\n\nThe pressure builds instead of releasing, and the burning in your lungs becomes a roar,\nand you realize your error just as the darkness at the edges of your vision\nbegins to move inward, quietly and with great finality.##\n\nThe sea keeps all of its secrets.##",
@@ -241,7 +502,7 @@
       "isclosing": true
     },
     {
-      "id": 12,
+      "id": 19,
       "type": "Story",
       "recap": "find surface, then lose consciousness in water",
       "text": "You stop fighting.# You go limp in the cold water\nand let the darkness be still around you for one terrible second,\nand then you feel it, the faint, slow pull of your body\ntoward one direction rather than another,\nthe physics of buoyancy asserting itself even here.##\n\nYou kick hard, toward where up should be.##\n\nYou break the surface with a gasp that tears at your throat, coughing water,\narms thrashing, and the rain hammers down\nand the sea heaves around you in enormous dark swells,\nand lightning flashes somewhere behind the clouds, illuminating for one white second\na field of wreckage, splintered wood, a torn sail panel, debris scattered\nacross the face of the water.##\n\nYou can see nothing.# You call out,\nbut the wind takes your voice and tears it to nothing.#\nThe cold is extraordinary, and your limbs are already growing heavy.##\n\nAnother wave, and you take a breath,\nand then the sea takes you down again,\nand the darkness comes back, and this time you do not fight it.##\n\nYou float.##\n\nDown.##",
