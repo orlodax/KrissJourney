@@ -33,7 +33,7 @@
     {
       "id": 5,
       "type": "Dialogue",
-      "recap": "Efeliah translates the tribunal - formal death sentence, the party heckles",
+      "recap": "Efeliah translates the tribunal - the party heckles, player picks when to draw steel",
       "dialogues": [
         {
           "actor": "Kriss",
@@ -45,9 +45,20 @@
           "actor": "Efeliah",
           "precomment": "Efeliah's voice arrives in your mind, flat and composed.",
           "line": "It is a language none of you know.# I can read his thoughts.#\nHe is saying... that you have profaned and violated\nthe territory of the Edzzen.# That you are emissaries of, and I am rendering\nthis faithfully, 'the worthy-of-atrocious-sufferings-and-death,'#\nor else enemy spies, or possibly ambassadors of distant kings.#\nIn any case you are condemned to die.",
-          "istelepathy": true
+          "istelepathy": true,
+          "replies": [
+            {
+              "line": "These people are insane.",
+              "nextline": "theobit"
+            },
+            {
+              "line": "Enough talk. Draw your sword.",
+              "childid": 6
+            }
+          ]
         },
         {
+          "linename": "theobit",
           "actor": "Kriss",
           "line": "These people are insane.",
           "comment": "You say it, perhaps not quietly enough."
@@ -62,7 +73,22 @@
           "actor": "Efeliah",
           "precomment": "The creature on the counter does not appear to enjoy the interruption.\nHe fixes you all with a gaze of refined malice and continues,\nhis voice rising to a pitch of theatrical outrage.",
           "line": "He says...# you will die.# Today.#\nThey will eat your tongues,# and then hang you from the royal ship,#\nand the fish will dispose of your putrid remains.",
-          "istelepathy": true
+          "istelepathy": true,
+          "replies": [
+            {
+              "line": "Has he even seen himself?",
+              "nextline": "corollabit"
+            },
+            {
+              "line": "Enough talk. Draw your sword.",
+              "childid": 6
+            }
+          ]
+        },
+        {
+          "linename": "corollabit",
+          "actor": "Kriss",
+          "line": "Has he even seen himself?"
         },
         {
           "actor": "Corolla",
@@ -111,36 +137,135 @@
     },
     {
       "id": 8,
-      "type": "Story",
-      "recap": "up the promontory toward the lighthouse",
-      "text": "The promontory rises at the edge of town where the buildings thin out:\ndark rock, a spine of it, jutting over the harbor with the lighthouse\nat its tip, a pale column against the afternoon sky.#\nSupporting it from below: great steel beams, angled like buttresses,\ndiving down into the face of the cliff and disappearing into the water.##\n\nYou run for it.##\n\n$c<<They are chasing us with hooks and fish bones up a cliff\nwhile two of our party is doing something clever with a ship.#\nI am going to focus on the running and trust that the clever part works.>>$C##\n\nThe rock steepens.# The Edzzen fan out behind you,\ntrying to close the circle, their howl rising and splitting\ninto dozens of individual notes of outrage.#\nSmiurl overtakes everyone with a single panicked leap and hits the lighthouse\ndoor first, palms flat, shoving it open.# You and Corolla\npile in after him and slam it shut behind you,\nbarring it with whatever comes to hand, with ropes and an iron ring\nand a piece of timber, while fists and hooks begin battering the wood\nfrom outside.##\n\nA narrow slit window, barred with iron, shows a ring of faces.##\n\nAbove you: a spiral stair, climbing.##",
-      "childid": 9
+      "type": "Action",
+      "recap": "lighthouse turn 1 (shared) - bar the ground floor door",
+      "text": "$CThe three of you spill into the base of the lighthouse and Smiurl slams the door\nshut behind you with both hands, and for a moment you just stand there, breathing.##\n\nThe room is bare stone and old salt air, empty except for what the keepers left behind:\na coil of heavy rope, an iron mooring ring bolted into the wall beside the frame,\nand a length of ship's timber leaning where someone propped it and forgot it.\nA narrow slit window, barred with iron, looks out onto a wall of small, furious faces.##\n\nSomething hits the door hard enough to shudder the whole frame.##\n\nAbove you, past the door and the failing light, a spiral stair climbs into the dark.",
+      "actions": [
+        {
+          "verbs": ["bar", "block", "barricade", "wedge", "brace", "jam"],
+          "answer": "You wedge the timber through the iron ring and lash it fast with the rope,\nCorolla throwing her whole weight against it as the door groans and holds.##\n\nIt will not hold forever.# Up the spiral stair, then, and no time to admire the work.",
+          "childid": 9
+        },
+        {
+          "verbs": ["look", "search", "examine", "listen"],
+          "answer": "A coil of rope, an iron ring, a length of ship's timber, and a door\nthat is not going to hold on its own.# Outside, the wall of small furious faces\nhas not moved.# Whatever you do, do it now."
+        },
+        {
+          "verbs": ["wait", "hide", "rest", "stay", "fight", "attack"],
+          "effect": { "gainitem": "edzzenclose" },
+          "answer": "You hesitate half a second too long, weighing rope against ring against timber,\nand in that half second the door takes a blow that splits one plank clean through.##\n\nThere is no time left to do this properly.# You shove Smiurl toward the stair instead.",
+          "childid": 90
+        }
+      ]
     },
     {
       "id": 9,
-      "type": "Story",
-      "recap": "up the lighthouse stairs - the hatch, the roof",
-      "text": "Up.##\n\nThe staircase is steep and narrow and curves with the lighthouse wall,\nand the noise from below follows you up it, the door taking a sustained beating\nthat the bar will not hold indefinitely.#\nAt the top, above the lamp room, Smiurl finds it first:\na hatch in the ceiling, and he is through it before you reach him,\nhis voice coming down from above.##\n\n$Y\"Up here!# This way!\"$C##\n\nCorolla laces her hands for your foot and you go through the hatch.#\nShe jams it with a dagger and takes the hand you offer her and swings up beside you,\nand the wind on the roof of the lighthouse hits like a fist, cold, full, real,\nand the sea is in every direction below.##\n\nAll three of you grab the railing and hold on.##\n\n$R\"Now what?!\"$C# you shout over the wind.##\n\nFrom below, a tremendous crash: the front door going.#\nThe sound of many small feet on stone stairs.#\nSpring toward you from the hatch; Corolla and Smiurl move to brace it.##",
-      "childid": 10
+      "type": "Action",
+      "recap": "lighthouse turn 2 (fast) - climb the stair",
+      "text": "$CThe stair spirals up inside the lighthouse wall, steep, narrow, and dark,\nand the noise from below follows you up it, muffled by the door but not gone.##\n\nSomewhere above, Smiurl is already shouting something that might be encouragement.",
+      "actions": [
+        {
+          "verbs": ["climb", "go", "continue", "ascend", "run", "up", "stairs"],
+          "answer": "You climb, three steps at a time where the stair allows it, until it opens\ninto the lamp room at the top, dead glass on every side and Smiurl's voice close now.",
+          "childid": 10
+        },
+        {
+          "verbs": ["look", "listen"],
+          "answer": "Just stone steps curling upward, and behind you, muffled, the sound\nof a door being generally disagreed with."
+        },
+        {
+          "verbs": ["wait", "rest", "stop", "hide"],
+          "effect": { "gainitem": "edzzenclose" },
+          "answer": "You slow, and somewhere below something heavy hits the floor.# That decides it.",
+          "childid": 100
+        }
+      ]
     },
     {
       "id": 10,
-      "type": "Story",
-      "recap": "Kriss spots the ship - and leaps",
-      "text": "You lean out over the railing on the seaward side.##\n\nBelow, far below, the cliff plunging straight down to dark water,\nyou spot it.# A ship, emerging from along the harbor wall, moving parallel to the coast\ntoward the promontory.# The sails above it are not canvas;\nthey are enormous, luminous panels, angled toward the sky.##\n\n$g\"Below you, on the sea,\"$C# Efeliah's voice arrives in your mind.##\n\nYou stare at the ship.# You stare at the great sails.#\nThe largest sail is oriented at an angle, its face tilted upward toward the sun,\nthe way a ramp tilts, you find yourself thinking,\nwithout exactly meaning to think it, and you step back from the railing slowly, barely aware you are moving,\nuntil you are standing beside Corolla and Smiurl at the hatch.##\n\nAnother crash from below, shaking the iron of the hatch.##\n\nCorolla looks up from it and finds your face.# She sees something there\nthat makes her go very still.##\n\nTwo rapid strides.# Your foot on the railing.##\n\nYou go off the edge of the lighthouse into the void.##\n\nCorolla watches you fall, and then she does not watch you fall,\nbecause you stop falling.# You hit the sail flat and $Wslide$C,\nthe great panel angled perfectly, a chute of taut luminous material,\nand you come off the bottom of it and land heavily on a mass\nof coiled ropes and furled canvas and what feels very much like a mattress.##\n\nYou lie there for one second and look up at the lighthouse far above you,\na very small tower against the sky.##\n\nThen you get to your feet.##\n\n$c<<That actually worked.#\nI want to be very clear, to myself, that I had no idea that would work.>>$C##",
-      "childid": 11
+      "type": "Action",
+      "recap": "lighthouse turn 3 (fast) - lamp room, through the hatch",
+      "text": "$CThe lamp room is dead, glass on every side and the great lens dark and cold,\nand there is no way out of it that you can see, until you hear Smiurl again,\nhis voice coming down through a hatch in the ceiling.##\n\n$Y\"Up here!# This way!\"$C",
+      "actions": [
+        {
+          "verbs": ["open", "climb", "go", "enter", "follow", "up"],
+          "answer": "You haul yourself through the hatch after him, and the wind on the lighthouse roof\nhits you like something solid, cold and full and entirely uninterested in your plans.##\n\nCorolla comes up right behind you.",
+          "childid": 11
+        },
+        {
+          "verbs": ["look", "search"],
+          "answer": "Glass walls, a dead lamp, and one hatch in the ceiling,\nSmiurl's voice coming through it, not patiently."
+        },
+        {
+          "verbs": ["wait", "rest", "hide", "stop"],
+          "effect": { "gainitem": "edzzenclose" },
+          "answer": "You wait one second too many, and the stair behind you fills with the sound of feet.",
+          "childid": 110
+        }
+      ]
     },
     {
       "id": 11,
-      "type": "Story",
-      "recap": "Corolla throws Smiurl - then faces the bigger Edzzen",
-      "text": "Above you, on the lighthouse roof: Corolla has turned from the railing.##\n\nSmiurl is crouched at the hatch, still trying to hold it,\nhis eyes huge, his skin a blinding white-yellow alarm.# He has not noticed\nthat Kriss is no longer beside him.# Corolla walks to him, deliberate,\ntakes hold of him by the back of his jacket,\nand before he can complete the sentence that begins with $Y\"But what are you...\"$C\nhe is airborne.##\n\nHis scream cuts off when your hands catch him on the deck.##\n\nCorolla takes her rincorsa, a short run toward the railing, and then she stops.##\n\nA figure has pulled itself over the edge of the roof.##\n\nLarger than the others.# Not by much, but enough to matter on a rooftop:#\nbroader in the shoulder, moving differently, with a deliberation the others lack.\nIt draws two daggers from its belt with a grin that is possibly the worst\nexpression you have ever seen, and settles into a fighting crouch.##\n\nBelow, on the deck, the three of you look up.##",
-      "childid": 12
+      "type": "Action",
+      "recap": "lighthouse turn 4 (fast) - wedge the hatch on the roof",
+      "text": "$CYou are on the roof now, railing on every side, the sea a long way down\nin every direction.# Below you, through the hatch, the stair is still full\nof noise, climbing toward you.##\n\nCorolla has her stiletto out, waiting on you.",
+      "actions": [
+        {
+          "verbs": ["block", "wedge", "jam", "bar", "close", "shut"],
+          "answer": "Corolla jams the stiletto through the hatch's iron loop with one hard twist,\nbuying you seconds rather than safety, and you both know it.",
+          "childid": 12
+        },
+        {
+          "verbs": ["look", "search"],
+          "answer": "The hatch, Corolla's stiletto, the railing, and a very long way down."
+        },
+        {
+          "verbs": ["wait", "rest", "hide", "stop"],
+          "effect": { "gainitem": "edzzenclose" },
+          "answer": "You hesitate, and the hatch bucks once under a fist from below.",
+          "childid": 130
+        }
+      ]
     },
     {
       "id": 12,
+      "type": "Action",
+      "recap": "lighthouse turn 5 (fast) - spot the ship, jump",
+      "text": "$CThe wind is full and the light is terrible, and somewhere below,\nthe sea is doing whatever the sea does, entirely indifferent to all of this.",
+      "actions": [
+        {
+          "verbs": ["look", "search", "peer", "lean"],
+          "effect": { "gainitem": "sawship" },
+          "answer": "You lean out over the seaward railing.# Far below, along the harbor wall,\na ship is moving parallel to the coast, sails immense and faintly luminous,\nthe largest of them tilted up toward the sun like a ramp."
+        },
+        {
+          "verbs": ["jump", "leap", "dive", "go"],
+          "condition": {
+            "item": "sawship",
+            "refusal": "You don't even know what's down there yet. Look first."
+          },
+          "answer": "Two strides.# Your foot on the railing.# You go off the edge of the lighthouse\ninto the void, and you have exactly enough time to regret it before you don't.",
+          "childid": 13
+        },
+        {
+          "verbs": ["wait", "rest", "hide", "stop"],
+          "effect": { "gainitem": "edzzenclose" },
+          "answer": "Another crash below, and Corolla's hand finds your shoulder and simply shoves.#\nYou do not so much decide to jump as discover that you already have.",
+          "childid": 130
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "type": "Story",
+      "recap": "fast path - Kriss lands on the ship, Corolla throws Smiurl, bigger Edzzen appears",
+      "text": "$CYou hit the sail flat and $Wslide$C, the great panel angled just right, a chute\nof taut luminous material, and you come off the bottom of it and land heavily\non a mass of coiled ropes and furled canvas and what feels very much like a mattress.##\n\nYou lie there for one second and look up at the lighthouse, a very small tower\nagainst the sky, then get to your feet.##\n\n$c<<That actually worked.# I want to be very clear, to myself,\nthat I had no idea it would.>>$C##\n\nAbove you, on the roof: Corolla has turned from the railing.# Smiurl is still\ncrouched at the hatch, holding it, his skin a blinding white-yellow alarm,\nand he has not noticed that you are gone.# Corolla walks to him, deliberate,\ntakes hold of him by the back of his jacket, and before he can finish the sentence\nthat begins with $Y\"But what are you...\"$C he is airborne.##\n\nHis scream cuts off when your hands catch him on the deck.##\n\nCorolla takes her run-up toward the railing, and then she stops.##\n\nA figure has pulled itself over the edge of the roof.##\n\nLarger than the others.# Not by much, but enough to matter up here:#\nbroader in the shoulder, moving with a deliberation the small ones lack.\nIt draws two daggers from its belt with a grin that is possibly the worst\nexpression you have ever seen, and settles into a fighting crouch.##\n\nBelow, on the deck, the three of you look up.",
+      "childid": 14
+    },
+    {
+      "id": 14,
       "type": "Dialogue",
-      "recap": "Corolla's rooftop duel - wound on the old burn scar",
+      "recap": "fast path - Corolla's rooftop duel, narrated - wound on the old burn scar",
       "dialogues": [
         {
           "actor": "Corolla",
@@ -153,12 +278,100 @@
           "precomment": "She does not answer.# Above you, you see her grip the railing\nwith both hands, and her head drops for one second,\nand the Edzzen is already moving toward her again.##\n\nShe does not have a weapon.# She has the railing.#\nAnd she has the Edzzen's momentum.##\n\nAt the last instant she twists aside, and the Edzzen's face meets the railing with a crack\nthat carries all the way down to the deck.##\n\nIn the half-second the creature spends with its head against the metal,\nCorolla takes her run, three steps on the open roof, hooks a foot\noff the back of the Edzzen's shoulders and goes over the railing headfirst.##",
           "line": "She's...",
           "comment": "She hits the sail.##\n\nShe slides.##\n\nShe lands hard on the deck, harder than you did,\nand she does not get up immediately.# She lies there, not moving,\nwhile Smiurl and Efeliah are already crouching over her\nand Theo is already casting off the mooring lines.##\n\nThe last thing visible on the lighthouse roof, above,\nis the Edzzen's expression, a precise composition of bafflement and fury,\nnow surrounded by many of his colleagues, shrinking\nas the ship carries you away from the promontory, into open water.##",
-          "childid": 13
+          "childid": 15
         }
       ]
     },
     {
-      "id": 13,
+      "id": 90,
+      "type": "Action",
+      "recap": "lighthouse turn 2 (slow) - climb the stair, door already failing",
+      "text": "$CThe stair spirals up into the dark, and behind you the ground floor door\nis already losing the argument, one plank at a time.##\n\nSmiurl's voice comes down from somewhere above, thin and urgent.",
+      "actions": [
+        {
+          "verbs": ["climb", "go", "continue", "ascend", "run", "up", "stairs"],
+          "answer": "You take the stair fast, badly, catching your shoulder twice on the curve\nof the wall, until it opens into the lamp room and Smiurl's voice is suddenly close.",
+          "childid": 100
+        },
+        {
+          "verbs": ["look", "listen"],
+          "answer": "Stone steps, curling up into the dark, and behind you a door\nthat is not going to be a door for very much longer."
+        }
+      ]
+    },
+    {
+      "id": 100,
+      "type": "Action",
+      "recap": "lighthouse turn 3 (slow) - lamp room, through the hatch, pursuit closing",
+      "text": "$CThe lamp room is dead glass and a cold lens, and no way out you can see,\nuntil Smiurl's voice finds you again, coming down through a hatch in the ceiling.##\n\n$Y\"Up here!# This way!# Hurry!\"$C##\n\nSomewhere below, on the stair, feet are climbing far too fast for anything\nyou would call reassuring.",
+      "actions": [
+        {
+          "verbs": ["open", "climb", "go", "enter", "follow", "up"],
+          "answer": "You haul yourself through the hatch and the wind hits you flat,\nand Corolla comes up right behind you, already turning back toward the opening.",
+          "childid": 110
+        },
+        {
+          "verbs": ["look", "search"],
+          "answer": "A dead lamp, glass on every side, one hatch, and feet on the stair\nthat are already closer than they should be."
+        }
+      ]
+    },
+    {
+      "id": 110,
+      "type": "Action",
+      "recap": "lighthouse turn 4 (slow) - wedge the hatch, no time left",
+      "text": "$CYou are on the roof, the sea a long way down on every side, and below\nthe hatch the stair has already gone from noise to something closer to a stampede.##\n\nCorolla has her stiletto out.",
+      "actions": [
+        {
+          "verbs": ["block", "wedge", "jam", "bar", "close", "shut"],
+          "answer": "You jam it through the iron loop together, hurried, badly seated,\nbuying seconds you both know you do not really have.",
+          "childid": 130
+        },
+        {
+          "verbs": ["look", "search"],
+          "answer": "The hatch, the stiletto, the railing, and no time to enjoy the view."
+        }
+      ]
+    },
+    {
+      "id": 130,
+      "type": "Story",
+      "recap": "slow path - the bigger Edzzen reaches the roof before anyone can jump",
+      "text": "$CYou have not even reached the seaward railing when you hear it:#\nmetal on metal, somewhere below the roof's edge, climbing the same steel bracing\nthat holds the lighthouse to the cliff.##\n\nA hand finds the railing.# Then another.# And then it hauls itself up and over,\nbigger than the others by enough to matter up here, broader in the shoulder,\nmoving with a deliberation the small ones lacked.# It draws two daggers\nfrom its belt with a grin that is possibly the worst expression you have ever seen.##\n\n$R\"Kriss!\"$C# Corolla shoves Smiurl behind her and reaches for her own blade,\nbut the thing is already between you and the railing, and between the railing\nand the sea, and between the sea and anywhere you would rather be.##\n\nThere is no jumping past this one.",
+      "childid": 140
+    },
+    {
+      "id": 140,
+      "type": "Fight",
+      "recap": "slow path - Kriss fights the bigger Edzzen directly, tougher tuning",
+      "text": "$CYou draw the sword, and for once you are grateful for its unreasonable weight.##\n\nThe creature comes in low and fast, both daggers working, and you understand\nin the first exchange that this is not the bar counter's swarm of angry old men.#\nThis one has done this before.",
+      "encounter": {
+        "foes": [
+          {
+            "name": "The Bigger Edzzen",
+            "health": 40,
+            "damage": 14,
+            "attacksperround": 2
+          }
+        ],
+        "victorymessage": "$CIt goes down hard, daggers skittering across the stone, and does not get up.##\n\nCorolla is already at the railing, pulling Smiurl to his feet, blood on her sleeve\nwhere she caught a stray blade shielding him# — a shallow line across her back,\nsitting exactly on the old burn scar from Ayonn.# She does not seem to have\nnoticed yet.##\n\n$R\"Later,\"$C# she says, before you can ask.# $R\"Jump.\"$C",
+        "defeatmessage": "$CYour arm gives a half-second before the rest of you does, and the last thing\nyou properly register is Corolla's voice, and then nothing at all.$d##\n\n\n-- GAME OVER --#\n\n\n$DThe universe just watched you lose a knife fight to a thousand-year-old dwarf.\nIt is not impressed.# Try again.",
+        "qtecycles": 3,
+        "qtelength": 6,
+        "qtespeedfactor": 1.3,
+        "qtewidth": 1
+      },
+      "childid": 150
+    },
+    {
+      "id": 150,
+      "type": "Story",
+      "recap": "slow path - post-fight escape, Corolla wounded, all three reach the ship",
+      "text": "$CCorolla does not wait for you to catch your breath.# She takes her run-up,\nhooks Smiurl under one arm bodily, ignoring his indignant squawk, and goes over\nthe railing with him before you have entirely processed that the fight is over.##\n\nYou follow, because there is nothing else on this roof worth staying for.##\n\nYou hit the sail flat and $Wslide$C, the great panel angled just right,\nand come off the bottom of it onto a mass of coiled rope and furled canvas\nthat only barely qualifies as a mattress.# Corolla lands beside you a moment later,\nconsiderably less gracefully, Smiurl still clamped under one arm and shrieking about it.##\n\nOnly then, sitting up, does she notice the blood soaking through her sleeve,\nand her face goes the color of the deck a half-second before the rest of her does.##\n\nEfeliah is at her side before you can call out.##\n\nAbove you, the lighthouse and its remaining tenants shrink fast\nas the ship pulls away from the promontory, into open water.",
+      "childid": 15
+    },
+    {
+      "id": 15,
       "type": "Story",
       "recap": "end of chapter - away from the town, Corolla unconscious",
       "text": "The lighthouse diminishes behind you, and the wretched town with it,\nuntil the promontory is only a dark finger against the pale sky\nand then the coast itself is only a line, and then only a suggestion,\nand then gone.##\n\nThe sails above you are already angling toward the sun,\nslowly, with a mechanical patience that seems almost affectionate,\nand the motors engage below the waterline with a clean,\nuntroubled hum.##\n\nCorolla has not woken up.##\n\nEfeliah is beside her, and has not moved from beside her,\nand Smiurl has arranged himself at a distance that is trying very hard\nnot to look like hovering.##\n\n$c<<She got hit on the old burn scar.#\nShe'll be fine.# Corolla is always fine.#\nI am saying this with full confidence and no anxiety whatsoever.>>$C##\n\n$CTheo stands at the wheel.# Or rather near it, since the navigation computer\nis already managing the course.# He looks at the panels above\nwith an expression you would describe, if pressed, as reverent.##",
