@@ -77,16 +77,20 @@ public class Chapter16WalkthroughTests
 
             idx = await ChooseAsync(idx, "It's obvious you're hiding something.");        // node 4: reply on Corolla's "No, we're good." -> node 6 (push branch)
 
-            idx = await ContinueAsync(idx);                                              // node 6 -> node 8
+            idx = await ContinueAsync(idx);                                              // node 6 -> node 20
+            idx = await ContinueAsync(idx);                                              // node 20 -> node 8
 
             idx = await ContinueAsync(idx);                                              // node 8 -> node 9
+            idx = await ContinueAsync(idx);                                              // node 9: Theo's "I was born in Oder" break
 
-            idx = await ChooseAsync(idx, "\"What happened?\"");                           // node 9: reply on "she is a noble" -> linename "attack"
+            idx = await ChooseAsync(idx, "\"Born for it?");                               // node 9: row 0 -> linename "bloodline", the royal-line strand
+            idx = await ContinueAsync(idx);                                              // node 9: "bloodline" line's own break, then falls through to "attack"
             idx = await ChooseAsync(idx, "\"What changed it?\"");                         // node 9: reply on "attack" -> linename "silence"
             idx = await ContinueAsync(idx);                                              // node 9: Corolla's childid line -> node 10
 
             idx = await ChooseAsync(idx, "\"And your father?\"");                         // node 10: reply on first line -> linename "father"
             idx = await ContinueAsync(idx);                                              // node 10: "father" line's own break
+            idx = await ChooseAsync(idx, "\"Then why did you accept?\"");                 // node 10: row 0 -> linename "accepted", skipping "theoSilent"
             idx = await ChooseAsync(idx, "\"Is that why you helped me?");                 // node 10: reply -> linename "helped"
             idx = await ContinueAsync(idx);                                              // node 10: Corolla's childid line -> node 11
 
@@ -130,6 +134,11 @@ public class Chapter16WalkthroughTests
         Assert.IsFalse(output.Contains("Nothing that carries a name"),
             "Node 17's refusal must not play with the flag set.");
         Assert.IsTrue(output.Contains("LEAVE ME ALONE!"), "Push branch should reach Corolla's outburst (node 6).");
+        Assert.IsTrue(output.Contains("hands that knew the rock"),
+            "Asking about the royal line should pull node 9's \"bloodline\" strand.");
+        Assert.IsFalse(output.Contains("And he won't."),
+            "Taking node 10's \"why did you accept\" arm must skip the \"theoSilent\" line entirely, "
+            + "including across the arrow-key redraw, which the break on that line is what prevents.");
         Assert.IsTrue(output.Contains("We helped you because it was right."), "Should have reached Theo's line in node 10's Øder exchange.");
         Assert.IsTrue(output.Contains("part of the planet"), "Should have reached node 14's hilltop beat.");
         Assert.IsTrue(output.Contains("There must be."), "Should have reached node 15's closing line.");
@@ -208,6 +217,84 @@ public class Chapter16WalkthroughTests
         Assert.IsTrue(output.Contains("You let the words die before they reach your mouth."), "Should have taken node 7 (the back-off branch).");
         Assert.IsTrue(output.Contains("It's time we told you our story."), "Should still converge on node 9 (Theo opens the story) via node 8.");
         Assert.IsFalse(output.Contains("LEAVE ME ALONE!"), "The back-off branch should never reach node 6's outburst.");
+    }
+
+    /// <summary>
+    /// The far side of the two reply branches the Øder scene actually has. Node 9's second row asks
+    /// what happened to the city and skips Theo's royal-line answer; node 10's second row puts Theo's
+    /// withheld reason to him and gets his silence before Corolla's "I saw Theo" - the same line the
+    /// other arm reaches, answering a different question. Walking it proves the branches are real
+    /// (the skipped strand never renders, the taken one does) and that the engine's arrow-key redraw
+    /// does not leak the strand the player did not ask for.
+    /// </summary>
+    [TestMethod]
+    public void Chapter16OderScene_OtherArms_SkipTheBloodlineAndPullTheosSilence()
+    {
+        GameEngine engine = BuildScopedEngine(16);
+        SetCurrentChapter(engine, 16);
+
+        InvalidOperationException stoppedAt = null;
+
+        Task script = Task.Run(async () =>
+        {
+            int idx = 0;
+
+            idx = await ContinueAsync(idx);                                              // node 1 -> node 2
+            idx = await ContinueAsync(idx);                                              // node 2 -> node 17 (Choice)
+            idx = await ChooseAsync(idx, "Leave her to it, and take what sleep the rock allows.", ConsoleKey.DownArrow);
+                                                                                           // node 17 -> node 19
+            idx = await ContinueAsync(idx);                                              // node 19 -> node 3
+
+            idx = await ContinueAsync(idx);                                              // node 3: Corolla's break
+            idx = await ContinueAsync(idx);                                              // node 3: Efeliah's break
+            idx = await ContinueAsync(idx);                                              // node 3: Kriss's childid line -> node 4
+
+            idx = await ChooseAsync(idx, "Let it go, and keep walking in silence.", ConsoleKey.DownArrow); // node 4 -> node 7
+            idx = await ContinueAsync(idx);                                              // node 7 -> node 8
+            idx = await ContinueAsync(idx);                                              // node 8 -> node 9
+            idx = await ContinueAsync(idx);                                              // node 9: Theo's "I was born in Oder" break
+
+            idx = await ChooseAsync(idx, "\"What happened to the city?\"", ConsoleKey.DownArrow);
+                                                                                           // node 9: row 1 -> "attack", skipping "bloodline"
+            idx = await ChooseAsync(idx, "\"What changed it?\"");                         // node 9: single reply -> "silence"
+            idx = await ContinueAsync(idx);                                              // node 9: Corolla's childid line -> node 10
+
+            idx = await ChooseAsync(idx, "\"And your father?\"");                         // node 10: single reply -> "father"
+            idx = await ContinueAsync(idx);                                              // node 10: "father" line's own break
+            idx = await ChooseAsync(idx, "\"Theo never said what changed his mind.\"", ConsoleKey.DownArrow);
+                                                                                           // node 10: row 1 -> "theoSilent"
+            idx = await ContinueAsync(idx);                                              // node 10: "theoSilent" break, then falls through to "accepted"
+
+            // Stop here: node 10's "helped" prompt is the push branch's business. Reaching it unanswered
+            // is what times the mock's ReadKey out, which is this test's terminator.
+            await WaitForOutputIndexAsync("Is that why you helped me?", idx);
+        });
+
+        try
+        {
+            engine.LoadNode(1);
+            Assert.Fail("Expected node 10's remaining reply prompt to time out the mock's ReadKey once the walk reached it unanswered.");
+        }
+        catch (InvalidOperationException ex)
+        {
+            stoppedAt = ex;
+        }
+
+        Assert.IsTrue(script.Wait(TimeSpan.FromSeconds(30)), "Input script timed out.");
+        Assert.IsNotNull(stoppedAt);
+        Assert.AreEqual("No keys available in mock terminal", stoppedAt.Message,
+            "Expected exception message in testing environment only: System.Console.ReadKey never throws this way.");
+
+        string output = terminal.GetOutput();
+        Assert.IsFalse(output.Contains("hands that knew the rock"),
+            "Asking about the city instead of the royal line must skip node 9's \"bloodline\" strand, "
+            + "including across the arrow-key redraw, which the break on that line is what prevents.");
+        Assert.IsTrue(output.Contains("None of that would come to pass."),
+            "Both of node 9's arms must still reach the attack.");
+        Assert.IsTrue(output.Contains("And he won't."),
+            "Node 10's second arm should pull Theo's refusal to answer.");
+        Assert.IsTrue(output.Contains("I saw Theo."),
+            "Both of node 10's arms converge on the same line, which is the answer to whichever was asked.");
     }
 
     // ---- helpers -------------------------------------------------------------------

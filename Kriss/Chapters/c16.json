@@ -20,7 +20,7 @@
       "id": 17,
       "type": "Choice",
       "recap": "camp in the labyrinths [DECISION: choice] - the payoff for Math's amplifier (c15 award) and for his promise to make himself heard; the ask is gated on mathAmplifier and the other option always advances",
-      "text": "$COn the third evening you camp hard against the canyon wall,\nand eat what Ayonn packed for you with your backs to the rock.##\n\nEfeliah is sitting a little apart from the light, her eyes open\nand not looking at anything in the canyon.# You have seen her do this\nbefore, at the Rock, and you know better than to walk in front of her\nwhile she is doing it.##\n\nThen she comes back into her own face, and blinks at the fire.",
+      "text": "$COn the third evening you camp against the canyon wall,\nand eat what Ayonn packed for you with your backs to the rock.##\n\nEfeliah is sitting a little apart from the light, her eyes open\nand not looking at anything in the canyon.# You have seen her do this\nbefore, at the Rock, and you know better than to walk in front of her\nwhile she is doing it.##\n\nThen she comes back into her own face, and blinks at the fire.",
       "choices": [
         {
           "desc": "Ask her what she was listening to.",
@@ -59,7 +59,7 @@
         {
           "actor": "Efeliah",
           "line": "He says he will make himself heard again.# He was quite firm about that.",
-          "comment": "Then she closes her eyes and is gone again, briefly,\nsomewhere several days north of here.",
+          "comment": "\nThen she closes her eyes and is gone again, briefly, somewhere several days north of here.",
           "childid": 3
         }
       ]
@@ -144,12 +144,12 @@
         {
           "actor": "Kriss",
           "line": "Smiurl!# Sounds like Ayonn's comforts have made you soft!",
-          "comment": "You say it, grinning."
+          "comment": "You tease him."
         },
         {
           "actor": "Smiurl",
           "line": "That is outrageous nonsense!# Smiurl does not go 'soft'!",
-          "comment": "\nHe says it, offended, while the others chuckle.# Then, sulking:"
+          "comment": "\nHe retorts, while the others chuckle.# Then, sulking:"
         },
         {
           "actor": "Smiurl",
@@ -159,13 +159,13 @@
           "actor": "Corolla",
           "precomment": "Corolla, walking ahead, does not turn around.",
           "line": "The distance from here to the coast is about the same as from Ayonn to Seer's Rock.#\nA little more, perhaps.# It's just past what you can see at the horizon.",
-          "comment": "She says it the way she says practical things: quickly, without weight, moving on."
+          "comment": "\nShe says it the way she says practical things: quickly, without weight, moving on."
         },
         {
           "actor": "Kriss",
           "precomment": "You look at the back of her head.# Something in the way she said it,\nthe precision of it, the ease, catches your attention.",
           "line": "How do you know that?# Did your Horde reach that far?",
-          "comment": "It is an innocent question.#\nYou say it easily, curious, the way you might ask someone how they know a shortcut.##\n\nCorolla stops walking.##",
+          "comment": "It is an innocent question,#\nasked easily, the way you might ask someone how they know a shortcut.##\n\nCorolla stops walking.##",
           "childid": 4
         }
       ]
@@ -205,15 +205,22 @@
     {
       "id": 6,
       "type": "Story",
-      "recap": "push branch - Corolla EXPLODES, storms off, Theo's odd line, watched all afternoon",
-      "text": "$c\"Come on.# It's obvious you're hiding something.\"$C# you say.##\n\nShe stops.##\n\nShe turns.##\n\n$R\"LEAVE ME ALONE!\"$C##\n\nThe cry hits the canyon walls and comes back at you.#\n$R\"Leave me alone\"$C...# she repeats, fainter,# and again, a whisper# $R\"...leave me alone...\"$C#\nfading into the rock.##\n\nNobody moves.# Smiurl has gone an immediate, shocked gray.#\nEfeliah is very still.# Theo does not turn around.##\n\nCorolla's eyes are bright with something you were not expecting,\na fury that has tears at the very edge of it, and she holds your gaze\nfor one burning moment, long enough for you to feel the full weight\nof having accidentally put your hand on something,\nbefore she turns away with a sharp motion of her whole body\nand strides ahead, disappearing around the next bend in the canyon.##\n\nYou look at Efeliah.# She looks back at you, stricken in her quiet way.#\nYou look at Theo.##\n\n$B\"Come.# It'll be dark in a few hours.\"$C##\n\n$c\"But...?\"$C# you start.##\n\n$B\"Don't worry about her\"$C# he answers, in a tone that is somehow not quite his own.##\n\nYou walk.# For the rest of the day you do not see Corolla except as\na distant shape ahead of you, never within speaking distance, and more than\nonce you catch what looks like movement on the canyon walls to either side,\na shape, a shift of shadow, and turn to find only bare rock.#\nSmiurl does not make a single sound.",
+      "recap": "push branch - Corolla EXPLODES, storms off",
+      "text": "$c\"Come on.# It's obvious you're hiding something.\"$C# you say.##\n\nShe stops.##\n\nShe turns.##\n\n$R\"LEAVE ME ALONE!\"$C##\n\nThe cry hits the canyon walls and comes back at you.#\n\n$R\"Leave me alone\"$C...# she repeats, fainter,# and again, a whisper# $R\"...leave me alone...\"$C#\nfading into the rock.##\n\nNobody moves.# Smiurl has gone an immediate, shocked gray.#\nEfeliah is very still.# Theo does not turn around.##\n\nCorolla's eyes are bright with something you were not expecting,\na fury that has tears at the very edge of it, and she holds your gaze\nfor one burning moment, long enough for you to feel the full weight\nof having accidentally put your hand on something,\nbefore she turns away with a sharp motion of her whole body\nand strides ahead, disappearing around the next bend in the canyon.",
+      "childid": 20
+    },
+    {
+      "id": 20,
+      "type": "Story",
+      "recap": "Theo's odd line, watched all afternoon",
+      "text": "You look at Efeliah.# She looks back at you, stricken in her quiet way.#\nYou look at Theo.##\n\n$B\"Come.# It'll be dark in a few hours.\"$C##\n\n$c\"But...?\"$C# you start.##\n\n$B\"Don't worry about her\"$C# he answers, in a tone that is somehow not quite his own.##\n\nYou walk.# For the rest of the day you do not see Corolla except as\na distant shape ahead of you, never within speaking distance, and more than\nonce you catch what looks like movement on the canyon walls to either side,\na shape, a shift of shadow, and turn to find only bare rock.#\nSmiurl does not make a single sound.",
       "childid": 8
     },
     {
       "id": 7,
       "type": "Story",
       "recap": "back-off branch (sparse) - Kriss lets it go, Corolla stays closed off but present",
-      "text": "You let the words die before they reach your mouth.# Whatever it is, it can wait.##\n\nYou keep walking.# Corolla stays a half-step ahead of the rest of you\nfor the remainder of the day, her jaw set, her eyes on the path,\nand nobody tries to close the distance.# Even Smiurl, for once,\nfinds nothing to say.##\n\nBy the time the light starts to fail, she still hasn't spoken again.",
+      "text": "You let the words die before they reach your mouth.# Whatever it is, it can wait.##\n\nYou keep walking.# Corolla stays a half-step ahead of the rest of you\nfor the remainder of the day, her jaw set, her eyes on the path,\nand nobody tries to close the distance.#\nEven Smiurl, for once, finds nothing to say.##\n\nBy the time the light starts to fail, she still hasn't spoken again.",
       "childid": 8
     },
     {
@@ -226,34 +233,42 @@
     {
       "id": 9,
       "type": "Dialogue",
-      "recap": "Theo opens the Øder backstory (pt.1) - pulled by replies: the attack, and why he changed his mind (withheld)",
+      "recap": "Theo opens the Øder backstory (pt.1) - the first reply branches: ask about the royal line and Theo gives it (source ch.XVI, the inherited qualities), ask about the city and you skip it; both land on the attack, and the withheld reason is a single reply",
       "dialogues": [
         {
           "actor": "Theo",
           "precomment": "He does not look up from the fire.# His voice is low, and even,\nand carries the weight of something that has not been said for a long time.",
           "line": "It's time we told you our story.",
-          "comment": "You look at him.# Then at Corolla, who has gone very still at the edge of the firelight."
+          "comment": "You look at him.#\nThen at Corolla, who has gone very still at the edge of the firelight."
         },
         {
           "actor": "Theo",
           "precomment": "He looks at the fire, not at you.#\nHe speaks the way he does everything: steadily, without decoration,\nputting one word after the next the way you put one foot after another\nwhen there is no other option.",
           "line": "I was born in the city of Øder.# Alone on the mountain range of the same name.#\nCorolla is from that city too.# But there is a great difference between us.#\nI am the son of laborers.# Mountain workers, for generations.\nMy people knew nothing but hard work.# They were born for it.#\nThey loved the mountains above all things.",
-          "comment": "He says it without sentiment.#\nBut you hear what is underneath it, as you hear most things underneath Theo's words:\nthe size of what he is describing by not describing it."
+          "comment": "He says it without sentiment.#\nBut you hear what is underneath it, as you hear most things underneath Theo's words:\nthe size of what he is describing by not describing it.",
+          "break": true
         },
         {
           "actor": "Theo",
-          "line": "She is a noble.# The last of Øder.# Firstborn of the king,\nand heir to the throne by right.# She was loved by the people.#\nIntelligent and beautiful, and she had no shortage of suitors.#\nNaturally she chose none of them.# There were no others of equal rank.#\nShe would have been the queen of Øder.##\n\nProbably the best ruler the city had ever had.",
+          "line": "She is a noble.# The last of Øder.# Firstborn of the king,\nand heir to the throne by right.# She was loved by the people.#\nIntelligent and beautiful, and she had no shortage of suitors.#\nNaturally she chose none of them.# She deserved better than any of them.#\nShe would have been the queen of Øder.##\n\nProbably the best ruler the city had ever had.",
           "comment": "He stops.# The fire settles.##\n\nSmiurl's skin is a deep, motionless amber, not his anxious amber\nbut something deeper, older, as if his light has gone still.",
           "replies": [
             {
-              "line": "\"What happened?\"",
-              "nextline": "attack"
+              "line": "\"Born for it? Like your people were born for the mountains?\"",
+              "nextline": "bloodline"
             },
             {
-              "line": "\"A city that never knew war... how did the Horde ever reach it?\"",
+              "line": "\"What happened to the city?\"",
               "nextline": "attack"
             }
           ]
+        },
+        {
+          "linename": "bloodline",
+          "actor": "Theo",
+          "line": "Her line had carried those qualities for centuries.#\nPassed down, generation to generation, the way my people passed down\nhands that knew the rock.##\n\nShe was born for it.# The same as we were born for ours.",
+          "comment": "He turns a piece of wood over in the fire, and says nothing else.",
+          "break": true
         },
         {
           "linename": "attack",
@@ -263,10 +278,6 @@
           "replies": [
             {
               "line": "\"What changed it?\"",
-              "nextline": "silence"
-            },
-            {
-              "line": "\"Why?\"",
               "nextline": "silence"
             }
           ]
@@ -289,7 +300,7 @@
     {
       "id": 10,
       "type": "Dialogue",
-      "recap": "Corolla's account (pt.2) - the fires, her father pulled by reply, joining the Horde, and the mandatory 'why did you help me' exchange",
+      "recap": "Corolla's account (pt.2) - the fires, her father pulled by reply, then a real branch: ask why she accepted, or put Theo's withheld reason to him and get his silence first. Both reach the same line, which answers a different question depending on which was asked",
       "dialogues": [
         {
           "actor": "Corolla",
@@ -298,10 +309,6 @@
           "replies": [
             {
               "line": "\"And your father?\"",
-              "nextline": "father"
-            },
-            {
-              "line": "\"Was he safe?\"",
               "nextline": "father"
             }
           ]
@@ -315,8 +322,31 @@
         },
         {
           "actor": "Corolla",
-          "line": "I had no home left.# No throne.#\nI looked around, and the Horde's chief was standing behind me,\nwatching me with a grin, and he described, without the least mercy,\nexactly what my situation was, and then he invited me to join them.##\n\nI had no other choice.# Where would I have gone?#\nI couldn't scatter myself among that handful of servants and butlers.#\nI saw Theo.# So I accepted, swearing in the bottom of my heart\nthat I would make them pay for it, the Horde and its chief.",
-          "comment": "She says the last sentence as if she is still deciding how to feel about it."
+          "line": "I had no home left.# No throne.#\nI looked around, and the Horde's chief was standing behind me,\nwatching me with a grin, and he described, without the least mercy,\nexactly what my situation was, and then he invited me to join them.##\n\nI had no other choice.# Where would I have gone?#\nI couldn't scatter myself among that handful of servants and butlers.",
+          "replies": [
+            {
+              "line": "\"Then why did you accept?\"",
+              "nextline": "accepted"
+            },
+            {
+              "line": "\"Theo never said what changed his mind.\"",
+              "nextline": "theoSilent"
+            }
+          ]
+        },
+        {
+          "linename": "theoSilent",
+          "actor": "Corolla",
+          "precomment": "You look across the fire.##\n\nTheo does not look up.# He turns the wood in the flames,\nand the fire takes it, and he says nothing at all.",
+          "line": "He didn't.# And he won't.",
+          "comment": "She does not offer to do it for him.##\n\nThe fire fills the place where the answer would have gone.",
+          "break": true
+        },
+        {
+          "linename": "accepted",
+          "actor": "Corolla",
+          "line": "I saw Theo.# So I accepted, swearing in the bottom of my heart\nthat I would make them pay for it, the Horde and its chief.",
+          "comment": "\nShe says it as if she is still deciding how to feel about it."
         },
         {
           "actor": "Corolla",
@@ -324,11 +354,7 @@
           "comment": "She looks at the fire.# Not at you.",
           "replies": [
             {
-              "line": "\"Is that why you helped me? At the beginning?\"",
-              "nextline": "helped"
-            },
-            {
-              "line": "\"So that's why you helped me?\"",
+              "line": "\"Is that why you helped me?\"",
               "nextline": "helped"
             }
           ]
@@ -366,10 +392,6 @@
             {
               "line": "\"I'm sorry. I didn't know.\"",
               "nextline": "forgiven"
-            },
-            {
-              "line": "\"Please forgive me. I didn't mean to push.\"",
-              "nextline": "forgiven"
             }
           ]
         },
@@ -403,10 +425,6 @@
             {
               "line": "\"Don't what?\"",
               "nextline": "dontwhat"
-            },
-            {
-              "line": "\"Don't do what, exactly?\"",
-              "nextline": "dontwhat"
             }
           ]
         },
@@ -439,15 +457,10 @@
       "dialogues": [
         {
           "actor": "Efeliah",
-          "precomment": "She reaches you as the others arrive, still faintly puzzled.",
           "line": "I really don't understand what's generating this unease of yours.",
           "replies": [
             {
               "line": "\"Neither do I.\"",
-              "nextline": "resign"
-            },
-            {
-              "line": "\"That makes two of us.\"",
               "nextline": "resign"
             }
           ]
@@ -460,10 +473,6 @@
           "replies": [
             {
               "line": "\"I think it has to do with the call.\"",
-              "nextline": "callAsked"
-            },
-            {
-              "line": "\"It might be the call, again.\"",
               "nextline": "callAsked"
             }
           ]
@@ -483,7 +492,7 @@
         },
         {
           "actor": "Kriss",
-          "precomment": "You say it, eyes fixed on the horizon.",
+          "precomment": "After a moment, eyes fixed on the horizon, you say:",
           "line": "There must be.# There must.",
           "childid": 16
         }
